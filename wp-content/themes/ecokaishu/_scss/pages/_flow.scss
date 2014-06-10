@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+#flow{
+
+//**********************************************************************
+//**********************************************************************
+//
+// _flow.scss INDEX
+//
+// #flow .container
+// #flow .icon-dot
+// #flow .contents
+//
+//**********************************************************************
+//**********************************************************************
+// .container
+//**********************************************************************
+
+.container{
+
+	//PC
+	@media only screen and (min-width: $minWidth){
+		max-width: 740px;
+		margin:{
+			top: 0;
+			bottom: 0;
+			left: auto;
+			right: auto;
+		}
+	}
+
+	
+
+}
+
+//**********************************************************************
+// .icon-dot
+//**********************************************************************
+
+.icon-dot#top{ 	top: 0; }
+
+//**********************************************************************
+// .contents
+//**********************************************************************
+
+.contents{
+
+	position: relative;
+	padding:{
+		top: 3.0rem;
+		bottom: 3.0rem;
+	}
+
+	// :last-of-type
+	//**************************************************************
+
+	&:last-of-type{
+		padding:{
+			bottom: 0;
+		}
+	}
+
+	// h3
+	//**************************************************************
+
+	h3{
+		display: none;
+	}
+
+	// h4
+	//**************************************************************
+
+	h4{
+
+		display: block;
+		position: relative;
+		z-index: 5;
+		margin: 0 auto;
+		padding: 1.0rem;
+		background: $darkGray;
+		color: $white;
+		font-size: $bigger;
+		text-align: center;
+		line-height: 1.0em;
+
+	}
+
+	// h5
+	//**************************************************************
+
+	h5{
+		margin:{
+			top: 2.0rem;
+			bottom: 2.0rem;
+		}
+		font:{
+			size: $bigger;
+		}
+	}
+
+	// .col
+	//**************************************************************
+	
+	.col{
+		position: relative;
+		padding: 2.0rem 0;
+
+		// :before
+		&:before{
+			display: block;
+			position: absolute;
+			z-index: 1;
+			top: -3.0rem;
+			bottom: -3.0rem;
+			left: 50%;
+			width: 1px;
+			background: rgba($black, .5);
+			content: "";
+		}
+
+		// .content
+		.content{
+			position: relative;
+			z-index: 2;
+			background: $white;
+			padding: 2.0rem;
+		}
+	}
+
+	// #actions
+	//**************************************************************
+
+	&#actions{
+
+		text-align: center;
+
+		//a
+		a{
+			display: block;
+			margin:{
+				top: 1.0rem;
+				bottom: 1.0rem;
+			}
+			padding:{
+				top: 1.0rem;
+				bottom: 1.0rem;
+			}
+			@include border-radius(3px);
+			border:{
+				bottom: 2px solid rgba($black, .2);
+			}
+			background: $green;
+			color: $white;
+			text-decoration: none;
+			&#contact{
+				background: $orange;
+			}
+			&#estimate{
+				background: $pink;
+			}
+		}
+
+		//.col
+		.col{
+			&:nth-of-type(2){
+				&:before{
+					bottom: -7.5rem;
+				}
+			}
+		}
+
+		//.openingHour
+		.openingHour{
+			display: block;
+			position: absolute;
+			z-index: 3;
+			bottom: 1.0;
+			left: 50%;
+			width: 320px;
+			margin: {
+				left: -160px;
+			};
+			text-align: center;
+			background: $gray;
+		}
+
+		//PC
+		@media only screen and (min-width: $minWidth){
+
+			position: relative;
+			padding:{
+				top: 3.0rem;
+				bottom: 3.0rem;
+			}
+			&:before{
+				display: block;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				width: 370px;
+				height: 1px;
+				margin: 0 auto;
+				margin-left: -184px;
+				background: rgba($black, .5);
+				content: "";
+			}
+			&:after{
+				display: block;
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				width: 370px;
+				height: 1px;
+				margin: 0 auto;
+				margin-left: -184px;
+				background: rgba($black, .5);
+				content: "";
+			}
+
+		}
+
+		//Mobile
+		@media only screen and (max-width: $maxWidth){
+
+			.col{
+				&:nth-of-type(1){
+					padding:{
+						right: 4.0rem;
+					}
+				}
+				&:nth-of-type(2){
+					padding:{
+						left: 4.0rem;
+					}
+				}
+			}
+
+		}
+
+	}
+
+	// #trigger
+	//**************************************************************
+	
+	&#trigger{
+
+		//h3
+		h3{
+			display: block;
+			position: relative;
+			z-index: 5;
+			margin: 0 auto;
+			padding: 1.0rem;
+			background: $darkGray;
+			color: $white;
+			font-size: $bigger;
+			text-align: center;
+			line-height: 1.0em;
+		}
+
+	}
+	
+	// #ecokaishu
+	//**************************************************************
+
+	&#ecokaishuFlow{
+
+		background: rgba($green, .2);
+		margin:{
+			top: 3.0rem;
+		}
+		padding:{
+			bottom: 3.0rem;
+		}
+		.col{
+			&:before{
+				top: -6.0rem;
+			}
+		}
+		.icon-dot#top{ color: $white; }
+
+	}
+
+}
+
+}

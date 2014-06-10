@@ -1,0 +1,70 @@
+// Compass library
+@import "compass";
+@import "compass/reset";
+
+//mixin
+@mixin arrow($top, $bottom, $left, $right, $size: 4px, $color: #000000, $border: left){
+	display: block;
+	position: absolute;
+	@if $top != "" { top: $top; }
+	@if $bottom != "" { bottom: $bottom; }
+	@if $left != "" { left: $left; }
+	@if $right != "" { right: $right; }
+	width: 0px;
+	height: 0px;
+	border: $size solid transparent;
+	@if $border == left { border-left-color: $color; }
+	@if $border == right { border-right-color: $color; }
+	@if $border == top { border-top-color: $color; }
+	@if $border == bottom { border-bottom-color: $color; }
+	content: "";
+}
+
+//vendor prefix
+$prefixList: -webkit-, -moz-, null;
+
+//breakpoints
+$minWidth: 769px;
+$maxWidth: 768px;
+$minWidthBig: 1025px;
+$maxWidthBig: 1024px;
+
+//fontsize
+$small: 10px;
+$smaller: 12px;
+$normal: 14px;
+$bigger: $normal* 1.5;
+$big: $normal* 2;
+$biggest: $normal*2.5;
+
+//color settings
+$green: #009ea1;
+$pink: #e2318c;
+$yellow: #fccb00;
+$orange: #f15b29;
+$darkBlue: #002949;
+$darkGray: #444848;
+$gray: #f0f0f0;
+$black: #000000;
+$white: #ffffff;
+$red: #CD0300;
+$blue: #04278B;
+
+//import parts
+@import "base/font.scss";
+@import "base/common.scss";
+@import "base/decoration.scss";
+
+@import "parts/table.scss";
+@import "parts/list.scss";
+@import "parts/form.scss";
+
+@import "pages/post.scss";
+
+@import "pages/home.scss";
+@import "pages/ecokaishu.scss";
+@import "pages/flow.scss";
+@import "pages/price.scss";
+@import "pages/about.scss";
+
+@import "pages/campaign.scss";

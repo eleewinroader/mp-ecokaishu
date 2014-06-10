@@ -1,0 +1,44 @@
+/*
+ * Theme name: MP-Ecokaishu
+ * Author: LEE Eunjoo
+ * Version: 0.00
+*/
+
+.hide{ display: none; }
+
+#estmtIntro{
+	padding-top: 1.0rem;
+}
+
+/* yColl form */
+.yCollItem{ display: inline-block; }
+.yCollItem_var{
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 1.0rem 0 !important;
+}
+.yCollItem_var:not(:first-child){
+	border-top: 1px dotted rgba(0, 0, 0, .1);
+}
+.yCollItem_add{
+	display: block;
+	width :100%;
+	margin-top: 1.5rem;
+	padding: 0.5rem;
+	font-size: 14px;
+}
+.yCollItem_del{
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	bottom: 1.0rem;
+	background: #f5f5f5;
+	border: 1px solid rgba(0, 0, 0, .1);
+}
+#yCollItem_size{
+	margin-top: 0.5rem;
+}
+#yCollItem_size input[type="text"]{
+	width: 50px;
+}

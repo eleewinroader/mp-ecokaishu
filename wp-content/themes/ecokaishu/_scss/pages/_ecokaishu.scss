@@ -1,0 +1,457 @@
+@charset "UTF-8";
+
+#ecokaishu{
+
+//**********************************************************************
+//**********************************************************************
+//
+// _ecokaishu.scss INDEX
+//
+// #ecokaishu #flowEcokaishu
+// #ecokaishu #achive2012
+//
+//**********************************************************************
+//**********************************************************************
+// #flowEcokaishu
+//**********************************************************************
+
+#flowEcokaishu{
+
+	position: relative;
+
+	// ol
+	//**************************************************************
+
+	ol{
+
+		position: relative;
+		text-align: center;
+		margin-bottom: 5.0rem;
+		padding-bottom: 5.0rem;
+
+		//:before
+		&:before{
+			display: block;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			bottom: -10.0rem;
+			left: 50%;
+			width: 1px;
+			background: rgba($black, .5);
+			content: "";
+		}
+
+		//li
+		li{
+			position: relative;
+			z-index: 2;
+			width: 220px;
+			margin: {
+				top: 0;
+				bottom: 0;
+				left: auto;
+				right: auto;
+			}
+			padding: 1.0rem 0;
+			span[class^="icon"]{
+
+				display: block;
+				width: 160px;
+				height: 160px;
+				margin: 1.0rem auto;
+				@include border-radius(50%);
+				background: $white;
+				font-size: $normal* 6;
+				text-align: center;
+				line-height: 160px;
+			}
+			span[class="txt"]{
+				background: $gray;
+			}
+			&:after{
+				display: block;
+				position: absolute;
+				z-index: 10;
+				width: 0px;
+				height: 0px;
+				border: 8px solid transparent;
+				border-top-color: $darkGray;
+				content: "";
+			}
+		}
+
+	}
+
+	// .icon-dot
+	//**************************************************************
+
+	.icon-dot#top{ 	top: 0; }
+	.icon-dot#bottom{ bottom: -3.0rem; }
+
+	//PC
+	@media only screen and (min-width: $minWidth){
+
+		//&:before
+		&:before{
+			display: block;
+			position: absolute;
+			z-index: 2;
+			top: 50%;
+			left: 50%;
+			margin: {
+				top: -290px;
+				left: -290px;
+			}
+			width: 580px;
+			height: 580px;
+			border: 1px solid;
+			@include border-radius(50%);
+			background: $gray;
+			content: "";
+		}
+
+		//ol
+		ol{
+
+			width: 740px;
+			margin: {
+				top: 0;
+				left: auto;
+				right: auto;
+			}
+			min-height: 800px;
+
+			//li
+			li{
+				display: block;
+				position: absolute;
+				&:nth-of-type(1){
+					top: 50px;
+					left: 50%;
+					margin:{
+						left: -110px;
+					}
+					&:after{
+						top: 160px;
+						right: -88px;
+						@include rotate(-45deg);
+					}
+				}
+				&:nth-of-type(2){
+					top: 260px;
+					right: 0;
+					&:after{
+						bottom: -54px;
+						right: 102px;
+						@include rotate(45deg);
+					}
+				}
+				&:nth-of-type(3){
+					bottom: 50px;
+					right: 100px;
+					&:after{
+						bottom: 87px;
+						left: -61px;
+						@include rotate(90deg);
+					}
+				}
+				&:nth-of-type(4){
+					bottom: 24px;
+					left: 100px;
+					&:after{
+						top: -20px;
+						left: -5px;
+						@include rotate(180deg);
+					}
+				}
+				&:nth-of-type(5){
+					top: 260px;
+					left: 0;
+					&:after{
+						top: -55px;
+						right: 24px;
+						@include rotate(225deg);
+					}
+				}
+			}
+
+		}
+
+	}
+
+	//Mobile
+	@media only screen and (max-width: $maxWidth){
+
+		ol{
+			li{
+				&:after{
+					bottom: 0;
+					left: 50%;
+					margin:{
+						bottom: -20px;
+						left: -7px;
+					}
+				}
+				&:last-of-type:after{
+					border-top-color: transparent;
+				}
+			}
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// #achive2012
+//**********************************************************************
+
+#achive2012{
+
+	position: relative;
+	padding: 5.0rem 0;
+	background: $white;
+
+	// :before
+	//**************************************************************
+
+	&:before{
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		width: 1px;
+		background: rgba($black, .5);
+		content: "";
+	}
+
+	// h3
+	//**************************************************************
+
+	h3{
+
+		display: block;
+		position: relative;
+		z-index: 2;
+		margin: 0 auto;
+		text-align: center;
+		color: $white;
+
+		//.bg_pink
+		.bg_pink{
+			display: inline-block;
+			margin: 1.0rem 0;
+			padding: 1.0rem 2.0rem;
+			background: $pink;
+			font-size: $bigger;
+			line-height: 1.0em;
+		}
+
+	}
+
+	// h4
+	//**************************************************************
+
+	h4{
+		position: relative;
+		margin:{
+			top: 1.0rem;
+			bottom: 1.0rem;
+		}
+		font-size: $biggest;
+		line-height: 1.5em;
+		span{
+			display: inline-block;
+			vertical-align: top;
+		}
+		.per{
+			font:{
+				size: $biggest* 2;
+				weight: bold;
+			}
+			letter-spacing: -0.05em;
+		}
+		.normal{
+			font-size: $normal !important;
+		}
+
+	}
+
+	// h5
+	//**************************************************************
+
+	h5{
+		position: relative;
+		margin:{
+			top: 2.0rem;
+			bottom: 1.0rem;
+		}
+		font-size: $bigger;
+		span{
+			display: inline-block;
+			vertical-align: bottom;
+			line-height: 1.3em;
+		}
+		.per{
+			font-size: $big;
+			font-weight: bold;
+			margin-right: 0.5rem;
+		}
+
+	}
+
+	// ul
+	//**************************************************************
+
+	ul{
+		position: relative;
+		z-index: 2;
+	}
+
+	// #graph
+	//**************************************************************
+
+	#graph{
+
+		position: relative;
+		z-index: 5;
+		padding: 2.0rem 0;
+		text-align: center;
+
+		//p
+		p{
+			position: absolute;
+			z-index: 7;
+			font-size: $bigger;
+			color: $white;
+			letter-spacing: -0.1rem;
+			span{
+				display: block;
+				&.per{
+					font-size: $biggest;
+					line-height: 1.1em;
+					&:after{
+						font-size: $big;
+						content: "%";
+					}
+				}
+				&.num{
+					&:after{
+						content: "点";
+					}
+				}
+			}
+			&#reuse{
+				width: 47%;
+				left: 0;
+				top: 10.0rem;
+				text-align: right;
+			}
+			&#recycle{
+				width: 47%;
+				right: 0;
+				top: 8.0rem;
+				text-align: left;
+			}
+		}
+	}
+
+	// #details
+	//**************************************************************
+
+	#details{
+		position: relative;
+		z-index: 2;
+
+		//.col
+		.col{
+			padding: 2.0rem  0;
+			&#reuse{
+				h4{
+					color: $green;
+				}
+
+			}
+			&#recycle{
+				text-align: right;
+				h4{
+					color: $darkBlue;
+				}
+			}
+		}
+
+	}
+
+	//PC
+	@media only screen and (min-width: $minWidthBig){
+		
+		//.col
+		.col{
+			&#reuse{
+				padding:{
+					right: 10.0rem;
+				}
+			}
+			&#recycle{
+				padding:{
+					left: 10.0rem;
+				}
+			}
+			h4{
+				.normal{
+					font-size: $normal !important;
+					line-height: 4.0em;
+				}
+			}
+			ul{
+				margin:{
+					top: 2.0rem;
+				}
+			}
+		}
+
+		//#graph
+		#graph{
+			position: absolute;
+			top: 10.0rem;
+			left: 50%;
+			margin-left: -150px;
+			width: 300px;
+			height: 300px;
+		}
+
+	}
+
+	//Mobile
+	@media only screen and (max-width: $maxWidthBig){
+
+		//h4
+		h4{
+			&:before{
+				right: 0;
+				margin-ight: -34px;
+			}
+		}
+
+		//.col
+		.col{
+			background: $white;
+		}
+
+		//#details
+		#details{
+			border:{
+				top: 1px solid rgba($black, .5);
+				bottom: 1px solid rgba($black, .5);
+			}
+		}
+
+	}
+
+}
+
+
+}

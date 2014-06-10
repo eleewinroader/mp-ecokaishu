@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+.post{
+
+//**********************************************************************
+//**********************************************************************
+//
+// _post.scss INDEX
+//
+// .post Common settings
+// .post .contents
+// .post #notices
+// .post #info
+//
+//**********************************************************************
+//**********************************************************************
+// Common settings
+//**********************************************************************
+
+h3{
+	margin:{
+		top: 2.0rem;
+		bottom: 2.0rem;
+	}
+	font-size: $big;
+	line-height: 1.3em;
+}
+h4{
+	margin:{
+		top: 2.0rem;
+		bottom: 2.0rem;
+	}
+	font-size: $bigger;
+}
+h5{
+	margin:{
+		top: 1.0rem;
+		bottom: 1.0rem;
+	}
+	font:{
+		size: $normal* 1.2;
+		weight: bold;
+	}
+}
+
+//**********************************************************************
+// .contents
+//**********************************************************************
+
+.contents{
+	padding: 3.0rem 0;
+	&:nth-child(2n){
+		background: $white;
+	}
+}
+
+//**********************************************************************
+// #notices
+//**********************************************************************
+
+&#notices{
+
+	.container{
+		max-width: 740px;
+	}
+
+}
+
+//**********************************************************************
+// #info
+//**********************************************************************
+
+&#info{
+
+	.container{
+		max-width: 740px;
+	}
+
+	ol{
+		margin-left: 2.0rem;
+		li{
+			&:nth-of-type(1):before{
+				margin-right: 0.5rem;
+				content: "(1)";
+			}
+			&:nth-of-type(2):before{
+				margin-right: 0.5rem;
+				content: "(2)";
+			}
+			&:nth-of-type(3):before{
+				margin-right: 0.5rem;
+				content: "(3)";
+			}
+			&:nth-of-type(4):before{
+				margin-right: 0.5rem;
+				content: "(4)";
+			}
+			&:nth-of-type(5):before{
+				margin-right: 0.5rem;
+				content: "(5)";
+			}
+			&:nth-of-type(6):before{
+				margin-right: 0.5rem;
+				content: "(6)";
+			}
+			&:nth-of-type(7):before{
+				margin-right: 0.5rem;
+				content: "(7)";
+			}
+			&:nth-of-type(8):before{
+				margin-right: 0.5rem;
+				content: "(8)";
+			}
+			&:nth-of-type(9):before{
+				margin-right: 0.5rem;
+				content: "(9)";
+			}
+			&:nth-of-type(10):before{
+				margin-right: 0.5rem;
+				content: "(10)";
+			}
+			> ol{
+				margin-left: 4.0rem;
+				li{
+					list-style-type: lower-alpha;
+				}
+			}
+			p{
+				display: inline-block;
+			}
+
+			ul{
+				margin-left: 2.0rem;
+				list-style-type: circle;
+				ul{
+					margin-left: 4.0rem;
+					list-style-type: square;
+				}
+			}
+			dl{
+				margin-left: 2.0rem;
+			}
+		}
+	}
+
+}
+
+}

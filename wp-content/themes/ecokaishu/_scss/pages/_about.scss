@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+#about{
+
+//**********************************************************************
+//**********************************************************************
+//
+// _about.scss INDEX
+//
+// #about #greetings
+// #about #outline
+//
+//**********************************************************************
+//**********************************************************************
+// #greetings
+//**********************************************************************
+
+#greetings{
+
+	position: relative;
+	padding: 5.0rem 0;
+	background: $white;
+
+	//p
+	//**************************************************************
+
+	p{
+		position: relative;
+		z-index: 2;
+	}
+
+	// dl
+	//**************************************************************
+
+	dl{
+		position: relative;
+		z-index: 2;
+		dt{
+			margin-top: 0.5rem;
+		}
+	}
+
+	// #ceoProfile
+	//**************************************************************
+
+	#ceoProfile{
+
+		// PC
+		@media only screen and (min-width: $minWidth){
+
+			h4{
+				margin: 0;
+				line-height: 1.2em;
+			}
+
+			dl{
+				margin: 1.0rem 0;
+				line-height: 1.5em;
+				font-size: 90%;
+			}
+
+		}
+
+		// Mobile
+		@media only screen and (max-width: $maxWidth){
+
+			margin-top: 2.0rem;
+			padding:{
+				top: 2.0rem;
+				bottom: 2.0rem;
+				left: 1.0rem;
+				right: 1.0rem;
+			}
+			border: 1px solid rgba($black, .1);
+
+			h4{
+				font-size: 120%;
+			}
+
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// #outline
+//**********************************************************************
+
+#outline{
+
+	padding-top: 5.0rem;
+
+	// #history
+	//**************************************************************
+
+	#history{
+
+		//dl
+		dl{
+			position: relative;
+			padding:{
+				bottom: 5.0rem;
+			}
+			&:before{
+				z-index: 1;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 5px;
+				bottom: 0;
+				width: 1px;
+				height: 100%;
+				background: rgba($black, .2);
+				content: "";
+			}
+			dt{
+				position: relative;
+				padding-left: 1.0rem;
+				font-weight: bold;
+				&:not(:first-of-type){
+					margin-top: 0.5rem;
+				}
+				&:before{
+					display: block;
+					position: absolute;
+					z-index: 2;
+					top: 9px;
+					left: 3px;
+					width: 5px;
+					height: 5px;
+					background: $green;
+					@include border-radius(50%);
+					content: "";
+				}
+			}
+			dd{
+				display: inline-block;
+				position: relative;
+				padding-left: 1.0rem;
+				font-size: 90%;
+			}
+		}
+
+		// Mobile
+		@media only screen and (max-width: $maxWidth){
+
+			margin-top: 3.0rem;
+
+		}
+
+	}
+
+}
+
+}

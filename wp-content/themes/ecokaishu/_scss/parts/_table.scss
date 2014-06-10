@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+//**********************************************************************
+//**********************************************************************
+//
+// _table.scss INDEX
+//
+// PC settings
+// Mobile settings
+//
+//**********************************************************************
+//**********************************************************************
+// PC settings
+//**********************************************************************
+
+@media only screen and (min-width: $minWidth){
+
+	table{
+
+		width: 100%;
+		@include box-sizing(border-box);
+
+		// thead
+		//******************************************************************
+
+		thead{
+			border-bottom: 1px solid rgba($black, .05);
+			th{
+				padding: 0.5rem 0.2rem;
+				@include box-sizing(border-box);
+			}
+		}
+
+		// tbody
+		//******************************************************************
+
+		tbody{
+			th,
+			td{
+				padding: 0.5rem 0.2rem;
+				@include box-sizing(border-box);
+			}
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// Mobile settings
+//**********************************************************************
+
+@media only screen and (max-width: $maxWidth){
+
+	table{
+
+		width: 100%;
+
+		// thead
+		//**************************************************************
+
+		thead{
+			display: none;
+		}
+
+		// tbody, tfoot
+		//**************************************************************
+		
+		tbody, tfoot{
+			display: block;
+			tr{
+				display: block;
+				th{
+					display: block;
+					padding: 0.5rem 0.2rem;
+					border: none;
+					background: rgba($black, .05);
+					list-style-type: none;					
+				}
+				td{
+					display: block;
+					padding: 0.5rem 0.2rem;
+					width: 100%;
+					border: none;
+					@include box-sizing(border-box);
+					vertical-align: middle;
+					&:not(:last-child){
+						margin: 0.2rem 0;
+						border-bottom: 1px solid rgba($black, .05);
+					}
+					&:before{
+						display: inline-block;
+						padding-right: 0.5rem;
+					}
+				}
+			}
+		}
+
+	}
+
+}

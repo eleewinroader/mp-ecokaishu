@@ -1,0 +1,721 @@
+@charset "UTF-8";
+
+//**********************************************************************
+//**********************************************************************
+//
+// _common.scss INDEX
+//
+// General settings
+// Grid settings
+// article
+// .ecolandNavi
+// #fixedHeader
+// .boiler
+// .siteFooter
+//
+//**********************************************************************
+//**********************************************************************
+// General settings
+//**********************************************************************
+
+html, body{
+	position: relative;
+	overflow-x: hidden;
+	background: rgba($black, .03);
+	color: $darkGray;
+	font: 15px/1 Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Verdana, Geneva, Arial, Helvetica;
+	-webkit-text-size-adjust: auto; -webkit-appearance: none;
+	line-height: 1.5rem;
+}
+img{ border: 0; vertical-align: bottom; width: auto; max-width: 100%; height: auto; }
+a{
+	&:hover{
+		img{ @include opacity(.5); }
+	}
+}
+.clear{
+	display: block;
+	clear: both;
+}
+.hidden{
+	display: none !important;
+}
+.social4i{
+	padding: 2.0rem 0; 
+}
+.panelCont{
+	display: none;
+}
+.icon-dot{
+	display: block;
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	margin-left: -20px;
+	width: 4px;
+	height: 4px;
+	color: $pink;
+	font-size: $normal* 3;
+	line-height: 4px;
+}
+
+//**********************************************************************
+// Grid settings
+//**********************************************************************
+
+//PC
+@media only screen and (min-width: $minWidth){
+
+	.container{
+		width: 1140px;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+	.col{
+		@include box-sizing(border-box);
+	}
+	.onecol{
+		float: left;
+		width: 6.57894%;
+		margin: 0 0.87719%;
+	}
+	.twocol{
+		float: left;
+		width: 14.91228%;
+		margin: 0 0.87719%;
+	}
+	.threecol{
+		float: left;
+		width: 23.24561%;
+		margin: 0 0.87719%;
+	}
+	.fourcol{
+		float: left;
+		width: 31.57894%;
+		margin: 0 0.87719%;
+	}
+	.fivecol{
+		float: left;
+		width: 39.91228%;
+		margin: 0 0.87719%;
+	}
+	.sixcol{
+		float: left;
+		width: 48.24561%;
+		margin: 0 0.87719%;
+	}
+	.sevencol{
+		float: left;
+		width: 56.57894%;
+		margin: 0 0.87719%;
+	}
+	.eightcol{
+		float: left;
+		width: 64.91228%;
+		margin: 0 0.87719%;
+	}
+	.ninecol{
+		float: left;
+		width: 73.24561%;
+		margin: 0 0.87719%;
+	}	
+	.tencol{
+		float: left;
+		width: 81.57894%;
+		margin: 0 0.87719%;
+	}
+	.elevencol{
+		float: left;
+		width: 89.91228%;
+		margin: 0 0.87719%;
+	}
+	.twelvecol{
+		float: left;
+		width: 98.24561%;
+		margin: 0 0.87719%;
+	}
+	.last{
+		float: right;
+	}
+	.flRight{
+		float: right;
+	}
+
+}
+
+//Mobile
+@media only screen and (max-width: $maxWidth){
+
+	.container{
+		padding: 0 1.0rem;
+	}
+
+}
+
+//**********************************************************************
+// article
+//**********************************************************************
+
+article{
+
+	padding-top: 5.0rem;
+
+	// h2
+	//**************************************************************
+
+	h2{
+		position: relative;
+		padding-top: 1.0rem;
+		font-size: 18px;
+		text-align: center;
+		&:before{
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -40px;
+			width: 80px;
+			height: 3px;
+			content: "";
+			background: $pink;
+		}
+	}
+
+	// archive
+	//**************************************************************
+	&.archive{
+
+		h3{
+			font-size: $big;
+			line-height: 1.3em;
+			margin:{
+				top: 2.0rem;
+				bottom: 2.0rem;
+			}
+			
+		}
+		h4{
+			font-size: $bigger;
+			margin:{
+				top: 2.0rem;
+				bottom: 2.0rem;
+			}
+		}
+		h5{
+			margin:{
+				top: 1.0rem;
+				bottom: 1.0rem;
+			}
+			font:{
+				size: $normal* 1.2;
+				weight: bold;
+			}
+		}
+
+		//.archiveIntro
+		.archiveIntro{
+			padding:{
+				top: 3.0rem;
+				bottom: 3.0rem;
+			}
+			font:{
+				family: Shuei MaruGo B;
+				size: $biggest;
+			}
+			line-height: 1.2em;
+			text-align: center;
+			//Mobile
+			@media only screen and (max-width: $maxWidth){
+				font-size: $bigger;
+				line-height: 1.5em;
+				.block{
+					display: inline !important;
+				}
+			}
+		}
+
+	}
+
+}
+
+
+//**********************************************************************
+// .ecolandNavi
+//**********************************************************************
+
+.ecolandNavi{
+
+	z-index: 9999;
+	border-top: 3px solid $green;
+	background: rgba($black, .2);
+
+	// ecolandNavi ul, li
+	//******************************************************************
+	
+	ul{
+
+		//Mobile
+		@media only screen and (max-width: $maxWidth){
+			display: table;
+			width: 100%;
+		}
+	}
+
+	li{
+
+		overflow: hidden;
+		height: 35px;
+		text-align: center;
+		vertical-align: middle;
+		-webkit-font-smoothing: antialiased;
+		-webkit-text-stroke: 0.35px;
+
+		//:nth-of-type(7) 
+		&:nth-of-type(7){
+			height: 35px;
+			line-height: 35px;
+			border-right: none;
+			a{
+				display: inline-block;
+				padding: 0 1.0rem;
+			}
+			span{
+				display: inline-block;
+				&#login{
+					line-height: 1.0rem;
+				}
+				&#welcome{
+					padding: 0 0.5rem;
+				}			   
+			}
+		}
+
+		// a
+		a{
+			display: block;
+			border-right: 1px solid rgba($white, .1);
+			background: $green;
+			color: rgba($white, .8);
+			text-decoration: none;
+			&:before{
+				font:{
+					family: icomoon;
+					size: 24px;
+				}
+				line-height: 35px;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			&:hover{
+				background: #ffffff !important;
+				color: #009ea1 !important;
+			}
+		}
+		&:nth-of-type(1) a:before{ content: "\e009"; }
+		&:nth-of-type(2) a:before{ content: "\e008"; }
+		&:nth-of-type(3) a:before{ content: "\e003"; }
+		&:nth-of-type(4) a:before{ content: "\e007"; }
+		&:nth-of-type(5) a:before{ content: "\e006"; }
+		&:nth-of-type(6) a:before{ content: "\e005"; }
+
+		//span
+		span{
+			display: none;
+			line-height: 1.0rem;	
+		}
+
+		//#currSite
+		&#currSite a{
+			color: #009ea1;
+			background: #ffffff;
+		}
+
+		//PC
+		@media only screen and (min-width: $minWidth){
+			display: inline-block;
+			margin-right: -5px;
+			a{
+				padding: 0 0.7rem;
+			}
+		}
+
+		//Mobile
+		@media only screen and (max-width: $maxWidth){
+			display: table-cell;
+			a{
+				padding: 0 0.3rem;
+			}
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// #fixedHeader
+//**********************************************************************
+
+#fixedHeader{
+
+	$height: 44px;
+	$padding: 0.5rem;
+
+	position: relative;
+	z-index: 10000;
+	width: 100%;
+	background: $white;
+	
+	// .gNavi
+	//**************************************************************
+	
+	.gNavi{
+
+		text-align: center;
+
+		//li
+		li{
+			a{
+				padding:{
+					top: 0.3rem;
+					bottom: 0.3rem;
+					left: 0.3rem;
+					right: 0.3rem;
+				}
+				@include border-radius(3px);
+				color: $darkGray;
+				text-decoration: none;
+				&:hover{
+					background: $green;
+					color: $white;
+				}
+			}
+
+			//PC
+			@media only screen and (min-width: $minWidth){
+
+				display: inline-block;
+				line-height: $height;
+
+			}
+
+			//Mobile
+			@media only screen and (max-width: $maxWidth){
+
+				position: relative;
+				border-bottom :1px solid rgba($black, .1);
+				text-align: left;
+				&:after{
+					position: absolute;
+					z-index: 10;
+					top: 50%;
+					right: 0.5rem;
+					width: 0px;
+					height: 0px;
+					margin-top: -4px;
+					border: 4px solid transparent;
+					border-left-color: $darkGray;
+					content: "";
+				}
+				a{
+					display: block;
+					padding: 1.0rem;
+					color: $darkGray;
+					text-decoration: none;
+				}
+
+			}
+
+		}
+	}
+
+	// .telBtn
+	//**************************************************************
+
+	.telBnr{
+
+		color: $darkGray;
+		text-decoration: none;
+
+		p{
+			&.telNum{
+				font-size: $big;
+				line-height: $height;
+			}
+			&.openingHour{
+				font-size: $smaller;
+				line-height: 1.2em;
+			}
+			span[class^="icon-"]{
+				font-size: 90%;
+			}
+		}
+
+		//PC
+		@media only screen and (min-width: $minWidthBig){
+
+			display: table;
+			width: 100%;
+			height: 100%;
+			text-align: right;
+
+			//p
+			p{
+				display: table-cell;
+				vertical-align: middle;
+				&.telNum{
+					color: $pink;
+				}
+				&#tap{
+					display: none;
+				}
+			}
+
+		}
+
+		//Mobile
+		@media only screen and (max-width: $maxWidthBig){
+
+			display: block;
+			text-align: center;
+			padding: 0.5rem 1.0rem;
+			background: $pink;
+			color: $white;
+
+			//p
+			p{
+				text-align: center;
+				&.telNum{
+					display: inline-block;
+					line-height: 1.2em;
+				}
+				&.openingHour{
+					display: inline-block;
+					.block{
+						 display: inline !important;
+						 &:nth-of-type(1){
+						 	&:after{
+						 		content: " / ";
+						 	}
+						 }
+					}
+				}
+			}
+		}
+
+	}
+
+	
+	// .siteHeader
+	//**************************************************************
+	
+	.siteHeader{
+
+		border-bottom: 1px solid rgba($black, .1);
+
+		//.container
+		.container{
+			position: relative;
+			padding: {
+				top: $padding* 2;
+				bottom: $padding* 2;
+			}
+		}
+
+		//#siteName
+		#siteName{
+
+			h1 a{
+				display: block;
+				color: $green;
+				font:{
+					family: "Shuei MaruGo B";
+					size: $bigger;
+					weight: bold;
+				}
+				text-decoration: none;
+			}
+
+		}
+
+		//Bigger screen
+		@media only screen and (min-width: $minWidthBig){
+
+			#siteName{
+				line-height: $height;
+			}
+			.showSmaller,
+			.panelCont{
+				display: none;
+			}
+			.showBigger{
+				display: block;
+			}
+
+		}
+
+		//Smaller screen
+		@media only screen and (max-width: $maxWidthBig){
+
+			.showBigger{
+				display: none;
+			}
+
+			//.showSmaller
+			.showSmaller{
+				display: block;
+				position: absolute;
+				top: 50%;
+				width: 40px;
+				height: 40px;
+				margin-top: -20px;
+				background: $darkGray;
+				@include border-radius(3px);
+				@include box-sizing(border-box);
+				border-bottom: 2px solid rgba($black, .5);
+				color: $white;
+				font-size: $bigger;
+				text-align: center;
+				line-height:  40px;
+				&#menuBtn{
+					right: 52px;
+				}
+				&#telBtn{
+					right: 0.5rem;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// .boiler
+//**********************************************************************
+
+.boiler{
+
+	// &#campaign
+	//**************************************************************
+
+	&#campaign{
+
+		padding:{
+
+			top: 2.0rem;
+			bottom: 2.0rem;
+		}
+		background: $darkGray;
+
+		//h3
+		h3{
+			display: none;
+		}
+
+		//Mobile
+		@media only screen and (max-width: $maxWidth){
+			li{
+				&:not(:last-of-type){
+					margin: {
+						bottom: 1.0rem;
+					}
+				}
+			}
+		}
+
+	}
+
+}
+
+
+//**********************************************************************
+// .siteFooter
+//**********************************************************************
+
+.siteFooter{
+
+	padding:{
+		top: 2.0rem;
+		bottom: 2.0rem;
+	}
+	border-top: 1px solid rgba($black, .1);
+	background: $white;
+	color: $darkGray;
+	font:{
+		size: $smaller;
+	}
+
+	// ul
+	//**************************************************************
+
+	ul{
+
+		// li
+		li{
+			display: inline-block;
+			a{
+				color: $darkGray;
+				text:{
+					decoration: none;
+				}
+				&:hover{
+					border:{
+						bottom: 1px dotted $darkGray;
+					}
+				}
+			}
+			line-height: 1.2em;
+		}
+	}
+
+	// #logos
+	//**************************************************************
+
+	#logos{
+
+		//a
+		a{
+			display: inline-block;
+			text:{
+				decoration: none;
+			}
+			vertical-align: middle;
+			&#gd{
+				color: $red;
+			}
+			&#pmark{
+				color: $blue;
+			}
+		}
+
+		//span[class^="icon"]
+		span[class^="icon"]{
+			font:{
+				size: $big* 2;
+			}
+		}
+
+		//PC
+		@media only screen and (min-width: $minWidth){
+
+			text:{
+				align: right;
+			}
+
+		}
+
+		//Mobile
+		@media only screen and (max-width: $maxWidth){
+
+			padding:{
+				top: 2.0rem;
+			}
+			text:{
+				align: center;
+			}
+
+		}
+	}
+
+}

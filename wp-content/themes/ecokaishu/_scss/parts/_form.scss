@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+//**********************************************************************
+//**********************************************************************
+//
+// _form.scss INDEX
+//
+// Form elements general settings
+// Form layout settings
+//
+//**********************************************************************
+//**********************************************************************
+// Form elements general settings
+//**********************************************************************
+
+// variables
+$formHeight: 44px;
+$formPadding: 0.5rem;
+
+input, textarea, select{
+	font-size: 100%;
+	 -webkit-appearance: none;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+	width: 100%;	
+	min-height: $formHeight;
+	padding: 0 $formPadding;
+	border: 1px solid rgba($black, .1);
+	@include box-sizing(border-box);
+}
+textarea{
+	width: 100%;
+	min-height: 100px;
+	padding: $formPadding;
+	border: 1px solid rgba($black, .1);
+	@include box-sizing(border-box);
+
+}
+input[type="submit"], button{
+	display: inline-block;
+  	-webkit-appearance: none;
+	width: 100%;
+	height: $formHeight;
+	min-height: $formHeight;
+	padding: 0 $formPadding;
+	background: rgba($black, .5);
+	border: 1px solid rgba($pink, .1);
+	@include box-sizing(border-box);
+	@include border-radius(3px);
+	color: $white;
+	line-height: $formHeight;
+	&:hover{
+		background: rgba($black, .9) !important;
+	}
+}
+select,
+option{
+	height: $formHeight;
+	padding: 0 $formPadding;
+	@include box-sizing(border-box);
+	border: none;
+	background: $white;
+	line-height: 1.5rem;
+}
+
+::-webkit-input-placeholder{ font-size: 14px; }
+:-moz-placeholder{ font-size: 14px; }
+::-moz-placeholder{ font-size: 14px; }
+:-ms-input-placeholder{ font-size: 14px; }
+
+
+//**********************************************************************
+// Form layout settings
+//**********************************************************************
+
+.formContents{
+	margin: $formPadding 0;
+}
+
+
+// PC settings
+//**********************************************************************
+
+@media only screen and (min-width: 741px){
+
+	.formContents{
+		display: table;
+		width: 100%;
+		margin: $formPadding 0;
+	}
+	.formContents .formTitle{
+		display: table-cell;
+	}
+	.formContents .formElements{
+		display: table-cell;
+	}
+
+}
+
+
+
+

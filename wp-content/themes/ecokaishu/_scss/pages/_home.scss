@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+#home{
+
+//**********************************************************************
+//**********************************************************************
+//
+// _home.scss INDEX
+//
+// #home h2
+// #home #movie
+// #home #index
+// #home #news
+//
+//**********************************************************************
+// h2
+//**********************************************************************
+
+h2{
+	margin:{
+		bottom: 3.0rem;
+	}
+}
+
+//**********************************************************************
+// #movie
+//**********************************************************************
+
+#movie{
+
+	// .movie-container
+	//**************************************************************
+
+	.movie-container{
+		overflow: hidden;
+		position: relative;
+		padding:{
+			top: 30px; height: 0;
+			bottom: 56.25%;
+		}
+		iframe, object, embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+}
+
+//**********************************************************************
+// #index
+//**********************************************************************
+
+#index{
+
+	padding: {
+		top: 3.0rem;
+		bottom: 3.0rem;
+	}
+	text:{
+		align: center;
+		decoration: none;
+	}
+	font-size: $bigger;
+
+	// h3
+	//**************************************************************
+
+	h3{
+		display: none;
+	}
+
+	// .col
+	//**************************************************************
+
+	.col{
+
+		//a
+		a{
+			display: block;
+			color: $darkGray;
+			text-decoration: none;
+		}
+		
+		//PC
+		@media only screen and (min-width: $minWidth){
+
+			a{
+				&:hover{
+					color: $green;
+				}
+				span{
+					&[class^="icon-"]{
+						display: inline-block;
+						margin-bottom: 1.0rem;
+						font-size: $biggest * 2;
+						line-height: 70px;
+						vertical-align: middle;
+					}
+					&[class="icon-ecolandjp"]{
+						font-size: $biggest * 3;
+					}
+					&.indexTitle{
+						display: block;
+					}
+				}
+			}
+
+		}
+
+		//Mobile
+		@media only screen and (max-width: $maxWidth){
+
+			padding:{
+				top: 1.0rem;
+				bottom: 1.0rem;
+			}
+			&:not(:last-of-type){
+				border:{
+					bottom :1px solid rgba($black, .05);
+				}
+			}
+			a{
+				span{
+					display: inline-block;
+					vertical-align: middle;
+				}
+				span[class^="icon-"]{
+					font-size: $bigger;
+					line-height: 1.0em;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// #news
+//**********************************************************************
+
+#news{
+
+	margin-bottom: 3.0rem;
+
+	// h3
+	//**************************************************************
+
+	h3{
+		margin-bottom: 2.0rem;
+		font-size: $bigger;
+		text-align: center;
+	}
+
+	// ul
+	//**************************************************************
+
+	ul{
+
+		padding: 2.0rem;
+		background: $white;
+
+		//li
+		li{
+			padding: 1.0rem 0;
+			&:not(:last-of-type){
+				border:{
+					bottom :1px solid rgba($black, .05);
+				}
+			}
+			&:first-of-type{
+				.newsTxt{
+					&:before{
+						display: inline-block;
+						margin-right: 0.3rem;
+						padding: 0.2rem 0.3rem;
+						background: $pink;
+						color: $white;
+						font-size: 85%;
+						content: "NEW";
+					}
+				}
+
+			}
+			a{
+				display: block;
+				color: $darkGray;
+				text:{
+					decoration: none;
+				}
+				time{
+					letter-spacing: 0.1rem;
+					margin-right: 0.3rem;
+					color: $green;
+					font-weight: bold;
+					//Mobile
+					@media only screen and (max-width: $maxWidth){
+						display: block;
+					}
+				}
+				.tag{
+					display: inline-block;
+					margin-right: 0.3rem;
+					padding: 0.2rem 0.3rem;
+					background: $darkBlue;
+					color: $white;
+					font-size: 85%;
+				}
+			}
+		}
+
+	}
+
+	// .col
+	//**************************************************************
+
+	.col{
+
+		background: rgba($green, .1);
+		padding:{
+			top: 1.0rem;
+			bottom: 3.0rem;
+		} 
+		@include box-sizing(border-box);
+
+		//PC
+		@media only screen and (min-width: $minWidth){
+			padding:{
+				left: 3.0rem;
+				right: 3.0rem;
+			} 
+		}
+
+	}
+
+}
+
+}

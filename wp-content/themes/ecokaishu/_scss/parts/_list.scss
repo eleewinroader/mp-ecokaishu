@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+//**********************************************************************
+//**********************************************************************
+//
+// _list.scss INDEX
+//
+//.definitionList
+//
+//**********************************************************************
+//**********************************************************************
+// .definitionList
+//**********************************************************************
+
+.definitionList{
+
+	//dt
+	dt{
+		position: relative;
+		font-weight: bold;
+		padding-left: 0.5rem;
+		&:not(:first-of-type){
+			margin-top: 0.5rem;
+		}
+		&:before{
+			@include arrow(5px, "", 0px, "", 4px, $green, left);	
+		}
+	}
+
+	//dd
+	dd{
+		position: relative;
+		padding-left: 0.5rem;
+		small{
+			color: rgba($black, .7);
+		}
+		dl{
+			font-size: 90%;
+			dt{
+				margin-top: 0 !important;
+				&:before{
+					@include arrow(7px, "", 0px, "", 4px, rgba($black, .3), left);	
+				}
+			}
+		}		
+	}
+
+}

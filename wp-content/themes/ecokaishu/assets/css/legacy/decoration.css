@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/***********************************************************************
+
+text CSS
+
+***********************************************************************/
+
+sup{
+	position: relative;
+	top: -4px;
+	vertical-align: baseline;
+	color: #009ea1;
+	font-size:16px;
+}
+sub {
+	position: relative;
+	top: 4px;
+	vertical-align: baseline;
+	color: #009ea1;
+}
+
+.al_r{ text-align: right !important; }
+.al_l{ text-align: left !important; }
+.al_c{ text-align: center !important; }
+
+.alignleft{ float: left !important; }
+.alignright{ float: right !important; }
+
+.b{ font-weight: bold !important; }
+
+.big{ font-size: 19px !important; }
+.small{ font-size: 12px !important; }
+
+.ltsp05{ letter-spacing: -8px !important; }
+
+.m0{ margin: 0 !important; }
+
+.green{ color: #009ea1 !important; }
+.pink{ color: #e2318c !important; }
+.gray{ color: #9fa0a0 !important; }
+.darkgray{ color: #666464 !important; }
+.lightgray{ color: #d3d3d4 !important; }
+.goodDesign{ color: #CD0300 !important; }
+.privacyMark{ color: #04278b !important; }
+.white{ color: #ffffff !important; }
+
+.bg_green{ background: #009ea1 !important; }
+.bg_pink{ background: #e2318c !important; }
+.bg_white{ background: #ffffff !important; }
+
+.underline{ text-decoration: underline; }
+
+.block{ display: block !important; }
+.hidden{ display: none !important; }
+
+.footnote{	
+	color: #666464;
+	line-height: 19px;
+}
+
+blockquote{
+	display: inline-block;
+	position: relative;
+	padding: 8px 32px;
+}
+blockquote:before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #009ea1;
+	font-size: 48px;
+	content: '“';
+}
+blockquote:after{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #009ea1;
+	font-size: 48px;
+	content: '”';
+}
+blockquote+p{
+	margin-top: 0;
+}
+
+
+img.alignleft{ 
+	float: left;
+	margin-right: 16px;
+	margin-bottom: 16px;
+}
+img.alignright{ 
+	float: right;
+	margin-bottom: 16px;
+	margin-left: 16px;
+}
+img.alignleft+p,
+img.alignright+p{
+	margin-top: 0;
+}
+img.al_c{
+	display: block;
+	margin: 0 auto;
+}
+img.imgbnr{
+	display: block;
+	margin-bottom: 16px;
+	border: 1px solid #d3d3d4;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+	/* PC & Tablet settings
+	***********************************************************************/
+
+	@media only screen and (max-width: 599px){
+
+		img.alignleft{ 
+			display: block !important;
+			float: inherit !important;
+			margin: 8px auto !important;
+		}
+		img.alignright{ 
+			display: block !important;
+			float: inherit !important;
+			margin: 8px auto !important;
+		}
+
+	}
