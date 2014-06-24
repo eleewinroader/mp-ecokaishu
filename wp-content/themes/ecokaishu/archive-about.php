@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 get_header( ); ?>
 
@@ -12,13 +12,13 @@ get_header( ); ?>
 	<div class="container" id="intro">
 		<div class="twelvecol last">
 
-			<div class="archiveIntro">
+			<div class="summary">
 				<p><span class="block">創業64年の物流会社、ウインローダー。</span>
 				<span class="block">日本に循環型物流を構築すべく、</span>
 				<span class="block">日々取り組んでいます。</span></p>
-			<!-- .intro .archiveIntro--></div>
+			<!-- .intro .summary--></div>
 				
-			<!--<div class="archiveIntro"><?php echo getPage("イントロ", "contents"); ?></div>
+			<!--<div class="intro"><?php echo getPage("イントロ", "contents"); ?></div>
 			<?php echo getPage("エコ回収の流れ", "contents"); ?>-->
 		</div>
 	<!-- .intro--></div>

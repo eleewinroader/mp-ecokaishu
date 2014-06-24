@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 
 $couponNum = $_POST["couponNum"]; //クーポン番号取得

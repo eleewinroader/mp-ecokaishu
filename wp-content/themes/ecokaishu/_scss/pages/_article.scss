@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+article{
+
+//**********************************************************************
+// Common settings
+//**********************************************************************
+
+padding-top: 5.0rem;
+
+//**********************************************************************
+// h tag settings
+//**********************************************************************
+
+h2{
+	position: relative;
+	padding-top: 1.0rem;
+	font-size: 18px;
+	text-align: center;
+	&:before{
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -40px;
+		width: 80px;
+		height: 3px;
+		content: "";
+		background: $pink;
+	}
+}
+
+h3{
+	margin-top: 2.0rem;
+	margin-bottom: 2.0rem;
+	font-size: $big;
+	line-height: 1.3em;
+	
+}
+
+h4{
+	margin-top: 2.0rem;
+	margin-bottom: 2.0rem;
+	font-size: $bigger;
+}
+
+h5{
+	margin-top: 1.0rem;
+	margin-bottom: 1.0rem;
+	font-size: $normal* 1.2;
+	font-weight: bold;
+}
+
+//**********************************************************************
+// &.article settings
+//**********************************************************************
+
+&.archive{
+
+	// .summary
+	//**************************************************************
+
+	.summary{
+
+		padding-top: 3.0rem;
+		padding-bottom: 3.0rem;
+		font-size: $biggest;
+		line-height: 1.2em;
+		text-align: center;
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			font-size: $bigger;
+			line-height: 1.5em;
+			.block{
+				display: inline !important;
+			}
+		}
+
+	}
+
+	
+	// .contents
+	//**************************************************************
+
+	.contents{
+		padding: 5.0rem 0;
+		&:nth-child(odd){
+			background: $white !important;
+		}
+	}
+
+
+}
+
+//**********************************************************************
+// &.post settings
+//**********************************************************************
+
+&.post{
+
+	// .contents
+	//**************************************************************
+
+	.contents{
+		padding: 5.0rem 0;
+		&:nth-child(odd){
+			background: $white !important;
+		}
+	}
+
+
+	// &#notices settings
+	//**************************************************************
+
+	&#notices{
+
+		.container{
+			max-width: $maxWidth;
+		}
+
+	}
+
+	// #docs
+	//**************************************************************
+
+	&#docs{
+
+		//.container
+		.container{
+			max-width: $maxWidth;
+		}
+
+		//.col
+		.col{
+
+			//ol
+			> ol{
+
+				margin-left: 2.0rem;
+
+				> li{
+
+					&:before{ margin-right: 0.5rem; }
+					&:nth-of-type(1):before{ content: "(1)"; }
+					&:nth-of-type(2):before{ content: "(2)"; }
+					&:nth-of-type(3):before{ content: "(3)"; }
+					&:nth-of-type(4):before{ content: "(4)"; }
+					&:nth-of-type(5):before{ content: "(5)"; }
+					&:nth-of-type(6):before{ content: "(6)"; }
+					&:nth-of-type(7):before{ content: "(7)"; }
+					&:nth-of-type(8):before{ content: "(8)"; }
+					&:nth-of-type(9):before{ content: "(9)"; }
+					&:nth-of-type(10):before{ content: "(10)"; }
+
+					> ol{
+
+						margin-left: 3.0rem;
+
+						> li{
+							list-style-type: lower-alpha;
+							> ol{
+								margin-left: 4.0rem;
+								>li{
+									list-style-type: circle;
+								}
+							}
+						}
+
+					}
+
+					> p{
+						display: inline-block;
+					}
+
+				}
+
+			}
+
+			//ul
+			> ul{
+
+				margin-left: 2.0rem;
+
+				> li{
+					list-style-type: circle;
+					> ul{
+						margin-left: 3.0rem;
+
+						>li{
+							list-style-type: square;
+						}
+					}
+				}
+
+			}
+
+			//dl
+			> dl{
+				margin-left: 2.0rem;
+			}
+
+		}
+
+	}
+
+}
+
+}

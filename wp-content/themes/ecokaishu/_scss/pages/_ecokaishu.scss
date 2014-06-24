@@ -3,15 +3,6 @@
 #ecokaishu{
 
 //**********************************************************************
-//**********************************************************************
-//
-// _ecokaishu.scss INDEX
-//
-// #ecokaishu #flowEcokaishu
-// #ecokaishu #achive2012
-//
-//**********************************************************************
-//**********************************************************************
 // #flowEcokaishu
 //**********************************************************************
 
@@ -90,7 +81,7 @@
 	.icon-dot#bottom{ bottom: -3.0rem; }
 
 	//PC
-	@media only screen and (min-width: $minWidth){
+	@media all and (min-width: $minWidth){
 
 		//&:before
 		&:before{
@@ -181,7 +172,7 @@
 	}
 
 	//Mobile
-	@media only screen and (max-width: $maxWidth){
+	@media all and (max-width: $maxWidth){
 
 		ol{
 			li{
@@ -386,7 +377,7 @@
 	}
 
 	//PC
-	@media only screen and (min-width: $minWidthBig){
+	@media all and (min-width: $minWidthBig){
 		
 		//.col
 		.col{
@@ -426,7 +417,7 @@
 	}
 
 	//Mobile
-	@media only screen and (max-width: $maxWidthBig){
+	@media all and (max-width: $maxWidthBig){
 
 		//h4
 		h4{

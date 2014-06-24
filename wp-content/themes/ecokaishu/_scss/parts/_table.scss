@@ -13,7 +13,7 @@
 // PC settings
 //**********************************************************************
 
-@media only screen and (min-width: $minWidth){
+@media all and (min-width: $minWidth){
 
 	table{
 
@@ -50,7 +50,7 @@
 // Mobile settings
 //**********************************************************************
 
-@media only screen and (max-width: $maxWidth){
+@media all and (max-width: $maxWidth){
 
 	table{
 

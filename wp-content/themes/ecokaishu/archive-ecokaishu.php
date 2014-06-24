@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 get_header( ); ?>
 
@@ -11,9 +11,9 @@ get_header( ); ?>
 		<div class="container intro">
 			<div class="twelvecol last">
 
-				<div class="archiveIntro">
+				<div class="summary">
 					<?php echo getPage("イントロ", "contents"); ?>
-				<!-- .intro .archiveIntro--></div>
+				<!-- .intro .summary--></div>
 
 				<div id="flowEcokaishu">
 					<span class="icon-dot" id="top"></span>

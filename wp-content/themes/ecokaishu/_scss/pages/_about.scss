@@ -3,15 +3,6 @@
 #about{
 
 //**********************************************************************
-//**********************************************************************
-//
-// _about.scss INDEX
-//
-// #about #greetings
-// #about #outline
-//
-//**********************************************************************
-//**********************************************************************
 // #greetings
 //**********************************************************************
 
@@ -46,7 +37,7 @@
 	#ceoProfile{
 
 		// PC
-		@media only screen and (min-width: $minWidth){
+		@media all and (min-width: $minWidth){
 
 			h4{
 				margin: 0;
@@ -62,7 +53,7 @@
 		}
 
 		// Mobile
-		@media only screen and (max-width: $maxWidth){
+		@media all and (max-width: $maxWidth){
 
 			margin-top: 2.0rem;
 			padding:{
@@ -89,7 +80,7 @@
 
 #outline{
 
-	padding-top: 5.0rem;
+	padding-bottom: 0;
 
 	// #history
 	//**************************************************************
@@ -143,7 +134,7 @@
 		}
 
 		// Mobile
-		@media only screen and (max-width: $maxWidth){
+		@media all and (max-width: $maxWidth){
 
 			margin-top: 3.0rem;
 

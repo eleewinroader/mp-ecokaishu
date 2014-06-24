@@ -5,7 +5,7 @@
 *
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 
 if($_POST){
@@ -13,6 +13,7 @@ if($_POST){
 	global $wpdb, $user_ID;
 
 	include(TEMPLATEPATH.'/estimate-post.php');
+
 
 	if(!$_POST["coupon"]) $coupon = '受け取らない'; //メルマガ登録取得
 	$userAgent = $_SERVER['HTTP_USER_AGENT']; //ユーザーエージェント
@@ -54,6 +55,7 @@ if($_POST){
 		add_post_meta($insert_id, 'estmtInfo18', $replyWay);
 		add_post_meta($insert_id, 'estmtInfo20', $userAgent);
 		add_post_meta($insert_id, 'estmtInfo21', $siteCode);
+		add_post_meta($insert_id, 'estmtInfo23', $campName);
 
 		//ユーザー登録
 		if(($coupon == '受け取る' && !$couponUsed) || $quiz){
@@ -89,6 +91,7 @@ if($_POST){
 			'cstmPhoneNum' => $cstmPhoneNum,
 			'cstmContents' => $cstmContents,
 			'cpiItems' => $cpiItems,
+			'campName' => $campName,
 			'cltDay0' => $cltDay0,
 			'cltDay1' => $cltDay1,
 			'cltDay2' => $cltDay2,

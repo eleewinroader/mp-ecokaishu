@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 get_header( ); ?>
 
@@ -11,9 +11,9 @@ get_header( ); ?>
 	<div class="container intro">
 		<div class="twelvecol last">
 
-			<div class="archiveIntro">
+			<div class="summary">
 				<p><span class="block">エコ回収の料金は、</span><span class="block">すべてきちんときまっています。</span><span class="block">現地にお伺いした際、</span><span class="block">不当に料金が変わることはありません！</span></p>
-			<!-- .intro .archiveIntro--></div>
+			<!-- .intro .summary--></div>
 
 			<div id="ex">
 				<h3>料金系計算の例</h3>
@@ -25,7 +25,7 @@ get_header( ); ?>
 						<p><span>物品ごとの料金</span><span>洗濯機 4,320円</span><span>ソファ 3,240円</span></p>
 					</li>
 					<li>
-						<p><span>特需作業料金</span><span>階段の運び出し 1,080円</span></p>
+						<p><span>特殊作業料金</span><span>階段の運び出し 1,080円</span></p>
 					</li>
 					<li>
 						<p><span>買取料金</span><span>冷蔵庫 1,000円</span></p>
@@ -36,7 +36,7 @@ get_header( ); ?>
 				</ul>
 			<!-- .intro #ex--></div>
 
-			<!--<div class="archiveIntro"><?php echo getPage("イントロ", "contents"); ?></div>
+			<!--<div class="intro"><?php echo getPage("イントロ", "contents"); ?></div>
 			<?php echo getPage("エコ回収の流れ", "contents"); ?>-->
 		</div>
 	<!-- .intro--></div>	
@@ -55,8 +55,7 @@ get_header( ); ?>
 
 			<div class="twelvecol col last">
 				<h3>エコ回収してほしいのはどんなモノですか？</h3>
-				<p>基本的には、再利用が可能なモノはお引取が可能です。
-				家具・家電製品・衣類・食器類・雑貨類など、その他、紙（本・雑誌・新聞・ダンボール）・布団などもお引取ができます。</p>
+				<p>基本的には、再利用が可能なモノはお引取が可能です。家具・家電製品・衣類・食器類・雑貨類など、その他、紙（本・雑誌・新聞・ダンボール）・布団などもお引取ができます。</p>
 			</div>
 
 			<section id="electricApp">
@@ -64,122 +63,53 @@ get_header( ); ?>
 				<div class="sixcol col">
 					<h5>テレビ</h5>
 					<table>
-					<thead>
-					<tr>
-					<th>サイズ</th>
-					<th>物品ごとの料金</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-					<td class="al_c">20インチ以下</td>
-					<td class="pink al_c">3,240円</td>
-					</tr>
-					<tr>
-					<td class="al_c">21-25インチ</td>
-					<td class="pink al_c">4,320円</td>
-					</tr>
-					<tr>
-					<td class="al_c">26-30インチ</td>
-					<td class="pink al_c">5,940円</td>
-					</tr>
-					<tr>
-					<td class="al_c">31インチ以上</td>
-					<td class="pink al_c">7,560円</td>
-					</tr>
-					</tbody>
+						<thead><tr><th>サイズ</th><th>物品ごとの料金</th></tr>	</thead>
+						<tbody>
+							<tr><th>20インチ以下</th><td>3,240円</td></tr>
+							<tr><th>21-25インチ</th><td>4,320円</td></tr>
+							<tr><th>26-30インチ</th><td>5,940円</td></tr>
+							<tr><th>31インチ以上</th><td>7,560円</td></tr>
+						</tbody>
 					</table>
 				</div>
 				<div class="sixcol col last">
 					<h5>冷蔵庫</h5>
 					<table>
-					<thead>
-					<tr>
-					<th>サイズ</th>
-					<th>物品ごとの料金</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-					<td class="al_c">100リットル未満（冷凍含）</td>
-					<td class="pink al_c">4,320円</td>
-					</tr>
-					<tr>
-					<td class="al_c">200リットル未満（冷凍含）</td>
-					<td class="pink al_c">5,940円</td>
-					</tr>
-					<tr>
-					<td class="al_c">400リットル未満（冷凍含）</td>
-					<td class="pink al_c">7,560円</td>
-					</tr>
-					<tr>
-					<td class="al_c">500リットル未満（冷凍含）</td>
-					<td class="pink al_c">9,720円</td>
-					</tr>
-					<tr>
-					<td class="al_c">500リットル以上（冷凍含）</td>
-					<td class="pink al_c">12,960円</td>
-					</tr>
-					</tbody>
+						<thead><tr><th>サイズ</th><th>物品ごとの料金</th></tr>	</thead>
+						<tbody>
+							<tr><th>100リットル未満(冷凍含)</th><td>4,320円</td></tr>
+							<tr><th>200リットル未満(冷凍含)</th><td>5,940円</td></tr>
+							<tr><th>400リットル未満(冷凍含)</th><td>7,560円</td></tr>
+							<tr><th>500リットル未満(冷凍含)</th><td>9,720円</td></tr>
+							<tr><th>500リットル以上(冷凍含)</th><td>12,960円</td></tr>
+						</tbody>
 					</table>
 				</div>
 				<div class="fourcol col">
 					<h5>エアコン</h5>
 					<table>
-					<thead>
-					<tr>
-					<th>サイズ</th>
-					<th>物品ごとの料金</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-					<td class="al_c">窓取付</td>
-					<td class="pink al_c">3,240円</td>
-					</tr>
-					<tr>
-					<td class="al_c">室外機付</td>
-					<td class="pink al_c">5,940円</td>
-					</tr>
-					</tbody>
+						<thead><tr><th>サイズ</th><th>物品ごとの料金</th></tr>	</thead>
+						<tbody>
+							<tr><th>窓取付</th><td>3,240円</td></tr>
+							<tr><th>室外機付</th><td>5,940円</td></tr>
+						</tbody>
 					</table>
 				</div>
 				<div class="fourcol col">
 					<h5>衣類乾燥器</h5>
 					<table>
-					<thead>
-					<tr>
-					<th>サイズ</th>
-					<th>物品ごとの料金</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-					<td class="al_c">全サイズ</td>
-					<td class="pink al_c">3,240円</td>
-					</tr>
-					</tbody>
+						<thead><tr><th>サイズ</th><th>物品ごとの料金</th></tr>	</thead>
+						<tbody><tr><th>全サイズ</th><td>3,240円</td></tr></tbody>
 					</table>
 				</div>
 				<div class="fourcol col last">
 					<h5>洗濯機</h5>
 					<table>
-					<thead>
-					<tr>
-					<th>サイズ</th>
-					<th>物品ごとの料金</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-					<td class="al_c">8.0kg以下</td>
-					<td class="pink al_c">4,320円</td>
-					</tr>
-					<tr>
-					<td class="al_c">ドラム式洗濯乾燥機</td>
-					<td class="pink al_c">5,940円</td>
-					</tr>
-					</tbody>
+						<thead><tr><th>サイズ</th><th>物品ごとの料金</th></tr>	</thead>
+						<tbody>
+							<tr><th>8.0kg以下</th><td>4,320円</td></tr>
+							<tr><th>ドラム式洗濯乾燥</th><td>5,940円</td></tr>
+						</tbody>
 					</table>
 				</div>
 			<!--#itemPrice #electricApp--></section>
@@ -189,12 +119,7 @@ get_header( ); ?>
 					<h4>各物品のランク別料金</h4>
 					<table>
 						<thead>
-							<tr>
-							<th>品物ランクと料金</th>
-							<th>縦・横・奥行の合計</th>
-							<th>重さ</th>
-							<th>目安となる品物</th>
-							</tr>
+							<tr><th>品物ランクと料金</th><th>縦・横・奥行の合計</th><th>重さ</th><th>目安となる品物</th></tr>
 						</thead>
 						<tbody>
 							<tr>
@@ -337,7 +262,7 @@ get_header( ); ?>
 		<div class="container">
 			<div class="twelvecol col last">
 				<h3>買取希望でしょうか？</h3>
-				<p>家電製品（特に冷蔵庫・洗濯機・テレビ・電子レンジ・炊飯器）は年式が5年以内のモノ、家具は使用5年以内のブランド品<sup>※1</sup>は買取できる可能性があります。ブランド意外の家具は、使用１年未満のモノは買取できる可能性があります。正しい見積は、回収日当日となります。</p>
+				<p>家電製品（特に冷蔵庫・洗濯機・テレビ・電子レンジ・炊飯器）は年式が5年以内のモノ、家具は使用5年以内のブランド品<sup>※1</sup>は買取できる可能性があります。ブランド以外の家具は、使用１年未満のモノは買取できる可能性があります。正しい見積は、回収日当日となります。</p>
 				<p class="footnote"><small>※1 家具のブランドにより、買取の基準が異なりますので、詳しくはお問い合わせ下さい。</small></p>
 				<div>
 				<h4>買取が難しいモノ</h4>

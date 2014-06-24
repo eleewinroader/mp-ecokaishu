@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 ?>
 
@@ -56,7 +56,7 @@
 		</li>
 		<li class="formContents required">
 			<div class="formTitle"><label for="cstmResidence">住居形態</label></div>
-			<div class="formElements">				
+			<div class="formElements">
 				<ul class="formElement">
 					<li>
 						<select name="cstmResidence" id="cstmResidence"<?php echo $disabled; ?>>
@@ -162,7 +162,6 @@
 	</ol>
 </fieldset>
 
-
 <fieldset>
 	<ol>
 		<li class="formContents required">
@@ -174,6 +173,48 @@
 				<p class="footnote"><small>※家具類や大きな品物は、「幅×奥行×高さ」などをお伝え頂くと正確なお見積もりができます。また、家電類は「型番号」、「メーカー名」、「年式」をお伝え頂くと、買取も含め、正確なお見積もりができます。お手数ですが、ご協力のほどよろしくお願いします。</small></p>
 				<p class="footnote pink"><small>※原則、購入後５年以上経過している場合は買取は行っておりません。</small></p>
 				
+			</div>
+		</li>
+	</ol>
+</fieldset>
+
+<fieldset>
+	<ol>
+		<li class="formContents">
+			<div class="formTitle">キャンペーン種類</div>
+			<div class="formElements">
+				<select name="campKind" id="campKind"<?php echo $disabled; ?>>
+					<option value="">選択してください</option>
+					<?php
+					$campKinds = array();
+					$campCodes = array();
+					$args = array(
+						"post_type" => "campaign",
+						"campaignstatus" => "open",
+						"posts_per_page" => -1
+					);
+					$camps = query_posts($args);
+					foreach($camps as $camp){
+						$campName = get_post_meta($camp->ID, "campInfo01", TRUE);
+						if($campName) array_push($campKinds, $campName);
+						if(campCode($camp)){
+							$childrenClass = campCode($camp, "children");
+							$code = substr($childrenClass, 7, 11);
+							$code = str_replace("-", "_", $code);
+							array_push($campCodes, $code);
+						}
+					}
+					for($i=0; $i<count($campKinds); $i++){
+						if($campCodes[$i] == $pr_code){
+							$selected = " selected";
+							$campName = $campKinds[$i];
+						}else{
+							$selected = "";
+						}
+						echo '<option id="campKinds'.$i.'" value="'.$campCodes[$i].'"'.$selected.'>'.$campKinds[$i].'</option>';
+					}?>
+				</select>
+				<input type="hidden" name="campName" value="<?php echo $campName; ?>" />
 			</div>
 		</li>
 	</ol>

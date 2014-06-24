@@ -49,6 +49,8 @@ $black: #000000;
 $white: #ffffff;
 $red: #CD0300;
 $blue: #04278B;
+$twitter: #55acee;
+$facebook: #3b5998;
 
 //import parts
 @import "base/font.scss";
@@ -59,12 +61,13 @@ $blue: #04278B;
 @import "parts/list.scss";
 @import "parts/form.scss";
 
-@import "pages/post.scss";
+@import "pages/article.scss";
 
 @import "pages/home.scss";
 @import "pages/ecokaishu.scss";
 @import "pages/flow.scss";
 @import "pages/price.scss";
 @import "pages/about.scss";
+@import "pages/faq.scss";
 
 @import "pages/campaign.scss";

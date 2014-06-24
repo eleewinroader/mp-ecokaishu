@@ -2,10 +2,86 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 
-/* news*/
+
+/* calendar */
+//本日取得
+function getToday($date = "Y-m-d") { 
+		$today = new DateTime();
+		return $today->format($date);
+}
+
+//本日かどうかチェック
+function isHoliday($year, $month, $day) {
+
+	$day = $year.$month.$day;
+	if(array_key_exists($day, getHolidays($year))){
+		return true;
+	}
+	return false;
+}
+ 
+//Googleカレンダーから祝日を取得
+function getHolidays($year) {
+	$holidays = array();
+	$prevYear = $year - 1;
+	$nextYear = $year + 1;
+ 
+	//Googleカレンダーから、指定年の祝日情報をJSON形式で取得するためのURL
+	$url = sprintf(
+		"http://www.google.com/calendar/feeds/%s/public/full?alt=json&%s&%s",
+		"japanese__ja%40holiday.calendar.google.com",
+		"start-min=".$prevYear."-01-01",
+		"start-max=".$nextYear."-12-31"
+	);
+ 
+	//JSON形式で取得した情報を配列に変換
+	$results = json_decode(file_get_contents($url), true);
+ 
+	//年月日（例：20120512）をキーに、祝日名を配列に格納
+	foreach ($results["feed"]["entry"] as $value) {
+		$date = str_replace("-", "", $value["gd$when"][0]["startTime"]);
+		$title = $value["title"]["$t"];
+		$holidays[$date] = $title;
+	}
+ 
+	//祝日の配列を早い順に並び替え
+	ksort($holidays);
+ 
+	//配列として祝日を返す
+	return $holidays;
+}
+
+
+
+
+//N日（週）+か-する関数
+function getNthDay($year, $month, $day, $n) {
+ 
+	$next_prev = new DateTime($year."-".$month."-".$day);
+	$next_prev->modify($n);
+	return $next_prev->format("Ymd");
+}
+
+function getWeekDay($year, $month, $day, $n){
+	$datetime = new DateTime($year."-".$month."-".$day);
+	$datetime->modify($n);
+	$week = array("日", "月", "火", "水", "木", "金", "土");
+	$w = (int)$datetime->format("w");
+	return $week[$w];
+}
+
+function getReservInfo($ymd){
+	$reservs = query_posts(array("pagename" => "reserv"));
+	foreach($reservs as $reserv){
+		$available = get_post_meta($reserv->ID, "reservInfo01");
+		if(array_search($ymd, $available) !== false) $status = "happy";
+		else $status = "sad";
+	}
+	return $status;
+}
 
 add_filter( 'aioseop_title', 'rewrite_custom_titles' );
 
@@ -46,7 +122,7 @@ function getPage($string, $type){
 
 //notices
 function notices(){
-	$notice = NULL;
+	$notice = '';
 	return $notice;
 }
 
@@ -194,7 +270,7 @@ function siteInfo($type){
 	}elseif($type == 'siteUrlEcohokan'){
 		$info = $protocol.'www.eco-land.jp/hokan/';
 	}elseif($type == 'siteUrlRshop'){
-		$info = $protocol.'www.kaitori-eco.jp';
+		$info = $protocol.'www.kaitori-eco.com';
 	}else{
 			$info = $protocol.$httpHost;	
 	}
@@ -226,7 +302,7 @@ function is_smartphone(){
 }
 
 //キャンペーンコード取得
-function campCode($hier=null, $glue = null){
+function campCode($post, $hier=NULL, $glue = NULL){
 	$campCodes = get_the_terms($post->ID, 'campcode');
 	$campCodeSlugs = array();
 	if($campCodes && !is_wp_error($campCodes)){
@@ -241,7 +317,7 @@ function campCode($hier=null, $glue = null){
 		}
 	}
 	if(!$glue){
-		return $campCodeSlugs;
+		return $campCodeSlugs[0];
 	}else{
 		$campCodeSlugs = implode($glue, $campCodeSlugs);
 		return $campCodeSlugs;
@@ -477,7 +553,7 @@ function cmsTitle($posttype, $submitdate, $pr_code){
 	);
 
 	//post_type判別
-	if($posttype == 'faq'){
+	if($posttype == 'contact'){
 		$typeid = 'C';
 	}elseif($posttype == 'works'){
 		$typeid = 'W';
@@ -676,11 +752,13 @@ function estimate_ntfct($email, $estimateValues){
 
 ■集荷品について
 '.$estimateValues['cstmContents'];
-if($estimateValues['cpiItems']){
+if($estimateValues['campName']){
 	$message .= '
 
-■キャンペーン対象品
-'.$estimateValues['cpiItems'];
+──────────────────────────────────
+
+■申込キャンペーン
+'.$estimateValues['campName'];
 }
 $message .= '
 

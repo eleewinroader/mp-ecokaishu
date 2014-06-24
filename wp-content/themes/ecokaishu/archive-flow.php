@@ -2,21 +2,21 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 get_header( ); ?>
 
 	<h2><?php post_type_archive_title(); ?></h2>
 
 	<div class="container intro">
-		<div class="twelvecol last">
+		<div class="twelvecol col last">
 
-			<div class="archiveIntro">
+			<div class="summary">
 				<p><span class="block">使わなくなった家電や家具などを、</span><span class="block">1個からでもエコ回収・買取に伺います。</span></p>
 				<p><span class="block">ご相談・依頼から集荷まで、</span><span class="block">エコ回収の流れをご案内いたします。</span></p>
-			<!-- .intro .archiveIntro--></div>
+			<!-- .intro .summary--></div>
 
-			<!--<div class="archiveIntro"><?php echo getPage("イントロ", "contents"); ?></div>
+			<!--<div class="intro"><?php echo getPage("イントロ", "contents"); ?></div>
 			<?php echo getPage("エコ回収の流れ", "contents"); ?>-->
 
 		</div>
@@ -38,14 +38,14 @@ get_header( ); ?>
 			<div class="sixcol col">
 				<h4>どうすればいいかわからない</h4>
 				<div class="content">
-					<a href="<?php echo siteInfo("rootURl"); ?>/contact/" id="contact"><span class="icon-info4"></span>お問い合わせ</a>
-					<a href="tel:0120-530-<?php echo telNum("", pageCode(), ""); ?>" id="tel"><span class="icon-phone2"></span>0120-530-<?php echo telNum("", pageCode(), ""); ?></a>
+					<a href="<?php echo siteInfo("rootURl"); ?>/contact/" id="contact"><span class="icon-question2"></span>お問い合わせ</a>
+					<a href="tel:0120-530-<?php echo telNum("", pageCode(), ""); ?>" id="tel"><span class="icon-phone"></span>0120-530-<?php echo telNum("", pageCode(), ""); ?></a>
 				</div>
 			</div>
 			<div class="sixcol col last">
 				<h4>見積もってほしい</h4>
 				<div class="content">
-					<a href="<?php echo siteInfo("rootURl"); ?>/estimate/" id="estimate"><span class="icon-calculator"></span>かんたん見積もり</a>
+					<a href="<?php echo siteInfo("rootURl"); ?>/estimate/" id="estimate"><span class="icon-shipping"></span>かんたん見積もり</a>
 				</div>
 			</div>
 			<div class="openingHour">平･土 9時-22時 祝･日 9時-20時 </div>
@@ -54,7 +54,6 @@ get_header( ); ?>
 
 	<section class="contents" id="ecokaishuFlow">
 		<div class="container">
-
 			<h3>エコ回収の流れ</h3>
 
 			<section class="twelvecol col last">

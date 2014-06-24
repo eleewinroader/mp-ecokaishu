@@ -3,67 +3,259 @@
 #home{
 
 //**********************************************************************
+// General settings
 //**********************************************************************
-//
-// _home.scss INDEX
-//
-// #home h2
-// #home #movie
-// #home #index
-// #home #news
-//
+
+padding-top: 3.0rem;
+
 //**********************************************************************
-// h2
+// h tag
 //**********************************************************************
 
 h2{
-	margin:{
-		bottom: 3.0rem;
-	}
+	display: none;
+}
+
+h3{
+	margin-bottom: 1.0rem;
 }
 
 //**********************************************************************
-// #movie
+// .liquidLayout
 //**********************************************************************
 
-#movie{
+.liquidLayout{
 
-	// .movie-container
+	padding-bottom: 3.0rem;
+
+	// .col
 	//**************************************************************
 
-	.movie-container{
-		overflow: hidden;
-		position: relative;
-		padding:{
-			top: 30px; height: 0;
-			bottom: 56.25%;
+	.col{
+
+		margin-top: 10px;
+		border: 1px solid rgba($black, .1);
+		@include border-radius(6px);
+		@include box-sizing(border-box);
+		background: $white;
+
+		//.colContents
+		.colContents{
+			padding: 0.5rem;
 		}
-		iframe, object, embed {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
+
+		//PC
+		@media all and (min-width: $minWidth){
+				margin-bottom: 10px;
 		}
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			width:  100%;
+		}
+
+	}
+}
+
+//**********************************************************************
+// #sliderCampaign
+//**********************************************************************
+
+#sliderCampaign{
+
+	h3, h4{
+		display: none;
+	}
+
+	a{
+		display: block;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	// .mainVisual
+	// **************************************************************
+
+	.mainVisual{
+		overflow: hidden !important;
+		border: 1px solid rgba($black, .1);
+		@include border-radius(6px);
+		@include box-sizing(border-box);
+	}
+
+
+	// .owl-buttons
+	// **************************************************************
+
+	.owl-buttons{
+
+		position: absolute;
+		top: 45%;
+		width: 100%;
+
+		//div
+		div{
+			background: $darkGray;
+			@include opacity(.8);
+			padding: 0.5rem;
+			&:before{
+				display: inline-block;
+				font:{
+					family: icomoon;
+					size: $bigger;
+				}
+				line-height: 1.3em;
+				vertical-align: middle;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			&.owl-prev{
+				position: absolute;
+				left: 0;
+				&:before{
+					content: "\e9cf";
+				}
+			}
+			&.owl-next{
+				position: absolute;
+				right: 0;
+				&:before{
+					content: "\e9cb";
+				}
+			}
+		}
+	}
+
+	// .owl-controls
+	// **************************************************************
+
+	.owl-controls span{
+		background: $darkGray;
 	}
 
 }
 
 //**********************************************************************
-// #index
+// #shortcuts
 //**********************************************************************
 
-#index{
+#shortcuts{
 
-	padding: {
-		top: 3.0rem;
-		bottom: 3.0rem;
+	// h3
+	//**************************************************************
+	
+	h3{
+		display: none;
 	}
-	text:{
-		align: center;
-		decoration: none;
+
+	// ul
+	//**************************************************************
+
+	ul{
+		overflow: hidden;
+
+		//li
+		li{
+
+			display: block;
+
+			//a
+			a{
+				display: block;
+				color: $darkGray;
+				text-decoration: none;
+			}
+
+		}
+
+		//PC
+		@media all and (min-width: $minWidth){
+
+			//li
+			li{
+
+				text-align: center;
+
+				a{
+					margin: 0 auto;
+					width: 126px;
+					height: 126px;
+					padding: 1.0rem;
+					border: 1px solid rgba($black, .1);
+					@include border-radius(50%);
+					@include box-sizing(border-box);
+					color: $white;
+					letter-spacing: -0.05rem;
+					line-height: 1.2rem;
+					&:hover{ background: $darkBlue !important; }
+					&#estimate{ background: $pink; }
+					&#contact{ background: $orange; }
+					&#tel{ background: $green; }
+					span[class^="icon-"]{
+						display: block;
+						margin-bottom: 0.2rem;
+						font-size: $biggest * 1.5;
+						vertical-align: middle;
+					}
+				}
+				&:not(:last-of-type){
+					margin-bottom: 10px;
+				}
+			}
+
+		}
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+
+			border: 1px solid rgba($black, .1);
+			@include border-radius(6px);
+			background: $white;
+			font-size: $normal * 1.2;
+
+			li{
+				position: relative;
+				a{
+					padding: 1.5rem 0.5rem;
+					.block{
+						display: inline !important;
+					}
+					&#tel{
+						.block{
+							&:before{
+								content: "-";
+							}
+						}
+					}
+				}
+				&:after{
+					display: block;
+					position: absolute;
+					top: 50%;
+					right: 1.0rem;
+					width: 0;
+					height: 0;
+					margin-top: -8px;
+					border: 4px solid transparent;
+					border-left-color: $darkGray;
+					content: "";
+				}
+				&:not(:last-of-type){
+					border-bottom: 1px solid rgba($black, .1);
+				}
+			}
+
+		}
+
 	}
-	font-size: $bigger;
+
+}
+
+
+//**********************************************************************
+// #indexs
+//**********************************************************************
+
+#indexs{
 
 	// h3
 	//**************************************************************
@@ -74,33 +266,37 @@ h2{
 
 	// .col
 	//**************************************************************
-
+	
 	.col{
+
+		overflow: hidden;
+		border: 1px solid rgba($black, .1);
+		@include border-radius(6px);
+		background: $white;
 
 		//a
 		a{
 			display: block;
+			padding: 1.0rem 0.5rem;
 			color: $darkGray;
 			text-decoration: none;
+			&:hover{
+				color: $green;
+			}
 		}
-		
+
 		//PC
-		@media only screen and (min-width: $minWidth){
+		@media all and (min-width: $minWidth){
 
 			a{
-				&:hover{
-					color: $green;
-				}
+				text-align: center;
 				span{
 					&[class^="icon-"]{
 						display: inline-block;
-						margin-bottom: 1.0rem;
-						font-size: $biggest * 2;
+						margin-bottom: 0.5rem;
+						font-size: $biggest * 1.8;
 						line-height: 70px;
 						vertical-align: middle;
-					}
-					&[class="icon-ecolandjp"]{
-						font-size: $biggest * 3;
 					}
 					&.indexTitle{
 						display: block;
@@ -111,25 +307,81 @@ h2{
 		}
 
 		//Mobile
-		@media only screen and (max-width: $maxWidth){
+		@media all and (max-width: $maxWidth){
 
-			padding:{
-				top: 1.0rem;
-				bottom: 1.0rem;
-			}
-			&:not(:last-of-type){
-				border:{
-					bottom :1px solid rgba($black, .05);
-				}
-			}
 			a{
-				span{
-					display: inline-block;
-					vertical-align: middle;
+				&:after{
+					display: block;
+					position: absolute;
+					top: 50%;
+					right: 1.0rem;
+					width: 0;
+					height: 0;
+					margin-top: -8px;
+					border: 4px solid transparent;
+					border-left-color: $darkGray;
+					content: "";
 				}
-				span[class^="icon-"]{
-					font-size: $bigger;
-					line-height: 1.0em;
+			}
+
+		}
+	}
+
+}
+
+//**********************************************************************
+// #faq
+//**********************************************************************
+
+#faq{
+
+	position: relative;
+	
+	// ul
+	//**************************************************************
+
+	ul{
+
+		position: relative;
+		z-index: 2;
+		background: $white;
+
+		//li
+		li{
+
+			//a
+			a{
+				display: block;
+				padding: 0.5rem;
+				background: $white;
+				color: $darkGray;
+				text-decoration: none;
+				&:before{
+					font-family: icomoon;
+					speak: none;
+				}
+				&:hover{
+					color: $green;
+				}
+				.txt{
+					padding-left: 0.1rem;
+				}
+			}
+
+			//&:nth-of-type
+			&:nth-of-type(1){
+				a{
+					border-top: 1px solid rgba($black, .05);
+					&:before{ content: "\e789"; }
+				}
+			}
+			&:nth-of-type(2){ a:before{ content: "\e8e1"; } }
+			&:nth-of-type(3){ a:before{ content: "\e6ed"; } }
+			&:nth-of-type(4){ a:before{ content: "\e66e"; } }
+			&:nth-of-type(5){ a:before{ content: "\e706"; } }
+			&:not(:last-of-type){ 
+				a{
+					border-bottom: 1px solid rgba($black, .05);
 				}
 			}
 
@@ -137,6 +389,17 @@ h2{
 
 	}
 
+	// #faqIcon
+	//**************************************************************
+
+	#faqIcon{
+		position: absolute;
+		z-index: 1;
+		top: 1.0rem;
+		right: 1.0rem;
+		width: 100px;
+
+	}
 }
 
 //**********************************************************************
@@ -145,47 +408,37 @@ h2{
 
 #news{
 
-	margin-bottom: 3.0rem;
-
-	// h3
-	//**************************************************************
-
-	h3{
-		margin-bottom: 2.0rem;
-		font-size: $bigger;
-		text-align: center;
-	}
-
 	// ul
 	//**************************************************************
 
 	ul{
 
-		padding: 2.0rem;
-		background: $white;
-
 		//li
 		li{
+
 			padding: 1.0rem 0;
-			&:not(:last-of-type){
-				border:{
-					bottom :1px solid rgba($black, .05);
-				}
-			}
+
+			//:first-of-type
 			&:first-of-type{
 				.newsTxt{
 					&:before{
 						display: inline-block;
 						margin-right: 0.3rem;
-						padding: 0.2rem 0.3rem;
+						padding: 0.1rem 0.3rem;
 						background: $pink;
 						color: $white;
 						font-size: 85%;
 						content: "NEW";
 					}
 				}
-
 			}
+
+			//:not(:last-of-type)
+			&:not(:last-of-type){
+				border-bottom :1px solid rgba($black, .05);
+			}
+
+			//a
 			a{
 				display: block;
 				color: $darkGray;
@@ -193,50 +446,203 @@ h2{
 					decoration: none;
 				}
 				time{
+					display: block;
 					letter-spacing: 0.1rem;
-					margin-right: 0.3rem;
+					margin-bottom: 0.3rem;
 					color: $green;
 					font-weight: bold;
-					//Mobile
-					@media only screen and (max-width: $maxWidth){
-						display: block;
-					}
 				}
 				.tag{
 					display: inline-block;
 					margin-right: 0.3rem;
-					padding: 0.2rem 0.3rem;
+					padding: 0.1rem 0.3rem;
 					background: $darkBlue;
 					color: $white;
 					font-size: 85%;
 				}
 			}
-		}
 
-	}
-
-	// .col
-	//**************************************************************
-
-	.col{
-
-		background: rgba($green, .1);
-		padding:{
-			top: 1.0rem;
-			bottom: 3.0rem;
-		} 
-		@include box-sizing(border-box);
-
-		//PC
-		@media only screen and (min-width: $minWidth){
-			padding:{
-				left: 3.0rem;
-				right: 3.0rem;
-			} 
 		}
 
 	}
 
 }
+
+//**********************************************************************
+// #voices
+//**********************************************************************
+
+#voices{
+
+	// ul
+	//**************************************************************
+
+	ul{
+
+		margin-bottom: 1.0rem;
+
+		//li
+		li{
+			&:not(:last-of-type){
+				margin-bottom: 1.0rem;
+			}
+
+			//p
+			p{
+
+				&.voicesInfo{
+					&:before{
+						font-family: icomoon;
+						speak: none;
+						padding-right: 0.3rem;
+						content: "\e91d";
+					}
+				}
+
+				&.voicesContents{
+					position: relative;
+					padding: 1.0rem;
+					@include border-radius(3px);
+					background: rgba($black, .05);
+
+					&:after,
+					&:before{
+						font-family: courier;
+						font-size: $biggest;
+						color: rgba($black, .3);
+					}
+
+					&:before{
+						content: "“";
+					}
+					&:after{	
+						position: absolute;
+						bottom: 0;
+						right: 1.0rem;
+						content: "“";
+					}
+					strong{
+						font-weight: bold
+					}
+				}
+			}
+
+		}
+
+	}
+
+}
+
+
+//**********************************************************************
+// #reservCalendar
+//**********************************************************************
+
+#reservCalendar{
+
+	ul{
+		margin-bottom: 1.0rem;
+		li{
+			display: inline-block;
+			&:first-of-type{ color: $green; }
+			&:last-of-type{ color: rgba($black, .3); }
+		}
+	}
+
+	table{
+		th, td{
+			text-align: center;
+			&:not(:last-of-type){
+				border-right: 1px solid rgba($black, .02);
+			}
+		}
+		thead{
+			th{
+				background: rgba($black, .1);
+			}
+		}
+		tbody{
+
+		tr{
+			&:nth-of-type(2n-1){
+				border-top: 1px solid rgba($black, .1);
+			}
+			&:nth-of-type(2n){
+				border-top: 1px solid rgba($black, .05);
+			}
+		}
+		th, td{
+			&.happy{
+				background: $green;
+				color: $white;
+			}
+			&.sad{
+				color: rgba($black, .3);
+			}
+		}
+		td{
+			&:before{
+				font-family: icomoon;
+				speak: none;
+				@include appearance(none);
+			}
+			&.happy{
+				&:before{
+					font-size: $bigger;
+					content: "\e980";
+				}
+			}
+			&.sad{
+				&:before{ content: "\e985"; }
+			}
+		}
+		}
+		.holiday{
+			background: rgba($green, .1);
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// .webservices
+//**********************************************************************
+
+.webservices{
+
+	overflow: inherit;
+	border: none;
+	padding: 0;
+	@include box-sizing(border-box);
+	background: transparent;
+
+	// #movie
+	//**************************************************************
+
+	&#movie{
+		.movie-container{
+			overflow: hidden;
+			position: relative;
+			padding:{
+				top: 30px; height: 0;
+				bottom: 56.25%;
+			}
+			iframe, object, embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	&#facebook, &#twitter{
+		min-height: 400px;
+	}
+
+}
+
 
 }

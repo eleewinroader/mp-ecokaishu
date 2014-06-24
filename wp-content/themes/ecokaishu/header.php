@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 ?>
 <!DOCTYPE html>
@@ -25,18 +25,15 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 	echo '<meta http-equiv="refresh" content="0; url=http://www.eco-kaishu.jp/legacy">';
 }?>
 <title></title>
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo bloginfo("stylesheet_url"); ?>" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script><![endif]-->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/d3.min.js"></script>
-<script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?Sx8LHUR5fDo%3D" charset="utf-8"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/script.min.js"></script>
 <?php wp_head(); ?>
 </script>
 </head>
 <body>
 
-
-	<div class="ecolandNavi">
+	<div class="globalnavi" id="ecoland">
 		<ul class="twelvecol col last">
 			<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>"><span>エコランド</span></a></li>
 			<li><a href="<?php echo siteInfo("siteUrlEcookataduke"); ?>"><span>エコランドのお片づけサービス</span></a></li>
@@ -45,47 +42,35 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 			<li><a href="<?php echo siteInfo("siteUrlEcoauc"); ?>"><span>エコオク</span></a></li>
 			<li><a href="<?php echo siteInfo("siteUrlRshop"); ?>"><span>エコランドのリサイクルショップ</span></a></li>
 		</ul>
-	<!-- ecolandNavi--></div>
+	<!-- globalnavi--></div>
 
-	<div id="fixedHeader">
-
-		<header class="siteHeader">
+	<div id="headerFixed">
+		<header class="header">
 			<div class="container">
-				<div class="twocol col" id="siteName">
+				<div class="sixcol col" id="siteName">
 					<h1 id="logo"><a href="<?php echo siteInfo("rootUrl"); ?>">エコ回収</a></h1>
 				</div>
-				<div class="sixcol col" id="siteMenu">
+				<div class="sixcol col last" id="siteMenu">
 					<div class="showBigger" id="contMenu">
-						<ul class="gNavi">
+						<ul>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/ecokaishu/">エコ回収とは</a></li>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/flow/">ご利用の流れ</a></li>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/price/">料金案内</a></li>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/contact/">お問い合わせ</a></li>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/estimate/">見積依頼</a></li>
+							<li><a href="<?php echo siteInfo("rootUrl"); ?>/faq/">よくある質問</a></li>
+							<li><a href="<?php echo siteInfo("rootUrl"); ?>/about/">運営会社</a></li>
+							<li><a href="https://twitter.com/eco_land"><span class="icon-twitter3"></span><span class="txt">twitter</span></a></li>
+							<li><a href="https://www.facebook.com/ecoland.jp"><span class="icon-facebook3"></span><span class="txt">facebook</span></a></li>
 						</ul>
 					</div>
 					<div class="showSmaller" data-panel="panelMenu" data-content="contMenu" id="menuBtn"><span class="icon-menu2"></span></div>
 				</div>
-				<div class="fourcol col last" id="tel">
-					<div class="showBigger" id="contContact">
-						<a href="tel:0120530<?php echo telNum("", pageCode(), ""); ?>" class="telBnr">
-							<p id="tap">タップしてお気軽に電話ください!</p>
-							<p class="telNum">
-								<span class="icon-phone"></span>0120-530-<?php echo telNum("", pageCode(), ""); ?>
-							</p>
-							<p class="openingHour"><span class="block">平･土 9時-22時</span><span class="block">祝･日 9時-20時</span></p>
-						</a>
-					</div>
-					<div class="showSmaller" data-panel="panelContact" data-content="contContact" id="telBtn"><span class="icon-phone"></span></div>
-				</div>
-			<!--header .container --></div>
-		<!-- header --></header>
+			<!--.header .container --></div>
+		<!-- .header --></header>
 
 		<div class="panelCont" id="panelMenu"></div>
-		<div class="panelCont" id="panelContact"></div>
 		<!--.panelCont-->
 
-	<!--#fixedHeader--></div>
+	<!--#headerFixed--></div>
 
 	<?php
 	if(is_single()){
@@ -98,9 +83,9 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 			$featureType = $cat[0]->cat_name;
 		}elseif(get_post_type() == "campaign"){
 			$pageType = "campaign";
-			if(campCode()){ 
-				$parentClass = " ".campCode("parent", ",");
-				$childrenClass = " ".campCode("children", " ");
+			if(campCode($post)){ 
+				$parentClass = " ".campCode($post, "parent", " ");
+				$childrenClass = campCode($post, "children", " ");
 			}else{
 				$parentClass = NULL;
 				$childrenClass = NULL;
@@ -117,3 +102,4 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 	}?>
 	<article class="<?php echo $pageType.$parentClass;?>" id="<?php echo $featureType.$childrenClass; ?>">
 	
+	<?php echo $pr_code; ?>

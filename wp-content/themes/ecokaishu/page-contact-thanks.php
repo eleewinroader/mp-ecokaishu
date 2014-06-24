@@ -5,7 +5,7 @@
 *
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 
 if($_POST){
@@ -18,7 +18,7 @@ if($_POST){
 	$userAgent = $_SERVER['HTTP_USER_AGENT']; //ユーザーエージェント
 	date_default_timezone_set('Asia/Tokyo');
 	$submitdate = date("mdH", time()); //送信タイム
-	$post_type = 'faq';
+	$post_type = "contactform";
 	$post_title = cmsTitle($post_type, $submitdate, $pr_code);
 
 	$insertpost = array(

@@ -1,35 +1,18 @@
 @charset "UTF-8";
 
-#flow{
+article#flow{
 
 //**********************************************************************
-//**********************************************************************
-//
-// _flow.scss INDEX
-//
-// #flow .container
-// #flow .icon-dot
-// #flow .contents
-//
-//**********************************************************************
-//**********************************************************************
-// .container
+// general
 //**********************************************************************
 
 .container{
 
 	//PC
-	@media only screen and (min-width: $minWidth){
-		max-width: 740px;
-		margin:{
-			top: 0;
-			bottom: 0;
-			left: auto;
-			right: auto;
-		}
+	@media all and (min-width: $minWidth){
+		max-width: $maxWidth;
+		margin: 0 auto;
 	}
-
-	
 
 }
 
@@ -46,10 +29,6 @@
 .contents{
 
 	position: relative;
-	padding:{
-		top: 3.0rem;
-		bottom: 3.0rem;
-	}
 
 	// :last-of-type
 	//**************************************************************
@@ -110,8 +89,8 @@
 			display: block;
 			position: absolute;
 			z-index: 1;
-			top: -3.0rem;
-			bottom: -3.0rem;
+			top: -5.0rem;
+			bottom: -5.0rem;
 			left: 50%;
 			width: 1px;
 			background: rgba($black, .5);
@@ -127,6 +106,29 @@
 		}
 	}
 
+	// #trigger
+	//**************************************************************
+	
+	&#trigger{
+
+		background: transparent !important;
+
+		//h3
+		h3{
+			display: block;
+			position: relative;
+			z-index: 5;
+			margin: 0 auto;
+			padding: 1.0rem;
+			background: $darkGray;
+			color: $white;
+			font-size: $bigger;
+			text-align: center;
+			line-height: 1.0em;
+		}
+
+	}
+
 	// #actions
 	//**************************************************************
 
@@ -137,18 +139,12 @@
 		//a
 		a{
 			display: block;
-			margin:{
-				top: 1.0rem;
-				bottom: 1.0rem;
-			}
-			padding:{
-				top: 1.0rem;
-				bottom: 1.0rem;
-			}
+			margin-top: 1.0rem;
+			margin-bottom: 1.0rem;
+			padding-top: 1.0rem;
+			padding-bottom: 1.0rem;
 			@include border-radius(3px);
-			border:{
-				bottom: 2px solid rgba($black, .2);
-			}
+			border-bottom: 2px solid rgba($black, .2);
 			background: $green;
 			color: $white;
 			text-decoration: none;
@@ -164,7 +160,7 @@
 		.col{
 			&:nth-of-type(2){
 				&:before{
-					bottom: -7.5rem;
+					bottom: -9.5rem;
 				}
 			}
 		}
@@ -185,22 +181,22 @@
 		}
 
 		//PC
-		@media only screen and (min-width: $minWidth){
+		@media all and (min-width: $minWidth){
 
 			position: relative;
 			padding:{
-				top: 3.0rem;
-				bottom: 3.0rem;
+				top: 5.0rem;
+				bottom: 5.0rem;
 			}
 			&:before{
 				display: block;
 				position: absolute;
 				top: 0px;
 				left: 50%;
-				width: 370px;
+				width: $maxWidth / 2;
 				height: 1px;
 				margin: 0 auto;
-				margin-left: -184px;
+				margin-left: -$maxWidth / 4;
 				background: rgba($black, .5);
 				content: "";
 			}
@@ -209,10 +205,10 @@
 				position: absolute;
 				bottom: 0px;
 				left: 50%;
-				width: 370px;
+				width: $maxWidth / 2;
 				height: 1px;
 				margin: 0 auto;
-				margin-left: -184px;
+				margin-left: -$maxWidth / 4;
 				background: rgba($black, .5);
 				content: "";
 			}
@@ -220,7 +216,7 @@
 		}
 
 		//Mobile
-		@media only screen and (max-width: $maxWidth){
+		@media all and (max-width: $maxWidth){
 
 			.col{
 				&:nth-of-type(1){
@@ -238,45 +234,24 @@
 		}
 
 	}
-
-	// #trigger
-	//**************************************************************
-	
-	&#trigger{
-
-		//h3
-		h3{
-			display: block;
-			position: relative;
-			z-index: 5;
-			margin: 0 auto;
-			padding: 1.0rem;
-			background: $darkGray;
-			color: $white;
-			font-size: $bigger;
-			text-align: center;
-			line-height: 1.0em;
-		}
-
-	}
 	
 	// #ecokaishu
 	//**************************************************************
 
 	&#ecokaishuFlow{
 
-		background: rgba($green, .2);
-		margin:{
-			top: 3.0rem;
-		}
-		padding:{
-			bottom: 3.0rem;
-		}
+		background: rgba($green, .1) !important;
+		margin-top: 5.0rem;
+		padding-bottom: 5.0rem;
+
+		//.col
 		.col{
 			&:before{
-				top: -6.0rem;
+				top: -10.0rem;
 			}
 		}
+
+		//.icon-dot#top
 		.icon-dot#top{ color: $white; }
 
 	}

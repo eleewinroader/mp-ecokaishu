@@ -2,30 +2,28 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 get_header( ); ?>
 
 		<div class="campIntro">
 
-			<div class="mainVisual">
-				<?php if(have_posts()): while(have_posts()): the_post(); ?>
-					<div class="container">
-					<div class="twelvecol col last">
-						<h2>梅雨のキャンペーン</h2>
-						<div class="campVisual">
-							<div class="topic"><span class="txt">衣類詰め合せ最大3袋まで無料</span></div>
-							<img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1406/mainVisual_icon.png" alt="" id="campVisualImg" />
-							<div class="sixcol col">無料</div>
-							<div class="sixcol col last">引取</div>
-							<div class="raindrop"></div>
-						</div>
-					</div>
-					</div>
-					<!--<?php the_content(); ?>
-					<!--<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />-->
-				<?php endwhile; endif; ?>
-			<!-- .campIntro  .mainVisual--></div>
+			<div class="container">
+				<div class="twelvecol col last">
+					<div class="mainVisual">
+						<?php if(have_posts()): while(have_posts()): the_post(); ?>
+							<h2><?php the_title(); ?></h2>
+							<div class="campVisual">
+								<?php the_content(); ?>
+
+
+
+
+							</div>
+						<?php endwhile; endif; ?>
+					<!-- .campIntro  .mainVisual--></div>
+				<!-- .campIntro  .col--></div>
+			<!-- .campIntro  .container--></div>
 
 			<?php
 			$campInfo01 = get_post_meta($post->ID, "campInfo01", TRUE);
@@ -47,7 +45,7 @@ get_header( ); ?>
 				echo "</td></tr>";
 			}
 			if($campInfo06) echo "<tr><th>対象</th><td>".$campInfo06."</td></tr>";
-			if($campInfo07) echo "<tr><th>条件</th><td>".$campInfo07.'<div class="clear"></div></td></tr>';
+			if($campInfo07) echo "<tr><th>内容</th><td>".$campInfo07.'<div class="clear"></div></td></tr>';
 			echo "</tbody></table>";
 			if($campInfo08) echo '<div class="footnote">'.$campInfo08.'</div>';
 			echo "</div></div></section>";
@@ -125,8 +123,7 @@ get_header( ); ?>
 				array(
 					"taxonomy" => "campcode",
 					"field" => "slug",
-					"terms" => campCode()
-
+					"terms" => campCode($post),
 				)
 			)
 		);

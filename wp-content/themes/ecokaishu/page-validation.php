@@ -740,7 +740,23 @@ $(document).ready(function(){
 				$("#"+eleId).find(".formTitle").addClass("ok");
 			}
 
-		},	
+		},
+
+		
+		'campKind' : function(){
+
+			var eleId = "campKind";
+			var ele = $("#"+eleId);
+			var msgId = eleId+"Msg";
+			var msg = $("#"+msgId);
+
+			if(ele.val()){
+				msg.remove();
+				ele.closest(".formContents").find(".formTitle").addClass("ok");
+				ele.removeClass("focus").addClass("correct");
+			}
+
+		},
 
 		'causesRank' : function(){
 
@@ -1031,6 +1047,7 @@ $(document).ready(function(){
 	});
 
 	$("#quesKind").change(jVal.quesKind);
+	$("#campKind").change(jVal.campKind);
 	$("#cstmName").blur(jVal.cstmName);
 	$("#cstmPron").blur(jVal.cstmPron);
 	$("#cstmEmail").blur(jVal.cstmEmail);

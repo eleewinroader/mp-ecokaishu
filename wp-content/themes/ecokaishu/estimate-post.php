@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1
+* @since MP-Ecokaishu 0.1.1
 */
 
 $cstmPrefecture = $_POST["cstmPrefecture"]; //県取得
@@ -41,7 +41,11 @@ $agreeLaw = $_POST["agreeLaw"]; //プライバシーポリシーに同意する�
 $siteCode = $_POST["siteCode"]; //サイトコード
 
 
-if($_GET['pr_code']) $pr_code = $_GET['pr_code'];
+if($_GET['pr_code']) $pr_code = $_GET['pr_code']; 
 if($_POST['pr_code']) $pr_code = $_POST['pr_code'];
+
+$campKind = $_POST["campKind"]; //キャンペーン取得
+$campName = $_POST["campName"]; //キャンペーン名取得
+
 
 ?>
