@@ -1,0 +1,41 @@
+{
+  "name": "MP-ecokaishu",
+  "version": "0.1.1",
+  "description": "Monster Platform for www.eco-kaishu.jp よくある質問・カレンダーmodule 追加、CVアップのためのブラッシュアップ(主にheader,boiler,footerの申込誘導UI改善)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-compass": "~0.2.0",
+    "grunt-contrib-imagemin": "~0.1.4",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-rsync": "~0.1.1",
+    "matchdep": "~0.1.2",
+    "grunt-csscomb": "*",
+    "grunt-combine-media-queries": "*",
+    "grunt-compass-multiple": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-livereload": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-open": "*",
+    "grunt-mocha": "~0.4.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eleewinroader/ecokaishu"
+  },
+  "author": "restard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eleewinroader/ecokaishu/issues"
+  },
+  "homepage": "https://github.com/eleewinroader/ecokaishu"
+}
