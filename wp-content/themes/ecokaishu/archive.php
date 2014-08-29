@@ -5,7 +5,7 @@
 * @since MP-Ecokaishu 0.1.1
 */
 
-get_header(); ?>
+get_header(); ?>ㄱㄷㄴㅅㅁㄱㅇ
 
 	<header>
 		<nav id="sitepath"><?php if(function_exists( 'bread_crumb' ) ) bread_crumb(array('home_label' => 'エコランドNEWS')); ?></nav>
@@ -92,5 +92,4 @@ echo '<li><span class="icon-location" aria-hidden="true"></span>開催場所 : '
 	<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

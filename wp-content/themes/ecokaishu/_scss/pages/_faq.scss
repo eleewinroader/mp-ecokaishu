@@ -3,29 +3,118 @@
 article#faq{
 
 //**********************************************************************
-//**********************************************************************
-//
-// _faq.scss INDEX
-//
+// General settings
 //**********************************************************************
 
-
-	max-width: $maxWidth;
-	margin: 0 auto;
-
+max-width: $maxWidth;
+margin: 0 auto;
 
 //**********************************************************************
-// #intro
+// layout settings
 //**********************************************************************
 
-#intro{
+// .container settings
+//**********************************************************************
+
+.container{
+	position: relative;
+}
+
+// .contents
+//**********************************************************************
+
+.contents{
+	padding: 5.0rem 0;
+	border-top: 1px solid rgba($black, .1);
+	background: transparent !important;
+}
+
+//**********************************************************************
+// dl
+//**********************************************************************
+
+dl{
+
+	// dt, dd
+	//**************************************************************
+
+	dt,dd{
+
+		position: relative;
+		padding:{
+			top: 1.0rem;
+			bottom: 1.0rem;
+			right: 1.0rem;
+			left: 3.5rem;
+		}
+		background: $white;
+
+		//&:before
+		&:before{
+			position: absolute;
+			top: 50%;
+			left: 1.0rem;
+			margin-top: -10px;
+			font-family: icomoon;
+			speak: none;
+			font-size: $bigger;
+			line-height: 1.0em;
+		}
+	}
+
+	// dt
+	//**************************************************************
+
+	dt{
+		position: relative;
+		&:before{
+			content: "\e99f";
+		}
+		&:after{
+			display: block;
+			position: absolute;
+			left: 1.6rem;
+			bottom: 0;
+			width: 2px;
+			height: 1.0rem;
+			margin-bottom: -1.0rem;
+			background: rgba($black, .1);
+			content: "";
+		}
+	}
+
+	// dd
+	//**************************************************************
+
+	dd{
+		margin-top: 1.0rem;
+		margin-bottom: 2.0rem;
+		border: 1px solid rgba($black, .1);
+		&:before{
+			color: $green;
+			content: "\e70e"
+		}
+	}
+
+}
+
+//**********************************************************************
+// .intro
+//**********************************************************************
+
+.intro{
 
 	padding-top: 5.0rem;
 	padding-bottom: 5.0rem;
 
+	// ul
+	//**************************************************************
+
 	ul{
 
+		//li
 		li{
+
 			a{
 				display: block;
 				padding: 0.5rem;
@@ -45,11 +134,13 @@ article#faq{
 					padding-left: 0.1rem;
 				}
 			}
+
 			&:nth-of-type(1){ a:before{ content: "\e789"; } }
 			&:nth-of-type(2){ a:before{ content: "\e8e1"; } }
 			&:nth-of-type(3){ a:before{ content: "\e6ed"; } }
 			&:nth-of-type(4){ a:before{ content: "\e66e"; } }
 			&:nth-of-type(5){ a:before{ content: "\e706"; } }
+
 		}
 	}
 
@@ -80,98 +171,6 @@ article#faq{
 			}
 		}
 
-
-	}
-
-}
-
-dt,dd{
-	position: relative;
-	padding:{
-		top: 1.0rem;
-		bottom: 1.0rem;
-		right: 1.0rem;
-		left: 3.5rem;
-	}
-	background: $white;
-	&:before{
-		position: absolute;
-		top: 50%;
-		left: 1.0rem;
-		margin-top: -10px;
-		font-family: icomoon;
-		speak: none;
-		font-size: $bigger;
-		line-height: 1.0em;
-	}
-}
-dt{
-	position: relative;
-	&:before{
-		content: "\e99f";
-	}
-	&:after{
-		display: block;
-		position: absolute;
-		left: 1.6rem;
-		bottom: 0;
-		width: 2px;
-		height: 1.0rem;
-		margin-bottom: -1.0rem;
-		background: rgba($black, .1);
-		content: "";
-	}
-}
-
-dd{
-	margin-top: 1.0rem;
-	margin-bottom: 2.0rem;
-	border: 1px solid rgba($black, .1);
-	&:before{
-		color: $green;
-		content: "\e70e"
-	}
-}
-
-.contents{
-	padding: 5.0rem 0;
-	border-top: 1px solid rgba($black, .1);
-}
-
-.container{
-	position: relative;
-}
-
-#faqMenu{
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	ul{
-		position: fixed;
-		border: 1px solid;
-		li{
-			a{
-				display: block;
-				position: relative;
-				padding: 1.0rem 1.5rem;
-				color: $darkGray;
-				text-decoration: none;
-				border-bottom: 1px solid rgba($black, .1);
-				&:before{
-					display: block;
-					position: absolute;
-					top: 50%;
-					left: 0;
-					width: 0;
-					height: 0;
-					margin-top: -5px;
-					border: 5px solid transparent;
-					border-right-color: $darkGray;
-					content: "";
-				}
-			}
-		}
 	}
 
 }

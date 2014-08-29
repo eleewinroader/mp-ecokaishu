@@ -4,7 +4,34 @@
 * @subpackage MP-Ecokaishu
 * @since MP-Ecokaishu 0.1.1
 */
-get_header( ); ?>
+get_header( );?>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=491417914337676&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<?php
+
+global $wpdb;
+$query = "SELECT meta_id, post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $post->ID ORDER BY meta_id ASC";
+$cf = $wpdb->get_results($query, ARRAY_A);
+
+//var flow
+$campFlowInfo01 = array();
+$campFlowInfo02 = array();
+
+foreach( $cf as $row ){
+
+	//for flow
+	if($row['meta_key'] == "campFlowInfo01") array_push($campFlowInfo01, $row['meta_value']);
+	if($row['meta_key'] == "campFlowInfo02") array_push($campFlowInfo02, $row['meta_value']);
+
+}?>
 
 		<div class="campIntro">
 
@@ -14,16 +41,82 @@ get_header( ); ?>
 						<?php if(have_posts()): while(have_posts()): the_post(); ?>
 							<h2><?php the_title(); ?></h2>
 							<div class="campVisual">
-								<?php the_content(); ?>
+								<?php
+								if(!is_single(4141)): ?>
+								<!--<div class="fb-comments" data-href="http://www.eco-kaishu.jp/" data-numposts="5" data-colorscheme="light"></div>-->
 
 
-
-
+									<?php the_content(); ?>
+								<?php else:
+									$got_manth = date("n", mktime(0, 0, 0, date("n"), date("d")+14, date("Y")));
+									$got_day   = date("j", mktime(0, 0, 0, date("n"), date("j")+14, date("Y")));
+									?>
+									<div id="appealTitle">
+										<p><span class="leftTitle">EARLY</span><span class="rightTitle">エコ回収</span></p>
+									</div>
+									<div id="dates">
+										<p><span class="date"><span class="dateIn"><?php echo $got_manth ; ?></span></span><span class="date"><span class="dateIn">月</span></span><span class="date"><span class="dateIn"><?php echo $got_day; ?></span></span><span class="date"><span class="dateIn">日</span></span><span class="date" id="dateAfter"><span class="dateIn">以降</span></span></p>
+									</div>
+									<div id="discount">
+										<p><span class="block">基本料金</span><span class="block mincho off">30%OFF</span></p>
+									</div>
+								<?php endif; ?>
 							</div>
+
 						<?php endwhile; endif; ?>
 					<!-- .campIntro  .mainVisual--></div>
 				<!-- .campIntro  .col--></div>
 			<!-- .campIntro  .container--></div>
+
+			<?php if(campCode($post, "children", "") == "camp1407-00"): ?>
+
+				<div id="appealItems">
+					<div class="container">
+						<div id="timeline" class="sixcol col">
+							<a width="100%" data-theme="light" class="twitter-timeline" href="https://twitter.com/hashtag/%E3%82%A8%E3%82%B3%E3%83%A9%E3%83%B3%E3%83%89" data-widget-id="483428412866830337" data-chrome="noborders transparent" data-related="eco_land">#エコランド Tweets</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</div>
+						<div class="sixcol col last" id="welcome">
+							<div id="btns">
+								<p><span class="block">まだエコランド会員でない方は</span><span class="block">こちらから登録(無料)できます！</span></p>
+								<a href="">エコランド会員とは？</a>
+							</div>
+							<img src="<?php echo get_bloginfo("template_url"); ?>/assets/img/campaign/1407/00_welcome_icon.png" alt="" id="ecolin" />
+						</div>
+					<!-- #appealItems .container--></div>
+				<!-- #appealItems--></div>
+
+			<?php endif; ?>
+
+			<?php
+			if(is_single(4068)):
+			$convSales = convSale();
+			if($convSales): ?>
+				<section class="contents" id="convenience">
+					<div class="container">
+						<h3>割引対象地域と日付</h3>
+						<ol>
+							<?php
+							$i = 1;
+							$count = count($convSales);
+							$col = 12 / $count;
+							foreach($convSales  as $convSale):
+								if($i == ($count)) $last = " last"; ?>
+								<li class="case col <?php echo numToStr($col)."col".$last; ?>">
+									<div class="info">
+										<h4>
+											<span class="block"><?php echo $convSale->area; ?></span>
+											<span class="block"><?php echo $convSale->month."月".$convSale->day."日"; ?></span>
+										</h4>
+										<?php echo $convSale->details; ?>
+									</div>
+								</li>
+								<?php $i++; ?>
+							<?php endforeach; ?>
+						</ol>
+					<!--#convenience .container --></div>
+				<!--#convenience --></section>
+			<?php endif; endif; ?>
 
 			<?php
 			$campInfo01 = get_post_meta($post->ID, "campInfo01", TRUE);
@@ -31,7 +124,15 @@ get_header( ); ?>
 			$campInfo03 = get_post_meta($post->ID, "campInfo03", TRUE);
 			$campInfo04 = get_post_meta($post->ID, "campInfo04", TRUE);
 			$campInfo05 = get_post_meta($post->ID, "campInfo05", TRUE);
-			$campInfo06 = get_post_meta($post->ID, "campInfo06", TRUE);
+			if(!$convSales){
+				$campInfo06 = get_post_meta($post->ID, "campInfo06", TRUE);
+			}else{
+				$campInfo06 .= "<p>";
+				foreach($convSales  as $convSale){
+					$campInfo06 .= '<span class="block">'.$convSale->area."にお住まいの方で、".$convSale->month."月".$convSale->day."日にエコ回収をご依頼していただいた方</span>";
+				}
+				$campInfo06 .= "</p>";
+			}
 			$campInfo07 = get_post_meta($post->ID, "campInfo07", TRUE);
 			$campInfo08 = get_post_meta($post->ID, "campInfo08", TRUE);
 			echo '<section class="contents details"><div class="container"><div class="twelvecol col last">';
@@ -55,18 +156,6 @@ get_header( ); ?>
 		<!-- .campIntro --></div>
 
 		<?php
-		global $wpdb;
-		$query = "SELECT meta_id, post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $post->ID ORDER BY meta_id ASC";
-		$cf = $wpdb->get_results($query, ARRAY_A);
-
-		$campFlowInfo01 = array();
-		$campFlowInfo02 = array();
-
-		foreach( $cf as $row ){
-			if($row['meta_key'] == "campFlowInfo01") array_push($campFlowInfo01, $row['meta_value']);
-			if($row['meta_key'] == "campFlowInfo02") array_push($campFlowInfo02, $row['meta_value']);
-		}
-
 		$length = count($campFlowInfo01);
 		if($length > 1): ?>
 			<section class="contents campFlow" >

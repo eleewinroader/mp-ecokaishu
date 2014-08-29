@@ -9,8 +9,19 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'custom140702';
+	src:url('assets/fonts/custom140702.eot?-14fm3e');
+	src:url('assets/fonts/custom140702.eot?#iefix-14fm3e') format('embedded-opentype'),
+		url('assets/fonts/custom140702.woff?-14fm3e') format('woff'),
+		url('assets/fonts/custom140702.ttf?-14fm3e') format('truetype'),
+		url('assets/fonts/custom140702.svg?-14fm3e#custom140702') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 [class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
+	font-family: "icomoon", "custom140702";
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -3448,4 +3459,25 @@
 }
 .icon-smashing:before {
 	content: "\ea6c";
+}
+.icon-airconditioner:before {
+	content: "\ee01";
+}
+.icon-fan:before {
+	content: "\ee02";
+}
+.icon-firework1:before {
+	content: "\ee03";
+}
+.icon-firework2:before {
+	content: "\ee04";
+}
+.icon-firework3:before {
+	content: "\ee05";
+}
+.icon-firework4:before {
+	content: "\ee06";
+}
+.icon-towerfan:before {
+	content: "\ee07";
 }

@@ -1,12 +1,13 @@
 <?php
-/*
-*
-* Template name: かんたん見積依頼2受付完了
-*
-* @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
-*/
+/**
+ * The main template file.
+ *
+ * Template name: かんたん見積依頼2受付完了
+ *
+ * @package WordPress
+ * @subpackage ecokaishuCMS
+ * @since ecokaishuCMS 0.0
+ */
 
 if($_POST){
 
@@ -132,29 +133,20 @@ wp_reset_query();
 </article>
 </div>
 
-<script type="text/javascript">
-	(function () {
-		var tagjs = document.createElement("script");
-		var s = document.getElementsByTagName("script")[0];
-		tagjs.async = true;
-		tagjs.src = "//s.yjtag.jp/tag.js#site=5qzqEGf";
-		s.parentNode.insertBefore(tagjs, s);
-	}());
-</script>
-<noscript>
-	<iframe src="//b.yjtag.jp/iframe?c=5qzqEGf" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-</noscript>
+<footer class="siteFooter al_c">
+	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+</footer>
 
 <!-- Google Code for &#12456;&#12467;&#22238;&#21454;CV&#12479;&#12464; Conversion Page -->
 <script type="text/javascript">
-/* <![CDATA[*/
+/* <![CDATA[ */
 var google_conversion_id = 974830453;
 var google_conversion_language = "en";
 var google_conversion_format = "3";
 var google_conversion_color = "ffffff";
 var google_conversion_label = "ewxYCOv_2QkQ9fbq0AM";
 var google_remarketing_only = false;
-/* ]]>*/
+/* ]]> */
 </script>
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 </script>
@@ -164,12 +156,8 @@ var google_remarketing_only = false;
 </div>
 </noscript>
 
-
-
-<footer class="siteFooter al_c">
-	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
-</footer>
-
+<script src="//easy-entry.jp/ffconf/ffconf_5000_0140_0232.js" charset="utf-8" type="text/javascript"></script>
+<script src="//easy-entry.jp/track/efo2r.js?t=100" charset="utf-8" type="text/javascript"></script>
 
 </body>
 </html>

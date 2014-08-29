@@ -57,6 +57,10 @@ h5{
 
 &.archive{
 
+	&#area{
+		
+	}
+
 	// .summary
 	//**************************************************************
 
@@ -98,6 +102,88 @@ h5{
 //**********************************************************************
 
 &.post{
+
+	
+
+	// a
+	//**************************************************************
+	a{
+		color: $green;
+		text-decoration: none;
+		&:hover{
+			color: $pink;
+		}
+	}
+
+	// header
+	//**************************************************************
+	
+	header{
+
+		//.cat
+		.cat{
+			&:before{
+				margin-right: 0.3rem;
+				font-family: icomoon;
+				font-size: 90%;
+				speak: none;
+				content: "\e8d8";
+			}
+			a{
+				&:not(:last-of-type){
+					&:after{
+						padding-left: 0.5rem;
+						color: $darkGray;
+						font-family: icomoon;
+						speak: none;
+						content: "\00BB";
+					}
+				}
+			}
+		}
+
+		//.postNav
+		.postNav{
+
+			h2{
+				display: none;
+			}
+
+			li{
+
+				display: inline-block;
+
+				//previous
+				&:nth-of-type(1){
+					&:before{
+						margin-right: 0.3rem;
+						font-family: icomoon;
+						font-size: 90%;
+						speak: none;
+						content: "\e9d7";
+					}
+					&:after{
+						margin: 0 0.5rem;
+						content: "|";
+					}
+				}
+
+				//next
+				&:nth-of-type(2){
+					&:after{
+						margin-left: 0.5rem;
+						font-family: icomoon;
+						font-size: 90%;
+						speak: none;
+						content: "\e9d3";
+					}
+				}
+
+			}
+
+		}
+
+	}
 
 	// .contents
 	//**************************************************************

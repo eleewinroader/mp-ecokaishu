@@ -54,6 +54,8 @@ $chaKey = $_POST["pswd"];
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
 </footer>
 
+<script src="//easy-entry.jp/ffconf/ffconf_5000_0141_0233.js" charset="utf-8" type="text/javascript"></script>
+<script src="//easy-entry.jp/track/efo2.js" charset="utf-8" type="text/javascript"></script>
 
 </body>
 </html>

@@ -55,7 +55,7 @@ get_header( ); ?>
 				<h3>企業概要</h3>
 				<dl class="definitionList">
 					<dt>商号</dt>
-					<dd>株式会社ウインローダー <a href="http://www.winroader.co.jp/">コーポレートサイトへ</a></dd>
+					<dd>株式会社ウインローダー <a href="http://www.winroader.co.jp/" rel="nofollow">コーポレートサイトへ</a></dd>
 					<dt>所在地</dt>
 					<dd>本社:東京都杉並区上荻2-37-7<br />TEL 03-3390-2161/FAX 03-3301-0481</dd>
 					<dt>設　立</dt><dd>昭和25年1月</dd>

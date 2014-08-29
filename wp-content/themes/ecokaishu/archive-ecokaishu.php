@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
+* @since MP-Ecokaishu 0.1
 */
 get_header( ); ?>
 
@@ -33,7 +33,7 @@ get_header( ); ?>
 		<section class="contents" id="achive2012">
 			<div class="container">
 
-				<h3><span class="bg_pink"><span class="block"><?php echo getPage("2012年のエコ回収実績", "title"); ?></span><span class="block">81,741点</span></span></h3>
+				<h3><span class="bg_pink"><?php echo getPage("2012年のエコ回収実績", "title"); ?></h3>
 				
 				<div id="graph">
 					<p id="reuse">Re-use<span class="per">56.37</span><span class="num">46,076</span></p>

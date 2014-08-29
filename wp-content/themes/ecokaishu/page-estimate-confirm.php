@@ -1,12 +1,13 @@
 <?php
-/*
-*
-* Template name: かんたん見積依頼の内容確認
-*
-* @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
-*/
+/**
+ * The main template file.
+ *
+ * Template name: かんたん見積依頼の内容確認
+ *
+ * @package WordPress
+ * @subpackage ecokaishuCMS
+ * @since ecokaishuCMS 0.0
+ */
 
 include(TEMPLATEPATH.'/estimate-post.php');
 
@@ -73,6 +74,8 @@ include (TEMPLATEPATH . '/header-form.php');
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
 </footer>
 
+<script src="//easy-entry.jp/ffconf/ffconf_5000_0137_0229.js" charset="utf-8" type="text/javascript"></script>
+<script src="//easy-entry.jp/track/efo2r.js?t=1" charset="utf-8" type="text/javascript"></script>
 
 </body>
 </html>

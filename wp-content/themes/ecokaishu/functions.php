@@ -5,12 +5,142 @@
 * @since MP-Ecokaishu 0.1.1
 */
 
+date_default_timezone_set( 'Asia/Tokyo' );
+
+//header cleaner
+remove_action( 'wp_head', 'feed_links_extra'); // Display the links to the extra feeds such as category feeds
+remove_action( 'wp_head', 'feed_links'); // Display the links to the general feeds: Post and Comment Feed
+remove_action( 'wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
+remove_action( 'wp_head', 'index_rel_link' ); // index link
+remove_action( 'wp_head', 'parent_post_rel_link', 10); // prev link
+remove_action( 'wp_head', 'start_post_rel_link', 10); // start link
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10); // Display relational links for the posts adjacent to the current post.
+remove_action( 'wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
+
+//カスタム投稿パーマリンク「/taxonomy/」削除
+function my_custom_post_type_permalinks_set($termlink, $term, $taxonomy){
+	return str_replace('/'.$taxonomy.'/', '/', $termlink);
+}
+add_filter('term_link', 'my_custom_post_type_permalinks_set',11,3);
+
+function getPostType($post, $object){
+	$postType = get_post_type_object(get_post_type($post));
+	switch ($object){
+		case "label":
+			$var = $postType->label;
+			break;
+		case "name":
+			$var = $postType->name;
+			break;
+		case "link":
+			$var = get_post_type_archive_link($postType->name);
+			break;
+	}
+	return $var;
+}
+
+
+/* shorcodes */
+//add_shortcode("siteUrl", "siteInfo");
+add_shortcode("telNum", "telNum");
+
+/* col  */
+function numToStr( $target ) {
+
+	// アルファベットの定義
+	$alphabet = array(
+		"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+		"ten", "eleven", "twelve" 
+	);
+
+	if(!is_numeric( $target ) || $target < 0){
+		return FALSE;
+	}
+
+	$one = fmod( $target , 26 );
+	$result = $alphabet[ $one ];
+	$carry = ( $target - $one ) / 26;
+
+	while( $carry != 0 ) {
+		$one = fmod( $carry - 1 , 26 );
+		$result = $alphabet[ $one ] . $result;
+		$carry = ( $carry - 1 - $one ) / 26;
+
+	}
+
+	return $result;
+
+}
+
+/* こちらの都合です。 */
+function convSale(){
+
+	global $wpdb;
+	$post_id = 4068;
+	$query = "SELECT meta_id, post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $post_id ORDER BY meta_id ASC";
+	$cf = $wpdb->get_results($query, ARRAY_A);
+
+	$convSaleInfo = array();
+
+	//var convenience sale 
+	$campConvInfo01 = array();
+	$campConvInfo02 = array();
+	$campConvInfo03 = array();
+
+	foreach( $cf as $row ){
+
+		//for convenience sale
+		if($row['meta_key'] == "campConvInfo01") array_push($campConvInfo01, $row['meta_value']);
+		if($row['meta_key'] == "campConvInfo02") array_push($campConvInfo02, $row['meta_value']);
+		if($row['meta_key'] == "campConvInfo03") array_push($campConvInfo03, $row['meta_value']);
+
+	}
+
+	$length = count($campConvInfo01);
+
+	if($length > 1){
+
+		for($i=0; $i<$length; $i++){
+
+			$args = array();
+
+			$date = new DateTime();
+			$today = $date->format("Y-m-d");
+
+			$campConvDate = $campConvInfo02[$i];
+			$campDate = new DateTime($campConvDate);
+			$campExpiration = $campDate->format("Y-m-d");
+			$campMonth = $campDate->format("m");
+
+			$campMonth = ereg_replace("^0+", "", $campMonth);
+			$campDay = ereg_replace("^0+", "", $campDate->format("d"));
+			$remain = (strtotime($campExpiration) - strtotime($today)) / ( 60 * 60 * 24);
+
+			$area = $campConvInfo01[$i];
+
+			$args["area"] = $area;
+			$args["link"] = get_permalink($post_id);
+			$args["month"] = $campMonth;
+			$args["day"] = $campDay;
+			$args["details"] = $campConvInfo03[$i];
+
+			$convSaleInfo[] =  (object) $args;
+		}
+
+		return $convSaleInfo;
+
+	}
+
+	return false;
+	
+}
 
 /* calendar */
 //本日取得
 function getToday($date = "Y-m-d") { 
-		$today = new DateTime();
-		return $today->format($date);
+	$today = new DateTime();
+	return $today->format($date);
 }
 
 //本日かどうかチェック
@@ -111,9 +241,9 @@ function getPage($string, $type){
 	", OBJECT);
 
 	if($type == "title"){
-		$pageInfo = $page[0]->post_title;
+		$pageInfo = get_post_meta($page[0]->ID, "archiveInfo01", TRUE);
 	}elseif($type == "contents"){
-		$pageInfo = $page[0]->post_content;
+		$pageInfo = get_post_meta($page[0]->ID, "archiveInfo02", TRUE);
 		$pageInfo = apply_filters("the_content", $pageInfo);
 	}
 	return $pageInfo;
@@ -129,78 +259,8 @@ function notices(){
 
 
 //電話番号
-function telNum($siteCode=NULL, $pageCode, $pr_code=NULL){
-	if($siteCode == 'ecokaishu'){
-		if($pageCode == 'campaign' || $pageCode == 'pr'){				
-			// PPCパラメーターが無い場合
-			if(!$pr_code){
-				if(!is_smartphone()){ //PCの場合
-					return "866";
-				}else{ //SPの場合
-					return "132";		
-				}
-			}else{
-			// PPCパラメーターがある場合
-				if(!is_smartphone()){ //PCの場合
-					switch($pr_code){
-						case 'Y_01':
-							return 664;
-							break;
-						case 'Y_03':
-							return 669;
-							break;
-						case 'Y_05':
-							return 292;
-							break;
-						case 'Y_07':
-							return 551;
-							break;
-						case 'Y_09':
-							return 263;
-							break;
-						case 'G_01':
-							return 338;
-							break;
-						default:
-							return 866;
-					}
-				}else{ //SPの場合
-					switch($pr_code){
-						case 'Y_01':
-							return 752;
-							break;
-						case 'Y_03':
-							return 898;
-							break;
-						case 'Y_05':
-							return 157;
-							break;
-						case 'Y_07':
-							return 204;
-							break;
-						case 'Y_09':
-							return 367;
-							break;
-						case 'G_01':
-							return 365;
-							break;
-						default:
-							return 132;
-					}
-				}
-			}
-		}else{
-			return 539;
-		}
-	}elseif($siteCode == 'hokan'){
-		return "539";
-	}elseif($siteCode == 'kaitorieco'){
-		return "539";
-	}elseif($siteCode == 'ecookataduke'){
-		return "539";
-	}else{
-		return "539";
-	}
+function telNum(){
+	return "539";
 }
 
 //siteCode取得
@@ -240,6 +300,9 @@ function pageCode($last=null){
 
 //ページ情報習取得
 function siteInfo($type){
+	/*extract(shortcode_atts(array(
+		"type" => ""
+	), $type));*/
 	if(isset($_SERVER['HTTPS']) and $_SERVER['HTTPS'] == 'on'){
 		$protocol = 'https://';
 	}else{
@@ -553,7 +616,7 @@ function cmsTitle($posttype, $submitdate, $pr_code){
 	);
 
 	//post_type判別
-	if($posttype == 'contact'){
+	if($posttype == 'contactform'){
 		$typeid = 'C';
 	}elseif($posttype == 'works'){
 		$typeid = 'W';

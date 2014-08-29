@@ -629,6 +629,75 @@ a{
 
 }
 
+//**********************************************************************
+// .sidebar
+//**********************************************************************
+
+.sidebar{
+
+	padding-bottom: 3.0rem;
+
+	h3{
+		font-size: $bigger;
+		margin-top: 2.0rem;
+		margin-bottom: 1.0rem;
+	}
+
+	.contents{
+		&:not(:last-of-type){
+			margin-bottom: 3.0rem;
+		}
+	}
+
+	// .catsList
+	//**************************************************************
+
+	.catsList{
+
+		h3{
+			display: none;
+		}
+
+		li{
+			border: 1px solid rgba($black, .05);
+			margin-bottom: 0.5rem;
+			a{
+				display: block;
+				padding: 1.0rem;
+				background: rgba($green, .7);
+				color: $white;
+				text-decoration: none;
+				&:hover{
+					background: rgba($darkBlue, .7) !important;
+				}
+				&:before{
+					margin-right: 0.3rem;
+					font-family: icomoon;
+					font-size: 90%;
+					speak: none;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+				}
+			}
+			&:nth-of-type(2n){
+				a{
+					background: rgba($pink, .7);
+				}
+			}
+			&.ecoauc-fund-report a:before{ content: "\e97a"; }
+			&.media a:before{ content: "\e900"; }
+			&.events a:before{ content: "\e8b9"; }
+			&.ecoreport a:before{ content: "\e828"; }
+			&.notice a:before{ content: "\e8c4"; }
+			&.staff a:before{ content: "\e919"; }
+			&.pressrelease a:before{ content: "\e8ad"; }
+
+		}
+
+	}
+
+}
+
 
 //**********************************************************************
 // .footer

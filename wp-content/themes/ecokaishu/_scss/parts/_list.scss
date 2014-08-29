@@ -99,3 +99,32 @@
 	}
 
 }
+
+//**************************************************************
+// .postsList
+//**************************************************************
+
+.postsList{
+
+	ul{
+		li{
+
+			border-bottom: 1px solid rgba($black, .05);
+			
+			a{
+				display: block;
+				padding: 1.0rem 0;
+				color: $darkGray;
+				text-decoration: none;
+			}
+			.cat{
+				display: block;
+				color: $green;
+				font-size: 90%;
+				
+			}
+
+		}
+	}
+
+}

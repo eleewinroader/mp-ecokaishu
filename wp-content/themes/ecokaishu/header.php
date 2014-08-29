@@ -28,29 +28,40 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 <link href="<?php echo bloginfo("stylesheet_url"); ?>" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script><![endif]-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/script.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyATFqXgLwOisyrnoSCcXnIE2iG_-C9bmHI&sensor=true"></script>
 <?php wp_head(); ?>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-42854141-2', 'auto');
+	ga('require', 'displayfeatures');
+	ga('send', 'pageview');
 </script>
+<?php include_once($_SERVER["DOCUMENT_ROOT"]. 'inc/tags/ga_common.php'); ?>
 </head>
-<body>
+<body onload="initialize();">
 
 	<div class="globalnavi" id="ecoland">
 		<ul class="twelvecol col last">
-			<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>"><span>エコランド</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcookataduke"); ?>"><span>エコランドのお片づけサービス</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcohokan"); ?>"><span>お預かり</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>" rel="nofollow"><span>エコランド</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlEcookataduke"); ?>" rel="nofollow"><span>エコランドのお片づけサービス</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlEcohokan"); ?>" rel="nofollow"><span>お預かり</span></a></li>
 			<li id="currSite"><a href="<?php echo siteInfo("siteUrlEcokaishu"); ?>"><span>エコ回収</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcoauc"); ?>"><span>エコオク</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlRshop"); ?>"><span>エコランドのリサイクルショップ</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlEcoauc"); ?>" rel="nofollow"><span>エコオク</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlRshop"); ?>" rel="nofollow"><span>エコランドのリサイクルショップ</span></a></li>
 		</ul>
 	<!-- globalnavi--></div>
 
 	<div id="headerFixed">
 		<header class="header">
 			<div class="container">
-				<div class="sixcol col" id="siteName">
+				<div class="fourcol col" id="siteName">
 					<h1 id="logo"><a href="<?php echo siteInfo("rootUrl"); ?>">エコ回収</a></h1>
 				</div>
-				<div class="sixcol col last" id="siteMenu">
+				<div class="eightcol col last" id="siteMenu">
 					<div class="showBigger" id="contMenu">
 						<ul>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/ecokaishu/">エコ回収とは</a></li>
@@ -58,8 +69,8 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/price/">料金案内</a></li>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/faq/">よくある質問</a></li>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/about/">運営会社</a></li>
-							<li><a href="https://twitter.com/eco_land"><span class="icon-twitter3"></span><span class="txt">twitter</span></a></li>
-							<li><a href="https://www.facebook.com/ecoland.jp"><span class="icon-facebook3"></span><span class="txt">facebook</span></a></li>
+							<li><a href="https://twitter.com/eco_land" rel="nofollow"><span class="icon-twitter3"></span><span class="txt">twitter</span></a></li>
+							<li><a href="https://www.facebook.com/ecoland.jp" rel="nofollow"><span class="icon-facebook3"></span><span class="txt">facebook</span></a></li>
 						</ul>
 					</div>
 					<div class="showSmaller" data-panel="panelMenu" data-content="contMenu" id="menuBtn"><span class="icon-menu2"></span></div>
@@ -77,6 +88,9 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 		if(get_post_type() == "notices"){
 			$pageType = "post";
 			$featureType = "notices";
+		}elseif(get_post_type() == "area" || get_post_type() == "items"){
+			$pageType = "post";
+			$parentClass = " achivements";
 		}elseif(get_post_type() == "post"){
 			$cat = get_the_category(); 
 			$pageType = "post";
@@ -94,6 +108,9 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 	}elseif(is_post_type_archive()){
 		$pageType = "archive";
 		$featureType = get_post_type();
+		if(get_post_type() == "area" || get_post_type() == "items"){
+			$parentClass = " achivements";
+		}
 	}elseif(is_archive()){
 		$pageType = "archive";
 	}elseif(is_home()){

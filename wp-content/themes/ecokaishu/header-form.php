@@ -1,10 +1,7 @@
 <?php
 /*
-* @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
+* ヘッダー
 */
-
 //日本時間設定
 date_default_timezone_set("Asia/Tokyo");
 
@@ -74,6 +71,18 @@ echo '<!--[if lte IE 8]><script type="text/javascript" src="'.siteInfo('rootUrl'
 	});
 
 </script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-42854141-2', 'auto');
+	ga('require', 'displayfeatures');
+	ga('send', 'pageview');
+</script>
+<?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/ga_common.php'); ?>
 </head>
 
 <body class="fullwidth" id="<?php echo pageCode(); ?>">

@@ -24,6 +24,8 @@
 $prefixList: -webkit-, -moz-, null;
 
 //breakpoints
+$minWidthSmall: 568px;
+$maxWidthSmall: 569px;
 $minWidth: 769px;
 $maxWidth: 768px;
 $minWidthBig: 1025px;
@@ -71,3 +73,4 @@ $facebook: #3b5998;
 @import "pages/faq.scss";
 
 @import "pages/campaign.scss";
+@import "pages/achivements.scss";

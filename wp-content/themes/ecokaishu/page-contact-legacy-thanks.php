@@ -120,36 +120,6 @@ wp_reset_query(); wp_reset_postdata();
 </article>
 </div>
 
-<script language="Javascript" type="text/javascript">
-<!--
-/* <![CDATA[*/
-var account_id="1OsEOoQOLDXC8XxH8jBf"; 
-var transaction_id = "";
-var amount = "";
-if (location.protocol == "https:") { var protocol = "https:"} else { var protocol = "http:" }
-document.write("<img width=1 height=1 border=0 src='" + protocol + "//b90.yahoo.co.jp/c?account_id=" + account_id + "&transaction_id=" + transaction_id + "&amount=" + amount + "'>");
-/* ]]>*/
-//-->
-</script>
-
-<!-- Google Code for &#12456;&#12467;&#22238;&#21454;CV&#12479;&#12464; Conversion Page -->
-<script type="text/javascript">
-/* <![CDATA[*/
-var google_conversion_id = 974830453;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "ewxYCOv_2QkQ9fbq0AM";
-var google_remarketing_only = false;
-/* ]]>*/
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/974830453/?label=ewxYCOv_2QkQ9fbq0AM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
 
 
 <?php include (TEMPLATEPATH . '/footer-legacy.php'); ?>

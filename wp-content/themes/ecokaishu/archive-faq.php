@@ -9,6 +9,7 @@ get_header( ); ?>
 
 	<h2><?php post_type_archive_title(); ?></h2>
 
+		
 	<?php
 	$args = array(
 		"orderby" => "ID",
@@ -17,18 +18,14 @@ get_header( ); ?>
 	$terms = get_terms("qstcat", $args);
 	?>
 
-<div id="intro">
 	<div class="container">
 		<div class="twelvecol col last">
+
+			<div class="intro">
 				<ul>
 					<?php foreach($terms as $term) echo '<li><a href="#faq'.$term->term_id.'"><span class="txt"> '.$term->name.'</span></a></li>'; ?>
 				</ul>
-				</div>
-			</div>
-</div>
-
-	<div class="container">
-		<div class="twelvecol col last">
+			<!-- #faq .intro--></div>
 
 			<?php 	foreach($terms as $term): ?>
 				<section class="contents" id="faq<?php echo $term->term_id; ?>">
@@ -47,11 +44,10 @@ get_header( ); ?>
 							echo '<dd>'.$post->post_content."</dd>";
 						}?>
 					</dl>
-				</section>
+				<!--#faq<?php echo $term->term_id; ?>--></section>
 			<?php endforeach; ?>
 
-		</div>
-
-	</div>
+		<!--#faq .twelvecol --></div>
+	<!--#faq .container --></div>
 
 <?php get_footer(); ?>

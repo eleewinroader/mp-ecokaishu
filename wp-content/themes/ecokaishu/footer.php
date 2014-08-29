@@ -6,9 +6,7 @@
 */
 ?>
 
-		<!-- article#<?php echo pageCode(TRUE); ?>--></article>
-
-	<!-- #main --></div>
+	<!-- article#<?php echo pageCode(TRUE); ?>--></article>
 
 	<div class="footer">
 
@@ -18,21 +16,22 @@
 			$pr_code = substr($childrenClass, 7, 11);
 			$pr_code = str_replace("-", "_", $pr_code);
 			$param = "?pr_code=".$pr_code; 
+			if($pr_code == "4_00") $ycoll = "2-1";
 		}?>
 
 		<aside id="contactBnrFixed">
 			<div class="container">
-				<?php if(is_smartphone()) $addClass = "showBnr "; ?>
-				<div class="<?php echo $addClass; ?>twelvecol col last" data-panel="panelBnr" id="title">
+				
+				<div class="twelvecol col last" data-panel="panelBnr" id="title">
 					<h3>エコランドに今すぐ相談する</h3>
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/contactBnrFixed_icon.png" id="ecolandGirl" data-panel="panelBnr" />
 				</div>
-				<div id="panelBnr" class="panelCont">
+				<div id="panelBnr" class="<!--panelCont-->">
 					<div class="threecol col" id="tel">
-						<a href="tel:0120530<?php echo telNum("", pageCode(), ""); ?>" class="telBnr">
+						<a href="tel:0120530<?php echo telNum(); ?>" class="telBnr" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
 							<p class="msg" id="tap">お急ぎの方はお電話で！</p>
 							<p class="btn">
-								<span class="icon-phone"></span>0120-530-<?php echo telNum("", pageCode(), ""); ?>
+								<span class="icon-phone"></span>0120-530-<?php echo telNum(); ?>
 							</p>
 							
 						</a>
@@ -44,7 +43,7 @@
 						</a>
 					</div>
 					<div class="threecol col" id="estimate">
-						<a href="<?php echo siteInfo("rootUrl"); ?>/estimate/<?php echo $param; ?>">
+						<a href="<?php echo siteInfo("rootUrl"); ?>/estimate<?php echo $ycoll; ?>/<?php echo $param; ?>">
 							<p class="msg">見積もってほしいという方は！</p>
 							<p class="btn"><span class="icon-shipping"></span>かんたん見積依頼</p>
 						</a>
@@ -72,13 +71,16 @@
 					);
 					$posts = query_posts($args);
 					foreach($posts as $post){
-						if($i == count($posts)) $last = " last";
+						if($i == 4) $last = " last";
 						$folder = substr($post->post_name, 0, 4);
 						$code = substr($post->post_name, 5);
 						echo '<li class="threecol col'.$last.'"><a href="'.get_permalink($post->ID).'"><img src="'.get_bloginfo("template_url").'/assets/img/campaign/'.$folder.'/'.$code.'_bnr_640x260.gif" alt="'.$post->post_title.'へ" /></a></li>';
 						$i++;
-					}?>
+					}
+					wp_reset_query();
+					?>
 				</ul>
+				<div class="clear"></div>
 			</div>
 		<!--#campaign--></aside>
 
@@ -101,8 +103,8 @@
 				<p>Copyrights&copy;. <?php echo date("Y"); ?> WINROADER ALL RIGHT RESERVED.</p>
 			</div>
 			<div class="threecol col last" id="logos">
-				<a href="http://www.g-mark.org/award/describe/35474" id="gd"><span class="icon-gooddesign icon"></span></a>
-				<a href="http://privacymark.jp/" id="pmark"><span class="icon-pmark icon"></span></a>
+				<a href="http://www.g-mark.org/award/describe/35474" id="gd" rel="nofollow"><span class="icon-gooddesign icon"></span></a>
+				<a href="http://privacymark.jp/" id="pmark" rel="nofollow"><span class="icon-pmark icon"></span></a>
 			</div>
 		</footer>
 
@@ -126,7 +128,6 @@ $(document).ready(function(){
 	var subMenuHeight = $(".subMenu").outerHeight();
 	var start = $(header).offset().top;
 
-
 	$.event.add(window, "scroll", function(){
 
 		//positions
@@ -147,8 +148,10 @@ $(document).ready(function(){
 			});
 		}
 
+		<?php if(is_home() == FALSE): ?>
 		//footer
-		if ( docHeight - scrollPosition <= footerHeight ){
+		/*if ( docHeight - scrollPosition <= footerHeight ){
+
 			$(footer).css({
 				"position": "static",
 				"bottom": "inherit"
@@ -156,7 +159,9 @@ $(document).ready(function(){
 			<?php if(is_smartphone()): ?>
 				$("#panelBnr").slideDown().css("display", "block");
 			<?php endif; ?>
+
 		}else{
+
 			$(footer).css({
 				"position": "fixed",
 				"bottom" : "0px"
@@ -164,7 +169,8 @@ $(document).ready(function(){
 			<?php if(is_smartphone()): ?>
 				$("#panelBnr").slideUp().css("display", "none");
 			<?php endif; ?>
-		}
+		}*/
+		<?php endif; ?>
 
 		//subMenu
 		if(p>start){
@@ -184,7 +190,7 @@ $(document).ready(function(){
 	});
 
 	//showpanel
-	$(".showSmaller, .showBnr, .showAnswer").each(function(){
+	$(".showSmaller, .showBnr, .showMsg").each(function(){
 		$(this).click(function(){
 			var panelId = $(this).attr("data-panel");
 			var panel = $("#"+panelId);
@@ -211,18 +217,17 @@ $(document).ready(function(){
 	});
 
 	//masonry
-	var $container = $('.liquidLayout');
-	$container.masonry({
-		itemSelector: ".col",
-		columnWidth: ".twocol"
-
+	var $container = $(".liquidLayout").masonry();
+	$container.imagesLoaded( function() {
+		$container.masonry({
+			"columnWidth": 75,
+			"gutter": 20,
+			"itemSelector": ".item"
+		});
 	});
 
 	//scrolling
-
-
 	$('a[href*=#]:not([href=#])').click(function() {
-
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -233,15 +238,14 @@ $(document).ready(function(){
 					return false;
 			}
 		}
-		
 	});
-
-
-
 
 });
 
 </script>
+
+<?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/rm_google.php'); ?>
+<?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/rm_yahoo.php'); ?>
 
 <?php wp_footer(); ?>
 </body>

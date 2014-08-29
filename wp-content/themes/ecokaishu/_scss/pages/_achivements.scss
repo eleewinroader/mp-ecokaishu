@@ -1,0 +1,207 @@
+
+
+.achivements{
+
+	margin-bottom: 5.0rem;
+
+
+	&.post{
+		
+		h2{
+			margin-bottom: 1.0rem;
+			text-align: left;
+			&:before{
+				background-color: transparent;
+			}
+			.title{
+				font-size: $big;
+				line-height: 1.5em;
+			}
+		}
+
+		h3{
+			font-size: $bigger;
+		}
+
+		.contents{
+			padding: 5.0rem;
+		}
+
+	}
+
+//**********************************************************************
+// h tag
+//**********************************************************************
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		h2{
+			.staff{
+				&:before{
+					content: " : ";
+				}
+				.ruby{
+					display: none;
+				}
+			}
+		}
+		
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		h2{
+			margin-bottom: 0;
+			.staff{
+				display: block;
+				margin-top: 2.0rem;
+				.ruby{
+					display: block;
+					font-size: $normal;
+				}
+			}
+		}
+
+	}
+
+
+	
+//**********************************************************************
+// .staffIntro
+//**********************************************************************
+
+.staffIntro{
+
+	margin-top: 2.0rem;
+	margin-bottom: 2.0rem;
+
+	img{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		.slider{
+			&:nth-of-type(1){
+				position: relative;
+				.txt{
+
+					position: absolute;
+					top: 30%;
+					z-index: 2;
+				}
+			}
+		}
+
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		.txt{
+			display: none;
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// #staffMsg
+//**********************************************************************
+
+#staffMsg{
+
+	position: relative;
+	line-height: 1.5em;
+	margin-bottom: 2.0rem;
+	padding: 5.0rem 0;
+	font-size: $bigger;
+	text-align: center;
+
+	&:after,
+	&:before{
+		position: absolute;
+		padding-right: 0.3rem;
+		font-family: icomoon;
+		font-size: $biggest * 1.2;
+		color: rgba($green, .5);
+		content: "\e91f";
+		speak: none;
+	}
+
+	&:before{
+		top: 1.0rem;
+		left: 0;
+	}
+	&:after{	
+		position: absolute;
+		bottom: 1.0rem;
+		right: 0;
+		@include rotate(180deg);
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		font-size: $biggest;
+		padding: 5.0rem 2.0rem;
+
+	}
+
+}
+
+//**********************************************************************
+// #staffInterview
+//**********************************************************************
+
+#staffInterview{
+
+	.movieContainer{
+		margin-bottom: 5.0rem;
+	}
+
+
+}
+
+
+//**********************************************************************
+// #staffFavourites
+//**********************************************************************
+
+#staffFavourites{
+	.item{
+		border: none;
+		line-height: 1.5em;
+
+		img{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		&.txt{
+			padding: 1.0rem 0;
+		}
+
+		//PC
+		@media all and (min-width: $minWidth){
+			width: 214px;
+		}
+
+		//PC
+		@media all and (max-width: $maxWidth){
+			width: 100%;
+		}
+
+	}
+
+}
+
+
+}
+
+

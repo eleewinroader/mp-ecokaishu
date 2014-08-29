@@ -52,6 +52,8 @@ include (TEMPLATEPATH . '/header-form.php');
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
 </footer>
 
+<script src="//easy-entry.jp/ffconf/ffconf_5000_0139_0231.js" charset="utf-8" type="text/javascript"></script>
+<script src="//easy-entry.jp/track/efo2r.js?t=1" charset="utf-8" type="text/javascript"></script>
 
 </body>
 </html>
