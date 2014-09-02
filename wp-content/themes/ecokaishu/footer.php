@@ -22,11 +22,11 @@
 		<aside id="contactBnrFixed">
 			<div class="container">
 				
-				<div class="twelvecol col last" data-panel="panelBnr" id="title">
+				<div class="twelvecol col last showBnr" data-panel="panelBnr" id="title">
 					<h3>エコランドに今すぐ相談する</h3>
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/contactBnrFixed_icon.png" id="ecolandGirl" data-panel="panelBnr" />
 				</div>
-				<div id="panelBnr" class="<!--panelCont-->">
+				<div id="panelBnr" class="panelCont">
 					<div class="threecol col" id="tel">
 						<a href="tel:0120530<?php echo telNum(); ?>" class="telBnr" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
 							<p class="msg" id="tap">お急ぎの方はお電話で！</p>
@@ -54,8 +54,7 @@
 							<span class="blcok">祝･日 9時-20時</span>
 						</p>
 					</div>
-				</div>
-				<div id="gotop"><a href="#ecoland"><span class="icon-arrow-up3"></span></a></div>
+				</div>	
 			<!--#contactBnrFixed .container--></div>
 		<!--#contactBnrFixed--></aside>
 
@@ -110,6 +109,8 @@
 
 	</div>
 
+	<div id="gotop"><a href="#ecoland"><span class="icon-arrow-up3"></span><span class="small">TOP</span></a></div>
+
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -150,7 +151,7 @@ $(document).ready(function(){
 
 		<?php if(is_home() == FALSE): ?>
 		//footer
-		/*if ( docHeight - scrollPosition <= footerHeight ){
+		if ( docHeight - scrollPosition <= footerHeight ){
 
 			$(footer).css({
 				"position": "static",
@@ -169,7 +170,7 @@ $(document).ready(function(){
 			<?php if(is_smartphone()): ?>
 				$("#panelBnr").slideUp().css("display", "none");
 			<?php endif; ?>
-		}*/
+		}
 		<?php endif; ?>
 
 		//subMenu

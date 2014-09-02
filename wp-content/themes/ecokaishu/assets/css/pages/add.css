@@ -1,0 +1,222 @@
+/* line 30, ../../../_scss/pages/add.scss */
+#problem {
+  background-color: white; }
+  /* line 36, ../../../_scss/pages/add.scss */
+  #problem .intro {
+    min-height: 700px;
+    background: url("../img/add/intro_bg.png") no-repeat;
+    background-position: 0 -190px;
+    position: relative; }
+    /* line 43, ../../../_scss/pages/add.scss */
+    #problem .intro h1 {
+      display: inline-block;
+      margin-left: 50px;
+      text-align: center; }
+      /* line 48, ../../../_scss/pages/add.scss */
+      #problem .intro h1 span:first-child {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 100%;
+        font-weight: bold; }
+      /* line 54, ../../../_scss/pages/add.scss */
+      #problem .intro h1 span:nth-of-type(2) {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 300%;
+        font-weight: bold; }
+    /* line 62, ../../../_scss/pages/add.scss */
+    #problem .intro ul li {
+      display: inline-block;
+      position: absolute; }
+      /* line 65, ../../../_scss/pages/add.scss */
+      #problem .intro ul li a {
+        display: table-cell;
+        width: 155px;
+        height: 155px;
+        text-align: center;
+        vertical-align: middle;
+        background-color: rgba(255, 255, 255, 0.6);
+        border: 1px solid #E7318C;
+        border-radius: 500px;
+        font-size: 90%;
+        text-decoration: none;
+        color: #333333;
+        letter-spacing: -0.05em; }
+        /* line 81, ../../../_scss/pages/add.scss */
+        #problem .intro ul li a:hover {
+          -webkit-transition: 0.3s ease-in-out;
+          -moz-transform: scale(1.02);
+          -webkit-transform: scale(1.02);
+          -o-transform: scale(1.02);
+          -ms-transform: scale(1.02);
+          background-color: rgba(255, 0, 0, 0.1); }
+      /* line 89, ../../../_scss/pages/add.scss */
+      #problem .intro ul li:first-child {
+        top: 320px;
+        left: 140px; }
+      /* line 93, ../../../_scss/pages/add.scss */
+      #problem .intro ul li:nth-of-type(2) {
+        top: 130px;
+        left: 70px; }
+      /* line 97, ../../../_scss/pages/add.scss */
+      #problem .intro ul li:nth-of-type(3) {
+        top: 0px;
+        left: 420px; }
+      /* line 101, ../../../_scss/pages/add.scss */
+      #problem .intro ul li:nth-of-type(4) {
+        top: 60px;
+        right: 300px; }
+      /* line 105, ../../../_scss/pages/add.scss */
+      #problem .intro ul li:nth-of-type(5) {
+        top: 130px;
+        right: 70px; }
+      /* line 109, ../../../_scss/pages/add.scss */
+      #problem .intro ul li:nth-of-type(6) {
+        top: 290px;
+        right: 250px; }
+  /* line 118, ../../../_scss/pages/add.scss */
+  #problem section h3 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 250%; }
+  /* line 130, ../../../_scss/pages/add.scss */
+  #problem #strongPointList {
+    height: 380px;
+    padding: 0;
+    background-color: #b2e2e3 !important;
+    overflow: hidden; }
+    /* line 137, ../../../_scss/pages/add.scss */
+    #problem #strongPointList .container {
+      position: relative; }
+      /* line 140, ../../../_scss/pages/add.scss */
+      #problem #strongPointList .container div:first-child {
+        display: inline-block;
+        float: left;
+        margin-top: 25px;
+        margin-left: 130px; }
+      /* line 147, ../../../_scss/pages/add.scss */
+      #problem #strongPointList .container div:nth-of-type(2) {
+        display: inline-block;
+        position: absolute;
+        top: 25px;
+        left: 330px; }
+        /* line 152, ../../../_scss/pages/add.scss */
+        #problem #strongPointList .container div:nth-of-type(2) p {
+          display: table-cell;
+          width: 145px;
+          height: 145px;
+          text-align: center;
+          vertical-align: middle;
+          background-color: #009ea1;
+          border-radius: 500px;
+          color: white; }
+      /* line 164, ../../../_scss/pages/add.scss */
+      #problem #strongPointList .container div:nth-of-type(3) {
+        float: left;
+        margin-top: 60px;
+        margin-left: 150px; }
+        /* line 168, ../../../_scss/pages/add.scss */
+        #problem #strongPointList .container div:nth-of-type(3) ul {
+          display: block;
+          line-height: 2;
+          font-size: 120%; }
+          /* line 173, ../../../_scss/pages/add.scss */
+          #problem #strongPointList .container div:nth-of-type(3) ul li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid white;
+            text-align: left;
+            word-wrap: break-word; }
+            /* line 181, ../../../_scss/pages/add.scss */
+            #problem #strongPointList .container div:nth-of-type(3) ul li:before {
+              margin: 0 0.3rem;
+              font-family: icomoon;
+              font-size: 90%;
+              color: white;
+              content: "\e725"; }
+            /* line 189, ../../../_scss/pages/add.scss */
+            #problem #strongPointList .container div:nth-of-type(3) ul li a {
+              text-decoration: none;
+              font-weight: normal;
+              color: #333; }
+              /* line 194, ../../../_scss/pages/add.scss */
+              #problem #strongPointList .container div:nth-of-type(3) ul li a:hover {
+                color: #E7318C; }
+  /* line 210, ../../../_scss/pages/add.scss */
+  #problem #strongPoint {
+    background-color: #f5f5f5 !important; }
+    /* line 213, ../../../_scss/pages/add.scss */
+    #problem #strongPoint .strongPointDetail {
+      display: inline-block;
+      margin: 0 125px 60px; }
+      /* line 217, ../../../_scss/pages/add.scss */
+      #problem #strongPoint .strongPointDetail div {
+        display: inline-block; }
+        /* line 221, ../../../_scss/pages/add.scss */
+        #problem #strongPoint .strongPointDetail div:first-child p {
+          width: 240px;
+          height: 240px;
+          background-color: #f5f5f5;
+          border-radius: 500px;
+          overflow: hidden; }
+        /* line 231, ../../../_scss/pages/add.scss */
+        #problem #strongPoint .strongPointDetail div:nth-of-type(2) {
+          width: 600px; }
+          /* line 233, ../../../_scss/pages/add.scss */
+          #problem #strongPoint .strongPointDetail div:nth-of-type(2) h4 {
+            word-wrap: break-word;
+            font-weight: bold; }
+          /* line 237, ../../../_scss/pages/add.scss */
+          #problem #strongPoint .strongPointDetail div:nth-of-type(2) p {
+            word-wrap: break-word; }
+    /* line 246, ../../../_scss/pages/add.scss */
+    #problem #strongPoint .floatLeft div:first-child {
+      float: left;
+      margin-right: 20px; }
+    /* line 255, ../../../_scss/pages/add.scss */
+    #problem #strongPoint .floatRight div:first-child {
+      float: right;
+      margin-left: 20px; }
+  /* line 268, ../../../_scss/pages/add.scss */
+  #problem #recommend #exsample {
+    display: inline-block;
+    margin-bottom: 50px; }
+    /* line 272, ../../../_scss/pages/add.scss */
+    #problem #recommend #exsample div {
+      display: inline-block;
+      float: left;
+      width: 279px;
+      margin-right: 8px;
+      text-align: center; }
+      /* line 281, ../../../_scss/pages/add.scss */
+      #problem #recommend #exsample div:last-child {
+        margin-right: 0; }
+      /* line 285, ../../../_scss/pages/add.scss */
+      #problem #recommend #exsample div p {
+        display: inline-block;
+        width: 255px;
+        height: 255px;
+        background-color: #f5f5f5;
+        border-radius: 500px;
+        overflow: hidden; }
+    /* line 295, ../../../_scss/pages/add.scss */
+    #problem #recommend #exsample h3 {
+      font-size: 150%; }
+    /* line 298, ../../../_scss/pages/add.scss */
+    #problem #recommend #exsample ul {
+      display: inline-block;
+      width: 250px; }
+      /* line 301, ../../../_scss/pages/add.scss */
+      #problem #recommend #exsample ul li {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #dcdee0;
+        padding-left: 10%;
+        text-indent: -10%;
+        text-align: left;
+        word-wrap: break-word; }
+        /* line 310, ../../../_scss/pages/add.scss */
+        #problem #recommend #exsample ul li:before {
+          margin: 0 0.3rem;
+          font-family: icomoon;
+          font-size: 90%;
+          color: #dcdee0;
+          content: "\e725"; }

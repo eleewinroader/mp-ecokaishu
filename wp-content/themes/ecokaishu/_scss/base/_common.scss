@@ -372,18 +372,26 @@ a{
 
 			h1 a{
 				display: block;
+				position: relative;
+				padding-left: 60px;
 				color: $green;
-				font:{
-					size: $bigger;
-					weight: bold;
-				}
+				font-size: $bigger;
+				font-weight: bold;
 				text-decoration: none;
+				.icon-ecolandlogo{
+					position: absolute;
+					top: 50%;
+					left: 0;
+					margin-top: -12px;
+					font-size: 52px;
+					line-height: 21px;
+				}
 			}
 
 		}
 
 		//Bigger screen
-		@media all and (min-width: $minWidthBig){
+		@media all and (min-width: $minWidth){
 
 			#siteName{
 				line-height: $height;
@@ -399,7 +407,7 @@ a{
 		}
 
 		//Smaller screen
-		@media all and (max-width: $maxWidthBig){
+		@media all and (max-width: $maxWidth){
 
 			.showBigger{
 				display: none;
@@ -471,7 +479,7 @@ a{
 #contactBnrFixed{
 
 	position: relative;
-	z-index: 10000;
+	z-index: 9998;
 	width: 100%;
 	border-top: 1px solid rgba($black, .1);
 	background: $gray;
@@ -543,24 +551,6 @@ a{
 		right: 0;
 	}
 
-	//#top
-	#gotop{
-		position: absolute;
-		z-index: 20;
-		top: 0;
-		right: 0;
-		margin-top: -37px;
-		text-align: center;
-		a{
-			display: block;
-			padding: 0.5rem;
-			color: $darkGray;
-			font-size: $bigger;
-			text-decoration: none;
-		}
-
-	}
-
 	//PC
 	@media all and (min-width: $minWidth){
 
@@ -602,6 +592,14 @@ a{
 		#title{
 			position: relative;
 			z-index: 2;
+			h3{
+				padding: 0.3rem 0.5rem;
+				&:hover{
+					background: $pink;
+					color: $white;
+					@include border-radius(3px);
+				}
+			}
 			#ecolandGirl{
 				width: 100px;
 				margin-bottom: -3.5rem;
@@ -778,4 +776,28 @@ a{
 
 }
 
+//**********************************************************************
+// #gotop
+//**********************************************************************
 
+#gotop{
+	position: fixed;
+	z-index: 9999;
+	bottom: 20px;
+	right: 0;
+	text-align: center;
+	a{
+		display: block;
+		padding: 0.5rem;
+		background: rgba($darkGray, .8);
+		color: $white;
+		font-size: $bigger;
+		text-decoration: none;
+		.small{
+			display: block;
+			font-size: $small !important;
+			line-height: 1.2em;
+		}
+	}
+
+}

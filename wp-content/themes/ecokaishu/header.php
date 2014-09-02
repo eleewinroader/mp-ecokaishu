@@ -58,12 +58,13 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 	<div id="headerFixed">
 		<header class="header">
 			<div class="container">
-				<div class="fourcol col" id="siteName">
-					<h1 id="logo"><a href="<?php echo siteInfo("rootUrl"); ?>">エコ回収</a></h1>
+				<div class="threecol col" id="siteName">
+					<h1 id="logo"><a href="<?php echo siteInfo("rootUrl"); ?>"><span class="icon-ecolandlogo"></span>エコ回収</a></h1>
 				</div>
-				<div class="eightcol col last" id="siteMenu">
+				<div class="ninecol col last" id="siteMenu">
 					<div class="showBigger" id="contMenu">
 						<ul>
+							<li><a href="<?php echo siteInfo("rootUrl"); ?>/">HOME</a></li>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/ecokaishu/">エコ回収とは</a></li>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/flow/">ご利用の流れ</a></li>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/price/">料金案内</a></li>

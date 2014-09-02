@@ -353,9 +353,7 @@
 
 #camp1404-00{
 
-	background:{
-		color: $white;
-	}
+	background: $white;
 	padding-top: 0;
 
 
@@ -404,6 +402,19 @@
 			padding: 0.2rem 0.3rem;
 		}
 
+		//dd
+		table{
+			dt, dd{
+				display: block !important;
+				float: inherit !important;
+			}
+			dt{
+				&:after{
+					content: "" !important;
+				}
+			}
+		}
+
 	}
 		
 	//PC
@@ -419,6 +430,15 @@
 		#sliderCampaign &{
 			background:{
 				size: 150%;
+			}
+		}
+
+		//.detalis
+		.details{
+			table{
+				th{
+					width: 10%;
+				}
 			}
 		}
 
