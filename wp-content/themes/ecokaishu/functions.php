@@ -2,8 +2,23 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
+* @since MP-Ecokaishu 1.0
 */
+
+function getMetaArr($post, $meta){
+
+	global $wpdb;
+	$query = "SELECT meta_id, post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $post->ID ORDER BY meta_id ASC";
+	$cf = $wpdb->get_results($query, ARRAY_A);
+	
+	foreach( $cf as $row ){
+		if($row['meta_key'] == $meta) $vars[] = $row['meta_value'];
+	}
+	$vars = array_filter($vars, "strlen");
+	$vars = array_values($vars);
+	return $vars;
+	
+}
 
 date_default_timezone_set( 'Asia/Tokyo' );
 

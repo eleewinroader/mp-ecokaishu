@@ -5,30 +5,13 @@
 //
 // _decoration.scss INDEX
 //
-// #home h2
-// #home #movie
-// #home #index
-// #home #news
-//
 //**********************************************************************
 //**********************************************************************
 
 
-sup{
+sup, sub{
 	position: relative;
-	vertical-align: baseline;
-	color: $green;
-	font:{
-		size: $smaller;
-	}
-}
-sub {
-	position: relative;
-	vertical-align: baseline;
-	color: $green;
-	font:{
-		size: $smaller;
-	}
+	font-size: $smaller;
 }
 
 .al_r{ text-align: right !important; }
@@ -57,11 +40,11 @@ sub {
 .goodDesign{ color: #CD0300 !important; }
 .privacyMark{ color: #04278b !important; }
 
-.bg_green{ background: $green !important; }
-.bg_pink{ background: $pink !important; }
-.bg_white{ background: $white !important; }
-.bg_orange{ background: $orange !important; }
-.bg_yellow{ background: $yellow !important; }
+.bg_green{ padding: 0.1rem; background: rgba($green, .2) !important; }
+.bg_pink{ padding: 0.1rem; background: rgba($pink, .2) !important; }
+.bg_white{ padding: 0.1rem; background: rgba($white, .2) !important; }
+.bg_orange{ padding: 0.1rem; background: rgba($orange, .2) !important; }
+.bg_yellow{ padding: 0.1rem; background: rgba($yellow, .2) !important; }
 
 .underline{ text-decoration: underline; }
 
@@ -69,10 +52,10 @@ sub {
 .hidden{ display: none !important; }
 
 .footnote{
-	margin: 0.5rem 0;
-	color: #666464;	
-	font-size: 80%;
-	line-height: 1.2em;
+	margin: 0.5rem 0 !important;
+	color: rgba($black, .7) !important;
+	font-size: 80% !important;
+	line-height: 1.2em !important;
 }
 
 blockquote{

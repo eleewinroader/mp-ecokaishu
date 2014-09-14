@@ -2,35 +2,37 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
+* @since MP-Ecokaishu 1.0
 */
 get_header( ); ?>
 
 
 	<h2><?php post_type_archive_title(); ?></h2>
-
-		
 	<?php
-	$args = array(
-		"orderby" => "ID",
-		"order" => "ASC"
-	);
-	$terms = get_terms("qstcat", $args);
-	?>
+	$terms = array(
+		"エコ回収品について",
+		"エコ回収できるモノ/できないモノ",
+		"エコ回収作業について",
+		"お申し込みについて",
+		"料金について"
+	);?>
 
 	<div class="container">
 		<div class="twelvecol col last">
 
 			<div class="intro">
 				<ul>
-					<?php foreach($terms as $term) echo '<li><a href="#faq'.$term->term_id.'"><span class="txt"> '.$term->name.'</span></a></li>'; ?>
+					<?php
+					for($i=0; $i<count($terms); $i++){
+						echo '<li><a href="#faq'.$i.'"><span class="txt"> '.$terms[$i].'</span></a></li>';
+					}?>
 				</ul>
 			<!-- #faq .intro--></div>
 
-			<?php 	foreach($terms as $term): ?>
-				<section class="contents" id="faq<?php echo $term->term_id; ?>">
-					<h3><?php echo $term->name; ?></h3>
-					<dl>
+			<?php 	for($i=0; $i<count($terms); $i++): ?>
+				<section class="contents" id="faq<?php echo $i; ?>">
+					<h3><?php echo $terms[$i]; ?></h3>
+					<dl class="listFaq">
 						<?php
 						$args = array(
 							"post_type" => "faq",
@@ -45,7 +47,7 @@ get_header( ); ?>
 						}?>
 					</dl>
 				<!--#faq<?php echo $term->term_id; ?>--></section>
-			<?php endforeach; ?>
+			<?php endfor; ?>
 
 		<!--#faq .twelvecol --></div>
 	<!--#faq .container --></div>

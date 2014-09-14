@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
+* @since MP-Ecokaishu 1.0
 */
 
 get_header(); ?>ㄱㄷㄴㅅㅁㄱㅇ

@@ -1,29 +1,32 @@
 @charset "UTF-8";
 
 
+#staff{
+
+	.contents{
+		padding-top: 3.0rem;
+		padding-bottom: 3.0rem;
+	}
+
 //**********************************************************************
 // #aboutEcoland
 //**********************************************************************
 
-#staff{
-
-	h2{
-		font-weight: bold;
-	}
 
 	// #staff
 	//**************************************************************
 
-	#staff, #vehicle, #uniform{
+	.ecolandStaff, #vehicle, #uniform{
 		
 		h3{
 			text-align: center;
-			margin-bottom: 4rem;
+			margin-bottom: 2.0rem;
 
 			.hl1{
+				display: block;
 				color: $green;
-				font-size: 80%;
-				line-height: 1.3;
+				font-size: $normal;
+				line-height: 1.0rem;
 			}
 			.hl2{
 				display: block;
@@ -42,75 +45,114 @@
 				}
 			}
 			.hl3{
-				font-size: 130%;
+				font-size: $biggest;
 			}
 		}
 
-		// twelvecol
-		div.twelvecol{
 
-			// threecol
-			div.threecol{
-				// circle photo
-				div{
-					display: block;
-					text-align: center;
+		// threecol
+		.threecol{
+
+			margin-top: 2.0rem;
+			margin-bottom: 2.0rem;
+
+			//.circleTrimming
+			.circleTrimming{
+				overflow: hidden;
+				display: block;
+				width: 240px;
+				height: 240px;
+				margin: 0 auto;
+				@include border-radius(50%);
+				border: 1px solid rgba($black, .05);
+				background: $gray;
+				text-align: center;
+			}
+
+			// h4
+			h4{
+				margin-top: 1.5rem;
+				margin-bottom: 1.0rem;
+				text-align: center;
+				.small{
+					margin-left: 0.5rem;
+					font-size: $normal;
+					letter-spacing: -0.05rem;
 				}
-				.circleTrimming{
-					
-					width: 240px;
-					height: 240px;
-					margin: 0 auto;
-					background-color: #f5f5f5;
-					border-radius: 50%;
+			}
 
-					overflow: hidden;
-				}
-
-				// h4
-				h4{
-					text-align: center;
-				}
-
-				// list
-				ul{
-					display: block;
-					margin: 0 auto 1rem;
-					li{
-						margin-bottom: 1rem;
-						border-bottom: 1px solid #aaa;
-						padding-left: 10%;
-						text-indent: -10%;
-
-						text-align: left;
-						word-wrap: break-word;
-
-						&:before{
-							margin: 0 0.3rem;
-							font-family: icomoon;
-							font-size: 90%;
-							color: #aaa;
-							content: "\e725";
-						}
-					}
-				}
-
-				// description
-				p{
+			// list
+			ul{
+				display: block;
+				margin: 1.0rem 0;
+				//li
+				li{
+					position: relative;
+					padding-top: 0.7rem;
+					padding-bottom: 0.7rem;
+					padding-left: 1.5rem;
+					border-bottom: 1px solid rgba($black, .05);
+					//padding-right: 0.5rem;
+					//border-left: 0.5rem solid rgba($green, .3);
+					//background-color: $white;
 					text-align: left;
+					word-wrap: break-word;
+
+					//&:before
+					&:before{
+						position: absolute;
+						top: 0.7rem;
+						left: 0rem;
+						font-family: icomoon;
+					}
+
+					&:nth-of-type(1){ &:before{ content: "\e8f1"; } }
+					&:nth-of-type(2){ &:before{ content: "\e8cc"; } }
+
+					
+
+				}
+			}
+
+			// description
+			p{
+
+				position: relative;
+				text-align: left;
+				padding: 0.5rem;
+
+				&:after,
+				&:before{
+					font-family: icomoon;
+					speak: none;
+					padding-right: 0.3rem;
+					font-size: $biggest * 1.2;
+					color: rgba($black, .08);
+					content: "\e91f";
+				}
+				&:before{
+					position: absolute;
+					top: -0.5rem;
+					left: 0;
+				}
+				&:after{	
+					position: absolute;
+					bottom: 0rem;
+					right: 0rem;
+					@include rotate(180deg);
 				}
 
 			}
+
 		}
+
 		//PC
 		@media all and (min-width: $minWidthBig){
-			div.twelvecol{
+			.row{
 				margin-bottom: 4rem;
 			}
-			ul{
-				width: 255px;
-			}
 		}
+
 		//Mobile
 		@media all and (max-width: $maxWidthBig){
 			h3{
@@ -118,7 +160,7 @@
 					font-size: 90%;
 				}
 			}
-			div.twelvecol{
+			.row{
 				margin-bottom: 0;
 
 				div.threecol{

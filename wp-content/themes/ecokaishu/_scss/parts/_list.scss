@@ -47,6 +47,121 @@
 
 }
 
+
+//**********************************************************************
+// .listFaq
+//**********************************************************************
+
+.listFaq{
+
+	// dt, dd
+	//**************************************************************
+
+	dt,dd{
+
+		position: relative;
+		padding:{
+			top: 1.0rem;
+			bottom: 1.0rem;
+			right: 1.0rem;
+		}
+		background: $white;
+
+		//&:before
+		&:before{
+			font-family: icomoon;
+			speak: none;
+			line-height: 1.0em;
+		}
+	}
+
+	// dt
+	//**************************************************************
+
+	dt{
+		position: relative;
+		background: rgba($black, .03);
+		&:before{
+			content: "\e99f";
+		}
+		&:after{
+			display: block;
+			position: absolute;
+			bottom: 0;
+			width: 2px;
+			height: 1.0rem;
+			margin-bottom: -1.0rem;
+			background: rgba($green, .05);
+			content: "";
+		}
+	}
+
+	// dd
+	//**************************************************************
+
+	dd{
+		margin-top: 1.0rem;
+		margin-bottom: 2.0rem;
+		background: rgba($green, .1);
+		&:before{
+			color: $green;
+			content: "\e981";
+		}
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		dt,dd{
+
+			padding-left: 3.5rem;
+
+			//&:before
+			&:before{
+				position: absolute;
+				top: 50%;
+				left: 1.0rem;
+				margin-top: -10px;
+				font-size: $bigger;
+			}
+		}
+
+		dt{
+			&:after{
+				left: 1.6rem;
+			}
+		}
+
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		dt,dd{
+
+			padding-left: 1.0rem;
+
+			//&:before
+			&:before{
+				display: block;
+				margin-bottom: 0.5rem;
+				text-align: center;
+				font-size: $normal;
+			}
+		}
+
+		dt{
+			&:after{
+				left: 50%;
+				margin-left: -1px;
+			}
+		}
+
+	}
+
+
+}
+
 //**********************************************************************
 // .listBtn
 //**********************************************************************
@@ -122,6 +237,33 @@
 				color: $green;
 				font-size: 90%;
 				
+			}
+
+		}
+	}
+
+}
+
+//**************************************************************
+// .listItems
+//**************************************************************
+
+.listItems{
+
+	ul{
+		li{
+			display: inline-block;
+			
+			a{
+				display: block;
+				margin-bottom: 0.3rem;
+				margin-right: 0.3rem;
+				padding: 0.5rem;
+				background: rgba($white, .5);
+				border: 1px solid rgba($black, .1);
+				@include border-radius(3px);
+				color: $darkGray;
+				text-decoration: none;
 			}
 
 		}

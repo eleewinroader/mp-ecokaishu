@@ -74,17 +74,17 @@ h4{
 		position: relative;
 
 		h2{
-			display: inline-block;
+			//display: inline-block;
 			//margin-left: 3rem;
 		
 			span:first-child{
 				display: block;
-				margin-bottom: 2.3rem;
-				font-size: 115%;
+				margin-bottom: 2.0rem;
+				font-size: $bigger * 1.07;
 			}
 			span:nth-of-type(2){
 				display: block;
-				font-size: 350%;
+				font-size: $biggest * 2;
 			}
 		}
 
@@ -96,14 +96,13 @@ h4{
 				z-index: 10;
 				a{
 					display: table-cell;
-					width: 155px;
-					height: 155px;
+					width: 180px;
+					height: 180px;
 					text-align: center;
 					vertical-align: middle;
 					background-color: rgba($white, 0.6);
 					border: 5px solid rgba($black, .05);
 					@include border-radius(50%);
-					font-size: 90%;
 					text-decoration: none;
 					color: $black;
 					letter-spacing: -0.05em;
@@ -113,39 +112,36 @@ h4{
 						@include transform_to_scale(1.02);
 						background-color: rgba($pink,0.1);
 					}
-					span{
-						display: block;
-					}
-					strong{
+					b{
 						color: $pink;
 						font-weight: bold;
-						font-size: 120%;
+						font-size: $bigger;
 					}
 				}
 
 				&:first-child{
-					top: 320px;
+					top: 280px;
 					left: 40px;
 				}
 				&:nth-of-type(2){
-					top: 130px;
-					left: 160px;
+					top: 60px;
+					left: 120px;
 				}
 				&:nth-of-type(3){
-					top: 340px;
-					left: 660px;
+					top: 180px;
+					left: 620px;
 				}
 				&:nth-of-type(4){
-					top: 70px;
-					right: 200px;
+					top: 50px;
+					right: 140px;
 				}
 				&:nth-of-type(5){
-					top: 250px;
-					right: 70px;
+					top: 230px;
+					right: 0px;
 				}
 				&:nth-of-type(6){
-					top: 350px;
-					right: 300px;
+					top: 370px;
+					right: 220px;
 				}
 			}
 		}
@@ -168,13 +164,14 @@ h4{
 		min-height: 500px;
 		position: relative;
 
+		//h2
 		h2{
 			display: block;
 			margin-bottom: 2rem;
 		
 			span:first-child{
 				display: block;
-				margin-bottom: 1.3rem;
+				margin-bottom: 0.5rem;
 				font-size: 70%;	
 			}
 			span:nth-of-type(2){
@@ -209,19 +206,21 @@ h4{
 						}
 					}
 				}
-				strong{
+				b{
 					color: $pink;
 					font-weight: bold;
 					font-size: 120%;
+				}
+				.block{
+					display: inline !important;
 				}
 			}
 			
 		}
 		#introIllust1{
-			bottom: -40px;
+			bottom: -70px;
 			right: 0;
 			z-index: 1;
-
 			width: 30%;
 		}
 		#introIllust2{
@@ -352,7 +351,7 @@ h4{
 		#pointListPhoto{
 			position: absolute;
 			top: -4.0rem;
-			right: 0rem;
+			right: 6.0rem;
 		}
 
 		// list link
@@ -397,29 +396,79 @@ h4{
 
 }
 
-
+//**********************************************************************
 // #strongPoint
-//**************************************************************
+//**********************************************************************
 
 #strongPoint{
 
 	background: $gray;
 
-	.strongPointDetail{
-
-		.circleTrimming{
-			overflow: hidden;
-			margin: 0 auto;
-			background-color: #f5f5f5;
-			@include border-radius(50%);
-		}
-
-	}
+	// h3
+	//**************************************************************
 
 	h3{
 		text-align: center;
 	}
 
+	// .strongPointDetail
+	//**************************************************************
+
+	.strongPointDetail{
+
+		//.circleTrimming
+		.circleTrimming{
+			overflow: hidden;
+			margin: 0 auto;
+			background-color: $gray;
+			@include border-radius(50%);
+		}
+
+		//.btn
+		.btns{
+
+			margin: 1.0rem 0;
+
+			li{
+
+				display: inline-block;
+				margin-right: 0.5rem;
+
+
+				a{
+					display: inline-block;
+					border-bottom: 1px dotted;
+					//padding: 0.5rem 1.0rem;
+					//background: $gray;
+					//@include border-radius(6px);
+					text-decoration: none;
+					color: $green;
+					&:before{
+						display: inline-block;
+						margin-right: 0.2rem;
+						font-size: 90%;
+						font-family: icomoon;
+						speak: none;
+						content: "\e9d3";
+					}
+					&:hover{
+						border-bottom: 1px solid !important;
+						color: $darkGray;
+					}
+					&[href$=".pdf"]{
+						&:before{
+							display: inline-block;
+							margin-right: 0.2rem;
+							font-size: 90%;
+							font-family: icomoon;
+							speak: none;
+							content: "\ea5b";
+						}
+					}
+				}
+			}
+		}
+	}
 	
 	//PC
 	@media all and (min-width: $minWidth){
@@ -427,17 +476,20 @@ h4{
 		padding-top: 7.0rem;
 		padding-bottom: 7.0rem;
 
+		/* .strongPointDetail */
 		.strongPointDetail{
 
 			margin-top: 5.0rem;
 			margin-bottom: 5.0rem;
 
+			//nth-child(odd)
 			&:nth-child(odd){
 				div:first-child{
 					float: left;
 				}
 			}
 
+			//nth-child(even)
 			&:nth-child(even){
 				div:first-child{
 					float: right;
@@ -450,6 +502,11 @@ h4{
 			.circleTrimming{
 				width: 240px;
 				height: 240px;
+			}
+
+			p{
+				font-size: $normal * 1.1;
+				line-height: 1.7rem;
 			}
 
 		}

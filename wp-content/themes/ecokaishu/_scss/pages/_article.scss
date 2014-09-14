@@ -6,7 +6,10 @@ article{
 // Common settings
 //**********************************************************************
 
-padding-top: 5.0rem;
+	//PC
+	@media all and (min-width: $minWidth){
+		padding-top: 5.0rem;
+	}
 
 //**********************************************************************
 // h tag settings
@@ -57,9 +60,6 @@ h5{
 
 &.archive{
 
-	&#area{
-		
-	}
 
 	// .summary
 	//**************************************************************
@@ -103,8 +103,6 @@ h5{
 
 &.post{
 
-	
-
 	// a
 	//**************************************************************
 	a{
@@ -120,23 +118,26 @@ h5{
 	
 	header{
 
-		//.cat
-		.cat{
-			&:before{
-				margin-right: 0.3rem;
-				font-family: icomoon;
-				font-size: 90%;
-				speak: none;
-				content: "\e8d8";
-			}
-			a{
-				&:not(:last-of-type){
-					&:after{
-						padding-left: 0.5rem;
-						color: $darkGray;
-						font-family: icomoon;
-						speak: none;
-						content: "\00BB";
+		//.catNavi
+		.catNavi{
+			ul{
+				&:before{
+					margin-right: 0.3rem;
+					font-family: icomoon;
+					font-size: 90%;
+					speak: none;
+					content: "\e8d8";
+				}
+				li{
+					display: inline-block;
+					&:not(:last-of-type){
+						&:after{
+							padding-left: 0.5rem;
+							color: $darkGray;
+							font-family: icomoon;
+							speak: none;
+							content: "\00BB";
+						}
 					}
 				}
 			}

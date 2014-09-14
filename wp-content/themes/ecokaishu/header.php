@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
+* @since MP-Ecokaishu 1.0
 */
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,6 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script><![endif]-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/script.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyATFqXgLwOisyrnoSCcXnIE2iG_-C9bmHI&sensor=true"></script>
-<?php wp_head(); ?>
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -41,6 +40,7 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 	ga('send', 'pageview');
 </script>
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. 'inc/tags/ga_common.php'); ?>
+<?php wp_head(); ?>
 </head>
 <body onload="initialize();">
 

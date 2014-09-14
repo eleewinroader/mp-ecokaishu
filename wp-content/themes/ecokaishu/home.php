@@ -2,7 +2,7 @@
 /*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 0.1.1
+* @since MP-Ecokaishu 1.0
 */
 get_header( ); ?>
 
@@ -166,7 +166,7 @@ get_header( ); ?>
 			<?php
 			$convSales = convSale();
 			if($convSales): ?>
-				<section id="behind">
+				<section class="behind">
 					<h3>ただ今の「訳あり」割引</h3>
 					<ul>
 					<?php foreach($convSales  as $convSale): ?>
@@ -189,12 +189,14 @@ get_header( ); ?>
 					<h3>よくある質問</h3>
 					<ul>
 					<?php
-					$args = array(
-						"orderby" => "ID",
-						"order" => "ASC"
+					$terms = array(
+						"エコ回収品について",
+						"エコ回収できるモノ/できないモノ",
+						"エコ回収作業について",
+						"お申し込みについて",
+						"料金について"
 					);
-					$terms = get_terms("qstcat", $args);
-					foreach($terms as $term) echo '<li><a href="'.get_post_type_archive_link("faq").'#faq'.$term->term_id.'"><span class="txt"> '.$term->name.'</span></a></li>';
+					for($i=0; $i<count($terms); $i++) echo '<li><a href="'.get_post_type_archive_link("faq").'#faq'.$i.'"><span class="txt"> '.$terms[$i].'</span></a></li>';
 					?>
 					</ul>
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/icon_faq.png" alt="" id="faqIcon" />

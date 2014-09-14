@@ -19,7 +19,7 @@ get_header(); ?>
 
 		<h2><?php post_type_archive_title(); ?></h2>
 
-		<div class="twelvecol col postsList last">
+		<div class="twelvecol col listItems last">
 			<h3><?php print_r($parentAreaName); ?></h3>
 			<ul>
 				<?php
