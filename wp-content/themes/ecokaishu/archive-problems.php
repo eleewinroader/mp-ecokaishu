@@ -18,7 +18,7 @@ get_header( ); ?>
 			<li><a href="#point2"><b>時間指定</b>もできる？</a></li>
 			<li><a href="#point3"><span class="block"><b>大きいモノ</b>、</span><span class="block"><b>重いモノ</b>があるけど、</span><span class="block"><b>運び出し</b>も</span><span class="block">してくれる？</span></a></li>
 			<li><a href="#point4"><b>買取</b>も<span class="block">お願いできる？</span></a></li>
-			<li><a href="#point5"><span class="block"><b>どんな人</b></span>が来るのか不安…</a></li>
+			<!--<li><a href="#point5"><span class="block"><b>どんな人</b></span>が来るのか不安…</a></li>-->
 			<li><a href="#point6"><span class="block"><b>まだ使える</b>ので、</span><span class="block">捨てられたくない！</span><span class="block"><b>リユース</b>してくれる？</span></a></li>
 		</ul>
 		<div id="introIllust1"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/problems/intro_illust1.png" /></div>
@@ -40,7 +40,7 @@ get_header( ); ?>
 						<li><a href="#point2">お時間も指定できます！</a></li>
 						<li><a href="#point3">運び出し、解体もお任せ下さい！</a></li>
 						<li><a href="#point4">買取も、エコ回収と同時にご案内ができます！</a></li>
-						<li><a href="#point5">お伺いスタッフを事前に確認できます！</a></li>
+						<!--<li><a href="#point5">お伺いスタッフを事前に確認できます！</a></li>-->
 						<li><a href="#point6">お引取りしたものは、すべてリユース致します！</a></li>
 					</ul>
 				</div>
@@ -112,7 +112,7 @@ get_header( ); ?>
 				</div>
 			</div>
 
-			<div class="strongPointDetail" id="point5">
+			<!--<div class="strongPointDetail" id="point5">
 				<div class="fourcol col circleTrimming">
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_m.jpg" alt="" />
 				</div>
@@ -123,7 +123,7 @@ get_header( ); ?>
 						<li><a href="<?php echo get_post_type_archive_link("staff"); ?>">スタッフ紹介はこちら</a></li>
 					</ul>
 				</div>
-			</div>
+			</div>-->
 
 			<div class="strongPointDetail" id="point6">
 				<div class="fourcol col circleTrimming">

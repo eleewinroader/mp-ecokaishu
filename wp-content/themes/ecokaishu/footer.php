@@ -193,12 +193,13 @@ $(document).ready(function(){
 	//showpanel
 	$(".showSmaller, .showBnr, .showMsg").each(function(){
 		$(this).click(function(){
+
 			var panelId = $(this).attr("data-panel");
 			var panel = $("#"+panelId);
 			var contentId = $(this).attr("data-content");
 			var content = $("#"+contentId);
 			if(panel.css("display") == "none"){
-				$(".panelCont").slideUp();
+				$("header .panelCont").slideUp();
 				if($(this).attr("class") == "showSmaller") panel.html(content);
 				panel.slideDown();
 			}else{
@@ -206,6 +207,41 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	/*<<?php if(is_smartphone()): ?>
+	//
+	$(".showLnSubmenu").each(function(){
+		$(this).click(function(){
+			var childMenuId = $(this).attr("data-sub");
+			var childMenu = $("#" + childMenuId);
+			if(childMenu.css("display") == "none"){
+				$(".lnSubMenu").slideUp();
+				childMenu.slideDown();
+			}else{
+				childMenu.slideUp();
+			}
+		});
+
+	});
+	<?php endif; ?>*/
+
+	// pc mouseover
+	$('li.sub').on({
+		'mouseenter':function(){
+		$(this).children('ul').show();
+		},
+		'mouseleave':function(){
+			$(this).children('ul').hide();
+		}
+	});
+	
+	// sp menu btn tap
+	$('li.sub').on({
+		'touchstart':function(){
+		$(this).children('ul').animate({height: "toggle", opacity: "toggle"}, "slow");
+		}
+	});
+
 
 	//owl-slide
 	$("#owl-slide").owlCarousel({ 
@@ -241,8 +277,15 @@ $(document).ready(function(){
 		}
 	});
 
-});
+	//newsticker
+	$('#news ul').inewsticker({
+		speed : 5000,
+		effect : 'fade',
+		dir : 'ltr',
+		delay_after : 2000
+	});
 
+});
 </script>
 
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/rm_google.php'); ?>

@@ -30,13 +30,13 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/script.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyATFqXgLwOisyrnoSCcXnIE2iG_-C9bmHI&sensor=true"></script>
 <script>
+	//GA
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-42854141-2', 'auto');
-	ga('require', 'displayfeatures');
+	ga('create', 'UA-42854141-1', 'auto');
 	ga('send', 'pageview');
 </script>
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. 'inc/tags/ga_common.php'); ?>
@@ -63,15 +63,41 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 				</div>
 				<div class="ninecol col last" id="siteMenu">
 					<div class="showBigger" id="contMenu">
-						<ul>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/">HOME</a></li>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/ecokaishu/">エコ回収とは</a></li>
+						<ul id="localNavi">
+							<li id="navHome"><a href="<?php echo siteInfo("rootUrl"); ?>/">HOME</a></li>
+							<li id="navFeatures"><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収とは</a></li>
+							<li id="navDetails" class="sub currntPage">
+								<div data-sub="lnService" class="showLnSubmenu">サービス案内</div>
+								<ul class="lnSubMenu" id="lnService">
+									<li><a href="<?php echo get_post_type_archive_link("flow"); ?>">ご利用の流れ</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("price"); ?>">料金案内</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/ できないモノ</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("price"); ?>#purchase">買取について</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("price"); ?>#options">対応エリア</a></li>
+								</ul>
+							</li>
+							<li id="navFaq" class="hasSub">
+								<a href="#" data-sub="lnFaq" class="showLnSubmenu">よくある質問</a>
+								<ul class="lnSubMenu" id="lnFaq">
+									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq0">エコ回収品について</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/できないモノ</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq2">エコ回収作業について</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">お申し込みについて</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq4">料金について</a></li>
+								</ul>
+							</li>
+							<li id="navAbout" class="hasSub">
+								<a href="#" data-sub="lnAbout" class="showLnSubmenu">私たちについて</a>
+								<ul class="lnSubMenu" id="lnAbout">
+									<li><a href="<?php echo get_post_type_archive_link("staff"); ?>#concierge">私たちが伺います</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("staff"); ?>#collecting">私たちが参ります</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("about"); ?>">運営企業</a></li></li>
+								</ul>
+							</li>
+							<!--<li>
 							<li><a href="<?php echo siteInfo("rootUrl"); ?>/flow/">ご利用の流れ</a></li>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/price/">料金案内</a></li>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/faq/">よくある質問</a></li>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/about/">運営会社</a></li>
-							<li><a href="https://twitter.com/eco_land" rel="nofollow"><span class="icon-twitter3"></span><span class="txt">twitter</span></a></li>
-							<li><a href="https://www.facebook.com/ecoland.jp" rel="nofollow"><span class="icon-facebook3"></span><span class="txt">facebook</span></a></li>
+							<li><a href="<?php echo siteInfo("rootUrl"); ?>/price/">料金案内</a></li><a href="https://twitter.com/eco_land" rel="nofollow"><span class="icon-twitter3"></span><span class="txt">twitter</span></a></li>
+							<li><a href="https://www.facebook.com/ecoland.jp" rel="nofollow"><span class="icon-faceb-ook3"></span><span class="txt">facebook</span></a></li>-->
 						</ul>
 					</div>
 					<div class="showSmaller" data-panel="panelMenu" data-content="contMenu" id="menuBtn"><span class="icon-menu2"></span></div>
@@ -83,6 +109,7 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 		<!--.panelCont-->
 
 	<!--#headerFixed--></div>
+	<div class="test"></div>
 
 	<?php
 	if(is_single()){
@@ -92,6 +119,7 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 		}elseif(get_post_type() == "area" || get_post_type() == "items"){
 			$pageType = "post";
 			$parentClass = " achivements";
+			$featureType = get_post_type();
 		}elseif(get_post_type() == "post"){
 			$cat = get_the_category(); 
 			$pageType = "post";

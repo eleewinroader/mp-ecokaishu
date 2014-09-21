@@ -4,6 +4,26 @@
 
 	margin-bottom: 5.0rem;
 
+	&.archive{
+
+		.listArea{
+			li{
+				display: inline-block;
+				&:not(:last-of-type){
+					&:after{
+						margin-left: 0.2rem;
+						margin-right: 0.2rem;
+						color: rgba($black, .1);
+						content: "|";
+					}
+				}
+				a{
+					color: $green;
+				}
+			}
+		}
+	}
+
 	&.post{
 		
 		h2{
@@ -82,6 +102,77 @@
 
 	}
 
+
+	&#area{
+
+		.municipalities{
+
+			position: relative;
+
+			h3{
+			}
+			h4{
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+			}
+
+			img{
+				&#staff{
+					position: absolute;
+					top: -80px;
+					right: 0;
+					width: 180px;
+				}
+				&#map{
+					position: relative;
+					margin-bottom: 1.0rem;
+				}
+			}
+
+			table{
+				th, td{
+					border: 1px solid rgba($white, .5);
+					padding-left: 0.5rem;
+					padding-right: 0.5rem;
+				}
+				th{
+					background: rgba($black, .05);
+					width: 20%;
+				}
+				td{
+					a{
+						&:not(:last-of-type){
+							&:after{
+								margin-left: 0.5rem;
+								margin-right: 0.5rem;
+								color: $gray;
+								content: "|";
+							}
+
+						}
+					}
+				}
+			}
+
+			p{
+				&.explains{
+					margin-bottom: 1.0rem;
+					padding-top: 0.5rem;
+					padding-bottom: 0.5rem;
+					padding-left: 0.5rem;
+					padding-right: 200px;
+					background-color: $gray;
+				}
+
+				b{
+					font-weight: bold;
+					color: $pink;
+				}
+
+			}
+
+		}
+	}
 
 
 

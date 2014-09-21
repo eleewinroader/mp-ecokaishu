@@ -668,12 +668,12 @@ function cmsTitle($posttype, $submitdate, $pr_code){
 
 
 // 添付の画像を取ってくる
-function get_attached_img($id, $cf, $alt=null, $size=null, $align=null, $link=null){
+function get_attached_img($id, $cf, $alt=null, $style=null, $size=null, $align=null, $link=null){
 	$attach_id = get_post_meta($id, $cf, true);
 	$image = wp_get_attachment_image_src($attach_id, $size);
 	list($src, $width, $height) = $image;
 	if($src){
-		$img = '<img src="'.$src.'" width="'.$width.'" height="'.$height.'" class="'.$align.'" alt="'.$alt.'" />';
+		$img = '<img src="'.$src.'" width="'.$width.'" height="'.$height.'" id="'.$style.'" class="'.$align.'" alt="'.$alt.'" />';
 		if($link){
 			$get_attached_img = '<a href="'.$link.'">'.$img.'</a>';
 		}else{

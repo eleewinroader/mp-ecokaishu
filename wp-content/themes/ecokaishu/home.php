@@ -10,29 +10,92 @@ get_header( ); ?>
 
 	<div class="container">
 
-		<section class="tencol col" id="sliderCampaign">
-			<h3>ただ今進行中のキャンペーン</h3>
-			<div id="owl-slide" class="owl-carousel owl-theme">
-				<?php
-				$args = array(
-					"post_type" => "campaign",
-					"campaignstatus" => "open"
-				);
-				$posts = query_posts($args);
-				foreach($posts as $post): ?>
-					<div id="<?php echo campCode($post, "children"); ?>">
-						<a class="mainVisual" href="<?php echo get_permalink($post->ID); ?>">
-							<div class="campVisual">
-								<h4><?php echo $post->post_title; ?></h4>
-								<?php echo $post->post_content; ?>
-							</div>
-						</a>
-					</div>
-				<?php endforeach; ?>
-			<!-- #owl-slide--></div>
-		<!-- #sliderCampaign--></section>
+		<div class="twelvecol col last">
+		<div class="liquidLayout">
 
-		<aside class="twocol col last" id="shortcuts">
+			<div class="item" id="sliderCampaignNews">
+
+				<section>
+					<h3>ただ今進行中のキャンペーン</h3>
+					<div id="owl-slide" class="owl-carousel owl-theme">
+						<?php
+						$args = array(
+							"post_type" => "campaign",
+							"campaignstatus" => "open"
+						);
+						$posts = query_posts($args);
+						foreach($posts as $post): ?>
+							<div id="<?php echo campCode($post, "children"); ?>">
+								<a class="mainVisual" href="<?php echo get_permalink($post->ID); ?>">
+									<div class="campVisual">
+										<h4><?php echo $post->post_title; ?></h4>
+										<?php echo $post->post_content; ?>
+									</div>
+								</a>
+							</div>
+						<?php endforeach; ?>
+					<!-- #owl-slide--></div>
+				</section>
+
+				<section id="news">
+					<h3>お知らせ</h3>
+					<ul>
+						<?php
+						$args = array(
+							"post_type" => "notices",
+							"posts_per_page" => 5
+						);
+						$posts = query_posts($args);
+						foreach($posts as $post){
+							$li = "<li><a href=".get_permalink($post->ID)."><time datetime=".$post->post_date.">".get_the_date("y.m.d")."</time>";
+							$tags = get_the_tags(); 
+							if ($tags) foreach($tags as $tag) $li .= '<span class="tag">'.$tag->name.'</span>';
+							$li .= '<span class="newsTxt">'.$post->post_title.'</span></a></li>';
+							echo $li;
+						}?>
+					</ul>
+					<div class="clear"></div>
+				</section>
+
+			<!-- #sliderCampaignNews--></div>
+
+			<section id="indexs" class="item">
+				<h3>メニュー</h3>
+				<ul class="listBtn">
+					<li>
+						<a href="<?php echo siteInfo("rootUrl"); ?>/estimate/" id="estimate">
+							<span class="icon-shipping"></span>
+							<span class="indexTitle"><span class="block">かんたん</span><span class="block">見積依頼</span></span>
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo siteInfo("rootUrl"); ?>/contact/" id="contact">
+							<span class="icon-question2"></span>
+							<span class="indexTitle">お問い合わせ</span>
+						</a>
+					</li>
+					<li>
+						<a href="tel:0120530<?php echo telNum(); ?>" id="tel" onclick="ga('send', 'event', 'tel', '発信', 'TOP', 1, {'nonInteraction': 1});">
+							<span class="icon-phone"></span>
+							<span class="indexTitle">0120<span class="block">530-<?php echo telNum(); ?></span></span>
+						</a>
+					</li>
+				</ul>
+			<!--#indexs--></section>
+
+			<div class="bnr" id="problems">
+
+				<div class="item">
+					<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
+				</div>
+
+				<div class="item">
+					<a href="<?php echo get_permalink(4141); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/0000/03_bnr_640x260.gif" alt="早割ページへ" /></a>
+				</div>
+
+			</div>
+
+		<!--<aside class="item" id="shortcuts">
 			<h3>エコランドにご相談してください!</h3>
 			<ul class="listBtn">
 				<li>
@@ -54,38 +117,28 @@ get_header( ); ?>
 					</a>
 				</li>
 			</ul>
-		<!-- #shorcuts--></aside>
+		<!-- #shorcuts</aside>-->
 
-		<div class="twelvecol col last">
-		<div class="liquidLayout">
-
-			<section id="indexs" >
-				<h3>メニュー</h3>
-				<div class="item">
-					<a href="<?php echo siteInfo("rootUrl"); ?>/ecokaishu/">
-						<span class="icon-ecolandlogo"></span>
-						<span class="indexTitle">エコ回収とは</span>
-					</a>
-				</div>
-				<div class="item">
-					<a href="<?php echo siteInfo("rootUrl"); ?>/flow/">
-						<span class="icon-flow-tree"></span>
-						<span class="indexTitle">ご利用の流れ</span>
-					</a>
-				</div>
-				<div class="item">
-					<a href="<?php echo siteInfo("rootUrl"); ?>/price/">
-						<span class="icon-calculate"></span>
-						<span class="indexTitle">料金案内</span>
-					</a>
-				</div>
-				<div class="item">
-					<a href="<?php echo siteInfo("rootUrl"); ?>/faq/">
-						<span class="icon-home"></span>
-						<span class="indexTitle">運営会社</span>
-					</a>
-				</div>
-			<!--#indexs--></section>
+			<?php
+			$convSales = convSale();
+			if($convSales): ?>
+				<section class="behind">
+					<h3>ただ今の「訳あり」割引</h3>
+					<ul>
+					<?php foreach($convSales  as $convSale): ?>
+						<li class="item">
+							<a href="<?php echo $convSale->link; ?>" class="itemContents">
+								<span class="icon-bullhorn"></span>
+								<p class="info">
+									<span class="block"><?php echo $convSale->month."月".$convSale->day."日"; ?></span><span class="block"><?php echo $convSale->area; ?></span>
+								</p>
+								<p class="off">割引CHECK</p>
+							</a>
+						</li>
+					<?php endforeach; ?>
+					</ul>
+				</section>
+			<?php endif; ?>
 
 			<section id="reservCalendar" class="item">
 				<div id="contentsCalendar" class="itemContents">
@@ -159,31 +212,6 @@ get_header( ); ?>
 				</div>
 			</section>
 
-			<div class="item bnr" id="earlybird">
-				<a href="<?php echo get_permalink(4141); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/0000/03_bnr_640x260.gif" alt="早割ページへ" /></a>
-			</div>
-
-			<?php
-			$convSales = convSale();
-			if($convSales): ?>
-				<section class="behind">
-					<h3>ただ今の「訳あり」割引</h3>
-					<ul>
-					<?php foreach($convSales  as $convSale): ?>
-						<li class="item">
-							<a href="<?php echo $convSale->link; ?>" class="itemContents">
-								<span class="icon-bullhorn"></span>
-								<p class="info">
-									<span class="block"><?php echo $convSale->month."月".$convSale->day."日"; ?></span><span class="block"><?php echo $convSale->area; ?></span>
-								</p>
-								<p class="off">割引CHECK</p>
-							</a>
-						</li>
-					<?php endforeach; ?>
-					</ul>
-				</section>
-			<?php endif; ?>
-
 			<section class="item" id="faq">
 				<div class="itemContents">
 					<h3>よくある質問</h3>
@@ -202,8 +230,25 @@ get_header( ); ?>
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/icon_faq.png" alt="" id="faqIcon" />
 				</div>
 			<!--#faq--></section>
+			
+			<section class="item voices">
+				<h3><span class="voicesTag">受付STAFFについて</span><span class="voicesInfo">神奈川県 20代 男性 </span></h3>
+				<p class="voicesContents"><strong>荷物量の説明等を１回で適切に理解</strong>してもらえたことや<strong>買い取りやリサイクルの仕組みを分かり易く説明</strong>してくれたこと、<strong>電話をかける時間帯への配慮や気遣い</strong>ががあったことよかったです。</p>
+			</section>
+			<section class="item voices">
+				<h3><span class="voicesTag">受付STAFFについて</span><span class="voicesInfo">千葉県 30代 女性 </span></h3>
+				<p class="voicesContents">いわゆるコールセンターなどのマニュアル的な感じでなく、<strong>人柄のよいかんじ</strong>が伝わってきました。とても<strong>安心</strong>できたし、<strong>親しみ</strong>がもてました。</p>
+			</section>
+			<section class="item voices">
+				<h3><span class="voicesTag">集荷STAFFについて</span><span class="voicesInfo">千葉県 30代 女性 </span></h3>
+				<p class="voicesContents">とても、<strong>感じのよい明るさ</strong>と<strong>清潔な印象</strong>のスタッフさんでした。なんだか、<strong>お仕事への誇り</strong>も感じられました。きっとよい会社なのだろうな〜と想像させる方でした。エコランドさんにお願いしてよかった！と心から思いました。</p>
+			</section>
+			<section class="item voices">
+				<h3><span class="voicesTag">集荷STAFFについて</span><span class="voicesInfo">東京都 40代 男性</span></h3>
+				<p class="voicesContents"> <strong>女性の方も来てくれた</strong>ので、<strgon>安心</strgon>できました。妻は女性の方が一人でも来てくれたほうが、安心できるらしい。いろいろと女性ならではの、気配りができるからだと言っています。</p>
+			</section>
 
-			<section class="item" id="news">
+			<!--<section class="item" id="news">
 				<div class="itemContents">
 					<h3>新着情報&お知らせ</h3>
 					<ul class="news">
@@ -222,7 +267,7 @@ get_header( ); ?>
 					}?>
 					</ul>
 				</div>
-			<!--#news--></section>
+			<!--#news</section>-->
 
 			<div class="item webservices" id="movie">
 				<div class="movie-container">
@@ -237,23 +282,6 @@ get_header( ); ?>
 			<div class="item webservices" id="facebook">
 				<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fecoland.jp&amp;width=420&amp;height=400&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=true&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:400px;" allowtransparency="true"></iframe>
 			<!--facebook--></div>
-			
-			<section class="item voices">
-				<h3><span class="voicesTag">受付STAFFについて</span><span class="voicesInfo">神奈川県 20代 男性 </span></h3>
-				<p class="voicesContents"><strong>荷物量の説明等を１回で適切に理解</strong>してもらえたことや<strong>買い取りやリサイクルの仕組みを分かり易く説明</strong>してくれたこと、<strong>電話をかける時間帯への配慮や気遣い</strong>ががあったことよかったです。</p>
-			</section>
-			<section class="item voices">
-				<h3><span class="voicesTag">受付STAFFについて</span><span class="voicesInfo">千葉県 30代 女性 </span></h3>
-				<p class="voicesContents">いわゆるコールセンターなどのマニュアル的な感じでなく、<strong>人柄のよいかんじ</strong>が伝わってきました。とても<strong>安心</strong>できたし、<strong>親しみ</strong>がもてました。</p>
-			</section>
-			<section class="item voices">
-				<h3><span class="voicesTag">集荷STAFFについて</span><span class="voicesInfo">千葉県 30代 女性 </span></h3>
-				<p class="voicesContents">とても、<strong>感じのよい明るさ</strong>と<strong>清潔な印象</strong>のスタッフさんでした。なんだか、<strong>お仕事への誇り</strong>も感じられました。きっとよい会社なのだろうな〜と想像させる方でした。エコランドさんにお願いしてよかった！と心から思いました。</p>
-			</section>
-			<section class="item voices">
-				<h3><span class="voicesTag">集荷STAFFについて</span><span class="voicesInfo">東京都 40代 男性</span></h3>
-				<p class="voicesContents"> <strong>女性の方も来てくれた</strong>ので、<strgon>安心</strgon>できました。妻は女性の方が一人でも来てくれたほうが、安心できるらしい。いろいろと女性ならではの、気配りができるからだと言っています。</p>
-			</section>
 
 		<!-- .liquidLayout--></div>
 		</div>

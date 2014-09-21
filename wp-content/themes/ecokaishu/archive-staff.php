@@ -10,7 +10,7 @@ get_header( ); ?>
 
 	<section class="contents ecolandStaff">
 
-		<div class="container">
+		<div class="container" id="concierge">
 
 			<h3 class="twelvecol col last">
 				<!--<span class="hl1">エコランド<br />コンシェルジュ</span>-->
@@ -60,9 +60,7 @@ get_header( ); ?>
 		<!--#staff .container--></div>
 	<!--#staff--></section>
 
-
-
-	<section class="contents ecolandStaff">
+	<section class="contents ecolandStaff" id="collecting">
 
 		<div class="container">
 
@@ -134,13 +132,13 @@ get_header( ); ?>
 			<div class="col threecol">
 				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
 				<h4>星 奈緒美<span class="small">ほし なおみ</span></h4>
-				<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>
+				<p>女性ならではの丁寧で繊細な作業をご提供しています。整理収納でお困りのお客様も、ぜひ一度ご利用下さいませ。</p>
 			</div>
 
 			<div class="col threecol last">
 				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
 				<h4>山本 紘亮<span class="small">やまもと こうすけい</span></h4>
-				<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>
+				<p>お客様のご希望・ご要望を丁寧に聞き出しながら、ご満足いただける確実な作業を提供しています。お任せ下さい。</p>
 			</div>
 
 			<div class="col threecol">
@@ -152,7 +150,7 @@ get_header( ); ?>
 			<div class="col threecol">
 				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
 				<h4>岡村 俊太<span class="small">おかむら しゅんた</span></h4>
-				<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>
+				<p>お客様のご希望・ご要望を丁寧に聞き出しながら、ご満足いただける確実な作業を提供しています。お任せ下さい。</p>
 			</div>
 
 			<div class="col threecol">
@@ -164,13 +162,13 @@ get_header( ); ?>
 			<div class="col threecol last">
 				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_tokura.jpg" /></div>
 				<h4>十倉 淳<span class="small">とくら じゅん</span></h4>
-				<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>
+				<!--<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>-->
 			</div>
 
 			<div class="col threecol">
 				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_shimura.jpg" /></div>
 				<h4>志村 昭<span class="small">しむら あきら</span></h4>
-				<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>
+				<!--<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>-->
 			</div>
 
 			<div class="col threecol">　</div>

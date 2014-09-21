@@ -71,7 +71,7 @@ get_header( ); ?>
 		<!--#purchase .container--></div>
 	<!--#purchase--></section>
 
-	<section class="contents">
+	<section class="contents" id="options">
 		<div class="container">
 			<div class="twelvecol col last"><h3><?php echo getPage("お申込みの前に確認してください！", "title"); ?></h3></div>
 			<div class="fourcol col">

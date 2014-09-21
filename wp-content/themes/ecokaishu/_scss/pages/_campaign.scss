@@ -1820,8 +1820,9 @@
 	@media all and (min-width: $minWidth){
 
 		background-image: url(assets/img/campaign/1408/00_bg.jpg);
-		background-position: center top;
+		background-position: center bottom;
 		background-size: 120%;
+		background-repeat: no-repeat;
 
 		.campVisual{
 			#appealTitle{

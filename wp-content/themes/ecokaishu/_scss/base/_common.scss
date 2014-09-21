@@ -271,84 +271,173 @@ a{
 	z-index: 10000;
 	width: 100%;
 	background: $white;
-	
-	// ul
+
+	// #localNavi
 	//**************************************************************
 	
-	ul{
+	#localNavi{
 
-		text-align: right;
+		position: relative;
 
 		//li
-		li{
-			a{
-				padding:{
-					top: 0.3rem;
-					bottom: 0.3rem;
-					left: 0.3rem;
-					right: 0.3rem;
+		> li{
+
+			line-height: $height;
+
+			//a
+			.showLnSubmenu{
+
+				position: relative;
+				padding-left: 32px;
+
+				&:before{
+					display: block;
+					position: absolute;
+					width: 30px;
+					font-size: $normal * 1.2;
+					font-family: icomoon;
+					speak: none;
 				}
-				@include border-radius(3px);
-				color: $darkGray;
-				text-decoration: none;
-				&:hover{
-					background: $green;
-					color: $white !important;
-					.icon-twitter3{ color: $white; }
-					.icon-facebook3{ color: $white; }
-				}
-				span{
-					&.icon-twitter3{ color: $twitter; }
-					&.icon-facebook3{ color: $facebook; }
-				}
+
 			}
+			&#navHome .showLnSubmenu:before{
+				font-size: $normal !important;
+				content: "\e8a9"
+			}
+			&#navFeatures .showLnSubmenu:before{ content: "\e77c"; }
+			&#navDetails .showLnSubmenu:before{ content: "\e848"; }
+			&#navFaq .showLnSubmenu:before{ content: "\e99f"; }
+			&#navAbout .showLnSubmenu:before{ content: "\e91a"; }
 
-			//PC
-			@media all and (min-width: $minWidth){
+			//.hasSub
+			&.hasSub{
 
-				display: inline-block;
-				line-height: $height;
-				span{
-					&.txt{
-						display: none;
+				a{
+					&:after{
+						display: block;
+						position: absolute;
+						top: 50%;
+						right: 0.5rem;
+						width: 0;
+						height: 0;
+						margin-top: -2px;
+						border: 4px solid transparent;
+						border-top-color: $darkGray;
+						content: "";
+						
 					}
 				}
 
-			}
-
-			//Mobile
-			@media all and (max-width: $maxWidth){
-
-				position: relative;
-				border-bottom :1px solid rgba($black, .1);
-				text-align: left;
-				&:after{
-					position: absolute;
-					z-index: 10;
-					top: 50%;
-					right: 0.5rem;
-					width: 0px;
-					height: 0px;
-					margin-top: -4px;
-					border: 4px solid transparent;
-					border-left-color: $darkGray;
-					content: "";
-				}
-				a{
-					display: block;
-					padding: 1.0rem;
-					color: $darkGray;
-					text-decoration: none;
-					span{
-						&[class^="icon-"]{
-							padding-right: 0.5rem;
+				&:hover{
+					a{
+						&:after{
+							border-top-color: $white;
 						}
 					}
 				}
 
 			}
 
+			//a
+			a{
+				display: block;
+				text-decoration: none;
+				color: $darkGray;
+				padding-left: 1.0rem;
+				padding-right: 1.5rem;
+			}
+
+			//ul submenu
+			.lnSubMenu{
+
+				display: none;
+				background: $pink;
+				text-align: left;
+
+				li{
+					display: block;
+					border: none;
+
+					&:not(:last-of-type){
+						border-bottom: 1px solid rgba($white, .2);
+					}
+
+					a{
+
+						padding-left: 1.0rem;
+						padding-right: 1.0rem;
+						color: $white !important;
+
+						&:before,
+						&:after{
+							border-top-color: transparent !important;
+							content: "" !important; 
+						}
+
+						&:hover{
+							color: $yellow !important;
+						}
+					}
+
+				}
+
+			}
+
+
 		}
+
+		//Bigger screen
+		@media all and (min-width: $minWidth){
+
+			text-align: right;
+
+			> li{
+
+				display: inline-block;
+
+				&:hover{
+					background: $pink;
+					> ul{
+						display: block;
+					}
+					a{
+						color: $yellow;
+						&:before{
+							color: $yellow;
+						}
+					}
+				}
+
+				a{
+
+					&:before{
+						left: 0;
+					}
+				}
+
+				.lnSubMenu{
+					position: absolute;
+					z-index: 9999;
+					top: 100%;
+				}
+
+			}
+
+		}
+
+		//Smaller screen
+		@media all and (max-width: $maxWidth){
+
+			> li{
+				a{
+					&:before{
+						left: 1.0rem;
+					}
+				}
+			}
+
+		}
+
 	}
 	
 	// .header

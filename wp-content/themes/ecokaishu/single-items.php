@@ -42,7 +42,6 @@ get_header(); ?>
 					</nav>
 					<h2><span class="title block"><?php the_title(); ?>のエコ回収</span></h2>
 				</header>
-
 				<?php
 				$args = array(
 					"post_type" => "faq",
