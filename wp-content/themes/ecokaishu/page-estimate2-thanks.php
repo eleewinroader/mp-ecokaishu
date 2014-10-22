@@ -2,11 +2,10 @@
 /**
  * The main template file.
  *
- * Template name: かんたん見積依頼2-1受付完了
- *
- * @package WordPress
- * @subpackage ecokaishuCMS
- * @since ecokaishuCMS 0.0
+ * Template name: メールで見積依頼2-1受付完了
+* @package Montser Platform
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
  */
 
 if($_POST){

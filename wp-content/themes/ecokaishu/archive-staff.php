@@ -1,8 +1,8 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
 
@@ -43,7 +43,7 @@ get_header( ); ?>
 			</div>
 
 			<div class="col threecol">
-				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
+				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_iwasaki.jpg" /></div>
 				<h4>岩崎 愛華<span class="small">いわさき あいか</span></h4>
 				<p>お使いにならなくなったものについてのお悩み、なんでもご相談ください。お得に手放したい、誰かに使ってほしい。私が叶えます！</p>
 			</div>
@@ -124,55 +124,65 @@ get_header( ); ?>
 			</div>
 
 			<div class="col threecol">
-				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
+				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sato.jpg" /></div>
 				<h4>佐藤 一樹<span class="small">さとう かずき</span></h4>
 				<p>笑顔と元気をモットーに、的確な提案、安全で確実な作業を心がけています！ご質問にも丁寧にお答えいたします。</p>
 			</div>
 
 			<div class="col threecol">
-				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
+				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_f.jpg" /></div>
 				<h4>星 奈緒美<span class="small">ほし なおみ</span></h4>
 				<p>女性ならではの丁寧で繊細な作業をご提供しています。整理収納でお困りのお客様も、ぜひ一度ご利用下さいませ。</p>
 			</div>
 
 			<div class="col threecol last">
-				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
-				<h4>山本 紘亮<span class="small">やまもと こうすけい</span></h4>
+				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamamoto.jpg" /></div>
+				<h4>山本 紘亮<span class="small">やまもと こうすけ</span></h4>
 				<p>お客様のご希望・ご要望を丁寧に聞き出しながら、ご満足いただける確実な作業を提供しています。お任せ下さい。</p>
 			</div>
 
 			<div class="col threecol">
-				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
+				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_oomori.jpg" /></div>
+				<h4>大森 太一<span class="small">おおもり たいち</span></h4>
+				<p>お困り事がございましたら、ご相談下さい。最後までお付き合いさせて頂きます。皆様の笑顔のために頑張ります！</p>
+			</div>
+
+			<div class="col threecol">
+				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sanada.jpg" /></div>
 				<h4>眞田 清道<span class="small">さなだ きよみち</span></h4>
 				<p>お客様にも、お品物にも、作業にも、すべてのものにLove and Passion！おもてなしの心で、常に最高のサービスを。</p>
 			</div>
 
 			<div class="col threecol">
 				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
-				<h4>岡村 俊太<span class="small">おかむら しゅんた</span></h4>
+				<h4>岡村 駿太<span class="small">おかむら しゅんた</span></h4>
 				<p>お客様のご希望・ご要望を丁寧に聞き出しながら、ご満足いただける確実な作業を提供しています。お任せ下さい。</p>
 			</div>
 
-			<div class="col threecol">
-				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
+			<div class="col threecol last">
+				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_iwashima.jpg" /></div>
 				<h4>岩島 正明<span class="small">いわしま まさあき</span></h4>
 				<p>安心・安全をモットーに作業いたします。お預かりしたお品物にお客様のエコの気持ちを添えて、次のお客様の所へお届けします。</p>
 			</div>
 
-			<div class="col threecol last">
+			<div class="col threecol">
 				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_tokura.jpg" /></div>
 				<h4>十倉 淳<span class="small">とくら じゅん</span></h4>
-				<!--<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>-->
+				<p>お客様に安心して頂けるよう、笑顔で丁寧な作業を行います。ぜひエコランドをご利用ください。</p>
 			</div>
 
 			<div class="col threecol">
 				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_shimura.jpg" /></div>
 				<h4>志村 昭<span class="small">しむら あきら</span></h4>
-				<!--<p>あるいはたとえばご論旨を強いるものはどう高等と与えだので、その通りにはするだてについて釣へ至るています</p>-->
+				<p>お客様の笑顔が見たいから。お客様に笑顔になってもらえるような、安心の接客を心がけています。</p>
 			</div>
 
-			<div class="col threecol">　</div>
-			<div class="col threecol">　</div>
+			<div class="col threecol">
+				<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
+				<h4>室岡 誠<span class="small">むろおか まこと</span></h4>
+			</div>
+
+
 			<div class="col threecol last">　</div>
 
 		<!--#staff .container--></div>

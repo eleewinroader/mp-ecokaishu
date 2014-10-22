@@ -1,6 +1,7 @@
 // Compass library
 @import "compass";
 @import "compass/reset";
+@import "compass/css3";
 
 //mixin
 @mixin arrow($top, $bottom, $left, $right, $size: 4px, $color: #000000, $border: left){
@@ -19,6 +20,18 @@
 	@if $border == bottom { border-bottom-color: $color; }
 	content: "";
 }
+
+//animation settings
+@mixin transform_time ($time: 1s) {
+	-webkit-transition: $time ease-in-out;
+}
+@mixin transform_to_scale ($scale: 1) {
+	-moz-transform: scale($scale);
+	-webkit-transform: scale($scale);
+	-o-transform: scale($scale);
+	-ms-transform: scale($scale);
+}
+
 
 //vendor prefix
 $prefixList: -webkit-, -moz-, null;
@@ -62,6 +75,7 @@ $facebook: #3b5998;
 @import "parts/table.scss";
 @import "parts/list.scss";
 @import "parts/form.scss";
+@import "parts/link.scss";
 
 @import "pages/article.scss";
 
@@ -74,6 +88,7 @@ $facebook: #3b5998;
 @import "pages/problems.scss";
 @import "pages/staff.scss";
 @import "pages/accomplishment.scss";
+@import "pages/concierge.scss";
 
 @import "pages/campaign.scss";
 @import "pages/achivements.scss";

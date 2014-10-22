@@ -3,10 +3,9 @@
  * The main template file.
  *
  * Template name: クーポン未使用者専用受付完了
- *
- * @package WordPress
- * @subpackage ecokaishuCMS
- * @since ecokaishuCMS 0.0
+* @package Montser Platform
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
  */
 
 

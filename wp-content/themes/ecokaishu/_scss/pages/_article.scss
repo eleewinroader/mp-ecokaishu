@@ -3,13 +3,28 @@
 article{
 
 //**********************************************************************
-// Common settings
+// General settings
 //**********************************************************************
 
-	//PC
-	@media all and (min-width: $minWidth){
-		padding-top: 5.0rem;
+//PC
+@media all and (min-width: $minWidth){
+	padding-top: 5.0rem;
+}
+
+//Mobile
+@media all and (max-width: $maxWidth){
+	padding-top: 3.0rem;
+}
+
+// .contents
+//**********************************************************************
+
+.contents{
+	padding: 3.0rem 0;
+	&:not(:last-of-type){
+		border-bottom: 1px solid rgba($black, .05);
 	}
+}
 
 //**********************************************************************
 // h tag settings
@@ -54,6 +69,17 @@ h5{
 	font-weight: bold;
 }
 
+
+//Mobile
+@media all and (max-width: $maxWidth){
+
+	/*h3{
+		text-align: center;
+	}*/
+
+}
+
+
 //**********************************************************************
 // &.article settings
 //**********************************************************************
@@ -61,24 +87,56 @@ h5{
 &.archive{
 
 
+	// a
+	//**************************************************************
+	a{
+		color: $green;
+		text-decoration: none;
+		&:hover{
+			color: $pink;
+		}
+	}
+
+	// .achiveIndex
+	//**************************************************************
+
+	.achiveIndex{
+
+		padding-top: 1.0rem;
+		padding-bottom: 1.0rem;
+		border-top: 3px solid rgba($black, .1);
+		border-bottom: 1px solid rgba($black, .1);
+		text-align: center;
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			display: none;
+		}
+
+	}
+
 	// .summary
 	//**************************************************************
 
 	.summary{
 
-		padding-top: 3.0rem;
-		padding-bottom: 3.0rem;
+		padding-top: 5.0rem;
+		padding-bottom: 5.0rem;
 		font-size: $biggest;
 		line-height: 1.2em;
 		text-align: center;
 
 		//Mobile
 		@media all and (max-width: $maxWidth){
+
+			padding-top: 3.0rem;
+			padding-bottom: 3.0rem;
 			font-size: $bigger;
 			line-height: 1.5em;
 			.block{
 				display: inline !important;
 			}
+			
 		}
 
 	}
@@ -87,12 +145,6 @@ h5{
 	// .contents
 	//**************************************************************
 
-	.contents{
-		padding: 5.0rem 0;
-		&:nth-child(odd){
-			background: $white !important;
-		}
-	}
 
 
 }
@@ -184,16 +236,6 @@ h5{
 
 		}
 
-	}
-
-	// .contents
-	//**************************************************************
-
-	.contents{
-		padding: 5.0rem 0;
-		&:nth-child(odd){
-			background: $white !important;
-		}
 	}
 
 

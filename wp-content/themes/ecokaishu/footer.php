@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
+* @subpackage MP-Ecokaishu 1.3
 * @since MP-Ecokaishu 0.0
 */
 ?>
@@ -19,7 +19,7 @@
 			if($pr_code == "4_00") $ycoll = "2-1";
 		}?>
 
-		<aside id="contactBnrFixed">
+		<!--<aside id="contactBnrFixed">
 			<div class="container">
 				
 				<div class="twelvecol col last showBnr" data-panel="panelBnr" id="title">
@@ -36,16 +36,16 @@
 							
 						</a>
 					</div>
-					<div class="threecol col" id="contact">
-						<a href="<?php echo siteInfo("rootUrl"); ?>/contact/">
-							<p class="msg">お困りの事は何でもご相談！</p>
-							<p class="btn"><span class="icon-question2"></span>お問い合わせ</p>
-						</a>
-					</div>
 					<div class="threecol col" id="estimate">
 						<a href="<?php echo siteInfo("rootUrl"); ?>/estimate<?php echo $ycoll; ?>/<?php echo $param; ?>">
 							<p class="msg">見積もってほしいという方は！</p>
-							<p class="btn"><span class="icon-shipping"></span>かんたん見積依頼</p>
+							<p class="btn"><span class="icon-mail4"></span>メールで見積依頼</p>
+						</a>
+					</div>
+					<div class="threecol col" id="order">
+						<a href="<?php echo siteInfo("siteUrlEcoland"); ?>/order" rel="nofollow">
+							<p class="msg">見積から申込までWEB完結！</p>
+							<p class="btn"><span class="icon-calculate"></span>WEB見積&申込</p>
 						</a>
 					</div>
 					<div class="threecol col last" id="openingHour">
@@ -55,8 +55,8 @@
 						</p>
 					</div>
 				</div>	
-			<!--#contactBnrFixed .container--></div>
-		<!--#contactBnrFixed--></aside>
+			<!--#contactBnrFixed .container</div>
+		<!--#contactBnrFixed</aside>-->
 
 		<aside class="boiler" id="campaign">
 			<div class="container">
@@ -83,17 +83,88 @@
 			</div>
 		<!--#campaign--></aside>
 
+		<aside class="boiler" id="sitePages">
+			<div class="container">
+				<div class="twelvecol col last">
+					<h3>エコ回収 全コンテンツ</h3>
+				</div>
+				<div class="twocol col">
+					<h4>サービス概要&利用</h4>
+					<ul>
+						<li><a href="<?php echo siteInfo("rootUrl") ?>">サイトTOP</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収とは</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("campaign"); ?>">キャンペーン一覧</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("about"); ?>">メールで見積依頼</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("about"); ?>">WEB見積&申込</a></li>
+					</ul>
+				</div>
+				<div class="twocol col">
+					<h4>サービス案内</h4>
+					<ul>
+						<li><a href="<?php echo get_post_type_archive_link("flow"); ?>">ご利用の流れ</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("price"); ?>">料金案内</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/できないモノ</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">買取について</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>">よくある質問</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("staff"); ?>">スタッフ紹介</a></li>
+					</ul>
+				</div>
+				<div class="twocol col">
+					<h4>対応エリア</h4>
+					<ul>
+					<?php
+					$terms = array("東京都", "神奈川県", "埼玉県", "千葉県", "大阪府", "兵庫県"); 
+					foreach($terms as $term){
+						$prefecture = get_page_by_title($term, "", "area");
+						echo '<li><a href="'.get_permalink($prefecture->ID).'">'.$prefecture->post_title.'</a></li>';
+					}?>
+					</ul>
+				</div>
+				<div class="fourcol col">
+					<h4>エコ回収の物品別実績</h4>
+					<ul class="listItems">
+						<?php
+						$posts = query_posts(
+							array(
+								"order_by" => "date",
+								"order" => ASC,
+								"post_type" => "items",
+								"posts_per_page" => -1
+							)
+						);
+						foreach($posts as $post){
+							echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+						}
+						wp_reset_query();
+						?>
+					</ul>
+				</div>
+				<div class="twocol col last">
+					<h4>当サイトについて</h4>
+					<ul>
+						<li><a href="<?php echo get_post_type_archive_link("about"); ?>">企業情報</a></li>
+						<?php
+						$posts = query_posts(
+							array(
+								"order_by" => "date",
+								"order" => ASC,
+								"post_type" => "post",
+								"posts_per_page" => -1,
+								"cat" => 1
+							)
+						);
+						foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+						wp_reset_query(); ?>
+						<li><a href="<?php echo bloginfo("siteurl"); ?>/contact/">お問い合わせ</a></li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+
 		<footer class="siteInfo">
 			<div class="container">
 			<div class="ninecol col" id="appendix">
-				<ul>
-					<li><a href="<?php echo get_post_type_archive_link("about"); ?>">企業情報</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(3252)); ?>">寄付先紹介</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(3250)); ?>">利用規約</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(3248)); ?>">出品禁止商品ガイドライン</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(3246)); ?>">プライバシーポリシー</a></li>
-					<li><a href="<?php echo esc_url(get_permalink(3244)); ?>">個人情報の扱いについて</a></li>
-				</ul>
 				<ul>
 					<li>株式会社ウインローダー 東京都杉並区上荻2-37-7</li>
 					<li>エコランドコンシェルジュ 0120-530-539</li>
@@ -109,7 +180,25 @@
 
 	</div>
 
-	<div id="gotop"><a href="#ecoland"><span class="icon-arrow-up3"></span><span class="small">TOP</span></a></div>
+	<div id="shortcutsBtns">
+		<ul>
+			<li><a href="tel:0120530<?php echo telNum(); ?>" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});"><span class="icon-phone"></span><span class="label"><span class="block">0120</span><span class="block">530-<?php echo telNum(); ?></span></span></a></li>
+			<li><a href="<?php echo get_post_type_archive_link("concierge"); ?>"><span class="icon-calculate"></span><span class="label"><span class="block">5分で</span><span class="block">見積</span></span></a></li>
+			<li><a href="<?php echo get_post_type_archive_link("faq"); ?>"><span class="icon-question"></span><span class="label">よくある質問</span></a></li>
+			<li><a href="#siteHeader"><span class="icon-arrow-up3"></span><span class="label">TOP</span></a></li>
+		</ul>
+	</div>
+
+	<div class="globalnavi">
+		<ul>
+			<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>" rel="nofollow"><span>エコランド</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlEcookataduke"); ?>" rel="nofollow"><span>エコランドのお片づけサービス</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlEcohokan"); ?>" rel="nofollow"><span>お預かり</span></a></li>
+			<li id="currSite"><a href="<?php echo siteInfo("siteUrlEcokaishu"); ?>"><span>エコ回収</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlEcoauc"); ?>" rel="nofollow"><span>エコオク</span></a></li>
+			<li><a href="<?php echo siteInfo("siteUrlRshop"); ?>" rel="nofollow"><span>エコランドのリサイクルショップ</span></a></li>
+		</ul>
+	<!-- globalnavi--></div>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -173,84 +262,84 @@ $(document).ready(function(){
 		}
 		<?php endif; ?>
 
-		//subMenu
-		if(p>start){
-			$(subMenu).css({
-				"position": "fixed",
-				"top" : headerHeight+"px"
-			});
-			$(subMenu).find("ul").addClass("spSettings");
-		}else{
-			$(subMenu).css({
-				"position": "static",
-				"top" : ""
-			});
-			$(subMenu).find("ul").removeClass("spSettings");
-		}
-
+		
 	});
-
-	//showpanel
-	$(".showSmaller, .showBnr, .showMsg").each(function(){
-		$(this).click(function(){
-
-			var panelId = $(this).attr("data-panel");
-			var panel = $("#"+panelId);
-			var contentId = $(this).attr("data-content");
-			var content = $("#"+contentId);
-			if(panel.css("display") == "none"){
-				$("header .panelCont").slideUp();
-				if($(this).attr("class") == "showSmaller") panel.html(content);
-				panel.slideDown();
-			}else{
-				panel.slideUp();
-			}
-		});
-	});
-
-	/*<<?php if(is_smartphone()): ?>
-	//
-	$(".showLnSubmenu").each(function(){
-		$(this).click(function(){
-			var childMenuId = $(this).attr("data-sub");
-			var childMenu = $("#" + childMenuId);
-			if(childMenu.css("display") == "none"){
-				$(".lnSubMenu").slideUp();
-				childMenu.slideDown();
-			}else{
-				childMenu.slideUp();
-			}
-		});
-
-	});
-	<?php endif; ?>*/
 
 	// pc mouseover
-	$('li.sub').on({
+	$('.showLnSubmenu').on({
 		'mouseenter':function(){
-		$(this).children('ul').show();
+			$(this).children('ul').show();
 		},
 		'mouseleave':function(){
 			$(this).children('ul').hide();
 		}
 	});
+
+	<?php if(is_smartphone()): ?>
+
+	// sp menu
+	$(".showSmaller").each(function(){
+			
+		var panelId = $(this).attr("data-panel");
+		var panel = $("#"+panelId);
+		var contentId = $(this).attr("data-content");
+		var content = $("#"+contentId);
+
+		panel.html(content); // ex: $("#panelMenu").html($("#contMenu"));
+	});
 	
-	// sp menu btn tap
-	$('li.sub').on({
+	//// header
+	// sp main menu btn tap
+	$('#menuBtn').on({
 		'touchstart':function(){
-		$(this).children('ul').animate({height: "toggle", opacity: "toggle"}, "slow");
+			$("#panelMenu").animate({height: "toggle", opacity: "toggle"}, "slow");
+
+			// close sub menu
+			if($(".lnSubMenu").css("display") == "block"){
+				$(".lnSubMenu").css("display", "none");
+			}
 		}
 	});
 
+	// sp sub menu btn tap
+	$(".showLnSubmenu").on({
+		"touchstart":function(){
+			var subId = $(this).attr("data-sub");
+			$("#"+subId).animate({height: "toggle", opacity: "toggle"}, "slow");
+		}
+	});
+
+	// footer
+	$("#title").on({
+		"touchstart":function(){
+			$("#panelBnr").animate({height: "toggle", opacity: "toggle"}, "slow");
+		}
+	});
+
+	<?php endif; ?>
 
 	//owl-slide
-	$("#owl-slide").owlCarousel({ 
+	$(".owl-carousel").owlCarousel({ 
 		navigation : true, // Show next and prev buttons
-		slideSpeed : 300,
-		paginationSpeed : 400,
-		singleItem:true,
+		slideSpeed : 500,
+		paginationSpeed : 1000,
+		singleItem: true,
 		navigationText : ["",""],
 		autoPlay: true
+	});
+
+	//showMsg
+	$(".showMsg").each(function(){
+		$(this).click(function(){
+			var id = $(this).attr("data-panel");
+			var panel = $("#"+id);
+			if(panel.css("display") == "none"){
+				$(".panelCont").slideUp("fast");
+				panel.slideDown("fast");
+			}else{
+				panel.slideUp("fast");
+			}
+		});
 	});
 
 	//masonry
@@ -285,7 +374,25 @@ $(document).ready(function(){
 		delay_after : 2000
 	});
 
+	<?php if(!is_smartphone()): ?>
+	//tab
+	$(".tabCont:first-of-type").show();
+	<?php if(get_post_type() == "price"): ?>$(".tabIndex li:nth-of-type(2)").addClass("active");<?php endif; ?>
+	<?php if(get_post_type() == "flow"): ?>$(".tabIndex li:nth-of-type(1)").addClass("active");<?php endif; ?>
+	$(".tabIndex .tabBtn").each(function(){
+		$(this).click(function(){
+			$(".tabIndex li").removeClass("active");
+			$(this).addClass("active");
+			var tabId = $(this).attr("data-tab");
+			$(".tabCont").hide();
+			$("#"+tabId).fadeIn("slow");
+		});
+	});
+	<?php endif; ?>
+
+
 });
+
 </script>
 
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/rm_google.php'); ?>

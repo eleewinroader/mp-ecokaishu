@@ -1,8 +1,8 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 ?>
 
@@ -11,7 +11,7 @@
 <fieldset>
 	<ol>
 		<li class="formContents required">
-			<div class="formTitle"><label for="yCollCstmMuni">お住まいの地域</label></div>
+			<div class="formTitle"><label for="yCollCstmMuni">伺い先</label></div>
 			<div class="formElements">				
 				<ul class="formElement">
 					<li>
@@ -30,7 +30,7 @@
 			</div>
 		</li>
 		<li class="formContents required">
-			<div class="formTitle"><label for="cstmResidence">住居形態</label></div>
+			<div class="formTitle"><label for="cstmResidence">建物形態</label></div>
 			<div class="formElements">				
 				<ul class="formElement">
 					<li>

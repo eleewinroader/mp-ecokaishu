@@ -8,155 +8,318 @@ article#price{
 
 .intro{
 
+	// PC
+	@media all and (min-width: $minWidth){
+
+	}
+
+
 	// .summary
 	//**************************************************************
 
 	.summary{
-		padding-bottom: 0;
+		
+		//text-align: left;
+		padding-bottom: 0 !important;
+		//border-bottom: none !important;
 	}
 
-	// #ex
+	// nav
 	//**************************************************************
 
-	#ex{
+	nav{
 
-		margin:{
-			bottom: 5.0rem;
-		}
-
-		// h3
-		h3{
-			margin-bottom: 1.0rem;
-			font-size: 18px;
-			text-align: center;
-		}
-		
-		// ul
+		//ul
 		ul{
 
+			margin: 0 auto;
 			text-align: center;
 
+			//li
 			li{
-				position: relative;
+				display: inline-block;
 				text-align: center;
-				&:after{
-					position: absolute;
-					z-index: 3;
-					font:{
-						family: icomoon;
-						size: 24px !important;
-					}
-					content: "\e672";
-				}
-				&:nth-of-type(3){
-					&:after{
-						content: "\e674";
-					}
-				}
-				&:nth-of-type(4){
-					color: $white;
-					&:after{
-						color: $darkGray;
-						content: "=";
-					}
-				}
-				&:nth-of-type(5){
-					color: $white;
-					&:after{
-						content: "";
-					}
-				}
-				p{
+				vertical-align: top;
+
+				
+				/*&:hover{
+					@include transform_time(0.3s);
+					@include transform_to_scale(1.02);
+					background-color: rgba($pink, .6);
+				}*/
+
+				//a
+				a{
+
 					display: block;
-					span{
-						display: block;
-						&:first-of-type{
-							font-weight: bold;
-						}
-					}
-				}
+					@include box-sizing(border-box);
+					border: 3px solid white;
+					@include border-radius(50%);
+					@include box-shadow(rgba($black, .2) 0px 0px 3px);
+					text-decoration: none;
+					color: $white;
 
-				// PC
-				@media all and (min-width: $minWidth){
+					&:hover{
+						background: $darkBlue !important;
+					}
 
-					display: inline-block;
-					width: 150px;
-					height: 150px;
-					&:before{
-						display: block;
-						position: absolute;
-						z-index: 1;
-						top: 0;
-						left: 0;
-						width: 150px;
-						height: 150px;
-						@include border-radius(50%);
-						background: $white;
-						content: "";
-					}
-					&:after{
-						top: 50%;
-						right: -12px;
-						margin-top: -12px;
-					}
-					&:nth-of-type(4){
-						&:before{
-							background: $green;
-						}
+					.here{
+						display: inline-block;
+						margin-top: 0.2rem;
+						padding: 0 0.5rem;
+						background: rgba($black, .3);
+						border: 1px solid rgba($black, .1);
+						@include border-radius(6px);
+						@include box-shadow(rgba($black, .2) 0px 0px 3px inset);
 						&:after{
-							right: -24px;
+							display: inline-block;
+							width: 0;
+							height: 0;
+							//margin-top: -4px;
+							margin-left: 0.3rem;
+							border: 4px solid transparent;
+							border-top-color: $white;
+							content: "";
+							vertical-align: middle;
 						}
-					}
-					&:nth-of-type(5){
-						margin-left: 2.0rem;
-						&:before{
-							background: $pink;
-						}
-					}
-					p{
-						position: absolute;
-						z-index: 4;
-						top: 30%;
-						margin: 0;
-						width: 150px;
 					}
 
 				}
-
-				// Mobile
-				@media all and (max-width: $maxWidth){
-
-					display: block;
-					margin: 0 auto;
-					padding: 0.5rem 0;
-					background: $white;
-					&:after{
-						bottom: -12px;
-						left: 50%;
-						margin-left: -12px;
-					}
-					&:not(:last-of-type){
-						margin-bottom: 0.5rem;
-					}
-					&:nth-of-type(4){
+				&:nth-of-type(1){
+					a{
 						background: $green;
-						&:after{
-							bottom: -20px;
-							margin-left: -8px;
-						}
 					}
-					&:nth-of-type(5){
-						margin-top: 2.0rem;
+				}
+
+				&:nth-of-type(2){
+					a{
 						background: $pink;
 					}
-					p{
-						margin: 1.0rem 0;
-					}
-
 				}
 
 			}
 
+		}
+
+		// PC
+		@media all and (min-width: $minWidth){
+
+			ul{
+				li{
+					a{
+						width: 160px;
+						height: 160px;
+						padding-top: 3.5rem;
+					}
+				}
+			}
+
+		}
+
+		// PC
+		@media all and (max-width: $maxWidth){
+
+			ul{
+				li{
+					a{
+						width: 140px;
+						height: 140px;
+						padding-top: 3.0rem;
+					}
+				}
+			}
+
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// #ex
+//**********************************************************************
+
+#ex{
+
+	background: $gray;
+
+	// ul
+	//***************************************************************
+
+	ul{
+
+		text-align: center;
+
+		//li
+		li{
+
+			position: relative;
+			@include border-radius(6px);
+			border: 3px solid transparent;
+			background: $white;
+
+			//&:after
+			&:after{
+				z-index: 3;
+				line-height: 42px;
+				position: absolute;
+				width: 42px;
+				height: 42px;
+				color: $green;
+				font:{
+					family: icomoon;
+					size: $biggest * 1.2;
+				}
+				content: "\e672";
+			}
+			&:nth-of-type(2),
+			&:nth-of-type(3){
+				border-color: rgba($green, .7);
+				@include box-shadow(rgba($black, .5) 0px 0px 3px);
+				cursor: pointer;
+				&.active{
+					background: rgba($green, .8);
+					color: $white;
+				}
+			}
+			&:nth-of-type(3){
+				&:after{
+					color: $pink;
+					content: "\e674";
+				}
+			}
+			&:nth-of-type(4){
+				border-color: rgba($pink, .7);
+				@include box-shadow(rgba($black, .5) 0px 0px 3px);
+				cursor: pointer;
+				&:after{
+					color: $darkGray;
+					content: "\e9b4";
+				}
+				&.active{
+					background: rgba($pink, .9);
+					color: $white;
+				}
+			}
+			&:nth-of-type(5){
+				p{
+					line-height: 1.0em;
+					margin-top: 2.5rem !important;
+					font-size: $biggest;
+				}
+				&:after{ content: ""; } 
+			}
+
+			//a
+			a{
+				display: block;
+				color: $darkGray;
+				text-decoration: none;
+			}
+
+			//h4
+			h4{
+				margin-top: 1.5rem;
+				margin-bottom: 1.0rem;
+				padding-bottom: 1.0rem;
+				border-bottom: 1px solid rgba($black, .1);
+			}
+
+			//span[class^="icon-"]
+			span[class^="icon-"]{
+				display: block;
+				margin-top: 0.5rem;
+				margin-bottom: 0.7rem;
+				font-size: $biggest * 1.2;
+			}
+
+			//p
+			p{
+				.priceIndex{
+					margin-right: 0.5rem;
+				}
+				.price{
+					&:after{
+						font-size: 80%;
+						content: "円";
+					}
+				}
+			}
+
+		}
+
+	}
+
+	// PC
+	@media all and (min-width: $minWidth){
+
+		//ul
+		ul{
+
+			//li
+			li{
+
+				vertical-align: top;
+				height: 200px;
+
+				&:after{
+					top: 50%;
+					right: -34px;
+					margin-top: -21px;
+				}
+				&:nth-of-type(4){
+					&:after{
+						@include rotate(90deg);
+					}
+				}
+
+				//.active
+				&.active{
+					&:before{
+						display: block;
+						position: absolute;
+						width: 60px;
+						height: 60px;
+						left: 50%;
+						bottom: -90px;
+						margin-left: -30px;
+						background: $white;
+						@include rotate(45deg);
+						content: "";
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+	// Mobile
+	@media all and (max-width: $maxWidth){
+
+		//ul
+		ul{
+
+			//li
+			li{
+
+				margin-bottom: 1.0rem;
+				padding-bottom: 1.0rem;
+
+				//&:after
+				&:after{
+					bottom: -32px;
+					left: 50%;
+					margin-left: -21px;
+				}
+
+				//&:nth-of-type(5)
+				&:nth-of-type(5){
+					padding-bottom: 2.0rem;
+				}
+
+			}
 		}
 
 	}
@@ -327,6 +490,135 @@ article#price{
 }
 
 
+
+//**********************************************************************
+// #simulations
+//**********************************************************************
+
+#simulations{
+
+	// h3
+	//**************************************************************
+
+	h3{
+		margin-bottom: 0;
+	}
+
+	// .case
+	//**************************************************************
+
+	.case{
+
+		padding: 3.0rem 0;
+
+		&:not(:last-of-type){
+			border-bottom: 1px dashed rgba($black, .1);
+		}
+
+		//.imgFamily
+		.imgFamily{
+			margin-bottom: 2.0rem;
+			padding: 0.5rem;
+			@include box-sizing(border-box);
+			border: 1px solid rgba($black, .05);
+			background: $white;
+		}
+
+	}
+
+	// PC
+	@media all and (min-width: $minWidth){
+
+		//.case
+		.case{
+
+			//.details
+			.details{
+
+				position: relative;
+				height: 300px;
+				min-height: 300px;
+				margin-top: 2.0rem;
+				vertical-align: top;
+
+				//table
+				table{
+
+					tbody{
+						th, td{
+							padding-top: 0.5rem;
+							padding-bottom: 0;
+						}
+					}
+
+					tfoot{
+						position: absolute;
+						bottom: 0;
+						width: 100%;
+						border-top: 3px solid rgba($black, .1);
+						@include box-sizing(border-box);
+						tr{
+							display: block;
+							width: 100%;
+						}
+						th{
+							display: inline-block;
+							width: 50%;
+						}
+						td{
+							display: inline-block;
+							width: 50%;
+						}
+					}
+
+				}
+
+			}
+
+		}
+	}
+
+	// Mobile
+	@media all and (max-width: $maxWidth){
+
+		//.case
+		.case{
+
+			//.details
+			.details{
+
+				table{
+
+					tbody,
+					tfoot{
+						display: block !important;
+						tr{
+							display: table !important;
+							width: 100% !important;
+							border-bottom: 1px solid rgba($black, .1);
+						}
+						th, td{
+							display: table-cell !important;
+							border-bottom: none !important;
+						}
+						th{
+							width: 50%;
+							background: none;
+						}
+					}
+					tfoot{
+						background: rgba($black, .1);
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
 
 
 }

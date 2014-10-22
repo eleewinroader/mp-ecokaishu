@@ -1,8 +1,8 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 ?>
 
@@ -11,7 +11,7 @@
 <fieldset>
 	<ol>
 		<li class="formContents required">
-			<div class="formTitle"><label for="prefectures">お住まいの地域</label></div>
+			<div class="formTitle"><label for="prefectures">お伺い先</label></div>
 			<div class="formElements">
 				<div class="formElement">
 				<select name="cstmPrefecture" id="prefectures"<?php echo $disabled; ?> required>
@@ -55,7 +55,7 @@
 			</div>
 		</li>
 		<li class="formContents required">
-			<div class="formTitle"><label for="cstmResidence">住居形態</label></div>
+			<div class="formTitle"><label for="cstmResidence">建物形態</label></div>
 			<div class="formElements">
 				<ul class="formElement">
 					<li>
@@ -178,7 +178,7 @@
 	</ol>
 </fieldset>
 
-<fieldset>
+<!--<fieldset>
 	<ol>
 		<li class="formContents">
 			<div class="formTitle">キャンペーン種類</div>
@@ -218,7 +218,7 @@
 			</div>
 		</li>
 	</ol>
-</fieldset>
+</fieldset>-->
 
 <fieldset>
 	<ol>
@@ -227,7 +227,7 @@
 			<div class="formElements">
 				<ul class="formElement">
 				<?php
-				$cltDayArgs = array($cltDay0, $cltDay1, $cltDay2);				
+				$cltDayArgs = array($cltDay0, $cltDay1, $cltDay2);
 				for($i=0; $i<3; $i++){
 					$j = $i + 1;
 					if(is_smartphone()){

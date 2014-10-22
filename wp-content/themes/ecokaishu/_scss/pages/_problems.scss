@@ -7,16 +7,6 @@ article#problems{
 	background-repeat: repeat;
 
 
-//animation settings
-@mixin transform_time ($time: 1s) {
-	-webkit-transition: $time ease-in-out;
-}
-@mixin transform_to_scale ($scale: 1) {
-	-moz-transform: scale($scale);
-	-webkit-transform: scale($scale);
-	-o-transform: scale($scale);
-	-ms-transform: scale($scale);
-}
 
 
 //**********************************************************************
@@ -24,18 +14,15 @@ article#problems{
 //**********************************************************************
 
 //PC
-	@media all and (min-width: $minWidth){
+@media all and (min-width: $minWidth){
 
-
-h3{
-	//padding: 1.0rem;
-	font-size: $biggest;
-	//text-align: center;
-}
-h4{
-	font-size: $big;
-	line-height: 1.3em;
-}
+	h3{
+		font-size: $biggest;
+	}
+	h4{
+		font-size: $big;
+		line-height: 1.3em;
+	}
 
 }
 
@@ -74,9 +61,7 @@ h4{
 		position: relative;
 
 		h2{
-			//display: inline-block;
-			//margin-left: 3rem;
-		
+			
 			span:first-child{
 				display: block;
 				margin-bottom: 2.0rem;

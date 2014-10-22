@@ -1,21 +1,20 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
+
+	<div class="container">
+	<div class="twelvecol col last">
 
 	<?php if(have_posts()): while(have_posts()): the_post(); ?>
 
 		<h2><?php the_title(); ?></h2>
 
 		<div class="contents">
-			<div class="container">
-			<div class="twelvecol col last">
-				<?php the_content(); ?>
-			</div>
-			</div>
+			<?php the_content(); ?>
 		</div>
 
 		<?php
@@ -53,18 +52,19 @@ get_header( ); ?>
 
 			for($i=0; $i<$length; $i++){
 				echo '
-				<section class="contents">
-					<div class="container">
-					<div class="twelvecol col last">
+				<div class="contents">
+					<section>
 						<h3>'.$contentsInfo01[$i].'</h3>'.
 						$contentsInfo02[$i].
-					'</div>
-					</div>
-				</section>';
+					'</section>
+				</div>';
 			}
 
 		}?>
 
 	<?php endwhile; endif; ?>
+
+	</div>
+	</div>	
 
 <?php get_footer(); ?>

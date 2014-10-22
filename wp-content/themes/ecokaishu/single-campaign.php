@@ -1,8 +1,8 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 get_header( );?>
 
@@ -41,11 +41,7 @@ foreach( $cf as $row ){
 						<?php if(have_posts()): while(have_posts()): the_post(); ?>
 							<h2><?php the_title(); ?></h2>
 							<div class="campVisual">
-								<?php
-								if(!is_single(4141)): ?>
-								<!--<div class="fb-comments" data-href="http://www.eco-kaishu.jp/" data-numposts="5" data-colorscheme="light"></div>-->
-
-
+								<?php if(!is_single(4141)): ?>
 									<?php the_content(); ?>
 								<?php else:
 									$got_manth = date("n", mktime(0, 0, 0, date("n"), date("d")+14, date("Y")));

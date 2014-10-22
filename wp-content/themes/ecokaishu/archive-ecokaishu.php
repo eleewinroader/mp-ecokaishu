@@ -12,7 +12,7 @@ get_header( ); ?>
 			<div class="twelvecol last">
 
 				<div class="summary">
-					<?php echo getPage("イントロ", "contents"); ?>
+					<?php echo getPage("イントロ-3", "contents"); ?>
 				<!-- .intro .summary--></div>
 
 				<div id="flowEcokaishu">

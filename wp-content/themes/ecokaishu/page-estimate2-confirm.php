@@ -1,11 +1,11 @@
 <?php
 /*
 *
-* Template name: かんたん見積依頼2-1の内容確認
+* Template name: メールで見積依頼2-1の内容確認
 *
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 
 include(TEMPLATEPATH.'/estimate2-post.php');

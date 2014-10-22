@@ -1,7 +1,7 @@
 <?php
 /*
 *
-* Template name: かんたん見積依頼受付完了
+* Template name: メールで見積依頼受付完了
 *
 * @package Montser Platform
 * @subpackage MP-Ecokaishu

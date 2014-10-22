@@ -221,14 +221,15 @@
 
 .postsList{
 
-	ul{
-		li{
+	>ul{
+
+		>li{
 
 			border-bottom: 1px solid rgba($black, .05);
 			
 			a{
 				display: block;
-				padding: 1.0rem 0;
+				padding: 0.5rem 0;
 				color: $darkGray;
 				text-decoration: none;
 			}
@@ -244,6 +245,64 @@
 
 }
 
+
+//**************************************************************
+// .achiveList
+//**************************************************************
+
+.achiveList{
+
+	
+	> li{
+
+		padding: 1.0rem 0;
+
+		&:not(:last-of-type){
+			border-bottom: 1px dashed rgba($black, .1);
+		}
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+
+			//extend
+			.icon{
+				margin-right: 0.3rem;
+				font-family: icomoon;
+				speak: none;
+			}
+
+			//.date
+			.date{
+				text-align: left !important;
+				&:before{
+					@extend .icon;
+					content: "\e8f7";
+				}
+			}
+
+			//.cats
+			.cats{
+				&:before{
+					@extend .icon;
+					content: "\e8d8";
+				}
+			}
+
+			//.campaignOpen
+			.campaignOpen{
+				text-align: left !important;
+				&:before{
+					@extend .icon;
+					content: "\e8c4";
+				}
+			}
+
+		}
+
+	}
+
+}
+
 //**************************************************************
 // .listItems
 //**************************************************************
@@ -253,12 +312,13 @@
 	ul{
 		li{
 			display: inline-block;
+			font-size: 90%;
 			
 			a{
 				display: block;
 				margin-bottom: 0.3rem;
 				margin-right: 0.3rem;
-				padding: 0.5rem;
+				padding: 0.3rem 0.5rem;
 				background: rgba($white, .5);
 				border: 1px solid rgba($black, .1);
 				@include border-radius(3px);
@@ -266,6 +326,33 @@
 				text-decoration: none;
 			}
 
+		}
+	}
+
+}
+
+
+
+//**************************************************************
+// .wp-pagenavi
+//**************************************************************
+
+.wp-pagenavi{
+
+	.pages,
+	.nextpostslink,
+	.previouspostslink{
+		border: none;
+	}
+
+	.current{
+		border: 1px solid rgba($black, .05) !important;
+		background: rgba($black, .1);
+	}
+
+	.page{
+		&:hover{
+			border: 1px solid rgba($pink, .8);
 		}
 	}
 

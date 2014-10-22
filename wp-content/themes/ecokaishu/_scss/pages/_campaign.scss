@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.campaign{
+article.campaign{
 
 //**********************************************************************
 // .contents
@@ -13,12 +13,6 @@
 
 	h3{
 
-		margin-top: 2.0rem;
-		font:{
-			size: 48px;
-			weight: bold;
-		}
-		line-height: 1.2em;
 		text-align: center;
 
 		//+p
@@ -339,11 +333,13 @@
 	max-width: 930px;
 	margin: 0 auto;
 
-	#sliderCampaign &{
+	#sliderCampaignNews &,
+	article#campaign &{
 		overflow: hidden;
 		height: 400px;
 	}
 
+	
 }
 
 
@@ -426,14 +422,57 @@
 			position: center top;
 		}
 
-		//#sliderCampaign
-		#sliderCampaign &{
-			background:{
-				size: 150%;
+		//#sliderCampaignNews
+		#sliderCampaignNews &{
+
+			.mainVisual{
+
+				position: relative;
+				background-image: none;
+				background-color: $yellow !important;
+
+				//.campVisual
+				.campVisual{
+
+					width: 100%;
+					height: 100%;
+
+					img{
+						position: absolute;
+						width: 400px;
+						top: 50%;
+						left: 50%;
+						margin-top: -180px;
+						margin-left: -200px;
+					}
+
+				}
+
 			}
 		}
 
-		//.detalis
+		//#achiveCampaign &
+		#achiveCampaign &{
+
+			//.campVisual
+			.campVisual{
+
+				width: 100%;
+				height: 100%;
+
+				img{
+					position: absolute;
+					width: 400px;
+					top: 50%;
+					left: 5%;
+					margin-top: -180px;
+				}
+
+			}
+
+		}
+
+		//.detalis	
 		.details{
 			table{
 				th{
@@ -446,11 +485,34 @@
 
 	//Mobile
 	@media all and (max-width: $maxWidth){
+
 		background:{
 			image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///+vZ4TxwRxGxkawAIwDYjMic0ACAAAGD4GiFX/4AAAAAElFTkSuQmCC);
 			repeat: repeat;
 			color: $yellow;
 		}
+
+		//#sliderCampaignNews
+		#sliderCampaignNews &,
+		#achiveCampaign &{
+
+			//.campVisual
+			.campVisual{
+
+				img{
+					position: absolute;
+					width: 270px;
+					top: 50%;
+					left: 50%;
+					margin-top: -130px;
+					margin-left: -135px;
+					
+				}
+
+			}
+
+		}
+
 	}
 
 }
@@ -671,8 +733,8 @@
 					}
 				}
 
-				//#sliderCampaign
-				#sliderCampaign &{
+				//#sliderCampaignNews
+				#sliderCampaignNews &{
 					padding-top: 1.0rem;
 					img{
 						display: none;
@@ -860,8 +922,8 @@
 				float: right;
 				@include box-sizing(border-box);
 
-				//#sliderCampaign
-				#sliderCampaign &{
+				//#sliderCampaignNews
+				#sliderCampaignNews &{
 					padding-right: 1.0rem;
 				}
 
@@ -887,8 +949,8 @@
 				left: 50%;
 				margin-left: -75px;
 
-				//#sliderCampaign
-				#sliderCampaign &{
+				//#sliderCampaignNews
+				#sliderCampaignNews &{
 					@include opacity(.9);
 				}
 			}
@@ -902,8 +964,8 @@
 					text-align: center;
 				}
 
-				//#sliderCampaign
-				#sliderCampaign &{
+				//#sliderCampaignNews
+				#sliderCampaignNews &{
 					padding-top: 2.0rem;
 				}
 
@@ -1232,13 +1294,11 @@
 
 		#spShow{
 			display: none;
-
-	}
+		}
 
 
 		//PC
 		@media all and (min-width: $minWidth){
-
 
 			height: 400px;
 
@@ -1275,8 +1335,8 @@
 		//PC
 		@media all and (min-width: $minWidth){
 
-			//#sliderCampaign
-			#sliderCampaign &{
+			//#sliderCampaignNews
+			#sliderCampaignNews &{
 				padding-top: 2.0rem;
 			}
 
@@ -1286,8 +1346,8 @@
 		@media all and (max-width: $maxWidth){
 
 
-			//#sliderCampaign
-			#sliderCampaign &{
+			//#sliderCampaignNews
+			#sliderCampaignNews &{
 				position: relative;
 				height: 400px;
 				padding: 0 !important;
@@ -1499,7 +1559,7 @@
 
 	background-color: #5cba9e; // Old browsers
 	@include filter-gradient(#5cba9e, #5cba9e, horizontal); // IE6-9
-	@include background-image(linear-gradient(left,	#5cba9e 1%,#009ea1 50%,#5cba9e 100%));
+	@include background-image(linear-gradient(left,#5cba9e 1%,#009ea1 50%,#5cba9e 100%));
 
 
 	h2{
@@ -1765,8 +1825,8 @@
 			.icon-plane{
 
 				position: absolute;
-				top: 0;
-				right: 0;
+				top: 2.0rem;
+				right: 2.0rem;
 				@include rotate(30deg);
 				color: rgba($blue1408-00, .7);
 				font-size: $biggest * 1.5;
@@ -2054,8 +2114,8 @@ background:{
 	.campVisual{
 
 		margin: 0 auto;
-		padding: 4.0rem 1.0rem 1.0rem 1.0rem;
-			text-align: center;
+		padding: 3.0rem 1.0rem 1.0rem 1.0rem;
+		text-align: center;
 
 		//.appealTitle
 		.appealTitle{
@@ -2064,8 +2124,7 @@ background:{
 			@include text-shadow(3px, 3px, 0px, $white);
 		}
 
-
-
+		//.showMsg
 		.showMsg{
 			display: inline-block;
 			margin-top: 3.0rem;
@@ -2080,9 +2139,67 @@ background:{
 				color: $pink;
 			}
 		}
+		//#sliderCampaignNews &
+		#sliderCampaignNews &,
+		article#campaign &{
+
+			.showMsg{
+				display: none;
+			}
+
+			#toBehind{
+				display: inline-block;
+				margin-top: 2.0rem;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 0.5rem 1.0rem;
+				border: 1px solid rgba($black, .1);
+				@include border-radius(6px);
+				background: rgba($pink, .8);
+				color: $white;
+				font-size: $normal;
+				text-decoration: none;
+				&:hover{
+					border: 1px solid rgba($darkBlue, .5) !important;
+					background: rgba($darkBlue, .8) !important;
+				}
+				&:after{
+					margin-left: 0.5rem;
+					font-family: icomoon;
+					font-size: 90%;
+					speak: none;
+					content: "\e9db";
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+				}
+			}
+
+		}
+
+		//#behindMsg
 		#behindMsg{
 			padding-top: 3.0rem;
 			text-align: left;
+		}
+
+		//#toBehind
+		#toBehind{
+			display: none;
+		}
+
+
+		//Mobile
+		@media all and (max-width: $maxWidthSmall){
+
+			//.appealTitle
+			.appealTitle{
+				font-size: $biggest;
+				line-height: 1.2em;
+				.block{
+					display: inline !important;
+				}
+			}
+
 		}
 
 	}
@@ -2229,14 +2346,13 @@ background:{
 		background-image: url("assets/img/campaign/0000/03_bg.png");
 		background-repeat: no-repeat;
 
-
 		#appealTitle{
 
 			p{
 
 				display: table;
 				table-layout: fixed;
-				width: 290px;
+				width: 280px;
 				margin: 0 auto;
 				border: 3px solid $darkGray;
 				@include box-sizing(border-box);
@@ -2271,7 +2387,7 @@ background:{
 					display: inline-block;
 					overflow: hidden;
 					position: relative;
-					margin-right: 0.3rem;
+					margin-right: 0.1rem;
 					@include border-radius(50%);
 					border-radius: 50%;
 					background-color: $pink;
@@ -2354,6 +2470,15 @@ background:{
 				}
 			}
 
+			//#sliderCampaignNews &
+			#sliderCampaignNews &{
+
+				padding: 3.0rem 1.0rem;
+				height: 400px;
+				background-size: 60%;
+				@include box-sizing(border-box);
+
+			}
 
 		}
 
@@ -2361,11 +2486,11 @@ background:{
 		@media all and (max-width: $maxWidth){
 
 			background-position: right bottom;
-			background-size: 300px;
+			background-size: 280px;
 
 			#dates{
 
-				width: 290px;
+				width: 280px;
 				margin: 2.0rem auto;
 
 				.date{
@@ -2407,11 +2532,11 @@ background:{
 
 			#discount{
 
-				width: 290px;
+				width: 280px;
 				margin: 0 auto;
 				font-size: $biggest;
 				.off{
-					font-size: $biggest * 2;
+					font-size: $biggest * 1.5;
 				}
 
 			}
@@ -2431,6 +2556,48 @@ background:{
 
 	}
 
+}
+
+
+
+//**************************************************************************
+// #camp1410-00
+//**************************************************************************
+
+#camp1410-00{
+
+	$beige1410-00: #DFDEC5;
+	$brown1410-00: #42210B;
+
+	background: $beige1410-00;
+	background-image: linear-gradient(90deg, rgba($white, .1) 50%, transparent 50%),
+	linear-gradient(rgba($white, .1) 50%, transparent 50%);
+	background-size:50px 50px;
+
+	// .campVisual
+	//******************************************************************
+
+	.campVisual{
+	
+		//PC
+		@media all and (min-width: $minWidth){
+
+			img{
+				height: 400px;
+			}
+		}
+
+	}
+
+	// .details
+	//******************************************************************
+
+	.details{
+
+		background: $beige1410-00;
+
+	}
+	
 }
 
 

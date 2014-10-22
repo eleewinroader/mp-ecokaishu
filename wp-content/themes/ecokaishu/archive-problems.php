@@ -1,8 +1,8 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
 
@@ -14,7 +14,7 @@ get_header( ); ?>
 		</h2>
 
 		<ul>
-			<li><a href="#point1"><span class="block"><b>時間がない！</b></span><span class="block">見積を挟まなくても、</span><span class="block"><b>いきなり</b></span><span class="block">お願いできる？</span></a></li>
+			<li><a href="#point1"><span class="block"><b>時間がない！</b></span><span class="block">見積しなくても、</span><span class="block"><b>いきなり</b></span><span class="block">お願いできる？</span></a></li>
 			<li><a href="#point2"><b>時間指定</b>もできる？</a></li>
 			<li><a href="#point3"><span class="block"><b>大きいモノ</b>、</span><span class="block"><b>重いモノ</b>があるけど、</span><span class="block"><b>運び出し</b>も</span><span class="block">してくれる？</span></a></li>
 			<li><a href="#point4"><b>買取</b>も<span class="block">お願いできる？</span></a></li>

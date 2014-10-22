@@ -13,7 +13,7 @@ padding-top: 3.0rem;
 //**********************************************************************
 
 h2{
-	display: none;
+	//display: none;
 }
 
 h3{
@@ -66,75 +66,25 @@ h3{
 
 #sliderCampaignNews{
 
-	background: none !important;
 	border: none !important;
 
-	h3, h4{
-		display: none;
-	}
-
-	a{
-		display: block;
-		cursor: pointer;
-		text-decoration: none;
-	}
-
-	// .mainVisual
+	// #sliderCampaign
 	// **************************************************************
 
-	.mainVisual{
-		overflow: hidden !important;
-		@include box-sizing(border-box);
-	}
+	.sliderCampaign{
 
+		//.slider
+		.slider{
 
-	// .owl-buttons
-	// **************************************************************
-
-	.owl-buttons{
-
-		position: absolute;
-		top: 45%;
-		width: 100%;
-
-		//div
-		div{
-			background: $darkGray;
-			@include opacity(.8);
-			padding: 0.5rem;
-			&:before{
-				display: inline-block;
-				font:{
-					family: icomoon;
-					size: $bigger;
-				}
-				line-height: 1.3em;
-				vertical-align: middle;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-			}
-			&.owl-prev{
-				position: absolute;
-				left: 0;
-				&:before{
-					content: "\e9cf";
+			//a
+			a{
+				color: $darkGray;
+				&:hover{
+					color: $pink !important;
 				}
 			}
-			&.owl-next{
-				position: absolute;
-				right: 0;
-				&:before{
-					content: "\e9cb";
-				}
-			}
+
 		}
-	}
-
-	// .owl-controls
-	// **************************************************************
-
-	.owl-controls span{
-		background: $darkGray;
 	}
 
 	// #news
@@ -142,15 +92,12 @@ h3{
 
 	#news{
 
-		display: table;
 		margin-top: 10px;
 		background: $yellow;
 
 		//h3
 		h3{
-
-			display: table-cell;
-			width: 15%;
+			display: block;
 			margin: 0;
 			padding: 0.5rem;
 			@include box-sizing(border-box);
@@ -173,72 +120,77 @@ h3{
 
 		ul{
 			
-			display: table-cell;
-			width: 85%;
 			vertical-align: middle;
 
-		//li
-		li{
+			//li
+			li{
 
-			padding: 0.5rem 1.0rem;
-			line-height: 1.3em;
+				padding: 0.5rem 1.0rem;
+				line-height: 1.3em;
 
-			//:first-of-type
-			/*&:first-child{
-				.newsTxt{
-					&:before{
+				//a
+				a{
+					display: block;
+					color: $darkGray;
+					text:{
+						decoration: none;
+					}
+					time{
 						display: inline-block;
 						margin-right: 0.3rem;
-						padding: 0.1rem 0.3rem;
-						background: $pink;
-						color: $white;
-						font-size: 85%;
-						content: "NEW";
+					}
+					.tag{
+						display: inline-block;
+						margin-right: 0.3rem;
+						color: $darkBlue;
+						font-weight: bold;
 					}
 				}
-			}*/
 
+			}
+		}
+
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+		
+		width: 645px !important;
+
+		#news{
+
+			display: table;
+			min-height: 56px;
 			
+			//h3
+			h3{
+				display: table-cell;
+				width: 15%;
+			}
 
-			//a
-			a{
-				display: block;
-				color: $darkGray;
-				text:{
-					decoration: none;
-				}
-				time{
-					display: inline-block;
-					margin-right: 0.3rem;
-				}
-				.tag{
-					display: inline-block;
-					margin-right: 0.3rem;
-					color: $darkBlue;
-					font-weight: bold;
-				}
+			//ul
+			ul{
+				display: table-cell;
+				width: 85%;
 			}
 
 		}
+
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		#news{
+
+			ul{
+				li{
+					min-height: 60px;
+				}
+			}
+			
 		}
 
-	}
-
-	//PC
-	@media all and (min-width: $minWidth){
-		width: 645px !important;
-	}
-
-}
-
-//**********************************************************************
-// .behind
-//**********************************************************************
-
-.behind{
-
-	//PC
-	@media all and (min-width: $minWidth){
 	}
 
 }
@@ -256,7 +208,7 @@ h3{
 	//**************************************************************
 	
 	h3{
-		display: none;
+		//display: none;
 	}
 
 	// ul
@@ -375,39 +327,28 @@ h3{
 	//**************************************************************
 
 	h3{
-		display: none;
+		//display: none;
 	}
 
+	// ul
+	//**************************************************************
 	ul{
 
-		display: inline-table;
-		table-layout: fixed;
-		width: 100%;
-
+		//li
 		li{
 
-			display: table-cell;
-			width: 33.33333%;
-			vertical-align: middle;
-
 			// a
-			//**************************************************************
-
 			a{
-				display: table-cell;
 				line-height: 1.2em;
 				margin: 0 auto;
-				width: 140px;
-				height: 140px;
-				border: 1px solid rgba($black, .1);
-				@include border-radius(50%);
 				color: $white;
-				text-align: center;
 				text-decoration: none;
 				vertical-align: middle;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
 
-				&#estimate{ background: $pink; }
-				&#contact{ background: $orange; }
+				&#order{ background: $pink; }
+				&#estimate{ background: $orange; }
 				&#tel{ background: $green; }
 
 				&:hover{
@@ -417,8 +358,7 @@ h3{
 
 				span{
 					&[class^="icon"]{
-						display: block;
-						font-size: $biggest;
+						margin-bottom: 0.5rem;
 						-webkit-font-smoothing: antialiased;
 						-moz-osx-font-smoothing: grayscale;
 					}
@@ -434,12 +374,69 @@ h3{
 
 		width: 455px;
 
+		ul{
+			display: inline-table;
+			table-layout: fixed;
+			width: 100%;
+
+			li{
+				display: table-cell;
+				width: 33.33333%;
+				vertical-align: middle;
+			}
+
+			// a
+			a{
+				display: table-cell;
+				width: 140px;
+				height: 140px;
+				border: 1px solid rgba($black, .1);
+				@include border-radius(50%);
+				text-align: center;
+
+				span{
+					&[class^="icon"]{
+						display: block;
+						font-size: $biggest;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+					}
+				}
+
+			}
+
+		}
+
 	}
 
 	//Mobile
 	@media all and (max-width: $maxWidth){
 
 		width: 100%;
+
+		ul{
+
+			li{
+				&:last-of-type{
+					.block{
+						&:before{
+							content: "-";
+						}
+					}
+				}
+				&:after{
+					border-left-color: $white;
+				}
+
+			}
+			a{
+				span{
+					&.block{
+						display: inline-block !important;
+					}
+				}
+			}
+		}
 
 	}
 
@@ -493,8 +490,9 @@ h3{
 			}
 			&:nth-of-type(2){ a:before{ content: "\e8e1"; } }
 			&:nth-of-type(3){ a:before{ content: "\e6ed"; } }
-			&:nth-of-type(4){ a:before{ content: "\e66e"; } }
-			&:nth-of-type(5){ a:before{ content: "\e706"; } }
+			&:nth-of-type(4){ a:before{ content: "\e8da"; } }
+			&:nth-of-type(5){ a:before{ content: "\e66e"; } }
+			&:nth-of-type(6){ a:before{ content: "\e706"; } }
 			&:not(:last-of-type){ 
 				a{
 					border-bottom: 1px solid rgba($black, .05);
@@ -538,6 +536,65 @@ h3{
 		width: 265px !important;
 	}
 
+}
+
+//**********************************************************************
+// .btn
+//**********************************************************************
+
+#area{
+
+	//a
+	a{
+		display: block;
+		position: relative;
+		padding: 1.0rem;
+		text-decoration: none;
+		color: $darkGray;
+	}
+
+	//#area
+	&#area{
+
+		position: relative;
+
+		&:hover{
+			border-color: $pink;
+			.icon-map3{
+				color: $pink;
+			}
+		}
+
+		p{
+			margin-top: 5.0rem;
+			font-size: $bigger;
+			text-align: center;
+		}
+
+		span{
+			
+			&.icon-map3{
+				display: block;
+				position: absolute;
+				z-index: 2;
+				top: 1.0rem;
+				left: 50%;
+				margin-left: -32px;
+				font-size: $biggest * 2.0;
+				color: $yellow;
+			}
+			&.icon-search{
+				display: block;
+				position: absolute;
+				z-index: 3;
+				top: 2.8rem;
+				left: 50%;
+				color: $darkBlue;
+				font-size: $biggest;
+			}
+		}
+
+	}
 }
 
 //**********************************************************************
@@ -638,7 +695,7 @@ h3{
 		margin-bottom: 1.0rem;
 		li{
 			display: inline-block;
-			&:first-of-type{ color: $green; }
+			&:first-of-type{ color: $pink; }
 			&:last-of-type{ color: rgba($black, .3); }
 		}
 	}
@@ -647,6 +704,8 @@ h3{
 	//**************************************************************
 
 	table{
+
+		width: 100%;
 
 		//th, td
 		th, td{
@@ -665,7 +724,6 @@ h3{
 
 		//tbody
 		tbody{
-
 			tr{
 				&:nth-of-type(2n-1){ border-top: 1px solid rgba($black, .1); }
 				&:nth-of-type(2n){ border-top: 1px solid rgba($black, .05); }
@@ -673,12 +731,14 @@ h3{
 			th, td{
 				width: 14%;
 				&.happy{
-					background: $green;
-					color: $white;
+					color: $pink;
 				}
 				&.sad{
 					color: rgba($black, .3);
 				}
+			}
+			th{
+				font-size: 90%;
 			}
 			td{
 				&:before{
@@ -688,31 +748,47 @@ h3{
 				}
 				&.happy{
 					&:before{
-						font-size: $bigger;
-						content: "\e980";
+						font-size: $big !important;
+						content: "\e61c";
 					}
 				}
 				&.sad{
-					&:before{ content: "\e985"; }
+					&:before{ content: "\e675"; }
 				}
 			}
 		}
 
 		//.holiday
 		.holiday{
-			background: rgba($green, .1);
+			background: rgba($pink, .1);
 		}
 
 		//Mobile
 		@media all and (max-width: $maxWidth){
+
 			tr{
 				display: table;
 				width: 100%;
+				table-layout: fixed;
 			}
 			th, td{
 				display: table-cell;
 				width: 14%;
+				text-align: center;
 			}
+			th{
+				font-size: 80%;
+				letter-spacing: -0.1rem;
+				text-align: center;
+			}
+			td{
+				&:before{
+					display: block;
+					width: 100%;
+					margin: 0 auto;
+				}
+			}
+
 		}
 
 	}
@@ -722,6 +798,54 @@ h3{
 		width: 360px !important;
 	}
 
+
+}
+
+//**********************************************************************
+// #movie
+//**********************************************************************
+
+#movie{
+	
+
+	// #movieFlow video
+	//***************************************************************
+	.movieWrapper {
+		margin-top: 1.0rem;
+	}
+		
+	//PC
+	@media all and (min-width: $minWidth){
+
+		width: 550px !important;
+
+		//h3
+		h3{
+			.block{
+				display: inline !important;
+			}
+		}
+
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		//h3
+		h3{
+			.block{
+				line-height: 1.3em;
+				font-size: 90%;
+			}
+
+		}
+
+		// #movieFlow video
+		#movieFlow video{
+			min-height: 160px;
+		}
+
+	}
 
 }
 
@@ -736,27 +860,6 @@ h3{
 	padding: 0;
 	@include box-sizing(border-box);
 	background: transparent;
-
-	// #movie
-	//**************************************************************
-
-	&#movie{
-		.movie-container{
-			overflow: hidden;
-			position: relative;
-			padding:{
-				top: 30px; height: 0;
-				bottom: 56.25%;
-			}
-			iframe, object, embed {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
-		}
-	}
 
 	&#facebook, &#twitter{
 		min-height: 400px;

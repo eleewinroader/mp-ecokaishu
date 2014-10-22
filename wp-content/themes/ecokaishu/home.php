@@ -1,8 +1,8 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
 
@@ -15,9 +15,24 @@ get_header( ); ?>
 
 			<div class="item" id="sliderCampaignNews">
 
-				<section>
+				<section class="sliderCampaign">
 					<h3>ただ今進行中のキャンペーン</h3>
 					<div id="owl-slide" class="owl-carousel owl-theme">
+						<div class="slider">
+							<a href="<?php echo get_post_type_archive_link("price"); ?>">
+								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_01<?php if(is_smartphone()) echo "_s"; ?>.jpg" alt="エコランドは明朗会計" />
+							</a>
+						</div>
+						<div class="slider">
+							<a href="<?php echo get_post_type_archive_link("flow"); ?>#ecokaishu">
+								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_02<?php if(is_smartphone()) echo "_s"; ?>.jpg" alt="安心・丁寧な作業を常に心がけています" />
+							</a>
+						</div>	
+						<div class="slider">
+							<a href="<?php echo get_post_type_archive_link("concierge"); ?>">
+								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_03<?php if(is_smartphone()) echo "_s"; ?>.gif" alt="5分で見積完結【新登場】WEB見積" />
+							</a>
+						</div>
 						<?php
 						$args = array(
 							"post_type" => "campaign",
@@ -25,16 +40,34 @@ get_header( ); ?>
 						);
 						$posts = query_posts($args);
 						foreach($posts as $post): ?>
-							<div id="<?php echo campCode($post, "children"); ?>">
-								<a class="mainVisual" href="<?php echo get_permalink($post->ID); ?>">
-									<div class="campVisual">
-										<h4><?php echo $post->post_title; ?></h4>
-										<?php echo $post->post_content; ?>
-									</div>
-								</a>
+							<div class="slider" id="<?php echo campCode($post, "children"); ?>">
+								<?php if($post->post_title == "早割"):
+									$got_manth = date("n", mktime(0, 0, 0, date("n"), date("d")+14, date("Y")));
+									$got_day = date("j", mktime(0, 0, 0, date("n"), date("j")+14, date("Y")));?>
+									<a class="mainVisual" href="<?php echo get_permalink($post->ID); ?>">
+										<div class="campVisual">
+											<div id="appealTitle">
+												<p><span class="leftTitle">EARLY</span><span class="rightTitle">エコ回収</span></p>
+											</div>
+											<div id="dates">
+												<p><span class="date"><span class="dateIn"><?php echo $got_manth ; ?></span></span><span class="date"><span class="dateIn">月</span></span><span class="date"><span class="dateIn"><?php echo $got_day; ?></span></span><span class="date"><span class="dateIn">日</span></span><span class="date" id="dateAfter"><span class="dateIn">以降</span></span></p>
+											</div>
+											<div id="discount">
+												<p><span class="block">基本料金</span><span class="block mincho off">30%OFF</span></p>
+											</div>
+										</div>
+									</a>
+								<?php else: ?>
+									<a class="mainVisual" href="<?php echo get_permalink($post->ID); ?>">
+										<div class="campVisual">
+											<h4><?php echo $post->post_title; ?></h4>
+											<?php echo $post->post_content; ?>
+										</div>
+									</a>
+							<?php endif; ?>
 							</div>
 						<?php endforeach; ?>
-					<!-- #owl-slide--></div>
+					<!-- #owl-slide--></>
 				</section>
 
 				<section id="news">
@@ -59,19 +92,19 @@ get_header( ); ?>
 
 			<!-- #sliderCampaignNews--></div>
 
-			<section id="indexs" class="item">
+			<!--<section id="indexs" class="item">
 				<h3>メニュー</h3>
 				<ul class="listBtn">
 					<li>
-						<a href="<?php echo siteInfo("rootUrl"); ?>/estimate/" id="estimate">
-							<span class="icon-shipping"></span>
-							<span class="indexTitle"><span class="block">かんたん</span><span class="block">見積依頼</span></span>
+						<a href="<?php echo get_post_type_archive_link("concierge"); ?>" rel="nofollow" id="order">
+							<span class="icon-calculate"></span>
+							<span class="indexTitle"><span class="block">5分で</span><span class="block">見積</span></span>
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo siteInfo("rootUrl"); ?>/contact/" id="contact">
-							<span class="icon-question2"></span>
-							<span class="indexTitle">お問い合わせ</span>
+						<a href="<?php echo siteInfo("rootUrl"); ?>/estimate/" id="estimate">
+							<span class="icon-mail4"></span>
+							<span class="indexTitle"><span class="block">メールで</span><span class="block">見積依頼</span></span>
 						</a>
 					</li>
 					<li>
@@ -81,19 +114,24 @@ get_header( ); ?>
 						</a>
 					</li>
 				</ul>
-			<!--#indexs--></section>
+			<!--#indexs</section>-->
 
 			<div class="bnr" id="problems">
-
 				<div class="item">
 					<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
 				</div>
-
 				<div class="item">
 					<a href="<?php echo get_permalink(4141); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/0000/03_bnr_640x260.gif" alt="早割ページへ" /></a>
 				</div>
+			<!--#problems--></div>
 
-			</div>
+			<div class="item btn" id="area">
+				<a href="<?php echo get_post_type_archive_link("area"); ?>">
+					<span class="icon-search"></span>
+					<span class="icon-map3"></span>
+					<p><span class="block">対応エリアの</span><span class="block">確認はこちら</span></p>
+				</a>
+			<!--#area--></div>
 
 		<!--<aside class="item" id="shortcuts">
 			<h3>エコランドにご相談してください!</h3>
@@ -144,8 +182,8 @@ get_header( ); ?>
 				<div id="contentsCalendar" class="itemContents">
 					<h3>予約状況</h3>
 					<ul>
-						<li><span class="icon-happy"></span>予約可</li>
-						<li><span class="icon-sad"></span>やや混雑</li>
+						<li><span class="icon-sun3"></span>予約可</li>
+						<li><span class="icon-minus22"></span>やや混雑</li>
 					</ul>
 					<table>
 					<thead><tr>
@@ -157,9 +195,9 @@ get_header( ); ?>
 					//年月日に変数で取得
 					$year  = substr($ymd, 0, 4); 
 					$month = substr($ymd, 4, 2); 
-					$day   = substr($ymd, 6, 2); 
+					$day = substr($ymd, 6, 2); 
 					$month = sprintf("%01d", $month);
-					$day   = sprintf("%01d", $day);
+					$day = sprintf("%01d", $day);
 
 					$table = NULL;
 					
@@ -176,7 +214,7 @@ get_header( ); ?>
 							$n2 = sprintf("%01d", $m);
 							$k2 = sprintf("%01d", $d);
 							$w = getWeekDay($year, $month, $day, "+".$j." day");
-							$t = $n2.".".$k2;
+							$t = $n2."/".$k2;
 
 							if (isHoliday($y, $n, $i)) $holidayClass = " holiday";
 							else $holidayClass = "";
@@ -212,6 +250,16 @@ get_header( ); ?>
 				</div>
 			</section>
 
+			<div class="item" id="movie">
+				<div class="itemContents">
+					<h3><span class="block">5分でわかる</span>エコ回収の流れ</h3>
+					<p>安心のエコ回収。当日の流れを動画で体験してみてください。</p>
+					<div class="videoWrapper">
+						<iframe width="640" height="360" src="//www.youtube.com/embed/bNtnAxpyvaU?rel=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				 </div>
+			<!--movie--></div>
+
 			<section class="item" id="faq">
 				<div class="itemContents">
 					<h3>よくある質問</h3>
@@ -221,6 +269,7 @@ get_header( ); ?>
 						"エコ回収品について",
 						"エコ回収できるモノ/できないモノ",
 						"エコ回収作業について",
+						"買取について",
 						"お申し込みについて",
 						"料金について"
 					);
@@ -268,12 +317,6 @@ get_header( ); ?>
 					</ul>
 				</div>
 			<!--#news</section>-->
-
-			<div class="item webservices" id="movie">
-				<div class="movie-container">
-				<iframe width="1140" height="641" src="//www.youtube.com/embed/wbIak1kRaKg" frameborder="0" allowfullscreen></iframe>
-				 #movie .movie-container</div>
-			<!--youtube--></div>
 
 			<div class="item webservices" id="twitter">
 				<a class="twitter-timeline" href="https://twitter.com/eco_land" data-widget-id="476567348233506816">@eco_land からのツイート</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

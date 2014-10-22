@@ -1,10 +1,9 @@
 <?php
 /**
  * The main template file.
- *
- * @package WordPress
- * @subpackage ecokaishuCMS
- * @since ecokaishuCMS 0.0
+* @package Montser Platform
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
  */
 
 get_header(); ?>
@@ -41,15 +40,18 @@ get_header(); ?>
 		foreach($applicableAreas as $applicable) $service = $applicable->name;
 		switch ($service) {
 			case '対象内':
-				$text = "<b>エコ回収サービス対象内</b>のエリアです。お部屋のいらなくなったモノについて何でもご相談ください。";
+				$text = '<span class="block">対象エリア</span>';
 				break;
-			case '別途地域料金':
-				$text = "<b>別途地域料金</b>として4,200円が発生いたします。ご不明な点など、お気軽に電話・メールにてご相談くださいませ。";
+			case '地域料金':
+				$text = '<span class="block">地域料金が</span><span class="block">かかるエリア</span>';
 				break;
 			default:
-				$text = "<b>エコ回収サービス対象外</b>のエリアですが、可能な限り調整をいたしますので、お気軽に電話・メールにてご相談くださいませ。";
+				$text = '<span class="block">対象外</span>';
 				break;
 		}
+	}else{
+		if($prefectureName == "東京都" || $prefectureName == "大阪府") $text = "全地域";
+		else $text = "一部地域";
 	}
 
 	//vars for voices
@@ -60,38 +62,49 @@ get_header(); ?>
 
 	<div class="container">
 
-			<div class="ninecol col">
-				<div class="contents">
+		<div class="ninecol col">
 
-				<header>
-					<nav class="catNavi">
-						<ul>
-							<li><a href="<?php echo getPostType($post, "link"); ?>"><?php echo getPostType($post, "label"); ?></a></li>
-							<?php if(count($cltareas) > 1) echo '<li><a href="'.get_permalink($prefecture[0]->ID).'">'.$prefecture[0]->post_title.'</a></li>'; ?>
-							<li><?php the_title(); ?></li>
-						</ul>
-					</nav>
-					<h2><span class="title block"><?php the_title(); ?>のエコ回収</span></h2>
-				</header>
+			<header class="contents">
+				<nav class="catNavi">
+					<ul>
+						<li><a href="<?php echo getPostType($post, "link"); ?>"><?php echo getPostType($post, "label"); ?></a></li>
+						<?php if(count($cltareas) > 1) echo '<li><a href="'.get_permalink($prefecture[0]->ID).'">'.$prefecture[0]->post_title.'</a></li>'; ?>
+						<li><?php the_title(); ?></li>
+					</ul>
+				</nav>
+				<h2><span class="title block"><?php the_title(); ?>のエコ回収</span></h2>
+			<!--header--></header>
 
-				<div class="municipalities">
-
+			<section id="municipalities" class="contents">
+				<div class="msg">
+					<h3 class="explains">
+						<?php
+						if(count($cltareas) > 1){
+							echo '<span class="block">'.$post->post_title.'は</span>'.$text.'<span class="block">です!</span>';
+						}else{
+							echo '<span class="block">'.$prefectureName.'は</span><span class="block">'.$text.'</span><span class="block">対応可能です!</span>';
+						}?>
+					</h3>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/staff_img_yanashima.jpg" />
+				</div>
+				<div id="mapIndex">
+					<span class="applicable">対応可能エリア</span>
+					<span class="addtional">地域料金がかかるエリア</span>
+					<span class="disable">対応外</span>
+				</div>
+				<div id="mapArea">
 					<?php
 					if(count($cltareas) > 1){
-						echo '<p class="explains">'.$prefecture[0]->post_title.' '.$post->post_title.'は'.$text.'</p>';
-						echo '<img src="'.get_bloginfo("template_url").'/assets/img/base/staff_img_yanashima.png" alt="" id="staff" />';  
 						echo get_attached_img($prefecture[0]->ID, "areaInfo01", "", "map");
 					}else{
-						echo "<h3>対応エリア一覧</h3>";
-						echo get_attached_img($post->ID, "areaInfo01");
-						echo "<table>";
+						echo get_attached_img($post->ID, "areaInfo01", "", "map");
 						$able = get_term_by("name", "対象内", "applicablearea");
-						$conditional = get_term_by("name", "別途地域料金", "applicablearea");
+						$conditional = get_term_by("name", "地域料金", "applicablearea");
 						$disable = get_term_by("name", "対象外", "applicablearea");
 						$taxs = array($able, $conditional, $disable);
 						$labels = array(
-							"対応エリア", 
-							"地域料金がかかるエリア<sup>(※1)</sup>", 
+							"対応エリア一覧", 
+							"地域料金がかかるエリア一覧<sup>(※1)</sup>", 
 							"対応外エリア<sup>(※2)</sup>"
 						);
 						for($i=0; $i<3; $i++){
@@ -117,60 +130,115 @@ get_header(); ?>
 							);
 							$municipalities = query_posts($args);
 							if($municipalities){
-								echo "<tr><th>".$labels[$i]."</th><td>";
+								echo '<h4>'.$labels[$i].'</h4><ul class="listArea">';
 								foreach($municipalities as $municipality){
-									if($i<2) echo '<a href="'.get_permalink($municipality->ID).'">';
+									if($i<2) echo '<li><a href="'.get_permalink($municipality->ID).'">';
 									echo $municipality->post_title;
-									if($i<2) echo '</a>';
+									if($i<2) echo '</a></li>';
 								}
-								echo "</td></tr>"; 
+								echo "</ul>"; 
 							}
 						}
-						echo '</table>
+						echo '
 						<p class="footnote">
-							<small>※1 別途地域料金として4,200円が発生いたします。</small><br />
-							<small>※2 対象外エリアでも可能な可能な限り調整をいたしますので、お気軽に電話・メールにてご相談くださいませ。</small>
+							<small>※1 地域料金として別途4,200円が発生いたします。</small><br />
+							<small>※ 対象外エリアでも可能な可能な限り調整をいたしますので、お気軽に電話・メールにてご相談くださいませ。</small>
 						</p>';
 					}?>
-					
 				</div>
+			<!--#municipalities .contents--></section>
 
-				<section id="voices" class="achiveContents">
-					<?php if(!$voiceTitles): ?>
-						<?php the_content();?>
-					<?php else:?>
-						<h3><?php the_title(); ?>でエコ回収を利用した「お客様からの声」</h3>
+			<!--<section id="now" class="contents">
+				<h3>最近「<?php
+				if(count($cltareas) > 1) echo $prefectureName." ".$post->post_title;
+				else echo $prefectureName;
+				?>」でエコ回収された品物</h3>
+				<ul class="listEcokaishu">
+					<li>
+						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img01.jpg" alt="" />
+						<h4>Apple iPad(16G)</h4>
 						<dl>
-						<?php for($i=0; $i<count($voiceTitles); $i++){
-							echo "<dt>".$voiceTitles[$i]."</dt>";
-							echo "<dd>".$voiceContents[$i]."</dd>";
-						}?>
+							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
+							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
 						</dl>
-					<?php endif; ?>
-				</section>
+						
+					</li>
+					<li>
+						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img02.jpg" alt="" />
+						<h4>コムサスーツケースコムサスーツケース</h4>
+						
+						<dl>
+							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
+							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img03.jpg" alt="" />
+						<h4>FUJIGEN ウクレレ</h4>
+						
+						<dl>
+							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
+							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
+						</dl>
+					</li>
+					<li>
+						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img04.jpg" alt="" />
+						<h4>PS3</h4>
+						<dl>
+							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
+							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
+						</dl>
+					</li>
+				</ul>
+			<!--#now .contents</section>-->
 
-				<?php
-				$args = array(
-					"post_type" => "faq",
-					"posts_per_page" => -1,
-					"qstcat" => "対象エリア"
-				);
-				$faqs = query_posts($args);
-				if($faqs): ?>
-					<section class="achiveContents">
-						<h3>エコ回収の対象エリアについて「よくある質問」</h3>
-						<dl class="listFaq">
-						<?php foreach($faqs as $faq): ?>
-							<dt><?php echo $faq->post_title; ?></dt>
-							<dd><?php echo $faq->post_content; ?></dd>
-						<?php endforeach; wp_reset_query();?>
-						</dl>
-					</section>
+			<section id="voices" class="contents">
+				<?php if(!$voiceTitles): ?>
+					<?php echo $post->post_content; ?>
+				<?php else:?>
+					<h3><?php
+				if(count($cltareas) > 1) echo $prefectureName." ".$post->post_title;
+				else echo $prefectureName;
+				?>でエコ回収を利用した「お客様からの声」</h3>
+					<dl class="listVoices">
+					<?php for($i=0; $i<count($voiceTitles); $i++){
+						echo "<dt>".$voiceTitles[$i]."</dt>";
+						echo "<dd>".$voiceContents[$i]."</dd>";
+					}?>
+					</dl>
 				<?php endif; ?>
-					
+			<!--#voices .contents--></section>
 
+			<section id="shortcuts" class="contents">
+				<div class="twelvecol col last">
+					<h3>エコ回収についてもっと詳しく知る</h3>
 				</div>
-			</div>
+				<ul class="listShortcuts">
+					<li>
+						<a href="<?php echo get_post_type_archive_link("price"); ?>">
+							<span class="block">明朗な料金体系が</span>
+							<span class="block">エコ回収の特徴</span>
+							<span class="block index"><span class="icon-calculate"></span>料金案内</span>
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo get_post_type_archive_link("flow"); ?>">
+							<span class="block">エコ回収依頼から</span>
+							<span class="block">当日のエコ回収まで</span>
+							<span class="block index"><span class="icon-flow-tree"></span>ご利用の流れ</span>
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo get_post_type_archive_link("staff"); ?>">
+							<span class="block">お客様のお困りことに</span>
+							<span class="block">誠実・丁寧な仕事を</span>
+							<span class="block index"><span class="icon-users"></span>STAFF紹介</span>
+						</a>
+					</li>
+				</ul>
+			<!--#shortcuts .contents--></section>
+
+		<!--ninecol--></div>
 
 		<aside class="threecol col last sidebar">
 

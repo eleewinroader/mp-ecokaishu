@@ -1,8 +1,8 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 
 function getMetaArr($post, $meta){
@@ -14,8 +14,10 @@ function getMetaArr($post, $meta){
 	foreach( $cf as $row ){
 		if($row['meta_key'] == $meta) $vars[] = $row['meta_value'];
 	}
-	$vars = array_filter($vars, "strlen");
-	$vars = array_values($vars);
+	if($vars){
+		$vars = array_filter($vars, "strlen");
+		$vars = array_values($vars);
+	}
 	return $vars;
 	
 }
@@ -203,8 +205,7 @@ function getHolidays($year) {
 
 
 //N日（週）+か-する関数
-function getNthDay($year, $month, $day, $n) {
- 
+function getNthDay($year, $month, $day, $n) { 
 	$next_prev = new DateTime($year."-".$month."-".$day);
 	$next_prev->modify($n);
 	return $next_prev->format("Ymd");
@@ -222,8 +223,8 @@ function getReservInfo($ymd){
 	$reservs = query_posts(array("pagename" => "reserv"));
 	foreach($reservs as $reserv){
 		$available = get_post_meta($reserv->ID, "reservInfo01");
-		if(array_search($ymd, $available) !== false) $status = "happy";
-		else $status = "sad";
+		if(in_array($ymd, $available) == 1) $status = "sad";
+		else $status = "happy";
 	}
 	return $status;
 }
@@ -820,7 +821,7 @@ mail_footer();
 function estimate_ntfct($email, $estimateValues){
 
 	if($estimateValues['estmtSvcsEtc']) $estimateValues['estmtSvcsEtc'] = '('.$estimateValues['estmtSvcsEtc'].')';
-	$subject = '【エコ回収】かんたん見積依頼の受付が完了いたしました';
+	$subject = '【エコ回収】メールで見積依頼の受付が完了いたしました';
 	$message = $estimateValues['cstmName'].'様
 
 【エコ回収】の見積依頼をしていただき誠にありがとうございます。

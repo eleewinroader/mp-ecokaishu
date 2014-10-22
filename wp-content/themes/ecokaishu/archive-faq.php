@@ -1,18 +1,20 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
 
 
 	<h2><?php post_type_archive_title(); ?></h2>
 	<?php
+
 	$terms = array(
 		"エコ回収品について",
 		"エコ回収できるモノ/できないモノ",
 		"エコ回収作業について",
+		"買取について",
 		"お申し込みについて",
 		"料金について"
 	);?>
@@ -34,15 +36,17 @@ get_header( ); ?>
 					<h3><?php echo $terms[$i]; ?></h3>
 					<dl class="listFaq">
 						<?php
+						$term = get_term_by("name", $terms[$i], "qstcat");
 						$args = array(
 							"post_type" => "faq",
 							"qstcat" => $term->slug,
 							"order" => ASC,
-							"orderby" => date
+							"orderby" => date,
+							"posts_per_page" => -1
 						);
 						$posts = query_posts($args);
 						foreach($posts as $post){
-							echo '<dt>'.$post->post_title."</dt>";
+							echo '<dt id="qst'.$post->ID.'">'.$post->post_title."</dt>";
 							echo '<dd>'.$post->post_content."</dd>";
 						}?>
 					</dl>

@@ -1,10 +1,9 @@
 <?php
 /**
  * The main template file.
- *
- * @package WordPress
- * @subpackage ecokaishuCMS
- * @since ecokaishuCMS 0.0
+* @package Montser Platform
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
  */
 
 if(is_array($_POST["cltdItem"])) $cltdItem = $_POST["cltdItem"];

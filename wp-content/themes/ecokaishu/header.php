@@ -1,8 +1,8 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu
-* @since MP-Ecokaishu 1.0
+* @subpackage MP-Ecokaishu 1.3
+* @since MP-Ecokaishu 0.0
 */
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,6 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 <link href="<?php echo bloginfo("stylesheet_url"); ?>" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script><![endif]-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/script.min.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyATFqXgLwOisyrnoSCcXnIE2iG_-C9bmHI&sensor=true"></script>
 <script>
 	//GA
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -36,80 +35,79 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-42854141-1', 'auto');
+	ga('create', 'UA-42854141-2', 'auto');
 	ga('send', 'pageview');
 </script>
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. 'inc/tags/ga_common.php'); ?>
 <?php wp_head(); ?>
 </head>
-<body onload="initialize();">
+<body>
+	
+	<header class="header" id="siteHeader">
 
-	<div class="globalnavi" id="ecoland">
-		<ul class="twelvecol col last">
-			<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>" rel="nofollow"><span>エコランド</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcookataduke"); ?>" rel="nofollow"><span>エコランドのお片づけサービス</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcohokan"); ?>" rel="nofollow"><span>お預かり</span></a></li>
-			<li id="currSite"><a href="<?php echo siteInfo("siteUrlEcokaishu"); ?>"><span>エコ回収</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcoauc"); ?>" rel="nofollow"><span>エコオク</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlRshop"); ?>" rel="nofollow"><span>エコランドのリサイクルショップ</span></a></li>
-		</ul>
-	<!-- globalnavi--></div>
+		<div id="headerInfo">
+			<div class="container">
+				<h1 class="sixcol col">h1 tag</h1>
+				<div class="sixcol col last">
+					<a href="">エコランド</a>
+					<a href="">エコオク</a>
+					<a href="">会員登録(無料)</a>
+				</div>
+			</div>
+		</div>
 
-	<div id="headerFixed">
-		<header class="header">
+		<nav id="headerFixed">
 			<div class="container">
 				<div class="threecol col" id="siteName">
-					<h1 id="logo"><a href="<?php echo siteInfo("rootUrl"); ?>"><span class="icon-ecolandlogo"></span>エコ回収</a></h1>
+					<a href="<?php echo siteInfo("rootUrl"); ?>"><span class="icon-ecolandlogo"></span>エコ回収</a>
 				</div>
 				<div class="ninecol col last" id="siteMenu">
 					<div class="showBigger" id="contMenu">
 						<ul id="localNavi">
 							<li id="navHome"><a href="<?php echo siteInfo("rootUrl"); ?>/">HOME</a></li>
-							<li id="navFeatures"><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収とは</a></li>
-							<li id="navDetails" class="sub currntPage">
+							<li id="navFeatures" class="hasSub">
+								<div data-sub="lnEcokaishu" class="showLnSubmenu">エコ回収とは</div>
+								<ul class="lnSubMenu" id="lnEcokaishu">
+									<li><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収について</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("items"); ?>">物品別実績</a></li>
+								</ul>
+							</li>
+							<li id="navDetails" class="hasSub">
 								<div data-sub="lnService" class="showLnSubmenu">サービス案内</div>
 								<ul class="lnSubMenu" id="lnService">
 									<li><a href="<?php echo get_post_type_archive_link("flow"); ?>">ご利用の流れ</a></li>
 									<li><a href="<?php echo get_post_type_archive_link("price"); ?>">料金案内</a></li>
 									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/ できないモノ</a></li>
-									<li><a href="<?php echo get_post_type_archive_link("price"); ?>#purchase">買取について</a></li>
-									<li><a href="<?php echo get_post_type_archive_link("price"); ?>#options">対応エリア</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">買取について</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("area"); ?>">対応エリア</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>">よくある質問</a></li>
 								</ul>
-							</li>
-							<li id="navFaq" class="hasSub">
-								<a href="#" data-sub="lnFaq" class="showLnSubmenu">よくある質問</a>
-								<ul class="lnSubMenu" id="lnFaq">
-									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq0">エコ回収品について</a></li>
-									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/できないモノ</a></li>
-									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq2">エコ回収作業について</a></li>
-									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">お申し込みについて</a></li>
-									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq4">料金について</a></li>
-								</ul>
+
 							</li>
 							<li id="navAbout" class="hasSub">
-								<a href="#" data-sub="lnAbout" class="showLnSubmenu">私たちについて</a>
+								<div data-sub="lnAbout" class="showLnSubmenu">私たちについて</div>
 								<ul class="lnSubMenu" id="lnAbout">
-									<li><a href="<?php echo get_post_type_archive_link("staff"); ?>#concierge">私たちが伺います</a></li>
-									<li><a href="<?php echo get_post_type_archive_link("staff"); ?>#collecting">私たちが参ります</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("staff"); ?>#concierge">私たちが承ります</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("staff"); ?>#collecting">私たちが伺います</a></li>
 									<li><a href="<?php echo get_post_type_archive_link("about"); ?>">運営企業</a></li></li>
 								</ul>
 							</li>
-							<!--<li>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/flow/">ご利用の流れ</a></li>
-							<li><a href="<?php echo siteInfo("rootUrl"); ?>/price/">料金案内</a></li><a href="https://twitter.com/eco_land" rel="nofollow"><span class="icon-twitter3"></span><span class="txt">twitter</span></a></li>
-							<li><a href="https://www.facebook.com/ecoland.jp" rel="nofollow"><span class="icon-faceb-ook3"></span><span class="txt">facebook</span></a></li>-->
+							<li id="navConcierge"><a href="<?php echo get_post_type_archive_link("concierge"); ?>">お問い合わせ</a></li>
 						</ul>
 					</div>
-					<div class="showSmaller" data-panel="panelMenu" data-content="contMenu" id="menuBtn"><span class="icon-menu2"></span></div>
+					<div class="showSmaller" data-panel="panelMenu" data-content="contMenu" id="menuBtn" style="top:27px;"><span class="icon-menu2"></span></div>
 				</div>
-			<!--.header .container --></div>
-		<!-- .header --></header>
+</div>
 
-		<div class="panelCont" id="panelMenu"></div>
-		<!--.panelCont-->
+				</nav>
 
-	<!--#headerFixed--></div>
-	<div class="test"></div>
+
+
+
+
+			</div>
+		</header>
 
 	<?php
 	if(is_single()){
@@ -124,6 +122,10 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 			$cat = get_the_category(); 
 			$pageType = "post";
 			$featureType = $cat[0]->cat_name;
+		}elseif(get_post_type() == "columns"){
+			$cat = get_the_category(); 
+			$pageType = "post";
+			$featureType = $cat[0]->slug;
 		}elseif(get_post_type() == "campaign"){
 			$pageType = "campaign";
 			if(campCode($post)){ 
