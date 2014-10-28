@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
@@ -15,7 +15,18 @@ get_header( ); ?>
 		if($pr_code == "4_00") $ycoll = "2-1";
 	}?>
 	
-	<h2><?php post_type_archive_title(); ?></h2>
+	<header class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<ul class="twelvecol col last">
+					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php post_type_archive_title(); ?></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h2 class="twelvecol col last"><?php post_type_archive_title(); ?></h2>
+		</div>
+	<!--.headerPage--></header>
 
 	<div class="container">
 
@@ -53,7 +64,7 @@ get_header( ); ?>
 				</ol>
 				<div class="clear"></div>
 			</div>
-		</section>
+		<!--かんたんシミュレーション--></section>
 
 		<section class="contents" id="orderSteps">
 			<div class="twelvecol col last"><h3>WEB見積ご利用の流れ</h3></div>
@@ -79,7 +90,7 @@ get_header( ); ?>
 					<p>STEP3まで入力できたら、エコ回収時の費用の見積が表示されます。</p>
 				</li>
 			</ol>
-		</section>
+		<!--WEB見積ご利用の流れ--></section>
 
 		<section class="contents" id="contact">
 			<div class="fourcol col">
@@ -107,11 +118,10 @@ get_header( ); ?>
 					</div>
 				</a>
 			</div>
-		</section>
-
+		<!--コンシェルジュご利用の案内--></section>
 
 		<section class="contents" id="helps">
-			<div class="sixcol col postsList" id="faq">
+			<div class="sixcol col listPosts" id="faq">
 				<h3>よくある質問</h3>
 				<a href="<?php echo get_post_type_archive_link("faq"); ?>" class="toAchive">一覧を見る</a>
 				<ul class="">
@@ -126,7 +136,7 @@ get_header( ); ?>
 				}?>
 				</ul>
 			</div>
-			<div class="sixcol col postsList last" id="notices">
+			<div class="sixcol col listPosts last" id="notices">
 				<h3>新着情報</h3>
 				<a href="<?php echo get_post_type_archive_link("notices"); ?>" class="toAchive">一覧を見る</a>
 				<ul>
@@ -141,7 +151,7 @@ get_header( ); ?>
 				}?>
 				</ul>
 			</div>
-		</section>
+		<!--よくある質問--></section>
 
 		<section class="contents" id="services">
 			<div class="twelvecol col last"><h3>エコ回収サービス案内</h3></div>
@@ -183,23 +193,23 @@ get_header( ); ?>
 				</a>
 			</li>
 			</ul>
-		</section>
+		<!--サービス案内--></section>
 
 		<section class="contents" id="info">
 			<div class="twelvecol col last"><h3>当サイトについて</h3></div>
-			<div class="threecol col postsList">
+			<div class="threecol col listPosts">
 				<ul>
 					<li><a href="<?php echo get_post_type_archive_link("about"); ?>">企業情報</a></li>
 					<li><a href="<?php echo esc_url(get_permalink(3252)); ?>">寄付先紹介</a></li>
 				</ul>
 			</div>
-			<div class="threecol col postsList">
+			<div class="threecol col listPosts">
 				<ul>
 					<li><a href="<?php echo esc_url(get_permalink(3250)); ?>">利用規約</a></li>
 					<li><a href="<?php echo esc_url(get_permalink(3248)); ?>">出品禁止商品ガイドライン</a></li>
 				</ul>
 			</div>
-			<div class="threecol col postsList">
+			<div class="threecol col listPosts">
 				<ul>
 					<li><a href="<?php echo esc_url(get_permalink(3246)); ?>">プライバシーポリシー</a></li>
 					<li><a href="<?php echo esc_url(get_permalink(3244)); ?>">個人情報の扱いについて</a></li>
@@ -212,7 +222,7 @@ get_header( ); ?>
 					<span>お問い合わせ</span>
 				</a>
 			</div>
-		</section>
+		<!--当サイトについて--></section>
 
 	<!--.container--></div>
 

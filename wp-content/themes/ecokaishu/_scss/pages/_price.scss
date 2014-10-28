@@ -8,21 +8,7 @@ article#price{
 
 .intro{
 
-	// PC
-	@media all and (min-width: $minWidth){
-
-	}
-
-
-	// .summary
-	//**************************************************************
-
-	.summary{
-		
-		//text-align: left;
-		padding-bottom: 0 !important;
-		//border-bottom: none !important;
-	}
+	padding-bottom: 3.0rem;
 
 	// nav
 	//**************************************************************
@@ -40,13 +26,6 @@ article#price{
 				display: inline-block;
 				text-align: center;
 				vertical-align: top;
-
-				
-				/*&:hover{
-					@include transform_time(0.3s);
-					@include transform_to_scale(1.02);
-					background-color: rgba($pink, .6);
-				}*/
 
 				//a
 				a{

@@ -2,11 +2,7 @@
 
 article#problems{
 
-	background-color: $white;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAANklEQVQYV2NkIAIwEqFGkpAiSaAhzwkpAluESxHYBJhTsClCUYDPJBT/IJuEYQK6dTgVgBQCAG5EBSOuEsbJAAAAAElFTkSuQmCC) !important;
-	background-repeat: repeat;
-
-
+background-color: $white;
 
 
 //**********************************************************************
@@ -16,12 +12,85 @@ article#problems{
 //PC
 @media all and (min-width: $minWidth){
 
-	h3{
+	h2{
+
+		padding: 0;
+		text-align: center;
+		font-weight: bold;
+		&:before{
+			background: none;
+		}
+
+		//PC
+		@media all and (min-width: $minWidth){
+
+			span:first-child{
+				display: block;
+				margin-bottom: 2.0rem;
+				font-size: $bigger * 1.1;
+			}
+			span:nth-of-type(2){
+				display: block;
+				font-size: $biggest * 2;
+			}
+
+		}
+
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+
+			display: block;
+			margin-bottom: 2rem;
+		
+			span:first-child{
+				display: block;
+				margin-bottom: 0.5rem;
+				font-size: 70%;	
+			}
+			span:nth-of-type(2){
+				display: block;
+				font-size: 220%;
+			}
+
+		}
+
+	}
+
+	/*h3{
 		font-size: $biggest;
 	}
 	h4{
 		font-size: $big;
 		line-height: 1.3em;
+	}*/
+
+}
+
+//**********************************************************************
+// .circleTrimming
+//**********************************************************************
+
+.circleTrimming{
+
+	display: block;
+	overflow: hidden;
+	margin: 0 auto;
+	border: 1px solid rgba($black, .1);
+	@include border-radius(50%);
+	@include box-sizing(border-box);
+	background-color: $white;
+
+	//PC
+	@media all and (min-width: $minWidth){
+		width: 240px;
+		height: 240px;
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+		width: 290px;
+		height: 290px;
 	}
 
 }
@@ -34,18 +103,6 @@ article#problems{
 
 	overflow: hidden;
 
-	// h2
-	//**************************************************************
-
-	h2{
-		padding: 0;
-		text-align: center;
-		font-weight: bold;
-		&:before{
-			background: none;
-		}
-	}
-
 	// #introIllust1, #introIllust2
 	//**************************************************************
 	
@@ -57,21 +114,8 @@ article#problems{
 	//PC
 	@media all and (min-width: $minWidth){
 
-		min-height: 700px;
+		min-height: 500px;
 		position: relative;
-
-		h2{
-			
-			span:first-child{
-				display: block;
-				margin-bottom: 2.0rem;
-				font-size: $bigger * 1.07;
-			}
-			span:nth-of-type(2){
-				display: block;
-				font-size: $biggest * 2;
-			}
-		}
 
 		// circle link
 		ul{
@@ -149,25 +193,10 @@ article#problems{
 		min-height: 500px;
 		position: relative;
 
-		//h2
-		h2{
-			display: block;
-			margin-bottom: 2rem;
-		
-			span:first-child{
-				display: block;
-				margin-bottom: 0.5rem;
-				font-size: 70%;	
-			}
-			span:nth-of-type(2){
-				display: block;
-				font-size: 220%;
-			}
-		}
-
 		// list link
 		ul{
 			margin: 2rem auto;
+
 			li{
 				margin-bottom: 0.5rem;
 				
@@ -203,16 +232,15 @@ article#problems{
 			
 		}
 		#introIllust1{
+			z-index: 1;
 			bottom: -70px;
 			right: 0;
-			z-index: 1;
 			width: 30%;
 		}
 		#introIllust2{
+			z-index: -1;
 			bottom: 0;
 			left: 5px;
-			z-index: -1;
-
 			width: 100%;
 		}
 
@@ -226,31 +254,8 @@ article#problems{
 
 #strongPointList{
 
+	position: relative;
 	overflow: hidden;
-	background-color: rgba($green, .3) !important;
-
-	.container{
-		position: relative;
-	}
-
-	// h3
-	//**************************************************************
-
-	h3{
-
-		margin-top: 0;
-
-		#circle{
-			display: block;
-			//line-height: 1.5rem;
-			//background-color: $green;
-			//color: $white;
-			//font-size: $bigger;
-			text-align: center;
-			vertical-align: middle;
-		}
-
-	}
 
 	//#pointListLink
 	//**************************************************************
@@ -267,9 +272,12 @@ article#problems{
 				padding-top: 0.5rem;
 				padding-bottom: 0.5rem;
 				padding-left: 1.5rem;
-				border-bottom: 1px solid rgba($white, .3);
 				text-align: left;
 				word-wrap: break-word;
+
+				&:not(:last-of-type){
+					border-bottom: 1px solid rgba($black, .1);
+				}
 
 				//&:before
 				&:before{
@@ -302,41 +310,12 @@ article#problems{
 	// PC
 	@media all and (min-width: $minWidth){
 
-		//h3
-		h3{
-
-			position: relative;
-			margin-bottom: 2.0rem;
-			//height: 200px;
-
-			#circle{
-				position: absolute;
-				margin: 0 auto;
-				width: 200px;
-				height: 200px;
-				@include border-radius(50%);
-				top: 50%;
-				left: 0;
-				margin-top: -100px;
-				//margin-left: -100px;
-				.txt{
-					position: absolute;
-					width: 100%;
-					top: 50%;
-					left: 50%;
-					margin-top: -33px;
-					margin-left: -100px;
-
-				}
-			}
-			
-		}
-
 		// photo ito
-		#pointListPhoto{
+		.circleTrimming{
 			position: absolute;
-			top: -4.0rem;
-			right: 6.0rem;
+			bottom: 0;
+			right: 12rem;
+
 		}
 
 		// list link
@@ -360,18 +339,6 @@ article#problems{
 		padding-top: 3.0rem;
 		padding-bottom: 3.0rem;
 
-		//h3
-		h3{
-			margin-bottom: 1.0rem;
-			#circle{
-				padding: 0.5rem 0;
-				letter-spacing: -0.01rem;
-				.block:nth-of-type(2){
-					display: inline !important;
-				}
-			}
-		}
-
 		// photo ito
 		#pointListPhoto{
 			display: none;
@@ -387,27 +354,11 @@ article#problems{
 
 #strongPoint{
 
-	background: $gray;
-
-	// h3
-	//**************************************************************
-
-	h3{
-		text-align: center;
-	}
 
 	// .strongPointDetail
 	//**************************************************************
 
 	.strongPointDetail{
-
-		//.circleTrimming
-		.circleTrimming{
-			overflow: hidden;
-			margin: 0 auto;
-			background-color: $gray;
-			@include border-radius(50%);
-		}
 
 		//.btn
 		.btns{
@@ -423,9 +374,6 @@ article#problems{
 				a{
 					display: inline-block;
 					border-bottom: 1px dotted;
-					//padding: 0.5rem 1.0rem;
-					//background: $gray;
-					//@include border-radius(6px);
 					text-decoration: none;
 					color: $green;
 					&:before{
@@ -458,14 +406,14 @@ article#problems{
 	//PC
 	@media all and (min-width: $minWidth){
 
-		padding-top: 7.0rem;
-		padding-bottom: 7.0rem;
-
 		/* .strongPointDetail */
 		.strongPointDetail{
 
-			margin-top: 5.0rem;
-			margin-bottom: 5.0rem;
+			&:not(:last-of-type){
+				padding-top: 3.0rem;
+				padding-bottom: 3.0rem;
+				border-bottom: 1px dashed rgba($black, .1);
+			}
 
 			//nth-child(odd)
 			&:nth-child(odd){
@@ -484,11 +432,7 @@ article#problems{
 				}
 			}
 
-			.circleTrimming{
-				width: 240px;
-				height: 240px;
-			}
-
+			//p
 			p{
 				font-size: $normal * 1.1;
 				line-height: 1.7rem;
@@ -501,25 +445,14 @@ article#problems{
 	//Mobile
 	@media all and (max-width: $maxWidth){
 
-		h3{
-			//margin-top: 0;
-		}
-
 		.strongPointDetail{
+
 			margin: 0 auto 5rem;
-			/*div{
-				display: block;
-				float: none;
-				width: 100%;
-			}*/
+
 			h4{
 				text-align: center;
-			}			
-
-			.circleTrimming{
-				width: 290px;
-				height: 290px;
 			}
+
 		}
 
 	}
@@ -532,121 +465,73 @@ article#problems{
 
 #recommend{
 
-	background: $gray;
-
-	h3{
+	// h4
+	h4{
 		text-align: center;
-		margin-bottom: 3.0rem;
+
 	}
-	//background-color: $white !important;
 
-		
-	// #
-	//**************************************************************
-		//margin-bottom: 5rem;
-
-		/*
-		div{
-			text-align: center;
-
-			&:last-child{
-				margin-right: 0;
-			}
-
-			
-		}*/
-
-	.circleTrimming{
-		overflow: hidden;
+	// ul
+	ul{
 		display: block;
-		margin: 0 auto;
-		width: 240px;
-		height: 240px;
-		background-color: $white;
-		@include border-radius(50%);
+		margin: 2.0rem 0;
+		
+		//li
+		li{
+			position: relative;
+			padding-top: 0.7rem;
+			padding-bottom: 0.7rem;
+			padding-left: 1.5rem;
+			border-bottom: 1px solid rgba($black, .05);
+			text-align: left;
+			word-wrap: break-word;
+
+			//&:before
+			&:before{
+				position: absolute;
+				top: 0.7rem;
+				left: 0rem;
+				font-family: icomoon;
+				content: "\e66f";
+
+			}
+		}
 	}
 
+	// p
+	p{
+		text-align: left;
+	}
 
-			// h4
-			h4{
-				text-align: center;
+	//PC
+	@media all and (min-width: $minWidth){
 
-			}
-
-			// list
-			ul{
-				display: block;
-				margin: 2.0rem 0;
-				//border: 1px solid rgba($black, .05);
-				//li
-				li{
-					position: relative;
-					padding-top: 0.7rem;
-					padding-bottom: 0.7rem;
-					padding-left: 1.5rem;
-					border-bottom: 1px solid rgba($black, .05);
-					//padding-right: 0.5rem;
-					//border-left: 0.5rem solid rgba($green, .3);
-					//background-color: $white;
-					text-align: left;
-					word-wrap: break-word;
-
-					/*&:not(:last-of-type){
-						
-					}*/
-
-						//&:before
-					&:before{
-						position: absolute;
-						top: 0.7rem;
-						left: 0rem;
-						font-family: icomoon;
-						content: "\e66f";
-
-					}
-				}
-			}
-
-			// description
-			p{
-				text-align: left;
-			}
-
-		//PC
-		@media all and (min-width: $minWidth){
-
-			padding-top: 7.0rem;
-			padding-bottom: 7.0rem;
-
-			h3{
-				.block{
-					display: inline !important;
-				}
-			}
-
-		}
-
-
-		//Mobile
-		@media all and (max-width: $maxWidth){
-
-			h4{
-				.block{
-					display: inline !important;
-				}
-			}
-			
-			.col{
-				&:not(:last-of-type){
-					margin-bottom: 4.0rem;
-				}
-			}
-			.circleTrimming{
-				width: 290px;
-				height: 290px;
+		h3{
+			.block{
+				display: inline !important;
 			}
 		}
 
 	}
+
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		h4{
+			.block{
+				display: inline !important;
+			}
+		}
+		
+		.col{
+			&:not(:last-of-type){
+				margin-bottom: 4.0rem;
+			}
+		}
+
+	}
+
+}
 
 }

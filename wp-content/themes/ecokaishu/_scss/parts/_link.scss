@@ -42,40 +42,50 @@
 
 .innerLink{
 	display: inline-block;
-			border-bottom: 1px dotted;
-			text-decoration: none;
-			color: $green;
-			&:before{
-				display: inline-block;
-				margin-right: 0.2rem;
-				font-size: 90%;
-				font-family: icomoon;
-				speak: none;
-				content: "\e9d3";
-			}
-			&:hover{
-				border-bottom: 1px solid !important;
-				color: $darkGray;
-			}
-			&[href$=".pdf"]{
-				&:before{
-					display: inline-block;
-					margin-right: 0.2rem;
-					font-size: 90%;
-					font-family: icomoon;
-					speak: none;
-					content: "\ea5b";
-				}
-			}
+	border-bottom: 1px dotted;
+	text-decoration: none;
+	color: $green;
+	&:before{
+		display: inline-block;
+		margin-right: 0.2rem;
+		font-size: 90%;
+		font-family: icomoon;
+		speak: none;
+		content: "\e9d3";
+	}
+	&:hover{
+		border-bottom: 1px solid !important;
+		color: $darkGray;
+	}
+	&[href$=".pdf"]{
+		&:before{
+			display: inline-block;
+			margin-right: 0.2rem;
+			font-size: 90%;
+			font-family: icomoon;
+			speak: none;
+			content: "\ea5b";
+		}
+	}
 
-			&[href$=".pdf"]{
-				&:before{
-					display: inline-block;
-					margin-right: 0.2rem;
-					font-size: 90%;
-					font-family: icomoon;
-					speak: none;
-					content: "\ea5b";
-				}
-			}
+	&[href$=".pdf"]{
+		&:before{
+			display: inline-block;
+			margin-right: 0.2rem;
+			font-size: 90%;
+			font-family: icomoon;
+			speak: none;
+			content: "\ea5b";
+		}
+	}
+}
+
+
+.toAchive{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 0.5rem;
+	padding: 0 1.0rem;
+	@extend .btn;
+	font-size: $smaller;
 }

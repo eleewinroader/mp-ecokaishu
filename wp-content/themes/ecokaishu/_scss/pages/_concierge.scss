@@ -2,20 +2,6 @@
 
 article#concierge{
 
-//extend
-.btn{
-	border: 1px solid rgba($black, .1);
-	@include border-radius(6px);
-	background: rgba($black, .05);
-	color: $darkGray;
-	text-decoration: none;
-	&:hover{
-		border: 1px solid rgba($darkBlue, .5) !important;
-		background: rgba($darkBlue, .8) !important;
-		color: $white;
-	}
-}
-
 padding-bottom: 3.0rem;
 
 //**********************************************************************
@@ -405,10 +391,10 @@ padding-bottom: 3.0rem;
 		vertical-align: middle;
 	}
 
-	// .postsList
+	// .listPosts
 	//**************************************************************
 
-	.postsList{
+	.listPosts{
 		li{
 			&:last-of-type{ border-bottom: none; 	}
 			a{ color: $green; }
@@ -425,18 +411,6 @@ padding-bottom: 3.0rem;
 				}
 			}
 		}
-	}
-
-	// .toAchive
-	//**************************************************************
-
-	.toAchive{
-		display: inline-block;
-		vertical-align: middle;
-		margin-left: 0.5rem;
-		padding: 0 1.0rem;
-		@extend .btn;
-		font-size: $smaller;
 	}
 
 }

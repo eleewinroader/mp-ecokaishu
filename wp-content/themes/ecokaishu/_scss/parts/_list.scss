@@ -9,6 +9,55 @@
 //.listBtn
 //
 //**********************************************************************
+
+//**********************************************************************
+// .navPage
+//**********************************************************************
+.navPage{
+
+	margin-bottom: 3.0rem;
+	padding: 0.3rem 0;
+	background: rgba($black, .03);
+
+	ul{
+
+		font-size: 80%;
+
+		&:before{
+			margin-right: 0.3rem;
+			font-family: icomoon;
+			font-size: 90%;
+			speak: none;
+			content: "\e8d8";
+		}
+
+		li{
+
+			display: inline-block;
+			&:not(:last-of-type){
+				margin-right: 0.5rem;
+				&:after{
+					padding-left: 0.5rem;
+					color: $darkGray;
+					font-family: icomoon;
+					speak: none;
+					content: "\00BB";
+				}
+			}
+
+			a{
+				color: $green;
+				text-decoration: none;
+				&:hover{
+					color: $pink;
+				}
+			}
+			
+		}
+
+	}
+}
+
 //**********************************************************************
 // .definitionList
 //**********************************************************************
@@ -216,10 +265,10 @@
 }
 
 //**************************************************************
-// .postsList
+// .listPosts
 //**************************************************************
 
-.postsList{
+.listPosts{
 
 	>ul{
 
@@ -240,6 +289,19 @@
 				
 			}
 
+		}
+	}
+
+	#faq{
+		li{
+			a{
+				&:before{
+					font-family: icomoon;
+					speak: none;
+					margin-right: 0.5rem;
+					content: "\e99f";
+				}
+			}
 		}
 	}
 

@@ -31,7 +31,22 @@
 	-o-transform: scale($scale);
 	-ms-transform: scale($scale);
 }
-
+@-webkit-keyframes fadeIn {
+	0% { opacity: 0; }
+	20% { opacity: 0; }
+	40% { opacity: 0.3; }
+	60% { opacity: 0.5; }
+	80% { opacity: 0.9; }
+	100% { opacity: 1; }
+}
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	20% { opacity: 0; }
+	40% { opacity: 0.3; }
+	60% { opacity: 0.5; }
+	80% { opacity: 0.9; }
+	100% { opacity: 1; }
+}
 
 //vendor prefix
 $prefixList: -webkit-, -moz-, null;
@@ -67,6 +82,20 @@ $blue: #04278B;
 $twitter: #55acee;
 $facebook: #3b5998;
 
+//extend
+.btn{
+	border: 1px solid rgba($black, .1);
+	@include border-radius(6px);
+	background: rgba($black, .05);
+	color: $darkGray;
+	text-decoration: none;
+	&:hover{
+		border: 1px solid rgba($darkBlue, .5) !important;
+		background: rgba($darkBlue, .8) !important;
+		color: $white;
+	}
+}
+
 //import parts
 @import "base/font.scss";
 @import "base/common.scss";
@@ -78,6 +107,8 @@ $facebook: #3b5998;
 @import "parts/link.scss";
 
 @import "pages/article.scss";
+@import "pages/columns.scss";
+@import "pages/campaign.scss";
 
 @import "pages/home.scss";
 @import "pages/ecokaishu.scss";
@@ -89,6 +120,3 @@ $facebook: #3b5998;
 @import "pages/staff.scss";
 @import "pages/accomplishment.scss";
 @import "pages/concierge.scss";
-
-@import "pages/campaign.scss";
-@import "pages/achivements.scss";

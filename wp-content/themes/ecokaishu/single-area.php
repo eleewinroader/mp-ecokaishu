@@ -2,41 +2,52 @@
 /**
  * The main template file.
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
  */
 
-get_header(); ?>
+get_header();
 
-	<?php
-	//vars for area
-	$cltareas = get_the_terms($post->ID, 'cltarea');
-	if(count($cltareas) > 1){
-		 foreach($cltareas as $area){
-			if($area->parent == 0){
-				$prefectureId = $area -> term_id;
-				$prefectureName = $area -> name;
-			}else{
-				$municipalityId = $area -> term_id;
-				$municipalityName = $area -> name;
-			}
-		}
-		$args = array(
-			"post_type" => "area",
-			"name" => $prefectureName
-		);
-		$prefecture = query_posts($args);
-		wp_reset_query();
-	}else{
-		foreach($cltareas as $area){
-			$prefectureId = $area -> term_id;
-			$prefectureName = $area -> name;
-		}
-	}
+	//calling
+	$postType = get_post_type_object(get_post_type());
+	$cltAreas = get_the_terms($post->ID, 'cltarea');
+	
+	//vars of post type
+	$postTypeName = $postType->name;
+	$postTypeLabel = $postType->label;
+	$postTypeUrl = get_post_type_archive_link($postTypeName);
 
 	//vars 
+	$pageTitle = get_the_title($post->ID); //page title
+	$voiceTitles = getMetaArr($post, "contentsInfo01");
+	$voiceContents = getMetaArr($post, "contentsInfo02"); 
 	$applicableAreas = get_the_terms($post->ID, 'applicablearea');
-	if(count($cltareas) > 1){
+	//print_r($applicableAreas);
+	$navPage = '<li><a href="'.$postTypeUrl.'">'.$postTypeLabel.'</a></li>';
+	
+	if(count($cltAreas) > 1){ //vars for a single item page
+
+		//get taxs
+		 foreach($cltAreas as $cltArea){
+			if($cltArea->parent == 0){
+				$cltAreaName = $cltArea -> name; //cat name of a single item
+			}
+		}
+
+		//get a cat page
+		$args = array(
+			"post_type" => $postTypeName,
+			"name" => $cltAreaName
+		);
+		$cltArea = query_posts($args);
+		if($cltArea){ // if a cat page exists
+			$cltAreaId = $cltArea[0]->ID;
+			$cltAreaUrl = get_permalink($cltAreaId); //cat url of a single item
+			$navPage .= '<li><a href="'.$cltAreaUrl.'">'.$cltAreaName.'</a></li>';
+		}
+		wp_reset_query();
+
+		//vars for area
 		foreach($applicableAreas as $applicable) $service = $applicable->name;
 		switch ($service) {
 			case '対象内':
@@ -49,55 +60,64 @@ get_header(); ?>
 				$text = '<span class="block">対象外</span>';
 				break;
 		}
-	}else{
-		if($prefectureName == "東京都" || $prefectureName == "大阪府") $text = "全地域";
+		$areaPageTitle = $cltAreaName." ".$pageTitle;
+
+	}else{ // vars for a cat page
+
+		//get a page
+		$cltAreaId = $post->ID;
+		$cltAreaName = $post->post_title;
+		$areaPageTitle = $pageTitle;
+
+		//vars for area
+		if($cltAreaName == "東京都" || $cltAreaName == "大阪府") $text = "全地域";
 		else $text = "一部地域";
+
 	}
 
-	//vars for voices
-	$voiceTitles = getMetaArr($post, "contentsInfo01");
-	$voiceContents = getMetaArr($post, "contentsInfo02"); 
-
+	$navPage .= '<li>'.$pageTitle.'</li>';
 	?>
+
+	<header class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<ul class="twelvecol col last">
+					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><?php echo $navPage; ?>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h2 class="twelvecol col last"><span class="block"><?php echo $areaPageTitle; ?>の</span><span class="block">エコ回収 口コミ・実績</span></h2>
+		</div>
+	<!--.headerPage--></header>
 
 	<div class="container">
 
 		<div class="ninecol col">
 
-			<header class="contents">
-				<nav class="catNavi">
-					<ul>
-						<li><a href="<?php echo getPostType($post, "link"); ?>"><?php echo getPostType($post, "label"); ?></a></li>
-						<?php if(count($cltareas) > 1) echo '<li><a href="'.get_permalink($prefecture[0]->ID).'">'.$prefecture[0]->post_title.'</a></li>'; ?>
-						<li><?php the_title(); ?></li>
-					</ul>
-				</nav>
-				<h2><span class="title block"><?php the_title(); ?>のエコ回収</span></h2>
-			<!--header--></header>
-
-			<section id="municipalities" class="contents">
+			<div class="contents" id="municipalities">
 				<div class="msg">
-					<h3 class="explains">
+					<p class="explains">
 						<?php
-						if(count($cltareas) > 1){
-							echo '<span class="block">'.$post->post_title.'は</span>'.$text.'<span class="block">です!</span>';
+						if(count($cltAreas) > 1){
+							echo '<span class="block">'.$pageTitle.'は</span>'.$text.'<span class="block">です!</span>';
 						}else{
-							echo '<span class="block">'.$prefectureName.'は</span><span class="block">'.$text.'</span><span class="block">対応可能です!</span>';
+							echo '<span class="block">'.$areaPageTitle.'は</span><span class="block">'.$text.'</span><span class="block">対応可能です!</span>';
 						}?>
-					</h3>
-					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/staff_img_yanashima.jpg" />
+					</p>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/staff_img_yanashima.jpg" alt="" />
 				</div>
 				<div id="mapIndex">
-					<span class="applicable">対応可能エリア</span>
-					<span class="addtional">地域料金がかかるエリア</span>
-					<span class="disable">対応外</span>
+					<span class="applicable">対象エリア</span>
+					<span class="addtional">地域料金(4,200円)がかかるエリア</span>
+					<span class="disable">対象外</span>
 				</div>
 				<div id="mapArea">
 					<?php
-					if(count($cltareas) > 1){
-						echo get_attached_img($prefecture[0]->ID, "areaInfo01", "", "map");
+					if(count($cltAreas) > 1){
+						echo get_attached_img($cltAreaId, "areaInfo01", "", "map");
 					}else{
-						echo get_attached_img($post->ID, "areaInfo01", "", "map");
+						echo get_attached_img($cltAreaId, "areaInfo01", "", "map");
 						$able = get_term_by("name", "対象内", "applicablearea");
 						$conditional = get_term_by("name", "地域料金", "applicablearea");
 						$disable = get_term_by("name", "対象外", "applicablearea");
@@ -108,12 +128,13 @@ get_header(); ?>
 							"対応外エリア<sup>(※2)</sup>"
 						);
 						for($i=0; $i<3; $i++){
-							foreach($cltareas as $cltarea) $prefecture = $cltarea->term_id;
+							foreach($cltAreas as $cltarea) $prefecture = $cltarea->term_id;
 							$args = array(
 								"posts_per_page" => -1,
 								"post_type" => "area",
 								"order_by" => "date",
 								"order" => ASC,
+								"post__not_in" => array($cltAreaId),
 								'tax_query' => array(
 									'relation' => 'AND',
 									array(
@@ -146,60 +167,52 @@ get_header(); ?>
 						</p>';
 					}?>
 				</div>
-			<!--#municipalities .contents--></section>
+			<!--#municipalities .contents--></div>
 
-			<!--<section id="now" class="contents">
-				<h3>最近「<?php
-				if(count($cltareas) > 1) echo $prefectureName." ".$post->post_title;
-				else echo $prefectureName;
-				?>」でエコ回収された品物</h3>
-				<ul class="listEcokaishu">
-					<li>
-						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img01.jpg" alt="" />
-						<h4>Apple iPad(16G)</h4>
-						<dl>
-							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
-							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
-						</dl>
-						
-					</li>
-					<li>
-						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img02.jpg" alt="" />
-						<h4>コムサスーツケースコムサスーツケース</h4>
-						
-						<dl>
-							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
-							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
-						</dl>
-					</li>
-					<li>
-						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img03.jpg" alt="" />
-						<h4>FUJIGEN ウクレレ</h4>
-						
-						<dl>
-							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
-							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
-						</dl>
-					</li>
-					<li>
-						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img04.jpg" alt="" />
-						<h4>PS3</h4>
-						<dl>
-							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
-							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
-						</dl>
-					</li>
-				</ul>
-			<!--#now .contents</section>-->
+			<?php
+			if(campCode($post)){ 
+				$childrenClass = campCode($post, "children");
+				$pr_code = substr($childrenClass, 7, 11);
+				$pr_code = str_replace("-", "_", $pr_code);
+				$param = "?pr_code=".$pr_code; 
+				if($pr_code == "4_00") $ycoll = "2-1";
+			}
+			$telNum = telNum();
+			$template_url = get_bloginfo("template_url");
+			$site_url = siteInfo("rootUrl");
+$string = <<< EOF
+			<div class="contact contents">
+				<div class="box" id="tel">
+					<a href="tel:0120530{$telNum}" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
+						<p class="label block">お急ぎの方はお電話で</p>
+						<p class="action">
+							<span class="icon-phone"></span>
+							<span>0120-530-{$telNum}</span>
+						</p>
+					</a>
+				</div>
+				<div class="box" id="mail">
+					<a href="{$site_url}/estimate{$ycoll}/{$pr_code}">
+						<p class="label block">24時間受付中</p>
+						<p class="action">
+							<span class="icon-mail4"></span>
+							<span>メールで見積依頼</span>
+						</p>
+					</a>
+				</div>
+				<p id="openingHour">
+					<span class="date">営業時間</span>
+					<span class="date">平･土 9:00-22:00</span><span class="date">日･祝 9:00-20:00</span>
+				</p>
+			<!--コンシェルジュへ--></div>
+EOF;
+echo $string; ?>
 
-			<section id="voices" class="contents">
-				<?php if(!$voiceTitles): ?>
+			<section class="contents">
+				<?php if(count($voiceTitles) == 0): ?>
 					<?php echo $post->post_content; ?>
 				<?php else:?>
-					<h3><?php
-				if(count($cltareas) > 1) echo $prefectureName." ".$post->post_title;
-				else echo $prefectureName;
-				?>でエコ回収を利用した「お客様からの声」</h3>
+					<h3><?php the_title(); ?>でエコ回収を利用した「お客様からの声」</h3>
 					<dl class="listVoices">
 					<?php for($i=0; $i<count($voiceTitles); $i++){
 						echo "<dt>".$voiceTitles[$i]."</dt>";
@@ -207,9 +220,9 @@ get_header(); ?>
 					}?>
 					</dl>
 				<?php endif; ?>
-			<!--#voices .contents--></section>
+			<!--口コミ--></section>
 
-			<section id="shortcuts" class="contents">
+			<section class="contents">
 				<div class="twelvecol col last">
 					<h3>エコ回収についてもっと詳しく知る</h3>
 				</div>
@@ -236,56 +249,76 @@ get_header(); ?>
 						</a>
 					</li>
 				</ul>
-			<!--#shortcuts .contents--></section>
+			<!--エコ回収サービスについて--></section>
 
-		<!--ninecol--></div>
+			<?php echo $string; ?>
+
+		<!--.ninecol--></div>
 
 		<aside class="threecol col last sidebar">
 
-			<div class="bnrBtn">
+			<div class="bnrBtn contents">
 				<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
-			</div>
+			<!--.contents--></div>
 
 			<?php
-
-			//recent articles in the same area
-			if(count($cltareas) > 1){
-				$areaName = $prefecture[0]->post_title;
-				$postNotIn = array($prefecture[0]->ID);
-			}else{
-				$areaName = $post->post_title;
-				$postNotIn = array($post->ID);
+			//item pages in the same cat
+			$args = array(
+				"order_by" => "date",
+				"order" => ASC,
+				"post_type" => $postTypeName,
+				"posts_per_page" => -1,
+				"cltarea" => $cltAreaName,
+				"post__not_in" => array($cltAreaId)
+			);
+			$posts = query_posts($args);
+			if($posts){
+				echo '<section class="listItems contents">
+				<h2>'.$cltAreaName.'内のエリア一覧</h2><ul>';
+				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+				echo '</ul>
+				<!--.contents--></section>';
+				wp_reset_query();
 			}
+
+			//popular area cats
 			$args = array(
 				"order_by" => "date",
 				"order" => ASC,
 				"post_type" => "area",
 				"posts_per_page" => -1,
-				"cltarea" => $prefectureName,
-				"post__not_in" => $postNotIn
+				"catkinds" => "人気"
 			);
 			$posts = query_posts($args);
 			if($posts){
-				echo '<div class="listItems"><h3>'.$areaName.'内の対応エリア一覧</h3><ul>';
+				echo '<section class="listItems contents">
+				<h2>人気エリア一覧</h2><ul>';
 				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
-				echo '</ul></div>';
+				echo '</ul>
+				<!--.contents--></section>';
+				wp_reset_query();
 			}
 
-
+			//prefecture cats
 			$args = array(
-				"post_type" => "items",
-				"posts_per_page" => -1
+				"order_by" => "date",
+				"order" => ASC,
+				"post_type" => $postType->name,
+				"posts_per_page" => -1,
+				"catkinds" => "大カテゴリ"
 			);
 			$posts = query_posts($args);
 			if($posts){
-				echo '<div class="listItems"><h3>物品別エコ回収実績</h3><ul>';
+				echo '<section class="listItems contents">
+				<h2>対応都道府県一覧</h2><ul>';
 				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
-				echo '</ul></div>';
+				echo '</ul>
+				<!--.contents--></section>';
 				wp_reset_query();
 			}?>
 
-		</aside>
+		<!--.sidebar--></aside>
 
-	</div>
+	<!--.container--></div>
 
-<?php get_footer(); ?>
+<?php get_footer(); ?>'

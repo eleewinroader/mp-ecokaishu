@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-article.achivements{
+article.columns{
 
 //**********************************************************************
 // General settings
@@ -10,21 +10,18 @@ article.achivements{
 	position: relative;
 }
 
-
 //**********************************************************************
 // .msg
 //**********************************************************************
 
 .msg{
 
-	
 	//PC
 	@media all and (min-width: $minWidth){
 
 		position: absolute;
 		top: 1.0rem;
 		right: 0;
-
 
 		//img
 		img{
@@ -70,7 +67,6 @@ article.achivements{
 	}
 
 }
-
 
 //**********************************************************************
 // .listEcokaishu
@@ -172,27 +168,16 @@ article.achivements{
 
 			display: block;
 			position: relative;
-			padding: 1.5rem;
-			border: 3px solid rgba($black, .1);
+			padding: 1.5rem 0;
 			@include box-sizing(border-box);
-			@include box-shadow(rgba($black, .3) 0px 0px 3px);
-			//@include box-shadow(rgba($black, .1) 0px 0px 1px inset);
-			@include border-radius(3px);
 			color: $darkGray;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 
-			&:hover{
-				background: rgba($green, .8);
-				color: $white !important;
-			}
-
-			
-
 			&:after{
 				position: absolute;
 				top: 50%;
-				right: 0.5rem;
+				right: 0;
 				margin-top: -10px;
 				color: $darkGray;
 				font-family: icomoon;
@@ -200,10 +185,10 @@ article.achivements{
 				speak: none;
 				content: "\e862";
 			}
-			&:hover:after{ color: $white; }
+			&:hover:after{ color: $pink; }
 			
 			.index{
-				margin-top: 1.0rem;
+				margin-top: 0.5rem;
 				font-size: $bigger;
 				color: $green;
 				span[class^="icon-"]{
@@ -211,7 +196,7 @@ article.achivements{
 					color: $darkGray;
 				}
 			}
-			&:hover .index{ color: $white !important; }
+			&:hover .index{ color: $pink !important; }
 
 		}
 
@@ -253,26 +238,18 @@ article.achivements{
 
 }
 
-
 //**********************************************************************
-// .archive
-//**********************************************************************
+// .listPosts
+//*********************************************************************
 
-&.archive{
+.listPosts{
 
-	padding-bottom: 3.0rem;
-	
-	//a
-	a{
-		color: $green;
-		text-decoration: none;
-		&:hover{
-			color: $pink;
-		}
+	h3{
+		display: inline-block;
+		vertical-align: middle;
 	}
 
 }
-
 
 //**********************************************************************
 // .post
@@ -288,15 +265,13 @@ article.achivements{
 	//**************************************************************
 		
 	h2{
+		line-height: 1.5em;
 		margin-bottom: 1.0rem;
 		padding-top: 0;
 		text-align: left;
+		font-size: $big;
 		&:before{
 			background-color: transparent;
-		}
-		.title{
-			font-size: $big;
-			line-height: 1.5em;
 		}
 	}
 
@@ -310,6 +285,27 @@ article.achivements{
 
 	header{
 		padding-bottom: 0;
+	}
+
+	// .contentsImg
+	//******************************************************
+
+	.contentsImg{
+
+		border: 1px solid rgba($black, .1);
+		max-width: 280px;
+
+		//PC
+		@media all and (min-width: $minWidth){
+			margin-left: 1.0rem;
+		}
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			display: block !important; 
+			margin: 0 auto !important;
+		}
+
 	}
 
 	// .listEcokaishu
@@ -347,8 +343,13 @@ article.achivements{
 			li{
 				display: inline-block;
 				width: 32%;
+				border-bottom: 1px solid rgba($black, .1);
 				&:not(:last-of-type){
 					margin-right: 1.19%;
+				}
+				a{
+					padding-left: 1.0rem;
+					padding-right: 1.0rem;
 				}
 			}
 
@@ -540,12 +541,68 @@ article.achivements{
 
 		}
 
+		//.contact
+		.contact{
+			#openingHour{
+				display: inline-block !important;
+				width: 32%;
+				margin-left: 1.19%;
+				.date{
+					display: block;
+					line-height: 1.2em;
+					font-size: 90%;
+					&:nth-of-type(1){
+						display: block;
+					}
+					&:nth-of-type(2){
+						&:after{
+							content: "";
+						}
+					}
+				}
+			}
+		}
+
 	}
 
 	// &#items
 	//**************************************************************
 
 	&#items{
+
+		// .contact
+		//******************************************************
+		
+		.contact{
+			&:first-of-type{
+				.msg{
+					top: -100px;
+				}
+			}
+			&:last-of-type{
+				.msg{
+					display: none;
+				}
+				#openingHour{
+					display: inline-block !important;
+					width: 32%;
+					margin-left: 1.19%;
+					.date{
+						display: block;
+						line-height: 1.2em;
+						font-size: 90%;
+						&:nth-of-type(1){
+							display: block;
+						}
+						&:nth-of-type(2){
+							&:after{
+								content: "";
+							}
+						}
+					}
+				}
+			}
+		}
 
 		// .listFaq
 		//******************************************************
@@ -605,5 +662,197 @@ article.achivements{
 
 }
 
+//**********************************************************************
+// .sidebar
+//**********************************************************************
+
+.sidebar{
+
+	padding-bottom: 3.0rem;
+
+	h2{
+		font-size: $bigger;
+		margin-bottom: 1.0rem;
+	}
+
+	.contents{
+		margin-bottom: 2.0rem;
+		padding: 0;
+		border: none;
+	}
+
+	// .bnrBtn
+	//**************************************************************
+
+	.bnrBtn{
+
+		@include box-sizing(border-box);
+
+		//#area
+		&#area{
+
+			//a
+			a{
+				display: block;
+				position: relative;
+				padding: 1.0rem;
+				text-decoration: none;
+				color: $darkGray;
+			}
+
+			//#area
+			&#area{
+
+				position: relative;
+				border: 3px solid rgba($black, .1) !important; 
+
+				&:hover{
+					border-color: $pink;
+					.icon-map3{
+						color: $pink;
+					}
+				}
+
+				p{
+					margin-top: 5.0rem;
+					font-size: $bigger;
+					text-align: center;
+				}
+
+				span{
+					
+					&.icon-map3{
+						display: block;
+						position: absolute;
+						z-index: 2;
+						top: 1.0rem;
+						left: 50%;
+						margin-left: -32px;
+						font-size: $biggest * 2.0;
+						color: $yellow;
+					}
+					&.icon-search{
+						display: block;
+						position: absolute;
+						z-index: 3;
+						top: 2.8rem;
+						left: 50%;
+						color: $darkBlue;
+						font-size: $biggest;
+					}
+				}
+
+			}
+		}
+
+	}
+
+	// .catsList
+	//**************************************************************
+
+	.catsList{
+
+		h3{
+			display: none;
+		}
+
+		li{
+			border: 1px solid rgba($black, .05);
+			margin-bottom: 0.5rem;
+			a{
+				display: block;
+				padding: 1.0rem;
+				background: rgba($green, .7);
+				color: $white;
+				text-decoration: none;
+				&:hover{
+					background: rgba($darkBlue, .7) !important;
+				}
+				&:before{
+					margin-right: 0.3rem;
+					font-family: icomoon;
+					font-size: 90%;
+					speak: none;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+				}
+			}
+			&:nth-of-type(2n){
+				a{
+					background: rgba($pink, .7);
+				}
+			}
+			&.ecoauc-fund-report a:before{ content: "\e97a"; }
+			&.media a:before{ content: "\e900"; }
+			&.events a:before{ content: "\e8b9"; }
+			&.ecoreport a:before{ content: "\e828"; }
+			&.notice a:before{ content: "\e8c4"; }
+			&.staff a:before{ content: "\e919"; }
+			&.pressrelease a:before{ content: "\e8ad"; }
+
+		}
+
+	}
+
+	// .behind
+	//**************************************************************
+
+	.behind{
+
+		li{
+			margin-bottom: 1.0rem;
+			padding: 0.5rem;
+			border: 1px solid rgba($black, .1);
+
+			a{
+
+				padding-top: 0.5rem;
+				padding-bottom: 0.5rem;
+
+				p{
+
+					margin-top: 1.0rem;
+
+
+					//&.info
+					&.info{
+
+						display: inline-block;
+						font-size: $bigger;
+						color: $darkGray !important;
+
+						.block{
+
+							display: inline !important;
+							
+							&:nth-of-type(1){
+								&:after{
+									display: inline;
+									margin-left: 0.1rem;
+									margin-right: 0.1rem;
+								}
+							}
+
+						}
+
+					}
+
+				}
+
+				//.icon-bullhorn
+				.icon-bullhorn{
+					display: inline-block !important;
+					width: 20px;
+					height: 20px;
+					font-size: $normal;
+					line-height: 20px;
+				}
+
+			}
+
+		}
+	}
+
+}
 
 }

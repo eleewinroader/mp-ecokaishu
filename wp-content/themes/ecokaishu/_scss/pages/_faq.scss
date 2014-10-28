@@ -6,7 +6,6 @@ article#faq{
 // General settings
 //**********************************************************************
 
-max-width: $maxWidth;
 margin: 0 auto;
 
 //**********************************************************************
@@ -17,18 +16,20 @@ margin: 0 auto;
 //**********************************************************************
 
 .container{
+
 	position: relative;
+
 }
 
-// .contents
+// .docs
 //**********************************************************************
 
-.contents{
-	padding: 5.0rem 0;
-	border-top: 1px solid rgba($black, .1);
-	background: transparent !important;
+.docs{
+	//PC
+	@media all and (min-width: $minWidth){
+		max-width: $maxWidth;
+	}
 }
-
 
 //**********************************************************************
 // .intro
@@ -38,6 +39,7 @@ margin: 0 auto;
 
 	padding-top: 5.0rem;
 	padding-bottom: 5.0rem;
+	border-bottom: 1px solid rgba($black, .1);
 
 	// ul
 	//**************************************************************

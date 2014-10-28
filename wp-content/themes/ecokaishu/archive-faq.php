@@ -1,13 +1,24 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
 
+	<header class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<ul class="twelvecol col last">
+					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php post_type_archive_title(); ?></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h2 class="twelvecol col last"><?php post_type_archive_title(); ?></h2>
+		</div>
+	<!--.headerPage--></header>
 
-	<h2><?php post_type_archive_title(); ?></h2>
 	<?php
 
 	$terms = array(
@@ -19,7 +30,7 @@ get_header( ); ?>
 		"料金について"
 	);?>
 
-	<div class="container">
+	<div class="container docs">
 		<div class="twelvecol col last">
 
 			<div class="intro">

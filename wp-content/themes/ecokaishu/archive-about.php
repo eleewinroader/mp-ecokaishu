@@ -1,17 +1,27 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
 
+	<header class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<ul class="twelvecol col last">
+					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php post_type_archive_title(); ?></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h2 class="twelvecol col last"><?php post_type_archive_title(); ?></h2>
+		</div>
+	<!--.headerPage--></header>
 
-	<h2><?php post_type_archive_title(); ?></h2>
+	<div class="container">
 
-	<div class="container" id="intro">
-		<div class="twelvecol last">
-
+		<div class="twelvecol col last" id="intro">
 			<div class="summary">
 				<p><span class="block">創業64年の物流会社、ウインローダー。</span>
 				<span class="block">日本に循環型物流を構築すべく、</span>
@@ -20,11 +30,10 @@ get_header( ); ?>
 				
 			<!--<div class="intro"><?php echo getPage("イントロ", "contents"); ?></div>
 			<?php echo getPage("エコ回収の流れ", "contents"); ?>-->
-		</div>
-	<!-- .intro--></div>
+		<!--#intro --></div>
 
-	<section class="contents" id="greetings">
-		<div class="container">
+		<div class="contents">
+		<section id="greetings">
 			<div class="twelvecol last">
 				<h3>代表者からのメッセージ</h3>
 			</div>
@@ -46,11 +55,10 @@ get_header( ); ?>
 				</dl>
 				<!--<img src="<?php echo siteInfo("rootUrl"); ?>/img/<?php echo pageCode(); ?>/ceo.jpg" alt="" id="presImg" width="460px" />-->
 			</div>
-		<!-- #greetings .container --></div>
-	<!-- #greetings --></section>
+		<!-- #greetings --></section>
+		</div>
 
-	<div class="contents" id="outline">
-		<div class="container">
+		<div class="contents" id="outline">
 			<section class="sixcol col">
 				<h3>企業概要</h3>
 				<dl class="definitionList">
@@ -112,7 +120,8 @@ get_header( ); ?>
 					<dt>2011</dt><dd>昭島センターでのチャリティフリーマーケット開催／物流課と西多摩支店を統合、物流事業部創設／正社員による仙台でのボランティア活動／夢☆感課・昭島センターを物流事業部東村山と統合／ガイアの夜明け出演／コーポレートマネジメント室・広報採用室・エコランド企画室創設</dd>
 				</dl>
 			</section>
-		<!-- #outline .container--></div>
-	<!-- #outline --></div>
+		<!-- #outline --></div>
+
+	<!-- .container--></div>
 
 <?php get_footer(); ?>

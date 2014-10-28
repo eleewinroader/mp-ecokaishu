@@ -4,7 +4,7 @@
 * Template name: かんたん見積フォーム
 *
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
 */
 

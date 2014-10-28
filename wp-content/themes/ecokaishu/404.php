@@ -1,13 +1,25 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
 */
 
 get_header(); ?>
 
-	<h2>お探しのページは存在しません。</h2>
+
+	<header class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<ul class="twelvecol col last">
+					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li>お探しのページが見つかりません。</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h2 class="twelvecol col last">お探しのページが見つかりません。</h2>
+		</div>
+	<!--.headerPage--></header>
 
 	<div class="contents">
 		<div class="container">

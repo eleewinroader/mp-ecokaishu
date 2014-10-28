@@ -1,9 +1,14 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
 */
+
+date_default_timezone_set( 'Asia/Tokyo' );
+
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size(150, 150, true);
 
 function getMetaArr($post, $meta){
 
@@ -22,7 +27,25 @@ function getMetaArr($post, $meta){
 	
 }
 
-date_default_timezone_set( 'Asia/Tokyo' );
+function getMetaImgArr($post, $meta){
+
+	global $wpdb;
+	$query = "SELECT meta_id, post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $post->ID ORDER BY meta_id ASC";
+	$cf = $wpdb->get_results($query, ARRAY_A);	
+	foreach( $cf as $row ){
+		if($row['meta_key'] == $meta){
+			$image = wp_get_attachment_image_src($row['meta_value'], "thumbnail");
+			list($src, $width, $height) = $image;
+			$vars[] = '<img src="'.$src.'" width="'.$width.'" height="'.$height.'" />';
+		}
+	}
+	if($vars){
+		$vars = array_filter($vars, "strlen");
+		$vars = array_values($vars);
+	}	
+	return $vars;
+	
+}
 
 //header cleaner
 remove_action( 'wp_head', 'feed_links_extra'); // Display the links to the extra feeds such as category feeds
@@ -261,6 +284,8 @@ function getPage($string, $type){
 	}elseif($type == "contents"){
 		$pageInfo = get_post_meta($page[0]->ID, "archiveInfo02", TRUE);
 		$pageInfo = apply_filters("the_content", $pageInfo);
+	}elseif($type == "h1"){
+		$pageInfo = get_post_meta($page[0]->ID, "metaInfo01", TRUE);
 	}
 	return $pageInfo;
 
@@ -1100,4 +1125,7 @@ function inquiry_ntfct_isd($inquiryValues){
 受付番号：'.$inquiryValues['post_title'].'
 クーポン番号：'.$inquiryValues['couponNum'];
 wp_mail(array("e.lee.winroader@gmail.com", "h_murakami@winroader.co.jp", "fzpfyjfek6@i.softbank.jp"), $subject, $message, mail_header());
-}?>
+}
+
+
+?>

@@ -1,12 +1,23 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
 
-	<h2>不用品回収の前に「エコ回収」</h2>
+	<header class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<ul class="twelvecol col last">
+					<li><?php echo bloginfo("site_name"); ?>TOP</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h2 class="twelvecol col last">不用品回収の前に「エコ回収」</h2>
+		</div>
+	<!--.headerPage--></header>
 
 	<div class="container">
 
@@ -15,8 +26,7 @@ get_header( ); ?>
 
 			<div class="item" id="sliderCampaignNews">
 
-				<section class="sliderCampaign">
-					<h3>ただ今進行中のキャンペーン</h3>
+				<div class="sliderCampaign">
 					<div id="owl-slide" class="owl-carousel owl-theme">
 						<div class="slider">
 							<a href="<?php echo get_post_type_archive_link("price"); ?>">
@@ -60,15 +70,14 @@ get_header( ); ?>
 								<?php else: ?>
 									<a class="mainVisual" href="<?php echo get_permalink($post->ID); ?>">
 										<div class="campVisual">
-											<h4><?php echo $post->post_title; ?></h4>
 											<?php echo $post->post_content; ?>
 										</div>
 									</a>
 							<?php endif; ?>
 							</div>
 						<?php endforeach; ?>
-					<!-- #owl-slide--></>
-				</section>
+					<!-- #owl-slide--></div>
+				</div>
 
 				<section id="news">
 					<h3>お知らせ</h3>
@@ -92,30 +101,6 @@ get_header( ); ?>
 
 			<!-- #sliderCampaignNews--></div>
 
-			<!--<section id="indexs" class="item">
-				<h3>メニュー</h3>
-				<ul class="listBtn">
-					<li>
-						<a href="<?php echo get_post_type_archive_link("concierge"); ?>" rel="nofollow" id="order">
-							<span class="icon-calculate"></span>
-							<span class="indexTitle"><span class="block">5分で</span><span class="block">見積</span></span>
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo siteInfo("rootUrl"); ?>/estimate/" id="estimate">
-							<span class="icon-mail4"></span>
-							<span class="indexTitle"><span class="block">メールで</span><span class="block">見積依頼</span></span>
-						</a>
-					</li>
-					<li>
-						<a href="tel:0120530<?php echo telNum(); ?>" id="tel" onclick="ga('send', 'event', 'tel', '発信', 'TOP', 1, {'nonInteraction': 1});">
-							<span class="icon-phone"></span>
-							<span class="indexTitle">0120<span class="block">530-<?php echo telNum(); ?></span></span>
-						</a>
-					</li>
-				</ul>
-			<!--#indexs</section>-->
-
 			<div class="bnr" id="problems">
 				<div class="item">
 					<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
@@ -133,35 +118,10 @@ get_header( ); ?>
 				</a>
 			<!--#area--></div>
 
-		<!--<aside class="item" id="shortcuts">
-			<h3>エコランドにご相談してください!</h3>
-			<ul class="listBtn">
-				<li>
-					<a href="<?php echo siteInfo("rootUrl"); ?>/estimate/" id="estimate">
-						<span class="icon-shipping"></span>
-						<span class="indexTitle"><span class="block">かんたん</span><span class="block">見積依頼</span></span>
-					</a>
-				</li>
-				<li>
-					<a href="<?php echo siteInfo("rootUrl"); ?>/contact/" id="contact">
-						<span class="icon-question2"></span>
-						<span class="indexTitle">お問い合わせ</span>
-					</a>
-				</li>
-				<li>
-					<a href="tel:0120530<?php echo telNum(); ?>" id="tel" onclick="ga('send', 'event', 'tel', '発信', 'TOP', 1, {'nonInteraction': 1});">
-						<span class="icon-phone"></span>
-						<span class="indexTitle">0120<span class="block">530-<?php echo telNum(); ?></span></span>
-					</a>
-				</li>
-			</ul>
-		<!-- #shorcuts</aside>-->
-
 			<?php
 			$convSales = convSale();
 			if($convSales): ?>
-				<section class="behind">
-					<h3>ただ今の「訳あり」割引</h3>
+				<div class="behind">
 					<ul>
 					<?php foreach($convSales  as $convSale): ?>
 						<li class="item">
@@ -175,14 +135,14 @@ get_header( ); ?>
 						</li>
 					<?php endforeach; ?>
 					</ul>
-				</section>
+				</div>
 			<?php endif; ?>
 
 			<section id="reservCalendar" class="item">
 				<div id="contentsCalendar" class="itemContents">
 					<h3>予約状況</h3>
 					<ul>
-						<li><span class="icon-sun3"></span>予約可</li>
+						<li><span class="icon-truck"></span>予約可</li>
 						<li><span class="icon-minus22"></span>やや混雑</li>
 					</ul>
 					<table>
@@ -250,7 +210,7 @@ get_header( ); ?>
 				</div>
 			</section>
 
-			<div class="item" id="movie">
+			<section class="item" id="movie">
 				<div class="itemContents">
 					<h3><span class="block">5分でわかる</span>エコ回収の流れ</h3>
 					<p>安心のエコ回収。当日の流れを動画で体験してみてください。</p>
@@ -258,7 +218,7 @@ get_header( ); ?>
 						<iframe width="640" height="360" src="//www.youtube.com/embed/bNtnAxpyvaU?rel=0" frameborder="0" allowfullscreen></iframe>
 					</div>
 				 </div>
-			<!--movie--></div>
+			<!--movie--></section>
 
 			<section class="item" id="faq">
 				<div class="itemContents">
@@ -296,27 +256,6 @@ get_header( ); ?>
 				<h3><span class="voicesTag">集荷STAFFについて</span><span class="voicesInfo">東京都 40代 男性</span></h3>
 				<p class="voicesContents"> <strong>女性の方も来てくれた</strong>ので、<strgon>安心</strgon>できました。妻は女性の方が一人でも来てくれたほうが、安心できるらしい。いろいろと女性ならではの、気配りができるからだと言っています。</p>
 			</section>
-
-			<!--<section class="item" id="news">
-				<div class="itemContents">
-					<h3>新着情報&お知らせ</h3>
-					<ul class="news">
-					<?php
-					$args = array(
-						"posts_per_page" => 5,
-						"post_type" => array("notices"),
-					);
-					$posts = query_posts($args);
-					foreach($posts as $post){
-						$li = "<li><a href=".get_permalink($post->ID)."><time datetime=".$post->post_date.">".get_the_date("y.m.d")."</time>";
-						$tags = get_the_tags(); 
-						if ($tags) foreach($tags as $tag) $li .= '<span class="tag">'.$tag->name.'</span>';
-						$li .= '<span class="newsTxt">'.$post->post_title.'</span></a></li>';
-						echo $li;
-					}?>
-					</ul>
-				</div>
-			<!--#news</section>-->
 
 			<div class="item webservices" id="twitter">
 				<a class="twitter-timeline" href="https://twitter.com/eco_land" data-widget-id="476567348233506816">@eco_land からのツイート</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

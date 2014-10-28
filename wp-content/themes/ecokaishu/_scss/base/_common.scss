@@ -9,7 +9,6 @@ html, body{
 	line-height: 1.5rem;
 	overflow-x: hidden;
 	color: $darkGray;
-	//font: 15px/1 Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Verdana, Geneva, Arial, Helvetica;
 	font-family: Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Verdana, Geneva, Arial, Helvetica;
 	-webkit-text-size-adjust: auto;
 	-webkit-appearance: none;
@@ -178,155 +177,152 @@ a{
 		height: 100%;
 	}
 
+
 }
 
 //**********************************************************************
-// .globalnavi
+// #siteheader
 //**********************************************************************
 
-/*
-.globalnavi{
+#siteHeader{
 
-	// globalnavi ul
-	//******************************************************************
-	
-	ul{
+
+// #headerInfo
+//**********************************************************************
+
+#headerInfo{
+
+	border-top: 3px solid $green;
+	font-size: $smaller;
+	line-height: 1.2em;
+
+	// h1
+	//**************************************************************
+
+	h1{
 
 		//PC
 		@media all and (min-width: $minWidth){
-			position: absolute;
-			top: 3px;
-			right: 0.5rem;
+			line-height: 24px;
 		}
 
 		//Mobile
 		@media all and (max-width: $maxWidth){
-			display: none;
+			text-align: center;
 		}
 
+	}
+
+	// .navGlobal
+	//**************************************************************
+
+	.navGlobal{
+
+		//li
 		li{
 
-			overflow: hidden;
-			height: 35px;
-			text-align: center;
-			vertical-align: middle;
-			-webkit-font-smoothing: antialiased;
-			-webkit-text-stroke: 0.35px;
+			display: inline-block;
 
-			//:nth-of-type(7) 
-			&:nth-of-type(7){
-				height: 35px;
-				line-height: 35px;
-				border-right: none;
+			//&.currSite
+			&.currSite{
 				a{
-					display: inline-block;
-					padding: 0 1.0rem;
-				}
-				span{
-					display: inline-block;
-					&#login{
-						line-height: 1.0rem;
-					}
-					&#welcome{
-						padding: 0 0.5rem;
-					}			   
+					color: $green;
 				}
 			}
 
-			// a
+			//.label
+			.label{
+				display: none;
+				margin-left: 0.2rem;
+				vertical-align: middle;
+				line-height: 24px;
+			}
+			&:nth-of-type(6){
+				.label{
+					display: inline-block;
+				}
+			}
+
+			//a
 			a{
+
+				position: relative;
 				display: block;
-				//border-right: 1px solid rgba($white, .1);
-				//background: $green;
-				//color: rgba($white, .8);
+				height: 24px;
+				line-height: 24px;
 				text-decoration: none;
+				color: $darkGray;
+
 				&:before{
-					font:{
-						family: icomoon;
-						size: 24px;
-					}
-					line-height: 35px;
+					display: inline-block;
+					font-family: icomoon;
+					font-size: 24px;
+					vertical-align: middle;
 					-webkit-font-smoothing: antialiased;
 					-moz-osx-font-smoothing: grayscale;
 				}
+
 				&:hover{
-					background: #ffffff !important;
-					color: #009ea1 !important;
+					color: $pink;
+					border-bottom: 1px solid $pink;
+					.label{
+						display: inline-block;
+						-webkit-animation-name: fadeIn;
+						-webkit-animation-duration: 0.5s;
+						animation-name: fadeIn;
+						animation-duration: 0.5s;
+					}
 				}
+
 			}
 			&:nth-of-type(1) a:before{ content: "\e009"; }
 			&:nth-of-type(2) a:before{ content: "\e008"; }
-			&:nth-of-type(3) a:before{ content: "\e003"; }
-			&:nth-of-type(4) a:before{ content: "\e007"; }
-			&:nth-of-type(5) a:before{ content: "\e006"; }
-			&:nth-of-type(6) a:before{ content: "\e005"; }
-
-			//span
-			span{
-				display: none;
-				line-height: 1.0rem;
-			}
-
-			//#currSite
-			&#currSite a{
-				color: #009ea1;
-				background: #ffffff;
-			}
-
-			//PC
-			@media all and (min-width: $minWidth){
-				display: inline-block;
-				margin-right: -5px;
-				a{
-					padding: 0 0.7rem;
-				}
-			}
-
-			//Mobile
-			@media all and (max-width: $maxWidth){
-				display: table-cell;
-				a{
-					padding: 0 0.3rem;
-				}
+			&:nth-of-type(3) a:before{ content: "\e007"; }
+			&:nth-of-type(4) a:before{ content: "\e006"; }
+			&:nth-of-type(5) a:before{ content: "\e005"; }
+			&:nth-of-type(6) a:before{
+				font-size: 16px !important;
+				content: "\e95c";
 			}
 
 		}
 
 	}
 
-}*/
 
-//**********************************************************************
-// .header
-//**********************************************************************
+	//PC
+	@media all and (min-width: $minWidth){
 
-.header{
+		padding-top: 1.0rem;
+		padding-bottom: 0.3rem;
 
-	border-top: 3px solid $green;
-	background: rgba($black, .05);
-
-	a{
-		text-decoration: none;
-		color: $darkGray;
-	}
-
-	#headerInfo{
-
-		border-bottom: 1px solid rgba($black, .05);
-		font-size: $smaller;
-
-		ul{
+		//.navGlobal
+		.navGlobal{
 			text-align: right;
-
-			li{
-				display: inline-block;
-			}
 		}
+
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		padding: 0.5rem 0;
+
+		//.navGlobal
+		.navGlobal{
+			margin-top: 0.5rem;
+			padding-top: 0.3rem;
+			padding-bottom: 0.3rem;
+			border-top: 1px solid rgba($black, .1);
+			border-bottom: 1px solid rgba($black, .1);
+			text-align: center;
+		}
+
 	}
 
 }
 
-//**********************************************************************
+
 // #headerFixed
 //**********************************************************************
 
@@ -338,11 +334,38 @@ a{
 	position: relative;
 	z-index: 9998;
 	width: 100%;
+	padding-bottom: 1.0rem;
 	background: $white;
+	border-bottom: 1px solid rgba($black, .1);
+
+	.container{
+		position: relative;
+	}
+
+	//#siteName
+	#siteName{
+		a{
+			display: block;
+			position: relative;
+			line-height: 1.5em;
+			color: $green;
+			font-size: $biggest;
+			font-weight: bold;
+			text-decoration: none;
+			.icon-ecolandlogo{
+				position: absolute;
+				top: 50%;
+				left: 0;
+				margin-top: -12px;
+				font-size: 52px;
+				line-height: 21px;
+			}
+		}
+	}
 
 	// #localNavi
 	//**************************************************************
-	
+
 	#localNavi{
 
 		position: relative;
@@ -355,14 +378,11 @@ a{
 			margin-left: -5px;
 			padding-left: 2.3rem;
 			padding-right: 1.0rem;
-			border-right: 1px solid rgba($black, .05);
-
-			&:first-of-type{ border-left: 1px solid rgba($black, .05); }
 
 			&:before{
 				display: block;
 				position: absolute;
-				left: 0.7rem;
+				left: 0.5rem;
 				font-size: $normal * 1.2;
 				font-family: icomoon;
 				speak: none;
@@ -391,7 +411,7 @@ a{
 				&:after{
 					display: block;
 					position: absolute;
-					right: 1.0rem;
+					right: 0.5rem;
 					width: 0;
 					height: 0;
 					border: 4px solid transparent;
@@ -432,7 +452,7 @@ a{
 					font-size: 90%;
 
 					&:not(:last-of-type){
-						border-bottom: 1px solid rgba($white, .2);
+						border-bottom: 1px solid rgba($black, .1);
 					}
 
 					a{
@@ -519,6 +539,8 @@ a{
 
 			> li{
 
+				border-bottom: 1px solid rgba($black, .05);
+
 				//.hasSub
 				&.hasSub{
 					&:after{
@@ -542,82 +564,44 @@ a{
 		}
 
 	}
-	
-	// .header
-	//**************************************************************
-	
 
-		border-bottom: 1px solid rgba($black, .05);
+	//Bigger screen
+	@media all and (min-width: $minWidth){
 
-		//.container
-		.container{
-			position: relative;
-			padding: {
-				top: $padding* 2;
-				bottom: $padding* 2;
-			}
-		}
-
-		//#siteName
 		#siteName{
-			a{
-				display: block;
-				position: relative;
-				padding-left: 60px;
-				color: $green;
-				font-size: $bigger;
-				font-weight: bold;
-				text-decoration: none;
-				.icon-ecolandlogo{
-					position: absolute;
-					top: 50%;
-					left: 0;
-					margin-top: -12px;
-					font-size: 52px;
-					line-height: 21px;
-				}
+			line-height: $height;
+		}
+		.showSmaller,
+		.panelCont{
+			display: none;
+		}
+		.showBigger{
+			display: block;
+		}
+
+	}
+
+	//Smaller screen
+	@media all and (max-width: $maxWidth){
+
+		.showSmaller{
+			display: block;
+			position: absolute;
+			top: 50%;
+			width: 40px;
+			height: 40px;
+			margin-top: -20px;
+			@include box-sizing(border-box);
+			font-size: $bigger;
+			text-align: center;
+			line-height:  40px;
+			&#menuBtn{
+				right: 0.5rem;
 			}
 		}
 
-		//Bigger screen
-		@media all and (min-width: $minWidth){
-
-			#siteName{
-				line-height: $height;
-			}
-			.showSmaller,
-			.panelCont{
-				display: none;
-			}
-			.showBigger{
-				display: block;
-			}
-
-		}
-
-		//Smaller screen
-		@media all and (max-width: $maxWidth){
-
-			.showBigger{
-				display: none;
-			}
-			.showSmaller{
-				display: block;
-				position: absolute;
-				top: 50%;
-				width: 40px;
-				height: 40px;
-				margin-top: -20px;
-				@include box-sizing(border-box);
-				font-size: $bigger;
-				text-align: center;
-				line-height:  40px;
-				&#menuBtn{
-					right: 0.5rem;
-				}
-			}
-
-		}
+	}
+}
 
 }
 
@@ -629,10 +613,6 @@ a{
 
 	background: none !important;
 	border: none !important;
-
-	h3, h4{
-		display: none;
-	}
 
 	a{
 		display: block;
@@ -717,20 +697,21 @@ a{
 
 .boiler{
 
+	h3{
+		margin-bottom: 1.0rem;
+		font-size: $bigger;
+		text-align: left;
+	}
+
 	// &#campaign
 	//**************************************************************
 
 	&#campaign{
 
-		padding-top: 1.0rem;
-		padding-bottom: 1.0rem;
-		background: $darkGray;
+		padding: 3.0rem 0;
+		border-top: 1px solid rgba($black, .1);
+		border-bottom: 1px solid rgba($black, .1);
 		text-align: center;
-
-		//h3
-		h3{
-			display: none;
-		}
 
 		//Mobile
 		@media all and (max-width: $maxWidth){
@@ -752,13 +733,8 @@ a{
 
 	&#sitePages{
 
-		padding: 2.0rem 0;
+		padding: 3.0rem 0;
 		background-color: $gray;
-
-		//h3
-		h3{
-			display: none;
-		}
 
 		//h4
 		h4{
@@ -975,14 +951,7 @@ a{
 //**********************************************************************
 
 .behind{
-	
 
-	// h3
-	//**************************************************************
-
-	h3{
-		display: none;
-	}
 
 	// a
 	//**************************************************************
@@ -1122,225 +1091,7 @@ a{
 
 }
 
-//**********************************************************************
-// .sidebar
-//**********************************************************************
 
-.sidebar{
-
-	padding-bottom: 3.0rem;
-
-	h3{
-		font-size: $bigger;
-		margin-top: 2.0rem;
-		margin-bottom: 1.0rem;
-	}
-
-	.contents{
-		&:not(:last-of-type){
-			margin-bottom: 3.0rem;
-		}
-	}
-
-	// .listBtn
-	//**************************************************************
-
-	.listBtn{
-
-		margin-bottom: 1.0rem;
-		border: 3px solid rgba($black, .1);
-		@include box-sizing(border-box);
-
-		//#area
-		&#area{
-
-			//a
-			a{
-				display: block;
-				position: relative;
-				padding: 1.0rem;
-				text-decoration: none;
-				color: $darkGray;
-			}
-
-			//#area
-			&#area{
-
-				position: relative;
-
-				&:hover{
-					border-color: $pink;
-					.icon-map3{
-						color: $pink;
-					}
-				}
-
-				p{
-					margin-top: 5.0rem;
-					font-size: $bigger;
-					text-align: center;
-				}
-
-				span{
-					
-					&.icon-map3{
-						display: block;
-						position: absolute;
-						z-index: 2;
-						top: 1.0rem;
-						left: 50%;
-						margin-left: -32px;
-						font-size: $biggest * 2.0;
-						color: $yellow;
-					}
-					&.icon-search{
-						display: block;
-						position: absolute;
-						z-index: 3;
-						top: 2.8rem;
-						left: 50%;
-						color: $darkBlue;
-						font-size: $biggest;
-					}
-				}
-
-			}
-		}
-
-		//$#faq
-		&#faq{
-			a:after{
-				content: "\e6ad";
-				color: $pink;
-			}
-		}
-
-	}
-
-	// .bnrBtn
-	//**************************************************************
-
-	.bnrBtn{
-
-		margin-bottom: 1.0rem;
-
-		a{
-			display: block;
-		}
-	}
-
-	// .catsList
-	//**************************************************************
-
-	.catsList{
-
-		h3{
-			display: none;
-		}
-
-		li{
-			border: 1px solid rgba($black, .05);
-			margin-bottom: 0.5rem;
-			a{
-				display: block;
-				padding: 1.0rem;
-				background: rgba($green, .7);
-				color: $white;
-				text-decoration: none;
-				&:hover{
-					background: rgba($darkBlue, .7) !important;
-				}
-				&:before{
-					margin-right: 0.3rem;
-					font-family: icomoon;
-					font-size: 90%;
-					speak: none;
-					-webkit-font-smoothing: antialiased;
-					-moz-osx-font-smoothing: grayscale;
-				}
-			}
-			&:nth-of-type(2n){
-				a{
-					background: rgba($pink, .7);
-				}
-			}
-			&.ecoauc-fund-report a:before{ content: "\e97a"; }
-			&.media a:before{ content: "\e900"; }
-			&.events a:before{ content: "\e8b9"; }
-			&.ecoreport a:before{ content: "\e828"; }
-			&.notice a:before{ content: "\e8c4"; }
-			&.staff a:before{ content: "\e919"; }
-			&.pressrelease a:before{ content: "\e8ad"; }
-
-		}
-
-	}
-
-	// .behind
-	//**************************************************************
-
-	.behind{
-
-		li{
-			margin-bottom: 1.0rem;
-			padding: 0.5rem;
-			border: 1px solid rgba($black, .1);
-
-			a{
-
-				padding-top: 0.5rem;
-				padding-bottom: 0.5rem;
-
-				p{
-
-					margin-top: 1.0rem;
-
-
-					//&.info
-					&.info{
-
-						display: inline-block;
-						font-size: $bigger;
-						color: $darkGray !important;
-
-						.block{
-
-							display: inline !important;
-							
-							&:nth-of-type(1){
-								&:after{
-									display: inline;
-									margin-left: 0.1rem;
-									margin-right: 0.1rem;
-								}
-							}
-
-						}
-
-					}
-
-				}
-
-				//.icon-bullhorn
-				.icon-bullhorn{
-					display: inline-block !important;
-					width: 20px;
-					height: 20px;
-					font-size: $normal;
-					line-height: 20px;
-				}
-
-			}
-
-		}
-	}
-
-	//PC
-	@media all and (min-width: $minWidth){
-		padding-top: 3.0rem;
-	}
-
-}
 
 //**********************************************************************
 // .footer

@@ -3,7 +3,7 @@ Contributors: FolioVision
 Donate link: http://foliovision.com/seo-tools/wordpress/plugins/fv-top-level-categories
 Tags: categories, permalink
 Requires at least: 3.2.1
-Tested up to: 3.4.1
+Tested up to: 4.0
 Stable tag: trunk
 
 This is a fix of Top Level Categories plugin for Wordpress 3.1. and above.
@@ -45,27 +45,37 @@ Make sure your categories have unique slugs - watch out for pages with the same 
 
 == Changelog ==
 
-= 1.4 =
+= Version 1.6 - September 19th, 2014 =
+* Adding support for translations ( Slovak language added )
+
+= Version 1.5 - July 22nd, 2014 =
+* Settings screen added!
+* Category restrictions for post permalinks added! If you use post permalink structure with category in it, you can now restrict which categories will be allowed in the URL. Wordpress always picks the category with lowest category ID and that often causes inappropriate categories to show up in URLs - like /featured-content/2014/07/my-post"
+* Or you can simply force only the parent categories to show up in post URLs. So /parent-category/child-category/2014/07/my-post will change to /parent-category/2014/07/my-post
+* If you open the old post URL, proper 301 redirection to the new URL will be used.
+
+
+= Version 1.4 =
 * fix for Wordpress 3.4.1 - category prefix was part of the generated URLs
 
-= 1.3 =
+= Version 1.3 =
 * for for flushing of rewrite rules on plugin activation in WP 3.3
 
-= 1.2 =
+= Version 1.2 =
 * fix for WP 3.3
 * fix for /%categor%/%post-name% permalink structure
 
-= 1.1.3 =
+= Version 1.1.3 =
 * fix for deeper nested pages
 
-= 1.1.2 =
+= Version 1.1.2 =
 * fix for /category/child-category redirecting to /child-category page
 
-= 1.1.1 =
+= Version 1.1.1 =
 * fix for deeper nested categories
 
-= 1.1 =
+= Version 1.1 =
 * fix for WP 3.1
 
-= 1.0.1 =
+= Version 1.0.1 =
 * original version

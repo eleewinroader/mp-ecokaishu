@@ -2,44 +2,82 @@
 /**
  * The main template file.
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
  */
 
-get_header(); ?>
+get_header();
 
-	<?php
-	//vars
-	$terms = get_the_terms($post->ID, 'cltitems');
-	if($terms){
-		foreach($terms as $term){
-			if($term->parent == 0){
-				$parentItemTag = $term->slug;
-				$parentItemName = $term->name;
-				$parentItemId = $term->term_id;
-			}
-		}
-	}
+	//calling
 	$postType = get_post_type_object(get_post_type());
-	$postTypes = get_post_types(array("_builtin" => FALSE));
+	$cltItems = get_the_terms($post->ID, 'cltitems');
+	
+	//vars of post type
+	$postTypeName = $postType->name;
+	$postTypeLabel = $postType->label;
+	$postTypeUrl = get_post_type_archive_link($postTypeName);
 
+	//vars 
+	$relatedItemIds = array();
+	$relatedItemNames = array();
+	$pageTitle = get_the_title($post->ID); //page title
 	$voiceTitles = getMetaArr($post, "contentsInfo01");
 	$voiceContents = getMetaArr($post, "contentsInfo02"); 
+	$navPage = '<li><a href="'.$postTypeUrl.'">'.$postTypeLabel.'</a></li>';
+	
+	if(count($cltItems) > 1){ //vars for a single item page
+
+		//get taxs
+		 foreach($cltItems as $cltItem){
+			if($cltItem->parent == 0){
+				//$cltItemCatId = $cltItem -> term_id; //cat tax id of a single item
+				$cltItemCatName = $cltItem -> name; //cat name of a single item
+			}else{
+				array_push($relatedItemIds, $cltItem -> term_id); // tax ids of a single item
+				array_push($relatedItemNames, $cltItem -> term_name); // tax names of a single item
+			}
+		}
+
+		//get a cat page
+		$args = array(
+			"post_type" => $postTypeName,
+			"name" => $cltItemCatName
+		);
+		$cltItemCat = query_posts($args);
+		if($cltItemCat){ // if a cat page exists
+			$cltItemCatId = $cltItemCat[0]->ID;
+			$cltItemCatUrl = get_permalink($cltItemCatId); //cat url of a single item
+			$navPage .= '<li><a href="'.$cltItemCatUrl.'">'.$cltItemCatName.'</a></li>';
+		}
+		wp_reset_query();
+
+	}else{ // vars for a cat page
+
+		//get a page
+		$cltItemCatId = $post->ID;
+		$cltItemCatName = $post->post_title;
+
+	}
+
+	$navPage .= '<li>'.$pageTitle.'</li>';
 	?>
+
+	<header class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<ul class="twelvecol col last">
+					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><?php echo $navPage; ?>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h2 class="twelvecol col last"><span class="block"><?php echo $pageTitle; ?>の</span><span class="block">エコ回収 口コミ・実績</span></h2>
+		</div>
+	<!--.headerPage--></header>
 
 	<div class="container">
 
 		<div class="ninecol col">
-
-			<header class="contents">
-				<nav class="catNavi">
-					<ul>
-						<li><a href="<?php echo getPostType($post, "link"); ?>"><?php echo getPostType($post, "label"); ?></a></li>
-						<li><?php the_title(); ?></li>
-					</ul>
-				</nav>
-				<h2><span class="title block"><?php the_title(); ?>のエコ回収</span></h2>
-			<!--header--></header>
 
 			<?php
 			if(campCode($post)){ 
@@ -49,92 +87,43 @@ get_header(); ?>
 				$param = "?pr_code=".$pr_code; 
 				if($pr_code == "4_00") $ycoll = "2-1";
 			}
-			$title = $post->post_title;
 			$telNum = telNum();
 			$template_url = get_bloginfo("template_url");
 			$site_url = siteInfo("rootUrl");
-
 $string = <<< EOF
-			<section class="contact contents">
-				<h3><span class="block">{$title}でお困りのことがあれば、</span><span class="block">エコランドにご相談ください！</span></h3>
+			<div class="contact contents">
 				<div class="msg">
-					<div class="explains">
-						<span class="block"><span class="block">いらなくなった</span>{$title}は</span>
-						<span class="block">お任せください!</span>
-					</div>
-					<div id="ecolin"><img src="{$template_url}/assets/img/base/staff_img_shinki.jpg" /></div>
+					<p class="explains">
+						<span class="block"><span class="block">いらなくなった</span>{$pageTitle}は</span><span class="block">お任せください!</span>
+					</p>
+					<div id="ecolin"><img src="{$template_url}/assets/img/base/staff_img_shinki.jpg" alt="" /></div>
 				<!--.msg--></div>
 				<div class="box" id="tel">
 					<a href="tel:0120530{$telNum}" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
-						<span class="label block">お急ぎの方はお電話で</span>
-						<div class="action">
+						<p class="label block">お急ぎの方はお電話で</p>
+						<p class="action">
 							<span class="icon-phone"></span>
 							<span>0120-530-{$telNum}</span>
-						</div>
+						</p>
 					</a>
 				</div>
 				<div class="box" id="mail">
 					<a href="{$site_url}/estimate{$ycoll}/{$pr_code}">
-						<span class="label block">24時間受付中</span>
-						<div class="action">
+						<p class="label block">24時間受付中</p>
+						<p class="action">
 							<span class="icon-mail4"></span>
 							<span>メールで見積依頼</span>
-						</div>
+						</p>
 					</a>
 				</div>
 				<p id="openingHour">
 					<span class="date">営業時間</span>
 					<span class="date">平･土 9:00-22:00</span><span class="date">日･祝 9:00-20:00</span>
 				</p>
-			<!--.contact .contents--></section>
+			<!--コンシェルジュへ--></div>
 EOF;
 echo $string;
-?>
-			
 
-			<!--<section id="now" class="contents">
-				<h3>最近エコ回収された<?php echo $post->post_title; ?></h3>
-				<ul class="listEcokaishu">
-					<li>
-						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img01.jpg" alt="" />
-						<h4>Apple iPad(16G)</h4>
-						<dl>
-							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
-							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
-						</dl>
-						
-					</li>
-					<li>
-						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img02.jpg" alt="" />
-						<h4>コムサスーツケースコムサスーツケース</h4>
-						
-						<dl>
-							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
-							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
-						</dl>
-					</li>
-					<li>
-						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img03.jpg" alt="" />
-						<h4>FUJIGEN ウクレレ</h4>
-						
-						<dl>
-							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
-							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
-						</dl>
-					</li>
-					<li>
-						<img src="<?php echo bloginfo("template_url");?>/assets/img/area/img04.jpg" alt="" />
-						<h4>PS3</h4>
-						
-						<dl>
-							<dt>エコ回収日</dt><dd class="date">2014年10月6日</dd>
-							<dt>エコ回収地域</dt><dd class="location">東京都世田谷区</dd>
-						</dl>
-					</li>
-				</ul>
-			#now .contents</section>-->
-
-			<?php
 			$args = array(
 				"post_type" => "faq",
 				"posts_per_page" => -1,
@@ -144,7 +133,7 @@ echo $string;
 			);
 			$faqs = query_posts($args);
 			if($faqs): ?>
-				<section class="contents" id="intro">
+				<section class="contents">
 					<h3><?php the_title(); ?>のエコ回収について「よくある質問」</h3>
 					<dl class="listFaq">
 					<?php foreach($faqs as $faq): ?>
@@ -152,7 +141,7 @@ echo $string;
 						<dd><?php echo $faq->post_content; ?></dd>
 					<?php endforeach; wp_reset_query();?>
 					</dl>
-				<!--.contents--></section>
+				<!--よくある質問--></section>
 			<?php endif; ?>
 
 			<?php 
@@ -162,13 +151,13 @@ echo $string;
 					<h3><?php the_title(); ?>の「エコ回収料金」事例</h3>
 					<?php echo $priceExam; ?>
 					<p class="footnote"><small>
-					※ 金額表示はすべて税込価格となります<br />
+					※ 金額表示はすべて税込価格となります。<br />
 					※ 特殊作業は、お客様希望がなくても、作業上必ず必要になることもありますので、ご了承ください。
 					</small></p>
-				<!--.priceExam .contents--></section>
+				<!--「エコ回収料金」事例--></section>
 			<?php endif; ?>
 
-			<section id="voices" class="contents">
+			<section class="contents">
 				<?php if(count($voiceTitles) == 0): ?>
 					<?php echo $post->post_content; ?>
 				<?php else:?>
@@ -180,9 +169,40 @@ echo $string;
 					}?>
 					</dl>
 				<?php endif; ?>
-			<!--#voices .contents--></section>
+			<!--口コミ--></section>
 
-			<section id="shortcuts" class="contents">
+			<?php
+			//related items
+			if(count($cltItems) > 1){
+				$args = array(
+					"posts_per_page" => -1,
+					"post_type" => "items",
+					"order_by" => "date",
+					"order" => ASC,
+					"post__not_in" => array($post->ID),
+					"tax_query" => array(
+						array(
+							'taxonomy' => 'cltitems',
+							'field' => 'id',
+							'terms' => $relatedItemIds
+						)
+					)
+				);
+				$relatedItems = query_posts($args);
+				if($relatedItems){ ?>
+					<section class="contents listItems">
+						<h3>関連アイテム一覧</h3>
+						<ul>
+							<?php foreach($relatedItems as $relatedItem): ?>
+							<li><a href="<?php echo get_permalink($relatedItem->ID); ?>"><?php echo $relatedItem->post_title; ?></a></li>
+							<?php endforeach; ?>
+						</ul>
+					<!--関連アイテム--></section>
+					<?php
+				}
+			}?>
+
+			<section class="contents">
 				<div class="twelvecol col last">
 					<h3>エコ回収についてもっと詳しく知る</h3>
 				</div>
@@ -209,30 +229,68 @@ echo $string;
 						</a>
 					</li>
 				</ul>
-			<!--#shortcuts .contents--></section>
+			<!--エコ回収サービスについて--></section>
 
 			<?php echo $string; ?>
 
 		<!--.ninecol--></div>
 
 		<aside class="threecol col last sidebar">
+
+			<?php
+			//item pages in the same cat
+			$args = array(
+				"order_by" => "date",
+				"order" => ASC,
+				"post_type" => $postTypeName,
+				"posts_per_page" => -1,
+				"cltitems" => $cltItemCatName,
+				"post__not_in" => array($cltItemCatId)
+			);
+			$posts = query_posts($args);
+			if($posts){
+				echo '<section class="listItems contents">
+				<h2>同じカテゴリ内のアイテム一覧</h2><ul class="">';
+				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+				echo '</ul>
+				<!--.contents--></section>';
+				wp_reset_query();
+			}
+
+			//popular item cats
+			$args = array(
+				"order_by" => "date",
+				"order" => ASC,
+				"post_type" => $postType->name,
+				"posts_per_page" => -1,
+				"catkinds" => "人気"
+			);
+			$posts = query_posts($args);
+			if($posts){
+				echo '<section class="listItems contents">
+				<h2>人気アイテム一覧</h2><ul>';
+				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+				echo '</ul>
+				<!--.contents--></section>';
+				wp_reset_query();
+			}?>
 			
-			<div class="listBtn" id="area">
+			<div class="bnrBtn contents" id="area">
 				<a href="<?php echo get_post_type_archive_link("area"); ?>">
 					<span class="icon-search"></span>
 					<span class="icon-map3"></span>
 					<p><span class="block">対応エリアの</span><span class="block">確認はこちら</span></p>
 				</a>
-			<!--#area--></div>
+			<!--.contents--></div>
 
-			<div class="bnrBtn">
+			<div class="bnrBtn contents">
 				<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
-			</div>
+			<!--.contents--></div>
 
 			<?php
 			$convSales = convSale();
 			if($convSales): ?>
-				<div class="behind">
+				<div class="behind contents">
 					<ul>
 					<?php foreach($convSales  as $convSale): ?>
 						<li class="item">
@@ -246,27 +304,10 @@ echo $string;
 						</li>
 					<?php endforeach; ?>
 					</ul>
-				</div>
-			<?php endif; ?>
-			<?php
+				<!--.contents--></div>
+			<?php endif;?>
 
-			//recent articles in the same area
-			$args = array(
-				"order_by" => "date",
-				"order" => ASC,
-				"post_type" => $postType->name,
-				"posts_per_page" => -1,
-				"term" => $parentItemTag
-			);
-			$posts = query_posts($args);
-			if($posts){
-				echo '<div class="listItems"><h3>物品別エコ回収実績</h3><ul class="">';
-				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
-				echo '</ul></div>';
-				wp_reset_query();
-			}?>
-
-		</aside>
+		<!--.sidebar--></aside>
 
 	<!--.container--></div>
 

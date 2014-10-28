@@ -1,7 +1,7 @@
 {
   "name": "MP-ecokaishu",
-  "version": "0.1.1",
-  "description": "Monster Platform for www.eco-kaishu.jp よくある質問・カレンダーmodule 追加、CVアップのためのブラッシュアップ(主にheader,boiler,footerの申込誘導UI改善)",
+  "version": "2.0",
+  "description": "SEO内部対策vol.1済み",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {

@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 1.3
+* @subpackage MP-Ecokaishu 2.0
 * @since MP-Ecokaishu 0.0
 */
 ?>
@@ -19,48 +19,11 @@
 			if($pr_code == "4_00") $ycoll = "2-1";
 		}?>
 
-		<!--<aside id="contactBnrFixed">
-			<div class="container">
-				
-				<div class="twelvecol col last showBnr" data-panel="panelBnr" id="title">
-					<h3>エコランドに今すぐ相談する</h3>
-					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/contactBnrFixed_icon.png" id="ecolandGirl" data-panel="panelBnr" />
-				</div>
-				<div id="panelBnr" class="panelCont">
-					<div class="threecol col" id="tel">
-						<a href="tel:0120530<?php echo telNum(); ?>" class="telBnr" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
-							<p class="msg" id="tap">お急ぎの方はお電話で！</p>
-							<p class="btn">
-								<span class="icon-phone"></span>0120-530-<?php echo telNum(); ?>
-							</p>
-							
-						</a>
-					</div>
-					<div class="threecol col" id="estimate">
-						<a href="<?php echo siteInfo("rootUrl"); ?>/estimate<?php echo $ycoll; ?>/<?php echo $param; ?>">
-							<p class="msg">見積もってほしいという方は！</p>
-							<p class="btn"><span class="icon-mail4"></span>メールで見積依頼</p>
-						</a>
-					</div>
-					<div class="threecol col" id="order">
-						<a href="<?php echo siteInfo("siteUrlEcoland"); ?>/order" rel="nofollow">
-							<p class="msg">見積から申込までWEB完結！</p>
-							<p class="btn"><span class="icon-calculate"></span>WEB見積&申込</p>
-						</a>
-					</div>
-					<div class="threecol col last" id="openingHour">
-						<p>
-							<span class="block">平･土 9時-22時</span>
-							<span class="blcok">祝･日 9時-20時</span>
-						</p>
-					</div>
-				</div>	
-			<!--#contactBnrFixed .container</div>
-		<!--#contactBnrFixed</aside>-->
-
 		<aside class="boiler" id="campaign">
 			<div class="container">
-				<h3>キャンペーン</h3>
+				<div class="twelvecol col last">
+					<h3>ただ今のキャンペーン</h3>
+				</div>
 				<ul>
 					<?php
 					$i = 1;
@@ -122,7 +85,7 @@
 					</ul>
 				</div>
 				<div class="fourcol col">
-					<h4>エコ回収の物品別実績</h4>
+					<h4>アイテム別口コミ・エコ回収実績</h4>
 					<ul class="listItems">
 						<?php
 						$posts = query_posts(
@@ -145,13 +108,14 @@
 					<ul>
 						<li><a href="<?php echo get_post_type_archive_link("about"); ?>">企業情報</a></li>
 						<?php
+						$docsCat = get_category_by_slug("docs");
 						$posts = query_posts(
 							array(
 								"order_by" => "date",
 								"order" => ASC,
 								"post_type" => "post",
 								"posts_per_page" => -1,
-								"cat" => 1
+								"cat" => $docsCat->term_id
 							)
 						);
 						foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
@@ -189,17 +153,6 @@
 		</ul>
 	</div>
 
-	<div class="globalnavi">
-		<ul>
-			<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>" rel="nofollow"><span>エコランド</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcookataduke"); ?>" rel="nofollow"><span>エコランドのお片づけサービス</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcohokan"); ?>" rel="nofollow"><span>お預かり</span></a></li>
-			<li id="currSite"><a href="<?php echo siteInfo("siteUrlEcokaishu"); ?>"><span>エコ回収</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlEcoauc"); ?>" rel="nofollow"><span>エコオク</span></a></li>
-			<li><a href="<?php echo siteInfo("siteUrlRshop"); ?>" rel="nofollow"><span>エコランドのリサイクルショップ</span></a></li>
-		</ul>
-	<!-- globalnavi--></div>
-
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -228,13 +181,15 @@ $(document).ready(function(){
 		if(p>start){
 			$(header).css({
 				"position": "fixed",
-				"top" : "0px"
+				"top" : "0px",
+				"padding-top" : "1.0rem"
 			});
 			$("#panelMenu").slideUp().css("display", "none");
 		}else{
 			$(header).css({
 				"position": "static",
-				"top" : ""
+				"top" : "",
+				"padding-top" : "0rem"
 			});
 		}
 
