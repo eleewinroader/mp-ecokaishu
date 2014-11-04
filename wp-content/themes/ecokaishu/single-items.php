@@ -71,7 +71,16 @@ get_header();
 			</div>
 		</nav>
 		<div class="container">
-			<h2 class="twelvecol col last"><span class="block"><?php echo $pageTitle; ?>の</span><span class="block">エコ回収 口コミ・実績</span></h2>
+			<div class="ninecol col">
+				<h2><span class="block"><?php echo $pageTitle; ?>のエコ回収 口コミ・実績</span></h2>
+			</div>
+			<div class="listSns threecol col last">
+				<ul>
+					<li id="shareFacebook"><a href=""><span class="label">facebook</span></a></li>
+					<li id="shareTwitter"><a href=""><span class="label">twitter</span></a></li>
+					<li id="shareGoogle"><a href=""><span class="label">Google+</span></a></li>
+				</ul>
+			</div>
 		</div>
 	<!--.headerPage--></header>
 

@@ -69,6 +69,51 @@ article.columns{
 }
 
 //**********************************************************************
+// listQuote
+//**********************************************************************
+
+ul{
+
+	> li{
+
+		>q{
+
+			display: block;
+			position: relative;
+			//border: 1px solid; 
+
+			&:after,
+			&:before{
+				display: inline-block;
+				font-family: icomoon;
+				speak: none;
+				padding-right: 0.3rem;
+				font-size: $bigger;
+				color: rgba($black, .1);
+				content: "\e91f";
+			}
+			&:after{	
+				@include rotate(180deg);
+			}
+
+		}
+		&:first-of-type{ q{
+			margin-top: 1.5rem;
+			padding-top: 0.5rem;
+			border-top: 1px dashed rgba($black, .05);
+		} }
+		&:last-of-type{ q{
+			margin-bottom: 1.5rem;
+			padding-bottom: 0.5rem;
+			border-bottom: 1px dashed rgba($black, .05);
+		} }
+
+
+
+	}
+}
+
+//**********************************************************************
 // .listEcokaishu
 //**********************************************************************
 
@@ -265,6 +310,8 @@ article.columns{
 	//**************************************************************
 		
 	h2{
+		position: relative;
+		z-index: 5;
 		line-height: 1.5em;
 		margin-bottom: 1.0rem;
 		padding-top: 0;
@@ -285,6 +332,17 @@ article.columns{
 
 	header{
 		padding-bottom: 0;
+	}
+
+	// .headerPage
+	//******************************************************
+	
+	.headerPage{
+
+		.listSns{
+			margin-bottom: 1.0rem;
+		}
+
 	}
 
 	// .contentsImg
@@ -350,6 +408,117 @@ article.columns{
 				a{
 					padding-left: 1.0rem;
 					padding-right: 1.0rem;
+				}
+			}
+
+		}
+
+	}
+
+	// .figure
+	//******************************************************
+
+	.figure{
+
+		//img
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 1.0rem;
+			max-width: 280px;
+			border: 1px solid rgba($black, .1);
+			//PC
+			@media all and (min-width: $minWidth){
+				float: right;
+				margin-left: 1.0rem;
+			}
+		}
+
+		//figcaption
+		figcaption{
+			font-size: $bigger;
+			margin-bottom: 1.0rem;
+			&:before{
+				padding-right: 0.3rem;
+				font-family: "icomoon", "custom140702";
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				content: "\e918";
+			}
+		}
+
+		//dl
+		dl{
+
+			//nth-of-type(1)
+			&:nth-of-type(1){
+				margin-top: 1.0rem;
+				dt,dd{
+					float: left;
+				}
+				dt{
+					clear: left; 
+					&:before{
+						display: inline-block;
+						width: 0px;
+						height: 0px;
+						border: 4px solid transparent;
+						border-left-color: $darkGray;
+						content: "";
+					}
+					&:after{
+						content: "：";
+					}
+				}
+
+				dd{
+					&:after{
+						content: "%";
+					}
+				}
+			}
+
+			//nth-of-type(2)
+			&:nth-of-type(2){
+				margin-top: 1.0rem;
+				padding: 0.5rem;
+				background-color: $gray;
+				font-size: 80%;
+				text-align: center;
+				dt,dd{
+					display: inline-block;
+				}
+				dt{
+					&:before{
+						display: inline-block;
+						margin-right: 0.2rem;
+						font-family: "icomoon", "custom140702";
+						speak: none;
+						font-style: normal;
+						font-weight: normal;
+						font-variant: normal;
+						text-transform: none;
+						line-height: 1;
+						vertical-align: middle;
+					}
+					&:nth-of-type(1){ &:before{ content: "\e8eb"; } }
+					&:nth-of-type(2){ &:before{ content: "\e91a"; } }
+					&:nth-of-type(3){ &:before{ content: "\e8f2"; } }
+					&:after{
+						content: "：";
+					}
+				}
+				dd{
+					&:not(:last-of-type){
+						margin-right: 0.5rem;
+					}
 				}
 			}
 
@@ -482,7 +651,7 @@ article.columns{
 	// #area
 	//**************************************************************
 
-	&#area{
+	&.area{
 
 		// #municipalities
 		//******************************************************
@@ -491,7 +660,7 @@ article.columns{
 
 			//.msg
 			.msg{
-				top: -100px;
+				top: -60px;
 			}
 
 			//#mapIndex
@@ -568,7 +737,7 @@ article.columns{
 	// &#items
 	//**************************************************************
 
-	&#items{
+	&.items{
 
 		// .contact
 		//******************************************************
@@ -576,7 +745,13 @@ article.columns{
 		.contact{
 			&:first-of-type{
 				.msg{
-					top: -100px;
+					top: -60px;
+				}
+				.explains{
+					right: 0;
+				}
+				#ecolin{
+					margin-right: 60px;
 				}
 			}
 			&:last-of-type{
@@ -659,6 +834,7 @@ article.columns{
 		}
 
 	}
+
 
 }
 

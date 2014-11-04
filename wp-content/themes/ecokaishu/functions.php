@@ -7,8 +7,166 @@
 
 date_default_timezone_set( 'Asia/Tokyo' );
 
-add_theme_support('post-thumbnails');
-set_post_thumbnail_size(150, 150, true);
+/*******************************************************
+* seotag
+*******************************************************/
+
+//getTitle
+function getTitle($tempType, $obj){
+	if($tempType == "single"){
+		$metaTitle = get_post_meta($obj->ID, _aioseop_title, TRUE);
+		if($metaTitle) $metainfo = $metaTitle."｜".get_bloginfo("name");
+		else $metainfo = get_the_title($obj->ID)."｜".get_bloginfo("name");
+	}elseif($tempType == "postTypeArchive"){
+		$metainfo = $obj->label."｜".get_bloginfo("name");
+	}elseif($tempType == "archive"){
+		$metainfo = $obj->labels."｜".get_bloginfo("name");
+	}elseif($tempType == "home"){
+		$metainfo = "不用品回収の前に【エコ回収】";
+	}
+	if($metainfo) return $metainfo;
+	else return false;
+}
+//getDescription
+function getDescription($tempType, $obj){
+	if($tempType == "single"){
+		$metainfo = get_post_meta($obj->ID, _aioseop_description, TRUE);
+		if(!$metainfo) $metainfo = mb_substr(strip_tags($obj->post_content), 0, 100)."...";
+	}elseif($tempType == "postTypeArchive"){
+		$metainfo = $obj->description;
+	}elseif($tempType == "archive"){
+		$metainfo = $obj->description;
+	}elseif($tempType == "home"){
+		$metainfo = get_bloginfo("description");
+	}
+	if($metainfo) return $metainfo;
+	else return false;
+}
+//getKeywords
+function getKeywords($tempType, $obj){
+	if($tempType == "postTypeArchive"){
+		$metainfo = $obj->label.",不用品,回収,エコ";
+	}elseif($tempType == "archive"){
+		$metainfo = $obj->name.",不用品,回収,エコ";
+	}elseif($tempType == "home"){
+		$metainfo = "不,用品,回収,エコ,買取,ゴミ,ゼロ";
+	}
+	if($metainfo) return $metainfo;
+	else return false;
+}
+
+//getCanonicalUrl
+function getCanonicalUrl($tempType, $obj){
+	if($tempType == "single"){
+		$metaInfo = get_permalink($obj->ID);
+		print_r($metaInfo);
+	}elseif($tempType == "postTypeArchive"){
+		$metainfo = get_post_type_archive_link($obj->term_id);
+	}elseif($tempType == "archive"){
+		$metainfo = get_term_link($obj, $obj->taxonomy);
+	}elseif($tempType == "home"){
+		$metainfo = get_bloginfo("url");
+	}
+	if($metainfo) return $metainfo;
+	else return false;
+}
+
+//getH1
+function getH1($tempType, $obj){
+	if($tempType == "single"){
+		if($obj->post_type == "area"){
+			$metaH1 = get_the_title($obj->ID)."で不用品回収・処分を考えているならエコ回収";
+		}elseif($obj->post_type == "items"){
+			$metaH1 = get_the_title($obj->ID)."の処分・廃棄を考えているならエコ回収";
+		}elseif($obj->post_type == "campaign"){
+			$metaH1 = get_the_title($obj->ID)." 〜 不用品回収の前にオトク情報チェックして【エコ回収】";
+		}elseif($obj->post_type == "notices"){
+			$metaH1 = get_the_title($obj->ID)." 〜 お知らせ&新着情報";
+		}else{
+			$cat = get_the_category();
+			$metaH1 = get_post_meta($obj->ID, "contentsInfo04", TRUE);
+			if(!$metaH1) $metaH1 = get_the_title($obj->ID)." 〜 ".$cat[0]->name;
+		}
+		$metainfo = $metaH1;
+	}elseif($tempType == "postTypeArchive"){
+		$postType = $obj->name;
+		if($postType == "area"){
+			$metainfo = "東京・神奈川・千葉・埼玉・大阪・兵庫で不用品をゴミにしない【エコ回収】";
+		}elseif($postType == "items"){
+			$metainfo = "家電、家具、冷蔵庫、テレビなどの処分をお考えるのなら不用品をゴミにしない【エコ回収】";
+		}elseif($postType == "notices"){
+			$metainfo = "エコ回収サイトとサービスに関するお知らせ&新着情報";
+		}else{
+			$metaH1 = getPage("イントロ", "h1");
+			if($metaH1) $metainfo = $metaH1;
+			else $metainfo = $obj->label;
+		}
+	}elseif($tempType == "archive"){
+		$metainfo = $obj->name;
+	}elseif($tempType == "home"){
+		$metainfo = "不用品回収に頼む前に〜あなたのいらないモノが誰かのほしいモノに";
+	}
+	if($metainfo) return $metainfo;
+	else return false;
+}
+
+//getArticleClass
+function getArticleClass($tempType, $obj){
+	if($tempType == "single"){
+		$classinfo = "post";
+		if($obj->post_type == "campaign"){
+			$classinfo .= " campaign";
+			if(campCode($post)) $classinfo .= " ".campCode($obj, "parent", " ");
+		}elseif($obj->post_type == "area" || $obj->post_type == "items"){
+			$classinfo .= " columns";
+			$classinfo .= " ".$obj->post_type;
+		}else{
+			$classinfo .= " columns";
+			$cat = get_the_category(); 
+			if($cat) $classinfo .= " ".$cat[0]->slug;
+		}
+	}elseif($tempType == "postTypeArchive"){
+		$classinfo = "archive";
+		if($obj->name == "area" || $obj->name == "items") $classinfo .= " columns";
+		$classinfo .= " ".$obj->name;
+	}elseif($tempType == "archive"){
+		$classinfo = "archive columns";
+		$classinfo .= " ".$obj->slug;
+	}
+	if($classinfo) return $classinfo;
+	return false;
+}
+
+//getArticleId
+function getArticleId($tempType, $obj){
+	if($tempType == "single"){
+		if($obj->post_type == "campaign"){
+			if(campCode($obj)) $idinfo = campCode($obj, "children", " ");
+		}
+	}elseif($tempType == "postTypeArchive"){
+		if($obj->post_type == "campaign"){
+			if(campCode($obj)) $idinfo = campCode($obj, "children", " ");
+		}else{
+			$idinfo = $obj->name;
+		}
+	}elseif($tempType == "home"){
+		$idinfo = "home";
+	}
+	if($idinfo) return ' id="'.$idinfo.'"';
+	return false;
+}
+
+//getArticleImg
+function getArticleImg($tempType, $obj){
+	$imginfo = get_bloginfo("template_url")."/assets/img/base/ecoland_logo.gif";
+	if($tempType == "single"){
+		$img = get_post_meta($obj->ID, "kijitasuInfo03", TRUE);
+		$imgurl = wp_get_attachment_image_src($img, "medium"); 
+		if($imgurl) $imginfo = $imgurl[0];
+	}
+	if($imginfo) return $imginfo;
+	return false;
+}
 
 function getMetaArr($post, $meta){
 
@@ -35,8 +193,10 @@ function getMetaImgArr($post, $meta){
 	foreach( $cf as $row ){
 		if($row['meta_key'] == $meta){
 			$image = wp_get_attachment_image_src($row['meta_value'], "thumbnail");
-			list($src, $width, $height) = $image;
-			$vars[] = '<img src="'.$src.'" width="'.$width.'" height="'.$height.'" />';
+			if($image){
+				list($src, $width, $height) = $image;
+				$vars[] = '<img src="'.$src.'" width="'.$width.'" height="'.$height.'" />';
+			}
 		}
 	}
 	if($vars){
@@ -135,6 +295,11 @@ function convSale(){
 		if($row['meta_key'] == "campConvInfo02") array_push($campConvInfo02, $row['meta_value']);
 		if($row['meta_key'] == "campConvInfo03") array_push($campConvInfo03, $row['meta_value']);
 
+	}
+
+	if($campConvInfo01){
+		$campConvInfo01 = array_filter($campConvInfo01, "strlen");
+		$campConvInfo01 = array_values($campConvInfo01);
 	}
 
 	$length = count($campConvInfo01);
@@ -255,11 +420,11 @@ function getReservInfo($ymd){
 add_filter( 'aioseop_title', 'rewrite_custom_titles' );
 
 function rewrite_custom_titles( $title ) {
-    if ( is_post_type_archive() ) {
+	if ( is_post_type_archive() ) {
 	$postTypeName = get_post_type_object(get_post_type())->labels->name;
-        $title = $postTypeName . " | " . get_bloginfo("name");
-    }
-    return $title;
+		$title = $postTypeName . " | " . get_bloginfo("name");
+	}
+	return $title;
 }
 
 //getPage
@@ -507,7 +672,7 @@ function imgurl(){
 add_shortcode('kaishuImg', 'imgurl');
 
 //サムネール取得
-function view_first_image_src() {
+function view_first_image_src(){
 	global $post, $posts;
 	$_first_img_src = '';
 
@@ -515,10 +680,9 @@ function view_first_image_src() {
 	ob_end_clean();
 
 	$_output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $_matches);
-
-
 	$_first_img_src = $_matches[1][0];
 
+	if(empty($_first_img_src)) $_first_img_src = bloginfo("template_url")."/assets/img/base/ecoland_logo.gif";
 	return $_first_img_src;
 }
 
@@ -708,6 +872,26 @@ function get_attached_img($id, $cf, $alt=null, $style=null, $size=null, $align=n
 	}	
 	return $get_attached_img;
 	wp_reset_query();
+}
+
+
+
+add_filter( 'manage_posts_columns', 'shortlink_add_column' );
+add_action( 'manage_posts_custom_column', 'shortlink_add_value', 10, 2 );
+
+function shortlink_add_column($cols) { 
+	$cols['shortlink'] = __('Shortlink'); 
+	return $cols;
+}
+function shortlink_add_value($column_name, $post_id) {
+	if ( 'shortlink' == $column_name ) {
+		echo '<input type="text" value="'.wp_get_shortlink($post_id).'" onclick="this.focus(); this.select();" />';
+	}
+}
+add_filter( 'manage_edit-post_sortable_columns', 'shortlink_sortable_column' );
+function shortlink_sortable_column( $columns ) {
+	$columns['shortlink'] = 'Shortlink';
+	return $columns;
 }
 
 

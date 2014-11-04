@@ -393,6 +393,69 @@
 
 }
 
+//**************************************************************
+// .listSns
+//**************************************************************
+
+.listSns{
+
+	//ul
+	ul{
+
+		//li
+		li{
+
+			display: inline-block;
+
+			//a
+			a{
+
+				display: inline-block;
+				text-align: center;
+				vertical-align: middle;
+				&:before{
+					display: inline-block;
+					font-family: icomoon;
+					speak: none;
+					font-style: normal;
+					font-weight: normal;
+					font-variant: normal;
+					text-transform: none;
+					line-height: 1;
+					font-size: $biggest;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+				}
+			}
+			&#shareFacebook a{
+				&:before{
+					content: "\e885";
+					color: $facebook;
+				}
+			}
+			&#shareTwitter a{
+				&:before{
+					content: "\e883";
+					color: $twitter;
+				}
+			}
+			&#shareGoogle a{
+				&:before{
+					content: "\e888";
+					color: $google;
+				}
+			}
+
+			//.label
+			.label{
+				display: none;
+			}
+
+		}
+
+	}
+
+}
 
 
 //**************************************************************

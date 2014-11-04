@@ -36,24 +36,14 @@ DD_belatedPNG.fix('.png');
 
 <script type="text/javascript">
 
-	//google anaylistics
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-42854141-2', 'auto');
-	ga('require', 'displayfeatures');
-	ga('send', 'pageview');
-
-	
 	$(document).ready(function(){
 		//twocol		
 		$(".last").after("<div class='clear'></div>");
 	});
+
+<?php get_template_part("ga"); ?>
 		
 </script>
-<?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/ga_common.php'); ?>
 <?php wp_head(); ?>
 </head>
 

@@ -57,6 +57,7 @@
 						<li><a href="<?php echo siteInfo("rootUrl") ?>">サイトTOP</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収とは</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>
+						<li><a href="<?php echo get_category_link(507); ?>">100人に聞いてみました</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("campaign"); ?>">キャンペーン一覧</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("about"); ?>">メールで見積依頼</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("about"); ?>">WEB見積&申込</a></li>

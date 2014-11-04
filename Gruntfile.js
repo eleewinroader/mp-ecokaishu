@@ -100,20 +100,16 @@ module.exports = function(grunt){
 			main: {
 				src: [
 					"wp-content/themes/ecokaishu/assets/js/jquery-2.1.1.min.js",
-					"wp-content/themes/ecokaishu/assets/js/html5shiv.min.js",
 					"wp-content/themes/ecokaishu/assets/js/d3.min.js",
 					"wp-content/themes/ecokaishu/assets/js/owl.carousel.min.js",
 					"wp-content/themes/ecokaishu/assets/js/masonry.pkgd.min.js",
 					"wp-content/themes/ecokaishu/assets/js/imagesloaded.pkgd.min.js",
-					"wp-content/themes/ecokaishu/assets/js/inewsticker.js"
+					"wp-content/themes/ecokaishu/assets/js/inewsticker.js",
+					"wp-content/themes/ecokaishu/assets/js/share.js"
 				],
 				dest: "wp-content/themes/ecokaishu/script.min.js"
 			}
 		},
-
-		mocha: {
-  all: ['http://localhost:3501/index.html']
-},
 
 	});
 

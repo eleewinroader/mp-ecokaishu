@@ -56,6 +56,9 @@ get_header();
 			case '地域料金':
 				$text = '<span class="block">地域料金が</span><span class="block">かかるエリア</span>';
 				break;
+			case 'サービス休止':
+				$text = '<span class="block">サービス</span><span class="block">一時休止中</span>';
+				break;
 			default:
 				$text = '<span class="block">対象外</span>';
 				break;
@@ -70,8 +73,9 @@ get_header();
 		$areaPageTitle = $pageTitle;
 
 		//vars for area
-		if($cltAreaName == "東京都" || $cltAreaName == "大阪府") $text = "全地域";
-		else $text = "一部地域";
+		if($cltAreaName == "東京都") $text = '<span class="block">全地域</span><span class="block">対応可能です!</span>';
+		elseif( $cltAreaName == "兵庫県" || $cltAreaName == "大阪府") $text = '<span class="block">サービス</span><span class="block">一時休止中です!</span>';
+		else $text = '<span class="block">一部地域</span><span class="block">対応可能です!</span>';
 
 	}
 
@@ -87,7 +91,16 @@ get_header();
 			</div>
 		</nav>
 		<div class="container">
-			<h2 class="twelvecol col last"><span class="block"><?php echo $areaPageTitle; ?>の</span><span class="block">エコ回収 口コミ・実績</span></h2>
+			<div class="ninecol col">
+				<h2><?php echo $areaPageTitle; ?>のエコ回収 口コミ・実績</h2>
+			</div>
+			<div class="listSns threecol col last">
+				<ul>
+					<li id="shareFacebook"><a href=""><span class="label">facebook</span></a></li>
+					<li id="shareTwitter"><a href=""><span class="label">twitter</span></a></li>
+					<li id="shareGoogle"><a href=""><span class="label">Google+</span></a></li>
+				</ul>
+			</div>
 		</div>
 	<!--.headerPage--></header>
 
@@ -102,7 +115,7 @@ get_header();
 						if(count($cltAreas) > 1){
 							echo '<span class="block">'.$pageTitle.'は</span>'.$text.'<span class="block">です!</span>';
 						}else{
-							echo '<span class="block">'.$areaPageTitle.'は</span><span class="block">'.$text.'</span><span class="block">対応可能です!</span>';
+							echo '<span class="block">'.$areaPageTitle.'は</span>'.$text;
 						}?>
 					</p>
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/staff_img_yanashima.jpg" alt="" />

@@ -5,6 +5,20 @@
 * @since MP-Ecokaishu 0.0
 */
 get_header( );?>
+	
+	<header class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<ul class="twelvecol col last">
+					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php the_title(); ?></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h2 class="twelvecol col last"><?php the_title(); ?></h2>
+		</div>
+	<!--.headerPage--></header>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -39,7 +53,6 @@ foreach( $cf as $row ){
 				<div class="twelvecol col last">
 					<div class="mainVisual">
 						<?php if(have_posts()): while(have_posts()): the_post(); ?>
-							<h2><?php the_title(); ?></h2>
 							<div class="campVisual">
 								<?php if(!is_single(4141)): ?>
 									<?php the_content(); ?>

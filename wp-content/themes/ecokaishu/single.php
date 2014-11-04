@@ -20,9 +20,18 @@ get_header();
 	//navPage
 	$navPage = '<li><a href="'.$catUrl.'">'.$catName.'</a></li><li>'.$post->post_title.'</li>';
 
+	//vars of meta
 	$contentsTitles = getMetaArr($post, "contentsInfo01");
 	$contents = getMetaArr($post, "contentsInfo02"); 
 	$contentsImgs = getMetaImgArr($post, "contentsInfo03");
+
+	$kijitasuInfo01 = get_post_meta($post->ID, "kijitasuInfo01", TRUE);
+	$kijitasuInfo02 = get_post_meta($post->ID, "kijitasuInfo02", TRUE);
+	$kijitasuInfo03 = get_post_meta($post->ID, "kijitasuInfo03", TRUE);
+	$kijitasuInfo04 = get_post_meta($post->ID, "kijitasuInfo04", TRUE);
+	$kijitasuInfo05 = get_post_meta($post->ID, "kijitasuInfo05", TRUE);
+	$kijitasuInfo06 = get_post_meta($post->ID, "kijitasuInfo06", TRUE);
+	$kijitasuInfo07 = get_post_meta($post->ID, "kijitasuInfo07", TRUE);
 	
 	?>
 
@@ -35,7 +44,16 @@ get_header();
 			</div>
 		</nav>
 		<div class="container">
-			<h2 class="twelvecol col last"><?php echo the_title(); ?></h2>
+			<div class="twelvecol col last">
+				<h2><span class="block"><?php echo the_title(); ?></h2>
+				<div class="listSns">
+					<ul>
+						<li id="shareFacebook"><a href=""><span class="label">facebook</span></a></li>
+						<li id="shareTwitter"><a href=""><span class="label">twitter</span></a></li>
+						<li id="shareGoogle"><a href=""><span class="label">Google+</span></a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	<!--.headerPage--></header>
 
@@ -44,13 +62,32 @@ get_header();
 		<div class="ninecol col">
 
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
-				<?php the_content(); ?>
+				<?php if($kijitasuInfo01): ?>
+
+					<figure class="figure">
+						<?php echo get_attached_img($post->ID, "kijitasuInfo03", "", "", "thumbnail", "", ""); ?>
+						<figcaption><?php echo $kijitasuInfo01; ?></figcaption>
+						<?php the_content(); ?>
+						<?php echo $kijitasuInfo02; ?>
+						<div class="clear"></div>
+						<dl>
+							<dt>調査地域</dt><dd><?php echo $kijitasuInfo04; ?></dd>
+							<dt>調査対象</dt><dd><?php echo $kijitasuInfo05; ?></dd>
+							<dt>調査期間</dt><dd><?php echo $kijitasuInfo06."-".$kijitasuInfo07; ?></dd>
+						</dl>
+					</figure>
+					<div class="clear"></div>
+
+				<?php else: ?>
+					<?php the_content(); ?>
+				<?php endif; ?>
 			<?php endwhile; endif; ?>
 
 			<?php for($i=0; $i<count($contentsTitles); $i++){
-				echo "<h3>".$contentsTitles[$i]."</h3>";
-				echo '<div class="alignright contentsImg">'.$contentsImgs[$i]."</div>";
-				echo $contents[$i];
+				echo '<section class="contents"><h3>'.$contentsTitles[$i].'</h3>';
+				print_r($contentsImgs[$i]);
+				if($contentsImgs[$i]) echo '<div class="alignright contentsImg">'.$contentsImgs[$i]."</div>";
+				echo $contents[$i].'</section>';
 			}?>
 
 		<!--.ninecol--></div>

@@ -6,7 +6,7 @@
 */
 
 get_header(); ?>
-
+	
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
@@ -20,8 +20,8 @@ get_header(); ?>
 		</div>
 	<!--.headerPage--></header>
 
-
 	<div class="container">
+		<div class="twelvecol col last">
 
 		<div class="contents">
 			<section class="sliderCampaign" id="achiveCampaign">
@@ -104,11 +104,12 @@ get_header(); ?>
 		<!--.contents--></div>
 
 		<?php if(function_exists('wp_pagenavi')): ?>
-			<div class="twelvecol col last al_c">
+			<div class="contents al_c">
 				<?php wp_pagenavi(); ?>
 			<!--.pagenavi .contents--></div>
 		<?php endif; ?>
 
+		<!--.col--></div>
 	<!-- .container --></div>
 
 <?php get_footer(); ?>
