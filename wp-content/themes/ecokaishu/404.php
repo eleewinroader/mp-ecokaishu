@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
 
@@ -11,9 +11,18 @@ get_header(); ?>
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li>お探しのページが見つかりません。</li>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title">お探しのページが見つかりません。</span>
+						</a> 
+					</div>
+				</div>
 			</div>
 		</nav>
 		<div class="container">

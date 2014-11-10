@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
 
@@ -20,7 +20,15 @@ function getTitle($tempType, $obj){
 	}elseif($tempType == "postTypeArchive"){
 		$metainfo = $obj->label."｜".get_bloginfo("name");
 	}elseif($tempType == "archive"){
-		$metainfo = $obj->labels."｜".get_bloginfo("name");
+		if(is_category() || is_tag() || is_tax()){
+			$metainfo = $obj->name."｜".get_bloginfo("name");
+		}elseif(is_day()){
+			$metainfo = get_the_date("")."｜".get_bloginfo("name");
+		}elseif(is_month()){
+			$metainfo = get_the_date("Y年n月")."｜".get_bloginfo("name");
+		}elseif(is_year()){
+			$metainfo = get_the_date("Y年")."｜".get_bloginfo("name");
+		}
 	}elseif($tempType == "home"){
 		$metainfo = "不用品回収の前に【エコ回収】";
 	}
@@ -35,9 +43,9 @@ function getDescription($tempType, $obj){
 	}elseif($tempType == "postTypeArchive"){
 		$metainfo = $obj->description;
 	}elseif($tempType == "archive"){
-		$metainfo = $obj->description;
-	}elseif($tempType == "home"){
-		$metainfo = get_bloginfo("description");
+		if(is_category() || is_tag() || is_tax()){
+			$metainfo = $obj->description;
+		}
 	}
 	if($metainfo) return $metainfo;
 	else return false;
@@ -45,11 +53,12 @@ function getDescription($tempType, $obj){
 //getKeywords
 function getKeywords($tempType, $obj){
 	if($tempType == "postTypeArchive"){
-		$metainfo = $obj->label.",不用品,回収,エコ";
+		if($obj->name == "area" || $obj->name == "items") $metainfo = $obj->singular_label.",不,用品,回収,エコ";
+		$metainfo = $obj->label.",不,用品,回収,エコ";
 	}elseif($tempType == "archive"){
-		$metainfo = $obj->name.",不用品,回収,エコ";
-	}elseif($tempType == "home"){
-		$metainfo = "不,用品,回収,エコ,買取,ゴミ,ゼロ";
+		if(is_category() || is_tag() || is_tax()){
+			$metainfo = $obj->name.",不,用品,回収,エコ";
+		}
 	}
 	if($metainfo) return $metainfo;
 	else return false;
@@ -58,12 +67,19 @@ function getKeywords($tempType, $obj){
 //getCanonicalUrl
 function getCanonicalUrl($tempType, $obj){
 	if($tempType == "single"){
-		$metaInfo = get_permalink($obj->ID);
-		print_r($metaInfo);
+		$metainfo = get_permalink($obj->ID);
 	}elseif($tempType == "postTypeArchive"){
-		$metainfo = get_post_type_archive_link($obj->term_id);
+		$metainfo = get_post_type_archive_link($obj->name);
 	}elseif($tempType == "archive"){
-		$metainfo = get_term_link($obj, $obj->taxonomy);
+		if(is_category() || is_tag() || is_tax()){
+			$metainfo = get_term_link($obj, $obj->taxonomy);
+		}elseif(is_day()){
+			$metainfo = get_day_link();
+		}elseif(is_month()){
+			$metainfo = get_month_link();
+		}elseif(is_year()){
+			$metainfo = get_year_link();
+		}
 	}elseif($tempType == "home"){
 		$metainfo = get_bloginfo("url");
 	}
@@ -79,13 +95,14 @@ function getH1($tempType, $obj){
 		}elseif($obj->post_type == "items"){
 			$metaH1 = get_the_title($obj->ID)."の処分・廃棄を考えているならエコ回収";
 		}elseif($obj->post_type == "campaign"){
-			$metaH1 = get_the_title($obj->ID)." 〜 不用品回収の前にオトク情報チェックして【エコ回収】";
+			$metaH1 = "無料・格安キャンペーン 〜 ".get_the_title($obj->ID);
 		}elseif($obj->post_type == "notices"){
 			$metaH1 = get_the_title($obj->ID)." 〜 お知らせ&新着情報";
 		}else{
 			$cat = get_the_category();
 			$metaH1 = get_post_meta($obj->ID, "contentsInfo04", TRUE);
-			if(!$metaH1) $metaH1 = get_the_title($obj->ID)." 〜 ".$cat[0]->name;
+			if($metaH1) $metaH1 = $cat[0]->name."お役立ち情報 〜 ".$metaH1;
+			else $metaH1 = $cat[0]->name."お役立ち情報 〜 ".get_the_title($obj->ID);
 		}
 		$metainfo = $metaH1;
 	}elseif($tempType == "postTypeArchive"){
@@ -95,14 +112,24 @@ function getH1($tempType, $obj){
 		}elseif($postType == "items"){
 			$metainfo = "家電、家具、冷蔵庫、テレビなどの処分をお考えるのなら不用品をゴミにしない【エコ回収】";
 		}elseif($postType == "notices"){
-			$metainfo = "エコ回収サイトとサービスに関するお知らせ&新着情報";
+			$metainfo = "サービスとサイトに関するお知らせ&新着情報";
+		}elseif($postType == "campaign"){
+			$metainfo = "エコ回収をお得に利用しよう！ ~ 無料・格安キャンペーン情報";
 		}else{
 			$metaH1 = getPage("イントロ", "h1");
 			if($metaH1) $metainfo = $metaH1;
 			else $metainfo = $obj->label;
 		}
 	}elseif($tempType == "archive"){
-		$metainfo = $obj->name;
+		if(is_category() || is_tag() || is_tax()){
+			$metainfo = $obj->name."と不用品回収関連記事一覧";
+		}elseif(is_day()){
+			$metainfo = "不用品回収に関する".get_the_date("")."記事一覧";
+		}elseif(is_month()){
+			$metainfo = "不用品回収に関する".get_the_date("Y年n月")."記事一覧";
+		}elseif(is_year()){
+			$metainfo = "不用品回収に関する".get_the_date("Y年")."記事一覧";
+		}
 	}elseif($tempType == "home"){
 		$metainfo = "不用品回収に頼む前に〜あなたのいらないモノが誰かのほしいモノに";
 	}
@@ -218,11 +245,6 @@ remove_action( 'wp_head', 'start_post_rel_link', 10); // start link
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10); // Display relational links for the posts adjacent to the current post.
 remove_action( 'wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
 
-//カスタム投稿パーマリンク「/taxonomy/」削除
-function my_custom_post_type_permalinks_set($termlink, $term, $taxonomy){
-	return str_replace('/'.$taxonomy.'/', '/', $termlink);
-}
-add_filter('term_link', 'my_custom_post_type_permalinks_set',11,3);
 
 function getPostType($post, $object){
 	$postType = get_post_type_object(get_post_type($post));
@@ -594,29 +616,55 @@ function campCode($post, $hier=NULL, $glue = NULL){
 }
 
 //お問い合わせフォーム
-function contactBnr($form){
-	if(!$form) $formDir = "/estimate";
-	else $formDir = "/".$form;
-	$contactBnr = '
-		<aside class="contact">
-			<div class="bnr">
-				<a href="tel:0120530'.telNum(siteCode(), pageCode(), $prCode).'" id="tel">
-					<p class="expl">お電話で申込む</p>
-					<p class="btn"><span class="icon-phone2 icon"></span><span data-type="freeDial">0120</span>-<span data-type="localDial">530</span>-<span data-type="'.telNum(siteCode(), pageCode(), $prCode).'">'.telNum(siteCode(), pageCode(), $prCode).'</span></span></p>
-					<p class="openingHour">
-						<span class="block">平･土 9時-22時</span>
-						<span class="block">祝･日 9時-20時</span>
-					</p>
-				</a>
-			</div>
-			<div class="bnr">
-				<a href="'.siteInfo("rootUrl").$formDir.'" id="estimate">
-					<p class="expl">フォームから申込む</p>
-					<p class="btn"><span class="icon-calculator icon"></span>かんたん申込</p>
-				</a>
-			</div>
-		<!-- .contact --></aside>';
-	return $contactBnr;
+function contactBnr($msg=NULL){
+
+	$telNum = telNum();
+	$template_url = get_bloginfo("template_url");
+	$site_url = siteInfo("rootUrl");
+
+	if(campCode($post)){ 
+		$childrenClass = campCode($post, "children");
+		$pr_code = substr($childrenClass, 6, 11);
+		$pr_code = str_replace("-", "_", $pr_code);
+		$param = "?pr_code=".$pr_code; 
+		if($pr_code == "04_00") $ycoll = "2-1";
+	}
+	if(!$msg) $msg = '<span class="block">お気軽に</span><span class="block">なんなりと</span><span class="block">お問い合わせ</span><span class="block">ください!</span>';
+
+$string = <<< EOF
+	<div class="contact">
+		<div class="msg">
+			<p class="explains">
+				<span class="block">{$msg}</span>
+			</p>
+			<div id="ecolin"><img src="{$template_url}/assets/img/base/staff_img_shinki.jpg" alt="" /></div>
+		<!--.msg--></div>
+		<div class="box" id="tel">
+			<a href="tel:0120530{$telNum}" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
+				<p class="label block">お急ぎの方はお電話で</p>
+				<p class="action">
+					<span class="icon-phone"></span>
+					<span>0120-530-{$telNum}</span>
+				</p>
+			</a>
+		</div>
+		<div class="box" id="mail">
+			<a href="{$site_url}/estimate{$ycoll}/{$param}">
+				<p class="label block">24時間受付中</p>
+				<p class="action">
+					<span class="icon-mail4"></span>
+					<span>メールで見積依頼</span>
+				</p>
+			</a>
+		</div>
+		<p id="openingHour">
+			<span class="date">営業時間</span>
+			<span class="date">平･土 9:00-22:00</span><span class="date">日･祝 9:00-20:00</span>
+		</p>
+	<!--.contact--></div>
+EOF;
+return $string;
+
 }
 
 

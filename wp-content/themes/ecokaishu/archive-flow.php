@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
@@ -9,9 +9,18 @@ get_header( ); ?>
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php post_type_archive_title(); ?></li>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" itemprop="url">
+							<span itemprop="title"><?php post_type_archive_title(); ?></span>
+						</a> 
+					</div>
+				</div>
 			</div>
 		</nav>
 		<div class="container">
@@ -54,8 +63,8 @@ get_header( ); ?>
 						<h3>ご依頼の完了まで確認する事項</h3>
 					</div>
 					<ol class="listFlow">
-						<!--<?php
-						$arrs = array("対応エリア確認", "品物確認");
+						<?php
+						$arrs = array("お伺い先確認", "品物確認");
 						for($i=0; $i<count($arrs); $i++){
 							$module = get_page_by_title($arrs[$i], OBJECT, "flow");
 							$flowInfo01 = getMetaArr($module, "flowInfo01");
@@ -67,18 +76,18 @@ get_header( ); ?>
 								<span class="<?php echo $flowInfo04[0]; ?>"></span>
 								<?php echo $flowInfo03[0]; ?>
 							</li>
-						<?php } ?>-->
-						<li class="threecol col">
+						<?php } ?>
+						<!--<li class="threecol col">
 							<h4>お伺い先確認</h4>
 							<span class="icon-location"></span>
 							<p>お伺い先のエリアはどちらでしょうか。<br />ご訪問可能なエリアかどうか確認させて頂きます。</p>
 							<p class="footnote"><small>※エリアによっては地域料金を頂戴します。</small></p>
 						</li>
 						<li class="threecol col">
-							<h4>品物確認</h4>
+							<h4></h4>
 							<span class="icon-box2"></span>
-							<p>どのようなお品物のお引取をご希望ですか。<br />家具はサイズ、家電は容量などを教えた頂ければより正確なお見積が可能です。</p>
-						</li>
+							<p></p>
+						</li>-->
 						<li class="threecol col">
 							<h4>買取確認</h4>
 							<span class="icon-tags"></span>

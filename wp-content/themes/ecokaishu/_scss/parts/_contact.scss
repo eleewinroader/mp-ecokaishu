@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+//**********************************************************************
+// .contact
+//**********************************************************************
+
+// .contact
+//******************************************************
+
+.contact{
+
+
+		//.box
+		.box{
+
+			position: relative;
+			z-index: 5;
+
+			//a
+			a{
+				display: block;
+				padding-top: 0.5rem;
+				color: $darkGray;
+				text-decoration: none;
+
+				//.label
+				.label{
+					margin-bottom: 0.5rem;
+				}
+
+				//.action
+				.action{	
+
+					margin-top: 0.5rem;
+					padding: 1.0rem 0;
+					border: 1px solid rgba($black, .1);
+					@include border-radius(6px);
+					color: $white;
+					text-align: center;
+					text-decoration: none;
+
+					&:hover{
+						border: 1px solid rgba($darkBlue, .5) !important;
+						background: rgba($darkBlue, .8) !important;
+						color: $white;
+					}
+
+					span[class^="icon-"]{
+						font-size: 90%;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+					}
+
+				}
+
+			}
+
+			&#tel{ .action{ background: $green; } }
+			&#mail{ .action{ background: $pink; } }
+
+		}
+
+		//#openingHour
+		#openingHour{
+			margin-top: 1.0rem;
+		}
+
+		//PC
+		@media all and (min-width: $minWidth){
+
+			//h3
+			h3{
+				margin-top: 0;
+				margin-bottom: 1.0rem;
+			}
+
+			//.box
+			.box{
+				display: inline-block !important;
+				width: 32%;
+				vertical-align: bottom;
+				&:not(:last-of-type){
+					margin-right: 1.19%;
+				}
+			}
+
+			//#openingHour
+			#openingHour{
+				.date{
+					&:nth-of-type(2){
+						&:after{
+							content: " / ";
+						}
+					}
+				}
+			}
+
+		}
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+
+			//h3
+			h3{
+				position: relative;
+				z-index: 4;
+				margin-top: 0;
+				.block{
+					display: inline !important;
+				}
+			}
+
+			//.label
+			.label{
+				text-align: center;
+			}
+
+			//#openingHour
+			#openingHour{
+				text-align: center;
+				.date{
+					display: block;
+				}
+			}
+		}
+
+	}
+
+
+.msg{
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		position: absolute;
+		top: 1.0rem;
+		right: 0;
+
+		//img
+		img{
+			position: relative;
+			z-index: 2;
+			width: 250px;
+		}
+
+		//.explains
+		.explains{
+			position: absolute;
+			z-index: 3;
+			line-height: 1.2em;
+			top: 0;
+			right: 220px;
+			width: 160px;
+			height: 160px;
+			margin-top:  0;
+			padding-top: 3.0rem;
+			@include box-sizing(border-box);
+			@include border-radius(50%);
+			background: rgba($yellow, .4);
+			font-size: $normal * 1.3;
+			text-align: center;
+			letter-spacing: -0.05rem;
+		}
+
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		//img
+		img{
+			display: none;
+		}
+
+		//.explains
+		.explains{
+			display: none;
+		}
+
+	}
+
+}

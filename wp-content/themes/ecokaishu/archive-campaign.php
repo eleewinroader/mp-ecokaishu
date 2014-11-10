@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
 
@@ -10,9 +10,18 @@ get_header(); ?>
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php post_type_archive_title(); ?></li>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" itemprop="url">
+							<span itemprop="title"><?php post_type_archive_title(); ?></span>
+						</a> 
+					</div>
+				</div>
 			</div>
 		</nav>
 		<div class="container">
@@ -26,7 +35,7 @@ get_header(); ?>
 		<div class="contents">
 			<section class="sliderCampaign" id="achiveCampaign">
 				<h3>ただ今進行中のキャンペーン</h3>
-				<ul id="owl-slide" class="owl-carousel owl-theme">
+				<div id="owl-slide" class="owl-carousel owl-theme">
 					<?php
 					$args = array(
 						"post_type" => "campaign",
@@ -34,7 +43,7 @@ get_header(); ?>
 					);
 					$posts = query_posts($args);
 					foreach($posts as $post): ?>
-						<li id="<?php echo campCode($post, "children"); ?>">
+						<div class="slider" i id="<?php echo campCode($post, "children"); ?>">
 							<?php if($post->post_title == "早割"):
 								$got_manth = date("n", mktime(0, 0, 0, date("n"), date("d")+14, date("Y")));
 								$got_day = date("j", mktime(0, 0, 0, date("n"), date("j")+14, date("Y")));?>
@@ -58,10 +67,9 @@ get_header(); ?>
 									</div>
 								</a>
 						<?php endif; ?>
-
-						</li>
+						</div>
 					<?php endforeach; wp_reset_query(); ?>
-				<!-- #owl-slide--></ul>
+				<!-- #owl-slide--></div>
 			</section>
 		<!--.contents--></div>
 

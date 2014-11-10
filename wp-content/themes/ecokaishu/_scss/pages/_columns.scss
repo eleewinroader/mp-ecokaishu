@@ -12,8 +12,7 @@ article.columns{
 
 //**********************************************************************
 // .msg
-//**********************************************************************
-
+/*
 .msg{
 
 	//PC
@@ -66,7 +65,7 @@ article.columns{
 
 	}
 
-}
+}*/
 
 //**********************************************************************
 // listQuote
@@ -527,8 +526,7 @@ ul{
 	}
 
 	// .contact
-	//******************************************************
-
+	/*
 	.contact{
 
 		//.box
@@ -645,7 +643,7 @@ ul{
 			}
 		}
 
-	}
+	}*/
 
 
 	// #area
@@ -710,8 +708,15 @@ ul{
 
 		}
 
-		//.contact
-		.contact{
+		//.contactBnr
+		.contactBnr{
+
+			//msg
+			.msg{
+				display: none;
+			}
+
+			//#openingHour
 			#openingHour{
 				display: inline-block !important;
 				width: 32%;
@@ -730,6 +735,7 @@ ul{
 					}
 				}
 			}
+
 		}
 
 	}
@@ -739,11 +745,13 @@ ul{
 
 	&.items{
 
-		// .contact
+		// .contactBnr
 		//******************************************************
 		
-		.contact{
-			&:first-of-type{
+		.contactBnr{
+
+			//#top
+			&#top{
 				.msg{
 					top: -60px;
 				}
@@ -754,14 +762,20 @@ ul{
 					margin-right: 60px;
 				}
 			}
-			&:last-of-type{
+
+			//#bottom
+			&#bottom{
+
+				//.msg
 				.msg{
 					display: none;
 				}
+
+				//#openingHour
 				#openingHour{
-					display: inline-block !important;
-					width: 32%;
-					margin-left: 1.19%;
+
+
+					//.date
 					.date{
 						display: block;
 						line-height: 1.2em;
@@ -775,7 +789,18 @@ ul{
 							}
 						}
 					}
+
+					//PC
+					@media all and (min-width: $minWidth){
+
+						display: inline-block !important;
+						width: 32%;
+						margin-left: 1.19%;
+
+					}
+
 				}
+
 			}
 		}
 

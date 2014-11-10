@@ -4,7 +4,7 @@
 * Template name: レガシー用お問い合わせ内容確認
 *
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
  

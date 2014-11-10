@@ -2,7 +2,7 @@
 /**
  * The main template file.
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
  */
 
@@ -38,9 +38,23 @@ get_header();
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><?php echo $navPage; ?>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo $catUrl; ?>" itemprop="url">
+							<span itemprop="title"><?php echo $catName; ?></span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo get_permalink($post->ID) ?>" itemprop="url">
+							<span itemprop="title"><?php the_title(); ?></span>
+						</a> 
+					</div>
+				</div>
 			</div>
 		</nav>
 		<div class="container">
@@ -88,7 +102,28 @@ get_header();
 				print_r($contentsImgs[$i]);
 				if($contentsImgs[$i]) echo '<div class="alignright contentsImg">'.$contentsImgs[$i]."</div>";
 				echo $contents[$i].'</section>';
-			}?>
+			}
+
+			$cltitems = wp_get_post_terms($post->ID, 'cltitems');
+			$cltareas = wp_get_post_terms($post->ID, 'cltarea');
+			if(!empty($cltitems) && !empty($cltareas)): ?>
+				<footer class="listItems contents">
+					<h3>関連タグ</h3>
+					<ul>
+					<?php
+					if($cltitems){
+						foreach($cltitems as $cltitem){
+							echo '<li><a href="'.get_term_link($cltitem).'">'.$cltitem->name.'</a></li>';
+						}
+					}
+					if($cltareas){
+						foreach($cltareas as $cltarea){
+							echo '<li><a href="'.get_term_link($cltarea).'">'.$cltarea->name.'</a></li>';
+						}
+					}?>
+					</ul>
+				</footer>
+			<?php endif; ?>
 
 		<!--.ninecol--></div>
 
@@ -123,6 +158,10 @@ get_header();
 
 			<div class="bnrBtn contents">
 				<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
+			<!--.contents--></div>
+
+			<div class="bnrBtn contents">
+				<a href="<?php echo get_permalink(5884); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1411/00_bnr_640x260.gif" alt="先走り年末大掃除キャンペーンページへ" /></a>
 			<!--.contents--></div>
 
 			<?php

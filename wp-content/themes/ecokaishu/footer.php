@@ -1,10 +1,11 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
 ?>
+
 
 	<!-- article#<?php echo pageCode(TRUE); ?>--></article>
 
@@ -52,30 +53,30 @@
 					<h3>エコ回収 全コンテンツ</h3>
 				</div>
 				<div class="twocol col">
-					<h4>サービス概要&利用</h4>
+					<h4>サービス利用</h4>
 					<ul>
 						<li><a href="<?php echo siteInfo("rootUrl") ?>">サイトTOP</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収とは</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>
-						<li><a href="<?php echo get_category_link(507); ?>">100人に聞いてみました</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/できないモノ</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">買取について</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>">よくある質問</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("campaign"); ?>">キャンペーン一覧</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("about"); ?>">メールで見積依頼</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("about"); ?>">WEB見積&申込</a></li>
+						<li><a href="<?php echo siteInfo("rootUrl") ?>/estimate">メールで見積依頼</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("concierge"); ?>">WEB見積&申込</a></li>
 					</ul>
 				</div>
 				<div class="twocol col">
 					<h4>サービス案内</h4>
 					<ul>
+						<li><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収とは</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("flow"); ?>">ご利用の流れ</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("price"); ?>">料金案内</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/できないモノ</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">買取について</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>">よくある質問</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("staff"); ?>">スタッフ紹介</a></li>
+						<li><a href="<?php echo get_category_link(507); ?>">100人に聞いてみました</a></li>
 					</ul>
 				</div>
 				<div class="twocol col">
-					<h4>対応エリア</h4>
+					<h4>対応エリアの確認</h4>
 					<ul>
 					<?php
 					$terms = array("東京都", "神奈川県", "埼玉県", "千葉県", "大阪府", "兵庫県"); 
@@ -148,7 +149,7 @@
 	<div id="shortcutsBtns">
 		<ul>
 			<li><a href="tel:0120530<?php echo telNum(); ?>" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});"><span class="icon-phone"></span><span class="label"><span class="block">0120</span><span class="block">530-<?php echo telNum(); ?></span></span></a></li>
-			<li><a href="<?php echo get_post_type_archive_link("concierge"); ?>"><span class="icon-calculate"></span><span class="label"><span class="block">5分で</span><span class="block">見積</span></span></a></li>
+			<li><a href="http://www.eco-kaishu.jp/estimate"><span class="icon-shipping"></span><span class="label"><span class="block">メールで</span><span class="block">見積依頼</span></span></a></li>
 			<li><a href="<?php echo get_post_type_archive_link("faq"); ?>"><span class="icon-question"></span><span class="label">よくある質問</span></a></li>
 			<li><a href="#siteHeader"><span class="icon-arrow-up3"></span><span class="label">TOP</span></a></li>
 		</ul>
@@ -330,22 +331,37 @@ $(document).ready(function(){
 		delay_after : 2000
 	});
 
+	//setting for not sp
 	<?php if(!is_smartphone()): ?>
-	//tab
-	$(".tabCont:first-of-type").show();
-	<?php if(get_post_type() == "price"): ?>$(".tabIndex li:nth-of-type(2)").addClass("active");<?php endif; ?>
-	<?php if(get_post_type() == "flow"): ?>$(".tabIndex li:nth-of-type(1)").addClass("active");<?php endif; ?>
-	$(".tabIndex .tabBtn").each(function(){
-		$(this).click(function(){
-			$(".tabIndex li").removeClass("active");
-			$(this).addClass("active");
-			var tabId = $(this).attr("data-tab");
-			$(".tabCont").hide();
-			$("#"+tabId).fadeIn("slow");
+
+		//tab
+		$(".tabCont:first-of-type").show();
+		<?php if(get_post_type() == "price"): ?>$(".tabIndex li:nth-of-type(2)").addClass("active");<?php endif; ?>
+		<?php if(get_post_type() == "flow"): ?>$(".tabIndex li:nth-of-type(1)").addClass("active");<?php endif; ?>
+		$(".tabIndex .tabBtn").each(function(){
+			$(this).click(function(){
+				$(".tabIndex li").removeClass("active");
+				$(this).addClass("active");
+				var tabId = $(this).attr("data-tab");
+				$(".tabCont").hide();
+				$("#"+tabId).fadeIn("slow");
+			});
 		});
-	});
+
 	<?php endif; ?>
 
+	//setting for sp
+	<?php if(is_smartphone()): ?>
+
+		//img for sp
+		$(".imgforSp").each(function(){
+			var img = $(this).attr('src');
+			var extension = img.match(/(\.)(png|jpg|gif)/gi);
+			var name = "_s" + extension;
+			$(this).attr("src", img.replace(/(\.)(png|jpg|gif)/gi, name));
+		});
+
+	<?php endif; ?>
 
 });
 

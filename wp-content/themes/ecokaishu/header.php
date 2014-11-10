@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
 
@@ -13,22 +13,27 @@ if(is_single()){
 	$metaObj = get_post_type_object(get_post_type());
 }elseif(is_archive()){
 	$tempType = "archive";
-	if(is_category()){
-		$tax_slug = "category";
-		$id = get_query_var('cat');
-	}else if(is_tag()){
-		$tax_slug = "post_tag";
-		$id = get_query_var('tag_id');
-	}else if(is_tax()){
-		$tax_slug = get_query_var('taxonomy');
-		$term_slug = get_query_var('term');
-		$term = get_term_by("slug",$term_slug,$tax_slug);
-		$id = $term->term_id;
+	if(is_category() || is_tag() || is_tax()){
+		if(is_category()){
+			$tax_slug = "category";
+			$id = get_query_var('cat');
+		}elseif(is_tag()){
+			$tax_slug = "post_tag";
+			$id = get_query_var("tag_id");
+		}elseif(is_tax()){
+			$tax_slug = get_query_var("taxonomy");
+			$term_slug = get_query_var("term");
+			$term = get_term_by("slug",$term_slug,$tax_slug);
+			$id = $term->term_id;
+		}
+		$metaObj = get_term($id, $tax_slug);
+	}else{
+		
 	}
-	$metaObj = get_term($id, $tax_slug);
 }elseif(is_home()){
 	$tempType = "home";
 }
+
 $h1 = getH1($tempType, $metaObj); ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
@@ -38,7 +43,7 @@ $h1 = getH1($tempType, $metaObj); ?>
 <html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if !(IE 7) | !(IE 8) ]><!-->
-<html <?php language_attributes(); ?> prefix="og: http://ogp.me/ns#">
+<html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo('charset'); ?>">
@@ -53,11 +58,9 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 $title = getTitle($tempType, $metaObj);
 $description = getDescription($tempType, $metaObj);
 $keywords = getKeywords($tempType, $metaObj);
-if($title){
-	echo "<title>".$title."</title>"."\n";
-}
-if($description) echo '<meta name="description" itemprop="description" content="'.$description.'" />'."\n";
-if($keywords) echo '<meta name="keywords" itemprop="keywords" content="'.$keywords.'" />'."\n";
+if($title) echo "<title>".$title."</title>"."\n";
+if($description && !is_single()) echo '<meta name="description" itemprop="description" content="'.$description.'" />'."\n";
+if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" content="'.$keywords.'" />'."\n";
 ?>
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@eco_land" />
@@ -148,3 +151,4 @@ if($keywords) echo '<meta name="keywords" itemprop="keywords" content="'.$keywor
 	<article class="<?php echo getArticleClass($tempType, $metaObj);?>"<?php echo getArticleId($tempType, $metaObj); ?>>
 	
 	<?php echo $pr_code; ?>
+<div class="test"></div>

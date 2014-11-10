@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
@@ -9,9 +9,13 @@ get_header( ); ?>
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><?php echo bloginfo("site_name"); ?>TOP</li>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+				</div>
 			</div>
 		</nav>
 		<div class="container">
@@ -38,11 +42,11 @@ get_header( ); ?>
 								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_02<?php if(is_smartphone()) echo "_s"; ?>.jpg" alt="安心・丁寧な作業を常に心がけています" />
 							</a>
 						</div>	
-						<div class="slider">
+						<!--<div class="slider">
 							<a href="<?php echo get_post_type_archive_link("concierge"); ?>">
 								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_03<?php if(is_smartphone()) echo "_s"; ?>.gif" alt="5分で見積完結【新登場】WEB見積" />
 							</a>
-						</div>
+						</div>-->
 						<?php
 						$args = array(
 							"post_type" => "campaign",
@@ -107,6 +111,9 @@ get_header( ); ?>
 				</div>
 				<div class="item">
 					<a href="<?php echo get_permalink(4141); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/0000/03_bnr_640x260.gif" alt="早割ページへ" /></a>
+				</div>
+				<div class="item">
+					<a href="<?php echo get_permalink(5884); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1411/00_bnr_640x260.gif" alt="先走り年末大掃除キャンペーンページへ" /></a>
 				</div>
 			<!--#problems--></div>
 

@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
 
@@ -10,15 +10,24 @@ get_header(); ?>
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php single_cat_title( '', true ); ?></li>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" itemprop="url">
+							<span itemprop="title"><?php single_term_title("", true); ?></span>
+						</a> 
+					</div>
+				</div>
 			</div>
 		</nav>
 		<div class="container">
 			<h2 class="twelvecol col last">
-				<?php if (is_day()){
-					printf( __('日別アーカイブ: %s'),　get_the_date());
+				<?php if(is_day()){
+					printf( __('日別アーカイブ: %s'), get_the_date());
 				}elseif(is_month()){
 					printf( __('月別アーカイブ: %s'), get_the_date('Y年n月'));
 				}elseif(is_year()){
@@ -26,8 +35,8 @@ get_header(); ?>
 				}elseif(is_post_type_archive()){
 					$post_type = get_post_type_object( get_query_var( 'post_type' ));
 					echo $post_type->label;
-				}elseif(is_category() || is_tag()){
-					single_term_title('', true);
+				}elseif(is_category() || is_tag() || is_tax()){
+					single_term_title("", true);
 				}else{
 					the_title();
 				}?>
@@ -49,9 +58,10 @@ get_header(); ?>
 			global $wp_query;
 			query_posts(array_merge(
 					array(
-					'post_type' => array('post'),
-					'orderby' => $orderby,
-					'order' => $order,
+					"post_type" => get_post_types(),
+					"orderby" => $orderby,
+					"order" => $order,
+					"post_status" => "publish"
 				),
 		   		$wp_query->query
 			));
@@ -62,7 +72,7 @@ get_header(); ?>
 							<div class="sevencol col title"><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></div>
 							<div class="threecol col cats">
 								<?php
-								$tags = wp_get_post_terms($post->ID, 'post_tag');
+								$tags = wp_get_post_terms($post->ID);
 								if($tags){
 									$arr = $tags;
 									foreach($tags as $tag){

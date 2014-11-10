@@ -2,7 +2,7 @@
 /**
  * The main template file.
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
  */
 
@@ -23,7 +23,12 @@ get_header();
 	$voiceContents = getMetaArr($post, "contentsInfo02"); 
 	$applicableAreas = get_the_terms($post->ID, 'applicablearea');
 	//print_r($applicableAreas);
-	$navPage = '<li><a href="'.$postTypeUrl.'">'.$postTypeLabel.'</a></li>';
+	$navPage .= '
+			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+				<a href="'.$postTypeUrl.'" itemprop="url">
+					<span itemprop="title">'.$postTypeLabel.'</span>
+				</a> 
+			</div>';
 	
 	if(count($cltAreas) > 1){ //vars for a single item page
 
@@ -43,7 +48,12 @@ get_header();
 		if($cltArea){ // if a cat page exists
 			$cltAreaId = $cltArea[0]->ID;
 			$cltAreaUrl = get_permalink($cltAreaId); //cat url of a single item
-			$navPage .= '<li><a href="'.$cltAreaUrl.'">'.$cltAreaName.'</a></li>';
+			$navPage .= '
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="'.$cltAreaUrl.'" itemprop="url">
+							<span itemprop="title">'.$cltAreaName.'</span>
+						</a> 
+					</div>';
 		}
 		wp_reset_query();
 
@@ -79,15 +89,25 @@ get_header();
 
 	}
 
-	$navPage .= '<li>'.$pageTitle.'</li>';
+	$navPage .= '
+			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+				<a href="'.get_permalink($post->ID).'" itemprop="url">
+					<span itemprop="title">'.$pageTitle.'</span>
+				</a> 
+			</div>';
 	?>
 
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><?php echo $navPage; ?>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<?php echo $navPage; ?>
+				</div>
 			</div>
 		</nav>
 		<div class="container">
@@ -182,44 +202,13 @@ get_header();
 				</div>
 			<!--#municipalities .contents--></div>
 
-			<?php
-			if(campCode($post)){ 
-				$childrenClass = campCode($post, "children");
-				$pr_code = substr($childrenClass, 7, 11);
-				$pr_code = str_replace("-", "_", $pr_code);
-				$param = "?pr_code=".$pr_code; 
-				if($pr_code == "4_00") $ycoll = "2-1";
-			}
-			$telNum = telNum();
-			$template_url = get_bloginfo("template_url");
-			$site_url = siteInfo("rootUrl");
-$string = <<< EOF
-			<div class="contact contents">
-				<div class="box" id="tel">
-					<a href="tel:0120530{$telNum}" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
-						<p class="label block">お急ぎの方はお電話で</p>
-						<p class="action">
-							<span class="icon-phone"></span>
-							<span>0120-530-{$telNum}</span>
-						</p>
-					</a>
-				</div>
-				<div class="box" id="mail">
-					<a href="{$site_url}/estimate{$ycoll}/{$pr_code}">
-						<p class="label block">24時間受付中</p>
-						<p class="action">
-							<span class="icon-mail4"></span>
-							<span>メールで見積依頼</span>
-						</p>
-					</a>
-				</div>
-				<p id="openingHour">
-					<span class="date">営業時間</span>
-					<span class="date">平･土 9:00-22:00</span><span class="date">日･祝 9:00-20:00</span>
-				</p>
-			<!--コンシェルジュへ--></div>
-EOF;
-echo $string; ?>
+			<div class="contents contactBnr">
+				<?php
+				$msg = '<span class="block">いらなくなった</span>'.$post->post_title.'は</span><span class="block">お任せください!</span>';
+				 echo contactBnr($msg);
+				 ?>
+			</div>
+
 
 			<section class="contents">
 				<?php if(count($voiceTitles) == 0): ?>
@@ -264,7 +253,12 @@ echo $string; ?>
 				</ul>
 			<!--エコ回収サービスについて--></section>
 
-			<?php echo $string; ?>
+			<div class="contents contactBnr">
+				<?php
+				$msg = '<span class="block">いらなくなった</span>'.$post->post_title.'は</span><span class="block">お任せください!</span>';
+				 echo contactBnr($msg);
+				 ?>
+			</div>
 
 		<!--.ninecol--></div>
 
@@ -272,6 +266,10 @@ echo $string; ?>
 
 			<div class="bnrBtn contents">
 				<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
+			<!--.contents--></div>
+
+			<div class="bnrBtn contents">
+				<a href="<?php echo get_permalink(5884); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1411/00_bnr_640x260.gif" alt="先走り年末大掃除キャンペーンページへ" /></a>
 			<!--.contents--></div>
 
 			<?php
@@ -324,6 +322,24 @@ echo $string; ?>
 			if($posts){
 				echo '<section class="listItems contents">
 				<h2>対応都道府県一覧</h2><ul>';
+				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+				echo '</ul>
+				<!--.contents--></section>';
+				wp_reset_query();
+			}
+
+			//related contents page
+			$args = array(
+				"order_by" => "date",
+				"order" => DESC,
+				"post_type" =>"post",
+				"posts_per_page" => 10,
+				"cltitems" => $cltAreaName
+			);
+			$posts = query_posts($args);
+			if($posts){
+				echo '<section class="listPosts contents">
+				<h2>関連記事一覧</h2><ul class="">';
 				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
 				echo '</ul>
 				<!--.contents--></section>';

@@ -71,18 +71,21 @@ h3{
 
 	.sliderCampaign{
 
+		//a
+		a{
+			color: $darkGray;
+			&:hover{
+				color: $pink !important;
+			}
+		}
+
 		//.slider
 		.slider{
-
-			//a
-			a{
-				color: $darkGray;
-				&:hover{
-					color: $pink !important;
-				}
-			}
-
+			overflow: hidden;
+			height: 400px;
+			max-height: 400px;
 		}
+
 	}
 
 	// #news

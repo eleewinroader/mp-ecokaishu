@@ -39,10 +39,8 @@ article.campaign{
 			width: 90px;
 			height: 90px;
 			margin: 0 auto;
-			background:{
-				repeat: no-repeat;
-				size: 100%;
-			}
+			background-repeat: no-repeat;
+			background-size: 100%;
 			content: "";
 		}
 
@@ -59,6 +57,19 @@ article.campaign{
 
 }
 
+//**********************************************************************
+// .contact
+//**********************************************************************
+
+.contactBnr{
+
+	overflow: hidden;
+	background: $white;
+
+	.container{
+		position: relative;
+	}
+}
 
 //**********************************************************************
 // campIntro
@@ -131,22 +142,14 @@ article.campaign{
 
 }
 
+
 //**********************************************************************
 // .campFlow
 //**********************************************************************
 
 .campFlow{
 
-	padding: 4.0rem 0;
-	background:{
-		image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///+vZ4TxwRxGxkawAIwDYjMic0ACAAAGD4GiFX/4AAAAAElFTkSuQmCC) !important;
-		repeat: repeat !important;
-		color: $yellow !important;
-	}
-
 	// ul
-	//**************************************************************
-
 	ul{
 
 		text-align: center;
@@ -154,7 +157,6 @@ article.campaign{
 		//li
 		li{
 			position: relative;
-			width: 265px;
 			padding: 1.5rem 1.0rem;
 			@include box-sizing(border-box);
 			@include border-radius(6px);
@@ -175,20 +177,6 @@ article.campaign{
 				line-height: 3.0em;
 			}
 
-			//PC
-			@media all and (min-width: $minWidth){
-
-				display: inline-block;
-				&:not(:last-of-type){
-					margin-right: 2.0rem;
-					&:after{
-						position: absolute;
-						@include arrow(110px, "", "", -2.3rem, 10px, $white, left)
-					}
-				}
-
-			}
-
 			//Mobile
 			@media all and (max-width: $maxWidth){
 
@@ -198,7 +186,8 @@ article.campaign{
 					margin-bottom: 2.0rem;
 					&:after{
 						position: absolute;
-						@include arrow("", -2.1rem, 120px, "", 10px, $white, top)
+						@include arrow("", -2.1rem, 50%, "", 10px, $white, top);
+						margin-left: -10px;
 					}
 				}
 
@@ -208,16 +197,16 @@ article.campaign{
 		
 	}
 
-	// .obj
-	//**************************************************************
-	
-	.obj{
-		&:before{
-			background-image: url("assets/img/campaign/1404/icon_flower_white.png");
-		}		
+	//PC
+	@media all and (min-width: $minWidth){
+
+		padding-bottom: 6.0rem;
+
 	}
 
+
 }
+
 
 //**********************************************************************
 // .voices
@@ -316,6 +305,16 @@ article.campaign{
 
 }
 
+//**********************************************************************
+// .slider
+//**********************************************************************
+
+.slider{
+	overflow: hidden;
+	height: 400px;
+	max-height: 400px;
+}
+
 
 //**************************************************************************
 //**************************************************************************
@@ -332,13 +331,8 @@ article.campaign{
 	position: relative;
 	max-width: 930px;
 	margin: 0 auto;
-
-	#sliderCampaignNews &,
-	article#campaign &{
-		overflow: hidden;
-		height: 400px;
-	}
-
+	height: 100%;
+	max-height: 100%;
 	
 }
 
@@ -412,6 +406,37 @@ article.campaign{
 		}
 
 	}
+
+	// .campFlow
+	//**********************************************************************
+
+	.campFlow{
+
+		padding: 4.0rem 0;
+		background:{
+			image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///+vZ4TxwRxGxkawAIwDYjMic0ACAAAGD4GiFX/4AAAAAElFTkSuQmCC) !important;
+			repeat: repeat !important;
+			color: $yellow !important;
+		}
+
+		// ul
+		ul{
+
+			//li
+			li{
+				width: 265px;
+			}
+			
+		}
+
+		// .obj
+		.obj{
+			&:before{
+				background-image: url("assets/img/campaign/1404/icon_flower_white.png");
+			}		
+		}
+
+	}
 		
 	//PC
 	@media all and (min-width: $minWidth){
@@ -430,6 +455,7 @@ article.campaign{
 				position: relative;
 				background-image: none;
 				background-color: $yellow !important;
+				height: 400px;
 
 				//.campVisual
 				.campVisual{
@@ -2143,6 +2169,8 @@ background:{
 		#sliderCampaignNews &,
 		article#campaign &{
 
+			height: 400px;
+
 			.showMsg{
 				display: none;
 			}
@@ -2582,9 +2610,8 @@ background:{
 		//PC
 		@media all and (min-width: $minWidth){
 
-			img{
-				height: 400px;
-			}
+			height: 400px;
+
 		}
 
 	}
@@ -2598,6 +2625,68 @@ background:{
 
 	}
 	
+}
+
+
+//**************************************************************************
+// #camp1411-00
+//**************************************************************************
+
+#camp1411-00{
+
+	$blue1411-00: #A1FFFF;
+
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAN0lEQVQYV2NkQAIL////H8/IyIgsBmPDBfEpAikGKySkCKyQGEVwE7G5CV0Mq8PxeoaQqQNoIgBFhBALAIplIQAAAABJRU5ErkJggg==) repeat;
+
+	// .mailVisual
+	//******************************************************************
+
+	//&.post
+	&.post{
+
+		.mainVisual{
+			padding: 3.0rem 0;
+		}
+
+	}
+
+	// .mailVisual
+	//******************************************************************
+
+	// .campFlow
+	//**********************************************************************
+
+	.campFlow{
+
+		//padding: 4.0rem 0;
+		background: rgba($blue1411-00, .5);
+
+		// ul
+		ul{
+
+			//li
+			
+		}
+
+		// .obj
+		.obj{
+			&:before{
+				background-image: url("assets/img/campaign/1411/icon_twinkle_white.png");
+			}		
+		}
+
+	}
+
+
+	// .details
+	//******************************************************************
+
+	.details{
+
+		background: rgba($white, .6);
+
+	}
+
 }
 
 

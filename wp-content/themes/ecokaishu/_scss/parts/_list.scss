@@ -1,61 +1,62 @@
 @charset "UTF-8";
 
 //**********************************************************************
-//**********************************************************************
-//
-// _list.scss INDEX
-//
-//.definitionList
-//.listBtn
-//
-//**********************************************************************
-
-//**********************************************************************
 // .navPage
 //**********************************************************************
+
 .navPage{
 
 	margin-bottom: 3.0rem;
 	padding: 0.3rem 0;
 	background: rgba($black, .03);
+	font-size: 80%;
 
-	ul{
+	// .crumb
+	//**************************************************************
 
-		font-size: 80%;
+	.crumb{
 
-		&:before{
-			margin-right: 0.3rem;
-			font-family: icomoon;
-			font-size: 90%;
-			speak: none;
-			content: "\e8d8";
+		display: inline-block;
+		&:not(:last-of-type){
+			margin-right: 0.5rem;
+			&:after{
+				padding-left: 0.5rem;
+				color: $darkGray;
+				font-family: icomoon;
+				speak: none;
+				content: "\00BB";
+			}
 		}
 
-		li{
-
-			display: inline-block;
-			&:not(:last-of-type){
-				margin-right: 0.5rem;
-				&:after{
-					padding-left: 0.5rem;
-					color: $darkGray;
-					font-family: icomoon;
-					speak: none;
-					content: "\00BB";
-				}
+		//a
+		a{
+			color: $green;
+			text-decoration: none;
+			&:hover{
+				color: $pink;
 			}
+		}
 
+		//&:first-of-type
+		&:first-of-type{
+			&:before{
+				margin-right: 0.3rem;
+				font-family: icomoon;
+				font-size: 90%;
+				speak: none;
+				content: "\e8d8";
+			}
+		}
+
+		//&:last-of-type
+		&:last-of-type{
 			a{
-				color: $green;
-				text-decoration: none;
-				&:hover{
-					color: $pink;
-				}
+				color: $darkGray;
 			}
-			
 		}
-
+		
 	}
+
 }
 
 //**********************************************************************

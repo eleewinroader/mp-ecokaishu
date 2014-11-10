@@ -2,7 +2,7 @@
 /**
  * The main template file.
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
  */
 
@@ -17,9 +17,18 @@ get_header(); ?>
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php echo $postType->labels->name; ?></li>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" itemprop="url">
+							<span itemprop="title"><?php post_type_archive_title(); ?></span>
+						</a> 
+					</div>
+				</div>
 			</div>
 		</nav>
 		<h2><?php post_type_archive_title(); ?></h2>

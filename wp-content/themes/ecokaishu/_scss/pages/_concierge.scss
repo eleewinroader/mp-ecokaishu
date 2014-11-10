@@ -172,7 +172,6 @@ padding-bottom: 3.0rem;
 				margin-top: 1.0rem;
 				padding: 1.0rem 0;
 				@include border-radius(6px);
-				color: $white;
 				text-align: center;
 				text-decoration: none;
 				&:after{
@@ -184,25 +183,26 @@ padding-bottom: 3.0rem;
 				&:hover{
 					border: 1px solid rgba($darkBlue, .5) !important;
 					background: rgba($darkBlue, .9) !important;
+					color: $white;
 				}
 			}
 			&:nth-of-type(1){
 				a{
-					border: 1px solid rgba($pink, .5);
-					background: rgba($pink, .9);
+					border: 1px solid rgba($gray, .9);
+					background: rgba($gray, .5);
 				}
 			}
 			&:nth-of-type(2){
 				a{
-					border: 1px solid rgba($orange, .5);
-					background: rgba($orange, .9);
+					border: 1px solid rgba($gray, .9);
+					background: rgba($gray, .5);
 				}
 			}
 
 			//PC
 			@media all and (min-width: $minWidth){
 
-				width: 48.18181%;
+				width: 48.6486%;
 				&:first-of-type{ float: left; }
 				&:last-of-type{ float: right; }
 
@@ -291,91 +291,6 @@ padding-bottom: 3.0rem;
 		}
 
 	}
-
-//**********************************************************************
-// #contact
-//**********************************************************************
-
-#contact{
-
-	// h3
-	//**************************************************************
-
-	h3{
-		margin-top: 0;
-		margin-bottom: 0.5rem;
-	}
-
-	// a
-	//**************************************************************
-
-	a{
-
-		display: block;
-		padding-top: 0.5rem;
-		color: $darkGray;
-		text-align: center;
-		text-decoration: none;
-
-		//.label
-		.label{
-			margin-bottom: 0.5rem;
-			font-size: $bigger;
-		}
-
-		//.action
-		.action{	
-			margin-top: 0.5rem;
-			padding: 1.0rem 0;
-			@extend .btn;
-			text-decoration: none;
-			font-size: $bigger;
-			span[class^="icon-"]{
-				font-size: 90%;
-			}
-		}
-
-	}
-
-
-	//PC
-	@media all and (min-width: $minWidth){
-
-
-		// .col
-		.col{
-			&:first-of-type{
-				border-right: 1px solid rgba($black, .1);
-				#openingHour{
-					.date{
-						&:first-of-type{
-							&:after{
-								content: " / ";
-							}
-						}
-					}
-				}
-			}
-		}
-
-	}
-
-	//Mobile
-	@media all and (max-width: $maxWidth){
-
-		//#openingHour
-		#openingHour{
-			.date{
-				display: block;
-				text-align: center;
-			}
-		}
-
-	}
-
-
-}
-
 
 //**********************************************************************
 // #helps
@@ -501,10 +416,11 @@ padding-bottom: 3.0rem;
 
 		//a
 		a{
-			
+			display: block;
 			margin-top: 0.5rem;
 			padding: 0.7rem 0;
 			@extend .btn;
+			text-align: center;
 		}
 
 	}

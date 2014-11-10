@@ -1,51 +1,39 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.0
+* @subpackage MP-Ecokaishu 2.1
 * @since MP-Ecokaishu 0.0
 */
+
+$postType = get_post_type_object(get_post_type());
 get_header( );?>
 	
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
-				<ul class="twelvecol col last">
-					<li><a href="<?php echo siteInfo("rootUrl"); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li><li><?php the_title(); ?></li>
-				</ul>
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo get_post_type_archive_link($postType->name); ?>" itemprop="url">
+							<span itemprop="title"><?php echo $postType->label; ?></span>
+						</a> 
+					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo get_permalink($post->ID) ?>" itemprop="url">
+							<span itemprop="title"><?php the_title(); ?></span>
+						</a> 
+					</div>
+				</div>
 			</div>
 		</nav>
 		<div class="container">
 			<h2 class="twelvecol col last"><?php the_title(); ?></h2>
 		</div>
 	<!--.headerPage--></header>
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=491417914337676&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<?php
-
-global $wpdb;
-$query = "SELECT meta_id, post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $post->ID ORDER BY meta_id ASC";
-$cf = $wpdb->get_results($query, ARRAY_A);
-
-//var flow
-$campFlowInfo01 = array();
-$campFlowInfo02 = array();
-
-foreach( $cf as $row ){
-
-	//for flow
-	if($row['meta_key'] == "campFlowInfo01") array_push($campFlowInfo01, $row['meta_value']);
-	if($row['meta_key'] == "campFlowInfo02") array_push($campFlowInfo02, $row['meta_value']);
-
-}?>
 
 		<div class="campIntro">
 
@@ -165,46 +153,53 @@ foreach( $cf as $row ){
 		<!-- .campIntro --></div>
 
 		<?php
+		
+		$campFlowInfo01 = getMetaArr($post, "campFlowInfo01");
+		$campFlowInfo02 = getMetaArr($post, "campFlowInfo02");
+
 		$length = count($campFlowInfo01);
-		if($length > 1): ?>
+		if($length > 1): 
+
+			$num = 12 / $length;
+
+			switch ($num) {
+				case '3':
+					$class = "threecol";
+					break;
+				case '4':
+					$class = "fourcol";
+					break;
+				default:
+					$class = "";
+					break;
+			}?>
+
 			<section class="contents campFlow" >
 				<div class="obj"><span>FLOW</span></div>
 				<div class="container">
-				<h3>申込から引取までの流れ</h3>
-				<p class="al_c">WEBからお申し込みをするだけで、その後はエコランドの専門スタッフに全部お任せください！</p>
+				<div class="twelvecol col last">
+					<h3>申込から引取までの流れ</h3>
+					<p class="al_c">WEBからお申し込みをするだけで、その後はエコランドの専門スタッフに全部お任せください！</p>
+				</div>
 				<ul class="twelvecol col last">
 				<?php
 				for($i=0; $i<$length; $i++){
-					$catId = get_cat_ID("flow");
 					$args = array(
 						"post_type" => "flow",
 						"page_id" => $campFlowInfo01[$i]
 					);
 					$flows = query_posts($args);
 					foreach($flows as $flow){
-						$query = "SELECT meta_id,post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $flow->ID ORDER BY meta_id ASC";
-						$cf = $wpdb->get_results($query, ARRAY_A);
-
-						$flowInfo01 = array();
-						$flowInfo02 = array();
-						$flowInfo03 = array();
-						$flowInfo04 = array();
-						$flowInfo05 = array();
-
-						foreach( $cf as $row ){
-							if($row['meta_key'] == "flowInfo01") array_push($flowInfo01, $row['meta_value']);
-							if($row['meta_key'] == "flowInfo02") array_push($flowInfo02, $row['meta_value']);
-							if($row['meta_key'] == "flowInfo03") array_push($flowInfo03, $row['meta_value']);
-							if($row['meta_key'] == "flowInfo04") array_push($flowInfo04, $row['meta_value']);
-							if($row['meta_key'] == "flowInfo05") array_push($flowInfo05, $row['meta_value']);
-						}
-						$key = array_search($campFlowInfo02[$i], $flowInfo01);
-
-						echo '<li class="">';
-						echo '<span class="'.$flowInfo04[$key].' icon"></span>';
-						echo '<p class="title">'.$flowInfo01[$key].'</p>';
-						echo '<p class="txt">'.$flowInfo03[$key].'</p>';
+						$j = 0;
+						$flowInfo01 = getMetaArr($flow, "flowInfo01");
+						$flowInfo03 = getMetaArr($flow, "flowInfo03");
+						$flowInfo04 = getMetaArr($flow, "flowInfo04");
+						echo '<li class="'.$class.'">';
+						echo '<span class="'.$flowInfo04[$j].' icon"></span>';
+						echo '<p class="title">'.$flowInfo01[$j].'</p>';
+						echo '<p class="txt">'.$flowInfo03[$j].'</p>';
 						echo '</li>';
+						$j++;
 					}
 				}?>
 				</ul>
@@ -279,5 +274,17 @@ foreach( $cf as $row ){
 				</div>
 			<!-- .voices --></section>
 		<?php endif; ?>
+
+		<aside class="contents contactBnr">
+			<div class="container">
+				<div class="twelvecol col last">
+					<h3 class="al_l"><?php the_title(); ?>の申込・問合せはお気軽にどうぞ!</h3>
+					<?php
+					echo contactBnr();
+					?>
+				</div>
+			</div>
+		</aside>
+
 
 <?php get_footer(); ?>
