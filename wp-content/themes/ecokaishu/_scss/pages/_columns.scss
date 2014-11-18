@@ -661,45 +661,6 @@ ul{
 				top: -60px;
 			}
 
-			//#mapIndex
-			#mapIndex{
-
-				position: relative;
-				z-index: 4; 
-				span{
-					display: inline-block;
-					&:before{
-						display: inline-block;
-						width: 8px;
-						height: 8px;
-						margin-right: 0.3rem;
-						content: "";
-					}
-					&.applicable{ &:before { background: rgba($pink, .5); } }
-					&.addtional{ &:before { background: rgba($pink, .2); } }
-					&.disable{ &:before { background: rgba($black, .3); } }
-				}
-
-			}
-
-			//#map
-			#map{
-				position: relative;
-				z-index: 4;
-				margin-top: 1.0rem;
-				margin-bottom: 1.0rem;
-			}
-
-			//#mapArea
-			#mapArea{
-
-				h4{
-					margin-top: 1.0rem;
-					margin-bottom: 0.5rem;
-				}
-				
-			}
-
 			//Mobile
 			@media all and (max-width: $maxWidth){
 				margin-top: 0;
@@ -708,7 +669,54 @@ ul{
 
 		}
 
-		//.contactBnr
+		// #mapIndex
+		//******************************************************
+		
+		#mapIndex{
+
+			position: relative;
+			z-index: 4; 
+			span{
+				display: inline-block;
+				&:before{
+					display: inline-block;
+					width: 8px;
+					height: 8px;
+					margin-right: 0.3rem;
+					content: "";
+				}
+				&.applicable{ &:before { background: rgba($pink, .5); } }
+				&.addtional{ &:before { background: rgba($pink, .2); } }
+				&.disable{ &:before { background: rgba($black, .3); } }
+			}
+
+		}
+
+		// #map
+		//******************************************************
+			
+		#map{
+			position: relative;
+			z-index: 4;
+			margin-top: 1.0rem;
+			margin-bottom: 1.0rem;
+		}
+
+		// #mapArea
+		//******************************************************
+			
+		#mapArea{
+
+			h4{
+				margin-top: 1.0rem;
+				margin-bottom: 0.5rem;
+			}
+			
+		}
+
+		// .contactBnr
+		//******************************************************
+			
 		.contactBnr{
 
 			//msg
@@ -736,6 +744,13 @@ ul{
 				}
 			}
 
+		}
+
+		// .warning
+		//******************************************************
+		
+		.warning{
+			margin-top: -3.0rem;
 		}
 
 	}

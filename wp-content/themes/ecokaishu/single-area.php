@@ -66,9 +66,9 @@ get_header();
 			case '地域料金':
 				$text = '<span class="block">地域料金が</span><span class="block">かかるエリア</span>';
 				break;
-			case 'サービス休止':
-				$text = '<span class="block">サービス</span><span class="block">一時休止中</span>';
-				break;
+			//case 'サービス休止':
+			//	$text = '<span class="block">サービス</span><span class="block">一時休止中</span>';
+			//	break;
 			default:
 				$text = '<span class="block">対象外</span>';
 				break;
@@ -84,7 +84,7 @@ get_header();
 
 		//vars for area
 		if($cltAreaName == "東京都") $text = '<span class="block">全地域</span><span class="block">対応可能です!</span>';
-		elseif( $cltAreaName == "兵庫県" || $cltAreaName == "大阪府") $text = '<span class="block">サービス</span><span class="block">一時休止中です!</span>';
+		elseif( $cltAreaName == "兵庫県" || $cltAreaName == "大阪府") $text = "";
 		else $text = '<span class="block">一部地域</span><span class="block">対応可能です!</span>';
 
 	}
@@ -129,17 +129,21 @@ get_header();
 		<div class="ninecol col">
 
 			<div class="contents" id="municipalities">
-				<div class="msg">
-					<p class="explains">
-						<?php
-						if(count($cltAreas) > 1){
-							echo '<span class="block">'.$pageTitle.'は</span>'.$text.'<span class="block">です!</span>';
-						}else{
-							echo '<span class="block">'.$areaPageTitle.'は</span>'.$text;
-						}?>
-					</p>
-					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/staff_img_yanashima.jpg" alt="" />
-				</div>
+				<?php if($cltAreaName == "大阪府" || $cltAreaName == "兵庫県"): ?>
+					<p class="warning">大阪府・兵庫県　エコ回収お伺い 一時休止のお知らせ <a href="http://www.eco-kaishu.jp/?p=5790">詳しくこちら</a></p>
+				<?php else: ?>
+					<div class="msg">
+						<p class="explains">
+							<?php
+							if(count($cltAreas) > 1){
+								echo '<span class="block">'.$pageTitle.'は</span>'.$text.'<span class="block">です!</span>';
+							}else{
+								echo '<span class="block">'.$areaPageTitle.'は</span>'.$text;
+							}?>
+						</p>
+						<img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/staff_img_yanashima.jpg" alt="" />
+					</div>
+				<?php endif; ?>
 				<div id="mapIndex">
 					<span class="applicable">対象エリア</span>
 					<span class="addtional">地域料金(4,320円)がかかるエリア</span>

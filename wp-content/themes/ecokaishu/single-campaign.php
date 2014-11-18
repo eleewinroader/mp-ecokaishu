@@ -278,11 +278,8 @@ get_header( );?>
 		<aside class="contents contactBnr">
 			<div class="container">
 				<div class="twelvecol col last">
-				<?php echo campCode($post, "children"); ?>
 					<h3 class="al_l"><?php the_title(); ?>の申込・問合せはお気軽にどうぞ!</h3>
-					<?php
-					echo contactBnr();
-					?>
+					<?php echo contactBnr(TRUE); ?>
 				</div>
 			</div>
 		</aside>

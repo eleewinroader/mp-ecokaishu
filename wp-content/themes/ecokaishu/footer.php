@@ -57,6 +57,7 @@
 					<ul>
 						<li><a href="<?php echo siteInfo("rootUrl") ?>">サイトTOP</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/できないモノ</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("notices");?>">買取について</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">買取について</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>">よくある質問</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("campaign"); ?>">キャンペーン一覧</a></li>

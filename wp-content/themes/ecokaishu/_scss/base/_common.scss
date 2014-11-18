@@ -44,14 +44,26 @@ a{
 	font-size: $normal* 3;
 	line-height: 4px;
 }
-/*.notices{
+.warning{
+
 	margin-bottom: 1.0rem;
 	padding: 0.5rem;
-	border: 1px solid rgba($pink, .3);
+	border: 1px solid rgba($pink, .2);
 	@include box-sizing(border-box);
-	background: rgba($pink, .2);
+	background: rgba($pink, .1);
 	text-align: center;
-}*/
+
+	a{
+		display: inline-block;
+		line-height: 1.0em;
+		color: $darkGray !important;
+		border-bottom: 1px dotted $darkGray;
+		&:hover{
+			border-bottom-style: solid;
+		}
+	}
+	
+}
 
 
 //PC

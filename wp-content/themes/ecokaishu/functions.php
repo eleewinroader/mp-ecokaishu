@@ -618,7 +618,7 @@ function campCode($post, $hier=NULL, $glue = NULL){
 }
 
 //お問い合わせフォーム
-function contactBnr($msg=NULL){
+function contactBnr($msg=FALSE, $form=FALSE, $tel=FALSE, $openingHour=FALSE){
 
 	$telNum = telNum();
 	$template_url = get_bloginfo("template_url");
@@ -636,25 +636,25 @@ function contactBnr($msg=NULL){
 		$param = "?pr_code=".$month."-".$code;
 		if($month == 4) $ycoll = "2-1";
 	}
-	if(!$msg) $msg = '<span class="block">お気軽に</span><span class="block">なんなりと</span><span class="block">お問い合わせ</span><span class="block">ください!</span>';
 
-$string = <<< EOF
-	<div class="contact">
+	//msg
+	if($msg){
+		$balloon = '<span class="block">お気軽に</span><span class="block">なんなりと</span><span class="block">お問い合わせ</span><span class="block">ください!</span>';
+		$msg = <<<EOF
 		<div class="msg">
 			<p class="explains">
-				<span class="block">{$msg}</span>
+				<span class="block">{$balloon}</span>
 			</p>
 			<div id="ecolin"><img src="{$template_url}/assets/img/base/staff_img_shinki.jpg" alt="" /></div>
 		<!--.msg--></div>
-		<div class="box" id="tel">
-			<a href="tel:0120530{$telNum}" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
-				<p class="label block">お急ぎの方はお電話で</p>
-				<p class="action">
-					<span class="icon-phone"></span>
-					<span>0120-530-{$telNum}</span>
-				</p>
-			</a>
-		</div>
+EOF;
+	}else{
+		$msg = "";
+	}
+	
+	//kinds of form
+	if(!$form){
+		$form = <<<EOF
 		<div class="box" id="mail">
 			<a href="{$site_url}/estimate{$ycoll}/{$param}">
 				<p class="label block">24時間受付中</p>
@@ -664,15 +664,74 @@ $string = <<< EOF
 				</p>
 			</a>
 		</div>
+EOF;
+	}elseif($form == "contact"){
+		$form = <<<EOF
+		<div class="box" id="contact">
+			<a href="{$site_url}/contact">
+				<p class="label block">24時間受付中</p>
+				<p class="action">
+					<span class="icon-mail4"></span>
+					<span>お問い合わせ</span>
+				</p>
+			</a>
+		</div>
+EOF;
+	}else{
+		$form = "";
+	}
+
+	//tel
+	if(!$tel){
+		$tel = <<< EOF
+		<div class="box" id="tel">
+			<a href="tel:0120530{$telNum}" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});">
+				<p class="label block">お急ぎの方はお電話で</p>
+				<p class="action">
+					<span class="icon-phone"></span>
+					<span>0120-530-{$telNum}</span>
+				</p>
+			</a>
+		</div>
+EOF;
+	}else{
+		$tel = "";
+	}
+
+	//openingHour
+	if(!$openingHour){
+		$openingHour = <<< EOF
 		<p id="openingHour">
 			<span class="date">営業時間</span>
 			<span class="date">平･土 9:00-22:00</span><span class="date">日･祝 9:00-20:00</span>
 		</p>
+EOF;
+	}else{
+		$openingHour = "";
+	}
+
+
+$string = <<< EOF
+	<div class="contact">
+		{$msg}
+		{$tel}
+		{$form}
+		{$openingHour}
 	<!--.contact--></div>
 EOF;
 return $string;
 
 }
+function contact($atts){
+	extract( shortcode_atts ( array(
+		"msg" => FALSE,
+		"form" => FALSE,
+		"tel" => FALSE,
+		"open" => FALSE
+	), $atts));
+	return contactBnr($msg, $form, $tel, $open);
+}
+add_shortcode("contact", "contact");
 
 
 /*******************************************************
