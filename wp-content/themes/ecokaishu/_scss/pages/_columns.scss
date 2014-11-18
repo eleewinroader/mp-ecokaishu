@@ -864,6 +864,76 @@ ul{
 }
 
 //**********************************************************************
+// #askpeople
+//**********************************************************************
+
+&#askpeople{
+
+	// .item
+	//**************************************************************
+
+	.item{
+
+		font-size: 90%;
+
+		h3{
+			margin-top: 1.0rem;
+			margin-bottom: 0;
+		}
+	
+		a{
+			color: $darkGray;
+		}
+
+		img{
+			margin-bottom: 1.0rem;
+		}
+
+
+		.listItems{
+
+			margin-top: 1.0rem;
+			margin-bottom: 0.5rem;
+			padding-top: 1.0rem;
+			border-top: 1px dashed rgba($black, .1);
+
+			li{
+
+				a{
+					padding: 0 0.3rem;
+				}
+
+			}
+
+		}
+
+		//PC
+		@media all and (min-width: $minWidth){
+			width: 265px;
+			margin-bottom: 10px;
+		}
+
+		#more{
+
+			display: inline-block;
+			margin-left: 0.2rem;
+			padding: 0 0.3rem;
+			@include border-radius(3px);
+			@include box-sizing(border-box);
+			background: rgba($black, .05);
+			border: 1px solid rgba($black, .1);
+			font-size: 80%;
+
+			&:hover{
+				color: $pink;
+			}
+		}
+
+	}
+
+}
+
+//**********************************************************************
 // .sidebar
 //**********************************************************************
 

@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 
@@ -40,7 +40,7 @@ get_header(); ?>
 				移動もしくは削除された可能性があります。
 			</p>
 			<ul class="cstmCalendar">
-				<li><a href="<?php echo siteInfo('rootUrl'); ?>">エコ回収・買取TOPへ</a></li>
+				<li><a href="<?php echo siteInfo('rootUrl'); ?>"><?php echo bloginfo("site_name"); ?>TOP</a></li>
 				<li><a href="<?php echo siteInfo('siteUrlEcokaishu'); ?>/contact">お問い合わせ</a></li>
 			</ul>
 		</div>

@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 ?>
@@ -225,7 +225,7 @@ DD_belatedPNG.fix('.png');
 						<div class="eqat1"><p class="box">基本料金<span class="block">3,150円</span></p></div>
 						<span class="keisan"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/plus.png" alt="" class="png" /></span>
 						<div class="eqat1"><p class="box">物品ごとの料金
-							<span class="block">洗濯機4,200<span class="small">円</span></span>
+							<span class="block">洗濯機4,320<span class="small">円</span></span>
 							<span class="block">ソファ3,150<span class="small">円</span></span>
 						</p></div>
 						<span class="keisan"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/plus.png" alt="" class="png" /></span>
@@ -259,7 +259,7 @@ DD_belatedPNG.fix('.png');
 							<tr class="exmp2"><td colspan="3">列:ホットカーペット、ステッパー等</td></tr>
 							<tr><th rowspan="2">Fランク<br />3,150円</th><td>270cm以下</td><td>20kg以下</td><td>一人がけソファ</td></tr>
 							<tr class="exmp2"><td colspan="3">列:一人がけソファ、衣類乾燥機、ベッドフレーム(シングル)等</td></tr>
-							<tr><th rowspan="2">Gランク<br />4,200円</th><td>300cm以下</td><td>30kg以下</td><td>自転車</td></tr>
+							<tr><th rowspan="2">Gランク<br />4,320円</th><td>300cm以下</td><td>30kg以下</td><td>自転車</td></tr>
 							<tr class="exmp2"><td colspan="3">列:自転車、二人がけソファ、マットレス(シングル)等</td></tr>
 							<tr><th rowspan="2">Hランク<br />5,775円</th><td>360cm以下</td><td>40kg以下</td><td>マットレス(ダブル)</td></tr>
 							<tr class="exmp2"><td colspan="3">列:マットレス(ダブル)、三人がけソファ等</td></tr>
@@ -319,7 +319,7 @@ DD_belatedPNG.fix('.png');
 								【埼玉県】 吉川市、越谷市、三郷市、八潮市、上尾市<br />
 								【神奈川県】 鎌倉市、逗子市、横須賀市、三浦市、葉山町、大和市、相模原市<br />
 								【千葉県】 千葉市、習志野市、八千代市、船橋市、鎌ヶ谷市、松戸市、柏市、流山市</td>
-							<td class="pink">4,200 円</td>
+							<td class="pink">4,320 円</td>
 						</tr>
 						<tr>
 							<th>PCデータ物理消去</th>
@@ -446,7 +446,7 @@ DD_belatedPNG.fix('.png');
 			</div>
 			<div class="footnote">
 				<p class="small clear">
-					※<span class="pink">赤字</span>のエリアは、別途地域料金として4,200円が発生いたします。<br />
+					※<span class="pink">赤字</span>のエリアは、別途地域料金として4,320円が発生いたします。<br />
 					※記載されていないエリアでも可能な限り調整をいたしますので、お気軽に電話・メールにてご相談くださいませ。<br />
 					※対応エリアの詳細についてはお電話にてご確認ください。<br />
 					※お伺いする場所によっては、別当地域料金が発生いたします。</p>

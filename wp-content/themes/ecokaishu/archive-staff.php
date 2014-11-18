@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
@@ -148,7 +148,7 @@ get_header( ); ?>
 					<p>お客様にも、お品物にも、作業にも、すべてのものにLove and Passion！おもてなしの心で、常に最高のサービスを。</p>
 				</li>
 				<li class="col threecol">
-					<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
+					<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_okamura.jpg" /></div>
 					<h4>岡村 駿太<span class="small">おかむら しゅんた</span></h4>
 					<p>お客様のご希望・ご要望を丁寧に聞き出しながら、ご満足いただける確実な作業を提供しています。お任せ下さい。</p>
 				</li>
@@ -168,7 +168,7 @@ get_header( ); ?>
 					<p>お客様の笑顔が見たいから。お客様に笑顔になってもらえるような、安心の接客を心がけています。</p>
 				</li>
 				<li class="col threecol">
-					<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/demo_photo1.jpg" /></div>
+					<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_murooka.jpg" /></div>
 					<h4>室岡 誠<span class="small">むろおか まこと</span></h4>
 				</li>
 			</ol>

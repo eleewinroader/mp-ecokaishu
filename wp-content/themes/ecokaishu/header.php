@@ -1,11 +1,14 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 
 if(is_single()){
+	$tempType = "single";
+	$metaObj = $post;
+}elseif(is_page()){
 	$tempType = "single";
 	$metaObj = $post;
 }elseif(is_post_type_archive()){
@@ -87,12 +90,12 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 				<h1 class="eightcol col"><?php if($h1) echo $h1; else bloginfo("site_name"); ?></h1>
 				<div class="fourcol col last navGlobal">
 					<ul>
-					<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>"><span class="label">エコランド</span></a></li>
-					<li><a href="<?php echo siteInfo("siteUrlOkataduke"); ?>"><span class="label">お片づけ</span></a></li>
-					<li class="currSite"><a href="<?php echo siteInfo("siteUrlEcokaishu"); ?>"><span class="label">エコ回収</span></a></li>
-					<li><a href="<?php echo siteInfo("siteUrlEcoauc"); ?>"><span class="label">エコオク</span></a></li>
-					<li><a href="<?php echo siteInfo("siteUrlRshop"); ?>"><span class="label">リサイクルショップ</span></a></li>
-					<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>"><span class="label">会員登録</span></a></li>
+					<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>" title="エコランド"><span class="label">エコランド</span></a></li>
+					<li><a href="<?php echo siteInfo("siteUrlOkataduke"); ?>" title="お片づけ"><span class="label">お片づけ</span></a></li>
+					<li class="currSite"><a href="<?php echo siteInfo("siteUrlEcokaishu"); ?>" title="エコ回収"><span class="label">エコ回収</span></a></li>
+					<li><a href="<?php echo siteInfo("siteUrlEcoauc"); ?>" title="エコオク"><span class="label">エコオク</span></a></li>
+					<li><a href="<?php echo siteInfo("siteUrlRshop"); ?>" title="リサイクルショップ"><span class="label">リサイクルショップ</span></a></li>
+					<li><a href="<?php echo siteInfo("siteUrlEcoland"); ?>" title="会員登録"><span class="label">会員登録</span></a></li>
 					</ul>
 				</div>
 			</div>

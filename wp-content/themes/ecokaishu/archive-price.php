@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
@@ -33,12 +33,12 @@ get_header( ); ?>
 			<div class="summary">
 				<?php echo getPage("イントロ", "contents"); ?>
 			</div>
-			<nav>
+			<div class="tabIndex">
 				<ul>
 					<li><a href="#ex"><span class="block">料金の出し方</span><span class="here">こちら</span></a></li>
 					<li><a href="#simulations"><span class="block">みんなの見積は</span><span class="here">こちら</span></a></li>
 				</ul>
-			</nav>
+			<div>
 		<!-- .intro .summary--></div>
 	</div>
 

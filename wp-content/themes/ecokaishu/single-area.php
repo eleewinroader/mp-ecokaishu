@@ -2,7 +2,7 @@
 /**
  * The main template file.
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
  */
 
@@ -142,7 +142,7 @@ get_header();
 				</div>
 				<div id="mapIndex">
 					<span class="applicable">対象エリア</span>
-					<span class="addtional">地域料金(4,200円)がかかるエリア</span>
+					<span class="addtional">地域料金(4,320円)がかかるエリア</span>
 					<span class="disable">対象外</span>
 				</div>
 				<div id="mapArea">
@@ -195,7 +195,7 @@ get_header();
 						}
 						echo '
 						<p class="footnote">
-							<small>※1 地域料金として別途4,200円が発生いたします。</small><br />
+							<small>※1 地域料金として別途4,320円が発生いたします。</small><br />
 							<small>※ 対象外エリアでも可能な可能な限り調整をいたしますので、お気軽に電話・メールにてご相談くださいませ。</small>
 						</p>';
 					}?>

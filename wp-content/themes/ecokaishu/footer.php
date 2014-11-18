@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 ?>
@@ -72,7 +72,7 @@
 						<li><a href="<?php echo get_post_type_archive_link("flow"); ?>">ご利用の流れ</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("price"); ?>">料金案内</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("staff"); ?>">スタッフ紹介</a></li>
-						<li><a href="<?php echo get_category_link(507); ?>">100人に聞いてみました</a></li>
+						<li><a href="<?php echo get_permalink(get_page_by_title("100人に聞いてみました")); ?>">100人に聞いてみました</a></li>
 					</ul>
 				</div>
 				<div class="twocol col">
@@ -150,6 +150,7 @@
 		<ul>
 			<li><a href="tel:0120530<?php echo telNum(); ?>" onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});"><span class="icon-phone"></span><span class="label"><span class="block">0120</span><span class="block">530-<?php echo telNum(); ?></span></span></a></li>
 			<li><a href="http://www.eco-kaishu.jp/estimate"><span class="icon-shipping"></span><span class="label"><span class="block">メールで</span><span class="block">見積依頼</span></span></a></li>
+			<li><a href="<?php echo get_post_type_archive_link("area"); ?>"><span class="icon-location"></span><span class="label">対応エリア確認</span></a></li>
 			<li><a href="<?php echo get_post_type_archive_link("faq"); ?>"><span class="icon-question"></span><span class="label">よくある質問</span></a></li>
 			<li><a href="#siteHeader"><span class="icon-arrow-up3"></span><span class="label">TOP</span></a></li>
 		</ul>

@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 
@@ -169,6 +169,8 @@ function getArticleId($tempType, $obj){
 	if($tempType == "single"){
 		if($obj->post_type == "campaign"){
 			if(campCode($obj)) $idinfo = campCode($obj, "children", " ");
+		}elseif($obj->post_name == "askpeople"){
+			$idinfo = "askpeople";
 		}
 	}elseif($tempType == "postTypeArchive"){
 		if($obj->post_type == "campaign"){
@@ -624,10 +626,15 @@ function contactBnr($msg=NULL){
 
 	if(campCode($post)){ 
 		$childrenClass = campCode($post, "children");
-		$pr_code = substr($childrenClass, 6, 11);
-		$pr_code = str_replace("-", "_", $pr_code);
-		$param = "?pr_code=".$pr_code; 
-		if($pr_code == "04_00") $ycoll = "2-1";
+		$code = substr($childrenClass, -2);
+		$month = substr($childrenClass, 6, 2);
+		if(is_numeric($month)){
+			$month = sprintf("%01d", $month);
+		}else{
+			$month = substr($month, 0, 1);
+		}
+		$param = "?pr_code=".$month."-".$code;
+		if($month == 4) $ycoll = "2-1";
 	}
 	if(!$msg) $msg = '<span class="block">お気軽に</span><span class="block">なんなりと</span><span class="block">お問い合わせ</span><span class="block">ください!</span>';
 

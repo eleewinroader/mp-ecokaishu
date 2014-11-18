@@ -2582,6 +2582,13 @@ background:{
 		background: $green;
 		color: $white;
 
+		a{
+			color: $yellow;
+			&:hover{
+				color: $white;
+			}
+		}
+
 	}
 
 }
@@ -2629,12 +2636,12 @@ background:{
 
 
 //**************************************************************************
-// #camp1411-00
+// #camp14b-00
 //**************************************************************************
 
-#camp1411-00{
+#camp14b-00{
 
-	$blue1411-00: #A1FFFF;
+	$blue14b-00: #A1FFFF;
 
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAN0lEQVQYV2NkQAIL////H8/IyIgsBmPDBfEpAikGKySkCKyQGEVwE7G5CV0Mq8PxeoaQqQNoIgBFhBALAIplIQAAAABJRU5ErkJggg==) repeat;
 
@@ -2659,7 +2666,7 @@ background:{
 	.campFlow{
 
 		//padding: 4.0rem 0;
-		background: rgba($blue1411-00, .5);
+		background: rgba($blue14b-00, .5);
 
 		// ul
 		ul{

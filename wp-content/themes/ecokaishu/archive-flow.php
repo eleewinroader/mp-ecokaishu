@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
@@ -30,99 +30,59 @@ get_header( ); ?>
 
 	<div class="container">
 
+
+
 		<div class="twelvecol col last" id="intro">
 			<div class="summary">
 				<div class="container">
 					<!--<?php echo getPage("イントロ", "contents"); ?>-->
-					<p><span class="block">使わなくなった家電や家具などを、</span><span class="block">１個からでもエコ回収・買取に伺います。</span><span class="block">ご相談・依頼から集荷まで、エコ回収の流れをご案内いたします。</span></p>
+					<p><span class="block">使わなくなった家電や家具などを、</span><span class="block">１個からでもエコ回収・買取に伺います。</span><span class="block">ご相談・依頼から集荷まで、</span><span class="block">エコ回収の流れをご案内いたします。</span></p>
 				</div>
 			<!-- .intro .summary--></div>
 		<!-- .intro --></div>
 
-		<div class="threecol col">　</div>
-		<div class="sixcol col">
-			<ul class="tabIndex sixcol col">
-				<li data-tab="concierge" class="tabBtn"><?php if(is_smartphone()) echo '<a href="#concierge">'; ?>ご相談・依頼までの流れ<?php if(is_smartphone()) echo '</a>'; ?></li>
-				<li data-tab="ecokaishu" class="tabBtn"><?php if(is_smartphone()) echo '<a href="#ecokaishu">'; ?>エコ回収当日の流れ<?php if(is_smartphone()) echo '</a>'; ?></li>
+
+		<div class="tabIndex">
+			<ul>
+				<li class="tabBtn" data-tab="concierge"><span class="block">相談･依頼の流れは</span><span class="here">こちら</span></li>
+				<li class="tabBtn" data-tab="ecokaishu"><span class="block">集荷の流れは</span><span class="here">こちら</span></li>
 			</ul>
 		</div>
-		<div class="threecol col last">　</div>
-		<!-- tabIndex-->
 
 		<div class="tabs">
 
 			<div class="tabCont" id="concierge">
 
-				<!--<div class="twelvecol col last al_c visual contents">
-					<h3>ご相談・依頼までの流れ</h3>
-					<?php echo getPage("受付の流れ", "contents"); ?>
-				</div>-->
+				<div class="twelvecol col last al_c">
+					<h3>ご依頼・依頼までの流れ</h3>
+				</div>
 
 				<section class="contents">
 					<div class="twelvecol col last">
-						<h3>ご依頼の完了まで確認する事項</h3>
+						<h4>ご依頼の完了まで確認する事項</h4>
 					</div>
 					<ol class="listFlow">
 						<?php
-						$arrs = array("お伺い先確認", "品物確認");
+						$arrs = array("お伺い先確認", "品物確認", "買取確認", "建物確認", "金額提示", "予約希望日時確認", "お客様情報確認", "商品、合計金額再確認");
 						for($i=0; $i<count($arrs); $i++){
+							if(($i+1) % 4 == 0) $last = " last";
+							else $last = "";
 							$module = get_page_by_title($arrs[$i], OBJECT, "flow");
 							$flowInfo01 = getMetaArr($module, "flowInfo01");
 							$flowInfo03 = getMetaArr($module, "flowInfo03");
 							$flowInfo04 = getMetaArr($module, "flowInfo04");
 							?>
-							<li class="threecol col">
-								<h4><?php echo $flowInfo01[0]; ?></h4>
+							<li class="threecol col <?php echo $last; ?>">
+								<h5><?php echo $flowInfo01[0]; ?></h5>
 								<span class="<?php echo $flowInfo04[0]; ?>"></span>
 								<?php echo $flowInfo03[0]; ?>
 							</li>
 						<?php } ?>
-						<!--<li class="threecol col">
-							<h4>お伺い先確認</h4>
-							<span class="icon-location"></span>
-							<p>お伺い先のエリアはどちらでしょうか。<br />ご訪問可能なエリアかどうか確認させて頂きます。</p>
-							<p class="footnote"><small>※エリアによっては地域料金を頂戴します。</small></p>
-						</li>
-						<li class="threecol col">
-							<h4></h4>
-							<span class="icon-box2"></span>
-							<p></p>
-						</li>-->
-						<li class="threecol col">
-							<h4>買取確認</h4>
-							<span class="icon-tags"></span>
-							<p>新品で購入されて5年以内のお品物はございますか。<br />家具や家電は年式・メーカー/ブランド・型番によってはお買取対象になります。</p>
-						</li>
-						<li class="threecol col last">
-							<h4>建物確認</h4>
-							<span class="icon-home2"></span>
-							<p>お住まいは戸建でしょうか、集合住宅でしょうか。何階にお住まいですか。エレベーターはございますか。<br />階段作業の有無によって料金が異なります。</p>
-						</li>
-						<li class="threecol col">
-							<h4>金額提示</h4>
-							<span class="icon-calculate"></span>
-							<p>合計の料金は〇〇円になります。<br />まずはお時間帯指定のない場合の料金をご案内します。</p>
-						</li>
-						<li class="threecol col">
-							<h4>予約希望日時確認</h4>
-							<span class="icon-calendar3"></span>
-							<p>お伺いご希望の日時はお決まりですか。<br />もし料金にご納得頂ける場合はご希望の日時にお伺いが可能かどうか、予約状況を確認いたします。</p>
-						</li>
-						<li class="threecol col">
-							<h4>お客様情報確認</h4>
-							<span class="icon-profile"></span>
-							<p>ご予約を承りますので、まずお名前をフルネームを教えて頂けますでしょうか。<br />お名前(漢字・フルネーム)、ご連絡先、ご訪問先の住所、メールアドレス(PDFが確認できるもの)をお教えください。</p>
-						</li>
-						<li class="threecol col last">
-							<h4>商品、合計金額再確認</h4>
-							<span class="icon-checkmark-circle"></span>
-							<p>今回ご依頼のお品物は〇、〇、〇で合計金額は〇〇〇円になります。お支払いは当日現金でお願いしております。領収書はその場でメールにてお送り致します。</p>
-						</li>
 					</ol>
 				<!--concierge ecokaishu--></section>
 
 				<section class="contents">
-					<h3>依頼の前に注意ください！</h3>
+					<h4>依頼の前に注意ください！</h4>
 					<ul class="listCheck">
 						<li>お預かりしたお品物はリユースのため、エコオクというオークションサイトに出品致します。</li>
 						<li>お品物追加がある場合は2日前までにご連絡お願い致します。</li>
@@ -136,7 +96,7 @@ get_header( ); ?>
 
 			<div class="tabCont" id="ecokaishu">
 
-				<div class="twelvecol col last al_c visual contents">
+				<div class="twelvecol col last al_c visual">
 					<h3>5分でわかるエコ回収の流れ</h3>
 					<div class="videoWrapper">
 					<iframe width="640" height="360" src="//www.youtube.com/embed/bNtnAxpyvaU?rel=0" frameborder="0" allowfullscreen></iframe>

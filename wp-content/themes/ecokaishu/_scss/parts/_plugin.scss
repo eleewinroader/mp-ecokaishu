@@ -1,0 +1,38 @@
+// .liquidLayout
+//**********************************************************************
+
+.liquidLayout{
+
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 3.0rem;
+
+	// .item
+	//**************************************************************
+
+	.item{
+
+		overflow: hidden;
+		margin-top: 10px;
+		border: 1px solid rgba($black, .1);
+		@include box-sizing(border-box);
+		background: $white;
+
+
+		//.itemContents
+		.itemContents{
+			padding: 0.5rem;
+		}
+
+		//PC
+		@media all and (min-width: $minWidth){
+			width: 170px;
+			margin-bottom: 10px;
+		}
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			width:  100% !important;
+		}
+
+	}
+}

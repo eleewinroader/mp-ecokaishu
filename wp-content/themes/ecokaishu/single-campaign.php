@@ -1,7 +1,7 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.1
+* @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
 */
 
@@ -278,6 +278,7 @@ get_header( );?>
 		<aside class="contents contactBnr">
 			<div class="container">
 				<div class="twelvecol col last">
+				<?php echo campCode($post, "children"); ?>
 					<h3 class="al_l"><?php the_title(); ?>の申込・問合せはお気軽にどうぞ!</h3>
 					<?php
 					echo contactBnr();

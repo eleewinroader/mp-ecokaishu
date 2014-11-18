@@ -9,125 +9,120 @@
 position: relative;
 margin-bottom: 5.0rem;
 
+
+
 //**********************************************************************
 // .tabIndex
 //**********************************************************************
 
 .tabIndex{
 
-	// li
-	//**************************************************************
 
-	li{
-	
-		display: block;
-		background: $gray;
+	//ul
+	ul{
 
-	}
-
-	//PC
-	@media all and (min-width: $minWidth){
-
-		display: block;
-		width: 100%;
-		margin-bottom: -1px;
-
-		li{
-			display: inline-block;
-			width: 48%;
-			padding-top: 1.0rem;
-			padding-bottom: 1.0rem;
-			border: 1px solid transparent;
-			border-top-color:  rgba($black, .1);
-			border-left-color:  rgba($black, .1);
-			border-right-color:  rgba($black, .1);
-			@include box-sizing(border-box);
-			@include border-top-right-radius(6px);
-			@include border-top-left-radius(6px);
-			text-align: center;
-
-			&:first-of-type{
-				margin-right: 1%;
-			}
-
-			&.active{
-				background: $white;
-			}
-		}
-
-	}
-
-	//Mobile
-	@media all and (max-width: $maxWidth){
+		margin: 0 auto;
+		text-align: center;
 
 		//li
 		li{
+			display: inline-block;
+			text-align: center;
+			vertical-align: top;
+			@include box-sizing(border-box);
+			border: 3px solid white;
+			@include border-radius(50%);
+			@include box-shadow(rgba($black, .2) 0px 0px 3px);
+			text-decoration: none;
+			color: $white;
 
-			margin-bottom: 1.0rem;
-			padding: 1.0rem;
-
-			a{
-
-				display: block;
-				position: relative;
-				text-decoration: none;
-				color: $darkGray;
-				
+			.here{
+				display: inline-block;
+				margin-top: 0.2rem;
+				padding: 0 0.5rem;
+				background: rgba($black, .3);
+				border: 1px solid rgba($black, .1);
+				@include border-radius(6px);
+				@include box-shadow(rgba($black, .2) 0px 0px 3px inset);
 				&:after{
-					position: absolute;
-					top: 50%;
-					right: 0;
+					display: inline-block;
 					width: 0;
 					height: 0;
-					margin-top: -4px;
+					//margin-top: -4px;
+					margin-left: 0.3rem;
 					border: 4px solid transparent;
-					border-left-color: $darkGray;
+					border-top-color: $white;
 					content: "";
+					vertical-align: middle;
 				}
-				
+			}
+
+			&:hover{
+				background: $darkBlue !important;
+			}
+			
+			&:nth-of-type(1){
+				background: $orange;
+			}
+
+			&:nth-of-type(2){
+				background: $green;
 			}
 
 		}
 
 	}
 
+	// PC
+	@media all and (min-width: $minWidth){
 
+		ul{
+			li{
+				width: 160px;
+				height: 160px;
+				padding-top: 3.5rem;
+			}
+		}
+
+	}
+
+	// Mobile
+	@media all and (max-width: $maxWidth){
+
+		ul{
+			li{
+				width: 140px;
+				height: 140px;
+				padding-top: 3.0rem;
+			}
+		}
+
+	}
 
 }
 
-//**********************************************************************
-// .tabs
-//**********************************************************************
 
 .tabs{
-
-	//PC
-	@media all and (min-width: $minWidth){
-		border-top: 1px solid rgba($black, .1);
-	}
+	margin-top: 3.0rem;
+	padding-top: 3.0rem;
+	border-top: 1px solid rgba($black, .1);
 }
 
 
-//**********************************************************************
-// .visual
-//**********************************************************************
-
-.visual{
-
-	//PC
-	@media all and (min-width: $minWidth){
-		h3{
-			display: none;
-		}
-	}
-
-}
 
 //**********************************************************************
 // #concierge
 //**********************************************************************
 
 #concierge{
+
+
+	//h3
+	//**************************************************************
+	
+	h3{
+		margin-bottom: 0;
+	}
 
 	// .listFlow
 	//**************************************************************
