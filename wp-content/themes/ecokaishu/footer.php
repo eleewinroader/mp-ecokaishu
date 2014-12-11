@@ -80,7 +80,7 @@
 					</ul>
 				</div>
 				<div class="twocol col">
-					<h4>人気エリア別口コミ･評判</h4>
+					<h4>エリア別口コミ･評判</h4>
 					<ul class="listItems">
 					<?php
 					//popular item cats
@@ -108,7 +108,7 @@
 							"order" => ASC,
 							"post_type" => "items",
 							"posts_per_page" => -1,
-							"catkinds" => ""
+							"catkinds" => "人気"
 						);
 						$posts = query_posts($args);
 						if($posts){
