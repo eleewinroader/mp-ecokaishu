@@ -1,8 +1,6 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
 */
 ?>
 
@@ -53,57 +51,70 @@
 					<h3>エコ回収 全コンテンツ</h3>
 				</div>
 				<div class="twocol col">
-					<h4>サービス利用</h4>
+					<h4>サービス概要</h4>
 					<ul>
 						<li><a href="<?php echo siteInfo("rootUrl") ?>">サイトTOP</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ/できないモノ</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("notices");?>">買取について</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収とは</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("area");?>">対応エリア確認</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("flow"); ?>">ご利用の流れ</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("price"); ?>">料金案内</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("staff"); ?>">スタッフ紹介</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("campaign"); ?>">キャンペーン一覧</a></li>
+					</ul>
+				</div>
+				<div class="twocol col">
+					<ul id="marg">
+						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq1">エコ回収できるモノ</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">買取について</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>">よくある質問</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("campaign"); ?>">キャンペーン一覧</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("notices");?>">新着情報</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>
+						<li><a href="<?php echo get_permalink(get_page_by_title("100人に聞いてみました")); ?>">100人に聞いてみました</a></li>
+					</ul>
+				</div>
+				<div class="twocol col">
+					<h4>サービス申込</h4>
+					<ul>
 						<li><a href="<?php echo siteInfo("rootUrl") ?>/estimate">メールで見積依頼</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("concierge"); ?>">WEB見積&申込</a></li>
 					</ul>
 				</div>
 				<div class="twocol col">
-					<h4>サービス案内</h4>
-					<ul>
-						<li><a href="<?php echo get_post_type_archive_link("ecokaishu"); ?>">エコ回収とは</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("flow"); ?>">ご利用の流れ</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("price"); ?>">料金案内</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("staff"); ?>">スタッフ紹介</a></li>
-						<li><a href="<?php echo get_permalink(get_page_by_title("100人に聞いてみました")); ?>">100人に聞いてみました</a></li>
-					</ul>
-				</div>
-				<div class="twocol col">
-					<h4>対応エリアの確認</h4>
-					<ul>
+					<h4>人気エリア別口コミ･評判</h4>
+					<ul class="listItems">
 					<?php
-					$terms = array("東京都", "神奈川県", "埼玉県", "千葉県", "大阪府", "兵庫県"); 
-					foreach($terms as $term){
-						$prefecture = get_page_by_title($term, "", "area");
-						echo '<li><a href="'.get_permalink($prefecture->ID).'">'.$prefecture->post_title.'</a></li>';
+					//popular item cats
+					$args = array(
+						"order_by" => "date",
+						"order" => ASC,
+						"post_type" => "area",
+						"posts_per_page" => -1,
+						"catkinds" => "人気"
+					);
+					$posts = query_posts($args);
+					if($posts){
+						foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+						wp_reset_query();
 					}?>
 					</ul>
 				</div>
-				<div class="fourcol col">
-					<h4>アイテム別口コミ・エコ回収実績</h4>
+				<div class="twocol col">
+					<h4>アイテム別口コミ･評判</h4>
 					<ul class="listItems">
 						<?php
-						$posts = query_posts(
-							array(
-								"order_by" => "date",
-								"order" => ASC,
-								"post_type" => "items",
-								"posts_per_page" => -1
-							)
+						//popular item cats
+						$args = array(
+							"order_by" => "date",
+							"order" => ASC,
+							"post_type" => "items",
+							"posts_per_page" => -1,
+							"catkinds" => ""
 						);
-						foreach($posts as $post){
-							echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
-						}
-						wp_reset_query();
-						?>
+						$posts = query_posts($args);
+						if($posts){
+							foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+							wp_reset_query();
+						}?>
 					</ul>
 				</div>
 				<div class="twocol col last">

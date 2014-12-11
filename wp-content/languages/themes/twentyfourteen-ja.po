@@ -38,12 +38,13 @@ msgstr "次のギャラリー"
 msgid "More asides"
 msgstr "次のアサイド"
 
+#. translators: used with More archives link
 #: inc/widgets.php:206
 msgid "%s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "%s <span class=\"meta-nav\">&rarr;</span>"
 
-#: inc/customizer.php:37 inc/customizer.php:102 inc/featured-content.php:410
-#: inc/featured-content.php:419 inc/featured-content.php:479
+#: inc/customizer.php:37 inc/customizer.php:102 inc/featured-content.php:407
+#: inc/featured-content.php:416 inc/featured-content.php:476
 msgctxt "featured content default tag slug"
 msgid "featured"
 msgstr "featured"
@@ -52,10 +53,11 @@ msgstr "featured"
 msgid "Use this widget to list your recent Aside, Quote, Video, Audio, Image, Gallery, and Link posts."
 msgstr "最近のアサイド、引用、動画、音声、画像、ギャラリー、リンクの投稿の一覧を表示したい場合はこのウィジェットを使ってください。"
 
+#. Theme URI of the plugin/theme
 msgid "http://wordpress.org/themes/twentyfourteen"
 msgstr "http://wordpress.org/themes/twentyfourteen"
 
-#: inc/customizer.php:36 inc/featured-content.php:409
+#: inc/customizer.php:36 inc/featured-content.php:406
 msgid "Use a <a href=\"%1$s\">tag</a> to feature your posts. If no posts match the tag, <a href=\"%2$s\">sticky posts</a> will be displayed instead."
 msgstr "投稿を目立たせるには<a href=\"%1$s\">タグ</a>を使ってください。タグに一致する投稿がない場合は、代わりに<a href=\"%2$s\">先頭固定表示</a>指定の投稿が表示されます。"
 
@@ -85,14 +87,15 @@ msgstr "Y年"
 msgid "Site Title Color"
 msgstr "サイト名の色"
 
-#: inc/featured-content.php:431
+#: inc/featured-content.php:428
 msgid "Tag Name"
 msgstr "タグ名"
 
-#: inc/featured-content.php:436
+#: inc/featured-content.php:433
 msgid "Don&rsquo;t display tag on front end."
 msgstr "フロントエンドにタグを表示しない。"
 
+#. Description of the plugin/theme
 msgid "In 2014, our default theme lets you create a responsive magazine website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a magazine website with WordPress has never been easier."
 msgstr "2014年のデフォルトテーマでは、おしゃれで現代的なレスポンシブデザインのマガジンスタイル・サイトを作ることができます。お気に入りのホームページコンテンツをグリッドまたはスライダー形式でおすすめしましょう。3つのウィジェットエリアを使ってサイトをカスタマイズしたり、全幅ページテンプレートや執筆者を表示できる参加者ページでコンテンツのレイアウトを変えてみたりしてみませんか。WordPress でマガジンサイトを作るのが今までになく簡単になりました。"
 
@@ -152,7 +155,7 @@ msgstr "Twenty Fourteen は WordPress バージョン 3.6 以上を必要とし�
 msgid "Background may only be visible on wide screens."
 msgstr "背景は大画面の場合のみに表示される可能性があります。"
 
-#: inc/customizer.php:35 inc/featured-content.php:408
+#: inc/customizer.php:35 inc/featured-content.php:405
 msgid "Featured Content"
 msgstr "おすすめコンテンツ"
 
@@ -172,19 +175,19 @@ msgstr "スライダー"
 msgid "Enhance your site design by using <a href=\"%s\">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Twenty Fourteen uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page."
 msgstr "目立たせたい投稿に<a href=\"%s\">アイキャッチ画像</a>（投稿サムネイルとも言います）を使うことで、サイトデザインをさらによくしてください。こうすることで、画像を挿入することなく、投稿と画像を紐付けることができます。Twenty Fourteen は投稿と固定ページの記事タイトルの上とホームページのおすすめコンテンツエリアにアイキャッチ画像を使います。"
 
-#: inc/template-tags.php:53
+#: inc/template-tags.php:58
 msgid "Posts navigation"
 msgstr "投稿ナビゲーション"
 
-#: inc/template-tags.php:84
+#: inc/template-tags.php:89
 msgid "<span class=\"meta-nav\">Published In</span>%title"
 msgstr "%title<span class=\"meta-nav\">に投稿</span>"
 
-#: inc/template-tags.php:86
+#: inc/template-tags.php:91
 msgid "<span class=\"meta-nav\">Previous Post</span>%title"
 msgstr "<span class=\"meta-nav\">前の投稿</span>%title"
 
-#: inc/template-tags.php:87
+#: inc/template-tags.php:92
 msgid "<span class=\"meta-nav\">Next Post</span>%title"
 msgstr "<span class=\"meta-nav\">次の投稿</span>%title"
 
@@ -213,6 +216,7 @@ msgstr "表示する投稿数:"
 msgid "Post format to show:"
 msgstr "表示する投稿フォーマット:"
 
+#. Template Name of the plugin/theme
 msgid "Contributor Page"
 msgstr "参加者ページ"
 
@@ -298,6 +302,8 @@ msgstr "%件のコメント"
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
+#. #-#-#-#-#  twentyfourteen.pot (Twenty Fourteen 1.2)  #-#-#-#-#
+#. Author URI of the plugin/theme
 #: footer.php:21
 msgid "http://wordpress.org/"
 msgstr "http://ja.wordpress.org/"
@@ -331,7 +337,7 @@ msgctxt "Lato font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:488
+#: functions.php:491
 msgid "Page %s"
 msgstr "ページ %s"
 
@@ -347,19 +353,19 @@ msgstr "メインメニュー"
 msgid "Skip to content"
 msgstr "コンテンツへ移動"
 
-#: inc/template-tags.php:80
+#: inc/template-tags.php:85
 msgid "Post navigation"
 msgstr "投稿ナビゲーション"
 
-#: inc/template-tags.php:45
+#: inc/template-tags.php:50
 msgid "&larr; Previous"
 msgstr "&larr; 前へ"
 
-#: inc/template-tags.php:46
+#: inc/template-tags.php:51
 msgid "Next &rarr;"
 msgstr "次へ &rarr;"
 
-#: inc/template-tags.php:104
+#: inc/template-tags.php:109
 msgid "Sticky"
 msgstr "先頭固定表示"
 
@@ -411,12 +417,16 @@ msgstr "引用"
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
+#. #-#-#-#-#  twentyfourteen.pot (Twenty Fourteen 1.2)  #-#-#-#-#
+#. Theme Name of the plugin/theme
 #: inc/customizer.php:99
 msgid "Twenty Fourteen"
 msgstr "Twenty Fourteen"
 
+#. Author of the plugin/theme
 msgid "the WordPress team"
 msgstr "WordPress チーム"
 
+#. Template Name of the plugin/theme
 msgid "Full Width Page"
 msgstr "全幅ページ"

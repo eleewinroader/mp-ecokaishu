@@ -71,6 +71,46 @@ article.campaign{
 	}
 }
 
+
+//**********************************************************************
+// #end
+//**********************************************************************
+
+.end{
+
+	background: $darkBlue;
+	color: $white;
+	text-align: center;
+
+	p{
+
+		&:first-of-type{
+			line-height: 1.3em;
+			font-size: $big;
+		}
+
+		.link{
+			display: inline-block;
+			margin: 0.3rem; 
+			padding: 0 0.3rem;
+			border: 1px solid rgba($green, .9);
+			background: rgba($green, .5);
+			@include border-radius(3px);
+			color: $white;
+			font-size: 90%;
+			&:hover{
+				border: 1px solid rgba($pink, .9);
+				background: rgba($pink, .5);
+			}
+		}
+
+	}
+
+
+
+}
+
+
 //**********************************************************************
 // campIntro
 //**********************************************************************

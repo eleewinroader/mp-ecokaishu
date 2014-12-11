@@ -4,8 +4,6 @@
  *
  * Template name: メールで見積依頼の内容確認
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
  */
 
 include(TEMPLATEPATH.'/estimate-post.php');

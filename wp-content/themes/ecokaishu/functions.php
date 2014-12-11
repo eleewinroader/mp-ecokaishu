@@ -1,8 +1,6 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
 */
 
 date_default_timezone_set( 'Asia/Tokyo' );
@@ -263,6 +261,19 @@ function getPostType($post, $object){
 	}
 	return $var;
 }
+
+
+
+//カスタムポストacv
+function change_posts_per_page($query) {
+	if(is_admin() || ! $query->is_main_query()) return;
+	if(is_tag()) {
+		$query->set(
+			"post_type", "any"
+		);
+	}
+}
+add_action( 'pre_get_posts', 'change_posts_per_page' );
 
 
 /* shorcodes */

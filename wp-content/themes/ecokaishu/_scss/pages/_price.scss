@@ -2,6 +2,7 @@
 
 article#price{
 
+
 //**********************************************************************
 // .intro
 //**********************************************************************
@@ -14,6 +15,8 @@ article#price{
 	//**************************************************************
 
 	.tabIndex{
+
+		margin-bottom: 3.0rem;
 
 		//ul
 		ul{
@@ -120,13 +123,20 @@ article#price{
 
 #ex{
 
-	background: $gray;
+	overflow: hidden;
+	margin-top: 3.0rem;
+	padding-bottom: 0 !important;
+	border-top: 1px solid rgba($black, .1);
 
 	// ul
 	//***************************************************************
 
 	ul{
 
+		margin-bottom: 0;
+		padding-top: 3.0rem;
+		padding-bottom: 3.0rem;
+		background: rgba($green, .1);
 		text-align: center;
 
 		//li

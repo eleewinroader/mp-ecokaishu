@@ -1047,7 +1047,7 @@ $(document).ready(function(){
 	});
 
 	$("#quesKind").change(jVal.quesKind);
-	$("#campKind").change(jVal.campKind);
+	//$("#campKind").change(jVal.campKind);
 	$("#cstmName").blur(jVal.cstmName);
 	$("#cstmPron").blur(jVal.cstmPron);
 	$("#cstmEmail").blur(jVal.cstmEmail);

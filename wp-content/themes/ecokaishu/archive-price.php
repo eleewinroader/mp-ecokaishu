@@ -1,8 +1,6 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
 */
 get_header( ); ?>
 
@@ -45,7 +43,7 @@ get_header( ); ?>
 	<div id="ex" class="contents">
 		<div class="container">
 			<div class="twelvecol col last">
-				<h3><?php echo getPage("料金の出し方", "title"); ?> <span class="small"><small>※クリックすると料金の詳細が見れます</small></span></h3>
+				<h3><?php echo getPage("料金の出し方", "title"); ?> <span class="small"></span></h3>
 			</div>
 			<ul class="tabIndex">
 				<li class="twocol col">

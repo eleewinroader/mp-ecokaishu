@@ -2,8 +2,6 @@
 /**
  * The main template file.
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
  */
 get_header(); ?>
 
@@ -58,13 +56,7 @@ get_header(); ?>
 		"post_type" => "post"
 	);
 	$articles = query_posts($args);
-	foreach($articles as $article):
-
-
-	
-
-
-		?>
+	foreach($articles as $article): ?>
 
 		<section class="item">
 			

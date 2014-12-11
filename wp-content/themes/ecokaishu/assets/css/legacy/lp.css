@@ -102,6 +102,14 @@ body{
  	 width: 35px;
 	}
 
+.warning{
+	margin-bottom: 1.0rem;
+	margin-left: 1.0rem;
+	padding: 0.5rem;
+	border: 1px solid rgba(226,49,140,.2);
+	@include box-sizing(border-box);
+	background: rgba(226,49,140,.1);
+}
 
 
 
@@ -293,7 +301,7 @@ h5{
 	@media only screen and (min-width: 768px){
 
 		#camp #campImg{
-	padding-top: 130px;
+			padding-top: 130px;
 		}
 		#camp #kyan th,
 		#camp #kyan td{

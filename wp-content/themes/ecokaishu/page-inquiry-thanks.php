@@ -4,8 +4,6 @@
 * Template name: アンケートの受付完了
 *
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
 */
 
 if($_POST){

@@ -4,8 +4,6 @@
 * Template name: クーポン未使用者専用内容確認
 *
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
 */
 
 include (TEMPLATEPATH . '/coupon-post.php');

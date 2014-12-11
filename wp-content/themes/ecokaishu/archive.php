@@ -1,8 +1,6 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
 */
 
 get_header(); ?>
@@ -54,38 +52,30 @@ get_header(); ?>
 				<div class="twocol col last">投稿日</div>
 			<!--archiveIndex--></div>
 
-			<?php
-			global $wp_query;
-			query_posts(array_merge(
-					array(
-					"post_type" => get_post_types(),
-					"orderby" => $orderby,
-					"order" => $order,
-					"post_status" => "publish"
-				),
-		   		$wp_query->query
-			));
-			if(have_posts()): ?>
+			<?php if(have_posts()): ?>
 				<ul class="achiveList">
-					<?php while(have_posts()): the_post(); ?>
-						<li>
-							<div class="sevencol col title"><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></div>
-							<div class="threecol col cats">
-								<?php
-								$tags = wp_get_post_terms($post->ID);
-								if($tags){
-									$arr = $tags;
-									foreach($tags as $tag){
-										echo '<a href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>';
-										if(next($arr)) echo ', ';
-									}
-								}?>
-							</div>
-							<div class="twocol col al_c date last"><?php echo get_the_date(); ?></div>
-						</li>
-					<?php endwhile; ?>
+				<?php while(have_posts()): the_post(); ?>
+					<li>
+						<div class="sevencol col title"><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></div>
+						<div class="threecol col cats">
+							<?php
+							$tags = wp_get_post_terms($post->ID);
+							if($tags){
+								$arr = $tags;
+								foreach($tags as $tag){
+									echo '<a href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>';
+									if(next($arr)) echo ', ';
+								}
+							}?>
+						</div>
+						<div class="twocol col al_c date last"><?php echo get_the_date(); ?></div>
+					</li>
+				<?php endwhile; ?>
 				<!--.achiveList--></ul>
-			<?php endif ?>
+			<?php endif; ?>
+
+			
+
 		</div>
 
 		<?php if(function_exists('wp_pagenavi')): ?>

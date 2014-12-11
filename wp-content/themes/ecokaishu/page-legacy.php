@@ -1,8 +1,6 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
 */
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -44,7 +42,7 @@ DD_belatedPNG.fix('.png');
 </head>
 <body class="pr">
 
-<?php $campId = 2385; ?>
+<?php $campId = 5884; ?>
 <div id="wrapper">
 
 	<!--[if lt IE 9]>
@@ -67,7 +65,7 @@ DD_belatedPNG.fix('.png');
 
 		<div class="mainVisual">
 			<div class="container">
-				<h2><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1404/campIntro_h2.png" alt="" /></h2>
+				<h2><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1411/00.png" alt="" /></h2>
 			<!-- .campIntro #mainVisual --></div>
 		</div>
 
@@ -108,7 +106,7 @@ DD_belatedPNG.fix('.png');
 			</div>
 		</div><!-- #camp -->
 
-		<!--<div class="contents" id="reasons">
+		<div class="contents" id="reasons">
 			<div class="container">
 			<h3><span class="title-icon"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/heart.png" alt="" class="png" /></span>エコ回収が<span class="b pink">選ばれる理由</span></h3>
 			<div class="twocol1">
@@ -147,7 +145,7 @@ DD_belatedPNG.fix('.png');
 		echo $contact;
 		?>
 
-		<!--<div class="contents" id="voices">
+		<div class="contents" id="voices">
 			<div class="container">				
 			<h3><span class="title-icon"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/bubbles.png" alt="" class="png" /></span>エコ回収を利用した<span class="b pink">お客様からの喜びの声</span></h3>
 			<dl>
@@ -170,7 +168,7 @@ DD_belatedPNG.fix('.png');
 			</div>
 		</div><!--#voices -->			
 
-  		<!--<div class="contents" id="flow">
+  		<div class="contents" id="flow">
 			<div class="container">
 			<h3><span class="title-icon"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/list.png" alt="" class="png" /></span>エコ回収の<span class="b white">安心・信頼の流れ</span></h3>
 			<div id="step">
@@ -212,7 +210,7 @@ DD_belatedPNG.fix('.png');
 			</div>
 		</div><!--#flow-->
 
-  		<!--<div class="contents" id="cost">
+  		<div class="contents" id="cost">
 			<div class="container">
 			<h3><span class="title-icon"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/calculate.png" alt="" class="png" /></span>エコ回収の料金は<span class="b pink">明朗・明確</span></h3>
 			<div>
@@ -222,14 +220,14 @@ DD_belatedPNG.fix('.png');
 				<div class="threecol last" id="howto">
 					<p id="em">エコ回収の料金は、すべてきちんと決まっています。現地にお伺いした際、<span class="underline green"><strong>不当に料金が変わることはありません！</strong></span></p>
 				<div class="content clearfix">
-						<div class="eqat1"><p class="box">基本料金<span class="block">3,150円</span></p></div>
+						<div class="eqat1"><p class="box">基本料金<span class="block">3,240円</span></p></div>
 						<span class="keisan"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/plus.png" alt="" class="png" /></span>
 						<div class="eqat1"><p class="box">物品ごとの料金
 							<span class="block">洗濯機4,320<span class="small">円</span></span>
-							<span class="block">ソファ3,150<span class="small">円</span></span>
+							<span class="block">ソファ3,240<span class="small">円</span></span>
 						</p></div>
 						<span class="keisan"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/plus.png" alt="" class="png" /></span>
-						<div class="eqat1"><p class="box">特殊作業料金<span class="block">階段の運びだし1,050<span class="small">円</span></span></p></div>
+						<div class="eqat1"><p class="box">特殊作業料金<span class="block">階段の運びだし1,080<span class="small">円</span></span></p></div>
 						<span class="keisan"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/minus.png" alt="" class="png" /></span>
 						<div class="eqat1 minus"><p class="box">買取料金<span class="block">冷蔵庫1,000<span class="small">円</span></span></p></div>
 						<span class="keisan"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/equal.png" alt="" class="png" /></span>
@@ -237,7 +235,7 @@ DD_belatedPNG.fix('.png');
 					</div>
 				</div>
 			</div><!-- #cost way-->
-			<!--<div>
+			<div>
 				<div class="onecol">
 					<h4>料金表</h4>
 				</div>
@@ -247,33 +245,33 @@ DD_belatedPNG.fix('.png');
 							<tr><th class="table_title">品物ランクと料金</th><th class="table_title">縦・横・奥行の合計</th><th class="table_title">重さ</th><th>目安となる品物</th></tr>
 						</thead>
 						<tbody>
-							<tr><th rowspan="2">Aランク<br />525円</th><td>50cm以下</td><td>1kg以下</td><td>サッカーボール</td></tr>
+							<tr><th rowspan="2">Aランク<br />540円</th><td>50cm以下</td><td>1kg以下</td><td>サッカーボール</td></tr>
 							<tr class="exmp2"><td colspan="3">列:サッカーボール、ビデオカメラ、毛布等</td></tr>
-							<tr><th rowspan="2">Bランク<br />1,050円</th><td>90cm以下</td><td>2kg以下</td><td>ダイニングチェア</td></tr>
+							<tr><th rowspan="2">Bランク<br />1,080円</th><td>90cm以下</td><td>2kg以下</td><td>ダイニングチェア</td></tr>
 							<tr class="exmp2"><td colspan="3">列:ダイニングチェア、ノートパソコン、パソコン本体等</td></tr>
-							<tr><th rowspan="2">Cランク<br />1,575円</th><td>150cm以下</td><td>5kg以下</td><td>掃除機</td></tr>
+							<tr><th rowspan="2">Cランク<br />1,620円</th><td>150cm以下</td><td>5kg以下</td><td>掃除機</td></tr>
 							<tr class="exmp2"><td colspan="3">列:掃除機、カラーBOX(3段)、モニタ(液晶/CRT)</td></tr>
-							<tr><th rowspan="2">Dランク<br />2,100円</th><td>180cm以下</td><td>10kg以下</td><td>ちゃぶ台</td></tr>
+							<tr><th rowspan="2">Dランク<br />2,160円</th><td>180cm以下</td><td>10kg以下</td><td>ちゃぶ台</td></tr>
 							<tr class="exmp2"><td colspan="3">列:ちゃぶ台、ダイニングテーブル(2人用)</td></tr>
-							<tr><th rowspan="2">Eランク<br />2,625円</th><td>210cm以下</td><td>15kg以下</td><td>&nbsp;</td></tr>
+							<tr><th rowspan="2">Eランク<br />2,700円</th><td>210cm以下</td><td>15kg以下</td><td>&nbsp;</td></tr>
 							<tr class="exmp2"><td colspan="3">列:ホットカーペット、ステッパー等</td></tr>
-							<tr><th rowspan="2">Fランク<br />3,150円</th><td>270cm以下</td><td>20kg以下</td><td>一人がけソファ</td></tr>
+							<tr><th rowspan="2">Fランク<br />3,240円</th><td>270cm以下</td><td>20kg以下</td><td>一人がけソファ</td></tr>
 							<tr class="exmp2"><td colspan="3">列:一人がけソファ、衣類乾燥機、ベッドフレーム(シングル)等</td></tr>
 							<tr><th rowspan="2">Gランク<br />4,320円</th><td>300cm以下</td><td>30kg以下</td><td>自転車</td></tr>
 							<tr class="exmp2"><td colspan="3">列:自転車、二人がけソファ、マットレス(シングル)等</td></tr>
-							<tr><th rowspan="2">Hランク<br />5,775円</th><td>360cm以下</td><td>40kg以下</td><td>マットレス(ダブル)</td></tr>
+							<tr><th rowspan="2">Hランク<br />5,940円</th><td>360cm以下</td><td>40kg以下</td><td>マットレス(ダブル)</td></tr>
 							<tr class="exmp2"><td colspan="3">列:マットレス(ダブル)、三人がけソファ等</td></tr>
-							<tr><th rowspan="2">Iランク<br />7,350円</th><td>400cm以下</td><td>50kg以下</td><td>コピーボード</td></tr>
+							<tr><th rowspan="2">Iランク<br />7,560円</th><td>400cm以下</td><td>50kg以下</td><td>コピーボード</td></tr>
 							<tr class="exmp2"><td colspan="3">列:白黒業務用コピー機、足踏みミシン、ロフトベッド等</td></tr>
-							<tr><th rowspan="2">Jランク<br />9,450円</th><td>450cm以下</td><td>60kg以下</td><td>エレクトーン</td></tr>
+							<tr><th rowspan="2">Jランク<br />9,720円</th><td>450cm以下</td><td>60kg以下</td><td>エレクトーン</td></tr>
 							<tr class="exmp2"><td colspan="3">列:エレクトーン、金庫(60kg以下)等</td></tr>
-							<tr><th rowspan="2">Kランク<br />12,600円</th><td>500cm以下</td><td>70kg以下</td><td>電子ピアノ</td></tr>
+							<tr><th rowspan="2">Kランク<br />12,960円</th><td>500cm以下</td><td>70kg以下</td><td>電子ピアノ</td></tr>
 							<tr class="exmp2"><td colspan="3">列:電子ピアノ、金庫(90kg以下)、原付バイク等</td></tr>
 						</tbody>
 					</table>
 				</div><div class="clear"></div>
 			</div><!-- #cost table-->
-			<!--<div>
+			<div>
 				<div class="onecol">
 					<h4>特殊作業料金</h4>
 				</div>
@@ -286,12 +284,12 @@ DD_belatedPNG.fix('.png');
 						<tr>
 							<th>タンス・ベッドなど家具の解体</th>
 							<td>そのままの形では、お部屋から運び出せない家具の解体にかかる料金です。</td>
-							<td class="pink">1,050円</td>
+							<td class="pink">1,080円</td>
 						</tr>
 						<tr>
 							<th>階段を通る運び出し</th>
 							<td class="exmp2">大型の品物を、階段を使ってお運びする際にかかる料金です。</td>
-							<td class="pink exmp2">外階段：525 円／階<br />内階段：2,100円／階</td>
+							<td class="pink exmp2">外階段：540 円／階<br />内階段：2,160円／階</td>
 						</tr>
 						<tr>
 							<th>吊り降ろし作業</th>
@@ -301,17 +299,17 @@ DD_belatedPNG.fix('.png');
 						<tr>
 							<th>お部屋の掃き掃除と拭き掃除</th>
 							<td class="exmp2">洗剤を使わない場合の、清掃にかかる料金です。</td>
-							<td class="pink exmp2">1,050 円／10分</td>
+							<td class="pink exmp2">1,080 円／10分</td>
 						</tr>
 						<tr>
 							<th>お時間帯の枠指定</th>
 							<td>希望の時間枠にお伺いするための料金です。</td>
-							<td class="pink">1,050 円〜<br /><small>※3〜4月、12月はシーズン価格適用日があります</small></td>
+							<td class="pink">1,080 円〜<br /><small>※3〜4月、12月はシーズン価格適用日があります</small></td>
 						</tr>
 						<tr>
 							<th>指定時間ぴったりのお伺い</th>
 							<td class="exmp2">指定いただいたお時間ぴったりにお伺いするための料金です。</td>
-							<td class="pink exmp2">3,150 円〜<br /><small>※3〜4月、12月はシーズン価格適用日があります</small></td>
+							<td class="pink exmp2">3,240 円〜<br /><small>※3〜4月、12月はシーズン価格適用日があります</small></td>
 						</tr>
 						<tr>
 							<th>地域料金</th>
@@ -324,12 +322,12 @@ DD_belatedPNG.fix('.png');
 						<tr>
 							<th>PCデータ物理消去</th>
 							<td class="exmp2">お客様の目の前で、パソコンに穴を開け、データを消去する作業の料金です。</td>
-							<td class="pink exmp2">1,050 円〜</td>
+							<td class="pink exmp2">1,080 円〜</td>
 						</tr>
 						<tr>
 							<th>エアコンの取外し</th>
 							<td>セパレート型のエアコンを取り外す作業にかかる料金です。</td>
-							<td class="pink">9,450 円</td>
+							<td class="pink">9,720 円</td>
 						</tr>
 						<tr>
 							<th>大型物置の解体</th>
@@ -339,12 +337,12 @@ DD_belatedPNG.fix('.png');
 						<tr>
 							<th>家具の移動・AV配線</th>
 							<td>家具の移動やAV配線など、日常のお困りごとをサポートする料金です。</td>
-							<td class="pink">1,050 円／10分</td>
+							<td class="pink">1,080 円／10分</td>
 						</tr>
 					</tbody>
 				</table>
 			</div><!-- #cost etc -->
-			<!--<div id="bought">
+			<div id="bought">
 				<div class="onecol">
 					<h4>家具・家電の買取について</h4>
 				</div>
@@ -404,7 +402,7 @@ DD_belatedPNG.fix('.png');
 		</div><!--#cost-->
 		
 		
-		<!--<div class="contents" id="serviceArea">
+		<div class="contents" id="serviceArea">
 			<h3><span class="title-icon"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/map.png" alt="" class="png" /></span>エコ回収の対応エリアは<span class="pink b">全国拡大中</span></h3>
 			<div class="container">
 			<div class="onecol">
@@ -421,22 +419,10 @@ DD_belatedPNG.fix('.png');
 			</div>
 			<div class="clear"></div>
 			<div class="onecol">
-				<img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/serviceArea_img_02.gif" alt="" class="png" />
-			</div>
-			<div class="threecol last">
-				<dl class="dfntList">
-				<dt><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/map_icon.png" alt="" class="png green_map" />静岡県</dt><dd>
-				<p>静岡市（清水区、葵区、駿河区）<br />藤枝市、焼津市、島田市、吉田町、牧之原市、御前崎市、菊川市 </p>
-				<p>掛川市、川根本町、森町、袋井市、磐田市<br />浜松市（天竜区、浜北区、東区、南区、中区、西区、北区） 湖西市</p>
-				<p class="pink">富士宮市、富士市、小山町、御殿場市、裾野市、長泉町、三島市、函南町、熱海市、 伊豆の国市、清水町、沼津市 </p>
-				<p class="pink">伊豆市、伊東市、東伊豆町、河津町、西伊豆町、松崎町、下田市、南伊豆町</p></dd>
-				</dl>
-			</div>
-			<div class="clear"></div>
-			<div class="onecol">
 				<img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/serviceArea_img_03.gif" alt="" class="png" />
 			</div>
 			<div class="threecol1 last">
+				<p class="warning">誠に勝手ながら、2014年11月1日から　大阪府と兵庫県のお伺いを一時休止致します。<br />ご迷惑をお掛けし申し訳ございません。</p>
 				<dl class="dfntList clear">
 				<dt><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/map_icon.png" alt="" class="png green_map" />大阪府</dt><dd>
 				<p>全域</p></dd>
@@ -454,7 +440,7 @@ DD_belatedPNG.fix('.png');
 			</div>
 		</div><!--#serviceArea-->
 
-		<!--<div class="contents" id="corp">
+		<div class="contents" id="corp">
 			<div class="container">
 			<h3><span class="title-icon"><img src="<?php bloginfo("template_url"); ?>/assets/img/legacy/truck.png" alt="" class="png" /></span>創業64年のウインローダーが<span class="white b">エコ回収を運営</span></h3>
 			<table id="companyInfoTable">
@@ -493,7 +479,7 @@ DD_belatedPNG.fix('.png');
 			</div>
 		</div><!--#corp-->
 		
-		<!--<?php echo $contact; ?>-->
+		<?php echo $contact; ?>
 		
 		<div class="contents" id="options">
 			<div class="container">

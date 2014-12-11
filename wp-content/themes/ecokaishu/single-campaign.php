@@ -1,8 +1,6 @@
 <?php
 /*
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
 */
 
 $postType = get_post_type_object(get_post_type());
@@ -114,6 +112,24 @@ get_header( );?>
 					<!--#convenience .container --></div>
 				<!--#convenience --></section>
 			<?php endif; endif; ?>
+
+			<?php 
+			$tags = get_the_terms($post->ID, "campaignstatus");
+			if(!$tags){
+				$campArchiveLink = get_post_type_archive_link("campaign"); 
+				$endstring = <<<EOF
+<div class="contents end">
+	<div class="container">
+	<div class="twelvecol col last">
+	</div>
+		<p>本キャンペーンは<span class="yellow">大好評につき終了</span>いたしました。</p>
+		<p>多くのご利用をいただき、誠にありがとうございました。</p>
+		<p>ただいま進行中の<a href="{$campArchiveLink}" class="link">キャンペーン一覧</a></p>
+	</div>
+</div>
+EOF;
+				echo $endstring;
+			}?>
 
 			<?php
 			$campInfo01 = get_post_meta($post->ID, "campInfo01", TRUE);
@@ -274,6 +290,8 @@ get_header( );?>
 				</div>
 			<!-- .voices --></section>
 		<?php endif; ?>
+
+		<?php echo $endstring; ?>
 
 		<aside class="contents contactBnr">
 			<div class="container">

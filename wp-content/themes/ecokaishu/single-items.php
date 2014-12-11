@@ -2,8 +2,6 @@
 /**
  * The main template file.
 * @package Montser Platform
-* @subpackage MP-Ecokaishu 2.2
-* @since MP-Ecokaishu 0.0
  */
 
 get_header();
@@ -264,6 +262,24 @@ get_header();
 			if($posts){
 				echo '<section class="listItems contents">
 				<h2>人気アイテム一覧</h2><ul>';
+				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
+				echo '</ul>
+				<!--.contents--></section>';
+				wp_reset_query();
+			}
+
+			//popular item cats
+			$args = array(
+				"order_by" => "date",
+				"order" => ASC,
+				"post_type" => "area",
+				"posts_per_page" => -1,
+				"catkinds" => "人気"
+			);
+			$posts = query_posts($args);
+			if($posts){
+				echo '<section class="listItems contents">
+				<h2>人気エリア一覧</h2><ul>';
 				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
 				echo '</ul>
 				<!--.contents--></section>';
