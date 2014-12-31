@@ -5,7 +5,7 @@
 .vagrant/
 Vagrantfile
 bootstrap.sh
-
+wp-config.php
 
 #################
 ## Eclipse
