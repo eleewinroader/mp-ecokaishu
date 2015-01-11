@@ -29,11 +29,12 @@ if(is_single()){
 		}
 		$metaObj = get_term($id, $tax_slug);
 	}else{
-		
+
 	}
 }elseif(is_home()){
 	$tempType = "home";
 }
+
 
 $h1 = getH1($tempType, $metaObj); ?>
 <!DOCTYPE html>
@@ -60,6 +61,7 @@ $title = getTitle($tempType, $metaObj);
 $description = getDescription($tempType, $metaObj);
 $keywords = getKeywords($tempType, $metaObj);
 if($title) echo "<title>".$title."</title>"."\n";
+else echo "<title></title>\n";
 if($description && !is_single()) echo '<meta name="description" itemprop="description" content="'.$description.'" />'."\n";
 if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" content="'.$keywords.'" />'."\n";
 ?>
@@ -76,7 +78,8 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/assets/js/html5shiv.min.js"></script><![endif]-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/script.min.js"></script>
 <script type="text/javascript">
-<?php get_template_part("ga"); ?>
+<?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/ga_common.php'); ?>
+<?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/ga_ecokaishu.php'); ?>
 </script>
 <?php wp_head(); ?>
 </head>
@@ -100,10 +103,10 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 		<!--#headerInfo--></div>
 		<nav id="headerFixed">
 			<div class="container">
-				<div class="threecol col" id="siteName">
+				<div class="twocol col" id="siteName">
 					<a href="<?php echo siteInfo("rootUrl"); ?>">エコ回収</a>
 				</div>
-				<div class="ninecol col last" id="siteMenu">
+				<div class="tencol col last" id="siteMenu">
 					<div class="showBigger" id="contMenu">
 						<ul id="localNavi">
 							<li id="navHome"><a href="<?php echo siteInfo("rootUrl"); ?>/">HOME</a></li>
@@ -143,13 +146,10 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 
 				<div class="panelCont" id="panelMenu"></div>
 				<!--.panelCont-->
-				
-			<!--.container .header--></div> 
+
+			<!--.container .header--></div>
 
 		<!--.headerFixed--></nav>
 	<!--.header--></header>
 
 	<article class="<?php echo getArticleClass($tempType, $metaObj);?>"<?php echo getArticleId($tempType, $metaObj); ?>>
-	
-	<?php echo $pr_code; ?>
-<div class="test"></div>

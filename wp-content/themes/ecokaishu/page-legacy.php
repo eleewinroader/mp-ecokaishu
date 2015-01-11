@@ -42,7 +42,7 @@ DD_belatedPNG.fix('.png');
 </head>
 <body class="pr">
 
-<?php $campId = 5884; ?>
+<?php $campId = 4141; ?>
 <div id="wrapper">
 
 	<!--[if lt IE 9]>
@@ -65,7 +65,7 @@ DD_belatedPNG.fix('.png');
 
 		<div class="mainVisual">
 			<div class="container">
-				<h2><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1411/00.png" alt="" /></h2>
+				<h2><img src="<?php echo bloginfo("template_url"); ?>/assets/img/legacy/top.gif" alt="" /></h2>
 			<!-- .campIntro #mainVisual --></div>
 		</div>
 

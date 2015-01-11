@@ -70,6 +70,7 @@
 						<li><a href="<?php echo get_post_type_archive_link("notices");?>">新着情報</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>
 						<li><a href="<?php echo get_permalink(get_page_by_title("100人に聞いてみました")); ?>">100人に聞いてみました</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("voices");?>">お客様の声</a></li>
 					</ul>
 				</div>
 				<div class="twocol col">
@@ -134,6 +135,7 @@
 						);
 						foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
 						wp_reset_query(); ?>
+						<li><a href="<?php echo siteInfo("rootUrl") ?>/inquiry">お客様レビューフォーム</a></li>
 						<li><a href="<?php echo bloginfo("siteurl"); ?>/contact/">お問い合わせ</a></li>
 					</ul>
 				</div>
@@ -147,6 +149,10 @@
 					<li>株式会社ウインローダー 東京都杉並区上荻2-37-7</li>
 					<li>エコランドコンシェルジュ 0120-530-539</li>
 					<li>特願2007-262892 取得済み</li>
+					<li><a href="<?php
+					if(is_user_logged_in()) echo wp_logout_url(get_permalink());
+					else echo wp_login_url(get_permalink());
+					?>">スタッフ専用</a></li>
 				</ul>
 				<p>Copyrights&copy;. <?php echo date("Y"); ?> WINROADER ALL RIGHT RESERVED.</p>
 			</div>

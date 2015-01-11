@@ -47,7 +47,7 @@ get_header( ); ?>
 			<!-- .intro #flowEcokaishu--></div>
 		<!--#intro --></div>
 
-		<section class="contents" id="achive2012">
+		<section class="contents" id="archive2012">
 			<h3><span class="bg_pink"><?php echo getPage("2012年のエコ回収実績", "title"); ?></h3>
 			<div id="graph">
 				<p id="reuse">Re-use<span class="per">56.37</span><span class="num">46,076</span></p>

@@ -62,6 +62,35 @@ sup, sub{
 	line-height: 1.2em !important;
 }
 
+.star{
+
+	&:before{
+		display: inline-block;
+		vertical-align: middle;
+		speak: none;
+		line-height: 1;
+		color: $yellow;
+		font-family: "icomoon";
+		font-size: $bigger;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	&.star1{ &:before{ content: "\e979 \e977 \e977 \e977 \e977"; } }
+	&.star2{ &:before{ content: "\e979 \e979 \e977 \e977 \e977"; } }
+	&.star3{ &:before{ content: "\e979 \e979 \e979 \e977 \e977"; } }
+	&.star4{ &:before{ content: "\e979 \e979 \e979 \e979 \e977"; } }
+	&.star5{ &:before{ content: "\e979 \e979 \e979 \e979 \e979"; } }
+
+	.index{
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 0.3rem;
+	}
+
+}
+
+
 blockquote{
 	display: inline-block;
 	position: relative;

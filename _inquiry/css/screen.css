@@ -1,0 +1,366 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font: 14px/1 Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Verdana, Geneva, Arial, Helvetica;
+  line-height: 22px;
+}
+
+.section {
+  width: 100%;
+  text-align: center;
+  background: #d2d2d2;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2QyZDJkMiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZDJkMmQyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #d2d2d2), color-stop(50%, #ffffff), color-stop(100%, #d2d2d2));
+  background-image: -moz-linear-gradient(left, #d2d2d2, #ffffff, #d2d2d2);
+  background-image: -webkit-linear-gradient(left, #d2d2d2, #ffffff, #d2d2d2);
+  background-image: linear-gradient(to right, #d2d2d2, #ffffff, #d2d2d2);
+}
+.section a {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 12px;
+  display: inline-block;
+  margin: 20px auto;
+  color: #ffffff;
+  text-decoration: none;
+}
+.section a:hover {
+  opacity: 0.8;
+}
+.section a.btnNext {
+  background: #57a7b5;
+}
+.section a.btnPrev {
+  background: #cccccc;
+}
+.section h2 {
+  color: #999999;
+  padding: 100px 0;
+  font-weight: normal;
+  font-family: Arial;
+}
+.section h2 span {
+  font-size: 30px;
+}
+.section label.error {
+  display: block;
+  color: red;
+}
+.section .intro {
+  padding: 100px 0;
+}
+.section .intro p {
+  margin-bottom: 30px;
+}
+
+.frmGeneral {
+  overflow: hidden;
+  margin: 30px auto;
+  width: 835px;
+}
+.frmGeneral ul li {
+  margin-bottom: 10px;
+}
+.frmGeneral input {
+  background: none;
+  border: 1px solid #d3d3d3;
+  padding: 15px 10px;
+}
+.frmGeneral textarea {
+  background: #ffffff;
+  border: 1px solid #d3d3d3;
+  padding: 15px 10px;
+  resize: none;
+  min-width: 90%;
+}
+.frmGeneral select {
+  background: #d3d3d3;
+  border: #b3b3b3 solid 1px;
+  padding: 10px;
+}
+
+#section01 .btnNext, #section02 .btnNext {
+  min-width: 250px;
+}
+
+#section03 .btnNext, #section03 .btnPrev, #section04 .btnNext, #section04 .btnPrev, #section05 .btnNext, #section05 .btnPrev, #section06 .btnNext, #section06 .btnPrev, #section07 .btnNext, #section07 .btnPrev, #section08 .btnNext, #section08 .btnPrev, #section09 .btnNext, #section09 .btnPrev, #section10 .btnNext, #section10 .btnPrev, #section11 .btnNext, #section11 .btnPrev, #section12 .btnNext, #section12 .btnPrev, #section13 .btnNext, #section13 .btnPrev {
+  min-width: 130px;
+  margin: 15px 8px;
+}
+
+/*section 2*/
+#section02 p {
+  padding: 100px 0 0 0;
+}
+#section02 .txtNote {
+  text-align: left;
+  background: #ffffff;
+  border: #d3d3d3 solid 1px;
+  width: 50%;
+  margin: 50px auto;
+  padding: 10px;
+}
+#section02 .txtNote dt {
+  margin: 5px;
+}
+#section02 .txtNote dd {
+  margin: 5px 15px;
+}
+
+/*section 3*/
+#section03 input[type="text"], #section03 input[type="password"], #section03 input[type="email"], #section03 input[type="tel"], #section13 input[type="text"], #section13 input[type="password"], #section13 input[type="email"], #section13 input[type="tel"] {
+  width: 300px;
+}
+@media only screen and (max-width: 599px) {
+  #section03 input[type="text"], #section03 input[type="password"], #section03 input[type="email"], #section03 input[type="tel"], #section13 input[type="text"], #section13 input[type="password"], #section13 input[type="email"], #section13 input[type="tel"] {
+    width: 80%;
+  }
+}
+
+/*section 4*/
+#section04 input[type="text"] {
+  width: 250px;
+}
+#section04 select {
+  width: 150px;
+}
+#section04 .frmGeneral ul li p {
+  margin: 0 10px;
+  display: inline-block;
+}
+#section04 .frmGeneral ul li p label {
+  margin: 0 5px;
+}
+@media only screen and (max-width: 599px) {
+  #section04 select {
+    width: 70px;
+  }
+  #section04 .frmGeneral ul li p {
+    margin: 0;
+  }
+}
+
+/*section 5*/
+#section05 input[type="text"] {
+  width: 400px;
+}
+#section05 select {
+  width: 200px;
+  margin: 0 10px;
+}
+#section05 .frmGeneral {
+  margin: 0 auto;
+}
+#section05 .frmGeneral p {
+  margin: 20px 0;
+}
+#section05 .frmGeneral ul {
+  margin-bottom: 80px;
+}
+#section05 .frmGeneral ul li p {
+  margin: 0 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*section 6*/
+#section06 input[type="text"] {
+  width: 400px;
+}
+#section06 .frmGeneral ul li p {
+  margin: 0 20px;
+  display: inline-block;
+}
+
+/*section 7*/
+#section07 select {
+  width: 200px;
+  margin: 0 10px;
+}
+#section07 .frmGeneral {
+  margin: 0 auto;
+}
+#section07 .frmGeneral p {
+  margin: 0 0 20px 0;
+}
+#section07 .frmGeneral ul {
+  margin-bottom: 80px;
+}
+#section07 .frmGeneral ul li p {
+  margin: 0 20px 15px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*section 8 - section 9 - section 10*/
+#section08 .frmGeneral ul li p, #section09 .frmGeneral ul li p, #section10 .frmGeneral ul li p, #section11 .frmGeneral ul li p {
+  margin: 0 20px 15px 0;
+  display: inline-block;
+}
+
+/*section 13*/
+#section13 input[type="submit"] {
+  margin: 15px 8px;
+  min-width: 150px;
+  background: #57a7b5;
+  border-radius: 5px;
+  color: #ffffff;
+  display: inline-block;
+  margin: 20px auto;
+  padding: 14px 0;
+  border: none;
+  cursor: pointer;
+}
+
+/*section 14*/
+#section14 .btnFinish {
+  border: 2px solid #d3d3d3;
+  color: #000000;
+  min-width: 300px;
+}
+
+#txtRecommend01, #txtRecommend02 {
+  display: none;
+}
+
+/*mobile setting*/
+@media only screen and (max-width: 834px) {
+  .section {
+    background: #ffffff;
+  }
+  .section .intro {
+    padding: 50px 0;
+  }
+  .section .intro p {
+    margin-bottom: 15px;
+  }
+  .section h2 {
+    padding: 50px 0;
+  }
+
+  .frmGeneral {
+    width: 95%;
+  }
+
+  #section03 .btnNext, #section03 .btnPrev, #section04 .btnNext, #section04 .btnPrev, #section05 .btnNext, #section05 .btnPrev, #section06 .btnNext, #section06 .btnPrev, #section07 .btnNext, #section07 .btnPrev, #section08 .btnNext, #section08 .btnPrev, #section09 .btnNext, #section09 .btnPrev, #section10 .btnNext, #section10 .btnPrev, #section11 .btnNext, #section11 .btnPrev, #section12 .btnNext, #section12 .btnPrev, #section13 .btnNext, #section13 .btnPrev {
+    min-width: 32%;
+  }
+
+  #section02 p {
+    padding: 50px 0 0 0;
+  }
+  #section02 .txtNote {
+    width: 85%;
+  }
+
+  #section03 input[type="text"], #section03 input[type="password"], #section03 input[type="email"], #section03 input[type="tel"], #section13 input[type="text"], #section13 input[type="password"], #section13 input[type="email"], #section13 input[type="tel"] {
+    width: 80%;
+  }
+
+  #section04 select {
+    width: 70px;
+  }
+  #section04 .frmGeneral ul li p {
+    margin: 0;
+  }
+
+  #section05 input[type="text"] {
+    width: 80%;
+  }
+  #section05 select {
+    margin: 15px 0 0 0;
+  }
+  #section05 .frmGeneral ul {
+    margin-bottom: 40px;
+  }
+  #section05 .frmGeneral ul li p {
+    margin: 0;
+  }
+
+  #section06 input[type="text"] {
+    width: 80%;
+  }
+
+  #section07 .frmGeneral ul {
+    margin-bottom: 30px;
+  }
+  #section07 .frmGeneral ul li p {
+    margin: 0 5px 5px 0;
+  }
+
+  #section13 input[type="submit"] {
+    min-width: 40%;
+    padding: 15px 0;
+  }
+
+  #section14 .btnFinish {
+    min-width: 80%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .section {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

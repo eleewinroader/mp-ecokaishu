@@ -27,7 +27,7 @@ a{
 	display: none !important;
 }
 .social4i{
-	padding: 2.0rem 0; 
+	padding: 2.0rem 0;
 }
 .panelCont{
 	display: none;
@@ -62,7 +62,7 @@ a{
 			border-bottom-style: solid;
 		}
 	}
-	
+
 }
 
 
@@ -136,7 +136,7 @@ a{
 		float: left;
 		width: 73.24561%;
 		margin: 0 0.87719%;
-	}	
+	}
 	.tencol{
 		float: left;
 		width: 81.57894%;
@@ -383,6 +383,7 @@ a{
 			margin-left: -5px;
 			padding-left: 2.3rem;
 			padding-right: 1.0rem;
+			font-size: 90%;
 
 			&:before{
 				display: block;
@@ -412,7 +413,7 @@ a{
 			//.hasSub
 			&.hasSub{
 
-				padding-right: 2.0rem;
+				padding-right: 1.5rem;
 
 				&:after{
 					display: block;
@@ -423,7 +424,7 @@ a{
 					border: 4px solid transparent;
 					border-top-color: $darkGray;
 					content: "";
-					
+
 				}
 
 				&:hover{
@@ -470,7 +471,7 @@ a{
 						&:before,
 						&:after{
 							border-top-color: transparent !important;
-							content: "" !important; 
+							content: "" !important;
 						}
 
 						&:hover{
@@ -975,7 +976,7 @@ a{
 
 	// li
 	//**************************************************************
-	
+
 	li{
 
 		background: {
@@ -1004,7 +1005,7 @@ a{
 				//&.info
 				&.info{
 
-					font-size: $bigger * 1.4;
+					font-size: $bigger * 1.2;
 					letter-spacing: -0.1rem;
 
 					.block{
@@ -1075,7 +1076,7 @@ a{
 			}
 
 		}
-		
+
 	}
 
 	//Mobile
@@ -1111,7 +1112,7 @@ a{
 
 	// .siteInfo
 	//**************************************************************
-	
+
 	.siteInfo{
 
 		padding-top: 2.0rem;
@@ -1189,19 +1190,19 @@ a{
 	display: block;
 	position: fixed;
 	z-index: 9999;
-	
+	font-size: 90%;
 
 	// ul
 	//**************************************************************
 
 	ul{
-	
-		
+
+
 		//
 		li{
-			
+
 			text-align: center;
-			
+
 			&:nth-of-type(1){ a{ background: $green; } }
 			&:nth-of-type(2){ a{ background: $pink; } }
 			&:nth-of-type(3){ a{ color: $darkGray; } }
@@ -1260,7 +1261,7 @@ a{
 							display: block;
 							margin-bottom: 0.5rem;
 							font-size: $biggest;
-							
+
 						}
 						&.label{
 							display: block;
@@ -1294,7 +1295,7 @@ a{
 				display: table-cell;
 				height: 44px;
 				vertical-align: middle;
-				
+
 				&:nth-of-type(1){
 					width: 40%;
 					.block:first-of-type{

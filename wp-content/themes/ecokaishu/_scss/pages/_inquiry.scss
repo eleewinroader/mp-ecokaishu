@@ -1,0 +1,351 @@
+
+.inquiry{
+
+padding: 3.0rem 0;
+
+//.icomoon
+.icomoon{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.3rem;
+	font-family: icomoon;
+	font-size: 90%;
+	speak: none;
+}
+
+
+//**********************************************************************
+// General settings
+//**********************************************************************
+
+.container{
+	position: relative;
+	overflow: hidden;
+}
+
+h1{
+
+	line-height: 1.2em;
+	margin-bottom: 2.0rem;
+	font-weight: bold;
+	font-size: $big;
+
+	&:before{
+		display: block;
+		line-height: 1.0em;
+		margin-bottom: 3.0rem;
+		color: $green;
+		font-family: icomoon;
+		font-size: 72pt;
+		speak: none;
+		content: "\e009";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+}
+
+h2{
+	color: rgba($black, .5);
+	font-weight: normal;
+	.crtPage{
+		font-size: $biggest;
+	}
+	&:before{
+		background: none;
+	}
+}
+
+//PC
+@media only screen and (min-width: $minWidth){
+
+	h1{
+		.block{
+			display: inline !important;
+		}
+	}
+
+}
+
+//**********************************************************************
+// .formElements
+//**********************************************************************
+
+.formElements{
+
+	display: block !important;
+	overflow: hidden;
+	padding: 3.0rem 0;
+
+	.formElement{
+
+		&:not(:last-of-type){
+			margin-bottom: 2.0rem;
+			padding-bottom: 2.0rem;
+		}
+
+		ul{
+
+			li{
+
+				display: inline-block;
+				margin: 0.5rem 0;
+				&:not(:last-of-type){
+					margin-right: 0.3rem;
+				}
+
+				p{
+					display: inline-block;
+					&:not(:last-of-type){
+						margin-right: 0.3rem;
+					}
+				}
+
+			}
+
+		}
+
+		textarea{
+			margin-top: 1.0rem;
+		}
+
+		.index{
+			margin-bottom: 1.0rem;
+			font-size: $normal * 1.1;
+		}
+
+		//PC
+		@media only screen and (min-width: $minWidth){
+
+			input[type="text"],
+			input[type="email"],
+			input[type="password"],
+			input[type="tel"]{
+				margin: 0 auto;
+				width: 360px;
+			}
+
+		}
+
+	}
+
+}
+
+
+//**********************************************************************
+// .formBtns
+//**********************************************************************
+
+.formBtns{
+
+	text-align: center;
+
+	a, input[type="submit"]{
+
+		display: inline-block;
+		line-height: 44px;
+		height: 44px;
+		@include border-radius(6px);
+		@include box-sizing(border-box);
+		background: rgba($black, .3);
+		color: $white;
+		text-decoration: none;
+		vertical-align: middle;
+
+		&:only-child{
+			margin: 1.0rem auto;
+		}
+		&:not(:only-child){
+			&:last-of-type{
+				margin-left: 0.5rem;
+			}
+		}
+		&:hover{
+			@include opacity(.5);
+			color: $darkGray;
+		}
+
+		&.btnNext{
+			background: rgba($green, .8);
+		}
+
+		//PC
+		@media only screen and (min-width: $minWidth){
+			width: 170px;
+		}
+
+		//Mobile
+		@media only screen and (max-width: $maxWidth){
+			width: 75px;
+		}
+
+	}
+
+
+}
+
+//**********************************************************************
+// .formContents
+//**********************************************************************
+
+.formContents{
+
+	display: block;
+	text-align: center;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	label.error{
+		display: block;
+		margin: 0.5rem 0;
+		color: $pink;
+		font-size: 80%;
+	}
+
+	//PC
+	@media only screen and (min-width: $minWidth){
+
+		margin: 0 auto;
+		padding: 3.0rem 0;
+		max-width: $maxWidth;
+		@include box-sizing(border-box);
+
+	}
+
+}
+
+//**********************************************************************
+// #section01
+//**********************************************************************
+
+#section01{
+
+	p{
+		margin-bottom: 1.0rem;
+	}
+
+	//Mobile
+	@media only screen and (max-width: $maxWidth){
+
+		.intro{
+
+			.block{ display: inline !important; }
+		}
+
+		.formBtns{
+			a{
+				width: 100%;
+			}
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// #section02
+//**********************************************************************
+
+#section02{
+
+	//PC
+	@media only screen and (min-width: $minWidth){
+
+		.formBtns{
+			margin-top: 3.0rem;
+			a{
+				width: 320px !important;
+			}
+		}
+
+	}
+
+	//Mobile
+	@media only screen and (max-width: $maxWidth){
+
+		.formBtns{
+			margin-top: 3.0rem;
+			a{
+				width: 100% !important;
+			}
+		}
+
+	}
+
+}
+
+
+//**********************************************************************
+// #section03
+//**********************************************************************
+
+#section03{
+	.formElements{
+		ul{
+			li{
+				display: block;
+			}
+		}
+	}
+}
+
+#section05,
+#section06{
+	.formElements{
+		ul{
+			li{
+				&:last-of-type{
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+}
+
+#section07{
+
+	.formElements{
+		#reasonSelect{
+			ul{
+				li{
+					display: block;
+				}
+			}
+		}
+	}
+
+}
+
+#section13{
+
+	.formElements{
+
+		ul{
+			li{
+				display: block;
+			}
+		}
+	}
+
+}
+
+
+#thanks{
+
+	//Mobile
+	@media only screen and (max-width: $maxWidth){
+
+		.formBtns{
+			margin-top: 3.0rem;
+			a{
+				width: 100% !important;
+			}
+		}
+
+	}
+
+}
+
+}

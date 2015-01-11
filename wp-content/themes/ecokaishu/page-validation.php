@@ -484,7 +484,7 @@ $(document).ready(function(){
 					msg.remove();
 					ele.closest(".formContents").find(".formTitle").removeClass("ok");
 					ele.after('<span id="'+msgId+'" class="msg errorMsg">'+errorTypeMsg+'</span>');
-					ele.removeClass("focus").addClass("error");					
+					ele.removeClass("focus").addClass("error");	
 				}
 			}else{
 				msg.remove();

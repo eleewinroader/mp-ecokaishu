@@ -54,7 +54,7 @@
 				color: $darkGray;
 			}
 		}
-		
+
 	}
 
 }
@@ -92,7 +92,7 @@
 					@include arrow(7px, "", 0px, "", 4px, rgba($black, .3), left);
 				}
 			}
-		}		
+		}
 	}
 
 }
@@ -276,7 +276,7 @@
 		>li{
 
 			border-bottom: 1px solid rgba($black, .05);
-			
+
 			a{
 				display: block;
 				padding: 0.5rem 0;
@@ -287,7 +287,7 @@
 				display: block;
 				color: $green;
 				font-size: 90%;
-				
+
 			}
 
 		}
@@ -310,12 +310,12 @@
 
 
 //**************************************************************
-// .achiveList
+// .archiveList
 //**************************************************************
 
-.achiveList{
+.archiveList{
 
-	
+
 	> li{
 
 		padding: 1.0rem 0;
@@ -326,19 +326,11 @@
 
 		//Mobile
 		@media all and (max-width: $maxWidth){
-
-			//extend
-			.icon{
-				margin-right: 0.3rem;
-				font-family: icomoon;
-				speak: none;
-			}
-
 			//.date
 			.date{
 				text-align: left !important;
 				&:before{
-					@extend .icon;
+					//@extend .icon;
 					content: "\e8f7";
 				}
 			}
@@ -346,7 +338,7 @@
 			//.cats
 			.cats{
 				&:before{
-					@extend .icon;
+					//@extend .icon;
 					content: "\e8d8";
 				}
 			}
@@ -355,7 +347,7 @@
 			.campaignOpen{
 				text-align: left !important;
 				&:before{
-					@extend .icon;
+					//@extend .icon;
 					content: "\e8c4";
 				}
 			}
@@ -376,7 +368,7 @@
 		li{
 			display: inline-block;
 			font-size: 90%;
-			
+
 			a{
 				display: block;
 				margin-bottom: 0.3rem;

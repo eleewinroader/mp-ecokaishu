@@ -19,12 +19,13 @@ $formPadding: 0.5rem;
 
 input, textarea, select{
 	font-size: 100%;
-	 -webkit-appearance: none;
+	//-webkit-appearance: none;
 }
 input[type="text"],
 input[type="email"],
-input[type="password"]{
-	width: 100%;	
+input[type="password"],
+input[type="tel"]{
+	width: 100%;
 	min-height: $formHeight;
 	padding: 0 $formPadding;
 	border: 1px solid rgba($black, .1);
@@ -40,7 +41,7 @@ textarea{
 }
 input[type="submit"], button{
 	display: inline-block;
-  	-webkit-appearance: none;
+	-webkit-appearance: none;
 	width: 100%;
 	height: $formHeight;
 	min-height: $formHeight;
@@ -60,7 +61,7 @@ option{
 	height: $formHeight;
 	padding: 0 $formPadding;
 	@include box-sizing(border-box);
-	border: none;
+	border: 1px solid rgba($black, .1);
 	background: $white;
 	line-height: 1.5rem;
 }
@@ -79,11 +80,10 @@ option{
 	margin: $formPadding 0;
 }
 
-
 // PC settings
 //**********************************************************************
 
-@media all and (min-width: 741px){
+@media all and (min-width: $minWidth){
 
 	.formContents{
 		display: table;
@@ -100,5 +100,52 @@ option{
 }
 
 
+//**********************************************************************
+// .lawDoc
+//**********************************************************************
+
+.lawDoc{
+
+	display: block !important;
+	line-height: 1.5em;
+	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: visible;
+	height: 160px;
+	padding: 0.5rem;
+	@include box-sizing(border-box);
+	border: 1px solid rgba($black, .1);
+	font-size: 90%;
+	text-align: left !important;
+
+	h3{
+		line-height: 1.2em;
+		margin: 0.5rem 0;
+		padding: 0;
+		border: none;
+		text-align: left;
+		font-size: $normal * 1.2;
+
+	}
+
+	h4{
+		margin: 0.5rem 0;
+		padding: 0;
+		font-size: $normal;
+	}
+
+	h5{
+		margin: 0.5rem 0;
+		padding: 0;
+		font-size: $normal;
+	}
+
+	li,
+	p{
+		margin: 0;
+		padding: 0;
+	}
+
+}
 
 

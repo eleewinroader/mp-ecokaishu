@@ -19,6 +19,9 @@ get_header();
 	$relatedItemIds = array();
 	$relatedItemNames = array();
 	$pageTitle = get_the_title($post->ID); //page title
+
+
+
 	$voiceTitles = getMetaArr($post, "contentsInfo01");
 	$voiceContents = getMetaArr($post, "contentsInfo02");
 	$navPage .= '
@@ -147,11 +150,115 @@ get_header();
 				<!--「エコ回収料金」事例--></section>
 			<?php endif; ?>
 
-			<section class="contents">
+			<section class="contents voices">
+			<h3><?php the_title(); ?>でエコ回収を利用した「お客様からの声」</h3>
+			<?php
+			$append = array("アンティーク家具", "ベッド", "掃除機", "書籍", "枕", "洗濯機", "照明", "パソコン", "パソコン周辺機器");
+			$pageTitle = in_array($pageTitle, $append) ? $pageTitle."類" : $pageTitle;
+			$args = array(
+				"post_type" => "voices",
+				"tax_query" => array(
+					"relation" => "and",
+					array(
+						"taxonomy" => "voicekinds",
+						"field" => "slug",
+						"terms" => array("review")
+					),
+					array(
+						"taxonomy" => "cltitems",
+						"field" => "slug",
+						"terms" => array($pageTitle)
+					)
+				)
+			);
+			$args1 = array_merge($args, array("posts_per_page" => 1));
+			$newVoice =  query_posts($args1);
+			foreach($newVoice as $voice){
+				$name = getCustomerName($voice);
+				$sex = getCustomerSex($voice);
+				$age = getCustomerAge($voice);
+				$area = getCustomerAreas($voice, TRUE);
+				$items = getCustomerItems($voice, TRUE, "dd");
+				$date = getCustomerDate($voice);
+				$starts = getCustomerStarts($voice,"dd");
+				$features = getCustomerFeatures($voice, "dd");
+				$review03 = get_post_meta($voice->ID, "voiceInfo17", TRUE);
+				$review03Score = get_post_meta($voice->ID, "voiceInfo16", TRUE);
+				$review03ScoreIndex = getCustomerReview($post, $review03Score);
+
+				echo <<<EOF
+				
+				<div class="customerProfile">
+					<div class="customerComments">
+						<h4>{$name}<span class="small">様より</span></h4>
+						<h5>エコ回収サービス全体について評価してください。</h5>
+						<span class="rating-foreground star star{$review03Score}"> 
+							<meta itemprop="rating" content="{$review03Score}" /> 
+							<span class="index">{$review03ScoreIndex}</span>
+						</span> 
+						{$review03}
+					</div>
+					<div class="customerInfo last">
+						<dl>
+							<dt class="hide">性別・年代</dt><dd class="name">{$sex} / {$age}</dd>
+							<dt class="hide">回収エリア</dt><dd class="place">{$area}</dd>
+							<dt class="hide">回収日時</dt><dd class="date"><time datetime="{$date}">{$date}回収</time></dd>
+							<dt class="infoIndex">エコ回収をご利用になったきっかけ</dt> 
+							{$starts}
+							<dt class="infoIndex">エコランドをお選びになった理由</dt>
+							{$features}
+							<dt class="infoIndex">エコ回収したアイテム</dt>
+							{$items}
+						</dl>
+					</div>
+				<!--customerProfile--></div>
+EOF;
+			}
+
+
+			$args2 = array_merge($args, array("offset" => -1));
+			$voices =  query_posts($args2);
+			if($voices){
+				echo <<<EOF
+					<div class="archiveIndex">
+						<div class="onecol col">回収日</div>
+						<div class="twocol col">性別 / 年代</div>
+						<div class="twocol col">回収エリア</div>
+						<div class="fourcol col">回収アイテム</div>
+						<div class="threecol col last">評価</div>
+					</div>
+					<ul class="archiveList">
+EOF;
+				foreach($voices as $voice){
+					$name = getCustomerName($voice);
+					$sex = getCustomerSex($voice);
+					$age = getCustomerAge($voice);
+					$area = getCustomerAreas($voice);
+					$date = date("m/d", strtotime(getCustomerDate($voice)));
+					$items = getCustomerItems($voice);
+					$link = get_permalink($voice->ID);
+					echo <<<EOF
+							<li class=" al_c">
+								<a href="{$link}">
+									<div class="onecol col">{$date} </div>
+									<div class="twocol col">{$sex} / {$age}</div>
+									<div class="twocol col">{$area}</div>
+									<div class="fourcol col al_l">{$items}</div>
+									<div class="threecol col last">
+										<span class="rating-foreground star star{$review03Score}"> 
+											<meta itemprop="rating" content="{$review03Score}" /> 
+										</span> 
+									</div>
+								</a>
+							</li>
+EOF;
+				}
+				if($voices) echo "</ul>";
+			}?>
+
 				<?php if(count($voiceTitles) == 0): ?>
 					<?php echo $post->post_content; ?>
 				<?php else:?>
-					<h3><?php the_title(); ?>のエコ回収を利用した「お客様からの声」</h3>
 					<dl class="listVoices">
 					<?php for($i=0; $i<count($voiceTitles); $i++){
 						echo "<dt>".$voiceTitles[$i]."</dt>";
@@ -296,11 +403,7 @@ get_header();
 
 			<div class="bnrBtn contents">
 				<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
-			<!--.contents--></div>
-
-			<div class="bnrBtn contents">
-				<a href="<?php echo get_permalink(5884); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1411/00_bnr_640x260.gif" alt="先走り年末大掃除キャンペーンページへ" /></a>
-			<!--.contents--></div>
+			<!--.contents--></div>	
 
 			<?php
 			$convSales = convSale();

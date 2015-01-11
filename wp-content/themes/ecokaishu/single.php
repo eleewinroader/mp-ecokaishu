@@ -156,11 +156,7 @@ get_header();
 
 			<div class="bnrBtn contents">
 				<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
-			<!--.contents--></div>
-
-			<div class="bnrBtn contents">
-				<a href="<?php echo get_permalink(5884); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/campaign/1411/00_bnr_640x260.gif" alt="先走り年末大掃除キャンペーンページへ" /></a>
-			<!--.contents--></div>
+			<!--.contents--></div>	
 
 			<?php
 			$convSales = convSale();

@@ -5,6 +5,14 @@
 
 date_default_timezone_set( 'Asia/Tokyo' );
 
+
+add_action( 'wp_before_admin_bar_render', 'my_before_admin_bar_render' );
+function my_before_admin_bar_render() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu( 'edit' ); // ［プロフィールを編集］を削除
+}
+
+
 /*******************************************************
 * seotag
 *******************************************************/
@@ -14,7 +22,11 @@ function getTitle($tempType, $obj){
 	if($tempType == "single"){
 		$metaTitle = get_post_meta($obj->ID, _aioseop_title, TRUE);
 		if($metaTitle) $metainfo = $metaTitle."｜".get_bloginfo("name");
-		else $metainfo = get_the_title($obj->ID)."｜".get_bloginfo("name");
+		else{
+			if($obj->post_type == "voices"){
+				$metainfo = getCustomerAreas($obj)."の".getCustomerName($obj)."様から".getCustomerItems($obj)."を回収｜".get_bloginfo("name");
+			}
+		}
 	}elseif($tempType == "postTypeArchive"){
 		$metainfo = $obj->label."｜".get_bloginfo("name");
 	}elseif($tempType == "archive"){
@@ -37,7 +49,14 @@ function getTitle($tempType, $obj){
 function getDescription($tempType, $obj){
 	if($tempType == "single"){
 		$metainfo = get_post_meta($obj->ID, _aioseop_description, TRUE);
-		if(!$metainfo) $metainfo = mb_substr(strip_tags($obj->post_content), 0, 100)."...";
+		if(!$metainfo){
+			if($obj->post_type == "voices"){
+				$metainfo = getCustomerAreas($obj)."の".getCustomerName($obj)."様から".getCustomerItems($obj)."をエコ回収いたしました。不用品回収をお考えなら「エコ回収」。単なる不用品回収だけでなく、使わなくなったモノを再利用、再資源化して必要な人・場所に届けることができます。";
+			}else{
+				$desc = mb_substr(strip_tags($obj->post_content), 0, 100);
+				if($desc) $metainfo = mb_substr(strip_tags($obj->post_content), 0, 100)."...";
+			}
+		}
 	}elseif($tempType == "postTypeArchive"){
 		$metainfo = $obj->description;
 	}elseif($tempType == "archive"){
@@ -94,6 +113,8 @@ function getH1($tempType, $obj){
 			$metaH1 = get_the_title($obj->ID)."の処分・廃棄を考えているならエコ回収";
 		}elseif($obj->post_type == "campaign"){
 			$metaH1 = "無料・格安キャンペーン 〜 ".get_the_title($obj->ID);
+		}elseif($obj->post_type == "voices"){
+			$metaH1 = getCustomerAreas($obj)."の".getCustomerName($obj)."様から".getCustomerItems($obj)."を回収！";
 		}elseif($obj->post_type == "notices"){
 			$metaH1 = get_the_title($obj->ID)." 〜 お知らせ&新着情報";
 		}else{
@@ -142,17 +163,22 @@ function getArticleClass($tempType, $obj){
 		if($obj->post_type == "campaign"){
 			$classinfo .= " campaign";
 			if(campCode($post)) $classinfo .= " ".campCode($obj, "parent", " ");
+		}elseif($obj->post_type == "voices"){
+			$classinfo .= " ".$obj->post_type;
 		}elseif($obj->post_type == "area" || $obj->post_type == "items"){
 			$classinfo .= " columns";
 			$classinfo .= " ".$obj->post_type;
+		}elseif($obj->post_type == "page" && $obj->post_name == "inquiry"){
+			$classinfo .= " ".$obj->post_name;
 		}else{
 			$classinfo .= " columns";
-			$cat = get_the_category(); 
+			$cat = get_the_category();
 			if($cat) $classinfo .= " ".$cat[0]->slug;
 		}
 	}elseif($tempType == "postTypeArchive"){
 		$classinfo = "archive";
 		if($obj->name == "area" || $obj->name == "items") $classinfo .= " columns";
+
 		$classinfo .= " ".$obj->name;
 	}elseif($tempType == "archive"){
 		$classinfo = "archive columns";
@@ -188,7 +214,7 @@ function getArticleImg($tempType, $obj){
 	$imginfo = get_bloginfo("template_url")."/assets/img/base/ecoland_logo.gif";
 	if($tempType == "single"){
 		$img = get_post_meta($obj->ID, "kijitasuInfo03", TRUE);
-		$imgurl = wp_get_attachment_image_src($img, "medium"); 
+		$imgurl = wp_get_attachment_image_src($img, "medium");
 		if($imgurl) $imginfo = $imgurl[0];
 	}
 	if($imginfo) return $imginfo;
@@ -200,7 +226,7 @@ function getMetaArr($post, $meta){
 	global $wpdb;
 	$query = "SELECT meta_id, post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $post->ID ORDER BY meta_id ASC";
 	$cf = $wpdb->get_results($query, ARRAY_A);
-	
+
 	foreach( $cf as $row ){
 		if($row['meta_key'] == $meta) $vars[] = $row['meta_value'];
 	}
@@ -209,14 +235,14 @@ function getMetaArr($post, $meta){
 		$vars = array_values($vars);
 	}
 	return $vars;
-	
+
 }
 
 function getMetaImgArr($post, $meta){
 
 	global $wpdb;
 	$query = "SELECT meta_id, post_id,meta_key,meta_value FROM $wpdb->postmeta WHERE post_id = $post->ID ORDER BY meta_id ASC";
-	$cf = $wpdb->get_results($query, ARRAY_A);	
+	$cf = $wpdb->get_results($query, ARRAY_A);
 	foreach( $cf as $row ){
 		if($row['meta_key'] == $meta){
 			$image = wp_get_attachment_image_src($row['meta_value'], "thumbnail");
@@ -229,9 +255,9 @@ function getMetaImgArr($post, $meta){
 	if($vars){
 		$vars = array_filter($vars, "strlen");
 		$vars = array_values($vars);
-	}	
+	}
 	return $vars;
-	
+
 }
 
 //header cleaner
@@ -280,13 +306,275 @@ add_action( 'pre_get_posts', 'change_posts_per_page' );
 //add_shortcode("siteUrl", "siteInfo");
 add_shortcode("telNum", "telNum");
 
+
+
+/*******************************************************
+* settings for voice pages
+*******************************************************/
+
+
+function getCustomerName($post){
+	$name = get_post_meta($post->ID, "voiceInfo06", TRUE);
+	return $name;
+}
+
+function getCustomerSex($post){
+	$meta = get_post_meta($post->ID, "voiceInfo07", TRUE);
+	switch ($meta) {
+		case '0':
+			$sex = "女性";
+			break;
+		case '1':
+			$sex = "男性";
+			break;
+		default:
+			$sex = "";
+			break;
+	}
+	return $sex;
+}
+
+function getCustomerAge($post){
+	$meta = get_post_meta($post->ID, "voiceInfo08", TRUE);
+	switch ($meta){
+		case '0':
+			$age = "20代";
+			break;
+		case '1':
+			$age = "30代";
+			break;
+		case '2':
+			$age = "40代";
+			break;
+		case '3':
+			$age = "50代";
+			break;
+		case '4':
+			$age = "60代";
+			break;
+		case '5':
+			$age = "70代以上";
+			break;
+		default:
+			$age = "";
+			break;
+	}
+	return $age;
+}
+
+
+function getCustomerDate($post){
+	$date = get_post_meta($post->ID, "voiceInfo23", TRUE);
+	return $date;
+}
+
+
+function getCustomerStarts($post, $glue=FALSE){
+	$customerStarts = array();
+	$terms = get_the_terms($post->ID, 'starts');
+	foreach($terms as $term){
+		array_push($customerStarts, $term->name);
+	}
+	if(count($customerStarts) > 1){
+		if($glue){
+			for($i=0; $i<count($customerStarts); $i++) $starts .= "<".$glue.">".$customerStarts[$i]."</".$glue.">";
+		}else{
+			$starts = implode("・", $customerStarts);
+		}
+	}else{
+		if($glue) $starts = "<".$glue.">".$customerStarts[0]."</".$glue.">";
+		else $starts = $customerStarts[0];
+	}
+	return $starts;
+}
+
+function getCustomerFeatures($post, $glue=FALSE){
+	$customerFeatures = array();
+	$terms = get_the_terms($post->ID, 'features');
+	foreach($terms as $term){
+		if($term->parent != 0) array_push($customerFeatures, $term->name);
+	}
+	if(count($customerFeatures) > 1){
+		if($glue){
+			for($i=0; $i<count($customerFeatures); $i++) $features .= "<".$glue.">".$customerFeatures[$i]."</".$glue.">";
+		}else{
+			$features = implode("・", $customerFeatures);
+		}
+	}else{
+		if($glue) $features = "<".$glue.">".$customerFeatures[0]."</".$glue.">";
+		else $features = $customerFeatures[0];
+	}
+	return $features;
+}
+
+function getCustomerItems($post, $link=FALSE, $glue=FALSE){
+	//var
+	$customerItems = array();
+	//getItems
+	$cltItems = get_the_terms($post->ID, 'cltitems');
+	//$append = array("アンティーク家具類", "ベッド類", "掃除機類", "書籍類", "枕類", "洗濯機類", "照明類", "パソコン類", "パソコン周辺機器類");
+	foreach($cltItems as $cltItem){
+		$pos = mb_strpos($cltItem->name, "類");
+		$cltItemName = $pos ? mb_substr($cltItem->name, 0, $pos) : $cltItem->name;
+		if($cltItem->parent != 0){
+			$args = array(
+				"post_type" => "items",
+				"name" => $cltItemName
+			);
+			$items = query_posts($args);
+			foreach($items as $item){
+				array_push($customerItems, $item->ID);
+			}
+		}
+	}
+	for($i=0; $i<count($customerItems); $i++){
+		if($glue) $string .= "<".$glue.">";
+		if($link) $string .= '<a href="'. get_permalink($customerItems[$i]).'">';
+		$string .= get_the_title($customerItems[$i]);
+		if($link) $string .= '</a>';
+		if($glue) $string .= "</".$glue.">";
+		if($i< count($customerItems)-1 && $glue == FALSE) $string .= "・";
+	}
+	return $string;
+}
+
+
+function getCustomerReview($post, $star){
+
+	//var
+	switch ($star) {
+		case '5':
+			$string = "感動(期待以上)";
+			break;
+
+		case '4':
+			$string = "満足(期待通り)";
+			break;
+
+		case '3':
+			$string = "普通(まぁまぁ)";
+			break;
+
+		case '2':
+			$string = "不満(がっかり)";
+			break;
+
+		case '1':
+			$string = "非常に不満(もう頼まない)";
+			break;
+
+		default:
+			$string = "集計中";
+			break;
+	}
+
+	return $string;
+}
+
+
+function getCustomerAreas($post, $link=FALSE){
+	//var
+	$customerAreas = array();
+	//getAreas
+	$cltAreas = get_the_terms($post->ID, 'cltarea');
+
+	foreach($cltAreas as $cltArea){
+		if($cltArea->parent == 0){
+			$args = array(
+				"post_type" => "area",
+				"name" => $cltArea->name
+			);
+			$areas = query_posts($args);
+			foreach($areas as $area){
+				$prefectureName = $area->post_title;
+				$prefectureLink = get_permalink($area->ID);
+			}
+		}else{
+			$args = array(
+				"post_type" => "area",
+				"name" => $cltArea->name
+			);
+			$areas = query_posts($args);
+			foreach($areas as $area){
+				$municipalityName = $area->post_title;
+				$municipalityLink = get_permalink($area->ID);
+			}
+		}
+
+	}
+	//returnAreas
+	if($link){
+		$areaLink = $prefectureLink;
+		if($municipalityLink) $areaLink = $municipalityLink;
+		return '<a href="'.$areaLink.'">'.$prefectureName.' '.$municipalityName.'</a>';
+	}
+	else return $prefectureName.' '.$municipalityName;
+}
+
+function getStaffComments($post, $staffType, $crtUser){
+	$comments = get_comments(array("post_id" => $post->ID));
+	if($comments){
+		foreach($comments as $comment){
+			$staffEmail = $comment->comment_author_email;
+			$staff = get_user_by("email", $staffEmail);
+
+			$comments = $comment->comment_content;
+			$commentDate = $comment->comment_date;
+			$commentDateEdited = date("Y年m月d日", strtotime($commentDate));
+
+			if($staff->roles[0] == $staffType){
+
+				$staffName = $staff->display_name;
+				$staffPron = get_user_meta($staff->id, "namePron", TRUE);
+				$staffProfileImg = get_user_meta($staff->id, "profileimg", TRUE);
+
+				if($comment->comment_approved == 0){
+					if($crtUser->roles[0] == $staffType){
+						$notapproved .= <<<EOF
+						<div class="reply notApproved">
+							<span class="pink">承認待ち</span>
+							<p>{$comments}</p>
+							<time datetime="<?php echo getCustomerDate($commentDate); ?>">{$commentDate}投稿</time>
+						</div>
+EOF;
+					}
+				}else{
+					$string = <<<EOF
+					<div class="reply">
+						<h4> 担当スタッフより</h4>
+						<div class="staffInfo flRight">
+							<img src="{$staffProfileImg}" class="staffimg" />
+							<p class="staffName">
+								<span class="block name">{$staffName}</span>
+								<span class="block pron">{$staffPron}</span>
+							</p>
+						</div>
+						<div class="staffComments">
+							<p>{$comments}</p>
+							<time datetime="<?php echo getCustomerDate($commentDate); ?>">{$commentDateEdited}返信</time>
+						</div>
+						<div class="clear"></div>
+					</div>
+EOF;
+				}
+
+			}
+		}
+	}
+
+	return $notapproved.$string;
+
+}
+
+
+
 /* col  */
 function numToStr( $target ) {
 
 	// アルファベットの定義
 	$alphabet = array(
 		"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-		"ten", "eleven", "twelve" 
+		"ten", "eleven", "twelve"
 	);
 
 	if(!is_numeric( $target ) || $target < 0){
@@ -308,6 +596,7 @@ function numToStr( $target ) {
 
 }
 
+
 /* こちらの都合です。 */
 function convSale(){
 
@@ -318,7 +607,7 @@ function convSale(){
 
 	$convSaleInfo = array();
 
-	//var convenience sale 
+	//var convenience sale
 	$campConvInfo01 = array();
 	$campConvInfo02 = array();
 	$campConvInfo03 = array();
@@ -373,12 +662,12 @@ function convSale(){
 	}
 
 	return false;
-	
+
 }
 
 /* calendar */
 //本日取得
-function getToday($date = "Y-m-d") { 
+function getToday($date = "Y-m-d") {
 	$today = new DateTime();
 	return $today->format($date);
 }
@@ -392,13 +681,13 @@ function isHoliday($year, $month, $day) {
 	}
 	return false;
 }
- 
+
 //Googleカレンダーから祝日を取得
 function getHolidays($year) {
 	$holidays = array();
 	$prevYear = $year - 1;
 	$nextYear = $year + 1;
- 
+
 	//Googleカレンダーから、指定年の祝日情報をJSON形式で取得するためのURL
 	$url = sprintf(
 		"http://www.google.com/calendar/feeds/%s/public/full?alt=json&%s&%s",
@@ -406,20 +695,20 @@ function getHolidays($year) {
 		"start-min=".$prevYear."-01-01",
 		"start-max=".$nextYear."-12-31"
 	);
- 
+
 	//JSON形式で取得した情報を配列に変換
 	$results = json_decode(file_get_contents($url), true);
- 
+
 	//年月日（例：20120512）をキーに、祝日名を配列に格納
 	foreach ($results["feed"]["entry"] as $value) {
 		$date = str_replace("-", "", $value["gd$when"][0]["startTime"]);
 		$title = $value["title"]["$t"];
 		$holidays[$date] = $title;
 	}
- 
+
 	//祝日の配列を早い順に並び替え
 	ksort($holidays);
- 
+
 	//配列として祝日を返す
 	return $holidays;
 }
@@ -428,7 +717,7 @@ function getHolidays($year) {
 
 
 //N日（週）+か-する関数
-function getNthDay($year, $month, $day, $n) { 
+function getNthDay($year, $month, $day, $n) {
 	$next_prev = new DateTime($year."-".$month."-".$day);
 	$next_prev->modify($n);
 	return $next_prev->format("Ymd");
@@ -470,7 +759,7 @@ function getPage($string, $type){
 	$postType = get_post_type();
 	$title = esc_sql($string);
 	if(!$title) return;
-	
+
 	$page = $wpdb->get_results("
 		SELECT*
 		FROM $wpdb->posts
@@ -534,7 +823,7 @@ function pageCode($last=null){
 	if($last == 1){
 		$pageCode = end($dirs);
 	}else{
-		$pageCode = $dirs[0];	
+		$pageCode = $dirs[0];
 	}
 	return $pageCode;
 }
@@ -576,7 +865,7 @@ function siteInfo($type){
 	}elseif($type == 'siteUrlRshop'){
 		$info = $protocol.'www.kaitori-eco.com';
 	}else{
-			$info = $protocol.$httpHost;	
+			$info = $protocol.$httpHost;
 	}
 	return $info;
 }
@@ -635,7 +924,7 @@ function contactBnr($msg=FALSE, $form=FALSE, $tel=FALSE, $openingHour=FALSE){
 	$template_url = get_bloginfo("template_url");
 	$site_url = siteInfo("rootUrl");
 
-	if(campCode($post)){ 
+	if(campCode($post)){
 		$childrenClass = campCode($post, "children");
 		$code = substr($childrenClass, -2);
 		$month = substr($childrenClass, 6, 2);
@@ -662,7 +951,7 @@ EOF;
 	}else{
 		$msg = "";
 	}
-	
+
 	//kinds of form
 	if(!$form){
 		$form = <<<EOF
@@ -816,7 +1105,7 @@ function workDate($post){
 	$dates = wp_get_post_terms($post->ID, 'date');
 	foreach($dates as $date){
 		if($date->parent != 0){
-			$children = get_term_children($date->term_id, 'date');	
+			$children = get_term_children($date->term_id, 'date');
 			if(empty($children)) $month = $date->name.'月';
 			else $day = $date->name;
 			if($day) $workDay = $month.$day.'日';
@@ -913,28 +1202,21 @@ function update_profile_fields($contactmethods){
 	unset($contactmethods['aim']);
 	unset($contactmethods['jabber']);
 	unset($contactmethods['yim']);
- 
+	unset($contactmethods['url']);
+
 	//項目の追加
-	$contactmethods['name'] = 'お名前';
 	$contactmethods['namePron'] = 'ふりがな';
-	$contactmethods['phone'] = '電話番号';
-	$contactmethods['prefecture'] = '都道府県';
-	$contactmethods['municipality'] = '市区町村';
-	$contactmethods['birthday'] = '誕生日';
-	$contactmethods['sex'] = '性別';
-	$contactmethods['marrige'] = '既婚・未婚';
-	$contactmethods['residence'] = '一緒に暮らしている人数';
-	$contactmethods['job'] = '職業';
-	$contactmethods['topics'] = '気になるトピック';
- 
+	$contactmethods['belongs'] = '所属';
+	$contactmethods['profileimg'] = 'プロフィール画像';
+
 	return $contactmethods;
 }
 
 //ポストタイトル
-function cmsTitle($posttype, $submitdate, $pr_code){
+function cmsTitle($posttype, $submitdate, $pr_code=FALSE){
 	date_default_timezone_set('Asia/Tokyo');
 	$today = getdate();
-	$todayposts = query_posts( 
+	$todayposts = query_posts(
 		array(
 			'posts_per_page' => -1,
 			'post_type' => $posttype,
@@ -948,8 +1230,8 @@ function cmsTitle($posttype, $submitdate, $pr_code){
 	//post_type判別
 	if($posttype == 'contactform'){
 		$typeid = 'C';
-	}elseif($posttype == 'works'){
-		$typeid = 'W';
+	}elseif($posttype == 'voices'){
+		$typeid = 'V';
 	}elseif($posttype == "remind"){
 		$typeid = "R";
 	}else{
@@ -959,12 +1241,12 @@ function cmsTitle($posttype, $submitdate, $pr_code){
 	//ユーザーエージェント
 	$agent = getenv("HTTP_USER_AGENT");
 	if(is_smartphone()){
-		$ua = "-SP";	
+		$ua = "-SP";
 	}else{
 		$brow = IEbrowserVer();
 		if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8") $ua = "-LE";
 		else $ua = "-PC";
-	}		
+	}
 
 	//pr_code
 	if($pr_code){
@@ -994,7 +1276,7 @@ function get_attached_img($id, $cf, $alt=null, $style=null, $size=null, $align=n
 		}else{
 			$get_attached_img = $img;
 		}
-	}	
+	}
 	return $get_attached_img;
 	wp_reset_query();
 }
@@ -1004,8 +1286,8 @@ function get_attached_img($id, $cf, $alt=null, $style=null, $size=null, $align=n
 add_filter( 'manage_posts_columns', 'shortlink_add_column' );
 add_action( 'manage_posts_custom_column', 'shortlink_add_value', 10, 2 );
 
-function shortlink_add_column($cols) { 
-	$cols['shortlink'] = __('Shortlink'); 
+function shortlink_add_column($cols) {
+	$cols['shortlink'] = __('Shortlink');
 	return $cols;
 }
 function shortlink_add_value($column_name, $post_id) {
@@ -1060,7 +1342,7 @@ E-mail　530-539@eco-land.jp
 
 ecoecoecoecoecoecoecoecoecoecoecoecoecoecoecoeco
 
-【運営】株式会社ウインローダー 〒167-0043　東京都杉並区上荻2-37-7 
+【運営】株式会社ウインローダー 〒167-0043　東京都杉並区上荻2-37-7
 【エコランド事業部】 TEL:0120-530-539　
 
 ecoecoecoecoecoecoecoecoecoecoecoecoecoecoecoeco
@@ -1106,7 +1388,7 @@ $message .= '
 
 受付番号：'.$contactValues['post_title'].
 mail_footer();
-	
+
 	wp_mail($email, $subject, $message, mail_header());
 	wp_mail('mail_contact@eco-land.jp', $subject, $message, mail_header($email));
 }
@@ -1142,7 +1424,7 @@ $message .= '
 
 受付番号：'.$couponValues['post_title'].
 mail_footer();
-	
+
 	wp_mail($email, $subject, $message, mail_header());
 	wp_mail('mail_contact@eco-land.jp', $subject, $message, mail_header($email));
 
@@ -1263,7 +1545,7 @@ $message .= '
 
 受付番号：'.$yCollValues['post_title'].
 mail_footer();
-	
+
 	wp_mail($email, $subject, $message, mail_header());
 	wp_mail('mail_contact@eco-land.jp', $subject, $message, mail_header($email));
 
@@ -1307,7 +1589,7 @@ $message .= '
 
 受付番号：'.$yCollValues['post_title'].
 mail_footer();
-	
+
 	wp_mail($email, $subject, $message, mail_header());
 	wp_mail('mail_contact@eco-land.jp', $subject, $message, mail_header($email));
 
@@ -1324,29 +1606,9 @@ function inquiry_ntfct($cstmEmail, $inquiryValues){
 この度は【エコ回収】アンケートに答えていただき誠にありがとうございます。
 今後のサービスの向上させていただくために参考にさせていただきます。
 
-2013年12月18日までお答え頂いた方には、先着100名様限定1,000円分の商品券をプレゼントします。
-商品券の詳細については、後日メールにて改めてご案内させていただきます。
-
 なお、お答えいただいたアンケート内容は個人を特定する情報を除き
 ホームページに掲載させていただく場合がありますので、
 あらかじめご了承ください。';
-if($inquiryValues['couponNum']){
-	$message .= '
-
-──────────────────────────────────
-
-アンケート回答ありがとう「基本料金100%OFF」クーポン
-★★★★★★★★★★★★★★★★★★★
-クーポン番号：'.$inquiryValues['couponNum'].'
-★★★★★★★★★★★★★★★★★★★
-
-次回エコランドをご利用になる際、こちらのクーポンをお使いください。
-'.$inquiryValues['cstmName'].'様のまたのご利用、お待ちしております。
-
-※お申し込みの際、クーポン番号をお伝えください。
-
-──────────────────────────────────';
-}
 $message .= '
 
 受付番号：'.$inquiryValues['post_title'].
@@ -1354,87 +1616,211 @@ mail_footer();
 	wp_mail($cstmEmail, $subject, $message, mail_header());
 }
 
-function inquiry_ntfct_isd($inquiryValues){
 
-	$subject = '【エコ回収】アンケート：'.$inquiryValues['post_title'];
-	$message = '
+/*******************************************************
+* cron
+*******************************************************/
 
-──────────────────────────────────
 
-●回収品目
-'.$inquiryValues['cltdItems'].'
-その他：'.$inquiryValues['cltdItemEtc'].'
+/* メールフッター
+*****************************************************************************************/
+function mail_footer_forstaff(){
+	$mail_footer .= <<<EOF
 
-●不用品回収を出そうと思ったきっかけ
-'.$inquiryValues['cue'].'
-その他：'.$inquiryValues['cueEtc'].'
+ecoecoecoecoecoecoecoecoecoecoecoecoecoecoecoeco
 
-●エコランドを知った経由
-'.$inquiryValues['from'].'
-検索ワード：'.$inquiryValues['searchEtc'].'
-その他：'.$inquiryValues['fromEtc'].'
+管理画面 http://www.eco-kaishu.jp/wp-admin
 
-●エコランドを選んだ理由
-'.$inquiryValues['cause'].'
-その他：'.$inquiryValues['causeEtc'].'
+ecoecoecoecoecoecoecoecoecoecoecoecoecoecoecoeco
 
---
-１番：'.$inquiryValues['causeFirst'].'
-２番：'.$inquiryValues['causeSecond'].'
-３番：'.$inquiryValues['causeThird'].'
+EOF;
 
-──────────────────────────────────
+	return $mail_footer;
 
-●受付スタッフへの評価＆コメント
-'.$inquiryValues['voiceCC'].'
-'.$inquiryValues['voiceCCCmt'].'
-
-●回収スタッフへの評価＆コメント
-'.$inquiryValues['voiceCS'].'
-'.$inquiryValues['voiceCSCmt'].'
-
-●料金への評価＆コメント
-'.$inquiryValues['voiceCost'].'
-'.$inquiryValues['voiceCostCmt'].'
-
-●HPへの評価＆コメント
-'.$inquiryValues['voiceHP'].'
-'.$inquiryValues['voiceHPCmt'].'
-
-●他にあってほしいサービス
-'.$inquiryValues['voiceEtc'].'
-
-●その他のコメント
-'.$inquiryValues['voiceEtcSvc'].'
-
-──────────────────────────────────
-
-●他社に相談したか
-'.$inquiryValues['cttCor'].'
-
-●相談した会社
-'.$inquiryValues['cttedCor'].'
-その他：'.$inquiryValues['cttedCorEtc'].'
-
-──────────────────────────────────
-
-●自治体に相談したか
-'.$inquiryValues['cttOrg'].'
-
-●自治体を選ばなかった理由
-'.$inquiryValues['notAplyOrg'].'
-その他：'.$inquiryValues['notAplyOrgEtc'].'
-
-●自治体に相談しなかった理由
-'.$inquiryValues['notCttOrg'].'
-その他：'.$inquiryValues['notCttOrgEtc'].'
-
-──────────────────────────────────
-
-受付番号：'.$inquiryValues['post_title'].'
-クーポン番号：'.$inquiryValues['couponNum'];
-wp_mail(array("e.lee.winroader@gmail.com", "h_murakami@winroader.co.jp", "fzpfyjfek6@i.softbank.jp"), $subject, $message, mail_header());
 }
+
+
+//レビュー通信
+function staffCommentStatus($post, $email){
+
+	$args = array(
+		"post_id" => $post->ID,
+		"author_email" => $email,
+		"status" => "all"
+	);
+	$comments = get_comments($args);
+	if($comments){
+		foreach($comments as $comment){
+			if($comment->comment_approved){
+				return "済";
+			}else{
+				return "承認待ち";
+			}
+		}
+	}else{
+		return "未返信";
+	}
+}
+
+function dailyReviewReplys(){
+
+
+	$y = date_parse(date("c", strtotime("-1 day")));
+	$yesterday = $y["year"]."年".$y["month"]."月".$y["day"]."日";
+	$subject = "【レビュー通信】". $yesterday;
+
+	$message .= <<<EOF
+{$yesterday}まで投稿されたレビューの中、まだ返信がないレビュー
+※承認待ち返信も含まれています。
+
+------------
+
+EOF;
+
+	$args = array(
+		"post_status" => "publish",
+		"posts_per_page" => -1,
+		"post_type" => "voices",
+		"voicekinds" => "review"
+	);
+	$voices = query_posts($args);
+	foreach($voices as $voice){
+
+		$staffs = array();
+		$authors = get_the_terms($voice->ID, "author");
+
+		foreach($authors as $author){
+			if($author->name != "admin"){
+				$staff = get_user_by("login", $author->name);
+				if($staff->roles[0] == "cltstaff"){
+					$cltstaff = $staff->display_name;
+					$cltstaffStatus = staffCommentStatus($voice, $staff->user_email);
+					if($cltstaffStatus == "済") $i++;
+				}
+				if($staff->roles[0] == "conciergestaff"){
+					$concierge = $staff->display_name;
+					$conciergeStatus = staffCommentStatus($voice, $staff->user_email);
+					if($conciergeStatus == "済") $i++;
+				}
+			}
+		}
+
+		if($cltstaffStatus != "済" || $conciergeStatus != "済"){
+
+			$name = get_post_meta($voice->ID, "voiceInfo06", TRUE);
+			$econum = get_post_meta($voice->ID, "voiceInfo24", TRUE);
+			$cltdate = get_post_meta($voice->ID, "voiceInfo23", TRUE);
+			$guid = wp_get_shortlink($voice->ID);
+			$message .= <<<EOF
+
+{$name}様 (エコNo. {$econum} / {$cltdate}回収)
+{$guid}
+担当集荷スタッフ : {$cltstaff} ({$cltstaffStatus})
+担当コンシェルジュ : {$concierge} ({$conciergeStatus})
+
+------------
+
+EOF;
+		}
+
+	}
+
+	$message .= <<<EOF
+
+コメント作成マニュアル http://goo.gl/PlvOl3
+
+-----
+
+お問い合わせは IT戦略室 永廣&李垠柱まで送信してください。
+永廣 a_nagahiro@winroader.co.jp
+李垠柱 e_lee@winroader.co.jp
+ 
+
+EOF;
+
+	$emails = array(
+		"tokura@winroader.co.jp",
+		"shimura@winroader.co.jp",
+		"y_chou@winroader.co.jp",
+		"h_murakami@winroader.co.jp",
+		"eco-center@winroader.co.jp",
+		"mura_kaisyu@winroader.co.jp",
+		"meg_kaisyu@winroader.co.jp",
+		"s_okamura@winroader.co.jp",
+		"k_yamamoto@winroader.co.jp",
+		"a_nagahiro@winroader.co.jp",
+		"e_lee@winroader.co.jp",
+		"s_ohta@winroader.co.jp"
+	);
+	wp_mail($emails, $subject, $message, mail_header());
+
+}
+add_action( 'reviewReports', 'dailyReviewReplys');
+
+function dailyReviewReports(){
+
+	$y = date_parse(date("c", strtotime("-1 day")));
+	$yesterday = $y["year"]."年".$y["month"]."月".$y["day"]."日";
+	$subject = "【新着レビュー】". $yesterday;
+
+	$message .= <<<EOF
+{$yesterday}に投稿された新着レビュー
+
+------------
+
+EOF;
+
+	$args = array(
+		"post_status" => array("pending", "publish", "draft"),
+		"posts_per_page" => -1,
+		"post_type" => "voices",
+		"voicekinds" => "review",
+		"year" => $y["year"],
+		"month" => $y["month"],
+		"day" => $y["day"]
+	);
+	$voices = query_posts($args);
+	if($voices){
+		foreach($voices as $voice){
+
+			$name = get_post_meta($voice->ID, "voiceInfo06", TRUE);
+			$econum = get_post_meta($voice->ID, "voiceInfo24", TRUE);
+			$guid = wp_get_shortlink($voice->ID);
+
+			$message .= <<<EOF
+
+{$name}様 (エコNo. {$econum})
+
+EOF;
+		}
+
+	}else{
+		$message .= "未公開レビュー無し";
+	}
+
+$message .= <<<EOF
+
+------------
+
+管理画面 http://www.eco-kaishu.jp/wp-admin
+
+EOF;
+
+	$emails = array(
+		"e.lee.winroader@gmail.com",
+		"a_nagahiro@winroader.co.jp"
+	);
+	wp_mail($emails, $subject, $message, mail_header());
+
+}
+add_action( 'reviewReports', 'dailyReviewReports');
+function reviewReportsActivation() {
+	if (! wp_next_scheduled( 'reviewReports')){
+		wp_schedule_event( ceil( time() / 86400 ) * 86400 + (5 - get_option( 'gmt_offset' ) ) * 3600, 'daily', 'reviewReports' );
+	}
+}
+add_action('wp', 'reviewReportsActivation');
+
 
 
 ?>
