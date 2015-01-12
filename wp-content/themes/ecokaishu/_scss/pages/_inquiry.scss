@@ -1,8 +1,6 @@
 
 .inquiry{
 
-padding: 3.0rem 0;
-
 //.icomoon
 .icomoon{
 	display: inline-block;
@@ -21,6 +19,10 @@ padding: 3.0rem 0;
 .container{
 	position: relative;
 	overflow: hidden;
+}
+
+iframe {
+	display: none;
 }
 
 h1{
@@ -64,7 +66,22 @@ h2{
 			display: inline !important;
 		}
 	}
-
+	.siteFooter {
+		position: absolute;
+		bottom: 10px;
+	    left: 50%;
+	    width: 75%;
+	    margin: 0 0 0 -37.5%;
+	}
+}
+//Mobile
+@media only screen and (max-width: $maxWidth){
+	.container{
+		padding: 0;
+	}
+	.siteFooter {
+		font-size: 12px;
+	}
 }
 
 //**********************************************************************
@@ -192,8 +209,7 @@ h2{
 
 	display: block;
 	text-align: center;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	position: relative;
 
 	label.error{
 		display: block;
@@ -211,7 +227,13 @@ h2{
 		@include box-sizing(border-box);
 
 	}
-
+	//Mobile
+	@media only screen and (max-width: $maxWidth){
+		margin: 0;
+		padding: 0 1.0rem;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
 }
 
 //**********************************************************************
