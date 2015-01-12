@@ -29,7 +29,7 @@
 				}
 
 				//.action
-				.action{	
+				.action{
 
 					margin-top: 0.5rem;
 					padding: 1.0rem 0;
@@ -154,7 +154,7 @@
 			width: 160px;
 			height: 160px;
 			margin-top:  0;
-			padding-top: 3.0rem;
+			padding-top: 2.0rem;
 			@include box-sizing(border-box);
 			@include border-radius(50%);
 			background: rgba($yellow, .4);

@@ -31,7 +31,7 @@ get_header(); ?>
 		<div class="twelvecol col last">
 
 		<div class="contents">
-			<section class="sliderCampaign" id="achiveCampaign">
+			<section class="sliderCampaign" id="archiveCampaign">
 				<h3>ただ今進行中のキャンペーン</h3>
 				<div id="owl-slide" class="owl-carousel owl-theme">
 					<?php
@@ -74,7 +74,7 @@ get_header(); ?>
 		<div class="contents">
 			<section>
 				<h3>キャンペーンアーカイブ</h3>
-				<div class="achiveIndex">
+				<div class="archiveIndex">
 					<div class="sixcol col">キャンペーン名</div>
 					<div class="twocol col">ステータス</div>
 					<div class="fourcol col last">キャンペーン終了日</div>
@@ -90,7 +90,7 @@ get_header(); ?>
 			   		$wp_query->query
 				));
 				if(have_posts()): ?>
-					<ul class="achiveList">
+					<ul class="archiveList">
 						<?php while(have_posts()): the_post(); ?>
 							<li>
 								<div class="sixcol col title"><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></div>
@@ -106,7 +106,7 @@ get_header(); ?>
 						<?php endwhile; ?>
 					</ul>
 				<?php endif ?>
-			<!--campaign achive--></section>
+			<!--campaign archive--></section>
 		<!--.contents--></div>
 
 		<?php if(function_exists('wp_pagenavi')): ?>

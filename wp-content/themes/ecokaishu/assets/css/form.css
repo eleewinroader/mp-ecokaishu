@@ -236,52 +236,7 @@ textarea{
 	}
 
 
-	/* law*/
-	#law .lawDoc{
-		display: block !important;
-		overflow: scroll;
-		overflow-x: hidden;
-		overflow-y: visible;
-		height: 160px;
-		padding: 0.5rem;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-		border: 1px solid #d3d3d4;
-		font-size: 90%;
-		line-height: 1.5em;
-	}
-	#law .lawBtn{
-		display: block;
-		margin: 0.5rem 0;
-	}
-	#law .lawBtn label{
-		font-weight: bold;
-	}
-	#law .lawDoc h3{
-		margin: 0;
-		padding: 0;
-		border: none;
-		text-align: left;
-		line-height: 28px;
-		font-size: 16px;
-	}
-	#law .lawDoc h4{
-		margin: 0;
-		padding: 0;
-		background: none;
-	}
-	#law .lawDoc h4:after{
-		border-color: transparent !important;
-	}
-	#law .lawDoc li,
-	#law .lawDoc p{
-		margin: 0;
-		padding: 0;
-	}
-	#confirm #law{
-		display: none !important;
-	}
+	
 
 /* formBtns
 ***********************************************************************/

@@ -52,20 +52,20 @@
 $prefixList: -webkit-, -moz-, null;
 
 //breakpoints
-$minWidthSmall: 568px;
-$maxWidthSmall: 569px;
+$minWidthSmall: 376px;
+$maxWidthSmall: 375px;
 $minWidth: 769px;
 $maxWidth: 768px;
 $minWidthBig: 1025px;
 $maxWidthBig: 1024px;
 
 //fontsize
-$small: 10px;
-$smaller: 12px;
-$normal: 14px;
-$bigger: $normal* 1.5;
-$big: $normal* 2;
-$biggest: $normal*2.5;
+$small: 8pt;
+$smaller: 10pt;
+$normal: 100%;
+$bigger: 17pt;
+$big: 19pt;
+$biggest: 21pt;
 
 //color settings
 $green: #009ea1;
@@ -112,6 +112,7 @@ $google: #D34836;
 @import "pages/article.scss";
 @import "pages/columns.scss";
 @import "pages/campaign.scss";
+@import "pages/inquiry.scss";
 
 @import "pages/home.scss";
 @import "pages/ecokaishu.scss";
@@ -123,3 +124,4 @@ $google: #D34836;
 @import "pages/staff.scss";
 @import "pages/accomplishment.scss";
 @import "pages/concierge.scss";
+@import "pages/voice.scss";

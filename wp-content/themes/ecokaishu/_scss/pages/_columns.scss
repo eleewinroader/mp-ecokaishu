@@ -295,6 +295,73 @@ ul{
 
 }
 
+
+
+//**********************************************************************
+// .customerProfile
+//*********************************************************************
+
+.customerProfile{
+
+	margin-bottom: 2.0rem;
+
+	h4{
+		margin-top: 1.0rem;
+		margin-bottom: 1.0rem;
+		font-size: $bigger !important;
+	}
+
+	.star{
+		display: block;
+		margin-bottom: 1.0rem;
+	}
+
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		padding: 1.5rem;
+		border: 1px solid rgba($black, .05);
+
+		.customerInfo{
+			float: right;
+			width: 48.5%;
+		}
+
+		.customerComments{
+			float: left;
+			width: 48.5%;
+		}
+
+	}
+
+	//Mobile
+	@media all and (min-width: $minWidth){
+
+		.customerComments{
+			margin-bottom: 2.0rem;
+		}
+
+	}
+
+
+}
+
+
+//**********************************************************************
+// .archiveList
+//*********************************************************************
+
+.archiveList{
+
+	margin-bottom: 2.0rem;
+	
+	li:last-of-type{
+		border-bottom: 1px solid rgba($black, .1);
+	}
+
+}
+
 //**********************************************************************
 // .post
 //**********************************************************************

@@ -105,7 +105,8 @@ module.exports = function(grunt){
 					"wp-content/themes/ecokaishu/assets/js/masonry.pkgd.min.js",
 					"wp-content/themes/ecokaishu/assets/js/imagesloaded.pkgd.min.js",
 					"wp-content/themes/ecokaishu/assets/js/inewsticker.js",
-					"wp-content/themes/ecokaishu/assets/js/share.js"
+					"wp-content/themes/ecokaishu/assets/js/share.js",
+					"wp-content/themes/ecokaishu/assets/js/jquery.validate.js"
 				],
 				dest: "wp-content/themes/ecokaishu/script.min.js"
 			}

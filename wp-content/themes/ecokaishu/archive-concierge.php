@@ -143,7 +143,7 @@ get_header( ); ?>
 		<section class="contents" id="helps">
 			<div class="sixcol col listPosts" id="faq">
 				<h3>よくある質問</h3>
-				<a href="<?php echo get_post_type_archive_link("faq"); ?>" class="toAchive">一覧を見る</a>
+				<a href="<?php echo get_post_type_archive_link("faq"); ?>" class="toarchive">一覧を見る</a>
 				<ul class="">
 				<?php
 				$args = array(
@@ -158,7 +158,7 @@ get_header( ); ?>
 			</div>
 			<div class="sixcol col listPosts last" id="notices">
 				<h3>新着情報</h3>
-				<a href="<?php echo get_post_type_archive_link("notices"); ?>" class="toAchive">一覧を見る</a>
+				<a href="<?php echo get_post_type_archive_link("notices"); ?>" class="toarchive">一覧を見る</a>
 				<ul>
 				<?php
 				$args = array(

@@ -1,0 +1,368 @@
+// Compass library
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+
+.container { 
+	position: relative; 
+	width: 100%; 
+	overflow: hidden;
+	font: 14px/1 Meiryo, "メイリオ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Verdana, Geneva, Arial, Helvetica; 
+	line-height: 22px;
+}
+.section { 
+	width: 100%; 
+	text-align: center;
+	background: #d2d2d2;
+	@include background-image(linear-gradient(to right, #d2d2d2, #ffffff, #d2d2d2));
+	a {
+		@include border-radius(5px);
+		padding: 12px;
+		display: inline-block; 
+		margin:20px auto;
+		color: #ffffff; 
+		text-decoration: none;
+		&:hover {
+			opacity: 0.8;
+		}
+		&.btnNext {
+			background: #57a7b5; 	 
+		}
+		&.btnPrev {
+			background: #cccccc; 
+		}
+	}
+	h2 {
+		color: #999999;
+		padding:100px 0;
+		font-weight: normal;
+		font-family: Arial;
+		span {
+			font-size: 30px;
+		}
+	}
+    label.error {
+		display: block;
+		color: red;
+	}
+	.intro {
+		padding: 100px 0;
+		p {
+			margin-bottom: 30px;
+		}
+	}	
+}
+.frmGeneral {
+	overflow: hidden;
+	margin: 30px auto;
+	width: 835px;
+	ul {
+		li {
+			 margin-bottom: 10px;
+		}
+	}	
+	input {
+		background: none;
+		border: 1px solid #d3d3d3;
+		padding: 15px 10px;
+	}
+	textarea {
+		background: #ffffff;
+		border: 1px solid #d3d3d3;
+		padding: 15px 10px;
+		resize: none;
+		min-width: 90%;
+	}
+	select {
+		background: #d3d3d3;
+		border: #b3b3b3 solid 1px;
+		padding: 10px;
+	}
+}
+#section01, #section02  { 
+	.btnNext{
+		min-width: 250px; 	
+	}
+}
+#section03, #section04, #section05, #section06, #section07, #section08, #section09, #section10, #section11, #section12, #section13 {
+	.btnNext, .btnPrev {
+		min-width: 130px; 	
+		margin: 15px 8px;
+	}
+}
+/*section 2*/
+#section02 {
+	p {
+		padding: 100px 0 0 0;
+	}
+	.txtNote {
+		text-align: left;
+		background: #ffffff;
+		border: #d3d3d3 solid 1px;
+		width: 50%;
+		margin: 50px auto;
+		padding: 10px;
+		dt {
+			margin: 5px;
+		}
+		dd {
+			margin: 5px 15px;
+		}
+	}
+}
+/*section 3*/
+#section03, #section13 {
+	input[type="text"], input[type="password"], input[type="email"], input[type="tel"] { 
+		width: 300px;
+	}
+	@media only screen and (max-width: 599px){
+		input[type="text"], input[type="password"], input[type="email"], input[type="tel"] { 
+			width: 80%;
+		}
+	}
+}
+/*section 4*/
+#section04 {
+	input[type="text"] { 
+		width: 250px;
+	}
+	select {
+		width: 150px;
+	}
+	.frmGeneral { 
+		ul {
+			li {
+				p {
+					margin: 0 10px;
+					display: inline-block;
+					label {
+						margin: 0 5px;
+					}
+				}
+			}
+		}
+	}
+	@media only screen and (max-width: 599px){
+		select {
+			width: 70px;
+		}
+		.frmGeneral{
+			ul {
+				li {
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
+/*section 5*/
+#section05 {
+	input[type="text"] { 
+		width: 400px;
+	}
+	select {
+		width: 200px;
+		margin: 0 10px;
+	}	
+	.frmGeneral {
+		margin: 0 auto;
+		p {
+			margin: 20px 0;
+		}
+		ul {
+			margin-bottom: 80px;
+			li {
+				p {
+					margin: 0 10px;
+					display: inline-block;
+					vertical-align: top;
+				}
+			}
+		}
+	}
+}
+/*section 6*/
+#section06 {
+	input[type="text"] { 
+		width: 400px;
+	}
+	.frmGeneral {
+		ul {
+			li {
+				p {
+					margin: 0 20px;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+/*section 7*/
+#section07 {
+	select {
+		width: 200px;
+		margin: 0 10px;
+	} 
+	.frmGeneral {
+		margin: 0 auto;
+		p {
+			margin: 0 0 20px 0;
+		}
+		ul {
+			margin-bottom: 80px;
+			li {
+				p {
+					margin: 0 20px 15px 0;
+					display: inline-block;
+					vertical-align: top;
+				}
+			}
+		}
+	}
+}
+/*section 8 - section 9 - section 10*/
+#section08, #section09, #section10, #section11 {
+	.frmGeneral { 
+		ul {
+			li { 
+				p {
+					margin: 0 20px 15px 0;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+/*section 13*/
+#section13 {
+	input[type="submit"] {
+		margin: 15px 8px;
+    	min-width: 150px;
+    	background: #57a7b5;
+    	border-radius: 5px;
+	    color: #ffffff;
+	    display: inline-block;
+	    margin: 20px auto;
+	    padding: 14px 0;
+	    border: none;
+	    cursor: pointer;
+	}
+}
+/*section 14*/
+#section14 {
+	.btnFinish {
+		border: 2px solid #d3d3d3;
+		color: #000000;
+		min-width: 300px;
+	}
+}
+
+#txtRecommend01, #txtRecommend02 { 
+	display: none;
+}
+
+/*mobile setting*/
+@media only screen and (max-width: 834px){
+	.section {
+		background: #ffffff;	
+		.intro {
+			padding: 50px 0;
+			p {
+				margin-bottom: 15px;
+			}
+		}			
+		h2 {
+			padding: 50px 0;
+		}
+	}
+	.frmGeneral {
+		width: 95%;
+	}
+	#section03, #section04, #section05, #section06, #section07, #section08, #section09, #section10, #section11, #section12, #section13 {
+		.btnNext, .btnPrev {
+			min-width: 32%;
+		}
+	}
+	#section02 {
+		p {
+			padding: 50px 0 0 0;
+		}	
+		.txtNote {
+			width: 85%;
+		}	
+	}
+	#section03, #section13 {
+		input[type="text"], input[type="password"], input[type="email"], input[type="tel"] { 
+			width: 80%;
+		}
+	}
+	#section04 {
+		select {
+			width: 70px;
+		}
+		.frmGeneral { 
+			ul {
+				li {
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+	#section05 {
+		input[type="text"] { 
+			width: 80%;
+		}
+		select {
+			margin: 15px 0 0 0;
+		}	
+		.frmGeneral {
+			ul {
+				margin-bottom: 40px;
+				li {
+					p {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+	#section06 {
+		input[type="text"] { 
+			width: 80%;
+		}
+	}
+	#section07 {
+		.frmGeneral {
+			ul {
+				margin-bottom:30px;
+				li {
+					p {
+						margin: 0 5px 5px 0;
+					}
+				}
+			}
+		}
+	}
+	#section13 {
+		input[type="submit"]{
+			min-width: 40%;
+			padding: 15px 0;
+		}
+	}
+	#section14 {
+		.btnFinish {
+			min-width: 80%;
+		}
+	}
+}
+
+@media only screen and (max-width: 320px){
+	.section {		
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+}

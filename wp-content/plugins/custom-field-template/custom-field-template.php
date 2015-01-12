@@ -2138,7 +2138,7 @@ jQuery(this).addClass("closed");
 	
 	function make_textarea( $name, $sid, $data ) {
 		$cftnum = $rows = $cols = $tinyMCE = $htmlEditor = $mediaButton = $default = $hideKey = $label = $code = $class = $style = $wrap = $before = $after = $multipleButton = $mediaOffMedia = $mediaOffImage = $mediaOffVideo = $mediaOffAudio = $onclick = $ondblclick = $onkeydown = $onkeypress = $onkeyup = $onmousedown = $onmouseup = $onmouseover = $onmouseout = $onmousemove = $onfocus = $onblur = $onchange = $onselect = '';
-		$hide = $addfield = $out = $out_key = $out_value = $media = $editorcontainer_class = '';
+		$hide = $addfield = $out = $out_key = $out_value = $media = $editorcontainer_class = $disabled = '';
 		extract($data);
 		$options = $this->get_custom_field_template_data();
 
@@ -2252,7 +2252,8 @@ jQuery(this).addClass("closed");
 		if ( !empty($class) ) $content_class .= ' ' . $class;
 		$content_class .= '"';
 		if ( !empty($style) ) $style = ' style="' . $style . '"';
-		if ( !empty($wrap) && ($wrap == 'soft' || $wrap == 'hard' || $wrap == 'off') ) $wrap = ' wrap="' . $wrap . '"';
+		if ( !empty($wrap) && ($wrap == 'soft' || $wrap == 'hard' || $wrap == 'off') ) $wrap = ' wrap="' . $wrap . '"';		
+		if ( !empty($disabled) ) $disabled = ' disabled="disabled"';
 
 		if ( !empty($label) && !empty($options['custom_field_template_replace_keys_by_labels']) )
 			$title = stripcslashes($label);
@@ -2322,7 +2323,7 @@ jQuery(this).addClass("closed");
 			endif;
 		endif;
 		
-		$out_value .= '<div' . $editorcontainer_class . ' id="editorcontainer_' . $textarea_id . '" style="clear:none;"><textarea id="' . $textarea_id . '" name="' . $name . '[' . $sid . '][]" rows="' .$rows. '" cols="' . $cols . '"' . $content_class . $style . $event_output . $wrap . '>' . htmlspecialchars(trim($value)) . '</textarea><input type="hidden" name="'.$name.'_rand['.$sid.']" value="'.$rand.'" /></div>';
+		$out_value .= '<div' . $editorcontainer_class . ' id="editorcontainer_' . $textarea_id . '" style="clear:none;"><textarea id="' . $textarea_id . '" name="' . $name . '[' . $sid . '][]" rows="' .$rows. '" cols="' . $cols . '"' . $content_class . $style . $event_output . $wrap .  $disabled . '>' . htmlspecialchars(trim($value)) . '</textarea><input type="hidden" name="'.$name.'_rand['.$sid.']" value="'.$rand.'" /></div>';
 		if ( ($htmlEditor == true || $tinyMCE == true) && substr($wp_version, 0, 3) < '3.3' ) $out_value .= '</div>';
 		$out_value .= trim($after);
 		$out .= $out_value.'</dd></dl>'."\n";

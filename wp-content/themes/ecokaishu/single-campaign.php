@@ -4,8 +4,9 @@
 */
 
 $postType = get_post_type_object(get_post_type());
+$formType = get_post_meta($post->ID, "campInfo09", TRUE);
 get_header( );?>
-	
+
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
@@ -13,17 +14,17 @@ get_header( );?>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
-						</a> 
+						</a>
 					</div>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo get_post_type_archive_link($postType->name); ?>" itemprop="url">
 							<span itemprop="title"><?php echo $postType->label; ?></span>
-						</a> 
+						</a>
 					</div>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo get_permalink($post->ID) ?>" itemprop="url">
 							<span itemprop="title"><?php the_title(); ?></span>
-						</a> 
+						</a>
 					</div>
 				</div>
 			</div>
@@ -63,27 +64,19 @@ get_header( );?>
 				<!-- .campIntro  .col--></div>
 			<!-- .campIntro  .container--></div>
 
-			<?php if(campCode($post, "children", "") == "camp1407-00"): ?>
-
-				<div id="appealItems">
-					<div class="container">
-						<div id="timeline" class="sixcol col">
-							<a width="100%" data-theme="light" class="twitter-timeline" href="https://twitter.com/hashtag/%E3%82%A8%E3%82%B3%E3%83%A9%E3%83%B3%E3%83%89" data-widget-id="483428412866830337" data-chrome="noborders transparent" data-related="eco_land">#エコランド Tweets</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-						</div>
-						<div class="sixcol col last" id="welcome">
-							<div id="btns">
-								<p><span class="block">まだエコランド会員でない方は</span><span class="block">こちらから登録(無料)できます！</span></p>
-								<a href="">エコランド会員とは？</a>
-							</div>
-							<img src="<?php echo get_bloginfo("template_url"); ?>/assets/img/campaign/1407/00_welcome_icon.png" alt="" id="ecolin" />
-						</div>
-					<!-- #appealItems .container--></div>
-				<!-- #appealItems--></div>
-
-			<?php endif; ?>
-
 			<?php
+			$url = get_bloginfo("url");
+			if(campCode($post, "children", "") == "camp0000-04"){
+				$reviewForm = <<<EOF
+<div class="contents toReviewForm">
+	<div class="container">
+		<a href="{$url}/inquiry"><span class="block">お客様レビュー</span><span class="block">フォームはこちら</span></a>
+	</div>
+</div>
+EOF;
+				echo $reviewForm;
+			}
+
 			if(is_single(4068)):
 			$convSales = convSale();
 			if($convSales): ?>
@@ -113,10 +106,10 @@ get_header( );?>
 				<!--#convenience --></section>
 			<?php endif; endif; ?>
 
-			<?php 
+			<?php
 			$tags = get_the_terms($post->ID, "campaignstatus");
 			if(!$tags){
-				$campArchiveLink = get_post_type_archive_link("campaign"); 
+				$campArchiveLink = get_post_type_archive_link("campaign");
 				$endstring = <<<EOF
 <div class="contents end">
 	<div class="container">
@@ -169,15 +162,14 @@ EOF;
 		<!-- .campIntro --></div>
 
 		<?php
-		
+
 		$campFlowInfo01 = getMetaArr($post, "campFlowInfo01");
 		$campFlowInfo02 = getMetaArr($post, "campFlowInfo02");
+		$campFlowInfo05 = getMetaArr($post, "campFlowInfo05");
 
 		$length = count($campFlowInfo01);
-		if($length > 1): 
-
+		if($length > 1):
 			$num = 12 / $length;
-
 			switch ($num) {
 				case '3':
 					$class = "threecol";
@@ -194,8 +186,16 @@ EOF;
 				<div class="obj"><span>FLOW</span></div>
 				<div class="container">
 				<div class="twelvecol col last">
-					<h3>申込から引取までの流れ</h3>
-					<p class="al_c">WEBからお申し込みをするだけで、その後はエコランドの専門スタッフに全部お任せください！</p>
+				<?php
+				$flowTitle = get_post_meta($post->ID, "campFlowInfo03", TRUE);
+				$flowContents = get_post_meta($post->ID, "campFlowInfo04", TRUE);
+
+
+				if($flowTitle) echo '<h3>'.$flowTitle.'</h3>';
+				else echo '<h3>申込から引取までの流れ</h3>';
+				if($flowContents) echo '<p class="al_c">'.$flowContents.'</p>';
+				else echo '<p class="al_c">WEBからお申し込みをするだけで、その後はエコランドの専門スタッフに全部お任せください！</p>';
+				?>
 				</div>
 				<ul class="twelvecol col last">
 				<?php
@@ -206,16 +206,21 @@ EOF;
 					);
 					$flows = query_posts($args);
 					foreach($flows as $flow){
-						$j = 0;
 						$flowInfo01 = getMetaArr($flow, "flowInfo01");
 						$flowInfo03 = getMetaArr($flow, "flowInfo03");
 						$flowInfo04 = getMetaArr($flow, "flowInfo04");
+						$flowInfo05 = getMetaArr($flow, "flowInfo05");
+						$key = array_search($campFlowInfo02[$i], $flowInfo01);
 						echo '<li class="'.$class.'">';
-						echo '<span class="'.$flowInfo04[$j].' icon"></span>';
-						echo '<p class="title">'.$flowInfo01[$j].'</p>';
-						echo '<p class="txt">'.$flowInfo03[$j].'</p>';
+						$attr = array(
+							'class' => 'flowImage',
+							'alt' => $flowInfo01[$key]
+						);
+						if($campFlowInfo05[$i]) echo wp_get_attachment_image($flowInfo05[$i], 'small', '', $attr);
+						else echo '<span class="'.$flowInfo04[$key].' icon"></span>';
+						echo '<p class="title">'.$flowInfo01[$key].'</p>';
+						echo '<p class="txt">'.$flowInfo03[$key].'</p>';
 						echo '</li>';
-						$j++;
 					}
 				}?>
 				</ul>
@@ -265,7 +270,7 @@ EOF;
 							<p class="al_c"><?php echo $name."様 / ".$pref.$city."在住・".$sex."・".$age; ?> </p>
 							<p class="al_c">対象品：<?php echo get_post_meta($voice->ID, "voiceInfo07", TRUE); ?></p>
 						</header>
-						<?php if($cstmImg): ?>		
+						<?php if($cstmImg): ?>
 						<div class="threecol col flRight al_r">
 							<div class="img">
 								<?php echo get_attached_img($voice->ID, "voiceInfo01"); ?>
@@ -291,16 +296,20 @@ EOF;
 			<!-- .voices --></section>
 		<?php endif; ?>
 
-		<?php echo $endstring; ?>
-
-		<aside class="contents contactBnr">
-			<div class="container">
-				<div class="twelvecol col last">
-					<h3 class="al_l"><?php the_title(); ?>の申込・問合せはお気軽にどうぞ!</h3>
-					<?php echo contactBnr(TRUE); ?>
+		<?php
+		echo $endstring;
+		if(campCode($post, "children", "") == "camp0000-04"):
+			echo $reviewForm;
+		else: ?>
+			<aside class="contents contactBnr">
+				<div class="container">
+					<div class="twelvecol col last">
+						<h3 class="al_l"><?php the_title(); ?>の申込・問合せはお気軽にどうぞ!</h3>
+						<?php echo contactBnr(TRUE, $formType); ?>
+					</div>
 				</div>
-			</div>
-		</aside>
+			</aside>
+		<?php endif; ?>
 
 
 <?php get_footer(); ?>

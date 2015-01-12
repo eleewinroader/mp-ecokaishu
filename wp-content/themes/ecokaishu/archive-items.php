@@ -83,7 +83,7 @@ get_header();
 		<div class="contents">
 			<section id="faq" class="sixcol col listPosts">
 				<h3>エコ回収品関するよくある質問</h3>
-				<a href="<?php echo get_post_type_archive_link("faq"); ?>" class="toAchive">一覧を見る</a>
+				<a href="<?php echo get_post_type_archive_link("faq"); ?>" class="toarchive">一覧を見る</a>
 				<ul><?php
 					$args = array(
 						"order" => ASC,

@@ -7,128 +7,141 @@
  * @since ecokaishuCMS 0.0
  */
 
-get_header(); ?>
-	
-	<header>
-		<nav id="sitepath">
-			<ul class="bread_crumb">
-				<li><a href="<?php echo get_post_type_archive_link('voices'); ?>">お客様の声</a></li>
-				<li><?php the_title(); ?></li>
-			</ul>
-		</nav>
-		<h2><?php the_title(); ?>のお客様の声一覧</h2>
-	</header>
+get_header();
 
-	<div class="contents">
-		<div class="content">
-			<?php the_content(); ?>
+	$crtUserId = get_current_user_id();
+	$crtUser = get_user_by("id", $crtUserId);
+
+	$authors = get_the_terms($post->ID, "author");
+	$authorNames = array();
+	foreach($authors as $author) array_push($authorNames, $author->name); 
+
+
+	$review01 = get_post_meta($post->ID, "voiceInfo13", TRUE);
+	$review01Score = get_post_meta($post->ID, "voiceInfo12", TRUE) ;
+	$review02 = get_post_meta($post->ID, "voiceInfo15", TRUE);
+	$review02Score = get_post_meta($post->ID, "voiceInfo14", TRUE) ;
+	$review03 = get_post_meta($post->ID, "voiceInfo17", TRUE);
+	$review03Score = get_post_meta($post->ID, "voiceInfo16", TRUE) ;
+	$review04 = get_post_meta($post->ID, "voiceInfo19", TRUE);
+	$review04Score = get_post_meta($post->ID, "voiceInfo18", TRUE);
+	$navPage .= '
+			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+				<a href="'.$postTypeUrl.'" itemprop="url">
+				<a href="'.get_post_type_archive_link("voices").'">
+					<span itemprop="title">お客様の声</span>
+				</a> 
+			</div>
+			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+				<a href="'.get_permalink($post->ID).'" itemprop="url">
+					<span itemprop="title">'.getCustomerAreas($post).' '.getCustomerName($post).'様の口コミ</span>
+				</a> 
+			</div>';
+	?>
+
+
+
+	<div class="headerPage">
+		<nav class="navPage">
+			<div class="container">
+				<div class="twelvecol col last">
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
+							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
+						</a> 
+					</div>
+					<?php echo $navPage; ?>
+				</div>
+			</div>
+		</nav>
+	<!--.headerPage--></div>
+	
+	<div class="container">
+		<div class="fourcol col">
+			<div class="customerProfile">
+				<h2>
+					<?php echo getCustomerName($post); ?><span class="small">様</span>
+				</h2>
+				<dl>
+					<dt class="hide">性別・年代</dt><dd class="name"><?php echo getCustomerSex($post)." / ".getCustomerAge($post); ?></dd>
+					<dt class="hide">回収エリア</dt><dd class="place"><?php echo getCustomerAreas($post, TRUE);?></dd>
+					<dt class="hide">回収日時</dt><dd class="date"><time datetime="<?php echo getCustomerDate($post); ?>"><?php echo getCustomerDate($post);?>回収</time></dd>
+				</dl>
+				<h3 class="index">エコ回収をご利用になったきっかけ</h3> 
+				<ul><?php echo getCustomerStarts($post, "li"); ?></ul>
+				<h3 class="index">エコランドをお選びになった理由</h3>
+				<ul><?php echo getCustomerFeatures($post, "li"); ?></ul>
+				<h3 class="index">エコ回収したアイテム</h3>
+				<ul><?php echo getCustomerItems($post, TRUE, "li"); ?></ul>
+			<!--customerProfile--></div>
+			<div class="listSns">
+				<ul>
+					<li id="shareFacebook"><a href=""><span class="label">facebook</span></a></li>
+					<li id="shareTwitter"><a href=""><span class="label">twitter</span></a></li>
+					<li id="shareGoogle"><a href=""><span class="label">Google+</span></a></li>
+				</ul>
+			<!--listSns--></div>
+		</div>
+		<div class="eightcol col last customerVoices">
+			<section class="answer">
+				<h3>エコ回収サービス全体について評価してください。</h3>
+				<span class="rating-foreground star star<?php echo $review03Score; ?>"> 
+					<meta itemprop="rating" content="<?php echo $review03Score; ?>" /> 
+					<span class="index"><?php echo getCustomerReview($post, $review03Score); ?></span>
+				</span> 
+				<?php echo $review03; ?>
+			<!--answer--></section>
+			<section class="answer">
+				<h3>電話受付・メール対応など、コンシェルジュ<span class="small">(受付スタッフ)</span>の対応はいかがでしたか？</h3>
+				<span class="rating-foreground star star<?php echo $review01Score; ?>"> 
+					<meta itemprop="rating" content="<?php echo $review01Score; ?>" /> 
+					<span class="index"><?php echo getCustomerReview($post, $review01Score); ?></span>
+				</span> 
+				<?php
+				echo $review01;
+				if(getStaffComments($post, "conciergestaff", $crtUser)){
+					echo getStaffComments($post, "conciergestaff", $crtUser);
+				}
+				if(is_user_logged_in()){
+					if($crtUser->roles[0] == "conciergestaff"){
+						$search = in_array($crtUser->user_login, $authorNames);
+						if($search) comment_form();
+					}
+				}?>
+			<!--answer--></section>
+			<section class="answer">
+				<h3>当日の集荷スタッフのご対応はいかがでしたか？</h3>
+				<span class="rating-foreground star star<?php echo $review02Score; ?>"> 
+					<meta itemprop="rating" content="<?php echo $review02Score; ?>" /> 
+					<span class="index"><?php echo getCustomerReview($post, $review02Score); ?></span>
+				</span> 
+				<?php
+				echo $review02;
+				if(getStaffComments($post, "cltstaff", $crtUser)){
+					echo getStaffComments($post, "cltstaff", $crtUser);
+				}
+				if(is_user_logged_in()){
+					if($crtUser->roles[0] == "cltstaff"){
+						$search = in_array($crtUser->user_login, $authorNames);
+						if($search) comment_form();
+					}
+				}?>
+			<!--answer--></section>
+			<?php if($review04Score == 0): ?>
+				<section class="answer">
+					<h3>不用品でお困りの方にエコ回収をオススメして頂けますか？</h3>
+					<?php echo $review04;?>
+				<!--answer--></section>
+			<?php endif; ?>
+		<!--customerVoices--></div>
+	</div>
+
+	<div class="contents contactBnr">
+		<div class="container">
+			<div class="twelvecol col last">
+				<?php echo contactBnr(TRUE); ?>
+			</div>
 		</div>
 	</div>
 
-	<?php
-	//該当のアイテム格納
-	$dates = wp_get_post_terms($post->ID, 'date');
-	foreach($dates as $date){
-		if($date->parent != 0) $month = $date;
-		else $year = $date;
-	}?>
-
-	<div class="content">
-		<ul class="monthNav">
-		<?php
-		$prevMonth = $month->name - 1;
-		$prevMonthTerm = get_term_by('name', $prevMonth, 'date');
-		$nextMonth = $month->name + 1;
-		$nextMonthTerm = get_term_by('name', $nextMonth, 'date');
-		$monthNav = array($prevMonthTerm, $nextMonthTerm);
-		$monthNavClass = array('prevMonth', 'nextMonth');
-		for($i=0; $i<count($monthNav); $i++){
-			$args = array(		
-				'post_type' => 'voices',
-				'post_status' => 'publish',
-				'tax_query' => array(
-					'relation' => 'AND',
-					array(
-						'taxonomy' => 'date',
-						'field' => 'id',
-						'terms' => array($year->term_id),
-					),
-					array(
-						'taxonomy' => 'date',
-						'field' => 'name',
-						'terms' => array($monthNav[$i]->name),
-					),
-				),
-			);
-			$prevnext = query_posts($args);
-			foreach($prevnext as $link){
-				echo '<li class="'.$monthNavClass[$i].'"><a href="'.get_permalink($link->ID).'"">'.$link->post_title.'</a></li>';
-			}
-		}?>
-		</ul>
-	</div>
-
-	<?php
-	//該当のアイテム回収実績のquery配列
-	$args = array(
-		'post_type' => 'works',
-		'post_status' => array('publish', 'pending'),
-		'post__not_in' => array(1328,1443,1428,1344,619,846,875,785),
-		'tax_query' => array(
-			'relation' => 'AND',
-			array(
-				'taxonomy' => 'date',
-				'field' => 'id',
-				'terms' => array($year->term_id),
-			),
-			array(
-				'taxonomy' => 'date',
-				'field' => 'id',
-				'terms' => array($month->term_id),
-			)
-		),
-	);
-
-	$voices = array('worksInfo17', 'worksInfo19');
-	$answerskind = array('worksInfo40', 'worksInfo41');
-	$answerscf = array('受付スタッフ', '回収スタッフ');
-
-	for($i=0; $i<count($voices); $i++):
-
-		$colletingWorks = query_posts(array_merge(array(
-			'posts_per_page' => -1,
-			'meta_query' => array(
-				array('key' => $voices[$i])
-			)
-		), $args));
-
-		if($colletingWorks): ?>
-
-			<section class="contents">
-				<h3><?php echo $answerscf[$i]; ?>について</h3>
-				<div class="content">
-					<ul class="cstmVoices">
-						<?php foreach($colletingWorks as $colletingWork): ?>
-							<li>
-								<dl class="cstm">
-									<dt><?php echo workArea($colletingWork).' / '.workCstmInfo($colletingWork); ?></dt>
-									<dd>
-										<?php print_r(get_post_meta($colletingWork->ID, $voices[$i], true)); ?>
-									</dd>
-								</dl>
-								<?php if(get_post_meta($colletingWork->ID, $answerskind[$i], true)): ?>
-									<dl class="ecoland">
-										<dt><?php echo $answerscf[$i]; ?>からのご返答</dt>
-										<dd><?php echo get_post_meta($colletingWork->ID, $answerskind[$i], true); ?></dd>
-									</dl>
-								<?php endif; ?>
-							</li>
-						<?php endforeach; ?>
-					</ul>
-				</div>
-			</section>
-	
-	<?php endif; endfor; ?>
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
