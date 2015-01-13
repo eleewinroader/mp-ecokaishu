@@ -45,6 +45,44 @@
 			</div>
 		<!--#campaign--></aside>
 
+		<aside id="contactBnr" class="boiler">
+			<div class="container">
+				<div class="twelvecol col last">
+					<h3>エコ回収の申込・問合せはお気軽にどうぞ!</h3>
+					<div class="contact">
+						<div class="msg">
+							<p class="explains">
+								<span class="block"><span class="block">お気軽に</span><span class="block">なんなりと</span><span class="block">お問い合わせ</span><span class="block">ください!</span></span>
+							</p>
+							<div id="ecolin"><img alt="" src="http://www.eco-kaishu.jp/wp-content/themes/ecokaishu/assets/img/base/staff_img_shinki.jpg"></div>
+						</div><!--.msg-->
+						<div id="tel" class="box">
+							<a onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});" href="tel:0120530539">
+								<p class="label block">お急ぎの方はお電話で</p>
+								<p class="action">
+									<span class="icon-phone"></span>
+									<span>0120-530-539</span>
+								</p>
+							</a>
+						</div>
+						<div id="mail" class="box">
+							<a href="http://www.eco-kaishu.jp/estimate/?pr_code=0-03">
+								<p class="label block">24時間受付中</p>
+								<p class="action">
+									<span class="icon-mail4"></span>
+									<span>メールで見積依頼</span>
+								</p>
+							</a>
+						</div>
+						<p id="openingHour">
+							<span class="date">営業時間</span>
+							<span class="date">平･土 9:00-22:00</span><span class="date">日･祝 9:00-20:00</span>
+						</p>
+					</div><!--.contact-->
+				<div class="clear"></div>
+			</div>
+		</aside>
+
 		<aside class="boiler" id="sitePages">
 			<div class="container">
 				<div class="twelvecol col last">
@@ -194,6 +232,8 @@ $(document).ready(function(){
 
 	$.event.add(window, "scroll", function(){
 
+		checkOffsetContactBnr();
+
 		//positions
 		var p = $(window).scrollTop();
 		var scrollPosition = windowHeight + p;
@@ -238,8 +278,16 @@ $(document).ready(function(){
 		}
 		<?php endif; ?>
 
-		
 	});
+
+
+
+	function checkOffsetContactBnr() {
+		if($('#contactBnr').offset().top + $('#contactBnr').height() >= $('#sitePages').offset().top)
+	        $('#contactBnr').css('position', 'static');
+	    if($(document).scrollTop() + window.innerHeight < $('#sitePages').offset().top)
+	        $('#contactBnr').css('position', 'fixed');
+	    }
 
 	// pc mouseover
 	$('.showLnSubmenu').on({
