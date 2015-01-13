@@ -106,6 +106,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 				<a href="#" id="btnNext01" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/personalinfo/'}');ga('send', 'pageview',{'page':'/inquiry/personalinfo/'});">次へ</a>
 			</div>
 		</div>
+		<footer class="siteFooter al_c">
+			<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+		</footer>
 	</div>
 	<!--end section01-->
 
@@ -120,6 +123,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="#" id="btnNext02" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q1/'}');ga('send', 'pageview',{'page':'/inquiry/q1/'});">同意してレビューを開始</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section02-->
 
@@ -142,6 +148,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev03" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/personalinfo/'}');ga('send', 'pageview',{'page':'/inquiry/personalinfo/'});">戻る</a><a href="javascript:void(0);" id="btnNext03" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q2/'}');ga('send', 'pageview',{'page':'/inquiry/q2/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section03-->
 
@@ -188,6 +197,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev04" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q1/'}');ga('send', 'pageview',{'page':'/inquiry/q1/'});">戻る</a><a href="javascript:void(0);" id="btnNext04" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q3/'}');ga('send', 'pageview',{'page':'/inquiry/q3/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section04-->
 
@@ -263,6 +275,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev05" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q2/'}');ga('send', 'pageview',{'page':'/inquiry/q2/'});">戻る</a><a href="javascript:void(0);" id="btnNext05" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q4/'}');ga('send', 'pageview',{'page':'/inquiry/q4/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section05-->
 
@@ -288,6 +303,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev06" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q3/'}');ga('send', 'pageview',{'page':'/inquiry/q3/'});">戻る</a><a href="javascript:void(0);" id="btnNext06" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q5/'}');ga('send', 'pageview',{'page':'/inquiry/q5/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section06-->
 
@@ -354,6 +372,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev07" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q4/'}');ga('send', 'pageview',{'page':'/inquiry/q4/'});">戻る</a><a href="javascript:void(0);" id="btnNext07" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q6/'}');ga('send', 'pageview',{'page':'/inquiry/q6/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section07-->
 
@@ -387,6 +408,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev08" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q5/'}');ga('send', 'pageview',{'page':'/inquiry/q5/'});">戻る</a><a href="javascript:void(0);" id="btnNext08" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q7/'}');ga('send', 'pageview',{'page':'/inquiry/q7/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section08-->
 
@@ -411,6 +435,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev09" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q6/'}');ga('send', 'pageview',{'page':'/inquiry/q6/'});">戻る</a><a href="javascript:void(0);" id="btnNext09" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q8/'}');ga('send', 'pageview',{'page':'/inquiry/q8/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section9-->
 
@@ -435,6 +462,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev10" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q7/'}');ga('send', 'pageview',{'page':'/inquiry/q7/'});">戻る</a><a href="javascript:void(0);" id="btnNext10" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q9/'}');ga('send', 'pageview',{'page':'/inquiry/q9/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section10-->
 
@@ -456,6 +486,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev11" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q8/'}');ga('send', 'pageview',{'page':'/inquiry/q8/'});">戻る</a><a href="javascript:void(0);" id="btnNext11" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q10/'}');ga('send', 'pageview',{'page':'/inquiry/q10/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section11-->
 
@@ -472,6 +505,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev12" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q9/'}');ga('send', 'pageview',{'page':'/inquiry/q9/'});">戻る</a><a href="javascript:void(0);" id="btnNext12" class="btnNext" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/lottery/'}');ga('send', 'pageview',{'page':'/inquiry/lottery/'});">次へ</a>
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</section>
 		<!--end section12-->
 
@@ -492,6 +528,9 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 					<a href="javascript:void(0);" id="btnPrev13" class="btnPrev" onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/q10/'}');ga('send', 'pageview',{'page':'/inquiry/q10/'});">戻る</a><input onclick="ga('secondTracker.send','pageview',{'page':'/inquiry/thanks/'}');ga('send', 'pageview',{'page':'/inquiry/thanks/'});" type="submit" value="送信" class="btnNext" id="btnNext13" />
 				</div>
 			</div>
+			<footer class="siteFooter al_c">
+				<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
+			</footer>
 		</div>
 		<!--end section13-->
 
@@ -541,9 +580,7 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/rm_google.php'); ?>
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/rm_yahoo.php'); ?>
 
-<footer class="siteFooter al_c">
-	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
-</footer>
+
 
 <?php wp_footer(); ?>
 
