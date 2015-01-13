@@ -35,7 +35,13 @@ get_header( );
 	<div class="container">
 		<div class="twelvecol col last">
 
-		<div class="contents">
+		<div id="intro">
+			<p><span class="block">エコランドではエコ回収を実際にご利用頂いたお客様に</span>
+			<span class="block">エコ回収サービスやスタッフの満足度評価をお願いしています。</span>
+			<span class="block">エコ回収の利用をご検討中の方はぜひお客様の生の声をご確認ください。</span></p>
+		</div>
+
+		<div class="contents" id="voicesList">
 			<div class="archiveIndex">
 				<div class="onecol col">投稿日</div>
 				<div class="twocol col">性別/年代</div>
@@ -55,8 +61,8 @@ get_header( );
 						<li class="al_c">
 							<a href="<?php echo get_permalink($post->ID); ?>">
 								<div class="onecol col">
-									<time datetime="<?php echo getCustomerDate($post); ?>">
-									<?php echo date("m/d", strtotime(getCustomerDate($post))); ?>
+									<time datetime="<?php echo get_the_date(); ?>">
+									<?php echo get_the_date("m/d"); ?>
 									</time>
 								</div>
 								<div class="twocol col"><?php echo getCustomerSex($post); ?> <?php echo getCustomerAge($post); ?></div>

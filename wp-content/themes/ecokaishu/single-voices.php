@@ -65,7 +65,6 @@ get_header();
 				<dl>
 					<dt class="hide">性別・年代</dt><dd class="name"><?php echo getCustomerSex($post)." / ".getCustomerAge($post); ?></dd>
 					<dt class="hide">回収エリア</dt><dd class="place"><?php echo getCustomerAreas($post, TRUE);?></dd>
-					<dt class="hide">回収日時</dt><dd class="date"><time datetime="<?php echo getCustomerDate($post); ?>"><?php echo getCustomerDate($post);?>回収</time></dd>
 				</dl>
 				<h3 class="index">エコ回収をご利用になったきっかけ</h3> 
 				<ul><?php echo getCustomerStarts($post, "li"); ?></ul>
@@ -73,7 +72,19 @@ get_header();
 				<ul><?php echo getCustomerFeatures($post, "li"); ?></ul>
 				<h3 class="index">エコ回収したアイテム</h3>
 				<ul><?php echo getCustomerItems($post, TRUE, "li"); ?></ul>
+				<p class="footnote p2_t clear"><small><?php echo get_the_date("Y-m-d"); ?>投稿</small></p>
 			<!--customerProfile--></div>
+			<div class="listStars small">
+				<h4>星印の見方</h4>
+				<ul>
+					<li><span class="star star5"></span>感動(期待以上)</li>
+					<li><span class="star star4"></span>満足(期待通り)</li>
+					<li><span class="star star3"></span>普通(まぁまぁ)</li>
+					<li><span class="star star2"></span>不満(がっかり)</li>
+					<li><span class="star star1"></span>非常に不満(もう頼まない)</li>
+
+				</ul>
+			<!--listSns--></div>
 			<div class="listSns">
 				<ul>
 					<li id="shareFacebook"><a href=""><span class="label">facebook</span></a></li>
@@ -130,6 +141,7 @@ get_header();
 			<?php if($review04Score == 0): ?>
 				<section class="answer">
 					<h3>不用品でお困りの方にエコ回収をオススメして頂けますか？</h3>
+					<p class="m1_b b">オススメする</p>
 					<?php echo $review04;?>
 				<!--answer--></section>
 			<?php endif; ?>

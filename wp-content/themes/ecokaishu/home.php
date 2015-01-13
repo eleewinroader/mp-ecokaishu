@@ -106,6 +106,9 @@ get_header( ); ?>
 
 			<div class="bnr" id="problems">
 				<div class="item">
+					<a href="<?php echo get_post_type_archive_link("voices"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/bnr_voices.jpg" alt="お客様の声ページへ" /></a>
+				</div>
+				<div class="item">
 					<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
 				</div>
 				<div class="item">

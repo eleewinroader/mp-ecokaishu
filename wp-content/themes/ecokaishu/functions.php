@@ -412,7 +412,7 @@ function getCustomerItems($post, $link=FALSE, $glue=FALSE){
 	$customerItems = array();
 	//getItems
 	$cltItems = get_the_terms($post->ID, 'cltitems');
-	//$append = array("アンティーク家具類", "ベッド類", "掃除機類", "書籍類", "枕類", "洗濯機類", "照明類", "パソコン類", "パソコン周辺機器類");
+
 	foreach($cltItems as $cltItem){
 		$pos = mb_strpos($cltItem->name, "類");
 		$cltItemName = $pos ? mb_substr($cltItem->name, 0, $pos) : $cltItem->name;
@@ -427,6 +427,7 @@ function getCustomerItems($post, $link=FALSE, $glue=FALSE){
 			}
 		}
 	}
+
 	for($i=0; $i<count($customerItems); $i++){
 		if($glue) $string .= "<".$glue.">";
 		if($link) $string .= '<a href="'. get_permalink($customerItems[$i]).'">';
@@ -435,6 +436,7 @@ function getCustomerItems($post, $link=FALSE, $glue=FALSE){
 		if($glue) $string .= "</".$glue.">";
 		if($i< count($customerItems)-1 && $glue == FALSE) $string .= "・";
 	}
+
 	return $string;
 }
 
