@@ -24,10 +24,10 @@
 define('DB_NAME', 'ecokaishu');
 
 /** MySQL データベースのユーザー名 */
-define('DB_USER', 'root');
+define('DB_USER', 'admin');
 
 /** MySQL データベースのパスワード */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', '653048');
 
 /** MySQL のホスト名 */
 define('DB_HOST', 'localhost');
@@ -37,6 +37,7 @@ define('DB_CHARSET', 'utf8');
 
 /** データベースの照合順序 (ほとんどの場合変更する必要はありません) */
 define('DB_COLLATE', '');
+define('DISABLE_WP_CRON', 'true');
 
 /**#@+
  * 認証用ユニークキー
@@ -91,3 +92,5 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+
