@@ -541,9 +541,7 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/rm_google.php'); ?>
 <?php include_once($_SERVER["DOCUMENT_ROOT"]. '/inc/tags/rm_yahoo.php'); ?>
 
-<footer class="siteFooter al_c">
-	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
-</footer>
+
 
 <?php wp_footer(); ?>
 
