@@ -142,6 +142,12 @@
 			}
 		}
 
+		//.star
+		.star{
+			display: block;
+			margin-bottom: 1.0rem;
+		}
+
 		//.reply
 		.reply{
 
@@ -315,6 +321,26 @@
 
 	}
 
+	//.listStars
+	//**************************************************************
+
+	.listStars{
+
+		padding: 2.0rem 0;
+
+		h4{
+			margin-bottom: 1.0rem;
+		}
+
+		.star{
+			margin-right: 0.5rem;
+			&:before{
+				font-size: 12pt !important;
+			}
+		}
+
+	}
+
 	//.listSns
 	//**************************************************************
 
@@ -322,13 +348,7 @@
 		padding: 2.0rem 0;
 	}
 
-	//.star
-	//**************************************************************
 
-	.star{
-		display: block;
-		margin-bottom: 1.0rem;
-	}
 
 	//.contactBnr
 	//**************************************************************
@@ -341,16 +361,47 @@
 		}
 	}
 
-
-
-
-
 }
 
 //**********************************************************************
 // &.archive
 //**********************************************************************
 
+//#intro
+//**************************************************************
+
+#intro{
+
+		padding-top: 3.0rem;
+
+		//PC
+		@media all and (min-width: $minWidth){
+
+			height: 400px;
+			background: url("assets/img/voices/bg.jpg") center bottom no-repeat;
+
+			p{
+				width: 930px;
+				text-align: center;
+				margin: 0 auto;
+				padding-top: 250px;
+
+			}
+
+		}
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+
+			p{
+				.block{
+					display: inline !important;
+				}
+			}
+		}
+
+
+}
 
 //.archiveList
 //**************************************************************
@@ -373,6 +424,11 @@
 		margin-top: -5px;
 	}
 
+}
+
+#voicesList{
+	margin-top: 0;
+	padding-top: 0;
 }
 
 
