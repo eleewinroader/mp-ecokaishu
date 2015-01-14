@@ -796,6 +796,21 @@ a{
 
 	}
 
+	&#contactBnr{
+		overflow: hidden;
+		background: $white;
+		padding: 3rem 0;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 99;
+
+		.container {
+			position: relative;
+		}
+	}
+
 }
 
 //**********************************************************************

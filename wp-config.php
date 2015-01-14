@@ -21,13 +21,13 @@
 
 // ** MySQL 設定 - この情報はホスティング先から入手してください。 ** //
 /** WordPress のためのデータベース名 */
-define('DB_NAME', 'wordpress');
+define('DB_NAME', 'ecokaishu');
 
 /** MySQL データベースのユーザー名 */
-define('DB_USER', 'ecoland');
+define('DB_USER', 'root');
 
 /** MySQL データベースのパスワード */
-define('DB_PASSWORD', 'wordpress');
+define('DB_PASSWORD', 'root');
 
 /** MySQL のホスト名 */
 define('DB_HOST', 'localhost');
@@ -37,7 +37,7 @@ define('DB_CHARSET', 'utf8');
 
 /** データベースの照合順序 (ほとんどの場合変更する必要はありません) */
 define('DB_COLLATE', '');
-define('DISABLE_WP_CRON', 'true');
+define('DISABLE_WP_CRON', 'false');
 
 /**#@+
  * 認証用ユニークキー
