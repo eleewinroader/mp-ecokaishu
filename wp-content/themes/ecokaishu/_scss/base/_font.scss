@@ -20,8 +20,19 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'custom150116';
+	src:url('assets/fonts/custom150116.eot?-14fm3e');
+	src:url('assets/fonts/custom150116.eot?#iefix-14fm3e') format('embedded-opentype'),
+		url('assets/fonts/custom150116.woff?-14fm3e') format('woff'),
+		url('assets/fonts/custom150116.ttf?-14fm3e') format('truetype'),
+		url('assets/fonts/custom150116.svg?-14fm3e#custom140702') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 [class^="icon-"], [class*=" icon-"] {
-	font-family: "icomoon", "custom140702";
+	font-family: "icomoon", "custom140702", "custom150116";
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -3480,4 +3491,7 @@
 }
 .icon-towerfan:before {
 	content: "\ee07";
+}
+.icon-clothesdryer:before {
+    content: "\ee08";
 }
