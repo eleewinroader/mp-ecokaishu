@@ -137,6 +137,21 @@ span[aria-hidden]{
 	position: relative;
 
 }
+
+.warning{
+
+	margin-bottom: 1.0rem;
+	padding: 0.5rem;
+	border: 1px solid rgba(226, 49, 140, .2);
+	background: rgba(226, 49, 140, .1);
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-mox-sizign: border-box;
+	box-sizing: border-box;
+
+}
 /*.contents .content > p{
 	padding-right: 0.5rem;
 	padding-left: 0.5rem;

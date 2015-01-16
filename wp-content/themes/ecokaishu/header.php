@@ -152,4 +152,5 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 		<!--.headerFixed--></nav>
 	<!--.header--></header>
 
+
 	<article class="<?php echo getArticleClass($tempType, $metaObj);?>"<?php echo getArticleId($tempType, $metaObj); ?>>

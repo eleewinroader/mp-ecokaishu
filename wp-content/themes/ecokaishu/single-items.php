@@ -9,7 +9,31 @@ get_header();
 	//calling
 	$postType = get_post_type_object(get_post_type());
 	$cltItems = get_the_terms($post->ID, 'cltitems');
+
 	
+	if(get_the_terms($post->ID, "itemranks")){
+		$ranks = get_the_terms($post->ID, "itemranks");
+	}else{
+		$ranks = get_terms("itemranks");
+	}
+
+
+	if(get_the_terms($post->ID, "spworks")){
+		$spworks = get_the_terms($post->ID, "spworks");
+	}else{
+		$spworks = get_terms("spworks");
+	}
+
+	if(get_the_terms($post->ID, "options")){
+		$options = get_the_terms($post->ID, "options");
+	}else{
+		$options = get_terms("options");
+	}
+
+	$itemRanks = getMetaArr($post, "itemsInfo02");
+	$itemIndexs = getMetaArr($post, "itemsInfo03");
+	$itemSizes = getMetaArr($post, "itemsInfo04");
+
 	//vars of post type
 	$postTypeName = $postType->name;
 	$postTypeLabel = $postType->label;
@@ -105,6 +129,152 @@ get_header();
 		</div>
 	<!--.headerPage--></header>
 
+<?php
+
+function getPrice($var, $tax = FALSE){
+	$page = get_page_by_title($var, OBJECT, "price");
+	$amount = get_post_meta($page->ID, "priceInfo01", TRUE);
+	$amount = $tax ? taxin($amount) : $amount;
+	$unit = get_post_meta($page->ID, "priceInfo05", TRUE);
+	$price = array("amount" => $amount, "unit" => $unit);
+	return $price;
+}
+
+function getItemPriceArr($key, $var, $tax = FALSE){
+
+	$args = array(
+		"post_type" => "price",
+		$key => $var
+	);
+	$posts = query_posts($args);	
+	if($posts){
+
+		foreach($posts as $post){
+
+			$amounts = getMetaArr($post, "priceInfo01");
+			$indexs = getMetaArr($post, "priceInfo07");
+			$size = get_post_meta($post->ID, "priceInfo02", TRUE);
+			$weight = get_post_meta($post->ID, "priceInfo03", TRUE);
+			$examples = get_post_meta($post->ID, "priceInfo04", TRUE);
+			$contents = get_post_meta($post->ID, "priceInfo06", TRUE);
+			$price = array(
+				"name" => $post->post_title,
+				"amount" => $amounts,
+				"index" => $indexs,
+				"unit" => $unit,
+				"size" => $size,
+				"weight" => $weight,
+				"examples" => $examples,
+				"contents" => $contents
+			);
+		}
+		return $price;
+	}else{
+		return FALSE;
+	}
+
+}
+
+
+$basicPrice = getPrice("基本料金")["amount"];
+$basicUnit = getPrice("基本料金")["unit"];
+$areaPrice = getPrice("地域料金")["amount"];
+$areaUnit = getPrice("地域料金")["unit"];
+
+
+if(get_the_terms($post->ID, "itemranks")){
+	$indexRank = current($ranks);
+	$key = array_search($indexRank->name, $itemRanks);
+	$itemIndex1 = $itemIndexs[$key].$itemSizes[$key];
+	$itemPrice1 = getItemPriceArr("itemranks", $indexRank->slug)["amount"][0];
+	
+}else{
+	$itemIndex1 = "洗濯機";
+	$itemPrice1 = getPrice("Gランク")["amount"];
+	$itemIndex2 = "冷蔵庫";
+	$itemPrice2 .= getPrice("Iランク")["amount"];
+}
+
+echo taxin($basicPrice);
+echo taxin($areaPrice);
+echo $itemIndex1;
+echo taxin($itemPrice1);
+echo $itemIndex2;
+echo taxin($itemPrice2);
+
+?>
+<br />
+<?php
+
+$sum = $basicPrice + $itemPrice1 + $itemPrice2;
+echo taxin($sum);
+?>
+
+<br />
+<?php
+
+if($ranks){
+	$i = 0;
+	foreach($ranks as $rank){
+		echo "<h4>".getItemPriceArr("itemranks", $rank->slug)["name"]."</h4>";
+		echo getItemPriceArr("itemranks", $rank->slug)["size"];
+		echo getItemPriceArr("itemranks", $rank->slug)["weight"];
+		echo getItemPriceArr("itemranks", $rank->slug)["examples"];
+
+		$amounts = getItemPriceArr("itemranks", $rank->slug)["amount"];
+		$indexs = getItemPriceArr("itemranks", $rank->slug)["index"];
+		$units = getItemPriceArr("itemranks", $rank->slug)["unit"];
+
+		echo $itemIndexs[$i].$itemSizes[$i];
+		for($k=0; $k<count($amounts); $k++){
+			echo taxin($amounts[$k]).$units[$k];
+		}
+		echo "<br />";
+		$i++;
+	}
+}
+
+
+foreach($spworks as $spwork){
+	echo "<h4>".getItemPriceArr("spworks", $spwork->slug)["name"]."</h4>";
+	echo getItemPriceArr("spworks", $spwork->slug)["contents"];
+
+	$amounts = getItemPriceArr("spworks", $spwork->slug)["amount"];
+	$indexs = getItemPriceArr("spworks", $spwork->slug)["index"];
+
+	for($i=0; $i<count($amounts); $i++){
+		echo $indexs[$i]." ".$amounts[$i];
+	}
+
+	echo "<br />";
+}
+foreach($options as $option){
+
+	echo "<h4>".getItemPriceArr("options", $option->slug)["name"]."</h4>";
+	echo getItemPriceArr("options", $option->slug)["contents"];
+
+	$amounts = getItemPriceArr("options", $option->slug)["amount"];
+	$indexs = getItemPriceArr("options", $option->slug)["index"];
+
+	for($i=0; $i<count($amounts); $i++){
+		echo $indexs[$i]." ".$amounts[$i];
+	}
+	echo "<br />";
+} ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<div class="container">
 
 		<div class="ninecol col">
@@ -149,6 +319,172 @@ get_header();
 					</small></p>
 				<!--「エコ回収料金」事例--></section>
 			<?php endif; ?>
+
+
+<?php
+
+function getItemPrices($i){
+	switch ($i) {
+		case '0':
+			$info = array(
+				"price" => 500,
+				"size" => 50,
+				"weight" => 1,
+				"ex" => "炊飯器、ミキサー、オーブントースター、サッカーボール、ビデオカメラ等"
+			);
+			break;
+		case '1':
+			$info = array(
+				"price" => 1000,
+				"size" => 90,
+				"weight" => 2,
+				"ex" => "加湿器、縦型掃除機、ダイニングチェア、ノートパソコン、パソコン本体、布団、ガステーブル(2口)、ＤＶＤプレーヤー、ギター等"
+			);
+			break;
+		case '2':
+			$info = array(
+				"price" => 1500,
+				"size" => 150,
+				"weight" => 5,
+				"ex" => "カラーBOX(3段)、姿見、空気清浄器、スキー板等"
+			);
+			break;
+		case '3':
+			$info = array(
+				"price" => 2000,
+				"size" => 180,
+				"weight" => 10,
+				"ex" => "デスクチェア、こたつ、電子レンジ、ミニコンポ、一体型パソコン等"
+			);
+			break;
+		case '4':
+			$info = array(
+				"price" => 2500,
+				"size" => 210,
+				"weight" => 15,
+				"ex" => "家庭用複合機、ホットカーペット、レッグマジック、ステッパー等"
+			);
+			break;
+		case '5':
+			$info = array(
+				"price" => 3000,
+				"size" => 270,
+				"weight" => 20,
+				"ex" => "レンジ台、オイルヒーター、電子キーボード等"
+			);
+			break;
+		case '6':
+			$info = array(
+				"price" => 4000,
+				"size" => 300,
+				"weight" => 30,
+				"ex" => "自転車、ダイニングセット(二人用)、エアロバイク等"
+			);
+			break;
+		case '7':
+			$info = array(
+				"price" => 5500,
+				"size" => 360,
+				"weight" => 40,
+				"ex" => "A3レーザープリンタ、ウッドカーペット等"
+			);
+			break;
+		case '8':
+			$info = array(
+				"price" => 7000,
+				"size" => 400,
+				"weight" => 50,
+				"ex" => "足踏みミシン、ダイニングセット(四人用)、白黒業務用コピー機"
+			);
+			break;
+		case '9':
+			$info = array(
+				"price" => 9000,
+				"size" => 450,
+				"weight" => 60,
+				"ex" => "エレクトーン、大型マッサージ機等"
+			);
+			break;
+		case '10':
+			$info = array(
+				"price" => 12000,
+				"size" => 500,
+				"weight" => 70,
+				"ex" => "電子ピアノ、介護ベッド等"
+			);
+			break;
+		
+		default:
+			# code...
+			break;
+	}
+	return $info;
+}
+
+function getItemWorks($i){
+	switch ($i) {
+		case '0':
+			$info = array(
+				"name" => "外階段作業",
+				"desc" => "作業内容",
+				"price" => 500,
+				"unit" => "円/階"
+			);
+			break;
+		case '1':
+			$info = array(
+				"name" => "外階段作業",
+				"desc" => "作業内容",
+				"price" => 500,
+				"unit" => "円/階"
+			);
+			break;
+		case '2':
+			$info = array(
+				"name" => "外階段作業",
+				"desc" => "作業内容",
+				"price" => 500,
+				"unit" => "円/階"
+			);
+			break;
+		case '3':
+			$info = array(
+				"name" => "外階段作業",
+				"desc" => "作業内容",
+				"price" => 500,
+				"unit" => "円/階"
+			);
+			break;
+		case '4':
+			$info = array(
+				"name" => "外階段作業",
+				"desc" => "作業内容",
+				"price" => 500,
+				"unit" => "円/階"
+			);
+			break;
+		case '5':
+			$info = array(
+				"name" => "外階段作業",
+				"desc" => "作業内容",
+				"price" => 500,
+				"unit" => "円/階"
+			);
+			break;
+		
+		default:
+			# code...
+			break;
+	}
+	return $info;
+}
+
+
+
+
+?>
+
+
 
 			<section class="contents voices">
 			<h3><?php the_title(); ?>でエコ回収を利用した「お客様からの声」</h3>

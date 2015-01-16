@@ -43,7 +43,7 @@ get_header(); ?>
 		<div class="liquidLayout">
 
 	<?php
-	$kinds = array("年末の大掃除", "引越し");
+	$kinds = array("年末の大掃除", "引越し","片付け");
 	$cats = array();
 	$terms = get_terms( 'category', 'orderby=count&hide_empty=0');
 	foreach($terms as $term){
@@ -53,6 +53,7 @@ get_header(); ?>
 		"order" => DESC,
 		"orderby" => DATE,
 		"category__in" => $cats,
+		"posts_per_page" => -1,
 		"post_type" => "post"
 	);
 	$articles = query_posts($args);

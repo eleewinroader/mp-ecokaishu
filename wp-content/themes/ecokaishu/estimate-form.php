@@ -38,7 +38,7 @@
 						echo '<select name="cstmMncplt'.$j.'" id="prefecture'.$j.'" class="municipality"'.$disabled.'>';
 						echo '<option value="">市区町村を選択してください</option>';
 						$k = 0;
-						foreach($municipalities as $municipality){								
+						foreach($municipalities as $municipality){
 							$mncplt = get_term_by('id', $municipality, 'cltarea' );
 							if($mncplt->name == $cstmMncplt) $selected = "selected";
 							else $selected = "";
@@ -49,6 +49,7 @@
 					}
 				$j++;
 				}?>
+				<p class="warning">※大阪府と兵庫県のお伺いを一時休止致します。</p>
 				</div>
 			</div>
 		</li>
