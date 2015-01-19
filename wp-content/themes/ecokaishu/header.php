@@ -75,7 +75,6 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 <meta property="og:site_name" content="<?php echo get_bloginfo("sitename"); ?>" />
 <?php if($description) echo '<meta property="og:description" content="'.$description.'" />'."\n";  ?>
 <link href="<?php echo bloginfo("stylesheet_url"); ?>" rel="stylesheet" type="text/css" media="all" />
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/plugins/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/assets/js/html5shiv.min.js"></script><![endif]-->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/script.min.js"></script>
 <script type="text/javascript">

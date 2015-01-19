@@ -2,6 +2,9 @@
 
 article#price{
 
+.contents {
+	border-bottom: none !important;
+}
 
 //**********************************************************************
 // .intro
@@ -125,8 +128,8 @@ article#price{
 
 	overflow: hidden;
 	margin-top: 3.0rem;
-	padding-bottom: 0 !important;
 	border-top: 1px solid rgba($black, .1);
+	border-bottom: none;
 
 	// ul
 	//***************************************************************
@@ -136,14 +139,13 @@ article#price{
 		margin-bottom: 0;
 		padding-top: 3.0rem;
 		padding-bottom: 3.0rem;
-		background: rgba($green, .1);
 		text-align: center;
 
 		//li
 		li{
 
 			position: relative;
-			@include border-radius(6px);
+			@include border-radius(5px);
 			border: 3px solid transparent;
 			background: $white;
 
@@ -157,44 +159,37 @@ article#price{
 				color: $green;
 				font:{
 					family: icomoon;
-					size: $biggest * 1.2;
+					size: $biggest * 1.4;
 				}
-				content: "\e672";
+				content: "\e80b";
 			}
+			&:nth-of-type(1),
 			&:nth-of-type(2),
 			&:nth-of-type(3){
 				border-color: rgba($green, .7);
-				@include box-shadow(rgba($black, .5) 0px 0px 3px);
 				cursor: pointer;
-				&.active{
-					background: rgba($green, .8);
-					color: $white;
-				}
 			}
 			&:nth-of-type(3){
 				&:after{
-					color: $pink;
-					content: "\e674";
+					color: #d3d3d3;
 				}
 			}
 			&:nth-of-type(4){
-				border-color: rgba($pink, .7);
-				@include box-shadow(rgba($black, .5) 0px 0px 3px);
+				border-color: rgba($darkGray, .2);
 				cursor: pointer;
 				&:after{
-					color: $darkGray;
-					content: "\e9b4";
-				}
-				&.active{
-					background: rgba($pink, .9);
-					color: $white;
+					color: $pink;
+					background: #facbcc;
+					content: "\e83a";
+					padding: 0 20px;
 				}
 			}
 			&:nth-of-type(5){
+				border-color: $pink;
 				p{
 					line-height: 1.0em;
 					margin-top: 2.5rem !important;
-					font-size: $biggest;
+					font-size: $biggest * 1.7;
 				}
 				&:after{ content: ""; } 
 			}
@@ -208,17 +203,14 @@ article#price{
 
 			//h4
 			h4{
-				margin-top: 1.5rem;
-				margin-bottom: 1.0rem;
-				padding-bottom: 1.0rem;
-				border-bottom: 1px solid rgba($black, .1);
+				margin: 2rem 0;
+				font-size: $smaller * 1.4;
 			}
 
 			//span[class^="icon-"]
 			span[class^="icon-"]{
 				display: block;
-				margin-top: 0.5rem;
-				margin-bottom: 0.7rem;
+				margin-bottom: 1.5rem;
 				font-size: $biggest * 1.2;
 			}
 
@@ -249,7 +241,7 @@ article#price{
 			li{
 
 				vertical-align: top;
-				height: 200px;
+				height: 220px;
 
 				&:after{
 					top: 50%;
@@ -259,25 +251,9 @@ article#price{
 				&:nth-of-type(4){
 					&:after{
 						@include rotate(90deg);
+						right: -55px;
 					}
 				}
-
-				//.active
-				&.active{
-					&:before{
-						display: block;
-						position: absolute;
-						width: 60px;
-						height: 60px;
-						left: 50%;
-						bottom: -90px;
-						margin-left: -30px;
-						background: $white;
-						@include rotate(45deg);
-						content: "";
-					}
-				}
-
 			}
 
 		}
@@ -316,26 +292,89 @@ article#price{
 }
 
 //**********************************************************************
+// .linkMenu
+//**********************************************************************
+.linkMenu {
+	overflow: hidden;
+	border-bottom: 1px solid rgba($gray, .9);
+	margin-bottom: 30px;
+
+	li {
+		float: left;
+		border-top: 1px solid rgba($gray, .9);
+		a {
+			display: block;
+			width: 185px;
+			text-align: center;
+			padding: 12px 0;
+			border-top: 3px solid transparent;
+			border-left: 1px solid rgba($gray, .9);
+			font-size: $smaller * 1.35;
+			color: $darkGray;
+
+			&.active {
+				background: rgba($green, .1);
+				border-top: 3px solid $green;
+			}				
+		}
+		&:last-of-type {
+			a {
+				border-right: 1px solid rgba($gray, .9);
+			}
+		}
+	}
+}
+
+//**********************************************************************
+// #basicCharge
+//**********************************************************************
+#basicCharge, #purchase, #options {
+	td {
+		border-bottom: 1px solid rgba($gray, .9);
+		padding: 15px 0 15px 20px;
+
+		span {
+			margin-left: 20px;
+			font-weight: bold;
+			background: #facbcc;
+		}
+	}
+}
+
+
+//**********************************************************************
 // #itemPrice
 //**********************************************************************
 
 #itemPrice{
+
+	.item {
+		@include border-radius(15px);
+		padding: 0.5rem 1.5rem;
+		width: 31.5789%;
+		
+		h5 {
+			font-weight: normal;
+			text-align: center;
+		}
+	}
+	//h4
+	h4{
+		background: #facbcc;
+		display: inline-block;
+	}
 
 	// #electricApp
 	//**************************************************************
 
 	#electricApp{
 
-		//h4
-		h4{
-			margin-top: 2.0rem;
-		}
-
-		//table
-		tbody{
-			td{
-				color: $pink;
-			}
+		//span[class^="icon-"]
+		span[class^="icon-"]{
+			display: block;
+			margin: 1rem 0;
+			font-size: $biggest * 2.5;
+			text-align: center;
 		}
 
 	}
@@ -360,15 +399,15 @@ article#price{
 	@media all and (min-width: $minWidth){
 
 		table{
-			margin:{
-				bottom: 2.0rem;
-			}
 			th,td{
-				border-bottom: 1px solid rgba($black, .05);
-				text-align: center;
+				border-top: 1px solid rgba($darkGray, .2);		
+				padding: 0.7rem 0.5rem;		
 			}
-			thead th{
-				background: rgba($green, .1);
+			th {
+				text-align: left;
+			}
+			td{
+				text-align: right;
 			}
 		}
 

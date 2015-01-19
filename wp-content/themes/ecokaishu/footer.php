@@ -10,11 +10,11 @@
 	<div class="footer">
 
 		<?php
-		if(campCode($post)){ 
+		if(campCode($post)){
 			$childrenClass = campCode($post, "children");
 			$pr_code = substr($childrenClass, 7, 11);
 			$pr_code = str_replace("-", "_", $pr_code);
-			$param = "?pr_code=".$pr_code; 
+			$param = "?pr_code=".$pr_code;
 			if($pr_code == "4_00") $ycoll = "2-1";
 		}?>
 
@@ -48,6 +48,8 @@
 		<aside id="contactBnr" class="boiler">
 			<div class="container">
 				<div class="twelvecol col last">
+					<?php echo contactBnr(); ?>
+				<!--
 					<h3>エコ回収の申込・問合せはお気軽にどうぞ!</h3>
 					<div class="contact">
 						<div class="msg">
@@ -55,7 +57,7 @@
 								<span class="block"><span class="block">お気軽に</span><span class="block">なんなりと</span><span class="block">お問い合わせ</span><span class="block">ください!</span></span>
 							</p>
 							<div id="ecolin"><img alt="" src="http://www.eco-kaishu.jp/wp-content/themes/ecokaishu/assets/img/base/staff_img_shinki.jpg"></div>
-						</div><!--.msg-->
+						</div><!--.msg
 						<div id="tel" class="box">
 							<a onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});" href="tel:0120530539">
 								<p class="label block">お急ぎの方はお電話で</p>
@@ -78,8 +80,7 @@
 							<span class="date">営業時間</span>
 							<span class="date">平･土 9:00-22:00</span><span class="date">日･祝 9:00-20:00</span>
 						</p>
-					</div><!--.contact-->
-				<div class="clear"></div>
+					</div>.contact-->
 			</div>
 		</aside>
 
@@ -303,7 +304,7 @@ $(document).ready(function(){
 
 	// sp menu
 	$(".showSmaller").each(function(){
-			
+
 		var panelId = $(this).attr("data-panel");
 		var panel = $("#"+panelId);
 		var contentId = $(this).attr("data-content");
@@ -311,7 +312,7 @@ $(document).ready(function(){
 
 		panel.html(content); // ex: $("#panelMenu").html($("#contMenu"));
 	});
-	
+
 	//// header
 	// sp main menu btn tap
 	$('#menuBtn').on({
@@ -343,7 +344,7 @@ $(document).ready(function(){
 	<?php endif; ?>
 
 	//owl-slide
-	$(".owl-carousel").owlCarousel({ 
+	$(".owl-carousel").owlCarousel({
 		navigation : true, // Show next and prev buttons
 		slideSpeed : 500,
 		paginationSpeed : 1000,
