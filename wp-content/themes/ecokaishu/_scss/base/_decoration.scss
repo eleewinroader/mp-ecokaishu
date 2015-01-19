@@ -8,7 +8,6 @@
 //**********************************************************************
 //**********************************************************************
 
-
 sup, sub{
 	position: relative;
 	font-size: $smaller;
@@ -46,6 +45,7 @@ sup, sub{
 .yellow{ color: $yellow !important; }
 .gray{ color: $gray !important; }
 .darkgray{ color: $darkGray !important; }
+.black{ color: $black !important; }
 .white{ color: $white !important; }
 
 .goodDesign{ color: #CD0300 !important; }
@@ -130,7 +130,7 @@ img{
 		margin-right: 1.0rem;
 		margin-bottom: 1.0rem;
 	}
-	&.alignright{ 
+	&.alignright{
 		float: right;
 		margin-bottom: 1.0rem;
 		margin-left: 1.0rem;
@@ -159,12 +159,12 @@ img{
 
 	@media all and (min-width: $minWidth){
 
-		img.alignleft{ 
+		img.alignleft{
 			display: block !important;
 			float: inherit !important;
 			margin: 0.5rem auto !important;
 		}
-		img.alignright{ 
+		img.alignright{
 			display: block !important;
 			float: inherit !important;
 			margin: 0.5rem auto !important;
