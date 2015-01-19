@@ -809,6 +809,56 @@ a{
 		.container {
 			position: relative;
 		}
+
+		//PC
+		@media all and (min-width: $minWidth){
+			#qa {
+				display: none !important;
+			}
+		}
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			padding: 0.5rem 0;
+			text-align: center;
+
+			h3, #openingHour {
+				display: none;
+			}
+			.contact {
+				a {
+					padding: 0;
+					.label {
+						display: none !important;
+					}
+					.action {
+						width: 60px;
+						height: 60px;
+						@include border-radius(60px);
+						padding: 0;
+						margin: 0;
+
+						span {
+							display: none;
+						}
+					}
+					//span[class^="icon-"]
+					span[class^="icon-"]{
+						display: block !important;
+						font-size: $biggest*1.5;
+						line-height: 46pt;
+					}
+				}
+				.box {
+					display: inline-block;
+				}
+				#qa {
+					.action{
+						background: rgba($yellow, .7);
+					}
+				}
+			}
+		}
 	}
 
 }
@@ -1202,7 +1252,7 @@ a{
 
 #shortcutsBtns{
 
-	display: block;
+	display: none;
 	position: fixed;
 	z-index: 9999;
 	font-size: 90%;

@@ -1,4 +1,15 @@
-<?php
+/*	if($(window).width() < 769) {
+		 $("#panelMenu").html($("#contMenu"));
+		 $("#menuBtn").click(function() {
+			$("#panelMenu").animate({height: "toggle", opacity: "toggle"}, "slow");
+		});
+		$("#panelMenu .showLnSubmenu").click(function() {
+			var subId = $(this).attr("data-sub");
+			$("#"+subId).animate({height: "toggle", opacity: "toggle"}, "slow");
+		});
+	} */
+	
+	<?php
 /*
 * @package Montser Platform
 */
@@ -69,8 +80,15 @@
 							<a href="http://www.eco-kaishu.jp/estimate/?pr_code=0-03">
 								<p class="label block">24時間受付中</p>
 								<p class="action">
-									<span class="icon-mail4"></span>
+									<span class="icon-mail5"></span>
 									<span>メールで見積依頼</span>
+								</p>
+							</a>
+						</div>
+						<div id="qa" class="box">
+							<a href="#">
+								<p class="action">
+									<span class="icon-question2"></span>
 								</p>
 							</a>
 						</div>
@@ -277,16 +295,19 @@ $(document).ready(function(){
 			<?php endif; ?>
 		}
 		<?php endif; ?>
-
+		
 	});
 
 
-
+	
 	function checkOffsetContactBnr() {
 		if($('#contactBnr').offset().top + $('#contactBnr').height() >= $('#sitePages').offset().top)
-	        $('#contactBnr').css('position', 'static');
+	        $('#contactBnr').css({'position':'static', 'opacity':'1'});
 	    if($(document).scrollTop() + window.innerHeight < $('#sitePages').offset().top)
-	        $('#contactBnr').css('position', 'fixed');
+	        $('#contactBnr').css({'position':'fixed', 'opacity':'0.7'});
+	    if($(document).scrollTop() == 0)
+	        $('#contactBnr').css({'opacity':'1'});
+
 	    }
 
 	// pc mouseover
@@ -299,8 +320,21 @@ $(document).ready(function(){
 		}
 	});
 
-	<?php if(is_smartphone()): ?>
+	<?php if(!is_smartphone()): ?>
+	if($(window).width() < 769) {
+		 $("#panelMenu").html($("#contMenu"));
+		 $("#menuBtn").click(function() {
+			$("#panelMenu").animate({height: "toggle", opacity: "toggle"}, "slow");
+		});
+		$("#panelMenu .showLnSubmenu").click(function() {
+			var subId = $(this).attr("data-sub");
+			$("#"+subId).animate({height: "toggle", opacity: "toggle"}, "slow");
+		});
+	} 
+	<?php endif; ?>
 
+	<?php if(is_smartphone()): ?>
+	
 	// sp menu
 	$(".showSmaller").each(function(){
 			
@@ -309,8 +343,9 @@ $(document).ready(function(){
 		var contentId = $(this).attr("data-content");
 		var content = $("#"+contentId);
 
-		panel.html(content); // ex: $("#panelMenu").html($("#contMenu"));
+		panel.html(content); // ex: $("#panelMenu").html($("#contMenu"));		
 	});
+
 	
 	//// header
 	// sp main menu btn tap
@@ -325,6 +360,7 @@ $(document).ready(function(){
 		}
 	});
 
+	
 	// sp sub menu btn tap
 	$(".showLnSubmenu").on({
 		"touchstart":function(){

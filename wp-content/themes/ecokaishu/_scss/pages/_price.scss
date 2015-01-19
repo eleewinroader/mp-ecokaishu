@@ -279,6 +279,13 @@ article#price{
 					margin-left: -21px;
 				}
 
+				//&:nth-of-type(4)
+				&:nth-of-type(4){
+					&:after{
+						left: 42%;
+					}
+				}
+
 				//&:nth-of-type(5)
 				&:nth-of-type(5){
 					padding-bottom: 2.0rem;
@@ -323,6 +330,18 @@ article#price{
 			}
 		}
 	}
+
+	// Mobile
+	@media all and (max-width: $maxWidth){
+		li {
+			width: 99%;
+
+			a {
+				width: 100%;
+				border-right: 1px solid rgba($gray, .9);
+			}
+		}
+	}
 }
 
 //**********************************************************************
@@ -330,13 +349,17 @@ article#price{
 //**********************************************************************
 #basicCharge, #purchase, #options {
 	td {
-		border-bottom: 1px solid rgba($gray, .9);
-		padding: 15px 0 15px 20px;
-
 		span {
 			margin-left: 20px;
 			font-weight: bold;
 			background: #facbcc;
+		}
+	}
+	// PC
+	@media all and (min-width: $minWidth){
+		td, th {
+			border-bottom: 1px solid rgba($gray, .9);
+			padding: 15px 0 15px 20px;
 		}
 	}
 }
@@ -453,6 +476,10 @@ article#price{
 		//.block
 		.block{
 			display: inline !important;
+		}
+
+		.item {
+			padding: .5rem;
 		}
 
 		//#electricApp
