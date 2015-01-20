@@ -52,26 +52,20 @@ get_header( ); ?>
 					<p><span class="price">3,240</span></p>
 				</li>
 				<li data-tab="itemPrice" class="twocol col">
-					<?php if(is_smartphone()) echo '<a href="#itemPrice">'; ?>
 					<h4>物品ごとの料金</h4>
 					<span class="icon-box2"></span>
 					<p><span class="priceIndex">洗濯機</span><span class="price">4,320</span></p>
 					<p><span class="priceIndex">ソファ</span><span class="price">3,240</span></p>
-					<?php if(is_smartphone()) echo '</a>'; ?>
 				</li>
 				<li data-tab="options" class="twocol col">
-					<?php if(is_smartphone()) echo '<a href="#options">'; ?>
 					<h4>特殊作業料金</h4>
 					<span class="icon-tools"></span>
 					<p><span class="priceIndex m0_r">階段の運び出し</span><span class="price block">1,080</span></p>
-					<?php if(is_smartphone()) echo '</a>'; ?>
 				</li>
 				<li data-tab="purchase" class="twocol col">
-					<?php if(is_smartphone()) echo '<a href="#purchase">'; ?>
 					<h4>買取料金</h4>
 					<span class="icon-tags"></span>
 					<p><span class="priceIndex">オプション</p>
-					<?php if(is_smartphone()) echo '</a>'; ?>
 				</li>
 				<li class="fourcol col last">
 					<h4>合計料金</h4>
@@ -94,12 +88,12 @@ get_header( ); ?>
 			</section>
 			<table cellpadding="0" cellspacing="0" width="100%" border="0">
 				<tr>
-					<td>基本料金</td>
+					<th>基本料金</th>
 					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
 					<td>3,240円</td>
 				</tr>
 				<tr>
-					<td>地域料金</td>
+					<th>地域料金</th>
 					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
 					<td>4,320円</td>
 				</tr>
@@ -409,22 +403,22 @@ get_header( ); ?>
 			</section>
 			<table cellpadding="0" cellspacing="0" width="100%" border="0">
 				<tr>
-					<td>基本料金</td>
+					<th>基本料金</th>
 					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
 					<td>3,240円</td>
 				</tr>
 				<tr>
-					<td>地域料金</td>
+					<th>地域料金</th>
 					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
 					<td>4,320円</td>
 				</tr>
 				<tr>
-					<td>基本料金</td>
+					<th>基本料金</th>
 					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
 					<td>3,240円</td>
 				</tr>
 				<tr>
-					<td>地域料金</td>
+					<th>地域料金</th>
 					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
 					<td>4,320円</td>
 				</tr>
@@ -469,22 +463,22 @@ get_header( ); ?>
 			</section>
 			<table cellpadding="0" cellspacing="0" width="100%" border="0">
 				<tr>
-					<td>基本料金</td>
+					<th>基本料金</th>
 					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
 					<td>3,240円</td>
 				</tr>
 				<tr>
-					<td>地域料金</td>
+					<th>地域料金</th>
 					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
 					<td>4,320円</td>
 				</tr>
 				<tr>
-					<td>基本料金</td>
+					<th>基本料金</th>
 					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
 					<td>3,240円</td>
 				</tr>
 				<tr>
-					<td>地域料金</td>
+					<th>地域料金</th>
 					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
 					<td>4,320円</td>
 				</tr>
