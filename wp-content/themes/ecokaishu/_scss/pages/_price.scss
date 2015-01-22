@@ -191,7 +191,7 @@ article#price{
 					margin-top: 2.5rem !important;
 					font-size: $biggest * 1.7;
 				}
-				&:after{ content: ""; } 
+				&:after{ content: ""; }
 			}
 
 			//a
@@ -322,7 +322,7 @@ article#price{
 			&.active {
 				background: rgba($green, .1);
 				border-top: 3px solid $green;
-			}				
+			}
 		}
 		&:last-of-type {
 			a {
@@ -375,7 +375,7 @@ article#price{
 		@include border-radius(15px);
 		padding: 0.5rem 1.5rem;
 		width: 31.5789%;
-		
+
 		h5 {
 			font-weight: normal;
 			text-align: center;
@@ -423,8 +423,8 @@ article#price{
 
 		table{
 			th,td{
-				border-top: 1px solid rgba($darkGray, .2);		
-				padding: 0.7rem 0.5rem;		
+				//border-top: 1px solid rgba($darkGray, .2);
+				padding: 0.7rem 0.5rem;
 			}
 			th {
 				text-align: left;
@@ -472,7 +472,7 @@ article#price{
 		table{
 			font-size: $smaller;
 		}
-		
+
 		//.block
 		.block{
 			display: inline !important;
