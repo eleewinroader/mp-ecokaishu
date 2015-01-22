@@ -115,7 +115,7 @@ get_header();
 				</div>
 			</div>
 		</nav>
-		<div class="container">
+<!-- 		<div class="container">
 			<div class="ninecol col">
 				<h2><span class="block"><?php echo $pageTitle; ?>のエコ回収 口コミ・実績</span></h2>
 			</div>
@@ -126,661 +126,729 @@ get_header();
 					<li id="shareGoogle"><a href=""><span class="label">Google+</span></a></li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 	<!--.headerPage--></header>
 
-<?php
-
-function getPrice($var, $tax = FALSE){
-	$page = get_page_by_title($var, OBJECT, "price");
-	$amount = get_post_meta($page->ID, "priceInfo01", TRUE);
-	$amount = $tax ? taxin($amount) : $amount;
-	$unit = get_post_meta($page->ID, "priceInfo05", TRUE);
-	$price = array("amount" => $amount, "unit" => $unit);
-	return $price;
-}
-
-function getItemPriceArr($key, $var, $tax = FALSE){
-
-	$args = array(
-		"post_type" => "price",
-		$key => $var
-	);
-	$posts = query_posts($args);	
-	if($posts){
-
-		foreach($posts as $post){
-
-			$amounts = getMetaArr($post, "priceInfo01");
-			$indexs = getMetaArr($post, "priceInfo07");
-			$size = get_post_meta($post->ID, "priceInfo02", TRUE);
-			$weight = get_post_meta($post->ID, "priceInfo03", TRUE);
-			$examples = get_post_meta($post->ID, "priceInfo04", TRUE);
-			$contents = get_post_meta($post->ID, "priceInfo06", TRUE);
-			$price = array(
-				"name" => $post->post_title,
-				"amount" => $amounts,
-				"index" => $indexs,
-				"unit" => $unit,
-				"size" => $size,
-				"weight" => $weight,
-				"examples" => $examples,
-				"contents" => $contents
-			);
-		}
-		return $price;
-	}else{
-		return FALSE;
-	}
-
-}
-
-
-$basicPrice = getPrice("基本料金")["amount"];
-$basicUnit = getPrice("基本料金")["unit"];
-$areaPrice = getPrice("地域料金")["amount"];
-$areaUnit = getPrice("地域料金")["unit"];
-
-
-if(get_the_terms($post->ID, "itemranks")){
-	$indexRank = current($ranks);
-	$key = array_search($indexRank->name, $itemRanks);
-	$itemIndex1 = $itemIndexs[$key].$itemSizes[$key];
-	$itemPrice1 = getItemPriceArr("itemranks", $indexRank->slug)["amount"][0];
-	
-}else{
-	$itemIndex1 = "洗濯機";
-	$itemPrice1 = getPrice("Gランク")["amount"];
-	$itemIndex2 = "冷蔵庫";
-	$itemPrice2 .= getPrice("Iランク")["amount"];
-}
-
-echo taxin($basicPrice);
-echo taxin($areaPrice);
-echo $itemIndex1;
-echo taxin($itemPrice1);
-echo $itemIndex2;
-echo taxin($itemPrice2);
-
-?>
-<br />
-<?php
-
-$sum = $basicPrice + $itemPrice1 + $itemPrice2;
-echo taxin($sum);
-?>
-
-<br />
-<?php
-
-if($ranks){
-	$i = 0;
-	foreach($ranks as $rank){
-		echo "<h4>".getItemPriceArr("itemranks", $rank->slug)["name"]."</h4>";
-		echo getItemPriceArr("itemranks", $rank->slug)["size"];
-		echo getItemPriceArr("itemranks", $rank->slug)["weight"];
-		echo getItemPriceArr("itemranks", $rank->slug)["examples"];
-
-		$amounts = getItemPriceArr("itemranks", $rank->slug)["amount"];
-		$indexs = getItemPriceArr("itemranks", $rank->slug)["index"];
-		$units = getItemPriceArr("itemranks", $rank->slug)["unit"];
-
-		echo $itemIndexs[$i].$itemSizes[$i];
-		for($k=0; $k<count($amounts); $k++){
-			echo taxin($amounts[$k]).$units[$k];
-		}
-		echo "<br />";
-		$i++;
-	}
-}
-
-
-foreach($spworks as $spwork){
-	echo "<h4>".getItemPriceArr("spworks", $spwork->slug)["name"]."</h4>";
-	echo getItemPriceArr("spworks", $spwork->slug)["contents"];
-
-	$amounts = getItemPriceArr("spworks", $spwork->slug)["amount"];
-	$indexs = getItemPriceArr("spworks", $spwork->slug)["index"];
-
-	for($i=0; $i<count($amounts); $i++){
-		echo $indexs[$i]." ".$amounts[$i];
-	}
-
-	echo "<br />";
-}
-foreach($options as $option){
-
-	echo "<h4>".getItemPriceArr("options", $option->slug)["name"]."</h4>";
-	echo getItemPriceArr("options", $option->slug)["contents"];
-
-	$amounts = getItemPriceArr("options", $option->slug)["amount"];
-	$indexs = getItemPriceArr("options", $option->slug)["index"];
-
-	for($i=0; $i<count($amounts); $i++){
-		echo $indexs[$i]." ".$amounts[$i];
-	}
-	echo "<br />";
-} ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<div class="container">
-
-		<div class="ninecol col">
-
-			<div class="contents contactBnr" id="top">
-				<?php
-				$msg = '<span class="block">いらなくなった</span>'.$post->post_title.'は</span><span class="block">お任せください!</span>';
-				 echo contactBnr($msg);
-				 ?>
-			</div>
-
-			<?php
-			$args = array(
-				"post_type" => "faq",
-				"posts_per_page" => -1,
-				"qstcat" => $post->post_title,
-				"order" => ASC,
-				"orderby" => DATE,
-			);
-			$faqs = query_posts($args);
-			if($faqs): ?>
-				<section class="contents">
-					<h3><?php the_title(); ?>のエコ回収について「よくある質問」</h3>
-					<dl class="listFaq">
-					<?php foreach($faqs as $faq): ?>
-						<dt><?php echo $faq->post_title; ?></dt>
-						<dd><?php echo $faq->post_content; ?></dd>
-					<?php endforeach; wp_reset_query();?>
-					</dl>
-				<!--よくある質問--></section>
-			<?php endif; ?>
-
-			<?php 
-			$priceExam = get_post_meta($post->ID, "itemsInfo01", TRUE);
-			if($priceExam): ?>
-				<section class="contents priceExam" id="<?php echo "family".$post->ID; ?>">
-					<h3><?php the_title(); ?>の「エコ回収料金」事例</h3>
-					<?php echo $priceExam; ?>
-					<p class="footnote"><small>
-					※ 金額表示はすべて税込価格となります。<br />
-					※ 特殊作業は、お客様希望がなくても、作業上必ず必要になることもありますので、ご了承ください。
-					</small></p>
-				<!--「エコ回収料金」事例--></section>
-			<?php endif; ?>
-
-
-<?php
-
-function getItemPrices($i){
-	switch ($i) {
-		case '0':
-			$info = array(
-				"price" => 500,
-				"size" => 50,
-				"weight" => 1,
-				"ex" => "炊飯器、ミキサー、オーブントースター、サッカーボール、ビデオカメラ等"
-			);
-			break;
-		case '1':
-			$info = array(
-				"price" => 1000,
-				"size" => 90,
-				"weight" => 2,
-				"ex" => "加湿器、縦型掃除機、ダイニングチェア、ノートパソコン、パソコン本体、布団、ガステーブル(2口)、ＤＶＤプレーヤー、ギター等"
-			);
-			break;
-		case '2':
-			$info = array(
-				"price" => 1500,
-				"size" => 150,
-				"weight" => 5,
-				"ex" => "カラーBOX(3段)、姿見、空気清浄器、スキー板等"
-			);
-			break;
-		case '3':
-			$info = array(
-				"price" => 2000,
-				"size" => 180,
-				"weight" => 10,
-				"ex" => "デスクチェア、こたつ、電子レンジ、ミニコンポ、一体型パソコン等"
-			);
-			break;
-		case '4':
-			$info = array(
-				"price" => 2500,
-				"size" => 210,
-				"weight" => 15,
-				"ex" => "家庭用複合機、ホットカーペット、レッグマジック、ステッパー等"
-			);
-			break;
-		case '5':
-			$info = array(
-				"price" => 3000,
-				"size" => 270,
-				"weight" => 20,
-				"ex" => "レンジ台、オイルヒーター、電子キーボード等"
-			);
-			break;
-		case '6':
-			$info = array(
-				"price" => 4000,
-				"size" => 300,
-				"weight" => 30,
-				"ex" => "自転車、ダイニングセット(二人用)、エアロバイク等"
-			);
-			break;
-		case '7':
-			$info = array(
-				"price" => 5500,
-				"size" => 360,
-				"weight" => 40,
-				"ex" => "A3レーザープリンタ、ウッドカーペット等"
-			);
-			break;
-		case '8':
-			$info = array(
-				"price" => 7000,
-				"size" => 400,
-				"weight" => 50,
-				"ex" => "足踏みミシン、ダイニングセット(四人用)、白黒業務用コピー機"
-			);
-			break;
-		case '9':
-			$info = array(
-				"price" => 9000,
-				"size" => 450,
-				"weight" => 60,
-				"ex" => "エレクトーン、大型マッサージ機等"
-			);
-			break;
-		case '10':
-			$info = array(
-				"price" => 12000,
-				"size" => 500,
-				"weight" => 70,
-				"ex" => "電子ピアノ、介護ベッド等"
-			);
-			break;
-		
-		default:
-			# code...
-			break;
-	}
-	return $info;
-}
-
-function getItemWorks($i){
-	switch ($i) {
-		case '0':
-			$info = array(
-				"name" => "外階段作業",
-				"desc" => "作業内容",
-				"price" => 500,
-				"unit" => "円/階"
-			);
-			break;
-		case '1':
-			$info = array(
-				"name" => "外階段作業",
-				"desc" => "作業内容",
-				"price" => 500,
-				"unit" => "円/階"
-			);
-			break;
-		case '2':
-			$info = array(
-				"name" => "外階段作業",
-				"desc" => "作業内容",
-				"price" => 500,
-				"unit" => "円/階"
-			);
-			break;
-		case '3':
-			$info = array(
-				"name" => "外階段作業",
-				"desc" => "作業内容",
-				"price" => 500,
-				"unit" => "円/階"
-			);
-			break;
-		case '4':
-			$info = array(
-				"name" => "外階段作業",
-				"desc" => "作業内容",
-				"price" => 500,
-				"unit" => "円/階"
-			);
-			break;
-		case '5':
-			$info = array(
-				"name" => "外階段作業",
-				"desc" => "作業内容",
-				"price" => 500,
-				"unit" => "円/階"
-			);
-			break;
-		
-		default:
-			# code...
-			break;
-	}
-	return $info;
-}
-
-
-
-
-?>
-
-
-
-			<section class="contents voices">
-			<h3><?php the_title(); ?>でエコ回収を利用した「お客様からの声」</h3>
-			<?php
-			$append = array("アンティーク家具", "ベッド", "掃除機", "書籍", "枕", "洗濯機", "照明", "パソコン", "パソコン周辺機器");
-			$pageTitle = in_array($pageTitle, $append) ? $pageTitle."類" : $pageTitle;
-			$args = array(
-				"post_type" => "voices",
-				"tax_query" => array(
-					"relation" => "and",
-					array(
-						"taxonomy" => "voicekinds",
-						"field" => "slug",
-						"terms" => array("review")
-					),
-					array(
-						"taxonomy" => "cltitems",
-						"field" => "slug",
-						"terms" => array($pageTitle)
-					)
-				)
-			);
-			$args1 = array_merge($args, array("posts_per_page" => 1));
-			$newVoice =  query_posts($args1);
-			foreach($newVoice as $voice){
-				$name = getCustomerName($voice);
-				$sex = getCustomerSex($voice);
-				$age = getCustomerAge($voice);
-				$area = getCustomerAreas($voice, TRUE);
-				$items = getCustomerItems($voice, TRUE, "dd");
-				$date = getCustomerDate($voice);
-				$starts = getCustomerStarts($voice,"dd");
-				$features = getCustomerFeatures($voice, "dd");
-				$review03 = get_post_meta($voice->ID, "voiceInfo17", TRUE);
-				$review03Score = get_post_meta($voice->ID, "voiceInfo16", TRUE);
-				$review03ScoreIndex = getCustomerReview($post, $review03Score);
-
-				echo <<<EOF
-				
-				<div class="customerProfile">
-					<div class="customerComments">
-						<h4>{$name}<span class="small">様より</span></h4>
-						<h5>エコ回収サービス全体について評価してください。</h5>
-						<span class="rating-foreground star star{$review03Score}"> 
-							<meta itemprop="rating" content="{$review03Score}" /> 
-							<span class="index">{$review03ScoreIndex}</span>
-						</span> 
-						{$review03}
-					</div>
-					<div class="customerInfo last">
-						<dl>
-							<dt class="hide">性別・年代</dt><dd class="name">{$sex} / {$age}</dd>
-							<dt class="hide">回収エリア</dt><dd class="place">{$area}</dd>
-							<dt class="hide">回収日時</dt><dd class="date"><time datetime="{$date}">{$date}回収</time></dd>
-							<dt class="infoIndex">エコ回収をご利用になったきっかけ</dt> 
-							{$starts}
-							<dt class="infoIndex">エコランドをお選びになった理由</dt>
-							{$features}
-							<dt class="infoIndex">エコ回収したアイテム</dt>
-							{$items}
-						</dl>
-					</div>
-				<!--customerProfile--></div>
-EOF;
-			}
-
-
-			$args2 = array_merge($args, array("offset" => -1));
-			$voices =  query_posts($args2);
-			if($voices){
-				echo <<<EOF
-					<div class="archiveIndex">
-						<div class="onecol col">回収日</div>
-						<div class="twocol col">性別 / 年代</div>
-						<div class="twocol col">回収エリア</div>
-						<div class="fourcol col">回収アイテム</div>
-						<div class="threecol col last">評価</div>
-					</div>
-					<ul class="archiveList">
-EOF;
-				foreach($voices as $voice){
-					$name = getCustomerName($voice);
-					$sex = getCustomerSex($voice);
-					$age = getCustomerAge($voice);
-					$area = getCustomerAreas($voice);
-					$date = date("m/d", strtotime(getCustomerDate($voice)));
-					$items = getCustomerItems($voice);
-					$link = get_permalink($voice->ID);
-					echo <<<EOF
-							<li class=" al_c">
-								<a href="{$link}">
-									<div class="onecol col">{$date} </div>
-									<div class="twocol col">{$sex} / {$age}</div>
-									<div class="twocol col">{$area}</div>
-									<div class="fourcol col al_l">{$items}</div>
-									<div class="threecol col last">
-										<span class="rating-foreground star star{$review03Score}"> 
-											<meta itemprop="rating" content="{$review03Score}" /> 
-										</span> 
-									</div>
-								</a>
-							</li>
-EOF;
-				}
-				if($voices) echo "</ul>";
-			}?>
-
-				<?php if(count($voiceTitles) == 0): ?>
-					<?php echo $post->post_content; ?>
-				<?php else:?>
-					<dl class="listVoices">
-					<?php for($i=0; $i<count($voiceTitles); $i++){
-						echo "<dt>".$voiceTitles[$i]."</dt>";
-						echo "<dd>".$voiceContents[$i]."</dd>";
-					}?>
-					</dl>
-				<?php endif; ?>
-			<!--口コミ--></section>
-
-			<?php
-			//related items
-			if(count($cltItems) > 1){
-				$args = array(
-					"posts_per_page" => -1,
-					"post_type" => "items",
-					"order_by" => "date",
-					"order" => ASC,
-					"post__not_in" => array($post->ID),
-					"tax_query" => array(
-						array(
-							'taxonomy' => 'cltitems',
-							'field' => 'id',
-							'terms' => $relatedItemIds
-						)
-					)
-				);
-				$relatedItems = query_posts($args);
-				if($relatedItems){ ?>
-					<section class="contents listItems">
-						<h3>関連アイテム一覧</h3>
-						<ul>
-							<?php foreach($relatedItems as $relatedItem): ?>
-							<li><a href="<?php echo get_permalink($relatedItem->ID); ?>"><?php echo $relatedItem->post_title; ?></a></li>
-							<?php endforeach; ?>
-						</ul>
-					<!--関連アイテム--></section>
-					<?php
-				}
-			}?>
-
-			<section class="contents">
-				<div class="twelvecol col last">
-					<h3>エコ回収についてもっと詳しく知る</h3>
+		<div class="intro">
+			<h2><span>練馬区で不用品回収をお考えの方へ</span>エコランドにお任せください</h2>
+			<div class="contact">
+				<div id="tel">
+					<a onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});" href="tel:0120530539">
+						<span class="icon-phone"></span>
+						<span>0120-530-539</span>
+					</a>
 				</div>
-				<ul class="listShortcuts">
-					<li>
-						<a href="<?php echo get_post_type_archive_link("price"); ?>">
-							<span class="block">明朗な料金体系が</span>
-							<span class="block">エコ回収の特徴</span>
-							<span class="block index"><span class="icon-calculate"></span>料金案内</span>
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo get_post_type_archive_link("flow"); ?>">
-							<span class="block">エコ回収依頼から</span>
-							<span class="block">当日のエコ回収まで</span>
-							<span class="block index"><span class="icon-flow-tree"></span>ご利用の流れ</span>
-						</a>
-					</li>
-					<li>
-						<a href="<?php echo get_post_type_archive_link("staff"); ?>">
-							<span class="block">お客様のお困りことに</span>
-							<span class="block">誠実・丁寧な仕事を</span>
-							<span class="block index"><span class="icon-users"></span>STAFF紹介</span>
-						</a>
-					</li>
-				</ul>
-			<!--エコ回収サービスについて--></section>
-
-
-			<div class="contents contactBnr" id="bottom">
-				<? echo contactBnr(); ?>
+				<div id="mail">
+					<a href="http://www.eco-kaishu.jp/estimate/?pr_code=0-03">メールで見積依頼</a>
+				</div>
+				<p>営業時間 平･土 9:00-22:00日･祝 9:00-20:00</p>
 			</div>
+			<div class="fourcol col">
+				<span class="icon-moneybag"></span>
+				<div class="txt">私も今どうもその約束人</div>
+				<h4>明確な料金体系</h4>
+			</div>
+			<div class="fourcol col">
+				<span class="icon-settings"></span>
+				<div class="txt">私も今どうもその約束人</div>
+				<h4>事前見積&スピード対応</h4>
+			</div>
+			<div class="fourcol col">
+				<span class="icon-files"></span>
+				<div class="txt">私も今どうもその約束人</div>
+				<h4>安心の実績</h4>
+			</div>
+			<div class="clear"></div>
+		</div><!--.intro-->
+		<div class="reason">
+			<h3>エコランドが選ばれる理由</h3>
+			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+			<div class="fourcol col">
+				<span class="icon-moneybag"></span>
+				<h4>明確な料金体系</h4>
+				<h5>1点からでもオトクにお伺い！</h5>
+				<p>エコランドのエコ回収は料金がお品物ごとに<br />決まっています。1点からでもお引取可能なので、<br />パック料金より断然お得！</p>
+				<h5>買取も同時に対応</h5>
+				<p>家電・家具などはお買取も行っておりますので<br />複数の業者に頼む手間が省けます！※1)</p>
+			</div>
+			<div class="fourcol col">
+				<span class="icon-settings"></span>
+				<h4>事前見積&スピード対応</h4>
+				<h5>ネット/電話で事前見積</h5>
+				<p>「受付の対応が良かった」がエコランドを選んだ理由<br />【第3位】※2)！コンシェルジュ（受付スタッフ）が<br />事前にネット/お電話で丁寧にお見積させて頂きます。</p>
+				<h5>プロに運び出しもお任せ</h5>
+				<p>お部屋の中からの運び出しからお任せください。<br />大きいモノや重たいモノでもプロのスタッフが<br />スピーディーに運び出します。</p>
+			</div>
+			<div class="fourcol col">
+				<span class="icon-files"></span>
+				<h4>安心の実績</h4>
+				<h5>大手企業との提携が信頼の証</h5>
+				<p>お引取後までしっかり責任を負う<br />エコランドの仕組みが認められ、<br />たくさんの企業様と提携させて頂いています。</p>
+				<h5>有名メディアにも多数掲載</h5>
+				<p>エコ回収のリユース・リサイクルの<br />仕組みやお片づけサービスは<br />これまで多数のメディアに取り上げられています。</p>
+			</div>
+			<div class="clear"></div>
+			<p class="footnote">
+				<small>※ 1)使用年数やメーカーにより、お買取できないお品物もございます。</small>
+				<small>※ 2)2014年のお客様アンケート集計結果より。</small>
+			</p>
+		</div><!--.reason-->
+		<div class="ex">
+			<h3>明確な料金体系</h3>
+			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+			<ul>
+				<li class="twocol col">
+					<h4>基本料金</h4>
+					<span class="icon-shipping"></span>
+					<p><span class="price">3,240</span></p>
+				</li>
+				<li class="twocol col">
+					<h4>物品ごとの料金</h4>
+					<span class="icon-box2"></span>
+					<p><span class="priceIndex">洗濯機</span><span class="price">4,320</span></p>
+					<p><span class="priceIndex">ソファ</span><span class="price">3,240</span></p>
+				</li>
+				<li class="twocol col">
+					<h4>特殊作業料金</h4>
+					<span class="icon-tools"></span>
+					<p><span class="priceIndex m0_r">階段の運び出し</span><span class="price block">1,080</span></p>
+				</li>
+				<li class="twocol col">
+					<h4>買取料金</h4>
+					<span class="icon-tags"></span>
+					<p><span class="priceIndex">オプション</p>
+				</li>
+				<li class="fourcol col last">
+					<h4>合計料金</h4>
+					<p><span class="price">10,880</span></p>
+				</li>
+			</ul>
+		</div><!--.ex-->
+		<div class="tabs">
+			<section class="contents" id="basicCharges">
+				<div class="linkMenu">
+				    <h3><a href="#basicCharges" class="active">基本料金</a></h3>
+				    <div class="tab"><a href="#itemCharges">品物ごとの料金</a></div>
+				    <div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+				    <div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+				</div>
+				<table>
+					<tbody>
+						<tr>
+							<th>基本料金</th>
+							<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
+							<td>3,240円</td>
+						</tr>
+						<tr>
+							<th>地域料金</th>
+							<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
+							<td>4,320円</td>
+						</tr>
+					</tbody>
+				</table>
+			</section><!--#basicCharges-->
 
-		<!--.ninecol--></div>
+			<section class="contents" id="itemCharges">
+				<div class="linkMenu">
+				    <div class="tab"><a href="#basicCharges">基本料金</a></div>
+				    <h3><a href="#itemCharges" class="active">品物ごとの料金</a></h3>
+				    <div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+				    <div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+				</div>
+				<div class="container">
+					<div class="twelvecol col last">
+						<p>エコ回収の際に必要となるお品物ごとの料金です。電化製品などは一般的なサイズによってあらかじめ料金ランクが決まっています。<br />
+							棚やテーブルなどお品物ごとにサイズが違うモノに関しては幅・奥行・高さの和で料金ランクが決まります。</p>
+						<p>※金庫やエレクトーンなど重量のあるモノは重量によって料金ランクが決まります。</p>
+					</div>
 
-		<aside class="threecol col last sidebar">
+					<section id="electricApp">
+						<div class="twelvecol col last"><h4>各家電・パソコンのサイズ別料金</h4></div>
+						<div class="liquidLayout">
+							<div class="item">
+								<span class="icon-tv2"></span>
+								<h5>テレビ</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--item TV-->
+							<div class="item">
+								<span class="icon-refrigerator"></span>
+								<h5>冷蔵庫</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--item refrigerate-->
+							<div class="item">
+								<span class="icon-airconditioner"></span>
+								<h5>エアコン</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--item air conditioner-->
+							<div class="item">
+								<span class="icon-clothesdryer"></span>
+								<h5>テレビ</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--item clothes dryer-->
+							<div class="item">
+								<span class="icon-washingmachine"></span>
+								<h5>衣類乾燥機</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--item washing machine-->
+							<div class="item">
+								<span class="icon-laptop"></span>
+								<h5>エアコン</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+										<tr>
+											<th>20インチ以下</th>
+											<td>3,240円</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--item PC-->
+					</section><!--#itemCharges #electricApp-->
 
-			<?php
-			//item pages in the same cat
-			$args = array(
-				"order_by" => "date",
-				"order" => ASC,
-				"post_type" => $postTypeName,
-				"posts_per_page" => -1,
-				"cltitems" => $cltItemCatName,
-				"post__not_in" => array($cltItemCatId)
-			);
-			$posts = query_posts($args);
-			if($posts){
-				echo '<section class="listItems contents">
-				<h2>同じカテゴリ内のアイテム一覧</h2><ul class="">';
-				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
-				echo '</ul>
-				<!--.contents--></section>';
-				wp_reset_query();
-			}
+					<section id="itemRank">
+						<div class="twelvecol col last"><h4>各品物のランク別料金</h4></div>						
+						<div class="liquidLayout">
+							<div class="item">
+								<h5>A ランク <br />540円</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>縦・横・奥行の合計</th>
+											<td>50cm以下</td>
+										</tr>
+										<tr>
+											<th>重さ</th>
+											<td>1kg以下</td>
+										</tr>
+										<tr>
+											<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="item">
+								<h5>A ランク <br />540円</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>縦・横・奥行の合計</th>
+											<td>50cm以下</td>
+										</tr>
+										<tr>
+											<th>重さ</th>
+											<td>1kg以下</td>
+										</tr>
+										<tr>
+											<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="item">
+								<h5>A ランク <br />540円</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>縦・横・奥行の合計</th>
+											<td>50cm以下</td>
+										</tr>
+										<tr>
+											<th>重さ</th>
+											<td>1kg以下</td>
+										</tr>
+										<tr>
+											<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="item">
+								<h5>A ランク <br />540円</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>縦・横・奥行の合計</th>
+											<td>50cm以下</td>
+										</tr>
+										<tr>
+											<th>重さ</th>
+											<td>1kg以下</td>
+										</tr>
+										<tr>
+											<th colspan="2">、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="item">
+								<h5>A ランク <br />540円</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>縦・横・奥行の合計</th>
+											<td>50cm以下</td>
+										</tr>
+										<tr>
+											<th>重さ</th>
+											<td>1kg以下</td>
+										</tr>
+										<tr>
+											<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="item">
+								<h5>A ランク <br />540円</h5>
+								<table>
+									<tbody>
+										<tr>
+											<th>縦・横・奥行の合計</th>
+											<td>50cm以下</td>
+										</tr>
+										<tr>
+											<th>重さ</th>
+											<td>1kg以下</td>
+										</tr>
+										<tr>
+											<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section><!--#itemCharges #itemRank-->
+				</div><!--#itemCharges .container-->
+			</section><!--#itemCharges-->
 
-			//popular item cats
-			$args = array(
-				"order_by" => "date",
-				"order" => ASC,
-				"post_type" => $postType->name,
-				"posts_per_page" => -1,
-				"catkinds" => "人気"
-			);
-			$posts = query_posts($args);
-			if($posts){
-				echo '<section class="listItems contents">
-				<h2>人気アイテム一覧</h2><ul>';
-				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
-				echo '</ul>
-				<!--.contents--></section>';
-				wp_reset_query();
-			}
+			<section class="contents" id="spworksCharges">
+				<div class="linkMenu">
+				    <div class="tab"><a href="#basicCharges">基本料金</a></div>
+				    <div class="tab"><a href="#itemCharges">品物ごとの料金</a></div>
+				    <h3><a href="#spworksCharges" class="active">特殊作業料金</a></h3>
+				    <div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+				</div>
+				<table>
+					<tbody>
+						<tr>
+							<th>基本料金</th>
+							<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
+							<td>3,240円</td>
+						</tr>
+						<tr>
+							<th>地域料金</th>
+							<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
+							<td>4,320円</td>
+						</tr>
+						<tr>
+							<th>基本料金</th>
+							<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
+							<td>3,240円</td>
+						</tr>
+						<tr>
+							<th>地域料金</th>
+							<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
+							<td>4,320円</td>
+						</tr>
+					</tbody>
+				</table>
+			</section><!--#spworksCharges-->
 
-			//popular item cats
-			$args = array(
-				"order_by" => "date",
-				"order" => ASC,
-				"post_type" => "area",
-				"posts_per_page" => -1,
-				"catkinds" => "人気"
-			);
-			$posts = query_posts($args);
-			if($posts){
-				echo '<section class="listItems contents">
-				<h2>人気エリア一覧</h2><ul>';
-				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
-				echo '</ul>
-				<!--.contents--></section>';
-				wp_reset_query();
-			}?>
-			
-			<div class="bnrBtn contents" id="area">
-				<a href="<?php echo get_post_type_archive_link("area"); ?>">
-					<span class="icon-search"></span>
-					<span class="icon-map3"></span>
-					<p><span class="block">対応エリアの</span><span class="block">確認はこちら</span></p>
-				</a>
-			<!--.contents--></div>
-
-			<div class="bnrBtn contents">
-				<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
-			<!--.contents--></div>	
-
-			<?php
-			$convSales = convSale();
-			if($convSales): ?>
-				<div class="behind contents">
-					<ul>
-					<?php foreach($convSales  as $convSale): ?>
-						<li class="item">
-							<a href="<?php echo $convSale->link; ?>" class="itemContents">
-								<span class="icon-bullhorn"></span>
-								<p class="info">
-									<span class="block"><?php echo $convSale->month."月".$convSale->day."日"; ?></span><span class="block"><?php echo $convSale->area; ?></span>
-								</p>
-								<p class="off">割引CHECK</p>
-							</a>
-						</li>
-					<?php endforeach; ?>
-					</ul>
-				<!--.contents--></div>
-			<?php endif;
-
-			//related contents page
-			$args = array(
-				"order_by" => "date",
-				"order" => DESC,
-				"post_type" =>"post",
-				"posts_per_page" => 10,
-				"cltitems" => $cltItemCatName
-			);
-			$posts = query_posts($args);
-			if($posts){
-				echo '<section class="listPosts contents">
-				<h2>関連記事一覧</h2><ul class="">';
-				foreach($posts as $post) echo '<li><a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a></li>';
-				echo '</ul>
-				<!--.contents--></section>';
-				wp_reset_query();
-			}?>
-
-		<!--.sidebar--></aside>
-
+			<section class="contents" id="optionsCharges">
+				<div class="linkMenu">
+				    <div class="tab"><a href="#basicCharges">基本料金</a></div>
+				    <div class="tab"><a href="#itemCharges">品物ごとの料金</a></div>
+				    <div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+				    <h3><a href="#optionsCharges" class="active">オプション料金</a></h3>
+				</div>
+				<table>
+					<tbody>
+						<tr>
+							<th>基本料金</th>
+							<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
+							<td>3,240円</td>
+						</tr>
+						<tr>
+							<th>地域料金</th>
+							<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
+							<td>4,320円</td>
+						</tr>
+						<tr>
+							<th>基本料金</th>
+							<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
+							<td>3,240円</td>
+						</tr>
+						<tr>
+							<th>地域料金</th>
+							<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
+							<td>4,320円</td>
+						</tr>
+					</tbody>
+				</table>
+			</section><!--#optionsCharges-->
+		</div><!-- .tabs -->
+		<div class="purchase">
+			<h3>買取について</h3>
+			<p class="txtNote">製造年（使用年数）、メーカー名（ブランド名）、型番などをお教え頂ければメール/お電話で買取の目安金額がご案内できます。<br />最終的な買取金額はお引取にお伺いした際に商品の状態を確認した上でのご案内となります。</p>
+			<div class="threecol col">
+				<h4>家電</h4>
+				<dl>
+					<dt>対象品例</dt>
+					<dd>ＴＶ、冷蔵庫、洗濯機、電子レンジ、掃除機、炊飯器、ガステーブル、ブルーレイ/DVDレコーダー、ミニコンポなど</dd>
+					<dt>査定ポイント</dt>
+					<dd>製造年（5年以内が買取対象）、付属品の有無、商品の状態（キズ・汚れなど）、動作状況</dd>
+				</dl>
+			</div>	
+			<div class="threecol col">
+				<h4>家具</h4>
+				<dl>
+					<dt>対象品例</dt>
+					<dd>ブランド家具</dd>
+					<dt>査定ポイント</dt>
+					<dd>ブランド、使用年数（5年以内が買取対象、ソファは2年以内）、サイズ（幅・奥行・高さの和が450㎝以上は対象外）</dd>
+				</dl>
+			</div>	
+			<div class="threecol col">
+				<h4>家電</h4>
+				<dl>
+					<dt>対象品例</dt>
+					<dd>エレクトーン、電子ピアノ、ギター、キーボード、ベースなど</dd>
+					<dt>査定ポイント</dt>
+					<dd>メーカー名、製造年、型番</dd>
+				</dl>
+			</div>	
+			<div class="threecol col">
+				<h4>家電</h4>
+				<dl>
+					<dt>対象品例</dt>
+					<dd>デスクトップ本体、液晶モニタ、ノートパソコン</dd>
+					<dt>査定ポイント</dt>
+					<dd>初期化できるもの、OS、型番</dd>
+				</dl>
+			</div>	
+			<div class="clear"></div>
+			<p class="footnote"><small>※お品物やエリアによって買取のみではお伺いできない場合もございます。詳しくはお問い合わせください。</small></p>
+		</div><!-- .purchase -->
+		<div class="estimates">
+			<h3>事前見積&スピード対応</h3>
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="2">
+							<h4>ネット/ 電話で事前見積</h4>
+							<p>
+								エコ回収のお見積はサイト上のお問い合わせフォームから、<br />
+								またはお電話でご案内できます。<br />
+								コンシェルジュ（受付スタッフ）が親切・丁寧に<br />
+								ご案内致しますので、<br />
+								初めての方も安心してご連絡ください。
+							</p>
+						</td>
+						<td><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/img01.jpg" /></td>
+					</tr>
+					<tr>
+						<td><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/img01.jpg" /></td>
+						<td colspan="2">
+							<h4>プロに運び出しもお任せ</h4>
+							<p>
+								エコ回収にお伺いするスタッフは<br />
+								経験豊富な運び出しのプロ大きなモノや重たいモノも<br />
+								迅速な作業で安全に運び出します
+							</p>
+						</td>						
+					</tr>
+				</tbody>
+			</table>		
+			<div class="lstStaff">
+				<h4>私たちがまいります</h4>
+				<div class="owl-carousel owl-theme owl">
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_kurahashi.jpg"></div><h5>倉橋 瑛子</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_shinki.jpg"></div><h5>新木 千晴</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_tanomi.jpg"></div><h5>田野實 温代</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_tsutsumiya.jpg"></div><h5>堤谷 美里</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_iwasaki.jpg"></div><h5>岩崎 愛華</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_nagahiro.jpg"></div><h5>永廣 亜沙美</h5></div>
+				</div>
+			</div>
+			<div class="lstStaff">
+				<h4>私たちがうかがいます</h4>
+				<div class="owl-carousel owl-theme owl">
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_ushio.jpg"></div><h5>潮 恵輔</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_miyazaki.jpg"></div><h5>宮崎 美穂</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_watanabe.jpg"></div><h5>渡辺 愛美</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yanashima.jpg"></div><h5>梁島 さゆり</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_goto.jpg"></div><h5>後藤 拓</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_m.jpg"></div><h5>星 祐太</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamashita.jpg"></div><h5>山下 恭平</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_kaneko.jpg"></div><h5>金子 拓矢</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sasaki.jpg"></div><h5>佐々木 健</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sato.jpg"></div><h5>佐藤 一樹</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_f.jpg"></div><h5>星 奈緒美</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamamoto.jpg"></div><h5>山本 紘亮</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_oomori.jpg"></div><h5>大森 太一</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sanada.jpg"></div><h5>眞田 清道</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_okamura.jpg"></div><h5>岡村 駿太</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_iwashima.jpg"></div><h5>岩島 正明</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_tokura.jpg"></div><h5>十倉 淳</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_shimura.jpg"></div><h5>志村 昭</h5></div>
+					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_murooka.jpg"></div><h5>室岡 誠</h5></div>
+				</div>
+			</div>
+			<div class="txtContent">
+				<div class="block">
+					<img class="alignleft" src="<?php echo bloginfo("template_url"); ?>/assets/img/area/sample.gif">
+					<h4>スキルアップ研修の様子</h4>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+				</div>
+				<div class="block">
+					<img class="alignright" src="<?php echo bloginfo("template_url"); ?>/assets/img/area/sample.gif">
+					<h4>スキルアップ研修の様子</h4>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+				</div>
+			</div>
+		</div><!-- .estimates -->
+		<div class="record">
+			<h3>安心の実績</h3>
+			<div class="al_c">
+				<h4>大手企業との提携が信頼の証</h4>
+				<p>明確な料金体系やエコ回収後までしっかり責任を持ってリユース・リサイクルを行う仕組みに共感して頂き、<br />エコランドは60社以上の優良企業様と提携・協力をさせて頂いております。</p>
+				<p>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/G_1_東急ベル.gif" />
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/G_2_logotype01_01.gif" />
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/G_3_150111_プラウドオーナーず.jpg" />
+				</p>
+				<h4>有名メディアにも多数掲載</h4>
+				<p>エコランドのエコ回収やお片づけサービスはこれまで多くのメディアに取り上げられました。</p>
+			</div>
+			<div class="owl-carousel owl-theme owl">
+				<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_kurahashi.jpg"></div><h5>倉橋 瑛子</h5></div>
+				<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_shinki.jpg"></div><h5>新木 千晴</h5></div>
+				<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_tanomi.jpg"></div><h5>田野實 温代</h5></div>
+				<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_tsutsumiya.jpg"></div><h5>堤谷 美里</h5></div>
+				<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_iwasaki.jpg"></div><h5>岩崎 愛華</h5></div>
+				<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_nagahiro.jpg"></div><h5>永廣 亜沙美</h5></div>
+			</div>
+		</div><!-- .record -->
+		<div class="lstTodo">
+			<h3>こんなこともできます</h3>
+			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+			<table>
+				<tbody>
+					<tr>
+						<td><span class="circle"></span></td>
+						<td>
+							<h4>明確な料金が事前にわかる</h4>
+							<p>私も今どうもその約束人に対してものの所へ出ならた。<br />
+							どうしても事実へ演説院はけっしてどんな就職ですでだけ<br />
+							より教えがいでにも批評来なけれますて、当然にも出たまししう。</p>
+						</td>
+						<td><span class="circle"></span></td>
+						<td>
+							<h4>明確な料金が事前にわかる</h4>
+							<p>私も今どうもその約束人に対してものの所へ出ならた。<br />
+							どうしても事実へ演説院はけっしてどんな就職ですでだけ<br />
+							より教えがいでにも批評来なけれますて、当然にも出たまししう。</p>
+						</td>
+					</tr>
+					<tr>
+						<td><span class="circle"></span></td>
+						<td>
+							<h4>明確な料金が事前にわかる</h4>
+							<p>私も今どうもその約束人に対してものの所へ出ならた。<br />
+							どうしても事実へ演説院はけっしてどんな就職ですでだけ<br />
+							より教えがいでにも批評来なけれますて、当然にも出たまししう。</p>
+						</td>
+						<td><span class="circle"></span></td>
+						<td>
+							<h4>明確な料金が事前にわかる</h4>
+							<p>私も今どうもその約束人に対してものの所へ出ならた。<br />
+							どうしても事実へ演説院はけっしてどんな就職ですでだけ<br />
+							より教えがいでにも批評来なけれますて、当然にも出たまししう。</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div><!-- .lstTodo -->
+		<div class="flow">
+			<h3> ご利用の流れ</h3>
+			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+			<ul>
+				<li class="threecol col">
+					<span class="icon-number"></span>
+					<h4>見積もり依頼</h4>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step1.jpg">
+					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+				</li>
+				<li class="threecol col">
+					<span class="icon-number2"></span>
+					<h4>集荷</h4>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step2.jpg">
+					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+				</li>
+				<li class="threecol col">
+					<span class="icon-number3"></span>
+					<h4>お支払い</h4>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step3.jpg">
+					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+				</li>
+				<li class="threecol col">
+					<span class="icon-number4"></span>
+					<h4>エコオク</h4>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step4.jpg">
+					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+				</li>
+			</ul>
+			<div class="txtContent al_c">
+				<h4>お申し込みの前に確認ください‼︎</h4>
+				<table class="wth">
+					<tbody>
+						<tr>
+							<td>不用品がたくさん（20点以上）ある場合はお見積にお伺いします。</td>
+						</tr>
+						<tr>
+							<td>出張見積はお伺いできない地域もございます。詳しくはお問い合わせください。</td>
+						</tr>
+						<tr>
+							<td>出張見積は無料です。</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!-- .flow -->
 	<!--.container--></div>
 
 <?php get_footer(); ?>'
