@@ -130,7 +130,7 @@ get_header();
 	<!--.headerPage--></header>
 
 	<div class="container">
-		<div class="intro">
+		<section class="intro contents">
 			<h2><span>練馬区で不用品回収をお考えの方へ</span>エコランドにお任せください</h2>
 			<div class="contact">
 				<div id="tel">
@@ -154,14 +154,13 @@ get_header();
 				<div class="txt">私も今どうもその約束人</div>
 				<h4>事前見積&スピード対応</h4>
 			</div>
-			<div class="fourcol col">
+			<div class="fourcol col last">
 				<span class="icon-files"></span>
 				<div class="txt">私も今どうもその約束人</div>
 				<h4>安心の実績</h4>
 			</div>
-			<div class="clear"></div>
-		</div><!--.intro-->
-		<div class="reason">
+		</section><!--.intro-->
+		<section class="reason contents">
 			<h3>エコランドが選ばれる理由</h3>
 			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
 			<div class="fourcol col">
@@ -180,7 +179,7 @@ get_header();
 				<h5>プロに運び出しもお任せ</h5>
 				<p>お部屋の中からの運び出しからお任せください。<br />大きいモノや重たいモノでもプロのスタッフが<br />スピーディーに運び出します。</p>
 			</div>
-			<div class="fourcol col">
+			<div class="fourcol col last">
 				<span class="icon-files"></span>
 				<h4>安心の実績</h4>
 				<h5>大手企業との提携が信頼の証</h5>
@@ -188,13 +187,12 @@ get_header();
 				<h5>有名メディアにも多数掲載</h5>
 				<p>エコ回収のリユース・リサイクルの<br />仕組みやお片づけサービスは<br />これまで多数のメディアに取り上げられています。</p>
 			</div>
-			<div class="clear"></div>
 			<p class="footnote">
 				<small>※ 1)使用年数やメーカーにより、お買取できないお品物もございます。</small>
 				<small>※ 2)2014年のお客様アンケート集計結果より。</small>
 			</p>
-		</div><!--.reason-->
-		<div class="ex">
+		</section><!--.reason-->
+		<section class="ex contents">
 			<h3>明確な料金体系</h3>
 			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
 			<ul>
@@ -224,8 +222,8 @@ get_header();
 					<p><span class="price">10,880</span></p>
 				</li>
 			</ul>
-		</div><!--.ex-->
-		<div class="tabs">
+		</section><!--.ex-->
+		<section class="tabs contents">
 			<section class="contents" id="basicCharges">
 				<div class="linkMenu">
 				    <h3><a href="#basicCharges" class="active">基本料金</a></h3>
@@ -612,8 +610,8 @@ get_header();
 					</tbody>
 				</table>
 			</section><!--#optionsCharges-->
-		</div><!-- .tabs -->
-		<div class="purchase">
+		</section><!-- .tabs -->
+		<section class="purchase contents">
 			<h3>買取について</h3>
 			<p class="txtNote">製造年（使用年数）、メーカー名（ブランド名）、型番などをお教え頂ければメール/お電話で買取の目安金額がご案内できます。<br />最終的な買取金額はお引取にお伺いした際に商品の状態を確認した上でのご案内となります。</p>
 			<div class="threecol col">
@@ -643,7 +641,7 @@ get_header();
 					<dd>メーカー名、製造年、型番</dd>
 				</dl>
 			</div>	
-			<div class="threecol col">
+			<div class="threecol col last">
 				<h4>家電</h4>
 				<dl>
 					<dt>対象品例</dt>
@@ -652,10 +650,9 @@ get_header();
 					<dd>初期化できるもの、OS、型番</dd>
 				</dl>
 			</div>	
-			<div class="clear"></div>
 			<p class="footnote"><small>※お品物やエリアによって買取のみではお伺いできない場合もございます。詳しくはお問い合わせください。</small></p>
-		</div><!-- .purchase -->
-		<div class="estimates">
+		</section><!-- .purchase -->
+		<section class="estimates contents">
 			<h3>事前見積&スピード対応</h3>
 			<table>
 				<tbody>
@@ -720,28 +717,30 @@ get_header();
 					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_murooka.jpg"></div><h5>室岡 誠</h5></div>
 				</div>
 			</div>
-			<div class="txtContent">
-				<div class="block">
-					<img class="alignleft" src="<?php echo bloginfo("template_url"); ?>/assets/img/area/sample.gif">
-					<h4>スキルアップ研修の様子</h4>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-				</div>
-				<div class="block">
-					<img class="alignright" src="<?php echo bloginfo("template_url"); ?>/assets/img/area/sample.gif">
-					<h4>スキルアップ研修の様子</h4>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
-					<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+			<div class="twelvecol col">
+				<div class="txtContent">
+					<div class="block">
+						<img class="alignleft" src="<?php echo bloginfo("template_url"); ?>/assets/img/area/sample.gif">
+						<h4>スキルアップ研修の様子</h4>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					</div>
+					<div class="block">
+						<img class="alignright" src="<?php echo bloginfo("template_url"); ?>/assets/img/area/sample.gif">
+						<h4>スキルアップ研修の様子</h4>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+						<p>より安全かつスピーディーな作業を行うため、定期的にスキルアップ研修が行われています。ここではベテラン社員のテクニックを実演を交えて共有し、全スタッフが習得できるように練習しています。</p>
+					</div>
 				</div>
 			</div>
-		</div><!-- .estimates -->
-		<div class="record">
+		</section><!-- .estimates -->
+		<section class="record contents">
 			<h3>安心の実績</h3>
 			<div class="al_c">
 				<h4>大手企業との提携が信頼の証</h4>
@@ -762,8 +761,8 @@ get_header();
 				<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_iwasaki.jpg"></div><h5>岩崎 愛華</h5></div>
 				<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_nagahiro.jpg"></div><h5>永廣 亜沙美</h5></div>
 			</div>
-		</div><!-- .record -->
-		<div class="lstTodo">
+		</section><!-- .record -->
+		<section class="lstTodo contents">
 			<h3>こんなこともできます</h3>
 			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
 			<table>
@@ -802,8 +801,8 @@ get_header();
 					</tr>
 				</tbody>
 			</table>
-		</div><!-- .lstTodo -->
-		<div class="flow">
+		</section><!-- .lstTodo -->
+		<section class="flow contents">
 			<h3> ご利用の流れ</h3>
 			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
 			<ul>
@@ -825,30 +824,109 @@ get_header();
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step3.jpg">
 					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
 				</li>
-				<li class="threecol col">
+				<li class="threecol col last">
 					<span class="icon-number4"></span>
 					<h4>エコオク</h4>
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step4.jpg">
 					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
 				</li>
 			</ul>
-			<div class="txtContent al_c">
-				<h4>お申し込みの前に確認ください‼︎</h4>
-				<table class="wth">
-					<tbody>
-						<tr>
-							<td>不用品がたくさん（20点以上）ある場合はお見積にお伺いします。</td>
-						</tr>
-						<tr>
-							<td>出張見積はお伺いできない地域もございます。詳しくはお問い合わせください。</td>
-						</tr>
-						<tr>
-							<td>出張見積は無料です。</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="twelvecol col last">
+				<div class="txtContent al_c">
+					<span class="check">CHECK</span>
+					<h4>お申し込みの前に確認ください‼︎</h4>
+					<table class="wth">
+						<tbody>
+							<tr>
+								<td>不用品がたくさん（20点以上）ある場合はお見積にお伺いします。</td>
+							</tr>
+							<tr>
+								<td>出張見積はお伺いできない地域もございます。詳しくはお問い合わせください。</td>
+							</tr>
+							<tr>
+								<td>出張見積は無料です。</td>
+							</tr>
+						</tbody>
+					</table>
+				<div>
 			</div>
-		</div><!-- .flow -->
+		</section><!-- .flow -->
+		<section class="voices contents">
+			<h3>お客様の声</h3>
+			<p class="txtNote">私も今どうもその約束人に対してものの所へ出ならた。どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+			<div class="fivecol col">
+				<h4>えこりん様</h4>
+				<span class="new">NEW</span>
+				<dl>
+					<dt><span class="icon-user"></span></dt>
+					<dd class="last">
+						<span>男性 / 20代</span><span>2015-01-01 回収</span><a href="#">東京都　千代田区</a>
+					</dd>
+					<dt><span class="icon-tag"></span></dt>
+					<dd class="last">
+						<span>エコ回収ご利用になったきっかけ</span><br /><span>片付け</span>
+					</dd>
+					<dt><span class="icon-tag"></span></dt>
+					<dd class="last">
+						<span>エコランドをお選びになった理由</span><br /><span>メールで見積もりできる明確な料金が事前にわかる運び出ししてもらえる</span>
+					</dd>
+					<dt><span class="icon-download4"></span></dt>
+					<dd class="last">
+						<span>エコ回収したアイテム</span><br /><a href="#">ソファ</a><a href="#">ベッド</a>
+					</dd>
+				</dl>
+				<div class="star"></div>
+				<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+				<p class="al_r">2015-01-15 投稿</p>
+			</div>
+			<div class="sevencol col last">
+				<ul class="archiveList">
+					<li class="al_c">
+						<a href="#">
+							<div class="twocol col">2014-01-03</div>
+							<div class="twocol col">女性 / 20代</div>
+							<div class="twocol col">東京都 練馬区</div>
+							<div class="threecol col">パソコン、冷蔵庫、デスク</div>
+							<div class="threecol col last"><span class="star"></span> <span class="icon-arrow-right3"></span></div>
+						</a>
+					</li>
+					<li class="al_c">
+						<a href="#">
+							<div class="twocol col">2014-01-03</div>
+							<div class="twocol col">女性 / 20代</div>
+							<div class="twocol col">東京都 練馬区</div>
+							<div class="threecol col">パソコン、冷蔵庫、デスク</div>
+							<div class="threecol col last"><span class="star"></span> <span class="icon-arrow-right3"></span></div>
+						</a>
+					</li>
+					<li class="al_c">
+						<a href="#">
+							<div class="twocol col">2014-01-03</div>
+							<div class="twocol col">女性 / 20代</div>
+							<div class="twocol col">東京都 練馬区</div>
+							<div class="threecol col">パソコン、冷蔵庫、デスク</div>
+							<div class="threecol col last"><span class="star"></span> <span class="icon-arrow-right3"></span></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section><!-- .flow -->
+		<section class="faq contents">
+			<h3>よくある質問</h3>
+			<dl>
+				<dt><span class="icon-question2"></span><strong>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</strong></dt>
+				<dd><span class="icon-checkmark4"></span><strong>まるで大森さんの発展時代まだ相違でしたい一口その倫理それか発展がってご発展たたでないて、
+そうした今は私か辺科学がしが、張さんののが鈍痛のそれをいやしくもご意味と犯さとあなた他人に
+ご所有で加えるようにどうぞ実安心がさたいですと、どうもけっして混同ができだていです事に命じないた。</strong>
+				</dd>
+				<dt><span class="icon-question2"></span><strong>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</strong></dt>
+				<dd><span class="icon-checkmark4"></span><strong>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</strong></dd>
+				<dt><span class="icon-question2"></span><strong>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</strong></dt>
+				<dd><span class="icon-checkmark4"></span><strong>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</strong></dd>
+				<dt><span class="icon-question2"></span><strong>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</strong></dt>
+				<dd><span class="icon-checkmark4"></span><strong>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</strong></dd>
+			</dl>
+		</section><!-- .faq -->
 	<!--.container--></div>
 
 <?php get_footer(); ?>'
