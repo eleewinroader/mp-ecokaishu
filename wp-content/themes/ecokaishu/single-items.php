@@ -140,7 +140,7 @@ get_header();
 					</a>
 				</div>
 				<div id="mail">
-					<a href="http://www.eco-kaishu.jp/estimate/?pr_code=0-03">メールで見積依頼</a>
+					<a href="http://www.eco-kaishu.jp/estimate/?pr_code=0-03"><span>かんたん見積依頼</span><span class="icon-mail5"></span></a>
 				</div>
 				<p>営業時間 平･土 9:00-22:00日･祝 9:00-20:00</p>
 			</div>
@@ -717,7 +717,7 @@ get_header();
 					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_murooka.jpg"></div><h5>室岡 誠</h5></div>
 				</div>
 			</div>
-			<div class="twelvecol col">
+			<div class="twelvecol col last">
 				<div class="txtContent">
 					<div class="block">
 						<img class="alignleft" src="<?php echo bloginfo("template_url"); ?>/assets/img/area/sample.gif">

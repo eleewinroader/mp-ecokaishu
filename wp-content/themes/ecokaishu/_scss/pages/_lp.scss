@@ -8,6 +8,11 @@
 		font-size: $biggest*1.2;
 		text-align: center;
 		margin-bottom: 0.5rem;
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			font-size: $big;
+		}
 	}
 	.txtNote {
 		text-align: center;
@@ -22,30 +27,43 @@
 	}
 
 	.txtContent {
-			background: rgba($black, .05);
-			padding: 1rem;
-			margin: 1rem 0;
-			float: left;
-			width: 100%;
+		background: rgba($black, .05);
+		padding: 1rem;
+		margin: 1rem 0;
+		float: left;
+		width: 100%;
+		img {
+			max-width: 400px;
+			&.alignleft {
+				margin-right: 3rem;
+			}
+			&.alignright {
+				margin-left: 3rem;
+			}
+		}
+		p {
+			margin-bottom: 1rem;
+		}
+		table {
+			td {
+				border-bottom: solid 1px rgba($black, .07);
+				padding: 1rem 0;
+			}
+		}
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			width: 90%;
 			img {
-				max-width: 400px;
+				max-width: 50%;
 				&.alignleft {
-					margin-right: 3rem;
+				margin-right: 0.5rem;
 				}
 				&.alignright {
-					margin-left: 3rem;
-				}
-			}
-			p {
-				margin-bottom: 1rem;
-			}
-			table {
-				td {
-					border-bottom: solid 1px rgba($black, .07);
-					padding: 1rem 0;
+					margin-left: 0.5rem;
 				}
 			}
 		}
+	}
 
 	.intro {
 		background: {
@@ -133,6 +151,72 @@
 				font-size: $biggest;
 			}
 		}
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			padding: 1rem 0;
+			h2 {
+				font-size: $bigger;
+				line-height: $bigger;
+				span {
+					font-size: $smaller*1.2;
+				}
+			}
+			.col {
+				padding: 0.5rem 0;
+				margin-bottom: 0.5rem;
+				.txt {
+					margin-top: 0.5rem;
+				}
+				h4 {
+					margin-top: 0.5rem;
+					margin-bottom: 0.5rem;
+					font-size: $bigger;
+				}
+				span[class^="icon-"]{
+					font-size: $bigger;
+				}
+			}
+			.contact {
+				margin-bottom: 2rem;
+
+				#tel, #mail {
+					display: inline-block;
+					margin: 0 0.5rem;
+					a {
+						width: 4rem;
+						height: 4rem;
+						line-height: 4rem;
+						@include border-radius(50%);
+						color: $white;
+						line-height: 4rem;
+						text-decoration: none;
+						display: inline-block;	
+						padding: 0;	
+						border: none;				
+
+						span {
+							display: none;
+						}
+						//span[class^="icon-"]
+						span[class^="icon-"]{
+							display: block !important;
+							font-size: $biggest*1.5;
+							line-height: 4rem;
+						}
+					}
+				}
+				#tel {
+					a {
+						background: rgba($yellow, 0.5);
+					}
+				}
+				#mail {
+					a {
+						background: $pink;
+					}
+				}
+			}
+		}
 	}//end .intro
 
 	.reason {
@@ -162,6 +246,14 @@
 				border-left: 1px solid rgba($black, 0.1);
 				border-right: 1px solid rgba($black, 0.1);
 			}
+			//Mobile
+			@media all and (max-width: $maxWidth){
+				margin: 0;
+				&:nth-of-type(2) {
+					border: none;
+				}
+			}
+
 		}
 	}//end .reason
 
@@ -374,13 +466,16 @@
 
 			// Mobile
 			@media all and (max-width: $maxWidth){
-				li {
+				h3{
 					width: 99%;
 
 					a {
 						width: 100%;
 						border-right: 1px solid rgba($gray, .9);
 					}
+				}
+				.tab {
+					display: none;
 				}
 			}
 		}//en .linkMenu
@@ -511,7 +606,9 @@
 				}
 
 				.item {
-					padding: .5rem;
+					padding: 0;
+					border: none;
+					@include border-radius(0);
 				}
 
 				//#electricApp
@@ -652,6 +749,16 @@
 				}
 			}
 		}
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			td {
+				text-align: center;
+				font-size: 100%;
+				h4 {
+					font-size: $bigger;
+				}
+			}
+		}
 	}//end .estimates
 
 	.record {
@@ -668,6 +775,7 @@
 			}			
 		}
 		.item {
+			text-align: center;
 			.circleTrimming {
 				overflow: hidden;
 				@include border-radius(50%);
@@ -678,6 +786,14 @@
 			}
 			h5 {
 				font-weight: normal;
+			}
+		}		
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			.al_c {
+				img {
+					margin: 1rem 0;
+				}
 			}
 		}
 	}//end .record
@@ -691,6 +807,16 @@
 			border: 3px solid $green;
 			@include border-radius (50%);
 			margin-right: 2rem;
+		}
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			table {
+				td {
+					&:nth-of-type(1), &:nth-of-type(3) {
+						display: none;
+					}
+				}
+			}
 		}
 	}//end .record
 
@@ -746,6 +872,28 @@
 				top: -1.5rem;
 				@include border-radius(50%);
 				@include rotate(-10deg);
+			}
+		}
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			ul {
+				li {
+					padding-bottom: 1rem;
+					margin-bottom: 1rem;
+					&:after {
+						bottom: 0;
+						right:46%;
+						top: auto;
+						@rotate (90deg);
+					}
+				}
+			}
+			.txtContent {
+				table {
+					&.wth {
+						width: 100%;
+					}
+				}
 			}
 		}
 	}//end .flow
@@ -863,6 +1011,17 @@
 			dt {
 				&:nth-of-type(1) {
 					border-top: 1px solid rgba($black, .1);
+				}
+			}
+		}
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			dl {
+				width: 100%;
+				dt, dd {
+					span {
+						width: 10%;
+					}
 				}
 			}
 		}

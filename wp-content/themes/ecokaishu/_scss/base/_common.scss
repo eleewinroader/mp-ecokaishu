@@ -798,7 +798,7 @@ a{
 
 	&#contactBnr{
 		overflow: hidden;
-		background: $white;
+		background: $green;
 		padding: 3rem 0;
 		position: fixed;
 		bottom: 0;
@@ -812,8 +812,51 @@ a{
 
 		//PC
 		@media all and (min-width: $minWidth){
-			#qa {
-				display: none !important;
+			.contact {
+				text-align: center;
+
+				#tel, #mail {
+					display: inline-block;
+					width: 30%;
+					vertical-align: top;
+					margin: 0 0.5rem;
+					a {
+						width: 100%;
+						display: inline-block;
+						padding: 0.5rem 0;
+						text-decoration: none;
+					}
+				}
+
+				#openingHour, #mail{
+					span[class^="icon-"] {
+						display: none;
+					}
+				}
+
+				#tel {
+					a {
+						color: $white;
+						border: solid 3px $white;
+						font-size: $biggest*1.2;
+					}
+				}
+				#mail {
+					a {
+						color: $white;
+						background: $pink;
+						font-size: $big;
+						@include border-radius (6px);
+						line-height: $biggest*1.4;
+					}
+				}
+				#openingHour {
+					margin-top: 1rem;
+					a {						
+						color: $white;
+						text-decoration: none;
+					}
+				}
 			}
 		}
 
@@ -822,39 +865,44 @@ a{
 			padding: 0.5rem 0;
 			text-align: center;
 
-			h3, #openingHour {
-				display: none;
-			}
 			.contact {
-				a {
-					padding: 0;
-					.label {
-						display: none !important;
-					}
-					.action {
-						width: 60px;
-						height: 60px;
-						@include border-radius(60px);
-						padding: 0;
-						margin: 0;
+				#tel, #mail, #openingHour {
+					display: inline-block;
+					margin: 0 0.5rem;
+					a {
+						width: 4rem;
+						height: 4rem;
+						line-height: 4rem;
+						@include border-radius(50%);
+						color: $white;
+						line-height: 4rem;
+						text-decoration: none;
+						display: inline-block;						
 
 						span {
 							display: none;
 						}
-					}
-					//span[class^="icon-"]
-					span[class^="icon-"]{
-						display: block !important;
-						font-size: $biggest*1.5;
-						line-height: 46pt;
+						//span[class^="icon-"]
+						span[class^="icon-"]{
+							display: block !important;
+							font-size: $biggest*1.5;
+							line-height: 4rem;
+						}
 					}
 				}
-				.box {
-					display: inline-block;
+				#tel {
+					a {
+						background: rgba($yellow, 0.5);
+					}
 				}
-				#qa {
-					.action{
-						background: rgba($yellow, .7);
+				#mail {
+					a {
+						background: $pink;
+					}
+				}
+				#openingHour {
+					a {
+						background: $yellow;
 					}
 				}
 			}

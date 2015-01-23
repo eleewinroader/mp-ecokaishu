@@ -45,6 +45,26 @@
 			</div>
 		<!--#campaign--></aside>
 
+		<aside id="contactBnr" class="boiler">
+			<div class="container">
+				<div class="twelvecol col last">
+					<div class="contact">
+						<div id="tel">
+							<a onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});" href="tel:0120530539">
+								<span class="icon-phone"></span>
+								<span>0120-530-539</span>
+							</a>
+						</div>
+						<div id="mail">
+							<a href="http://www.eco-kaishu.jp/estimate/?pr_code=0-03"><span>メールで見積依頼</span><span class="icon-mail5"></span></a>
+						</div>
+						<div id="openingHour"><a href="#"><span>営業時間 平･土 9:00-22:00日･祝 9:00-20:00</span><span class="icon-question2"></span></a></div>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<!--#contactBnr-->
+
 		<aside class="boiler" id="sitePages">
 			<div class="container">
 				<div class="twelvecol col last">
@@ -194,6 +214,7 @@ $(document).ready(function(){
 
 	$.event.add(window, "scroll", function(){
 
+		checkOffsetContactBnr();
 		//positions
 		var p = $(window).scrollTop();
 		var scrollPosition = windowHeight + p;
@@ -240,6 +261,13 @@ $(document).ready(function(){
 
 		
 	});
+
+	function checkOffsetContactBnr() {
+		if($('#contactBnr').offset().top + $('#contactBnr').height() >= $('#sitePages').offset().top)
+	        $('#contactBnr').css({'position':'static'});
+	    if($(document).scrollTop() + window.innerHeight < $('#sitePages').offset().top)
+	        $('#contactBnr').css({'position':'fixed'});
+	}
 
 	// pc mouseover
 	$('.showLnSubmenu').on({
