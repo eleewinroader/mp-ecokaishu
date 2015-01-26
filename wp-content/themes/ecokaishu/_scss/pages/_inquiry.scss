@@ -124,6 +124,7 @@ h2{
 
 		textarea{
 			margin-top: 1.0rem;
+			width: 80%;
 		}
 
 		.index{
@@ -142,8 +143,20 @@ h2{
 				width: 360px;
 			}
 
+			.lawDoc {
+				width: 80%;
+				margin: 0 auto;
+			}
+
 		}
 
+	}
+	//PC
+	@media only screen and (min-width: $minWidth){
+		.lawDoc {
+			width: 80%;
+			margin: 0 auto;
+		}
 	}
 
 }
@@ -210,6 +223,7 @@ h2{
 	display: block;
 	text-align: center;
 	position: relative;
+	overflow-y: auto;
 
 	label.error{
 		display: block;
@@ -220,10 +234,9 @@ h2{
 
 	//PC
 	@media only screen and (min-width: $minWidth){
-
 		margin: 0 auto;
 		padding: 3.0rem 0;
-		max-width: $maxWidth;
+		max-width: $maxWidthBig;
 		@include box-sizing(border-box);
 
 	}
@@ -231,8 +244,6 @@ h2{
 	@media only screen and (max-width: $maxWidth){
 		margin: 0;
 		padding: 0 1.0rem;
-		overflow-x: hidden;
-		overflow-y: scroll;
 	}
 }
 
