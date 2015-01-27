@@ -26,6 +26,14 @@
 		}
 	}
 
+	.circleTrimming {
+		overflow: hidden;
+		@include border-radius(50%);
+		border: 1px solid rgba($black, .05);
+		background: $gray;
+		display: inline-block;
+	}
+
 	.txtContent {
 		background: rgba($black, .05);
 		padding: 1rem;
@@ -67,7 +75,7 @@
 
 	.intro {
 		background: {
-			image: url("assets/img/area/bg-area.jpg");
+			image: url("assets/img/area/bg-area.png");
  			position: center top;
   			repeat: no-repeat;
   		}
@@ -126,7 +134,7 @@
 			}
 		}
 
-		.col {
+		.fourcol {
 			text-align: center;
 			background: rgba($white, .3);
 			@include border-radius(15px);
@@ -145,7 +153,7 @@
 				font-size: 100%;
 			}
 
-			h4 {
+			.title {
 				margin-top: 1.5rem;
 				margin-bottom: 3rem;
 				font-size: $biggest;
@@ -154,6 +162,8 @@
 		//Mobile
 		@media all and (max-width: $maxWidth){
 			padding: 1rem 0;
+			background: none;
+
 			h2 {
 				font-size: $bigger;
 				line-height: $bigger;
@@ -161,7 +171,7 @@
 					font-size: $smaller*1.2;
 				}
 			}
-			.col {
+			.fourcol {
 				padding: 0.5rem 0;
 				margin-bottom: 0.5rem;
 				.txt {
@@ -174,6 +184,8 @@
 				}
 				span[class^="icon-"]{
 					font-size: $bigger;
+					background: $green;
+					color: $white;
 				}
 			}
 			.contact {
@@ -220,7 +232,7 @@
 	}//end .intro
 
 	.reason {
-		.col {
+		.fourcol {
 			text-align: center;
 			font-size: $smaller;
 			padding: 2rem 0;
@@ -242,14 +254,14 @@
 				font-size: $bigger;
 			}
 
-			&:nth-of-type(2) {
+			&.border {
 				border-left: 1px solid rgba($black, 0.1);
 				border-right: 1px solid rgba($black, 0.1);
 			}
 			//Mobile
 			@media all and (max-width: $maxWidth){
 				margin: 0;
-				&:nth-of-type(2) {
+				&.border {
 					border: none;
 				}
 			}
@@ -303,7 +315,6 @@
 					cursor: pointer;
 					&:after{
 						color: $pink;
-						background: #facbcc;
 						content: "\e83a";
 						padding: 0 20px;
 					}
@@ -325,8 +336,8 @@
 					text-decoration: none;
 				}
 
-				//h4
-				h4{
+				//title
+				.title{
 					margin: 2rem 0;
 					font-size: $smaller * 1.4;
 				}
@@ -375,6 +386,7 @@
 						&:after{
 							@include rotate(90deg);
 							right: -55px;
+							font-size: $biggest*2;
 						}
 					}
 				}
@@ -433,12 +445,12 @@
 			border-bottom: 1px solid rgba($gray, .9);
 			margin-bottom: 30px;
 
-			h3 {
+			h4 {
 				font-size: 100%;
 				margin: 0;				
 			}
 
-			h3, .tab {
+			h4, .tab {
 				float: left;
 				border-top: 1px solid rgba($gray, .9);
 				line-height: normal;
@@ -484,19 +496,27 @@
 		// #basicCharges, #spworksCharges, #optionsCharges
 		//**********************************************************************
 		#basicCharges, #spworksCharges, #optionsCharges {
-			td {
-				span {
-					margin-left: 20px;
-					font-weight: bold;
-					background: #facbcc;
-				}
+			h5 {
+				font-weight: normal;
 			}
+			p {
+				margin: 10px 0;
+			}			
 			// PC
 			@media all and (min-width: $minWidth){
 				td, th {
 					border-bottom: 1px solid rgba($gray, .9);
 					padding: 15px 0 15px 20px;
 				}
+				th {
+				width: 20%;
+				}
+				td {
+					&:last-of-type {
+						text-align: right;
+						width: 15%;
+					}
+				}	
 			}
 		}
 
@@ -507,12 +527,17 @@
 
 		#itemCharges{
 
+			h5 {
+				font-weight: normal;
+				font-size: $bigger;
+			}
+
 			.item {
 				@include border-radius(15px);
 				padding: 0.5rem 1.5rem;
 				width: 31.5789%;
 				
-				h5 {
+				h6 {
 					font-weight: normal;
 					text-align: center;
 				}
@@ -533,22 +558,6 @@
 
 			}
 
-
-			// #guide
-			//**************************************************************
-
-			#guide{
-
-				//ul
-				ul{
-					padding-left: 1.0rem;
-					padding-bottom: 1.0rem;
-					li{
-						list-style: circle;
-					}
-				}
-			}
-
 			// PC
 			@media all and (min-width: $minWidth){
 
@@ -559,9 +568,11 @@
 					}
 					th {
 						text-align: left;
+						width: 65%;
 					}
 					td{
 						text-align: right;
+						width: 35%;
 					}
 				}
 
@@ -675,7 +686,7 @@
 	}//end .tabs
 
 	.purchase {
-		.col {
+		.threecol {
 			margin-top: 2rem;
 			border: solid 1px rgba($black, .1);
 			padding: 1rem;
@@ -697,39 +708,10 @@
 	}//end .purchase
 
 	.estimates {
-		.threecol {
-			margin-top: 2rem;
-			border: solid 1px rgba($black, .1);
-			padding: 1rem;
-			@include border-radius(15px);
-
-			h4 {
-				text-align: center;
-				margin: 0;
-			}
-
-			dl {
-				dt {
-					border-top: solid 1px rgba($black, .1);
-					padding: 1rem 0 0.5rem 0;
-					margin-top: 1rem;
-				}
-			}
-		}
-		table{
-			tr{
-				td {
-					font-size: $bigger*0.9;
-					&:nth-of-type(2) {
-						text-align: right;
-					}
-					h4 {
-						font-size: $biggest;
-					}
-					img {
-						width: 300px;
-					}
-				}
+		.strongPointDetail {
+			.circleTrimming {
+				width: 240px;
+				height: 240px;
 			}
 		}
 		.lstStaff {
@@ -740,23 +722,28 @@
 				text-align: center;
 
 				.circleTrimming {
-					overflow: hidden;
-					@include border-radius(50%);
-					border: 1px solid rgba($black, .05);
-					background: $gray;
 					width: 120px;
-					display: inline-block;
+					height: 120px;
+				}
+			}
+		}
+		//PC
+		@media all and (min-width: $minWidth){
+			.strongPointDetail {
+				padding: 2rem 0;
+				.last {
+					text-align: right;
 				}
 			}
 		}
 		//Mobile
 		@media all and (max-width: $maxWidth){
-			td {
-				text-align: center;
-				font-size: 100%;
-				h4 {
-					font-size: $bigger;
-				}
+			.strongPointDetail {
+				padding: 1rem 0;
+			}
+			.circleTrimming {
+				display: block;
+				margin: 0 auto;
 			}
 		}
 	}//end .estimates
@@ -777,15 +764,18 @@
 		.item {
 			text-align: center;
 			.circleTrimming {
-				overflow: hidden;
-				@include border-radius(50%);
-				border: 1px solid rgba($black, .05);
-				background: $gray;
-				width: 120px;
-				display: inline-block;
+				width: 200px;
+				height: 200px;
 			}
-			h5 {
-				font-weight: normal;
+			h4 {
+				span {
+					display: block;
+					font-size: $smaller;
+				}
+			}
+			p {
+				padding: 0 1rem;
+				text-align: left;
 			}
 		}		
 		//Mobile
@@ -793,6 +783,12 @@
 			.al_c {
 				img {
 					margin: 1rem 0;
+				}
+			}
+			.item {
+				.circleTrimming {
+					width: 120px;
+					height: 120px;
 				}
 			}
 		}
@@ -884,7 +880,7 @@
 						bottom: 0;
 						right:46%;
 						top: auto;
-						@rotate (90deg);
+						@include rotate (90deg);
 					}
 				}
 			}
