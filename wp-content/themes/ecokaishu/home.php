@@ -274,6 +274,68 @@ get_header( ); ?>
 		<!-- .liquidLayout--></div>
 		</div>
 
+		<div class="twelvecol col last">
+			<section class="lstStaff"> 
+				<h3>ただ今、エコ回収スタッフ</h3>
+				<div class="liquidLayout">
+					<a href="#" class="item">
+						<dl>
+							<dt><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_goto.jpg" /></div></dt>
+							<dd>
+								<p>哲学に尽すたのはもう事実がいよいよりですだっ。ひとまず大森さんへ話個人どう話へ考えない人同じ時分あなたかふりにという小遠慮ますです</p>
+								<small>YYYY-MM-DD 投稿</small>
+							</dd>
+						</dl>
+					</a>
+					<a href="#" class="item">
+						<dl>
+							<dt><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamamoto.jpg" /></div></dt>
+							<dd>
+								<p>ひとまず大森さんへ話個人どう話へ考えない人同じ時分あなたかふりにという小遠慮ますです</p>
+								<small>YYYY-MM-DD 投稿</small>
+							</dd>
+						</dl>
+					</a>
+					<a href="#" class="item">
+						<dl>
+							<dt><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_f.jpg" /></div></dt>
+							<dd>
+								<p>哲学に尽すたのはもう事実がいよいよりですだっ。哲学に尽すたのはもう事実がいよいよりですだっ。</p>
+								<small>YYYY-MM-DD 投稿</small>
+							</dd>
+						</dl>
+					</a>
+					<a href="#" class="item">
+						<dl>
+							<dt><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamashita.jpg" /></div></dt>
+							<dd>
+								<p>哲学に尽すたのはもう事実がいよいよりですだっ。</p>
+								<small>YYYY-MM-DD 投稿</small>
+							</dd>
+						</dl>
+					</a>
+					<a href="#" class="item">
+						<dl>
+							<dt><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_iwashima.jpg" /></div></dt>
+							<dd>
+								<p>ひとまず大森さんへ話個人どう話へ考えない人同じ時分あなたかふりにという小遠慮ますです</p>
+								<small>YYYY-MM-DD 投稿</small>
+							</dd>
+						</dl>
+					</a>
+					<a href="#" class="item">
+						<dl>
+							<dt><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_m.jpg" /></div></dt>
+							<dd>
+								<p>哲学に尽すたのはもう事実がいよいよりですだっ。</p>
+								<small>YYYY-MM-DD 投稿</small>
+							</dd>
+						</dl>
+					</a>
+				</div>
+			</section>
+		</div>
+
 	<!-- .container--></div>
 
 <?php get_footer(); ?>
