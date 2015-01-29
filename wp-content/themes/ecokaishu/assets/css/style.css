@@ -1,5 +1,9 @@
 @charset "UTF-8";
+<<<<<<< HEAD
 /* line 5, ../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+=======
+/* line 17, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+>>>>>>> origin/master
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,6 +24,7 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
+<<<<<<< HEAD
 /* line 22, ../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1; }
@@ -29,63 +34,120 @@ ol, ul {
   list-style: none; }
 
 /* line 26, ../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+=======
+/* line 22, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+>>>>>>> origin/master
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+<<<<<<< HEAD
 /* line 28, ../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+=======
+/* line 28, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+>>>>>>> origin/master
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle; }
 
+<<<<<<< HEAD
 /* line 30, ../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none; }
   /* line 103, ../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+=======
+/* line 30, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+>>>>>>> origin/master
   q:before, q:after, blockquote:before, blockquote:after {
     content: "";
     content: none; }
 
+<<<<<<< HEAD
 /* line 32, ../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none; }
 
 /* line 116, ../../../../../../../../../../usr/local/lib/ruby/gems/2.2.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+=======
+/* line 32, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+>>>>>>> origin/master
   display: block; }
 
 @-webkit-keyframes fadeIn {
+  /* line 35, ../../_scss/style.scss */
   0% {
     opacity: 0; }
+
+  /* line 36, ../../_scss/style.scss */
   20% {
     opacity: 0; }
+
+  /* line 37, ../../_scss/style.scss */
   40% {
     opacity: 0.3; }
+
+  /* line 38, ../../_scss/style.scss */
   60% {
     opacity: 0.5; }
+
+  /* line 39, ../../_scss/style.scss */
   80% {
     opacity: 0.9; }
+
+  /* line 40, ../../_scss/style.scss */
   100% {
     opacity: 1; } }
+
 @keyframes fadeIn {
+  /* line 43, ../../_scss/style.scss */
   0% {
     opacity: 0; }
+
+  /* line 44, ../../_scss/style.scss */
   20% {
     opacity: 0; }
+
+  /* line 45, ../../_scss/style.scss */
   40% {
     opacity: 0.3; }
+
+  /* line 46, ../../_scss/style.scss */
   60% {
     opacity: 0.5; }
+
+  /* line 47, ../../_scss/style.scss */
   80% {
     opacity: 0.9; }
+
+  /* line 48, ../../_scss/style.scss */
   100% {
     opacity: 1; } }
+
 /* line 87, ../../_scss/style.scss */
 .btn, .toarchive, article#concierge #services li a, article#concierge #info #contact a {
   border: 1px solid rgba(0, 0, 0, 0.1);
-  -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.05);
   color: #444848;
@@ -94,7 +156,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   .btn:hover, .toarchive:hover, article#concierge #services li a:hover, article#concierge #info #contact a:hover {
     border: 1px solid rgba(0, 41, 73, 0.5) !important;
     background: rgba(0, 41, 73, 0.8) !important;
-    color: #ffffff; }
+    color: white; }
 
 @font-face {
   font-family: 'icomoon';
@@ -102,12 +164,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url("assets/fonts/icomoon.eot?#iefix-vjcnd0") format("embedded-opentype"), url("assets/fonts/icomoon.woff?-vjcnd0") format("woff"), url("assets/fonts/icomoon.ttf?-vjcnd0") format("truetype"), url("assets/fonts/icomoon.svg?-vjcnd0#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'custom140702';
   src: url("assets/fonts/custom140702.eot?-14fm3e");
   src: url("assets/fonts/custom140702.eot?#iefix-14fm3e") format("embedded-opentype"), url("assets/fonts/custom140702.woff?-14fm3e") format("woff"), url("assets/fonts/custom140702.ttf?-14fm3e") format("truetype"), url("assets/fonts/custom140702.svg?-14fm3e#custom140702") format("svg");
   font-weight: normal;
   font-style: normal; }
+<<<<<<< HEAD
 @font-face {
   font-family: 'custom150116';
   src: url("assets/fonts/custom150116.eot?-14fm3e");
@@ -115,6 +179,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: normal;
   font-style: normal; }
 /* line 34, ../../_scss/base/_font.scss */
+=======
+
+/* line 23, ../../_scss/base/_font.scss */
+>>>>>>> origin/master
 [class^="icon-"], [class*=" icon-"] {
   font-family: "icomoon", "custom140702", "custom150116";
   speak: none;
@@ -4785,8 +4853,8 @@ a:hover img {
   margin-bottom: 1.0rem;
   padding: 0.5rem;
   border: 1px solid rgba(226, 49, 140, 0.2);
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: rgba(226, 49, 140, 0.1);
   text-align: center; }
@@ -4813,8 +4881,8 @@ a:hover img {
 
   /* line 92, ../../_scss/base/_common.scss */
   .col {
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box; }
 
   /* line 95, ../../_scss/base/_common.scss */
@@ -5008,7 +5076,7 @@ a:hover img {
   z-index: 9998;
   width: 100%;
   padding-bottom: 1.0rem;
-  background: #ffffff;
+  background: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
   /* line 346, ../../_scss/base/_common.scss */
   #siteHeader #headerFixed .container {
@@ -5052,7 +5120,7 @@ a:hover img {
       /* line 397, ../../_scss/base/_common.scss */
       #siteHeader #headerFixed #localNavi > li#navHome:before {
         font-size: 100% !important;
-        content: ""; }
+        content: "\e8a9"; }
       /* line 401, ../../_scss/base/_common.scss */
       #siteHeader #headerFixed #localNavi > li#navFeatures:before {
         content: "\e77c"; }
@@ -5090,7 +5158,7 @@ a:hover img {
           content: ""; }
         /* line 431, ../../_scss/base/_common.scss */
         #siteHeader #headerFixed #localNavi > li.hasSub:hover:after {
-          border-top-color: #ffffff; }
+          border-top-color: white; }
       /* line 439, ../../_scss/base/_common.scss */
       #siteHeader #headerFixed #localNavi > li a {
         display: block;
@@ -5115,8 +5183,8 @@ a:hover img {
           #siteHeader #headerFixed #localNavi > li .lnSubMenu li a {
             padding-left: 1.0rem;
             padding-right: 1.0rem;
-            color: #ffffff !important; }
-            /* line 471, ../../_scss/base/_common.scss */
+            color: white !important; }
+            /* line 472, ../../_scss/base/_common.scss */
             #siteHeader #headerFixed #localNavi > li .lnSubMenu li a:before, #siteHeader #headerFixed #localNavi > li .lnSubMenu li a:after {
               border-top-color: transparent !important;
               content: "" !important; }
@@ -5172,7 +5240,7 @@ a:hover img {
     /* line 578, ../../_scss/base/_common.scss */
     #siteHeader #headerFixed #siteName {
       line-height: 44px; }
-    /* line 581, ../../_scss/base/_common.scss */
+    /* line 582, ../../_scss/base/_common.scss */
     #siteHeader #headerFixed .showSmaller,
     #siteHeader #headerFixed .panelCont {
       display: none; }
@@ -5188,8 +5256,8 @@ a:hover img {
       width: 40px;
       height: 40px;
       margin-top: -20px;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box;
       font-size: 17pt;
       text-align: center;
@@ -5214,8 +5282,8 @@ a:hover img {
   /* line 637, ../../_scss/base/_common.scss */
   .sliderCampaign .mainVisual {
     overflow: hidden !important;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box; }
   /* line 645, ../../_scss/base/_common.scss */
   .sliderCampaign .slider {
@@ -5321,7 +5389,11 @@ a:hover img {
 /* line 799, ../../_scss/base/_common.scss */
 .boiler#contactBnr {
   overflow: hidden;
+<<<<<<< HEAD
   background: #009ea1;
+=======
+  background: white;
+>>>>>>> origin/master
   padding: 3rem 0;
   position: fixed;
   bottom: 0;
@@ -5436,10 +5508,12 @@ a:hover img {
     #contactBnrFixed .col a p.btn, #contactBnrFixed .col a p.toarchive {
       padding: 0.7rem 1.0rem;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
       border-radius: 3px;
-      color: #ffffff;
+      color: white;
       font-size: 130%; }
       /* line 953, ../../_scss/base/_common.scss */
       #contactBnrFixed .col a p.btn span[class^="icon-"], #contactBnrFixed .col a p.toarchive span[class^="icon-"] {
@@ -5514,9 +5588,11 @@ a:hover img {
         /* line 1040, ../../_scss/base/_common.scss */
         #contactBnrFixed #title h3:hover {
           background: #e2318c;
-          color: #ffffff;
-          -moz-border-radius: 3px;
+          color: white;
           -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          -o-border-radius: 3px;
           border-radius: 3px; }
       /* line 1046, ../../_scss/base/_common.scss */
       #contactBnrFixed #title #ecolandGirl {
@@ -5583,8 +5659,13 @@ a:hover img {
         position: relative;
         padding: 0.5rem 0;
         background: #009ea1;
+<<<<<<< HEAD
         color: #ffffff; }
         /* line 1152, ../../_scss/base/_common.scss */
+=======
+        color: white; }
+        /* line 1054, ../../_scss/base/_common.scss */
+>>>>>>> origin/master
         .behind li a p.off:after {
           display: block;
           position: absolute;
@@ -5594,7 +5675,7 @@ a:hover img {
           height: 0;
           margin-top: -5px;
           border: 5px solid transparent;
-          border-left-color: #ffffff;
+          border-left-color: white;
           content: ""; }
     /* line 1169, ../../_scss/base/_common.scss */
     .behind li a .icon-bullhorn {
@@ -5602,11 +5683,13 @@ a:hover img {
       width: 40px;
       height: 40px;
       margin: 0 auto;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
       background: #e2318c;
-      color: #ffffff;
+      color: white;
       text-align: center;
       font-size: 20.4pt;
       line-height: 40px; }
@@ -5632,8 +5715,8 @@ a:hover img {
 .footer .siteInfo {
   padding-top: 2.0rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  background: #ffffff;
-  color: #000000;
+  background: white;
+  color: black;
   font-size: 10pt; }
   /* line 1239, ../../_scss/base/_common.scss */
   .footer .siteInfo ul li {
@@ -5653,11 +5736,19 @@ a:hover img {
     vertical-align: middle; }
     /* line 1262, ../../_scss/base/_common.scss */
     .footer .siteInfo #logos a#gd {
+<<<<<<< HEAD
       color: #CD0300; }
     /* line 1265, ../../_scss/base/_common.scss */
     .footer .siteInfo #logos a#pmark {
       color: #04278B; }
   /* line 1271, ../../_scss/base/_common.scss */
+=======
+      color: #cd0300; }
+    /* line 1167, ../../_scss/base/_common.scss */
+    .footer .siteInfo #logos a#pmark {
+      color: #04278b; }
+  /* line 1173, ../../_scss/base/_common.scss */
+>>>>>>> origin/master
   .footer .siteInfo #logos span[class^="icon"] {
     font-size: 38pt; }
   @media all and (min-width: 769px) {
@@ -5697,12 +5788,12 @@ a:hover img {
     /* line 1326, ../../_scss/base/_common.scss */
     #shortcutsBtns ul li a {
       display: block;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box;
       text-decoration: none;
-      background: #ffffff;
-      color: #ffffff;
+      background: white;
+      color: white;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale; }
       /* line 1337, ../../_scss/base/_common.scss */
@@ -5796,7 +5887,7 @@ a:hover img {
     display: block;
     padding: 0.5rem;
     background: rgba(68, 72, 72, 0.8);
-    color: #ffffff;
+    color: white;
     font-size: 17pt;
     text-decoration: none; }
     /* line 1468, ../../_scss/base/_common.scss */
@@ -5920,7 +6011,7 @@ sup, sub {
 
 /* line 49, ../../_scss/base/_decoration.scss */
 .white {
-  color: #ffffff !important; }
+  color: white !important; }
 
 /* line 51, ../../_scss/base/_decoration.scss */
 .goodDesign {
@@ -6045,7 +6136,11 @@ img {
     float: right;
     margin-bottom: 1.0rem;
     margin-left: 1.0rem; }
+<<<<<<< HEAD
   /* line 138, ../../_scss/base/_decoration.scss */
+=======
+  /* line 132, ../../_scss/base/_decoration.scss */
+>>>>>>> origin/master
   img.alignleft + p, img.alignright + p {
     margin-top: 0; }
   /* line 142, ../../_scss/base/_decoration.scss */
@@ -6078,8 +6173,8 @@ img {
   /* line 18, ../../_scss/parts/_table.scss */
   table {
     width: 100%;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box; }
     /* line 26, ../../_scss/parts/_table.scss */
     table thead {
@@ -6087,22 +6182,22 @@ img {
       /* line 28, ../../_scss/parts/_table.scss */
       table thead th {
         padding: 0.5rem 0.2rem;
-        -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box; }
-    /* line 38, ../../_scss/parts/_table.scss */
+    /* line 39, ../../_scss/parts/_table.scss */
     table tbody th,
     table tbody td {
       padding: 0.5rem 0.2rem;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box; }
-    /* line 49, ../../_scss/parts/_table.scss */
+    /* line 50, ../../_scss/parts/_table.scss */
     table tfoot th,
     table tfoot td {
       padding: 0.5rem 0.2rem;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box; } }
 @media all and (max-width: 768px) {
   /* line 67, ../../_scss/parts/_table.scss */
@@ -6130,8 +6225,8 @@ img {
           padding: 0.5rem 0.2rem;
           width: 100%;
           border: none;
-          -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
           box-sizing: border-box;
           vertical-align: middle; }
           /* line 99, ../../_scss/parts/_table.scss */
@@ -6201,7 +6296,7 @@ img {
     /* line 232, ../../_scss/parts/_table.scss */
     .tablePriceExam tbody tr td:nth-of-type(1) {
       text-align: center; }
-    /* line 235, ../../_scss/parts/_table.scss */
+    /* line 236, ../../_scss/parts/_table.scss */
     .tablePriceExam tbody tr td:nth-of-type(2), .tablePriceExam tbody tr td:last-of-type {
       text-align: right; }
     /* line 245, ../../_scss/parts/_table.scss */
@@ -6290,7 +6385,7 @@ img {
     width: 0px;
     height: 0px;
     border: 4px solid transparent;
-    border-left-color: #000000;
+    border-left-color: black;
     content: ""; }
 /* line 81, ../../_scss/parts/_list.scss */
 .definitionList dd {
@@ -6323,7 +6418,7 @@ img {
   padding-top: 1.0rem;
   padding-bottom: 1.0rem;
   padding-right: 1.0rem;
-  background: #ffffff; }
+  background: white; }
   /* line 121, ../../_scss/parts/_list.scss */
   .listFaq dt:before, .listFaq dd:before {
     font-family: icomoon;
@@ -6389,10 +6484,12 @@ img {
   .listBtn {
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
     border-radius: 6px;
-    background: #ffffff; }
+    background: white; }
     /* line 230, ../../_scss/parts/_list.scss */
     .listBtn li {
       display: block;
@@ -6476,8 +6573,10 @@ img {
     padding: 0.3rem 0.5rem;
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
     border-radius: 3px;
     color: #444848;
     text-decoration: none; }
@@ -6514,12 +6613,12 @@ img {
   /* line 436, ../../_scss/parts/_list.scss */
   .listSns ul li#shareGoogle a:before {
     content: "\e888";
-    color: #D34836; }
+    color: #d34836; }
   /* line 443, ../../_scss/parts/_list.scss */
   .listSns ul li .label {
     display: none; }
 
-/* line 460, ../../_scss/parts/_list.scss */
+/* line 462, ../../_scss/parts/_list.scss */
 .wp-pagenavi .pages,
 .wp-pagenavi .nextpostslink,
 .wp-pagenavi .previouspostslink {
@@ -6536,7 +6635,7 @@ img {
 input, textarea, select {
   font-size: 100%; }
 
-/* line 24, ../../_scss/parts/_form.scss */
+/* line 27, ../../_scss/parts/_form.scss */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -6545,8 +6644,8 @@ input[type="tel"] {
   min-height: 44px;
   padding: 0 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 /* line 34, ../../_scss/parts/_form.scss */
@@ -6555,8 +6654,8 @@ textarea {
   min-height: 100px;
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 /* line 42, ../../_scss/parts/_form.scss */
@@ -6569,28 +6668,30 @@ input[type="submit"], button {
   padding: 0 0.5rem;
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(226, 49, 140, 0.1);
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
-  color: #ffffff;
+  color: white;
   line-height: 44px; }
   /* line 55, ../../_scss/parts/_form.scss */
   input[type="submit"]:hover, button:hover {
     background: rgba(0, 0, 0, 0.9) !important; }
 
-/* line 59, ../../_scss/parts/_form.scss */
+/* line 60, ../../_scss/parts/_form.scss */
 select,
 option {
   height: 44px;
   padding: 0 0.5rem;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #ffffff;
+  background: white;
   line-height: 1.5rem; }
 
 /* line 69, ../../_scss/parts/_form.scss */
@@ -6636,8 +6737,8 @@ option {
   overflow-y: visible;
   height: 160px;
   padding: 0.5rem;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 90%;
@@ -6660,7 +6761,7 @@ option {
     margin: 0.5rem 0;
     padding: 0;
     font-size: 100%; }
-  /* line 143, ../../_scss/parts/_form.scss */
+  /* line 144, ../../_scss/parts/_form.scss */
   .lawDoc li,
   .lawDoc p {
     margin: 0;
@@ -6761,17 +6862,19 @@ option {
       margin-top: 0.5rem;
       padding: 1.0rem 0;
       border: 1px solid rgba(0, 0, 0, 0.1);
-      -moz-border-radius: 6px;
       -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
       border-radius: 6px;
-      color: #ffffff;
+      color: white;
       text-align: center;
       text-decoration: none; }
       /* line 42, ../../_scss/parts/_contact.scss */
       .contact .box a .action:hover {
         border: 1px solid rgba(0, 41, 73, 0.5) !important;
         background: rgba(0, 41, 73, 0.8) !important;
-        color: #ffffff; }
+        color: white; }
       /* line 48, ../../_scss/parts/_contact.scss */
       .contact .box a .action span[class^="icon-"] {
         font-size: 90%;
@@ -6846,11 +6949,13 @@ option {
       height: 160px;
       margin-top: 0;
       padding-top: 2.0rem;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
       background: rgba(252, 203, 0, 0.4);
       font-size: 130%;
@@ -6874,10 +6979,10 @@ option {
     overflow: hidden;
     margin-top: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background: #ffffff; }
+    background: white; }
     /* line 23, ../../_scss/parts/_plugin.scss */
     .liquidLayout .item .itemContents {
       padding: 0.5rem; }
@@ -7323,7 +7428,7 @@ article.columns {
   article.columns ul > li > q {
     display: block;
     position: relative; }
-    /* line 84, ../../_scss/pages/_columns.scss */
+    /* line 85, ../../_scss/pages/_columns.scss */
     article.columns ul > li > q:after, article.columns ul > li > q:before {
       display: inline-block;
       font-family: icomoon;
@@ -7334,9 +7439,10 @@ article.columns {
       content: "\e91f"; }
     /* line 94, ../../_scss/pages/_columns.scss */
     article.columns ul > li > q:after {
+      -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
-      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
       transform: rotate(180deg); }
   /* line 99, ../../_scss/pages/_columns.scss */
   article.columns ul > li:first-of-type q {
@@ -7400,8 +7506,8 @@ article.columns {
     display: block;
     position: relative;
     padding: 1.5rem 0;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     color: #444848;
     -webkit-font-smoothing: antialiased;
@@ -7866,8 +7972,10 @@ article.columns {
       /* line 913, ../../_scss/pages/_columns.scss */
       article.columns.post.items .priceExam .imgFamily {
         overflow: hidden;
-        -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, 0.1); }
         @media all and (min-width: 769px) {
@@ -7920,11 +8028,13 @@ article.columns {
       display: inline-block;
       margin-left: 0.2rem;
       padding: 0 0.3rem;
-      -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
       border-radius: 3px;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box;
       background: rgba(0, 0, 0, 0.05);
       border: 1px solid rgba(0, 0, 0, 0.1);
@@ -7946,8 +8056,8 @@ article.columns {
       border: none; }
     /* line 1040, ../../_scss/pages/_columns.scss */
     article.columns .sidebar .bnrBtn {
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box; }
       /* line 1048, ../../_scss/pages/_columns.scss */
       article.columns .sidebar .bnrBtn#area a {
@@ -8002,7 +8112,7 @@ article.columns {
         display: block;
         padding: 1.0rem;
         background: rgba(0, 158, 161, 0.7);
-        color: #ffffff;
+        color: white;
         text-decoration: none; }
         /* line 1121, ../../_scss/pages/_columns.scss */
         article.columns .sidebar .catsList li a:hover {
@@ -8104,14 +8214,14 @@ article.campaign .contents .obj {
 /* line 64, ../../_scss/pages/_campaign.scss */
 article.campaign .contactBnr {
   overflow: hidden;
-  background: #ffffff; }
+  background: white; }
   /* line 69, ../../_scss/pages/_campaign.scss */
   article.campaign .contactBnr .container {
     position: relative; }
 /* line 79, ../../_scss/pages/_campaign.scss */
 article.campaign .end {
   background: #002949;
-  color: #ffffff;
+  color: white;
   text-align: center; }
   /* line 87, ../../_scss/pages/_campaign.scss */
   article.campaign .end p:first-of-type {
@@ -8124,10 +8234,12 @@ article.campaign .end {
     padding: 0 0.3rem;
     border: 1px solid rgba(0, 158, 161, 0.9);
     background: rgba(0, 158, 161, 0.5);
-    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
     border-radius: 3px;
-    color: #ffffff;
+    color: white;
     font-size: 90%; }
     /* line 101, ../../_scss/pages/_campaign.scss */
     article.campaign .end p .link:hover {
@@ -8188,13 +8300,15 @@ article.campaign .campFlow ul {
   article.campaign .campFlow ul li {
     position: relative;
     padding: 1.5rem 1.0rem;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
     border-radius: 6px;
-    background: #ffffff;
+    background: white;
     vertical-align: top; }
     /* line 207, ../../_scss/pages/_campaign.scss */
     article.campaign .campFlow ul li:after {
@@ -8274,7 +8388,7 @@ article.campaign .voices {
     article.campaign .voices .voice h5 {
       display: inline-block;
       background: #009ea1;
-      color: #ffffff;
+      color: white;
       font-size: 18px;
       margin: 1.0rem 0;
       padding: 0.5rem 1.0rem; }
@@ -8283,8 +8397,10 @@ article.campaign .voices {
       width: 265px;
       height: 265px;
       overflow: hidden;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%; }
   /* line 346, ../../_scss/pages/_campaign.scss */
   article.campaign .voices .obj:before {
@@ -8315,7 +8431,7 @@ article.campaign .about {
 
 /* line 416, ../../_scss/pages/_campaign.scss */
 #camp1404-00 {
-  background: #ffffff;
+  background: white;
   padding-top: 0; }
   /* line 425, ../../_scss/pages/_campaign.scss */
   #camp1404-00 .mainVisual {
@@ -8337,7 +8453,7 @@ article.campaign .about {
   /* line 457, ../../_scss/pages/_campaign.scss */
   #camp1404-00 .details {
     padding-top: 3.0rem;
-    background: #ffffff; }
+    background: white; }
     /* line 463, ../../_scss/pages/_campaign.scss */
     #camp1404-00 .details span {
       padding: 0.2rem 0.3rem; }
@@ -8497,8 +8613,10 @@ article.campaign .about {
         #camp1406-00 .mainVisual .campVisual .topic .txt {
           display: inline-block;
           padding: 1.0rem;
-          -moz-border-radius: 3px;
           -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          -o-border-radius: 3px;
           border-radius: 3px;
           background: #e2318c;
           color: #fdface;
@@ -8565,6 +8683,7 @@ article.campaign .about {
     transform: rotate(45deg); }
     /* line 867, ../../_scss/pages/_campaign.scss */
     #camp1406-00 .raindrop#drop1 {
+<<<<<<< HEAD
       top: 307px;
       left: 767px; }
     /* line 867, ../../_scss/pages/_campaign.scss */
@@ -8723,6 +8842,166 @@ article.campaign .about {
     #camp1406-00 .raindrop#drop40 {
       top: 261px;
       left: 641px; }
+=======
+      top: 195px;
+      left: 291px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop2 {
+      top: 22px;
+      left: 782px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop3 {
+      top: 34px;
+      left: 858px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop4 {
+      top: 465px;
+      left: 519px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop5 {
+      top: 24px;
+      left: 167px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop6 {
+      top: 177px;
+      left: 159px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop7 {
+      top: 245px;
+      left: 799px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop8 {
+      top: 362px;
+      left: 633px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop9 {
+      top: 124px;
+      left: 250px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop10 {
+      top: 237px;
+      left: 927px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop11 {
+      top: 437px;
+      left: 154px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop12 {
+      top: 25px;
+      left: 351px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop13 {
+      top: 184px;
+      left: 722px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop14 {
+      top: 492px;
+      left: 365px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop15 {
+      top: 74px;
+      left: 755px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop16 {
+      top: 332px;
+      left: 106px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop17 {
+      top: 187px;
+      left: 438px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop18 {
+      top: 230px;
+      left: 29px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop19 {
+      top: 418px;
+      left: 209px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop20 {
+      top: 215px;
+      left: 850px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop21 {
+      top: 378px;
+      left: 568px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop22 {
+      top: 9px;
+      left: 886px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop23 {
+      top: 454px;
+      left: 0px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop24 {
+      top: 337px;
+      left: 869px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop25 {
+      top: 482px;
+      left: 582px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop26 {
+      top: 186px;
+      left: 848px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop27 {
+      top: 103px;
+      left: 130px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop28 {
+      top: 393px;
+      left: 215px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop29 {
+      top: 196px;
+      left: 375px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop30 {
+      top: 357px;
+      left: 567px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop31 {
+      top: 268px;
+      left: 593px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop32 {
+      top: 66px;
+      left: 405px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop33 {
+      top: 467px;
+      left: 128px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop34 {
+      top: 199px;
+      left: 185px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop35 {
+      top: 240px;
+      left: 798px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop36 {
+      top: 437px;
+      left: 916px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop37 {
+      top: 101px;
+      left: 56px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop38 {
+      top: 414px;
+      left: 491px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop39 {
+      top: 240px;
+      left: 534px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop40 {
+      top: 487px;
+      left: 474px; }
+>>>>>>> origin/master
 
 /* line 881, ../../_scss/pages/_campaign.scss */
 #camp1406-01 {
@@ -8761,7 +9040,7 @@ article.campaign .about {
       /* line 930, ../../_scss/pages/_campaign.scss */
       #camp1406-01 .campVisual #appealPoints .point#point2, #camp1406-01 .campVisual #appealPoints .lp .checkContents #point2.check, .lp .checkContents #camp1406-01 .campVisual #appealPoints #point2.check, #camp1406-01 .campVisual #appealPoints .lp .voices #point2.new, .lp .voices #camp1406-01 .campVisual #appealPoints #point2.new {
         background: #e2318c;
-        color: #ffffff; }
+        color: white; }
   /* line 938, ../../_scss/pages/_campaign.scss */
   #camp1406-01 .campVisual #appealImg {
     position: relative;
@@ -8797,25 +9076,28 @@ article.campaign .about {
       margin-left: -140px;
       padding-top: 2.0rem;
       border: 10px solid;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box;
       color: #e2318c;
       text-align: center; }
       /* line 978, ../../_scss/pages/_campaign.scss */
       #camp1406-01 .campVisual #appealImg #sale span {
         text-shadow: 1px 1px 0px #f3efd9;
+        -webkit-transform: rotate(-5deg);
         -moz-transform: rotate(-5deg);
         -ms-transform: rotate(-5deg);
-        -webkit-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
         transform: rotate(-5deg); }
         /* line 981, ../../_scss/pages/_campaign.scss */
         #camp1406-01 .campVisual #appealImg #sale span#max {
           font-size: 17pt; }
-        /* line 984, ../../_scss/pages/_campaign.scss */
+        /* line 985, ../../_scss/pages/_campaign.scss */
         #camp1406-01 .campVisual #appealImg #sale span#amount, #camp1406-01 .campVisual #appealImg #sale span#off {
           font-size: 19pt;
           line-height: 1.0em;
@@ -8835,13 +9117,13 @@ article.campaign .about {
     #camp1406-01 .campVisual #appealPoints {
       width: 65%;
       float: right;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box; }
       /* line 1014, ../../_scss/pages/_campaign.scss */
       #sliderCampaignNews #camp1406-01 .campVisual #appealPoints {
         padding-right: 1.0rem; }
-      /* line 1020, ../../_scss/pages/_campaign.scss */
+      /* line 1021, ../../_scss/pages/_campaign.scss */
       #camp1406-01 .campVisual #appealPoints #title span:nth-of-type(2), #camp1406-01 .campVisual #appealPoints #title span:nth-of-type(3) {
         display: inline-block !important; } }
   @media all and (max-width: 768px) {
@@ -8884,6 +9166,7 @@ article.campaign .about {
     /* line 1083, ../../_scss/pages/_campaign.scss */
     #camp1406-01 .leaf#leaf1 {
       background-color: #fccb00;
+<<<<<<< HEAD
       top: 68px;
       left: 126px;
       -moz-transform: rotate(4deg);
@@ -8908,9 +9191,39 @@ article.campaign .about {
       -ms-transform: rotate(4deg);
       -webkit-transform: rotate(4deg);
       transform: rotate(4deg); }
+=======
+      top: 360px;
+      left: 567px;
+      -webkit-transform: rotate(22deg);
+      -moz-transform: rotate(22deg);
+      -ms-transform: rotate(22deg);
+      -o-transform: rotate(22deg);
+      transform: rotate(22deg); }
+    /* line 1083, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf2 {
+      background-color: #fccb00;
+      top: 477px;
+      left: 921px;
+      -webkit-transform: rotate(14deg);
+      -moz-transform: rotate(14deg);
+      -ms-transform: rotate(14deg);
+      -o-transform: rotate(14deg);
+      transform: rotate(14deg); }
+>>>>>>> origin/master
+    /* line 1083, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf3 {
+      background-color: #fccb00;
+      top: 234px;
+      left: 312px;
+      -webkit-transform: rotate(7deg);
+      -moz-transform: rotate(7deg);
+      -ms-transform: rotate(7deg);
+      -o-transform: rotate(7deg);
+      transform: rotate(7deg); }
     /* line 1083, ../../_scss/pages/_campaign.scss */
     #camp1406-01 .leaf#leaf4 {
       background-color: #fccb00;
+<<<<<<< HEAD
       top: 388px;
       left: 801px;
       -moz-transform: rotate(10deg);
@@ -9061,11 +9374,180 @@ article.campaign .about {
       -ms-transform: rotate(57deg);
       -webkit-transform: rotate(57deg);
       transform: rotate(57deg); }
+=======
+      top: 267px;
+      left: 345px;
+      -webkit-transform: rotate(17deg);
+      -moz-transform: rotate(17deg);
+      -ms-transform: rotate(17deg);
+      -o-transform: rotate(17deg);
+      transform: rotate(17deg); }
+    /* line 1083, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf5 {
+      background-color: #fccb00;
+      top: 135px;
+      left: 122px;
+      -webkit-transform: rotate(41deg);
+      -moz-transform: rotate(41deg);
+      -ms-transform: rotate(41deg);
+      -o-transform: rotate(41deg);
+      transform: rotate(41deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf6 {
+      background-color: #FFF84B;
+      top: 87px;
+      left: 433px;
+      -webkit-transform: rotate(2deg);
+      -moz-transform: rotate(2deg);
+      -ms-transform: rotate(2deg);
+      -o-transform: rotate(2deg);
+      transform: rotate(2deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf7 {
+      background-color: #FFF84B;
+      top: 471px;
+      left: 460px;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf8 {
+      background-color: #FFF84B;
+      top: 15px;
+      left: 443px;
+      -webkit-transform: rotate(23deg);
+      -moz-transform: rotate(23deg);
+      -ms-transform: rotate(23deg);
+      -o-transform: rotate(23deg);
+      transform: rotate(23deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf9 {
+      background-color: #FFF84B;
+      top: 444px;
+      left: 19px;
+      -webkit-transform: rotate(32deg);
+      -moz-transform: rotate(32deg);
+      -ms-transform: rotate(32deg);
+      -o-transform: rotate(32deg);
+      transform: rotate(32deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf10 {
+      background-color: #FFF84B;
+      top: 368px;
+      left: 165px;
+      -webkit-transform: rotate(24deg);
+      -moz-transform: rotate(24deg);
+      -ms-transform: rotate(24deg);
+      -o-transform: rotate(24deg);
+      transform: rotate(24deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf11 {
+      background-color: #009ea1;
+      top: 444px;
+      left: 135px;
+      -webkit-transform: rotate(71deg);
+      -moz-transform: rotate(71deg);
+      -ms-transform: rotate(71deg);
+      -o-transform: rotate(71deg);
+      transform: rotate(71deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf12 {
+      background-color: #009ea1;
+      top: 372px;
+      left: 573px;
+      -webkit-transform: rotate(84deg);
+      -moz-transform: rotate(84deg);
+      -ms-transform: rotate(84deg);
+      -o-transform: rotate(84deg);
+      transform: rotate(84deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf13 {
+      background-color: #009ea1;
+      top: 215px;
+      left: 150px;
+      -webkit-transform: rotate(13deg);
+      -moz-transform: rotate(13deg);
+      -ms-transform: rotate(13deg);
+      -o-transform: rotate(13deg);
+      transform: rotate(13deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf14 {
+      background-color: #009ea1;
+      top: 89px;
+      left: 321px;
+      -webkit-transform: rotate(21deg);
+      -moz-transform: rotate(21deg);
+      -ms-transform: rotate(21deg);
+      -o-transform: rotate(21deg);
+      transform: rotate(21deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf15 {
+      background-color: #009ea1;
+      top: 245px;
+      left: 359px;
+      -webkit-transform: rotate(57deg);
+      -moz-transform: rotate(57deg);
+      -ms-transform: rotate(57deg);
+      -o-transform: rotate(57deg);
+      transform: rotate(57deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf16 {
+      background-color: #e2318c;
+      top: 379px;
+      left: 57px;
+      -webkit-transform: rotate(74deg);
+      -moz-transform: rotate(74deg);
+      -ms-transform: rotate(74deg);
+      -o-transform: rotate(74deg);
+      transform: rotate(74deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf17 {
+      background-color: #e2318c;
+      top: 390px;
+      left: 900px;
+      -webkit-transform: rotate(27deg);
+      -moz-transform: rotate(27deg);
+      -ms-transform: rotate(27deg);
+      -o-transform: rotate(27deg);
+      transform: rotate(27deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf18 {
+      background-color: #e2318c;
+      top: 227px;
+      left: 657px;
+      -webkit-transform: rotate(42deg);
+      -moz-transform: rotate(42deg);
+      -ms-transform: rotate(42deg);
+      -o-transform: rotate(42deg);
+      transform: rotate(42deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf19 {
+      background-color: #e2318c;
+      top: 191px;
+      left: 128px;
+      -webkit-transform: rotate(46deg);
+      -moz-transform: rotate(46deg);
+      -ms-transform: rotate(46deg);
+      -o-transform: rotate(46deg);
+      transform: rotate(46deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf20 {
+      background-color: #e2318c;
+      top: 212px;
+      left: 206px;
+      -webkit-transform: rotate(43deg);
+      -moz-transform: rotate(43deg);
+      -ms-transform: rotate(43deg);
+      -o-transform: rotate(43deg);
+      transform: rotate(43deg); }
+>>>>>>> origin/master
   /* line 1119, ../../_scss/pages/_campaign.scss */
   #camp1406-01 .details {
     background: rgba(252, 203, 0, 0.8); }
 
-/* line 1130, ../../_scss/pages/_campaign.scss */
+/* line 1131, ../../_scss/pages/_campaign.scss */
 #camp1406-02,
 #camp1406-03 {
   position: relative;
@@ -9073,7 +9555,7 @@ article.campaign .about {
   background-size: 180px;
   background-repeat: repeat-y;
   background-position: right top;
-  background-color: #ffffff; }
+  background-color: white; }
   /* line 1149, ../../_scss/pages/_campaign.scss */
   #camp1406-02 .campVisual,
   #camp1406-03 .campVisual {
@@ -9094,7 +9576,7 @@ article.campaign .about {
         font-size: 17pt;
         font-weight: bold;
         line-height: 1.0em;
-        text-shadow: 3px, 3px, 0px, #ffffff; }
+        text-shadow: 3px, 3px, 0px, white; }
     /* line 1173, ../../_scss/pages/_campaign.scss */
     #camp1406-02 .campVisual .appealContent,
     #camp1406-03 .campVisual .appealContent {
@@ -9107,17 +9589,17 @@ article.campaign .about {
         display: inline-block !important;
         margin-bottom: 0.5rem;
         padding: 0.3rem 1.0rem;
-        color: #ffffff;
+        color: white;
         font-size: 21pt;
         font-weight: bold;
         line-height: 1.3em;
-        background: #21B049; }
+        background: #21b049; }
       /* line 1191, ../../_scss/pages/_campaign.scss */
       #camp1406-02 .campVisual .appealContent .point2,
       #camp1406-03 .campVisual .appealContent .point2 {
         display: inline-block !important;
         margin-bottom: 0.5rem;
-        background: #F2C103;
+        background: #f2c103;
         padding: 0.3rem 1.0rem; }
       /* line 1197, ../../_scss/pages/_campaign.scss */
       #camp1406-02 .campVisual .appealContent .point3,
@@ -9125,11 +9607,11 @@ article.campaign .about {
         display: inline-block !important;
         margin-bottom: 0.5rem;
         padding: 0.3rem 1.0rem;
-        background: #1B3884;
-        color: #ffffff;
+        background: #1b3884;
+        color: white;
         margin-bottom: 0.5rem; }
   @media all and (min-width: 769px) {
-    /* line 1130, ../../_scss/pages/_campaign.scss */
+    /* line 1131, ../../_scss/pages/_campaign.scss */
     #camp1406-02,
     #camp1406-03 {
       background-size: 400px; }
@@ -9160,12 +9642,13 @@ article.campaign .about {
     position: absolute;
     z-index: 1;
     font-size: 50px;
-    color: #000000;
+    color: black;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
     opacity: 0.3; }
     /* line 1250, ../../_scss/pages/_campaign.scss */
     #camp1406-02 .ball#ball1,
     #camp1406-03 .ball#ball1 {
+<<<<<<< HEAD
       top: 334px;
       left: 406px;
       -moz-transform: rotate(3deg);
@@ -9253,19 +9736,118 @@ article.campaign .about {
       -ms-transform: rotate(25deg);
       -webkit-transform: rotate(25deg);
       transform: rotate(25deg); }
+=======
+      top: 359px;
+      left: 581px;
+      -webkit-transform: rotate(34deg);
+      -moz-transform: rotate(34deg);
+      -ms-transform: rotate(34deg);
+      -o-transform: rotate(34deg);
+      transform: rotate(34deg); }
+    /* line 1250, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball2,
+    #camp1406-03 .ball#ball2 {
+      top: 188px;
+      left: 162px;
+      -webkit-transform: rotate(22deg);
+      -moz-transform: rotate(22deg);
+      -ms-transform: rotate(22deg);
+      -o-transform: rotate(22deg);
+      transform: rotate(22deg); }
+    /* line 1250, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball3,
+    #camp1406-03 .ball#ball3 {
+      top: 269px;
+      left: 841px;
+      -webkit-transform: rotate(9deg);
+      -moz-transform: rotate(9deg);
+      -ms-transform: rotate(9deg);
+      -o-transform: rotate(9deg);
+      transform: rotate(9deg); }
+    /* line 1250, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball4,
+    #camp1406-03 .ball#ball4 {
+      top: 449px;
+      left: 855px;
+      -webkit-transform: rotate(33deg);
+      -moz-transform: rotate(33deg);
+      -ms-transform: rotate(33deg);
+      -o-transform: rotate(33deg);
+      transform: rotate(33deg); }
+    /* line 1250, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball5,
+    #camp1406-03 .ball#ball5 {
+      top: 360px;
+      left: 684px;
+      -webkit-transform: rotate(11deg);
+      -moz-transform: rotate(11deg);
+      -ms-transform: rotate(11deg);
+      -o-transform: rotate(11deg);
+      transform: rotate(11deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball6,
+    #camp1406-03 .ball#ball6 {
+      top: 208px;
+      left: 15px;
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+      transform: rotate(30deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball7,
+    #camp1406-03 .ball#ball7 {
+      top: 16px;
+      left: 641px;
+      -webkit-transform: rotate(33deg);
+      -moz-transform: rotate(33deg);
+      -ms-transform: rotate(33deg);
+      -o-transform: rotate(33deg);
+      transform: rotate(33deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball8,
+    #camp1406-03 .ball#ball8 {
+      top: 190px;
+      left: 544px;
+      -webkit-transform: rotate(6deg);
+      -moz-transform: rotate(6deg);
+      -ms-transform: rotate(6deg);
+      -o-transform: rotate(6deg);
+      transform: rotate(6deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball9,
+    #camp1406-03 .ball#ball9 {
+      top: 369px;
+      left: 515px;
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      transform: rotate(3deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball10,
+    #camp1406-03 .ball#ball10 {
+      top: 3px;
+      left: 673px;
+      -webkit-transform: rotate(42deg);
+      -moz-transform: rotate(42deg);
+      -ms-transform: rotate(42deg);
+      -o-transform: rotate(42deg);
+      transform: rotate(42deg); }
+>>>>>>> origin/master
   /* line 1268, ../../_scss/pages/_campaign.scss */
   #camp1406-02 .details,
   #camp1406-03 .details {
-    background: #1B3884;
-    color: #ffffff; }
+    background: #1b3884;
+    color: white; }
     /* line 1274, ../../_scss/pages/_campaign.scss */
     #camp1406-02 .details a,
     #camp1406-03 .details a {
-      color: #F2C103; }
+      color: #f2c103; }
       /* line 1276, ../../_scss/pages/_campaign.scss */
       #camp1406-02 .details a:hover,
       #camp1406-03 .details a:hover {
-        color: #ffffff; }
+        color: white; }
     /* line 1282, ../../_scss/pages/_campaign.scss */
     #camp1406-02 .details .footnote,
     #camp1406-03 .details .footnote {
@@ -9280,7 +9862,7 @@ article.campaign .about {
   #camp1407-00 h2 {
     position: relative;
     z-index: 3;
-    color: #ffffff; }
+    color: white; }
   /* line 1308, ../../_scss/pages/_campaign.scss */
   #camp1407-00 .vertical, #camp1407-00 .campVisual #appealImg .appealTitle, #camp1407-00 .campVisual #appealImg .appealDetails {
     -webkit-writing-mode: vertical-rl;
@@ -9288,7 +9870,7 @@ article.campaign .about {
     -ms-writing-mode: vertical-rl;
     -o-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
-    color: #ffffff; }
+    color: white; }
   /* line 1317, ../../_scss/pages/_campaign.scss */
   #camp1407-00 .campVisual {
     padding: 5.0rem 0; }
@@ -9316,8 +9898,8 @@ article.campaign .about {
               padding-left: 1.5rem;
               font-size: 21pt;
               line-height: 1.3em;
-              -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
               -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+              -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
               box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3); }
               /* line 1346, ../../_scss/pages/_campaign.scss */
               #camp1407-00 .campVisual #appealImg .appealTitle p span.paper.greenPaper {
@@ -9325,18 +9907,20 @@ article.campaign .about {
                 margin-top: -1.5rem;
                 margin-bottom: 2.5rem;
                 background: #009ea1;
+                -webkit-transform: rotate(-5deg);
                 -moz-transform: rotate(-5deg);
                 -ms-transform: rotate(-5deg);
-                -webkit-transform: rotate(-5deg);
+                -o-transform: rotate(-5deg);
                 transform: rotate(-5deg); }
               /* line 1353, ../../_scss/pages/_campaign.scss */
               #camp1407-00 .campVisual #appealImg .appealTitle p span.paper.pinkPaper {
                 margin-right: 2.5rem;
                 margin-top: 1.0rem;
                 background: #e2318c;
+                -webkit-transform: rotate(5deg);
                 -moz-transform: rotate(5deg);
                 -ms-transform: rotate(5deg);
-                -webkit-transform: rotate(5deg);
+                -o-transform: rotate(5deg);
                 transform: rotate(5deg); }
               /* line 1359, ../../_scss/pages/_campaign.scss */
               #camp1407-00 .campVisual #appealImg .appealTitle p span.paper .icon-star3 {
@@ -9421,14 +10005,16 @@ article.campaign .about {
         position: relative;
         margin-top: 1.0rem;
         padding: 1.0rem;
-        -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
         border-radius: 3px;
-        -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         background: #e2318c;
-        color: #ffffff;
+        color: white;
         font-size: 110.0%;
         text-decoration: none;
         letter-spacing: 0.05rem; }
@@ -9441,7 +10027,7 @@ article.campaign .about {
           height: 0;
           margin-top: -5px;
           border: 5px solid transparent;
-          border-left-color: #ffffff;
+          border-left-color: white;
           content: ""; }
       /* line 1519, ../../_scss/pages/_campaign.scss */
       #camp1407-00 #appealItems #welcome #ecolin {
@@ -9470,7 +10056,7 @@ article.campaign .about {
   /* line 1560, ../../_scss/pages/_campaign.scss */
   #camp1407-00 .details {
     background: #002949;
-    color: #ffffff; }
+    color: white; }
     /* line 1565, ../../_scss/pages/_campaign.scss */
     #camp1407-00 .details a {
       color: #fccb00; }
@@ -9483,6 +10069,7 @@ article.campaign .about {
     opacity: 0.3; }
     /* line 1580, ../../_scss/pages/_campaign.scss */
     #camp1407-00 .star#star1 {
+<<<<<<< HEAD
       top: 188px;
       left: 289px;
       color: #fccb00;
@@ -9509,10 +10096,42 @@ article.campaign .about {
       -moz-transform: rotate(29deg);
       -ms-transform: rotate(29deg);
       -webkit-transform: rotate(29deg);
+=======
+      top: 253px;
+      left: 361px;
+      color: #fccb00;
+      -webkit-transform: rotate(21deg);
+      -moz-transform: rotate(21deg);
+      -ms-transform: rotate(21deg);
+      -o-transform: rotate(21deg);
+      transform: rotate(21deg);
+      font-size: 30px; }
+    /* line 1580, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star2 {
+      top: 186px;
+      left: 865px;
+      color: #fccb00;
+      -webkit-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg);
+      font-size: 30px; }
+    /* line 1580, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star3 {
+      top: 206px;
+      left: 392px;
+      color: #fccb00;
+      -webkit-transform: rotate(29deg);
+      -moz-transform: rotate(29deg);
+      -ms-transform: rotate(29deg);
+      -o-transform: rotate(29deg);
+>>>>>>> origin/master
       transform: rotate(29deg);
       font-size: 30px; }
     /* line 1580, ../../_scss/pages/_campaign.scss */
     #camp1407-00 .star#star4 {
+<<<<<<< HEAD
       top: 197px;
       left: 735px;
       color: #fccb00;
@@ -9649,10 +10268,163 @@ article.campaign .about {
       -moz-transform: rotate(20deg);
       -ms-transform: rotate(20deg);
       -webkit-transform: rotate(20deg);
+=======
+      top: 266px;
+      left: 622px;
+      color: #fccb00;
+      -webkit-transform: rotate(2deg);
+      -moz-transform: rotate(2deg);
+      -ms-transform: rotate(2deg);
+      -o-transform: rotate(2deg);
+      transform: rotate(2deg);
+      font-size: 30px; }
+    /* line 1580, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star5 {
+      top: 266px;
+      left: 0px;
+      color: #fccb00;
+      -webkit-transform: rotate(37deg);
+      -moz-transform: rotate(37deg);
+      -ms-transform: rotate(37deg);
+      -o-transform: rotate(37deg);
+      transform: rotate(37deg);
+      font-size: 30px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star6 {
+      top: 291px;
+      left: 170px;
+      color: #fccb00;
+      -webkit-transform: rotate(2deg);
+      -moz-transform: rotate(2deg);
+      -ms-transform: rotate(2deg);
+      -o-transform: rotate(2deg);
+      transform: rotate(2deg);
+      font-size: 10px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star7 {
+      top: 382px;
+      left: 300px;
+      color: #fccb00;
+      -webkit-transform: rotate(32deg);
+      -moz-transform: rotate(32deg);
+      -ms-transform: rotate(32deg);
+      -o-transform: rotate(32deg);
+      transform: rotate(32deg);
+      font-size: 10px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star8 {
+      top: 255px;
+      left: 664px;
+      color: #fccb00;
+      -webkit-transform: rotate(25deg);
+      -moz-transform: rotate(25deg);
+      -ms-transform: rotate(25deg);
+      -o-transform: rotate(25deg);
+      transform: rotate(25deg);
+      font-size: 10px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star9 {
+      top: 224px;
+      left: 803px;
+      color: #fccb00;
+      -webkit-transform: rotate(24deg);
+      -moz-transform: rotate(24deg);
+      -ms-transform: rotate(24deg);
+      -o-transform: rotate(24deg);
+      transform: rotate(24deg);
+      font-size: 10px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star10 {
+      top: 41px;
+      left: 280px;
+      color: #fccb00;
+      -webkit-transform: rotate(37deg);
+      -moz-transform: rotate(37deg);
+      -ms-transform: rotate(37deg);
+      -o-transform: rotate(37deg);
+      transform: rotate(37deg);
+      font-size: 10px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star11 {
+      top: 312px;
+      left: 539px;
+      color: white;
+      -webkit-transform: rotate(8deg);
+      -moz-transform: rotate(8deg);
+      -ms-transform: rotate(8deg);
+      -o-transform: rotate(8deg);
+      transform: rotate(8deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star12 {
+      top: 435px;
+      left: 33px;
+      color: white;
+      -webkit-transform: rotate(41deg);
+      -moz-transform: rotate(41deg);
+      -ms-transform: rotate(41deg);
+      -o-transform: rotate(41deg);
+      transform: rotate(41deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star13 {
+      top: 271px;
+      left: 233px;
+      color: white;
+      -webkit-transform: rotate(18deg);
+      -moz-transform: rotate(18deg);
+      -ms-transform: rotate(18deg);
+      -o-transform: rotate(18deg);
+      transform: rotate(18deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star14 {
+      top: 208px;
+      left: 585px;
+      color: white;
+      -webkit-transform: rotate(41deg);
+      -moz-transform: rotate(41deg);
+      -ms-transform: rotate(41deg);
+      -o-transform: rotate(41deg);
+      transform: rotate(41deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star15 {
+      top: 127px;
+      left: 532px;
+      color: white;
+      -webkit-transform: rotate(35deg);
+      -moz-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+      -o-transform: rotate(35deg);
+      transform: rotate(35deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star16 {
+      top: 109px;
+      left: 725px;
+      color: white;
+      -webkit-transform: rotate(19deg);
+      -moz-transform: rotate(19deg);
+      -ms-transform: rotate(19deg);
+      -o-transform: rotate(19deg);
+      transform: rotate(19deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star17 {
+      top: 421px;
+      left: 415px;
+      color: white;
+      -webkit-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+>>>>>>> origin/master
       transform: rotate(20deg);
       font-size: 20px; }
     /* line 1598, ../../_scss/pages/_campaign.scss */
     #camp1407-00 .star#star18 {
+<<<<<<< HEAD
       top: 482px;
       left: 736px;
       color: #ffffff;
@@ -9745,10 +10517,113 @@ article.campaign .about {
     #camp1407-00 .star#star26 {
       top: 384px;
       left: 121px;
+=======
+      top: 218px;
+      left: 179px;
+      color: white;
+      -webkit-transform: rotate(25deg);
+      -moz-transform: rotate(25deg);
+      -ms-transform: rotate(25deg);
+      -o-transform: rotate(25deg);
+      transform: rotate(25deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star19 {
+      top: 346px;
+      left: 912px;
+      color: white;
+      -webkit-transform: rotate(41deg);
+      -moz-transform: rotate(41deg);
+      -ms-transform: rotate(41deg);
+      -o-transform: rotate(41deg);
+      transform: rotate(41deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star20 {
+      top: 475px;
+      left: 729px;
+      color: white;
+      -webkit-transform: rotate(16deg);
+      -moz-transform: rotate(16deg);
+      -ms-transform: rotate(16deg);
+      -o-transform: rotate(16deg);
+      transform: rotate(16deg);
+      font-size: 20px; }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star21 {
+      top: 13px;
+      left: 480px;
+      color: black;
+      font-size: 100px;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+      opacity: 0.1;
+      -webkit-transform: rotate(33deg);
+      -moz-transform: rotate(33deg);
+      -ms-transform: rotate(33deg);
+      -o-transform: rotate(33deg);
+      transform: rotate(33deg); }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star22 {
+      top: 301px;
+      left: 243px;
+      color: black;
+      font-size: 100px;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+      opacity: 0.1;
+      -webkit-transform: rotate(7deg);
+      -moz-transform: rotate(7deg);
+      -ms-transform: rotate(7deg);
+      -o-transform: rotate(7deg);
+      transform: rotate(7deg); }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star23 {
+      top: 469px;
+      left: 96px;
+      color: black;
+      font-size: 100px;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+      opacity: 0.1;
+      -webkit-transform: rotate(25deg);
+      -moz-transform: rotate(25deg);
+      -ms-transform: rotate(25deg);
+      -o-transform: rotate(25deg);
+      transform: rotate(25deg); }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star24 {
+      top: 37px;
+      left: 242px;
+      color: black;
+      font-size: 100px;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+      opacity: 0.1;
+      -webkit-transform: rotate(13deg);
+      -moz-transform: rotate(13deg);
+      -ms-transform: rotate(13deg);
+      -o-transform: rotate(13deg);
+      transform: rotate(13deg); }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star25 {
+      top: 277px;
+      left: 924px;
+      color: black;
+      font-size: 100px;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+      opacity: 0.1;
+      -webkit-transform: rotate(44deg);
+      -moz-transform: rotate(44deg);
+      -ms-transform: rotate(44deg);
+      -o-transform: rotate(44deg);
+      transform: rotate(44deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star26 {
+      top: 203px;
+      left: 244px;
+>>>>>>> origin/master
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -moz-transform: rotate(14deg);
       -ms-transform: rotate(14deg);
       -webkit-transform: rotate(14deg);
@@ -9757,10 +10632,22 @@ article.campaign .about {
     #camp1407-00 .star#star27 {
       top: 339px;
       left: 826px;
+=======
+      -webkit-transform: rotate(40deg);
+      -moz-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+      -o-transform: rotate(40deg);
+      transform: rotate(40deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star27 {
+      top: 13px;
+      left: 69px;
+>>>>>>> origin/master
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -moz-transform: rotate(14deg);
       -ms-transform: rotate(14deg);
       -webkit-transform: rotate(14deg);
@@ -9769,10 +10656,22 @@ article.campaign .about {
     #camp1407-00 .star#star28 {
       top: 271px;
       left: 146px;
+=======
+      -webkit-transform: rotate(13deg);
+      -moz-transform: rotate(13deg);
+      -ms-transform: rotate(13deg);
+      -o-transform: rotate(13deg);
+      transform: rotate(13deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star28 {
+      top: 195px;
+      left: 856px;
+>>>>>>> origin/master
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -moz-transform: rotate(42deg);
       -ms-transform: rotate(42deg);
       -webkit-transform: rotate(42deg);
@@ -9781,10 +10680,22 @@ article.campaign .about {
     #camp1407-00 .star#star29 {
       top: 13px;
       left: 42px;
+=======
+      -webkit-transform: rotate(7deg);
+      -moz-transform: rotate(7deg);
+      -ms-transform: rotate(7deg);
+      -o-transform: rotate(7deg);
+      transform: rotate(7deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star29 {
+      top: 103px;
+      left: 622px;
+>>>>>>> origin/master
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -moz-transform: rotate(34deg);
       -ms-transform: rotate(34deg);
       -webkit-transform: rotate(34deg);
@@ -9793,10 +10704,22 @@ article.campaign .about {
     #camp1407-00 .star#star30 {
       top: 302px;
       left: 377px;
+=======
+      -webkit-transform: rotate(25deg);
+      -moz-transform: rotate(25deg);
+      -ms-transform: rotate(25deg);
+      -o-transform: rotate(25deg);
+      transform: rotate(25deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star30 {
+      top: 180px;
+      left: 50px;
+>>>>>>> origin/master
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -moz-transform: rotate(14deg);
       -ms-transform: rotate(14deg);
       -webkit-transform: rotate(14deg);
@@ -9845,14 +10768,71 @@ article.campaign .about {
     #camp1407-00 .star#star35 {
       top: 278px;
       left: 929px;
+=======
+      -webkit-transform: rotate(41deg);
+      -moz-transform: rotate(41deg);
+      -ms-transform: rotate(41deg);
+      -o-transform: rotate(41deg);
+      transform: rotate(41deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star31 {
+      top: 161px;
+      left: 3px;
       color: #009ea1;
       font-size: 20px;
+      -webkit-transform: rotate(7deg);
+      -moz-transform: rotate(7deg);
+      -ms-transform: rotate(7deg);
+      -o-transform: rotate(7deg);
+      transform: rotate(7deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star32 {
+      top: 274px;
+      left: 865px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(16deg);
+      -moz-transform: rotate(16deg);
+      -ms-transform: rotate(16deg);
+      -o-transform: rotate(16deg);
+      transform: rotate(16deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star33 {
+      top: 288px;
+      left: 413px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(31deg);
+      -moz-transform: rotate(31deg);
+      -ms-transform: rotate(31deg);
+      -o-transform: rotate(31deg);
+      transform: rotate(31deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star34 {
+      top: 362px;
+      left: 319px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(38deg);
       -moz-transform: rotate(38deg);
       -ms-transform: rotate(38deg);
-      -webkit-transform: rotate(38deg);
+      -o-transform: rotate(38deg);
       transform: rotate(38deg); }
     /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star35 {
+      top: 441px;
+      left: 272px;
+>>>>>>> origin/master
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(32deg);
+      -moz-transform: rotate(32deg);
+      -ms-transform: rotate(32deg);
+      -o-transform: rotate(32deg);
+      transform: rotate(32deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
     #camp1407-00 .star#star36 {
+<<<<<<< HEAD
       top: 152px;
       left: 797px;
       color: #009ea1;
@@ -9901,21 +10881,75 @@ article.campaign .about {
       -ms-transform: rotate(38deg);
       -webkit-transform: rotate(38deg);
       transform: rotate(38deg); }
+=======
+      top: 157px;
+      left: 317px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(37deg);
+      -moz-transform: rotate(37deg);
+      -ms-transform: rotate(37deg);
+      -o-transform: rotate(37deg);
+      transform: rotate(37deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star37 {
+      top: 10px;
+      left: 898px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(19deg);
+      -moz-transform: rotate(19deg);
+      -ms-transform: rotate(19deg);
+      -o-transform: rotate(19deg);
+      transform: rotate(19deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star38 {
+      top: 430px;
+      left: 570px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(1deg);
+      -moz-transform: rotate(1deg);
+      -ms-transform: rotate(1deg);
+      -o-transform: rotate(1deg);
+      transform: rotate(1deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star39 {
+      top: 199px;
+      left: 698px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(8deg);
+      -moz-transform: rotate(8deg);
+      -ms-transform: rotate(8deg);
+      -o-transform: rotate(8deg);
+      transform: rotate(8deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star40 {
+      top: 2px;
+      left: 751px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(40deg);
+      -moz-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+      -o-transform: rotate(40deg);
+      transform: rotate(40deg); }
+>>>>>>> origin/master
 
 /* line 1644, ../../_scss/pages/_campaign.scss */
 #camp1407-01 {
   background-color: #5cba9e;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FF5CBA9E', endColorstr='#FF5CBA9E');
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iIzVjYmE5ZSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDA5ZWExIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNWNiYTllIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-  background-size: 100%;
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(1%, #5cba9e), color-stop(50%, #009ea1), color-stop(100%, #5cba9e));
-  background-image: -moz-linear-gradient(left, #5cba9e 1%, #009ea1 50%, #5cba9e 100%);
   background-image: -webkit-linear-gradient(left, #5cba9e 1%, #009ea1 50%, #5cba9e 100%);
-  background-image: linear-gradient(to right, #5cba9e 1%, #009ea1 50%, #5cba9e 100%); }
+  background-image: -moz-linear-gradient(left, #5cba9e 1%, #009ea1 50%, #5cba9e 100%);
+  background-image: -o-linear-gradient(left, #5cba9e 1%, #009ea1 50%, #5cba9e 100%);
+  background-image: linear-gradient(left, #5cba9e 1%, #009ea1 50%, #5cba9e 100%); }
   /* line 1654, ../../_scss/pages/_campaign.scss */
   #camp1407-01 h2:before {
-    background: #ffff00; }
+    background: yellow; }
   /* line 1662, ../../_scss/pages/_campaign.scss */
   #camp1407-01 .campVisual {
     position: relative;
@@ -9935,9 +10969,9 @@ article.campaign .about {
         line-height: 1.0em; }
         /* line 1682, ../../_scss/pages/_campaign.scss */
         #camp1407-01 .campVisual .appealTitle p span#items {
-          color: #ffff00;
+          color: yellow;
           font-size: 20.4pt;
-          text-shadow: 3px, 3px, 0px, #ffffff; }
+          text-shadow: 3px, 3px, 0px, white; }
         /* line 1687, ../../_scss/pages/_campaign.scss */
         #camp1407-01 .campVisual .appealTitle p span#expl {
           color: rgba(0, 0, 0, 0.5);
@@ -9946,7 +10980,7 @@ article.campaign .about {
         /* line 1692, ../../_scss/pages/_campaign.scss */
         #camp1407-01 .campVisual .appealTitle p span#off {
           position: relative;
-          color: #ffffff; }
+          color: white; }
           /* line 1697, ../../_scss/pages/_campaign.scss */
           #camp1407-01 .campVisual .appealTitle p span#off #what {
             position: absolute;
@@ -9974,11 +11008,13 @@ article.campaign .about {
         margin: 0 0.3rem;
         width: 80px;
         height: 80px;
-        -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
         border: 1px solid rgba(255, 255, 255, 0.5);
-        color: #ffff00;
+        color: yellow;
         text-align: center;
         line-height: 80px; }
     /* line 1742, ../../_scss/pages/_campaign.scss */
@@ -10019,10 +11055,12 @@ article.campaign .about {
     #camp1407-01 .campVisual .circle {
       display: block;
       position: absolute;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
-      background: #ffffff; }
+      background: white; }
       /* line 1792, ../../_scss/pages/_campaign.scss */
       #camp1407-01 .campVisual .circle#circle1 {
         left: -200px;
@@ -10075,7 +11113,7 @@ article.campaign .about {
   #camp1407-01 .details {
     position: relative;
     z-index: 5;
-    background: #ffffff; }
+    background: white; }
 
 /* line 1864, ../../_scss/pages/_campaign.scss */
 #camp1408-00 {
@@ -10108,7 +11146,7 @@ article.campaign .about {
         padding-top: 1.0rem;
         padding-bottom: 1.0rem;
         background: rgba(0, 255, 255, 0.5);
-        color: #ffffff;
+        color: white;
         font-size: 25px;
         letter-spacing: 0.2rem; }
     /* line 1913, ../../_scss/pages/_campaign.scss */
@@ -10116,17 +11154,20 @@ article.campaign .about {
       position: absolute;
       top: 2.0rem;
       right: 2.0rem;
+      -webkit-transform: rotate(30deg);
       -moz-transform: rotate(30deg);
       -ms-transform: rotate(30deg);
-      -webkit-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
       transform: rotate(30deg);
       color: rgba(0, 255, 255, 0.7);
       font-size: 31.5pt; }
     /* line 1924, ../../_scss/pages/_campaign.scss */
     #camp1408-00 .campVisual #appealImg .circle {
       position: absolute;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%; }
       /* line 1929, ../../_scss/pages/_campaign.scss */
       #camp1408-00 .campVisual #appealImg .circle.circle1 {
@@ -10221,7 +11262,7 @@ article.campaign .about {
   #camp1408-00 .details {
     position: relative;
     z-index: 5;
-    background: #ffffff; }
+    background: white; }
 
 /* line 2014, ../../_scss/pages/_campaign.scss */
 #camp0000-02 {
@@ -10245,7 +11286,7 @@ article.campaign .about {
       background-position: center center;
       background-size: auto 173px;
       text-align: center; }
-      /* line 2045, ../../_scss/pages/_campaign.scss */
+      /* line 2046, ../../_scss/pages/_campaign.scss */
       #camp0000-02 .hex-row .hex .corner1,
       #camp0000-02 .hex-row .hex .corner2 {
         overflow: hidden;
@@ -10273,9 +11314,10 @@ article.campaign .about {
       /* line 2071, ../../_scss/pages/_campaign.scss */
       #camp0000-02 .hex-row .hex .corner1 {
         z-index: -1;
+        -webkit-transform: rotate(60deg);
         -moz-transform: rotate(60deg);
         -ms-transform: rotate(60deg);
-        -webkit-transform: rotate(60deg);
+        -o-transform: rotate(60deg);
         transform: rotate(60deg); }
         /* line 2074, ../../_scss/pages/_campaign.scss */
         #camp0000-02 .hex-row .hex .corner1:before {
@@ -10283,9 +11325,10 @@ article.campaign .about {
           transform-origin: 0 0; }
       /* line 2081, ../../_scss/pages/_campaign.scss */
       #camp0000-02 .hex-row .hex .corner2 {
+        -webkit-transform: rotate(-60deg);
         -moz-transform: rotate(-60deg);
         -ms-transform: rotate(-60deg);
-        -webkit-transform: rotate(-60deg);
+        -o-transform: rotate(-60deg);
         transform: rotate(-60deg); }
         /* line 2083, ../../_scss/pages/_campaign.scss */
         #camp0000-02 .hex-row .hex .corner2:before {
@@ -10298,7 +11341,7 @@ article.campaign .about {
         #camp0000-02 .hex-row .hex#title1 .inner {
           font-size: 19pt;
           line-height: 1.1em;
-          color: #ffffff;
+          color: white;
           padding-top: 1.0rem; }
       /* line 2099, ../../_scss/pages/_campaign.scss */
       #camp0000-02 .hex-row .hex#title2 {
@@ -10308,7 +11351,7 @@ article.campaign .about {
           font-size: 21pt;
           font-weight: bold;
           line-height: 1.1em;
-          color: #ffffff;
+          color: white;
           padding-top: 0.5rem; }
       /* line 2111, ../../_scss/pages/_campaign.scss */
       #camp0000-02 .hex-row .hex#off1 {
@@ -10318,7 +11361,7 @@ article.campaign .about {
         /* line 2115, ../../_scss/pages/_campaign.scss */
         #camp0000-02 .hex-row .hex#off1 .inner {
           padding-top: 0.5rem;
-          color: #ffffff;
+          color: white;
           line-height: 1.3em; }
           /* line 2119, ../../_scss/pages/_campaign.scss */
           #camp0000-02 .hex-row .hex#off1 .inner .big {
@@ -10348,20 +11391,20 @@ article.campaign .about {
   /* line 2166, ../../_scss/pages/_campaign.scss */
   #camp0000-02 .details {
     background: #002949;
-    color: #ffffff; }
+    color: white; }
     /* line 2171, ../../_scss/pages/_campaign.scss */
     #camp0000-02 .details a {
       color: #fccb00; }
       /* line 2173, ../../_scss/pages/_campaign.scss */
       #camp0000-02 .details a:hover {
-        color: #ffffff; }
+        color: white; }
 
 /* line 2187, ../../_scss/pages/_campaign.scss */
 #camp0000-01 {
   background-image: url("assets/img/campaign/0000/00_bg.gif");
   background-position: left top;
   background-repeat: no-repeat;
-  background-color: #E4E4E4; }
+  background-color: #e4e4e4; }
   /* line 2202, ../../_scss/pages/_campaign.scss */
   #camp0000-01 .campVisual {
     margin: 0 auto;
@@ -10371,14 +11414,14 @@ article.campaign .about {
     #camp0000-01 .campVisual .appealTitle {
       font-size: 25.2pt;
       line-height: 1.3em;
-      text-shadow: 3px, 3px, 0px, #ffffff; }
+      text-shadow: 3px, 3px, 0px, white; }
     /* line 2216, ../../_scss/pages/_campaign.scss */
     #camp0000-01 .campVisual .showMsg {
       display: inline-block;
       margin-top: 3.0rem;
       padding: 0.5rem;
       background: rgba(68, 72, 72, 0.5);
-      color: #ffffff;
+      color: white;
       cursor: pointer; }
       /* line 2223, ../../_scss/pages/_campaign.scss */
       #camp0000-01 .campVisual .showMsg .icon-plus3 {
@@ -10386,7 +11429,7 @@ article.campaign .about {
       /* line 2226, ../../_scss/pages/_campaign.scss */
       #camp0000-01 .campVisual .showMsg:hover {
         color: #e2318c; }
-    /* line 2231, ../../_scss/pages/_campaign.scss */
+    /* line 2232, ../../_scss/pages/_campaign.scss */
     #sliderCampaignNews #camp0000-01 .campVisual, article#campaign #camp0000-01 .campVisual {
       height: 400px; }
       /* line 2236, ../../_scss/pages/_campaign.scss */
@@ -10400,11 +11443,13 @@ article.campaign .about {
         margin-right: auto;
         padding: 0.5rem 1.0rem;
         border: 1px solid rgba(0, 0, 0, 0.1);
-        -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
         border-radius: 6px;
         background: rgba(226, 49, 140, 0.8);
-        color: #ffffff;
+        color: white;
         font-size: 100%;
         text-decoration: none; }
         /* line 2252, ../../_scss/pages/_campaign.scss */
@@ -10445,10 +11490,12 @@ article.campaign .about {
     #camp0000-01 #convenience ol .case .info {
       overflow: hidden;
       position: relative;
-      background: #ffffff;
+      background: white;
       border: rgba(0, 0, 0, 0.1);
-      -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
       border-radius: 3px; }
       /* line 2320, ../../_scss/pages/_campaign.scss */
       #camp0000-01 #convenience ol .case .info h4 {
@@ -10479,8 +11526,10 @@ article.campaign .about {
       height: 140px;
       margin-top: -70px;
       margin-right: -70px;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
       background: #009ea1; }
       /* line 2359, ../../_scss/pages/_campaign.scss */
@@ -10489,11 +11538,12 @@ article.campaign .about {
         position: absolute;
         left: 0.8rem;
         bottom: 1.6rem;
-        color: #ffffff;
+        color: white;
         font-weight: bold;
+        -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
         transform: rotate(45deg); }
     @media all and (max-width: 768px) {
       /* line 2379, ../../_scss/pages/_campaign.scss */
@@ -10502,7 +11552,7 @@ article.campaign .about {
   /* line 2394, ../../_scss/pages/_campaign.scss */
   #camp0000-01 .details {
     background: #009ea1;
-    color: #ffffff; }
+    color: white; }
     /* line 2399, ../../_scss/pages/_campaign.scss */
     #camp0000-01 .details a {
       color: #fccb00; }
@@ -10529,10 +11579,10 @@ article.campaign .about {
     width: 280px;
     margin: 0 auto;
     border: 3px solid #444848;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box; }
-    /* line 2450, ../../_scss/pages/_campaign.scss */
+    /* line 2451, ../../_scss/pages/_campaign.scss */
     #camp0000-03 .campVisual #appealTitle p .leftTitle,
     #camp0000-03 .campVisual #appealTitle p .rightTitle {
       display: table-cell;
@@ -10544,7 +11594,7 @@ article.campaign .about {
     /* line 2459, ../../_scss/pages/_campaign.scss */
     #camp0000-03 .campVisual #appealTitle p .leftTitle {
       background-color: #444848;
-      color: #ffffff; }
+      color: white; }
     /* line 2463, ../../_scss/pages/_campaign.scss */
     #camp0000-03 .campVisual #appealTitle p .rightTitle {
       color: #444848; }
@@ -10557,12 +11607,14 @@ article.campaign .about {
       overflow: hidden;
       position: relative;
       margin-right: 0.1rem;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
       border-radius: 50%;
       background-color: #e2318c;
-      color: #ffffff;
+      color: white;
       text-align: center; }
       /* line 2487, ../../_scss/pages/_campaign.scss */
       #camp0000-03 .campVisual #dates P .date:before {
@@ -10572,9 +11624,10 @@ article.campaign .about {
         top: 34px;
         left: 34px;
         background-color: #CC3B86;
+        -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
         transform: rotate(45deg);
         content: ""; }
       /* line 2498, ../../_scss/pages/_campaign.scss */
@@ -10623,8 +11676,8 @@ article.campaign .about {
         padding: 3.0rem 1.0rem;
         height: 400px;
         background-size: 60%;
-        -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box; } }
   @media all and (max-width: 768px) {
     /* line 2430, ../../_scss/pages/_campaign.scss */
@@ -10677,13 +11730,13 @@ article.campaign .about {
 /* line 2642, ../../_scss/pages/_campaign.scss */
 #camp0000-03 .details {
   background: #009ea1;
-  color: #ffffff; }
+  color: white; }
   /* line 2647, ../../_scss/pages/_campaign.scss */
   #camp0000-03 .details a {
     color: #fccb00; }
     /* line 2649, ../../_scss/pages/_campaign.scss */
     #camp0000-03 .details a:hover {
-      color: #ffffff; }
+      color: white; }
 
 /* line 2669, ../../_scss/pages/_campaign.scss */
 #camp0000-04 .toReviewForm {
@@ -10695,12 +11748,14 @@ article.campaign .about {
     margin: 0 auto;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
     border-radius: 6px;
     background: rgba(226, 49, 140, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #ffffff;
+    color: white;
     text-align: center; }
     /* line 2687, ../../_scss/pages/_campaign.scss */
     #camp0000-04 .toReviewForm a:hover {
@@ -10728,8 +11783,8 @@ article.campaign .about {
 
 /* line 2743, ../../_scss/pages/_campaign.scss */
 #camp1410-00 {
-  background: #DFDEC5;
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0) 50%), linear-gradient(rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0) 50%);
+  background: #dfdec5;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 50%, transparent 50%), linear-gradient(rgba(255, 255, 255, 0.1) 50%, transparent 50%);
   background-size: 50px 50px; }
   @media all and (min-width: 769px) {
     /* line 2756, ../../_scss/pages/_campaign.scss */
@@ -10737,7 +11792,7 @@ article.campaign .about {
       height: 400px; } }
   /* line 2770, ../../_scss/pages/_campaign.scss */
   #camp1410-00 .details {
-    background: #DFDEC5; }
+    background: #dfdec5; }
 
 /* line 2783, ../../_scss/pages/_campaign.scss */
 #camp14b-00 {
@@ -10847,7 +11902,11 @@ article.campaign .about {
     margin-bottom: 1.0rem;
     font-size: 110.0%; }
   @media only screen and (min-width: 769px) {
+<<<<<<< HEAD
     /* line 138, ../../_scss/pages/_inquiry.scss */
+=======
+    /* line 140, ../../_scss/pages/_inquiry.scss */
+>>>>>>> origin/master
     .inquiry .formElements .formElement input[type="text"],
     .inquiry .formElements .formElement input[type="email"],
     .inquiry .formElements .formElement input[type="password"],
@@ -10871,14 +11930,16 @@ article.campaign .about {
     display: inline-block;
     line-height: 44px;
     height: 44px;
-    -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
     border-radius: 6px;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.3);
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     vertical-align: middle; }
     /* line 185, ../../_scss/pages/_inquiry.scss */
@@ -10920,9 +11981,14 @@ article.campaign .about {
     .inquiry .formContents {
       margin: 0 auto;
       padding: 3.0rem 0;
+<<<<<<< HEAD
       max-width: 1024px;
       -moz-box-sizing: border-box;
+=======
+      max-width: 768px;
+>>>>>>> origin/master
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box; } }
   @media only screen and (max-width: 768px) {
     /* line 221, ../../_scss/pages/_inquiry.scss */
@@ -10992,10 +12058,10 @@ article#home .liquidLayout {
     overflow: hidden;
     margin-top: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background: #ffffff; }
+    background: white; }
     /* line 44, ../../_scss/pages/_home.scss */
     article#home .liquidLayout .item .itemContents {
       padding: 0.5rem; }
@@ -11031,14 +12097,14 @@ article#home #sliderCampaignNews {
       display: block;
       margin: 0;
       padding: 0.5rem;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box;
       font-size: 90%;
       text-align: center;
       vertical-align: middle;
       background: #002949;
-      color: #ffffff; }
+      color: white; }
       /* line 111, ../../_scss/pages/_home.scss */
       article#home #sliderCampaignNews #news h3:before {
         display: inline-block;
@@ -11115,13 +12181,15 @@ article#home #shortcuts {
           height: 126px;
           padding: 1.0rem;
           border: 1px solid rgba(0, 0, 0, 0.1);
-          -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
           border-radius: 50%;
-          -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
           box-sizing: border-box;
-          color: #ffffff;
+          color: white;
           letter-spacing: -0.05rem;
           line-height: 1.2rem; }
           /* line 247, ../../_scss/pages/_home.scss */
@@ -11149,10 +12217,12 @@ article#home #shortcuts {
       /* line 211, ../../_scss/pages/_home.scss */
       article#home #shortcuts ul {
         border: 1px solid rgba(0, 0, 0, 0.1);
-        -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
         border-radius: 6px;
-        background: #ffffff;
+        background: white;
         font-size: 120%; }
         /* line 273, ../../_scss/pages/_home.scss */
         article#home #shortcuts ul li {
@@ -11189,7 +12259,7 @@ article#home #indexs {
   article#home #indexs ul li a {
     line-height: 1.2em;
     margin: 0 auto;
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     vertical-align: middle;
     -webkit-font-smoothing: antialiased;
@@ -11205,7 +12275,7 @@ article#home #indexs {
       background: #009ea1; }
     /* line 348, ../../_scss/pages/_home.scss */
     article#home #indexs ul li a:hover {
-      background: #ffffff !important;
+      background: white !important;
       color: #444848 !important; }
     /* line 354, ../../_scss/pages/_home.scss */
     article#home #indexs ul li a span[class^="icon"] {
@@ -11232,8 +12302,10 @@ article#home #indexs {
           width: 140px;
           height: 140px;
           border: 1px solid rgba(0, 0, 0, 0.1);
-          -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
           border-radius: 50%;
           text-align: center; }
           /* line 392, ../../_scss/pages/_home.scss */
@@ -11251,7 +12323,7 @@ article#home #indexs {
         content: "-"; }
       /* line 421, ../../_scss/pages/_home.scss */
       article#home #indexs ul li:after {
-        border-left-color: #ffffff; }
+        border-left-color: white; }
       /* line 428, ../../_scss/pages/_home.scss */
       article#home #indexs ul a span.block {
         display: inline-block !important; } }
@@ -11262,12 +12334,12 @@ article#home #faq {
   article#home #faq ul {
     position: relative;
     z-index: 2;
-    background: #ffffff; }
+    background: white; }
     /* line 460, ../../_scss/pages/_home.scss */
     article#home #faq ul li a {
       display: block;
       padding: 0.5rem;
-      background: #ffffff;
+      background: white;
       color: #444848;
       text-decoration: none; }
       /* line 466, ../../_scss/pages/_home.scss */
@@ -11316,7 +12388,7 @@ article#home #faq {
     article#home #faq {
       width: 360px !important; } }
 @media all and (min-width: 376px) {
-  /* line 524, ../../_scss/pages/_home.scss */
+  /* line 526, ../../_scss/pages/_home.scss */
   article#home #tanabata,
   article#home #earlybird,
   article#home #problems .item {
@@ -11392,7 +12464,7 @@ article#home .homeVoice {
     position: relative;
     padding: 1.0rem 0.5rem;
     background: rgba(0, 0, 0, 0.1); }
-    /* line 654, ../../_scss/pages/_home.scss */
+    /* line 655, ../../_scss/pages/_home.scss */
     article#home .homeVoice p.voicesContents:after, article#home .homeVoice p.voicesContents:before {
       font-size: 25.2pt;
       color: rgba(0, 0, 0, 0.1);
@@ -11405,9 +12477,10 @@ article#home .homeVoice {
       position: absolute;
       bottom: 1.0rem;
       right: 1.0rem;
+      -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
-      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
       transform: rotate(180deg); }
     /* line 671, ../../_scss/pages/_home.scss */
     article#home .homeVoice p.voicesContents strong {
@@ -11458,8 +12531,9 @@ article#home #reservCalendar table {
   article#home #reservCalendar table tbody td:before {
     font-family: icomoon;
     speak: none;
+    -webkit-appearance: none;
     -moz-appearance: none;
-    -webkit-appearance: none; }
+    appearance: none; }
   /* line 745, ../../_scss/pages/_home.scss */
   article#home #reservCalendar table tbody td.happy:before {
     font-size: 17pt !important;
@@ -11518,8 +12592,8 @@ article#home .webservices {
   overflow: inherit;
   border: none;
   padding: 0;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   background: transparent; }
   /* line 859, ../../_scss/pages/_home.scss */
@@ -11566,10 +12640,12 @@ article#home .webservices {
         width: 160px;
         height: 160px;
         margin: 1.0rem auto;
-        -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
-        background: #ffffff;
+        background: white;
         font-size: 600%;
         text-align: center;
         line-height: 160px; }
@@ -11605,8 +12681,10 @@ article#home .webservices {
       width: 580px;
       height: 580px;
       border: 1px solid;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
       background: #f0f0f0;
       content: ""; }
@@ -11630,9 +12708,10 @@ article#home .webservices {
           #ecokaishu #flowEcokaishu ol li:nth-of-type(1):after {
             top: 160px;
             right: -88px;
+            -webkit-transform: rotate(-45deg);
             -moz-transform: rotate(-45deg);
             -ms-transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
             transform: rotate(-45deg); }
         /* line 132, ../../_scss/pages/_ecokaishu.scss */
         #ecokaishu #flowEcokaishu ol li:nth-of-type(2) {
@@ -11642,9 +12721,10 @@ article#home .webservices {
           #ecokaishu #flowEcokaishu ol li:nth-of-type(2):after {
             bottom: -54px;
             right: 102px;
+            -webkit-transform: rotate(45deg);
             -moz-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
             transform: rotate(45deg); }
         /* line 141, ../../_scss/pages/_ecokaishu.scss */
         #ecokaishu #flowEcokaishu ol li:nth-of-type(3) {
@@ -11654,9 +12734,10 @@ article#home .webservices {
           #ecokaishu #flowEcokaishu ol li:nth-of-type(3):after {
             bottom: 87px;
             left: -61px;
+            -webkit-transform: rotate(90deg);
             -moz-transform: rotate(90deg);
             -ms-transform: rotate(90deg);
-            -webkit-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
             transform: rotate(90deg); }
         /* line 150, ../../_scss/pages/_ecokaishu.scss */
         #ecokaishu #flowEcokaishu ol li:nth-of-type(4) {
@@ -11666,9 +12747,10 @@ article#home .webservices {
           #ecokaishu #flowEcokaishu ol li:nth-of-type(4):after {
             top: -20px;
             left: -5px;
+            -webkit-transform: rotate(180deg);
             -moz-transform: rotate(180deg);
             -ms-transform: rotate(180deg);
-            -webkit-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
             transform: rotate(180deg); }
         /* line 159, ../../_scss/pages/_ecokaishu.scss */
         #ecokaishu #flowEcokaishu ol li:nth-of-type(5) {
@@ -11678,9 +12760,10 @@ article#home .webservices {
           #ecokaishu #flowEcokaishu ol li:nth-of-type(5):after {
             top: -55px;
             right: 24px;
+            -webkit-transform: rotate(225deg);
             -moz-transform: rotate(225deg);
             -ms-transform: rotate(225deg);
-            -webkit-transform: rotate(225deg);
+            -o-transform: rotate(225deg);
             transform: rotate(225deg); } }
   @media all and (max-width: 768px) {
     /* line 179, ../../_scss/pages/_ecokaishu.scss */
@@ -11696,7 +12779,7 @@ article#home .webservices {
 #ecokaishu #archive2012 {
   position: relative;
   padding: 5.0rem 0;
-  background: #ffffff; }
+  background: white; }
   /* line 210, ../../_scss/pages/_ecokaishu.scss */
   #ecokaishu #archive2012:before {
     display: block;
@@ -11715,7 +12798,7 @@ article#home .webservices {
     z-index: 2;
     margin: 0 auto;
     text-align: center;
-    color: #ffffff; }
+    color: white; }
     /* line 235, ../../_scss/pages/_ecokaishu.scss */
     #ecokaishu #archive2012 h3 .bg_pink {
       display: inline-block;
@@ -11774,7 +12857,7 @@ article#home .webservices {
       position: absolute;
       z-index: 7;
       font-size: 17pt;
-      color: #ffffff;
+      color: white;
       letter-spacing: -0.1rem; }
       /* line 322, ../../_scss/pages/_ecokaishu.scss */
       #ecokaishu #archive2012 #graph p span {
@@ -11847,7 +12930,7 @@ article#home .webservices {
       margin-ight: -34px; }
     /* line 431, ../../_scss/pages/_ecokaishu.scss */
     #ecokaishu #archive2012 .col {
-      background: #ffffff; }
+      background: white; }
     /* line 436, ../../_scss/pages/_ecokaishu.scss */
     #ecokaishu #archive2012 #details {
       border-top: 1px solid rgba(0, 0, 0, 0.5);
@@ -11866,18 +12949,20 @@ article#home .webservices {
       display: inline-block;
       text-align: center;
       vertical-align: top;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box;
       border: 3px solid white;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
-      -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
       -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
       box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
       text-decoration: none;
-      color: #ffffff; }
+      color: white; }
       /* line 39, ../../_scss/pages/_flow.scss */
       #flow .tabIndex ul li .here {
         display: inline-block;
@@ -11885,11 +12970,13 @@ article#home .webservices {
         padding: 0 0.5rem;
         background: rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(0, 0, 0, 0.1);
-        -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
         border-radius: 6px;
-        -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px inset;
         -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px inset;
+        -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px inset;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px inset; }
         /* line 47, ../../_scss/pages/_flow.scss */
         #flow .tabIndex ul li .here:after {
@@ -11898,7 +12985,7 @@ article#home .webservices {
           height: 0;
           margin-left: 0.3rem;
           border: 4px solid transparent;
-          border-top-color: #ffffff;
+          border-top-color: white;
           content: "";
           vertical-align: middle; }
       /* line 60, ../../_scss/pages/_flow.scss */
@@ -11935,12 +13022,14 @@ article#home .webservices {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     padding: 1.0rem;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
     border-radius: 6px; }
     /* line 142, ../../_scss/pages/_flow.scss */
     #flow #concierge .listFlow > li h4 {
@@ -11960,11 +13049,13 @@ article#home .webservices {
         width: 40px;
         height: 40px;
         margin-left: -20px;
-        -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
         background: rgba(241, 91, 41, 0.8);
-        color: #ffffff;
+        color: white;
         font-size: 90%; }
     /* line 164, ../../_scss/pages/_flow.scss */
     #flow #concierge .listFlow > li:nth-of-type(1) h4:before {
@@ -12029,8 +13120,8 @@ article#home .webservices {
       background-position: right;*/ } }
   /* line 242, ../../_scss/pages/_flow.scss */
   #flow #ecokaishu .listFlow > li {
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-top: 1.0rem; }
     /* line 246, ../../_scss/pages/_flow.scss */
@@ -12094,17 +13185,20 @@ article#home .webservices {
           position: absolute;
           top: 0;
           left: 0;
+          -webkit-transform: rotate(-30deg);
           -moz-transform: rotate(-30deg);
           -ms-transform: rotate(-30deg);
-          -webkit-transform: rotate(-30deg);
+          -o-transform: rotate(-30deg);
           transform: rotate(-30deg);
           width: 20px;
           height: 20px;
-          -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
           border-radius: 50%;
           background: #e2318c;
-          color: #ffffff;
+          color: white;
           font-size: 8pt;
           text-align: center; }
       /* line 306, ../../_scss/pages/_flow.scss */
@@ -12137,8 +13231,10 @@ article#home .webservices {
         width: 220px;
         height: 220px;
         margin: 0 auto;
-        -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, 0.1); }
       /* line 354, ../../_scss/pages/_flow.scss */
@@ -12175,19 +13271,26 @@ article#price .intro {
         /* line 37, ../../_scss/pages/_price.scss */
         article#price .intro .tabIndex ul li a {
           display: block;
-          -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
           box-sizing: border-box;
           border: 3px solid white;
-          -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
           border-radius: 50%;
-          -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
           -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
+          -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
           text-decoration: none;
+<<<<<<< HEAD
           color: #ffffff; }
           /* line 47, ../../_scss/pages/_price.scss */
+=======
+          color: white; }
+          /* line 44, ../../_scss/pages/_price.scss */
+>>>>>>> origin/master
           article#price .intro .tabIndex ul li a:hover {
             background: #002949 !important; }
           /* line 51, ../../_scss/pages/_price.scss */
@@ -12197,11 +13300,13 @@ article#price .intro {
             padding: 0 0.5rem;
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(0, 0, 0, 0.1);
-            -moz-border-radius: 6px;
             -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
             border-radius: 6px;
-            -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px inset;
             -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px inset;
+            -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px inset;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px inset; }
             /* line 59, ../../_scss/pages/_price.scss */
             article#price .intro .tabIndex ul li a .here:after {
@@ -12210,7 +13315,7 @@ article#price .intro {
               height: 0;
               margin-left: 0.3rem;
               border: 4px solid transparent;
-              border-top-color: #ffffff;
+              border-top-color: white;
               content: "";
               vertical-align: middle; }
         /* line 74, ../../_scss/pages/_price.scss */
@@ -12220,17 +13325,26 @@ article#price .intro {
         article#price .intro .tabIndex ul li:nth-of-type(2) a {
           background: #e2318c; }
     @media all and (min-width: 769px) {
+<<<<<<< HEAD
       /* line 94, ../../_scss/pages/_price.scss */
+=======
+      /* line 91, ../../_scss/pages/_price.scss */
+>>>>>>> origin/master
       article#price .intro .tabIndex ul li a {
         width: 160px;
         height: 160px;
         padding-top: 3.5rem; } }
     @media all and (max-width: 768px) {
+<<<<<<< HEAD
       /* line 109, ../../_scss/pages/_price.scss */
+=======
+      /* line 106, ../../_scss/pages/_price.scss */
+>>>>>>> origin/master
       article#price .intro .tabIndex ul li a {
         width: 140px;
         height: 140px;
         padding-top: 3.0rem; } }
+<<<<<<< HEAD
 /* line 127, ../../_scss/pages/_price.scss */
 article#price #ex {
   overflow: hidden;
@@ -12268,6 +13382,137 @@ article#price .linkMenu {
     /* line 170, ../../_scss/pages/_price.scss */
     article#price .linkMenu h3:last-of-type a, article#price .linkMenu .tab:last-of-type a {
       border-right: 1px solid rgba(240, 240, 240, 0.9); }
+=======
+/* line 124, ../../_scss/pages/_price.scss */
+article#price #ex {
+  overflow: hidden;
+  margin-top: 3.0rem;
+  padding-bottom: 0 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  /* line 134, ../../_scss/pages/_price.scss */
+  article#price #ex ul {
+    margin-bottom: 0;
+    padding-top: 3.0rem;
+    padding-bottom: 3.0rem;
+    background: rgba(0, 158, 161, 0.1);
+    text-align: center; }
+    /* line 143, ../../_scss/pages/_price.scss */
+    article#price #ex ul li {
+      position: relative;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
+      border-radius: 6px;
+      border: 3px solid transparent;
+      background: white; }
+      /* line 151, ../../_scss/pages/_price.scss */
+      article#price #ex ul li:after {
+        z-index: 3;
+        line-height: 42px;
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        color: #009ea1;
+        font-family: icomoon;
+        font-size: 25.2pt;
+        content: "\e672"; }
+      /* line 165, ../../_scss/pages/_price.scss */
+      article#price #ex ul li:nth-of-type(2), article#price #ex ul li:nth-of-type(3) {
+        border-color: rgba(0, 158, 161, 0.7);
+        -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+        cursor: pointer; }
+        /* line 169, ../../_scss/pages/_price.scss */
+        article#price #ex ul li:nth-of-type(2).active, article#price #ex ul li:nth-of-type(3).active {
+          background: rgba(0, 158, 161, 0.8);
+          color: white; }
+      /* line 175, ../../_scss/pages/_price.scss */
+      article#price #ex ul li:nth-of-type(3):after {
+        color: #e2318c;
+        content: "\e674"; }
+      /* line 180, ../../_scss/pages/_price.scss */
+      article#price #ex ul li:nth-of-type(4) {
+        border-color: rgba(226, 49, 140, 0.7);
+        -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+        cursor: pointer; }
+        /* line 184, ../../_scss/pages/_price.scss */
+        article#price #ex ul li:nth-of-type(4):after {
+          color: #444848;
+          content: "\e9b4"; }
+        /* line 188, ../../_scss/pages/_price.scss */
+        article#price #ex ul li:nth-of-type(4).active {
+          background: rgba(226, 49, 140, 0.9);
+          color: white; }
+      /* line 194, ../../_scss/pages/_price.scss */
+      article#price #ex ul li:nth-of-type(5) p {
+        line-height: 1.0em;
+        margin-top: 2.5rem !important;
+        font-size: 21pt; }
+      /* line 199, ../../_scss/pages/_price.scss */
+      article#price #ex ul li:nth-of-type(5):after {
+        content: ""; }
+      /* line 203, ../../_scss/pages/_price.scss */
+      article#price #ex ul li a {
+        display: block;
+        color: #444848;
+        text-decoration: none; }
+      /* line 210, ../../_scss/pages/_price.scss */
+      article#price #ex ul li h4 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.0rem;
+        padding-bottom: 1.0rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      /* line 218, ../../_scss/pages/_price.scss */
+      article#price #ex ul li span[class^="icon-"] {
+        display: block;
+        margin-top: 0.5rem;
+        margin-bottom: 0.7rem;
+        font-size: 25.2pt; }
+      /* line 227, ../../_scss/pages/_price.scss */
+      article#price #ex ul li p .priceIndex {
+        margin-right: 0.5rem; }
+      /* line 231, ../../_scss/pages/_price.scss */
+      article#price #ex ul li p .price:after {
+        font-size: 80%;
+        content: "円"; }
+  @media all and (min-width: 769px) {
+    /* line 249, ../../_scss/pages/_price.scss */
+    article#price #ex ul li {
+      vertical-align: top;
+      height: 200px; }
+      /* line 254, ../../_scss/pages/_price.scss */
+      article#price #ex ul li:after {
+        top: 50%;
+        right: -34px;
+        margin-top: -21px; }
+      /* line 260, ../../_scss/pages/_price.scss */
+      article#price #ex ul li:nth-of-type(4):after {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
+      /* line 267, ../../_scss/pages/_price.scss */
+      article#price #ex ul li.active:before {
+        display: block;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 50%;
+        bottom: -90px;
+        margin-left: -30px;
+        background: white;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        content: ""; } }
+>>>>>>> origin/master
   @media all and (max-width: 768px) {
     /* line 178, ../../_scss/pages/_price.scss */
     article#price .linkMenu h3 {
@@ -12418,11 +13663,11 @@ article#price #simulations .case {
   article#price #simulations .case .imgFamily {
     margin-bottom: 2.0rem;
     padding: 0.5rem;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.05);
-    background: #ffffff; }
+    background: white; }
 @media all and (min-width: 769px) {
   /* line 428, ../../_scss/pages/_price.scss */
   article#price #simulations .case .details {
@@ -12441,8 +13686,8 @@ article#price #simulations .case {
       bottom: 0;
       width: 100%;
       border-top: 3px solid rgba(0, 0, 0, 0.1);
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box; }
       /* line 452, ../../_scss/pages/_price.scss */
       article#price #simulations .case .details table tfoot tr {
@@ -12457,7 +13702,11 @@ article#price #simulations .case {
         display: inline-block;
         width: 50%; } }
 @media all and (max-width: 768px) {
+<<<<<<< HEAD
   /* line 484, ../../_scss/pages/_price.scss */
+=======
+  /* line 582, ../../_scss/pages/_price.scss */
+>>>>>>> origin/master
   article#price #simulations .case .details table tbody,
   article#price #simulations .case .details table tfoot {
     display: block !important; }
@@ -12485,7 +13734,7 @@ article#price #simulations .case {
 /* line 9, ../../_scss/pages/_about.scss */
 #about #greetings {
   position: relative;
-  background: #ffffff; }
+  background: white; }
   /* line 17, ../../_scss/pages/_about.scss */
   #about #greetings p {
     position: relative;
@@ -12556,8 +13805,10 @@ article#price #simulations .case {
         width: 5px;
         height: 5px;
         background: #009ea1;
-        -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
         content: ""; }
     /* line 127, ../../_scss/pages/_about.scss */
@@ -12591,10 +13842,12 @@ article#faq {
       display: block;
       padding: 0.5rem;
       border: 1px solid rgba(0, 0, 0, 0.1);
-      -moz-border-radius: 3px;
       -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
       border-radius: 3px;
-      background: #ffffff;
+      background: white;
       color: #444848;
       text-decoration: none; }
       /* line 60, ../../_scss/pages/_faq.scss */
@@ -12643,7 +13896,7 @@ article#faq {
 
 /* line 3, ../../_scss/pages/_problems.scss */
 article#problems {
-  background-color: #ffffff; }
+  background-color: white; }
   @media all and (min-width: 769px) {
     /* line 3, ../../_scss/pages/_problems.scss */
     article#problems {
@@ -12662,44 +13915,45 @@ article#problems {
         /* line 20, ../../_scss/pages/_problems.scss */
         article#problems h2:before {
           background: none; } }
-    @media all and (min-width: 769px) and (min-width: 769px) {
-      /* line 27, ../../_scss/pages/_problems.scss */
-      article#problems h2 span:first-child {
-        display: block;
-        margin-bottom: 2.0rem;
-        font-size: 18.7pt; }
-      /* line 32, ../../_scss/pages/_problems.scss */
-      article#problems h2 span:nth-of-type(2) {
-        display: block;
-        font-size: 42pt; } }
-    @media all and (min-width: 769px) and (max-width: 768px) {
-      /* line 15, ../../_scss/pages/_problems.scss */
-      article#problems h2 {
-        display: block;
-        margin-bottom: 2rem; }
-        /* line 46, ../../_scss/pages/_problems.scss */
+      @media all and (min-width: 769px) and (min-width: 769px) {
+        /* line 27, ../../_scss/pages/_problems.scss */
         article#problems h2 span:first-child {
           display: block;
-          margin-bottom: 0.5rem;
-          font-size: 70%; }
-        /* line 51, ../../_scss/pages/_problems.scss */
+          margin-bottom: 2.0rem;
+          font-size: 18.7pt; }
+        /* line 32, ../../_scss/pages/_problems.scss */
         article#problems h2 span:nth-of-type(2) {
           display: block;
-          font-size: 220%; } }
-
+          font-size: 42pt; } }
+      @media all and (min-width: 769px) and (max-width: 768px) {
+        /* line 15, ../../_scss/pages/_problems.scss */
+        article#problems h2 {
+          display: block;
+          margin-bottom: 2rem; }
+          /* line 46, ../../_scss/pages/_problems.scss */
+          article#problems h2 span:first-child {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 70%; }
+          /* line 51, ../../_scss/pages/_problems.scss */
+          article#problems h2 span:nth-of-type(2) {
+            display: block;
+            font-size: 220%; } }
   /* line 74, ../../_scss/pages/_problems.scss */
   article#problems .circleTrimming {
     display: block;
     overflow: hidden;
     margin: 0 auto;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     border-radius: 50%;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background-color: #ffffff; }
+    background-color: white; }
     @media all and (min-width: 769px) {
       /* line 74, ../../_scss/pages/_problems.scss */
       article#problems .circleTrimming {
@@ -12736,11 +13990,13 @@ article#problems {
             vertical-align: middle;
             background-color: rgba(255, 255, 255, 0.6);
             border: 5px solid rgba(0, 0, 0, 0.05);
-            -moz-border-radius: 50%;
             -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
             border-radius: 50%;
             text-decoration: none;
-            color: #000000;
+            color: black;
             letter-spacing: -0.05em; }
             /* line 139, ../../_scss/pages/_problems.scss */
             article#problems .intro ul li a:hover {
@@ -12807,7 +14063,7 @@ article#problems {
               background-color: rgba(240, 240, 240, 0.6);
               border: 1px solid rgba(0, 0, 0, 0.1);
               text-decoration: none;
-              color: #000000; }
+              color: black; }
               /* line 213, ../../_scss/pages/_problems.scss */
               article#problems .intro ul li a[href="#point1"] span:first-child {
                 display: block; }
@@ -13017,11 +14273,13 @@ article#problems {
       height: 60px;
       vertical-align: middle;
       background-color: #009ea1;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
       font-size: 40%;
-      color: #ffffff; }
+      color: white; }
   /* line 47, ../../_scss/pages/_staff.scss */
   #staff .ecolandStaff h3 .hl3, #staff #vehicle h3 .hl3, #staff #uniform h3 .hl3 {
     font-size: 21pt; }
@@ -13036,8 +14294,10 @@ article#problems {
     width: 240px;
     height: 240px;
     margin: 0 auto;
-    -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.05);
     background: #f0f0f0;
@@ -13082,7 +14342,7 @@ article#problems {
     position: relative;
     text-align: left;
     padding: 0.5rem; }
-    /* line 124, ../../_scss/pages/_staff.scss */
+    /* line 125, ../../_scss/pages/_staff.scss */
     #staff .ecolandStaff .threecol p:after, #staff .ecolandStaff .threecol p:before, #staff #vehicle .threecol p:after, #staff #vehicle .threecol p:before, #staff #uniform .threecol p:after, #staff #uniform .threecol p:before {
       font-family: icomoon;
       speak: none;
@@ -13100,9 +14360,10 @@ article#problems {
       position: absolute;
       bottom: 0rem;
       right: 0rem;
+      -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
-      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
       transform: rotate(180deg); }
 @media all and (min-width: 1025px) {
   /* line 151, ../../_scss/pages/_staff.scss */
@@ -13150,11 +14411,13 @@ article#problems {
       height: 60px;
       vertical-align: middle;
       background-color: #009ea1;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
       font-size: 35px;
-      color: #ffffff; }
+      color: white; }
   @media all and (min-width: 1025px) {
     /* line 41, ../../_scss/pages/_accomplishment.scss */
     #accomplishment h3 .hl3 {
@@ -13165,7 +14428,7 @@ article#problems {
       font-size: 100%; } }
 /* line 56, ../../_scss/pages/_accomplishment.scss */
 #accomplishment #chart {
-  background-color: #ffffff; }
+  background-color: white; }
   /* line 59, ../../_scss/pages/_accomplishment.scss */
   #accomplishment #chart h4 {
     font-size: 150%; }
@@ -13271,11 +14534,13 @@ article#problems {
       padding: 5px;
       background-color: rgba(226, 49, 140, 0.5);
       border-radius: 50%;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
       font-size: 15px;
-      color: #ffffff; }
+      color: white; }
   /* line 195, ../../_scss/pages/_accomplishment.scss */
   #accomplishment #chart #milestone ul {
     height: 100%;
@@ -13327,10 +14592,10 @@ article#problems {
       top: 250px; }
 /* line 249, ../../_scss/pages/_accomplishment.scss */
 #accomplishment #partner {
-  background-color: #ffffff; }
+  background-color: white; }
 /* line 254, ../../_scss/pages/_accomplishment.scss */
 #accomplishment #media {
-  background-color: #ffffff; }
+  background-color: white; }
   /* line 261, ../../_scss/pages/_accomplishment.scss */
   #accomplishment #media .row div.threecol div {
     display: block;
@@ -13391,7 +14656,7 @@ article#problems {
 article#concierge {
   padding-bottom: 3.0rem; }
   @media all and (max-width: 768px) {
-    /* line 14, ../../_scss/pages/_concierge.scss */
+    /* line 15, ../../_scss/pages/_concierge.scss */
     article#concierge h3,
     article#concierge h4 {
       text-align: center; } }
@@ -13424,15 +14689,18 @@ article#concierge {
         padding-top: 2.5rem;
         width: 140px;
         height: 140px;
+        -webkit-transform: rotate(-5deg);
         -moz-transform: rotate(-5deg);
         -ms-transform: rotate(-5deg);
-        -webkit-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
         transform: rotate(-5deg);
-        -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
-        -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         background: rgba(252, 203, 0, 0.5);
         text-align: center; }
@@ -13479,12 +14747,14 @@ article#concierge {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
         padding: 1.0rem;
-        -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         border: 1px solid rgba(0, 0, 0, 0.1);
-        -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
         border-radius: 6px; }
         /* line 151, ../../_scss/pages/_concierge.scss */
         article#concierge #order .steps > li h4 {
@@ -13506,8 +14776,10 @@ article#concierge {
           display: block;
           margin-top: 1.0rem;
           padding: 1.0rem 0;
-          -moz-border-radius: 6px;
           -webkit-border-radius: 6px;
+          -moz-border-radius: 6px;
+          -ms-border-radius: 6px;
+          -o-border-radius: 6px;
           border-radius: 6px;
           text-align: center;
           text-decoration: none; }
@@ -13521,7 +14793,7 @@ article#concierge {
           article#concierge #order .steps > li a:hover {
             border: 1px solid rgba(0, 41, 73, 0.5) !important;
             background: rgba(0, 41, 73, 0.9) !important;
-            color: #ffffff; }
+            color: white; }
         /* line 190, ../../_scss/pages/_concierge.scss */
         article#concierge #order .steps > li:nth-of-type(1) a {
           border: 1px solid rgba(240, 240, 240, 0.9);
@@ -13545,12 +14817,14 @@ article#concierge {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     padding: 1.0rem;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
     border-radius: 6px; }
     /* line 238, ../../_scss/pages/_concierge.scss */
     article#concierge .listFlow > li h4 {
@@ -13568,11 +14842,13 @@ article#concierge {
         width: 40px;
         height: 40px;
         margin-left: -20px;
-        -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         border-radius: 50%;
         background: rgba(0, 158, 161, 0.8);
-        color: #ffffff;
+        color: white;
         font-size: 90%; }
     /* line 258, ../../_scss/pages/_concierge.scss */
     article#concierge .listFlow > li:nth-of-type(1) h4:before {
@@ -13615,8 +14891,8 @@ article#concierge {
       margin-top: 1.0rem;
       margin-bottom: 1.0rem;
       border: 1px solid rgba(0, 0, 0, 0.05);
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box; }
     @media all and (max-width: 768px) {
       /* line 229, ../../_scss/pages/_concierge.scss */
@@ -13695,7 +14971,62 @@ article#concierge {
   font-family: icomoon;
   font-size: 90%;
   speak: none; }
+<<<<<<< HEAD
 /* line 29, ../../_scss/pages/_voice.scss */
+=======
+/* line 26, ../../_scss/pages/_voice.scss */
+.voices .customerProfile a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 90%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px; }
+/* line 40, ../../_scss/pages/_voice.scss */
+.voices .customerProfile ul li {
+  display: inline-block; }
+  /* line 45, ../../_scss/pages/_voice.scss */
+  .voices .customerProfile ul li:not(:last-of-type) {
+    margin-right: 0.5rem; }
+/* line 60, ../../_scss/pages/_voice.scss */
+.voices .customerProfile dl dt {
+  vertical-align: middle; }
+  /* line 70, ../../_scss/pages/_voice.scss */
+  .voices .customerProfile dl dt.hide {
+    display: none; }
+/* line 77, ../../_scss/pages/_voice.scss */
+.voices .customerProfile dl dd {
+  display: inline-block;
+  vertical-align: middle; }
+  /* line 83, ../../_scss/pages/_voice.scss */
+  .voices .customerProfile dl dd:not(:last-of-type) {
+    margin-right: 0.5rem; }
+  /* line 91, ../../_scss/pages/_voice.scss */
+  .voices .customerProfile dl dd.name:before {
+    content: "\e919"; }
+  /* line 92, ../../_scss/pages/_voice.scss */
+  .voices .customerProfile dl dd.place:before {
+    content: "\e8eb"; }
+  /* line 93, ../../_scss/pages/_voice.scss */
+  .voices .customerProfile dl dd.date:before {
+    content: "\e64d"; }
+/* line 103, ../../_scss/pages/_voice.scss */
+.voices .customerProfile .infoIndex {
+  display: block;
+  margin-top: 1.0rem;
+  margin-bottom: 0.5rem;
+  padding-top: 1.0rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1); }
+  /* line 109, ../../_scss/pages/_voice.scss */
+  .voices .customerProfile .infoIndex:before {
+    content: "\e954"; }
+/* line 127, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
 .voices .customerVoices .answer {
   margin-bottom: 3.0rem;
   padding-bottom: 3.0rem; }
@@ -13708,20 +15039,31 @@ article#concierge {
     /* line 41, ../../_scss/pages/_voice.scss */
     .voices .customerVoices .answer h3:before {
       content: "\e913"; }
+<<<<<<< HEAD
   /* line 48, ../../_scss/pages/_voice.scss */
   .voices .customerVoices .answer .star {
     display: block;
     margin-bottom: 1.0rem; }
   /* line 54, ../../_scss/pages/_voice.scss */
+=======
+  /* line 146, ../../_scss/pages/_voice.scss */
+  .voices .customerVoices .answer .star {
+    display: block;
+    margin-bottom: 1.0rem; }
+  /* line 152, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
   .voices .customerVoices .answer .reply {
     display: block;
     position: relative;
     margin-top: 2.0rem;
     padding: 1.5rem;
-    -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
     border-radius: 6px;
     background: rgba(0, 158, 161, 0.05); }
+<<<<<<< HEAD
     /* line 64, ../../_scss/pages/_voice.scss */
     .voices .customerVoices .answer .reply.notApproved {
       background: rgba(0, 0, 0, 0.05); }
@@ -13730,53 +15072,96 @@ article#concierge {
       margin: 1.0rem 0;
       font-size: 100%; }
     /* line 75, ../../_scss/pages/_voice.scss */
+=======
+    /* line 162, ../../_scss/pages/_voice.scss */
+    .voices .customerVoices .answer .reply.notApproved {
+      background: rgba(0, 0, 0, 0.05); }
+    /* line 167, ../../_scss/pages/_voice.scss */
+    .voices .customerVoices .answer .reply h4 {
+      margin: 1.0rem 0;
+      font-size: 100%; }
+    /* line 173, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
     .voices .customerVoices .answer .reply time {
       display: block;
       font-size: 90%;
       color: rgba(0, 0, 0, 0.5);
       margin-top: 1.0rem; }
+<<<<<<< HEAD
     /* line 87, ../../_scss/pages/_voice.scss */
+=======
+    /* line 185, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
     .voices .customerVoices .answer .reply .staffInfo .staffimg {
       overflow: hidden;
-      -moz-border-radius: 50%;
       -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
       border-radius: 50%;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box;
       border: 1px solid rgba(0, 0, 0, 0.1); }
+<<<<<<< HEAD
     /* line 96, ../../_scss/pages/_voice.scss */
     .voices .customerVoices .answer .reply .staffInfo .staffName {
       margin-top: 0.5rem; }
       /* line 98, ../../_scss/pages/_voice.scss */
+=======
+    /* line 194, ../../_scss/pages/_voice.scss */
+    .voices .customerVoices .answer .reply .staffInfo .staffName {
+      margin-top: 0.5rem; }
+      /* line 196, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
       .voices .customerVoices .answer .reply .staffInfo .staffName .pron {
         line-height: 1.0em;
         font-size: 80%; }
     @media all and (min-width: 769px) {
+<<<<<<< HEAD
       /* line 111, ../../_scss/pages/_voice.scss */
       .voices .customerVoices .answer .reply .staffComments {
         float: left;
         width: 75%; }
       /* line 117, ../../_scss/pages/_voice.scss */
+=======
+      /* line 209, ../../_scss/pages/_voice.scss */
+      .voices .customerVoices .answer .reply .staffComments {
+        float: left;
+        width: 75%; }
+      /* line 215, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
       .voices .customerVoices .answer .reply .staffInfo {
         float: right;
         width: 20%;
         text-align: center; }
+<<<<<<< HEAD
         /* line 124, ../../_scss/pages/_voice.scss */
+=======
+        /* line 222, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
         .voices .customerVoices .answer .reply .staffInfo .staffimg {
           display: block;
           width: 120px;
           height: 120px; } }
     @media all and (max-width: 768px) {
+<<<<<<< HEAD
       /* line 138, ../../_scss/pages/_voice.scss */
       .voices .customerVoices .answer .reply .staffInfo {
         margin-bottom: 1.0rem; }
         /* line 143, ../../_scss/pages/_voice.scss */
+=======
+      /* line 236, ../../_scss/pages/_voice.scss */
+      .voices .customerVoices .answer .reply .staffInfo {
+        margin-bottom: 1.0rem; }
+        /* line 241, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
         .voices .customerVoices .answer .reply .staffInfo .staffimg {
           display: inline-block;
           width: 60px;
           height: 60px;
           vertical-align: middle; }
+<<<<<<< HEAD
         /* line 149, ../../_scss/pages/_voice.scss */
         .voices .customerVoices .answer .reply .staffInfo .staffName {
           display: inline-block;
@@ -13794,11 +15179,31 @@ article#concierge {
   .voices .customerVoices .answer .form-allowed-tags {
     display: none; }
 /* line 190, ../../_scss/pages/_voice.scss */
+=======
+        /* line 247, ../../_scss/pages/_voice.scss */
+        .voices .customerVoices .answer .reply .staffInfo .staffName {
+          display: inline-block;
+          vertical-align: middle; } }
+  /* line 261, ../../_scss/pages/_voice.scss */
+  .voices .customerVoices .answer #reply-title {
+    margin-bottom: 1.0rem; }
+  /* line 264, ../../_scss/pages/_voice.scss */
+  .voices .customerVoices .answer .logged-in-as {
+    margin-bottom: 0.5rem; }
+  /* line 267, ../../_scss/pages/_voice.scss */
+  .voices .customerVoices .answer .comment-form-comment label {
+    display: none; }
+  /* line 270, ../../_scss/pages/_voice.scss */
+  .voices .customerVoices .answer .form-allowed-tags {
+    display: none; }
+/* line 288, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
 .voices.post .customerProfile h2 {
   margin-bottom: 2.0rem;
   text-align: left;
   font-size: 21pt;
   line-height: 1.3em; }
+<<<<<<< HEAD
   /* line 198, ../../_scss/pages/_voice.scss */
   .voices.post .customerProfile h2 .small {
     font-size: 50% !important; }
@@ -13806,10 +15211,20 @@ article#concierge {
   .voices.post .customerProfile h2:before {
     background: none; }
 /* line 210, ../../_scss/pages/_voice.scss */
+=======
+  /* line 296, ../../_scss/pages/_voice.scss */
+  .voices.post .customerProfile h2 .small {
+    font-size: 50% !important; }
+  /* line 301, ../../_scss/pages/_voice.scss */
+  .voices.post .customerProfile h2:before {
+    background: none; }
+/* line 308, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
 .voices.post .customerProfile h3 {
   margin-bottom: 0;
   font-size: 100%; }
 @media all and (min-width: 769px) {
+<<<<<<< HEAD
   /* line 187, ../../_scss/pages/_voice.scss */
   .voices.post .customerProfile {
     border: 1px solid #f0f0f0;
@@ -13827,10 +15242,33 @@ article#concierge {
 .voices.post .listSns {
   padding: 2.0rem 0; }
 /* line 255, ../../_scss/pages/_voice.scss */
+=======
+  /* line 285, ../../_scss/pages/_voice.scss */
+  .voices.post .customerProfile {
+    border: 1px solid #f0f0f0;
+    padding: 2.0rem; } }
+/* line 327, ../../_scss/pages/_voice.scss */
+.voices.post .listStars {
+  padding: 2.0rem 0; }
+  /* line 331, ../../_scss/pages/_voice.scss */
+  .voices.post .listStars h4 {
+    margin-bottom: 1.0rem; }
+  /* line 335, ../../_scss/pages/_voice.scss */
+  .voices.post .listStars .star {
+    margin-right: 0.5rem; }
+    /* line 337, ../../_scss/pages/_voice.scss */
+    .voices.post .listStars .star:before {
+      font-size: 12pt !important; }
+/* line 347, ../../_scss/pages/_voice.scss */
+.voices.post .listSns {
+  padding: 2.0rem 0; }
+/* line 357, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
 .voices.post .contactBnr .contact {
   position: relative;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 3.0rem; }
+<<<<<<< HEAD
 /* line 271, ../../_scss/pages/_voice.scss */
 .voices #intro {
   padding-top: 3.0rem; }
@@ -13840,21 +15278,40 @@ article#concierge {
       height: 400px;
       background: url("assets/img/voices/bg.jpg") center bottom no-repeat; }
       /* line 281, ../../_scss/pages/_voice.scss */
+=======
+/* line 373, ../../_scss/pages/_voice.scss */
+.voices #intro {
+  padding-top: 3.0rem; }
+  @media all and (min-width: 769px) {
+    /* line 373, ../../_scss/pages/_voice.scss */
+    .voices #intro {
+      height: 400px;
+      background: url("assets/img/voices/bg.jpg") center bottom no-repeat; }
+      /* line 383, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
       .voices #intro p {
         width: 930px;
         text-align: center;
         margin: 0 auto;
         padding-top: 250px; } }
   @media all and (max-width: 768px) {
+<<<<<<< HEAD
     /* line 295, ../../_scss/pages/_voice.scss */
     .voices #intro p .block {
       display: inline !important; } }
 /* line 310, ../../_scss/pages/_voice.scss */
+=======
+    /* line 397, ../../_scss/pages/_voice.scss */
+    .voices #intro p .block {
+      display: inline !important; } }
+/* line 412, ../../_scss/pages/_voice.scss */
+>>>>>>> origin/master
 .voices .archiveList a {
   display: block;
   position: relative;
   color: #444848;
   font-size: 90%; }
+<<<<<<< HEAD
 /* line 327, ../../_scss/pages/_voice.scss */
 .voices #voicesList {
   margin-top: 0;
@@ -14365,3 +15822,9 @@ article#concierge {
     /* line 922, ../../_scss/pages/_lp.scss */
     .lp .faq dl {
       max-width: 768px; } }
+=======
+/* line 429, ../../_scss/pages/_voice.scss */
+.voices #voicesList {
+  margin-top: 0;
+  padding-top: 0; }
+>>>>>>> origin/master
