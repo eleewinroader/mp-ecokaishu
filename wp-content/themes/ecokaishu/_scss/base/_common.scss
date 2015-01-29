@@ -798,7 +798,7 @@ a{
 
 	&#contactBnr{
 		overflow: hidden;
-		background: $white;
+		background: $green;
 		padding: 3rem 0;
 		position: fixed;
 		bottom: 0;
@@ -812,8 +812,51 @@ a{
 
 		//PC
 		@media all and (min-width: $minWidth){
-			#qa {
-				display: none !important;
+			.contact {
+				text-align: center;
+
+				#tel, #mail {
+					display: inline-block;
+					width: 30%;
+					vertical-align: top;
+					margin: 0 0.5rem;
+					a {
+						width: 100%;
+						display: inline-block;
+						padding: 0.5rem 0;
+						text-decoration: none;
+					}
+				}
+
+				#openingHour, #mail{
+					span[class^="icon-"] {
+						display: none;
+					}
+				}
+
+				#tel {
+					a {
+						color: $white;
+						border: solid 3px $white;
+						font-size: $biggest*1.2;
+					}
+				}
+				#mail {
+					a {
+						color: $white;
+						background: $pink;
+						font-size: $big;
+						@include border-radius (6px);
+						line-height: $biggest*1.4;
+					}
+				}
+				#openingHour {
+					margin-top: 1rem;
+					a {						
+						color: $white;
+						text-decoration: none;
+					}
+				}
 			}
 		}
 
@@ -822,39 +865,44 @@ a{
 			padding: 0.5rem 0;
 			text-align: center;
 
-			h3, #openingHour {
-				display: none;
-			}
 			.contact {
-				a {
-					padding: 0;
-					.label {
-						display: none !important;
-					}
-					.action {
-						width: 60px;
-						height: 60px;
-						@include border-radius(60px);
-						padding: 0;
-						margin: 0;
+				#tel, #mail, #openingHour {
+					display: inline-block;
+					margin: 0 0.5rem;
+					a {
+						width: 4rem;
+						height: 4rem;
+						line-height: 4rem;
+						@include border-radius(50%);
+						color: $white;
+						line-height: 4rem;
+						text-decoration: none;
+						display: inline-block;						
 
 						span {
 							display: none;
 						}
-					}
-					//span[class^="icon-"]
-					span[class^="icon-"]{
-						display: block !important;
-						font-size: $biggest*1.5;
-						line-height: 46pt;
+						//span[class^="icon-"]
+						span[class^="icon-"]{
+							display: block !important;
+							font-size: $biggest*1.5;
+							line-height: 4rem;
+						}
 					}
 				}
-				.box {
-					display: inline-block;
+				#tel {
+					a {
+						background: rgba($yellow, 0.5);
+					}
 				}
-				#qa {
-					.action{
-						background: rgba($yellow, .7);
+				#mail {
+					a {
+						background: $pink;
+					}
+				}
+				#openingHour {
+					a {
+						background: $yellow;
 					}
 				}
 			}
@@ -1426,574 +1474,5 @@ a{
 
 }
 
-//**********************************************************************
-// .blockItems
-//**********************************************************************
-.blockItems {
-	overflow: hidden;
 
-	h3 {
-		font-size: $biggest*1.2;
-		text-align: center;
-		margin-bottom: 0.5rem;
-	}
-	.txtNote {
-		text-align: center;
-	}
-
-	.footnote {
-		text-align: center;
-		margin: 1.5rem 0 !important;
-		small {
-			display: block;
-		}
-	}
-
-	.intro {
-		overflow: hidden;
-		background: {
-			image: url("assets/img/area/bg-area.jpg");
- 			position: center top;
-  			repeat: no-repeat;
-  		}
-  		padding-top: 100px;
-  		height: 692px;
-
-		h2 {
-			font-size: $biggest*2;
-			line-height: $biggest*2.1;
-			span {
-				font-size: $biggest;
-				display: block;
-				line-height: $biggest*1.2;
-				margin-bottom: 5px;
-			}
-			&:before {
-				background:none;
-			}
-		}
-		.contact {
-			text-align: center;
-			margin-top: 1rem;
-
-			#tel, #mail {
-				display: inline-block;
-				width: 30%;
-				vertical-align: top;
-				margin: 0 0.5rem;
-				a {
-					width: 100%;
-					display: inline-block;
-					padding: 0.5rem 0;
-				}
-			}
-
-			#tel {
-				a {
-					color: $green;
-					border: solid 3px rgba($green, .6);
-					background: #d7f4f5;
-					font-size: $biggest*1.2;
-				}
-			}
-			#mail {
-				a {
-					color: $white;
-					background: $pink;
-					font-size: $big;
-					@include border-radius (6px);
-					line-height: $biggest*1.4;
-				}
-			}
-			p {
-				margin-top: 1rem;
-			}
-		}
-		.lstIntro {
-			margin-top: 80px;
-			.col {
-				text-align: center;
-				background: rgba($white, .3);
-				@include border-radius(15px);
-
-				span[class^="icon-"]{
-					background: $white;
-					@include border-radius(40px);
-					font-size: $bigger*2;
-					padding: 0.5rem;
-					line-height: 0;
-				}
-
-				.txtIntro {
-					margin-top: 2rem;
-					font-weight: normal;
-					font-size: 100%;
-				}
-
-				.title {
-					margin-top: 1.5rem;
-					margin-bottom: 3rem;
-					font-size: $biggest;
-				}
-			}
-		}
-	}//end .intro
-
-	.reason {
-		.lstReason {
-			overflow: hidden;
-			margin-top: 80px;
-
-			.col {
-				text-align: center;
-				font-size: $smaller;
-				padding: 2rem 0;
-
-				span[class^="icon-"]{
-					font-size: $bigger*2.5;
-				}
-
-				h4 {
-					font-size: $biggest;
-					margin-top: 3rem;
-				}
-
-				h5 {
-					font-weight: normal;
-					margin-top: 2.5rem;
-					margin-bottom: 0.5rem;
-					font-size: $bigger;
-				}
-
-				&:nth-of-type(2) {
-					border-left: 1px solid rgba($black, 0.1);
-					border-right: 1px solid rgba($black, 0.1);
-				}
-			}
-		}
-	}//end .reason
-
-	.ex {
-		// ul
-		//***************************************************************
-
-		ul{
-
-			margin-bottom: 0;
-			padding-top: 3.0rem;
-			padding-bottom: 3.0rem;
-			text-align: center;
-
-			//li
-			li{
-
-				position: relative;
-				@include border-radius(5px);
-				border: 3px solid transparent;
-				background: $white;
-
-				//&:after
-				&:after{
-					z-index: 3;
-					line-height: 42px;
-					position: absolute;
-					width: 42px;
-					height: 42px;
-					color: $green;
-					font:{
-						family: icomoon;
-						size: $biggest * 1.4;
-					}
-					content: "\e80b";
-				}
-				&:nth-of-type(1),
-				&:nth-of-type(2),
-				&:nth-of-type(3){
-					border-color: rgba($green, .7);
-					cursor: pointer;
-				}
-				&:nth-of-type(3){
-					&:after{
-						color: #d3d3d3;
-					}
-				}
-				&:nth-of-type(4){
-					border-color: rgba($darkGray, .2);
-					cursor: pointer;
-					&:after{
-						color: $pink;
-						background: #facbcc;
-						content: "\e83a";
-						padding: 0 20px;
-					}
-				}
-				&:nth-of-type(5){
-					border-color: $pink;
-					p{
-						line-height: 1.0em;
-						margin-top: 2.5rem !important;
-						font-size: $biggest * 1.7;
-					}
-					&:after{ content: ""; } 
-				}
-
-				//a
-				a{
-					display: block;
-					color: $darkGray;
-					text-decoration: none;
-				}
-
-				//h4
-				h4{
-					margin: 2rem 0;
-					font-size: $smaller * 1.4;
-				}
-
-				//span[class^="icon-"]
-				span[class^="icon-"]{
-					display: block;
-					margin-bottom: 1.5rem;
-					font-size: $biggest * 1.2;
-				}
-
-				//p
-				p{
-					.priceIndex{
-						margin-right: 0.5rem;
-					}
-					.price{
-						&:after{
-							font-size: 80%;
-							content: "円";
-						}
-					}
-				}
-
-			}
-
-		}
-		// PC
-		@media all and (min-width: $minWidth){
-
-			//ul
-			ul{
-
-				//li
-				li{
-
-					vertical-align: top;
-					height: 220px;
-
-					&:after{
-						top: 50%;
-						right: -34px;
-						margin-top: -21px;
-					}
-					&:nth-of-type(4){
-						&:after{
-							@include rotate(90deg);
-							right: -55px;
-						}
-					}
-				}
-
-			}
-
-		}
-
-		// Mobile
-		@media all and (max-width: $maxWidth){
-
-			//ul
-			ul{
-
-				//li
-				li{
-
-					margin-bottom: 1.0rem;
-					padding-bottom: 1.0rem;
-
-					//&:after
-					&:after{
-						bottom: -32px;
-						left: 50%;
-						margin-left: -21px;
-					}
-
-					//&:nth-of-type(4)
-					&:nth-of-type(4){
-						&:after{
-							left: 42%;
-						}
-					}
-
-					//&:nth-of-type(5)
-					&:nth-of-type(5){
-						padding-bottom: 2.0rem;
-					}
-
-				}
-			}
-
-		}
-	}//end .ex
-
-
-	.tabs {
-		.contents {
-			border-bottom: none !important;
-		}
-		//**********************************************************************
-		// .linkMenu
-		//**********************************************************************
-		.linkMenu {
-			overflow: hidden;
-			border-bottom: 1px solid rgba($gray, .9);
-			margin-bottom: 30px;
-
-			h3 {
-				font-size: 100%;
-				margin: 0;
-				line-height: normal;
-			}
-
-			h3, .tab {
-				float: left;
-				border-top: 1px solid rgba($gray, .9);
-				a {
-					display: block;
-					width: 185px;
-					text-align: center;
-					padding: 12px 0;
-					border-top: 3px solid transparent;
-					border-left: 1px solid rgba($gray, .9);
-					font-size: $smaller * 1.35;
-					color: $darkGray;
-
-					&.active {
-						background: rgba($green, .1);
-						border-top: 3px solid $green;
-					}				
-				}
-				&:last-of-type {
-					a {
-						border-right: 1px solid rgba($gray, .9);
-					}
-				}
-			}
-
-			// Mobile
-			@media all and (max-width: $maxWidth){
-				li {
-					width: 99%;
-
-					a {
-						width: 100%;
-						border-right: 1px solid rgba($gray, .9);
-					}
-				}
-			}
-		}//en .linkMenu
-
-		//**********************************************************************
-		// #basicCharges, #spworksCharges, #optionsCharges
-		//**********************************************************************
-		#basicCharges, #spworksCharges, #optionsCharges {
-			td {
-				span {
-					margin-left: 20px;
-					font-weight: bold;
-					background: #facbcc;
-				}
-			}
-			// PC
-			@media all and (min-width: $minWidth){
-				td, th {
-					border-bottom: 1px solid rgba($gray, .9);
-					padding: 15px 0 15px 20px;
-				}
-			}
-		}
-
-
-		//**********************************************************************
-		// #itemCharges
-		//**********************************************************************
-
-		#itemCharges{
-
-			.item {
-				@include border-radius(15px);
-				padding: 0.5rem 1.5rem;
-				width: 31.5789%;
-				
-				h5 {
-					font-weight: normal;
-					text-align: center;
-				}
-			}
-
-			// #electricApp
-			//**************************************************************
-
-			#electricApp{
-
-				//span[class^="icon-"]
-				span[class^="icon-"]{
-					display: block;
-					margin: 1rem 0;
-					font-size: $biggest * 2.5;
-					text-align: center;
-				}
-
-			}
-
-
-			// #guide
-			//**************************************************************
-
-			#guide{
-
-				//ul
-				ul{
-					padding-left: 1.0rem;
-					padding-bottom: 1.0rem;
-					li{
-						list-style: circle;
-					}
-				}
-			}
-
-			// PC
-			@media all and (min-width: $minWidth){
-
-				table{
-					th,td{
-						border-top: 1px solid rgba($darkGray, .2);		
-						padding: 0.7rem 0.5rem;		
-					}
-					th {
-						text-align: left;
-					}
-					td{
-						text-align: right;
-					}
-				}
-
-				#electricApp{
-					thead{
-						th{
-							width: 50%;
-						}
-					}
-				}
-
-				#itemRank {
-					tbody{
-						tr{
-							&:nth-of-type(4n+1){
-								background: rgba($white, .5);
-							}
-							&:nth-of-type(4n+2){
-								background: rgba($white, .5);
-							}
-							td{
-								&[colspan="3"]{
-									font-size: $smaller;
-									text-align: left;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			// Mobile
-			@media all and (max-width: $maxWidth){
-
-				table{
-					font-size: $smaller;
-				}
-				
-				//.block
-				.block{
-					display: inline !important;
-				}
-
-				.item {
-					padding: .5rem;
-				}
-
-				//#electricApp
-				#electricApp{
-					thead{
-						display: block;
-						tr{
-							display: table;
-							width: 100%;
-							th{
-								padding: 0.5rem;
-								background: rgba($green, .1);
-								&:first-of-type{
-									width: 62%;
-								}
-							}
-						}
-					}
-					tbody{
-						tr{
-							display: table;
-							width: 100%;
-							th, td{
-								display: table-cell;
-								padding: 0.5rem;
-								border-bottom: 1px solid rgba($black, .1);
-							}
-							th{
-								width: 62%;
-								text-align: left !important;
-							}
-							td{
-								text-align: right !important;
-							}
-						}
-					}
-				}
-
-				//#itemRank
-				#itemRank{
-					tbody{
-						th{
-							text-align: center!important;
-						}
-						td{
-							&:nth-of-type(1):before{ content: "縦・横・奥行の合計 : "; }
-							&:nth-of-type(2):before{ content: "重さ :"; }
-							&:nth-of-type(3):before{ content: "目安となる品物 :"; }
-							&[colspan="3"]{
-								border:{
-									top: 1px solid rgba($black, .1);
-								}
-								font-size: $smaller;
-								text-align: left;
-								&:before{ content: ""; }
-							}
-						}
-					}
-				}
-
-			}
-
-		}//end .itemCharges
-	}//end .tabs
-
-	.purchase {
-		.lstPurchase {
-			overflow: hidden;
-		}
-
-	}
-
-}
 

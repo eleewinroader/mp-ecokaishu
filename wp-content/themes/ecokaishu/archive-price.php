@@ -36,7 +36,7 @@ get_header( ); ?>
 					<li><a href="#ex"><span class="block">料金の出し方</span><span class="here">こちら</span></a></li>
 					<li><a href="#simulations"><span class="block">みんなの見積は</span><span class="here">こちら</span></a></li>
 				</ul>
-			<div>
+			</div>
 		<!-- .intro .summary--></div>
 	</div>
 
@@ -52,7 +52,7 @@ get_header( ); ?>
 					<p><span class="price">3,240</span></p>
 				</li>
 				<li data-tab="itemPrice" class="twocol col">
-					<h4>物品ごとの料金</h4>
+					<h4>品物ごとの料金</h4>
 					<span class="icon-box2"></span>
 					<p><span class="priceIndex">洗濯機</span><span class="price">4,320</span></p>
 					<p><span class="priceIndex">ソファ</span><span class="price">3,240</span></p>
@@ -60,16 +60,16 @@ get_header( ); ?>
 				<li data-tab="options" class="twocol col">
 					<h4>特殊作業料金</h4>
 					<span class="icon-tools"></span>
-					<p><span class="priceIndex m0_r">階段の運び出し</span><span class="price block">1,080</span></p>
+					<p><span class="priceIndex m0_r">外階段作業</span><span class="price block">1,080</span></p>
 				</li>
 				<li data-tab="purchase" class="twocol col">
-					<h4>買取料金</h4>
+					<h4>オプション料金</h4>
 					<span class="icon-tags"></span>
 					<p><span class="priceIndex">オプション</p>
 				</li>
 				<li class="fourcol col last">
 					<h4>合計料金</h4>
-					<p><span class="price">10,880</span></p>
+					<p><span class="price">8,640</span></p>
 				</li>
 			</ul>
 			<!--<?php echo getPage("料金系計算の例", "contents"); ?>-->
@@ -77,415 +77,493 @@ get_header( ); ?>
 	<!-- .intro #ex--></div>
 
 	<div class="tabs">
-		<section class="contents" id="basicCharge">
-			<section class="linkMenu">
-				<ul>
-					<li><a href="#" class="active">基本料金</a></li>
-					<li><a href="#">品物ごとの料金</a></li>
-					<li><a href="#">特殊作業料金</a></li>
-					<li><a href="#">オプション料金</a></li>
-				</ul>
-			</section>
-			<table cellpadding="0" cellspacing="0" width="100%" border="0">
-				<tr>
-					<th>基本料金</th>
-					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
-					<td>3,240円</td>
-				</tr>
-				<tr>
-					<th>地域料金</th>
-					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
-					<td>4,320円</td>
-				</tr>
-			</table>
-		</section>
-
-		<section class="contents" id="itemPrice">
-			<section class="linkMenu">
-				<ul>
-					<li><a href="#">基本料金</a></li>
-					<li><a href="#" class="active">品物ごとの料金</a></li>
-					<li><a href="#">特殊作業料金</a></li>
-					<li><a href="#">オプション料金</a></li>
-				</ul>
-			</section>
+		<section class="contents" id="basicCharges">
 			<div class="container">
+				<div class="linkMenu">
+				    <h3><a href="#basicCharges" class="active">基本料金</a></h3>
+				    <div class="tab"><a href="#itemCharges">品物ごとの料金</a></div>
+				    <div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+				    <div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+				</div>
 				<div class="twelvecol col last">
-					<!--<h3><?php echo getPage("物品ごとの料金", "title"); ?></h3>
-					<?php echo getPage("物品ごとの料金", "contents"); ?>-->
+					<table>
+						<tbody>
+							<tr>
+								<th>基本料金</th>
+								<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
+								<td>3,240円</td>
+							</tr>
+							<tr>
+								<th>地域料金</th>
+								<td>一部の対応エリア訪問の際に頂戴している料金です。</td>
+								<td>4,320円</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section><!--#basicCharges-->
+
+		<section class="contents" id="itemCharges">
+			<div class="container">
+				<div class="linkMenu">
+				    <div class="tab"><a href="#basicCharges">基本料金</a></div>
+				    <h3><a href="#itemCharges" class="active">品物ごとの料金</a></h3>
+				    <div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+				    <div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+				</div>			
+				<div class="twelvecol col">
 					<p>エコ回収の際に必要となるお品物ごとの料金です。電化製品などは一般的なサイズによってあらかじめ料金ランクが決まっています。<br />
-棚やテーブルなどお品物ごとにサイズが違うモノに関しては幅・奥行・高さの和で料金ランクが決まります。</p>
-					<p>※金庫やエレクトーンなど重量のあるモノは重量によって料金ランクが決まります。</p>
+	棚やテーブルなどお品物ごとにサイズが違うモノに関しては幅・奥行・高さの和で料金ランクが決まります。</p>
+					<p class="appendix"><small>※金庫やエレクトーンなど重量のあるモノは重量によって料金ランクが決まります。</small></p>
 				</div>
 
 				<section id="electricApp">
-					<!--<div class="twelvecol col last"><h4><?php echo getPage("各家電のサイズ別料金", "title"); ?></h4></div>
-					<?php echo getPage("各家電のサイズ別料", "contents"); ?>-->
 					<div class="twelvecol col last"><h4>各家電・パソコンのサイズ別料金</h4></div>
 					<div class="liquidLayout">
 						<div class="item">
 							<span class="icon-tv2"></span>
 							<h5>テレビ</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
+							<table>
+								<tbody>
+									<tr>
+										<th>20インチ以下 / F</th>
+										<td>3,240円</td>
+									</tr>
+									<tr>
+										<th>21-25インチ / G</th>
+										<td>4,320円</td>
+									</tr>
+									<tr>
+										<th>26-30インチ / H</th>
+										<td>5,940円</td>
+									</tr>
+									<tr>
+										<th>31インチ以上 / I </th>
+										<td>7,560円</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 						<!--item TV-->
 						<div class="item">
 							<span class="icon-refrigerator"></span>
-							<h5>冷蔵庫</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
+							<h5>冷蔵庫*1</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>100リットル未満 / G</th>
+										<td>4,320円</td>
+									</tr>
+									<tr>
+										<th>200リットル未満 / H</th>
+										<td>5,940円</td>
+									</tr>
+									<tr>
+										<th>400リットル未満 / I </th>
+										<td>7,560円</td>
+									</tr>
+									<tr>
+										<th>500リットル未満 / J</th>
+										<td>9,720円</td>
+									</tr>
+									<tr>
+										<th>500リットル以上 / K</th>
+										<td>12,960円</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 						<!--item refrigerate-->
 						<div class="item">
 							<span class="icon-airconditioner"></span>
 							<h5>エアコン</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
+							<table>
+								<tbody>
+									<tr>
+										<th>窓用エアコン / F</th>
+										<td>3,240円</td>
+									</tr>
+									<tr>
+										<th>エアコン(室外機付) / H</th>
+										<td>5,940円</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
-						<!--item air conditioner-->
+						<!--item air airconditioner-->
 						<div class="item">
 							<span class="icon-clothesdryer"></span>
-							<h5>テレビ</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
+							<h5>衣類乾燥機</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>全サイズ / F</th>
+										<td>3,240円</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
-						<!--item clothes dryer-->
+						<!--item clothesdryer-->
 						<div class="item">
 							<span class="icon-washingmachine"></span>
-							<h5>衣類乾燥機</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
+							<h5>洗濯機</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>洗濯機 8.0㎏以下 / G</th>
+										<td>4,320円</td>
+									</tr>
+									<tr>
+										<th>ドラム式洗濯乾燥機 全サイズ / H</th>
+										<td>5,940円</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
-						<!--item washing machine-->
+						<!--item washingmachine-->
 						<div class="item">
 							<span class="icon-laptop"></span>
-							<h5>エアコン</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
-								<tr>
-									<th>20インチ以下</th>
-									<td>3,240円</td>
-								</tr>
+							<h5>パソコン</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>デスクトップ本体 / B</th>
+										<td>1,080円</td>
+									</tr>
+									<tr>
+										<th>ノートパソコン / B</th>
+										<td>1,080円</td>
+									</tr>
+									<tr>
+										<th>一体型パソコン / D</th>
+										<td>2,160円</td>
+									</tr>
+									<tr>
+										<th>モニタ(液晶/ブラウン管) / C</th>
+										<td>1,620円</td>
+									</tr>
+									<tr>
+										<th>マウス・キーボード / A</th>
+										<td>540円</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
+						<!--item laptop-->
 					</div>
-					<!--item PC-->
-				<!--#itemPrice #electricApp--></section>
+					<p class="footnote"><small>※ 1) すべて冷凍含サイズです。</small></p>
+				</section><!--#itemCharges #electricApp-->
 
 				<section id="itemRank">
-						<!-- <h4><?php echo getPage("各物品のランク別料金", "title"); ?></h4>
-						<?php echo getPage("各物品のランク別料金", "contents"); ?> -->
-					<div class="twelvecol col last"><h4>各品物のランク別料金</h4></div>						
+					<div class="twelvecol col last"><h4>各品物別ランク料金</h4></div>						
 					<div class="liquidLayout">
 						<div class="item">
 							<h5>A ランク <br />540円</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>縦・横・奥行の合計</th>
-									<td>50cm以下</td>
-								</tr>
-								<tr>
-									<th>重さ</th>
-									<td>1kg以下</td>
-								</tr>
-								<tr>
-									<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、</th>
-								</tr>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>50㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>1kg以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">炊飯器、ミキサー、オーブントースター、サッカーボール、ビデオカメラ等</th>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 						<div class="item">
-							<h5>A ランク <br />540円</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>縦・横・奥行の合計</th>
-									<td>50cm以下</td>
-								</tr>
-								<tr>
-									<th>重さ</th>
-									<td>1kg以下</td>
-								</tr>
-								<tr>
-									<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
-								</tr>
+							<h5>B ランク <br />1,080円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>90㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>2㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">加湿器、縦型掃除機、ダイニングチェア、ノートパソコン、パソコン本体、布団、ガステーブル(2口)、ＤＶＤプレーヤー、ギター等</th>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 						<div class="item">
-							<h5>A ランク <br />540円</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>縦・横・奥行の合計</th>
-									<td>50cm以下</td>
-								</tr>
-								<tr>
-									<th>重さ</th>
-									<td>1kg以下</td>
-								</tr>
-								<tr>
-									<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
-								</tr>
+							<h5>C ランク <br />1,620円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>150㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>5㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">カラーBOX(3段)、姿見、空気清浄器、スキー板等</th>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 						<div class="item">
-							<h5>A ランク <br />540円</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>縦・横・奥行の合計</th>
-									<td>50cm以下</td>
-								</tr>
-								<tr>
-									<th>重さ</th>
-									<td>1kg以下</td>
-								</tr>
-								<tr>
-									<th colspan="2">、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
-								</tr>
+							<h5>D ランク <br />2,160円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>180㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>10㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">デスクチェア、こたつ、電子レンジ、ミニコンポ、一体型パソコン等</th>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 						<div class="item">
-							<h5>A ランク <br />540円</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>縦・横・奥行の合計</th>
-									<td>50cm以下</td>
-								</tr>
-								<tr>
-									<th>重さ</th>
-									<td>1kg以下</td>
-								</tr>
-								<tr>
-									<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
-								</tr>
+							<h5>E ランク <br />2,700円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>210㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>15㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">家庭用複合機、ホットカーペット、レッグマジック、ステッパー等</th>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 						<div class="item">
-							<h5>A ランク <br />540円</h5>
-							<table cellpadding="0" cellspacing="0" width="100%" border="0">
-								<tr>
-									<th>縦・横・奥行の合計</th>
-									<td>50cm以下</td>
-								</tr>
-								<tr>
-									<th>重さ</th>
-									<td>1kg以下</td>
-								</tr>
-								<tr>
-									<th colspan="2">サッカーボール、ビデオカメラ、毛布等ダイニングチェア、ノートパソコン、パソコン本体等サッカーボール、ビデオカメラ</th>
-								</tr>
+							<h5>F ランク <br />3,240円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>270㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>20㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">レンジ台、オイルヒーター、電子キーボード等</th>
+									</tr>
+								</tbody>
 							</table>
+						</div>
+						<div class="item">
+							<h5>G ランク <br />4,320円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>300㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>30㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">自転車、ダイニングセット(二人用)、エアロバイク等</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="item">
+							<h5>H ランク <br />5,940円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>360㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>40㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">A3レーザープリンタ、ウッドカーペット等</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="item">
+							<h5>I ランク <br />7,560円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>400㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>50㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">足踏みミシン、ダイニングセット(四人用)、白黒業務用コピー機</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="item">
+							<h5>J ランク <br />9,720円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>450㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>60㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">エレクトーン、大型マッサージ機等</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="item">
+							<h5>K ランク <br />12,960円</h5>
+							<table>
+								<tbody>
+									<tr>
+										<th>縦・横・奥行の合計</th>
+										<td>500㎝以下</td>
+									</tr>
+									<tr>
+										<th>重さ</th>
+										<td>70㎏以下</td>
+									</tr>
+									<tr>
+										<th colspan="2">電子ピアノ、介護ベッド等</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>		
+				</section><!--#itemCharges #itemRank-->
+			</div>
+		</section><!--#itemCharges-->
+
+			<section class="contents" id="spworksCharges">
+				<div class="container">
+					<div class="linkMenu">
+					    <div class="tab"><a href="#basicCharges">基本料金</a></div>
+					    <div class="tab"><a href="#itemCharges">品物ごとの料金</a></div>
+					    <h3><a href="#spworksCharges" class="active">特殊作業料金</a></h3>
+					    <div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+					</div>
+					<div class="twelvecol col last">
+						<p>エコ回収をするうえで必要な作業に対して頂戴する料金です。お客様自身で作業を行って頂ければ料金は頂戴致しません。</p>
+						<table>
+							<tbody>
+								<tr>
+									<th>外階段作業 ※1</th>
+									<td>集合住宅の共有スペースや戸建の屋外に設置されている階段を利用して行う作業です。</td>
+									<td>540円/階</td>
+								</tr>
+								<tr>
+									<th>内階段作業 ※2</th>
+									<td>戸建、メゾネットなど室内にある階段を利用して行う作業です。</td>
+									<td>2,160円/階</td>
+								</tr>
+								<tr>
+									<th>解体作業 ※3</th>
+									<td>ベッドフレームや大型クローゼットなどの解体を行います。10分1,080円が目安となります。 </td>
+									<td>1,080円/10分</td>
+								</tr>
+								<tr>
+									<th>吊り下ろし作業 ※3</th>
+									<td>お部屋の中の階段を通らない大型家具などをベランダや窓から外に運び出す作業です。</td>
+									<td>11,880 / 円</td>
+								</tr>
+								<tr>
+									<th>養生作業</th>
+									<td>集合住宅の共有スペース(エレベーター周りやエントランスなど)を保護するためにプラスチックのシートを壁や床に貼る作業です。作業量により、料金が変動致します。お住まいの集合住宅によっては、数点のお運び出しの場合もこちらの作業が必要になりますので、事前にご確認ください。</td>
+									<td>1,080円～</td>
+								</tr>
+								<tr>
+									<th>エアコン取り外し工事</th>
+									<td>お住まいに設置されているエアコンの室内機と室外機を取り外す工事です。室外機の設置場所や設置方法(床置き、天井吊りなど)により料金が異なります。</td>
+									<td>9,720円/台～</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="footnote">
+							<p><small>※ 1) お品物ごとに作業料金が適用されます。 料金ランクがFランク以上のお品物のみが適用対象になります。</small></p>
+							<p><small>※ 2) お品物ごとに作業料金が適用されます。 料金ランクがFランク以上のお品物のみが適用対象になります。</small></p>
+							<p><small>※ 3) お品物ごとに作業料金が適用されます。</small></p>
 						</div>
 					</div>
-				<!--#itemPrice #itemRank--></section>
+				</div>
+			</section><!--#itemCharges-->
 
-				<!-- <section id="guide">
-					<div class="twelvecol col last"><h4><?php echo getPage("一部お引取ができないモノがあります。", "title"); ?></h4></div>
-					<?php echo getPage("一部お引取ができないモノがあります。", "contents"); ?>
-				</section> --><!--#itemPrice #guide-->
-
-			<!--#itemPrice .container--></div>
-		<!--#itemPrice--></section>
-
-		<section class="contents" id="purchase">
-			<!-- <div class="container">
+		<section class="contents" id="optionsCharges">
+			<div class="container">
+				<div class="linkMenu">
+				    <div class="tab"><a href="#basicCharges">基本料金</a></div>
+				    <div class="tab"><a href="#itemCharges">品物ごとの料金</a></div>
+				    <div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+				    <h3><a href="#optionsCharges" class="active">オプション料金</a></h3>
+				</div>
 				<div class="twelvecol col last">
-					<h3><?php echo getPage("買取料金", "title"); ?></h3>
-					<?php echo getPage("買取料金", "contents"); ?>
-					<h4><?php echo getPage("買取が難しいモノがあります。", "title"); ?></h4>
-					<?php echo getPage("買取が難しいモノがあります。", "contents"); ?>
+					<p>お客様のご希望により自由に選択して頂けるサービスの料金です。</p>
+					<table>
+						<tbody>
+							<tr>
+								<th>時間帯指定サービス</th>
+								<td>3時間枠でお時間帯をご指定頂けます。(お時間枠：9～12時、11～14時、13～16時、15～18時)</td>
+								<td>1,080円</td>
+							</tr>
+							<tr>
+								<th>当日集荷サービス</th>
+								<td>受付日当日にお伺いさせて頂くサービスです。</td>
+								<td>2,160円</td>
+							</tr>
+							<tr>
+								<th>夜間指定サービス</th>
+								<td>18時～20時の間でお伺いさせて頂くサービスです。</td>
+								<td>3,240円</td>
+							</tr>
+							<tr>
+								<th>レディースサービス</th>
+								<td>女性スタッフによるお伺いをお約束致します。</td>
+								<td>1,080円</td>
+							</tr>
+							<tr>
+								<th>目の前あんしんデータ消去サービス</th>
+								<td>お客様の目の前でパソコンからハードディスクを取り出し、物理的に破壊するサービスです。 デスクトップ本体2,160円 ノートＰＣ・一体型ＰＣ</td>
+								<td>4,320円</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="footnote">
+						<p><small>※ 1) ご指定がない場合はご訪問前日の18～21時の間にお伺い予定時間を3時間枠でご連絡致します。</small></p>
+						<p><small>※ 2) ご予約状況により、承ることができない可能性もございますので、あらかじめご了承ください。</small></p>
+						<p><small>※ 3) 女性1名、男性1名でのお伺いになります。 女性のお客様対象のサービスです。</small></p>
+						<p><small>※ 4) こちらのサービスをご希望されない場合はセンターに持ち帰ってデータ消去を行います。</small></p>
+					</div>
 				</div>
-			</div> --><!--#purchase .container-->
-			<section class="linkMenu">
-				<ul>
-					<li><a href="#">基本料金</a></li>
-					<li><a href="#">品物ごとの料金</a></li>
-					<li><a href="#" class="active">特殊作業料金</a></li>
-					<li><a href="#">オプション料金</a></li>
-				</ul>
-			</section>
-			<table cellpadding="0" cellspacing="0" width="100%" border="0">
-				<tr>
-					<th>基本料金</th>
-					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
-					<td>3,240円</td>
-				</tr>
-				<tr>
-					<th>地域料金</th>
-					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
-					<td>4,320円</td>
-				</tr>
-				<tr>
-					<th>基本料金</th>
-					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
-					<td>3,240円</td>
-				</tr>
-				<tr>
-					<th>地域料金</th>
-					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
-					<td>4,320円</td>
-				</tr>
-			</table>
-		<!--#purchase--></section>
+			</div>
+		</section><!--#optionsCharges-->
 
-		<section class="contents" id="options">
-			<!-- <div class="container">
-				<div class="twelvecol col last"><h3><?php echo getPage("特殊作業料金", "title"); ?></h3></div>
-				<div class="fourcol col">
-					<h4><?php echo getPage("お住まいの地域はエリア内ですか？", "title"); ?></h4>
-					<?php echo getPage("お住まいの地域はエリア内ですか？", "contents"); ?>
-				</div>
-				<div class="fourcol col">
-					<h4><?php echo getPage("何階から運び出しますか？", "title"); ?></h4>
-					<?php echo getPage("何階から運び出しますか？", "contents"); ?>
-				</div>
-				<div class="fourcol col last">
-					<h4><?php echo getPage("大型の場合は解体などの作業が必要です。", "title"); ?></h4>
-					<?php echo getPage("大型の場合は解体などの作業が必要です。", "contents"); ?>
-				</div>
-				<div class="fourcol col">
-					<h4><?php echo getPage("時間指定をご希望ですか？", "title"); ?></h4>
-					<?php echo getPage("時間指定をご希望ですか？", "contents"); ?>
-				</div>
-				<div class="fourcol col">
-					<h4><?php echo getPage("養生作業が必要ですか？", "title"); ?></h4>
-					<?php echo getPage("養生作業が必要ですか？", "contents"); ?>
-				</div>
-				<div class="fourcol col last">
-					<h4><?php echo getPage("レディースサービスやPCデータ消去サービスはご存知ですか？", "title"); ?></h4>
-					<?php echo getPage("レディースサービスやPCデータ消去サービスはご存知ですか？", "contents"); ?>
-				</div>
-			</div> --><!--#check .container-->
-			<section class="linkMenu">
-				<ul>
-					<li><a href="#">基本料金</a></li>
-					<li><a href="#">品物ごとの料金</a></li>
-					<li><a href="#">特殊作業料金</a></li>
-					<li><a href="#" class="active">オプション料金</a></li>
-				</ul>
-			</section>
-			<table cellpadding="0" cellspacing="0" width="100%" border="0">
-				<tr>
-					<th>基本料金</th>
-					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
-					<td>3,240円</td>
-				</tr>
-				<tr>
-					<th>地域料金</th>
-					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
-					<td>4,320円</td>
-				</tr>
-				<tr>
-					<th>基本料金</th>
-					<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
-					<td>3,240円</td>
-				</tr>
-				<tr>
-					<th>地域料金</th>
-					<td>一部の対応エリア訪問の際に頂戴している料金です。地域料金が必要なエリアの確認はこちら <span>逃がさない</span></td>
-					<td>4,320円</td>
-				</tr>
-			</table>
-		<!--#check--></section>
-
-	<!-- .tabs --></div>
+	</div><!-- .tabs -->
 
 	<section class="contents" id="simulations">
 	<div class="container">

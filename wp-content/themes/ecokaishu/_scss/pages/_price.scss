@@ -131,184 +131,26 @@ article#price{
 	border-top: 1px solid rgba($black, .1);
 	border-bottom: none;
 
-	// ul
-	//***************************************************************
-
-	ul{
-
-		margin-bottom: 0;
-		padding-top: 3.0rem;
-		padding-bottom: 3.0rem;
-		text-align: center;
-
-		//li
-		li{
-
-			position: relative;
-			@include border-radius(5px);
-			border: 3px solid transparent;
-			background: $white;
-
-			//&:after
-			&:after{
-				z-index: 3;
-				line-height: 42px;
-				position: absolute;
-				width: 42px;
-				height: 42px;
-				color: $green;
-				font:{
-					family: icomoon;
-					size: $biggest * 1.4;
-				}
-				content: "\e80b";
-			}
-			&:nth-of-type(1),
-			&:nth-of-type(2),
-			&:nth-of-type(3){
-				border-color: rgba($green, .7);
-				cursor: pointer;
-			}
-			&:nth-of-type(3){
-				&:after{
-					color: #d3d3d3;
-				}
-			}
-			&:nth-of-type(4){
-				border-color: rgba($darkGray, .2);
-				cursor: pointer;
-				&:after{
-					color: $pink;
-					background: #facbcc;
-					content: "\e83a";
-					padding: 0 20px;
-				}
-			}
-			&:nth-of-type(5){
-				border-color: $pink;
-				p{
-					line-height: 1.0em;
-					margin-top: 2.5rem !important;
-					font-size: $biggest * 1.7;
-				}
-				&:after{ content: ""; } 
-			}
-
-			//a
-			a{
-				display: block;
-				color: $darkGray;
-				text-decoration: none;
-			}
-
-			//h4
-			h4{
-				margin: 2rem 0;
-				font-size: $smaller * 1.4;
-			}
-
-			//span[class^="icon-"]
-			span[class^="icon-"]{
-				display: block;
-				margin-bottom: 1.5rem;
-				font-size: $biggest * 1.2;
-			}
-
-			//p
-			p{
-				.priceIndex{
-					margin-right: 0.5rem;
-				}
-				.price{
-					&:after{
-						font-size: 80%;
-						content: "円";
-					}
-				}
-			}
-
-		}
-
-	}
-
-	// PC
-	@media all and (min-width: $minWidth){
-
-		//ul
-		ul{
-
-			//li
-			li{
-
-				vertical-align: top;
-				height: 220px;
-
-				&:after{
-					top: 50%;
-					right: -34px;
-					margin-top: -21px;
-				}
-				&:nth-of-type(4){
-					&:after{
-						@include rotate(90deg);
-						right: -55px;
-					}
-				}
-			}
-
-		}
-
-	}
-
-	// Mobile
-	@media all and (max-width: $maxWidth){
-
-		//ul
-		ul{
-
-			//li
-			li{
-
-				margin-bottom: 1.0rem;
-				padding-bottom: 1.0rem;
-
-				//&:after
-				&:after{
-					bottom: -32px;
-					left: 50%;
-					margin-left: -21px;
-				}
-
-				//&:nth-of-type(4)
-				&:nth-of-type(4){
-					&:after{
-						left: 42%;
-					}
-				}
-
-				//&:nth-of-type(5)
-				&:nth-of-type(5){
-					padding-bottom: 2.0rem;
-				}
-
-			}
-		}
-
-	}
-
 }
 
 //**********************************************************************
 // .linkMenu
 //**********************************************************************
 .linkMenu {
+
 	overflow: hidden;
 	border-bottom: 1px solid rgba($gray, .9);
 	margin-bottom: 30px;
 
-	li {
+	h3 {
+		font-size: 100%;
+		margin: 0;
+	}
+
+	h3, .tab {
 		float: left;
 		border-top: 1px solid rgba($gray, .9);
+		line-height: normal;
 		a {
 			display: block;
 			width: 185px;
@@ -333,7 +175,7 @@ article#price{
 
 	// Mobile
 	@media all and (max-width: $maxWidth){
-		li {
+		h3{
 			width: 99%;
 
 			a {
@@ -341,19 +183,18 @@ article#price{
 				border-right: 1px solid rgba($gray, .9);
 			}
 		}
+		.tab {
+			display: none;
+		}
 	}
-}
+}//end .linkMenu
 
 //**********************************************************************
-// #basicCharge
+// #basicCharges
 //**********************************************************************
-#basicCharge, #purchase, #options {
-	td {
-		span {
-			margin-left: 20px;
-			font-weight: bold;
-			background: #facbcc;
-		}
+#basicCharges, #spworksCharges, #optionsCharges {
+	p {
+		margin: 10px 0;
 	}
 	// PC
 	@media all and (min-width: $minWidth){
@@ -361,15 +202,27 @@ article#price{
 			border-bottom: 1px solid rgba($gray, .9);
 			padding: 15px 0 15px 20px;
 		}
+		th {
+			width: 20%;
+		}
+		td {
+			&:last-of-type {
+				text-align: right;
+				width: 15%;
+			}
+		}		
+		.footnote {
+			margin: 2rem 0 !important;
+		}
 	}
 }
 
 
 //**********************************************************************
-// #itemPrice
+// #itemCharges
 //**********************************************************************
 
-#itemPrice{
+#itemCharges{
 
 	.item {
 		@include border-radius(15px);
@@ -380,11 +233,6 @@ article#price{
 			font-weight: normal;
 			text-align: center;
 		}
-	}
-	//h4
-	h4{
-		background: #facbcc;
-		display: inline-block;
 	}
 
 	// #electricApp
@@ -402,20 +250,8 @@ article#price{
 
 	}
 
-
-	// #guide
-	//**************************************************************
-
-	#guide{
-
-		//ul
-		ul{
-			padding-left: 1.0rem;
-			padding-bottom: 1.0rem;
-			li{
-				list-style: circle;
-			}
-		}
+	.appendix {
+		font-size: 80%;
 	}
 
 	// PC
@@ -428,9 +264,11 @@ article#price{
 			}
 			th {
 				text-align: left;
+				width: 65%;
 			}
 			td{
 				text-align: right;
+				width: 35%;
 			}
 		}
 
@@ -459,9 +297,6 @@ article#price{
 					}
 				}
 			}
-			.block{
-
-			}
 		}
 
 	}
@@ -479,7 +314,9 @@ article#price{
 		}
 
 		.item {
-			padding: .5rem;
+			padding: 0;
+			border-radius: 0;
+			border: none;
 		}
 
 		//#electricApp

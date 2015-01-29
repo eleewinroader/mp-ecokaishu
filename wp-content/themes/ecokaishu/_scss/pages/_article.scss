@@ -2,6 +2,16 @@
 
 article{
 
+//.icomoon
+.icomoon{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.3rem;
+	font-family: icomoon;
+	font-size: 90%;
+	speak: none;
+}
+
 //**********************************************************************
 // General settings
 //**********************************************************************
@@ -10,11 +20,18 @@ article{
 //**********************************************************************
 
 .contents{
+
 	position: relative;
 	padding: 3.0rem 0;
 	&:not(:last-of-type){
 		border-bottom: 1px solid rgba($black, .05);
 	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+		padding: 5.0rem 0;
+	}
+
 }
 
 //**********************************************************************
@@ -60,6 +77,12 @@ h5{
 	font-weight: bold;
 }
 
+h6{
+	margin-top: 1.0rem;
+	margin-bottom: 1.0rem;
+	font-size: $normal* 1.2;
+}
+
 //**********************************************************************
 // &.archiveIndex
 //**********************************************************************
@@ -88,6 +111,285 @@ h5{
 
 }
 
+//**********************************************************************
+// .priceEx
+//**********************************************************************
+
+.priceEx{
+
+	margin-bottom: 0;
+	text-align: center;
+
+	//li
+	li{
+
+		position: relative;
+		@include border-radius(5px);
+		border: 3px solid transparent;
+		background: $white;
+
+		//&:after
+		&:after{
+			z-index: 3;
+			line-height: 42px;
+			position: absolute;
+			width: 42px;
+			height: 42px;
+			color: $green;
+			font:{
+				family: icomoon;
+				size: $biggest * 1.4;
+			}
+			content: "\e80b";
+		}
+		&:nth-of-type(1),
+		&:nth-of-type(2),
+		&:nth-of-type(3){
+			border-color: rgba($green, .7);
+			cursor: pointer;
+		}
+		&:nth-of-type(3){
+			&:after{
+				color: #d3d3d3;
+			}
+		}
+		&:nth-of-type(4){
+			border-color: rgba($darkGray, .2);
+			cursor: pointer;
+			&:after{
+				color: $pink;
+				content: "\e83a";
+				padding: 0 20px;
+			}
+		}
+		&:nth-of-type(5){
+			border-color: $pink;
+			p{
+				line-height: 1.0em;
+				margin-top: 2.5rem !important;
+				font-size: $biggest * 1.7;
+			}
+			&:after{ content: ""; }
+		}
+
+		//a
+		a{
+			display: block;
+			color: $darkGray;
+			text-decoration: none;
+		}
+
+
+		//span[class^="icon-"]
+		span[class^="icon-"]{
+			display: block;
+			font-size: $biggest * 1.2;
+		}
+
+		//p
+		p{
+			&.title{
+				font-size: $bigger;
+			}
+			.priceIndex{
+				margin-right: 0.5rem;
+			}
+			.price{
+				&:after{
+					font-size: 80%;
+					content: "円";
+				}
+			}
+		}
+
+	}
+
+	// PC
+	@media all and (min-width: $minWidth){
+
+
+		//li
+		li{
+
+			vertical-align: top;
+			height: 200px;
+
+			&:after{
+				top: 50%;
+				right: -34px;
+				margin-top: -21px;
+			}
+			&:nth-of-type(4){
+				&:after{
+					@include rotate(90deg);
+					right: -55px;
+					font-size: $biggest*2;
+				}
+			}
+
+			//span[class^="icon-"]
+			span[class^="icon-"]{
+				margin-bottom: 1.0rem;
+			}
+
+			p{
+				&.title{
+					margin-top: 2.0rem;
+					margin-bottom: 1.0rem;
+					font-size: $bigger;
+				}
+			}
+
+		}
+
+	}
+
+	// Mobile
+	@media all and (max-width: $maxWidth){
+
+
+		//li
+		li{
+
+			margin-bottom: 1.0rem;
+			padding-bottom: 1.0rem;
+
+			//&:after
+			&:after{
+				bottom: -32px;
+				left: 50%;
+				margin-left: -21px;
+			}
+
+			//&:nth-of-type(4)
+			&:nth-of-type(4){
+				&:after{
+					left: 42%;
+				}
+			}
+
+			//&:nth-of-type(5)
+			&:nth-of-type(5){
+				padding-bottom: 2.0rem;
+			}
+
+
+			p{
+				&.title{
+					margin-top: 1.5rem;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// .customerProfile
+//**********************************************************************
+
+.customerProfile{
+
+	// a
+	//**************************************************************
+
+	a{
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0.2rem 0.5rem;
+		border: 1px solid rgba($black, .1);
+		background: rgba($black, .05);
+		font-size: 90%;
+		@include border-radius(3px);
+	}
+
+	// ul
+	//**************************************************************
+
+	ul{
+
+		li{
+
+			display: inline-block;
+
+			//&:not(:last-of-type)
+			&:not(:last-of-type){
+				margin-right: 0.5rem;
+			}
+
+		}
+
+	}
+
+	// dl
+	//**************************************************************
+
+	dl{
+
+		//dt
+		dt{
+
+			vertical-align: middle;
+
+			//&:before
+			&:before{
+				@extend .icomoon;
+			}
+
+			//.hide
+			&.hide{ display: none; }
+
+
+		}
+
+
+		//dd
+		dd{
+
+			display: inline-block;
+			vertical-align: middle;
+
+			//&:not(:last-of-type)
+			&:not(:last-of-type){
+				margin-right: 0.5rem;
+			}
+
+			//&:before
+			&:before{
+				@extend .icomoon;
+			}
+			&.name{ &:before{ content: "\e919"; } }
+			&.place{ &:before{ content: "\e8eb"; } }
+			&.date{ &:before{ content: "\e64d"; } }
+
+		}
+
+	}
+
+
+	// .index
+	//**************************************************************
+
+	.index{
+
+		display: block;
+		margin-top: 1.0rem;
+		margin-bottom: 0.5rem;
+		padding-top: 1.0rem;
+		border-top: 1px dashed rgba($black, .1);
+		font-size: $normal;
+		text-align: left;
+
+		&:before{ @extend .icomoon; }
+		&.info{ &:before{ content: "\e954"; }}
+		&.comments{ &:before{ content: "\e915"; }}
+		&.items{ &:before{ content: "\e905"; }}
+
+	}
+
+}
 
 //**********************************************************************
 // &.article settings
@@ -307,5 +609,7 @@ h5{
 
 &.columns{
 }
+
+
 
 }
