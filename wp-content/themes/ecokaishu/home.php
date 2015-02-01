@@ -11,7 +11,7 @@ get_header( ); ?>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
-						</a> 
+						</a>
 					</div>
 				</div>
 			</div>
@@ -40,7 +40,7 @@ get_header( ); ?>
 							<a href="<?php echo get_post_type_archive_link("flow"); ?>#ecokaishu">
 								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_02<?php if(is_smartphone()) echo "_s"; ?>.jpg" alt="安心・丁寧な作業を常に心がけています" />
 							</a>
-						</div>	
+						</div>
 						<!--<div class="slider">
 							<a href="<?php echo get_post_type_archive_link("concierge"); ?>">
 								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_03<?php if(is_smartphone()) echo "_s"; ?>.gif" alt="5分で見積完結【新登場】WEB見積" />
@@ -86,18 +86,23 @@ get_header( ); ?>
 					<h3>お知らせ</h3>
 					<ul>
 						<?php
+						function filter_where( $where = '' ) {
+							$where .= " AND post_date > '" . date('Y-m-d', strtotime('-14 days')) . "'";
+							return $where;
+						}
+						add_filter( 'posts_where', 'filter_where' );
 						$args = array(
-							"post_type" => "notices",
-							"posts_per_page" => 5
+							"post_type" => "notices"
 						);
 						$posts = query_posts($args);
 						foreach($posts as $post){
 							$li = "<li><a href=".get_permalink($post->ID)."><time datetime=".$post->post_date.">".get_the_date("y.m.d")."</time>";
-							$tags = get_the_tags(); 
+							$tags = get_the_tags();
 							if ($tags) foreach($tags as $tag) $li .= '<span class="tag">'.$tag->name.'</span>';
 							$li .= '<span class="newsTxt">'.$post->post_title.'</span></a></li>';
 							echo $li;
-						}?>
+						}
+						wp_reset_query();?>
 					</ul>
 					<div class="clear"></div>
 				</section>
@@ -159,22 +164,22 @@ get_header( ); ?>
 					$ymd = $today->format("Ymd");
 
 					//年月日に変数で取得
-					$year  = substr($ymd, 0, 4); 
-					$month = substr($ymd, 4, 2); 
-					$day = substr($ymd, 6, 2); 
+					$year  = substr($ymd, 0, 4);
+					$month = substr($ymd, 4, 2);
+					$day = substr($ymd, 6, 2);
 					$month = sprintf("%01d", $month);
 					$day = sprintf("%01d", $day);
 
 					$table = NULL;
-					
+
 					$j = 0;
 					for ($a = 1; $a < 3; $a++){
 						for($i = $j; $i < 7*$a; $i++){
 							$ymd = getNthDay($year, $month, $day, "+".$j." day");
 							$iconClass = getReservInfo($ymd);
-							$y = substr($ymd, 0, 4); 
-							$m = substr($ymd, 4, 2); 
-							$d = substr($ymd, 6, 2); 
+							$y = substr($ymd, 0, 4);
+							$m = substr($ymd, 4, 2);
+							$d = substr($ymd, 6, 2);
 							$n = sprintf("%02d", $m);
 							$k = sprintf("%02d", $d);
 							$n2 = sprintf("%01d", $m);
@@ -189,13 +194,13 @@ get_header( ); ?>
 							else $holidayClass = "";
 
 							if($j < 7){
-								$table0 .= '<th class="'.$iconClass.$holidayClass.'">'.$w.'</th>'.PHP_EOL; 
-								$table1 .= '<th class="'.$iconClass.$holidayClass.'">'.$t.'</th>'.PHP_EOL; 
-								$table2 .= '<td class="'.$iconClass.$holidayClass.'"></td>'.PHP_EOL; 
+								$table0 .= '<th class="'.$iconClass.$holidayClass.'">'.$w.'</th>'.PHP_EOL;
+								$table1 .= '<th class="'.$iconClass.$holidayClass.'">'.$t.'</th>'.PHP_EOL;
+								$table2 .= '<td class="'.$iconClass.$holidayClass.'"></td>'.PHP_EOL;
 							}elseif($j >= 8 || $j < 15){
-								$table3 .= '<th class="'.$iconClass.$holidayClass.'">'.$t.'</th>'.PHP_EOL; 
-								$table4 .= '<td class="'.$iconClass.$holidayClass.'"></td>'.PHP_EOL; 
-							
+								$table3 .= '<th class="'.$iconClass.$holidayClass.'">'.$t.'</th>'.PHP_EOL;
+								$table4 .= '<td class="'.$iconClass.$holidayClass.'"></td>'.PHP_EOL;
+
 							}
 							$j++;
 						}
@@ -245,7 +250,7 @@ get_header( ); ?>
 					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/icon_faq.png" alt="" id="faqIcon" />
 				</div>
 			<!--#faq--></section>
-			
+
 			<section class="item homeVoice">
 				<h3><span class="voicesTag">受付STAFFについて</span><span class="voicesInfo">神奈川県 20代 男性 </span></h3>
 				<p class="voicesContents"><strong>荷物量の説明等を１回で適切に理解</strong>してもらえたことや<strong>買い取りやリサイクルの仕組みを分かり易く説明</strong>してくれたこと、<strong>電話をかける時間帯への配慮や気遣い</strong>ががあったことよかったです。</p>
@@ -272,19 +277,19 @@ get_header( ); ?>
 			<!--facebook--></div>
 
 		<div class="twelvecol col last">
-			<section class="lstStaff"> 
+			<section class="lstStaff">
 				<h3>ただ今、エコ回収スタッフ</h3>
 				<div class="liquidLayout">
 					<?php
 					$my_query = new WP_Query('post_type=staffwords');
-					while ($my_query->have_posts()) : $my_query->the_post(); ?>		
-						<dl class="item">								
+					while ($my_query->have_posts()) : $my_query->the_post(); ?>
+						<dl class="item">
 							<dt><a href="<?php echo get_permalink($post->ID) ?>" class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_goto.jpg" /></a></dt>
-							<dd>								
+							<dd>
 								<?php the_content(); ?>
 								<small><?php echo get_the_date(); ?></small>
 							</dd>
-						</dl> 
+						</dl>
 					<?php endwhile;  wp_reset_query(); ?>
 				</div>
 			</section>
