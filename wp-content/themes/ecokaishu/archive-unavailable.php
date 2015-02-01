@@ -29,7 +29,7 @@ get_header(); ?>
 
 	<div class="container">
 
-		<div class="twelvecol col last" id="intro">
+		<div class="twelvecol col last">
 			<div class="summary">
 				<p>
 					<span class="block">エコランドは再利用できるモノを</span>
@@ -46,8 +46,12 @@ get_header(); ?>
 
 		<div class="sixcol col">
 			<h3>エコ回収できないモノ</h3>
-			<p>可燃ごみ（紙類でも、ごみと混ざり可燃ごみと判断した物は回収できません。）</p>
-			<p>不燃ごみ（乾電池・スプレー缶など）</p>
+			<dl class="listDefi">
+				<dt>可燃ごみ</dt>
+				<dd>紙類でも、ごみと混ざり可燃ごみと判断した物は回収できません。</dd>
+				<dt>不燃ごみ</dt>
+				<dd>乾電池・スプレー缶など</dd>
+			</dl>
 			<p>飲食物</p>
 			<p>液体物（シャンプー・石けんなども含まれます。）</p>
 			<p>刃物、木刀</p>
@@ -58,8 +62,10 @@ get_header(); ?>
 		</div>
 		<div class="sixcol col last">
 			<h3>よくご質問があり、お引取ができないモノ</h3>
-			<p>安全装置がすべての口に付いていないガステーブル</p>
-			<p>ウォーターベッド</p>
+			<ul class="listDefi">
+				<li>安全装置がすべての口に付いていないガステーブル</li>
+				<li>ウォーターベッド</li>
+			</ul>
 			<p>ウォシュレット</p>
 			<p>画面の割れたテレビやモニター</p>
 			<p>植物</p>
