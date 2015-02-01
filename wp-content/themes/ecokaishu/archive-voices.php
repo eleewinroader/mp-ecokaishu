@@ -3,11 +3,6 @@
 * @package Montser Platform
 */
 get_header( );
-
-
-
-
-
 ?>
 
 	<header class="headerPage">

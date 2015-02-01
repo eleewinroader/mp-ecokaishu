@@ -76,7 +76,7 @@ get_header( ); ?>
 				</li>
 			<!--priceEx--></ul>
 
-			<section class="tabContents" id="basicCharges">
+			<section class="contentsPrice" id="basicCharges">
 				<div class="linkMenu twelvecol col last">
 					<h4><a href="#basicCharges">基本料金</a></h4>
 					<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
@@ -101,7 +101,7 @@ get_header( ); ?>
 				</div>
 			<!--#basicCharges--></section>
 
-			<section class="tabContents" id="itemCharges">
+			<section class="contentsPrice" id="itemCharges">
 				<div class="linkMenu twelvecol col last">
 					<div class="tab"><a href="#basicCharges">基本料金</a></div>
 					<h4><a href="#itemCharges">物品ごとの料金</a></h4>
@@ -480,7 +480,7 @@ get_header( ); ?>
 				</div><!--#itemCharges #itemRank-->
 			<!--#itemCharges--></section>
 
-			<section class="tabContents" id="spworksCharges">
+			<section class="contentsPrice" id="spworksCharges">
 				<div class="linkMenu twelvecol col last">
 					<div class="tab"><a href="#basicCharges">基本料金</a></div>
 					<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
@@ -527,13 +527,12 @@ get_header( ); ?>
 						<p>
 							<small>※1 お品物ごとに作業料金が適用されます。</small>
 							<small>※2 料金ランクがFランク以上のお品物のみが適用対象になります。</small>
-							<small>※3 お品物ごとに作業料金が適用されます。</small>
 						</p>
 					</div>
 				</div>
 			<!--#spworksCharges--></section>
 
-			<section class="tabContents" id="optionsCharges">
+			<section class="contentsPrice" id="optionsCharges">
 				<div class="linkMenu twelvecol col last">
 					<div class="tab"><a href="#basicCharges">基本料金</a></div>
 					<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
