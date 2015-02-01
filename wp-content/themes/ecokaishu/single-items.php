@@ -158,7 +158,8 @@ get_header();
 			</div>
 		<!--.lpIntro--></div>
 
-		<section class="contents lpCharge">
+		<section class="contents priceDetails" id="lpPriceDetails">
+
 			<div class="twelvecol col last titleSection">
 				<h3>明確な料金体系</h3>
 				<p class="footnote al_c">
@@ -191,7 +192,7 @@ get_header();
 					<p class="title">合計料金</p>
 					<p><span class="price">11,880</span></p>
 				</li>
-			</ul><!--priceEx-->
+			<!--priceEx--></ul>
 
 			<section class="tabContents" id="basicCharges">
 				<div class="linkMenu twelvecol col last">
@@ -595,7 +596,7 @@ get_header();
 					</div>
 					<div class="threecol col last"></div>
 				</div><!--#itemCharges #itemRank-->
-			</section><!--#itemCharges-->
+			<!--#itemCharges--></section>
 
 			<section class="tabContents" id="spworksCharges">
 				<div class="linkMenu twelvecol col last">
@@ -648,7 +649,7 @@ get_header();
 						</p>
 					</div>
 				</div>
-			</section><!--#spworksCharges-->
+			<!--#spworksCharges--></section>
 
 			<section class="tabContents" id="optionsCharges">
 				<div class="linkMenu twelvecol col last">
@@ -702,8 +703,9 @@ get_header();
 						</p>
 					</div>
 				</div>
-			</section><!--#optionsCharges-->
-		</section><!--.lpCharge-->
+			<!--#optionsCharges--></section>
+
+		<!--#lpPriceDetails--></section>
 
 		<section class="purchase contents">
 			<div class="twelvecol col last titleSection">
