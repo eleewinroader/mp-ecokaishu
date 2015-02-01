@@ -192,7 +192,7 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
-
+wp-content/themes/.DS_Store
 
 #############
 ## Python
