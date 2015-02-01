@@ -12,12 +12,12 @@ get_header(); ?>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
-						</a> 
+						</a>
 					</div>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo get_permalink($post->ID) ?>" itemprop="url">
 							<span itemprop="title"><?php the_title(); ?></span>
-						</a> 
+						</a>
 					</div>
 				</div>
 			</div>

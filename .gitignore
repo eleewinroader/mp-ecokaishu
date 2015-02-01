@@ -193,6 +193,7 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+wp-content/themes/.DS_Store
 
 
 #############
@@ -231,7 +232,4 @@ pip-log.txt
 #############
 ## Wordress
 #############
-wp-config.php
-
-wp-config.php
 wp-config.php
