@@ -4,12 +4,12 @@
 */
 get_header( );
 
-	
+
 
 
 
 ?>
-	
+
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
@@ -17,12 +17,12 @@ get_header( );
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
-						</a> 
+						</a>
 					</div>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" itemprop="url">
 							<span itemprop="title"><?php post_type_archive_title(); ?></span>
-						</a> 
+						</a>
 					</div>
 				</div>
 			</div>
@@ -50,14 +50,16 @@ get_header( );
 				<div class="threecol col last">評価</div>
 			</div>
 			<?php
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			$args = array(
 				"post_type" => "voices",
-				"voicekinds" => "review"
+				"voicekinds" => "review",
+				"paged" => $paged
 			);
-			$posts = query_posts($args);
-			if($posts): ?>
+			$postsa = new WP_Query($args);
+			if($postsa): ?>
 				<ul class="archiveList">
-					<?php foreach($posts as $post): ?>
+					<?php while($postsa->have_posts()): $postsa->the_post(); ?>
 						<li class="al_c">
 							<a href="<?php echo get_permalink($post->ID); ?>">
 								<div class="onecol col">
@@ -70,20 +72,20 @@ get_header( );
 								<div class="fourcol col al_l"><?php echo getCustomerItems($post); ?></div>
 								<div class="threecol col last">
 									<span class="star star<?php echo get_post_meta($post->ID, "voiceInfo16", TRUE); ?>"></span>
-									<span class="icon icon-arrow-right3"></span>
 								</div>
+								<span class="icon icon-arrow-right3"></span>
 							</a>
 						</li>
-					<?php endforeach; ?>
+					<?php endwhile; ?>
 				</ul>
 				<?php endif; ?>
 		<!--.contents--></div>
 
 		<?php if(function_exists('wp_pagenavi')): ?>
 			<div class="contents al_c">
-				<?php wp_pagenavi(); ?>
+				<?php wp_pagenavi(array("query" => $postsa)); ?>
 			<!--.pagenavi .contents--></div>
-		<?php endif; ?>
+		<?php endif; wp_reset_postdata(); ?>
 
 		<!--.col--></div>
 	<!-- .container --></div>

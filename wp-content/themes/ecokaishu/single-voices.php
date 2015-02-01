@@ -14,7 +14,7 @@ get_header();
 
 	$authors = get_the_terms($post->ID, "author");
 	$authorNames = array();
-	foreach($authors as $author) array_push($authorNames, $author->name); 
+	foreach($authors as $author) array_push($authorNames, $author->name);
 
 
 	$review01 = get_post_meta($post->ID, "voiceInfo13", TRUE);
@@ -30,12 +30,12 @@ get_header();
 				<a href="'.$postTypeUrl.'" itemprop="url">
 				<a href="'.get_post_type_archive_link("voices").'">
 					<span itemprop="title">お客様の声</span>
-				</a> 
+				</a>
 			</div>
 			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 				<a href="'.get_permalink($post->ID).'" itemprop="url">
 					<span itemprop="title">'.getCustomerAreas($post).' '.getCustomerName($post).'様の口コミ</span>
-				</a> 
+				</a>
 			</div>';
 	?>
 
@@ -48,14 +48,14 @@ get_header();
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
-						</a> 
+						</a>
 					</div>
 					<?php echo $navPage; ?>
 				</div>
 			</div>
 		</nav>
 	<!--.headerPage--></div>
-	
+
 	<div class="container">
 		<div class="fourcol col">
 			<div class="customerProfile">
@@ -66,13 +66,13 @@ get_header();
 					<dt class="hide">性別・年代</dt><dd class="name"><?php echo getCustomerSex($post)." / ".getCustomerAge($post); ?></dd>
 					<dt class="hide">回収エリア</dt><dd class="place"><?php echo getCustomerAreas($post, TRUE);?></dd>
 				</dl>
-				<h3 class="index">エコ回収をご利用になったきっかけ</h3> 
+				<h3 class="index info">エコ回収をご利用になったきっかけ</h3>
 				<ul><?php echo getCustomerStarts($post, "li"); ?></ul>
-				<h3 class="index">エコランドをお選びになった理由</h3>
+				<h3 class="index info">エコランドをお選びになった理由</h3>
 				<ul><?php echo getCustomerFeatures($post, "li"); ?></ul>
-				<h3 class="index">エコ回収したアイテム</h3>
+				<h3 class="index items">エコ回収したアイテム</h3>
 				<ul><?php echo getCustomerItems($post, TRUE, "li"); ?></ul>
-				<p class="footnote p2_t clear"><small><?php echo get_the_date("Y-m-d"); ?>投稿</small></p>
+				<p class="footnote"><small><?php echo get_the_date("Y-m-d"); ?>投稿</small></p>
 			<!--customerProfile--></div>
 			<div class="listStars small">
 				<h4>星印の見方</h4>
@@ -96,18 +96,18 @@ get_header();
 		<div class="eightcol col last customerVoices">
 			<section class="answer">
 				<h3>エコ回収サービス全体について評価してください。</h3>
-				<span class="rating-foreground star star<?php echo $review03Score; ?>"> 
-					<meta itemprop="rating" content="<?php echo $review03Score; ?>" /> 
+				<span class="rating-foreground star star<?php echo $review03Score; ?>">
+					<meta itemprop="rating" content="<?php echo $review03Score; ?>" />
 					<span class="index"><?php echo getCustomerReview($post, $review03Score); ?></span>
-				</span> 
+				</span>
 				<?php echo $review03; ?>
 			<!--answer--></section>
 			<section class="answer">
 				<h3>電話受付・メール対応など、コンシェルジュ<span class="small">(受付スタッフ)</span>の対応はいかがでしたか？</h3>
-				<span class="rating-foreground star star<?php echo $review01Score; ?>"> 
-					<meta itemprop="rating" content="<?php echo $review01Score; ?>" /> 
+				<span class="rating-foreground star star<?php echo $review01Score; ?>">
+					<meta itemprop="rating" content="<?php echo $review01Score; ?>" />
 					<span class="index"><?php echo getCustomerReview($post, $review01Score); ?></span>
-				</span> 
+				</span>
 				<?php
 				echo $review01;
 				if(getStaffComments($post, "conciergestaff", $crtUser)){
@@ -122,10 +122,10 @@ get_header();
 			<!--answer--></section>
 			<section class="answer">
 				<h3>当日の集荷スタッフのご対応はいかがでしたか？</h3>
-				<span class="rating-foreground star star<?php echo $review02Score; ?>"> 
-					<meta itemprop="rating" content="<?php echo $review02Score; ?>" /> 
+				<span class="rating-foreground star star<?php echo $review02Score; ?>">
+					<meta itemprop="rating" content="<?php echo $review02Score; ?>" />
 					<span class="index"><?php echo getCustomerReview($post, $review02Score); ?></span>
-				</span> 
+				</span>
 				<?php
 				echo $review02;
 				if(getStaffComments($post, "cltstaff", $crtUser)){
