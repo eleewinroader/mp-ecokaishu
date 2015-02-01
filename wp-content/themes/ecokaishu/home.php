@@ -271,7 +271,23 @@ get_header( ); ?>
 				<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fecoland.jp&amp;width=420&amp;height=400&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=true&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:400px;" allowtransparency="true"></iframe>
 			<!--facebook--></div>
 
-		<!-- .liquidLayout--></div>
+		<div class="twelvecol col last">
+			<section class="lstStaff"> 
+				<h3>ただ今、エコ回収スタッフ</h3>
+				<div class="liquidLayout">
+					<?php
+					$my_query = new WP_Query('post_type=staffwords');
+					while ($my_query->have_posts()) : $my_query->the_post(); ?>		
+						<dl class="item">								
+							<dt><a href="<?php echo get_permalink($post->ID) ?>" class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_goto.jpg" /></a></dt>
+							<dd>								
+								<?php the_content(); ?>
+								<small><?php echo get_the_date(); ?></small>
+							</dd>
+						</dl> 
+					<?php endwhile;  wp_reset_query(); ?>
+				</div>
+			</section>
 		</div>
 
 	<!-- .container--></div>

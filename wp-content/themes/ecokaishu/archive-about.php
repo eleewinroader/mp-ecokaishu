@@ -11,12 +11,12 @@ get_header( ); ?>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
-						</a> 
+						</a>
 					</div>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" itemprop="url">
 							<span itemprop="title"><?php post_type_archive_title(); ?></span>
-						</a> 
+						</a>
 					</div>
 				</div>
 			</div>
@@ -34,7 +34,7 @@ get_header( ); ?>
 				<span class="block">日本に循環型物流を構築すべく、</span>
 				<span class="block">日々取り組んでいます。</span></p>
 			<!-- .intro .summary--></div>
-				
+
 			<!--<div class="intro"><?php echo getPage("イントロ", "contents"); ?></div>
 			<?php echo getPage("エコ回収の流れ", "contents"); ?>-->
 		<!--#intro --></div>
@@ -53,7 +53,7 @@ get_header( ); ?>
 			</div>
 			<div class="fourcol col last" id="ceoProfile">
 				<h4>株式会社ウインローダー<span class="block">代表取締役社長 高嶋 民仁</span></h4>
-				<dl class="definitionList">
+				<dl class="listDefi">
 					<dt>1996年</dt><dd>慶応義塾大学 法学部政治学科卒業</dd>
 					<dt>1999年</dt><dd>株式会社ウインローダー 取締役 環境事業部長に就任</dd><dd>東京都臨時清掃職員を経験</dd>
 					<dt>2000年</dt><dd>米国の廃棄物処理企業にてインターンシップを行う</dd><dd>慶応義塾大学大学院 経営管理研究科入学</dd>
@@ -68,7 +68,7 @@ get_header( ); ?>
 		<div class="contents" id="outline">
 			<section class="sixcol col">
 				<h3>企業概要</h3>
-				<dl class="definitionList">
+				<dl class="listDefi">
 					<dt>商号</dt>
 					<dd>株式会社ウインローダー <a href="http://www.winroader.co.jp/" rel="nofollow">コーポレートサイトへ</a></dd>
 					<dt>所在地</dt>
@@ -81,7 +81,7 @@ get_header( ); ?>
 					<dt>営業種目</dt><dd>一般貨物自動車運送事業/倉庫業/荷造梱包業/家電家具配送設置業/古物の売買業/産業廃棄物収集運搬および処理業/廃品回収リサイクル業/古物商</dd>
 					<dt>許認可</dt>
 						<dd>
-							<dl class="definitionList">
+							<dl class="listDefi">
 								<dt>産業廃棄物収集運搬</dt>
 								<dd>東京都(1310062315号)/神奈川県(1402062315号)/埼玉県(1102062315号)/千葉県(1200062315号)/茨城県(00801062315号)横浜市(5600062315号)/川崎市(5700062315号v/横須賀市(5802062315号)/ 相模原市(09800062315号)/さいたま市(10100062315号)/川越市(10300062315号)/千葉市(5500062315号)/船橋市(1040062315号)</dd>
 								<dt>産業廃棄物積替保管</dt>

@@ -175,6 +175,8 @@ function getArticleClass($tempType, $obj){
 		}elseif($obj->post_type == "area" || $obj->post_type == "items"){
 			$classinfo .= " lp";
 			$classinfo .= " ".$obj->post_type;
+		}elseif($obj->post_type == "staffwords"){
+			$classinfo .= " ".$obj->post_type;
 		}elseif($obj->post_type == "page" && $obj->post_name == "inquiry"){
 			$classinfo .= " ".$obj->post_name;
 		}else{
