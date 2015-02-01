@@ -115,69 +115,16 @@ get_header();
 				</div>
 			</div>
 		</nav>
-<!-- 		<div class="container">
-			<div class="ninecol col">
-				<h2><span class="block"><?php echo $pageTitle; ?>のエコ回収 口コミ・実績</span></h2>
-			</div>
-			<div class="listSns threecol col last">
-				<ul>
-					<li id="shareFacebook"><a href=""><span class="label">facebook</span></a></li>
-					<li id="shareTwitter"><a href=""><span class="label">twitter</span></a></li>
-					<li id="shareGoogle"><a href=""><span class="label">Google+</span></a></li>
-				</ul>
-			</div>
-		</div> -->
 	<!--.headerPage--></header>
 
 	<div class="container">
 
-		<div class="intro">
+		<div class="lpIntro">
 			<div class="twelvecol col last">
 				<h2>
-					<span class="sub">練馬区で不用品回収をお考えの方へ</span>
-					<span class="main"><span class="block">エコランドに</span><span class="block">お任せください</span>
+					<span class="sub"><?php echo $pageTitle; ?>で不用品回収をお考えの方へ</span>
+					<span class="main"><span class="block">エコランドに</span><span class="block">お任せください</span></span>
 				</h2>
-			</div>
-			<div class="twelvecol col last">
-				<div class="contact">
-					<div id="tel">
-						<a onclick="ga('send', 'event', 'tel', '発信', '下層', 1, {'nonInteraction': 1});" href="tel:0120530539">
-							<span class="icon-phone"></span>
-							<span>0120-530-539</span>
-						</a>
-					</div>
-					<div id="mail">
-						<a href="http://www.eco-kaishu.jp/estimate/?pr_code=0-03"><span>かんたん見積依頼</span><span class="icon-mail5"></span></a>
-					</div>
-					<p>営業時間 平･土 9:00-22:00日･祝 9:00-20:00</p>
-				</div>
-			</div>
-			<div class="fourcol col">
-				<a href="#lpPrice">
-					<span class="icon-moneybag"></span>
-					<div class="txt">私も今どうもその約束人</div>
-					<div class="title">明確な料金体系</div>
-				</a>
-			</div>
-			<div class="fourcol col">
-				<a href="">
-					<span class="icon-settings"></span>
-					<div class="txt">私も今どうもその約束人</div>
-					<div class="title">事前見積&スピード対応</div>
-				</a>
-			</div>
-			<div class="fourcol col last">
-				<a href="">
-					<span class="icon-files"></span>
-					<div class="txt">私も今どうもその約束人</div>
-					<div class="title">安心の実績</div>
-				</a>
-			</div>
-		</div><!--.intro-->
-
-		<section class="reason contents">
-			<div class="twelvecol col last titleSection">
-				<h3>エコランドが選ばれる理由</h3>
 			</div>
 			<div class="fourcol col">
 				<span class="icon-moneybag"></span>
@@ -209,12 +156,16 @@ get_header();
 					<small id="reasonAppe2">※2 2014年のお客様アンケート集計結果より。</small>
 				</p>
 			</div>
-		</section><!--.reason-->
+		<!--.lpIntro--></div>
 
-		<section class="ex contents" id="lpPrice">
+		<section class="contents lpCharge">
 			<div class="twelvecol col last titleSection">
 				<h3>明確な料金体系</h3>
+				<p class="footnote al_c">
+					<small>※すべて税込価額です。</small>
+				</p>
 			</div>
+
 			<ul class="priceEx">
 				<li class="twocol col">
 					<p class="title">基本料金</p>
@@ -238,516 +189,521 @@ get_header();
 				</li>
 				<li class="fourcol col last">
 					<p class="title">合計料金</p>
-					<p><span class="price">10,880</span></p>
+					<p><span class="price">11,880</span></p>
 				</li>
 			</ul><!--priceEx-->
-			<div class="tabs">
-				<section class="tabContents" id="basicCharges">
-					<div class="linkMenu twelvecol col last">
-						<h4><a href="#basicCharges">基本料金</a></h4>
-						<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
-						<div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
-						<div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+
+			<section class="tabContents" id="basicCharges">
+				<div class="linkMenu twelvecol col last">
+					<h4><a href="#basicCharges">基本料金</a></h4>
+					<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
+					<div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+					<div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+				</div>
+				<div class="twelvecol col last listCharge">
+					<table>
+						<tbody>
+							<tr>
+								<th><h5>基本料金</h5></th>
+								<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
+								<td>3,240円</td>
+							</tr>
+							<tr>
+								<th><h5>地域料金</h5></th>
+								<td>一部の対応エリア訪問の際に頂戴している料金です。</td>
+								<td>4,320円</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			<!--#basicCharges--></section>
+
+			<section class="tabContents" id="itemCharges">
+				<div class="linkMenu twelvecol col last">
+					<div class="tab"><a href="#basicCharges">基本料金</a></div>
+					<h4><a href="#itemCharges">物品ごとの料金</a></h4>
+					<div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+					<div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+				</div>
+				<div class="twelvecol col last">
+					<p>エコ回収の際に必要となるお品物ごとの料金です。電化製品などは一般的なサイズによってあらかじめ料金ランクが決まっています。<br />棚やテーブルなどお品物ごとにサイズが違うモノに関しては幅・奥行・高さの和で料金ランクが決まります。<sup>※1</sup></p>
+					<p class="footnote">
+						<small>※1 金庫やエレクトーンなど重量のあるモノは重量によって料金ランクが決まります。</small>
+					</p>
+				</div>
+				<div id="electricApp" class="itemChargesDetails">
+					<div class="twelvecol col last">
+						<h5>各家電・パソコンのサイズ別料金</h5>
 					</div>
-					<div class="twelvecol col last chargeList">
+					<div class="fourcol col rankCharge">
+						<span class="icon-tv2"></span>
+						<h6>テレビ</h6>
 						<table>
 							<tbody>
 								<tr>
-									<th><h5>基本料金</h5></th>
-									<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
+									<th>20インチ以下</th>
+									<td>Fランク</td>
 									<td>3,240円</td>
 								</tr>
 								<tr>
-									<th><h5>地域料金</h5></th>
-									<td>一部の対応エリア訪問の際に頂戴している料金です。</td>
+									<th>21-25インチ</th>
+									<td>Gランク</td>
 									<td>4,320円</td>
 								</tr>
-							</tbody>
-						</table>
-					</div>
-				</section><!--#basicCharges-->
-
-				<section class="tabContents" id="itemCharges">
-					<div class="linkMenu twelvecol col last">
-						<div class="tab"><a href="#basicCharges">基本料金</a></div>
-						<h4><a href="#itemCharges">物品ごとの料金</a></h4>
-						<div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
-						<div class="tab"><a href="#optionsCharges">オプション料金</a></div>
-					</div>
-					<div class="twelvecol col last">
-						<p>エコ回収の際に必要となるお品物ごとの料金です。電化製品などは一般的なサイズによってあらかじめ料金ランクが決まっています。<br />棚やテーブルなどお品物ごとにサイズが違うモノに関しては幅・奥行・高さの和で料金ランクが決まります。<sup>※1</sup></p>
-					</div>
-					<div id="electricApp" class="twelvecol col last itemChargesDetails">
-						<h5>各家電・パソコンのサイズ別料金</h5>
-						<div class="liquidLayout">
-							<div class="item">
-								<span class="icon-tv2"></span>
-								<h6>テレビ</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>20インチ以下</th>
-											<td>Fランク</td>
-											<td>3,240円</td>
-										</tr>
-										<tr>
-											<th>21-25インチ</th>
-											<td>Gランク</td>
-											<td>4,320円</td>
-										</tr>
-										<tr>
-											<th>26-30インチ</th>
-											<td>Hランク</td>
-											<td>5,940円</td>
-										</tr>
-										<tr>
-											<th>31インチ以上</th>
-											<td>Iランク</td>
-											<td>7,560円</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!--item TV-->
-							<div class="item">
-								<span class="icon-refrigerator"></span>
-								<h6>冷蔵庫<sup>※2</sup></h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>100リットル未満</th>
-											<td>Gランク</td>
-											<td>4,320円</td>
-										</tr>
-										<tr>
-											<th>200リットル未満</th>
-											<td>Hランク</td>
-											<td>5,940円</td>
-										</tr>
-										<tr>
-											<th>400リットル未満</th>
-											<td>Iランク</td>
-											<td>7,560円</td>
-										</tr>
-										<tr>
-											<th>500リットル未満</th>
-											<td>Jランク</td>
-											<td>9,720円</td>
-										</tr>
-										<tr>
-											<th>500リットル以上</th>
-											<td>Kランク</td>
-											<td>12,960円</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!--item refrigerate-->
-							<div class="item">
-								<span class="icon-airconditioner"></span>
-								<h6>エアコン</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>窓用エアコン</th>
-											<td>Fランク</td>
-											<td>3,240円</td>
-										</tr>
-										<tr>
-											<th>エアコン(室外機付)</th>
-											<td>Hランク</td>
-											<td>5,940円</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!--item air airconditioner-->
-							<div class="item">
-								<span class="icon-washingmachine"></span>
-								<h6>洗濯機</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>洗濯機 8.0㎏以下</th>
-											<td>Gランク</td>
-											<td>4,320円</td>
-										</tr>
-										<tr>
-											<th>ドラム式洗濯乾燥機</th>
-											<td>Hランク</td>
-											<td>5,940円</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!--item washingmachine-->
-							<div class="item">
-								<span class="icon-clothesdryer"></span>
-								<h6>衣類乾燥機</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>全サイズ</th>
-											<td>Fランク</td>
-											<td>3,240円</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!--item clothesdryer-->
-							<div class="item">
-								<span class="icon-laptop"></span>
-								<h6>パソコン</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>デスクトップ本体</th>
-											<td>Bランク</td>
-											<td>1,080円</td>
-										</tr>
-										<tr>
-											<th>ノートパソコン</th>
-											<td>Bランク</td>
-											<td>1,080円</td>
-										</tr>
-										<tr>
-											<th>一体型パソコン</th>
-											<td>Dランク</td>
-											<td>2,160円</td>
-										</tr>
-										<tr>
-											<th>モニタ(液晶/ブラウン管)</th>
-											<td>Cランク</td>
-											<td>1,620円</td>
-										</tr>
-										<tr>
-											<th>マウス・キーボード</th>
-											<td>Aランク</td>
-											<td>540円</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!--item laptop-->
-						</div>
-						<p class="footnote">
-							<small>※1 金庫やエレクトーンなど重量のあるモノは重量によって料金ランクが決まります。</small>
-							<small>※2 すべて冷凍含サイズです。</small>
-						</p>
-					</div><!--#itemCharges #electricApp-->
-
-					<div id="itemRank" class="twelvecol col last itemChargesDetails">
-						<h5>各品物別ランク料金</h5>
-						<div class="liquidLayout">
-							<div class="item">
-								<h6>A ランク 540円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>50㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>1kg以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">炊飯器、ミキサー、オーブントースター、サッカーボール、ビデオカメラ等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>B ランク 1,080円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>90㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>2㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">加湿器、縦型掃除機、ダイニングチェア、ノートパソコン、パソコン本体、布団、ガステーブル(2口)、ＤＶＤプレーヤー、ギター等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>C ランク 1,620円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>150㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>5㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">カラーBOX(3段)、姿見、空気清浄器、スキー板等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>D ランク 2,160円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>180㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>10㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">デスクチェア、こたつ、電子レンジ、ミニコンポ、一体型パソコン等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>E ランク 2,700円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>210㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>15㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">家庭用複合機、ホットカーペット、レッグマジック、ステッパー等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>F ランク 3,240円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>270㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>20㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">レンジ台、オイルヒーター、電子キーボード等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>G ランク 4,320円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>300㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>30㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">自転車、ダイニングセット(二人用)、エアロバイク等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>H ランク 5,940円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>360㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>40㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">A3レーザープリンタ、ウッドカーペット等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>I ランク 7,560円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>400㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>50㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">足踏みミシン、ダイニングセット(四人用)、白黒業務用コピー機</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>J ランク 9,720円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>450㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>60㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">エレクトーン、大型マッサージ機等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="item">
-								<h6>K ランク 12,960円</h6>
-								<table>
-									<tbody>
-										<tr>
-											<th>縦・横・奥行の合計</th>
-											<td>500㎝以下</td>
-										</tr>
-										<tr>
-											<th>重さ</th>
-											<td>70㎏以下</td>
-										</tr>
-										<tr>
-											<td colspan="2" class="itemEx">電子ピアノ、介護ベッド等</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div><!--#itemCharges #itemRank-->
-				</section><!--#itemCharges-->
-
-				<section class="tabContents" id="spworksCharges">
-					<div class="linkMenu twelvecol col last">
-						<div class="tab"><a href="#basicCharges">基本料金</a></div>
-						<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
-						<h4><a href="#spworksCharges">特殊作業料金</a></h4>
-						<div class="tab"><a href="#optionsCharges">オプション料金</a></div>
-					</div>
-					<div class="twelvecol col last chargeList">
-						<p>エコ回収をするうえで必要な作業に対して頂戴する料金です。お客様自身で作業を行って頂ければ料金は頂戴致しません。</p>
-						<table>
-							<tbody>
 								<tr>
-									<th><h5>外階段作業</h5></th>
-									<td>集合住宅の共有スペースや戸建の屋外に設置されている階段を利用して行う作業です。</td>
-									<td>540円/階</td>
+									<th>26-30インチ</th>
+									<td>Hランク</td>
+									<td>5,940円</td>
 								</tr>
 								<tr>
-									<th><h5>内階段作業</h5></th>
-									<td>戸建、メゾネットなど室内にある階段を利用して行う作業です。</td>
-									<td>2,160円/階</td>
-								</tr>
-								<tr>
-									<th><h5>解体作業</h5></th>
-									<td>ベッドフレームや大型クローゼットなどの解体を行います。10分1,080円が目安となります。 </td>
-									<td>1,080円/10分</td>
-								</tr>
-								<tr>
-									<th><h5>吊り下ろし作業</h5></th>
-									<td>お部屋の中の階段を通らない大型家具などをベランダや窓から外に運び出す作業です。</td>
-									<td>11,880 / 円</td>
-								</tr>
-								<tr>
-									<th><h5>養生作業</h5></th>
-									<td>集合住宅の共有スペース(エレベーター周りやエントランスなど)を保護するためにプラスチックのシートを壁や床に貼る作業です。作業量により、料金が変動致します。お住まいの集合住宅によっては、数点のお運び出しの場合もこちらの作業が必要になりますので、事前にご確認ください。</td>
-									<td>1,080円～</td>
-								</tr>
-								<tr>
-									<th><h5>エアコン取り外し工事</h5></th>
-									<td>お住まいに設置されているエアコンの室内機と室外機を取り外す工事です。室外機の設置場所や設置方法(床置き、天井吊りなど)により料金が異なります。</td>
-									<td>9,720円/台～</td>
+									<th>31インチ以上</th>
+									<td>Iランク</td>
+									<td>7,560円</td>
 								</tr>
 							</tbody>
 						</table>
-						<div class="footnote">
-							<p><small>※ 1) お品物ごとに作業料金が適用されます。 料金ランクがFランク以上のお品物のみが適用対象になります。</small></p>
-							<p><small>※ 2) お品物ごとに作業料金が適用されます。 料金ランクがFランク以上のお品物のみが適用対象になります。</small></p>
-							<p><small>※ 3) お品物ごとに作業料金が適用されます。</small></p>
-						</div>
 					</div>
-				</section><!--#spworksCharges-->
-
-				<section class="tabContents" id="optionsCharges">
-					<div class="linkMenu twelvecol col last">
-						<div class="tab"><a href="#basicCharges">基本料金</a></div>
-						<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
-						<div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
-						<h4><a href="#optionsCharges">オプション料金</a></h4>
-					</div>
-					<div class="twelvecol col last chargeList">
-						<p>お客様のご希望により自由に選択して頂けるサービスの料金です。</p>
+					<!--fourcol TV-->
+					<div class="fourcol col rankCharge">
+						<span class="icon-refrigerator"></span>
+						<h6>冷蔵庫<sup>※1</sup></h6>
 						<table>
 							<tbody>
 								<tr>
-									<th><h5>時間帯指定サービス</h5></th>
-									<td colspan="2">3時間枠でお時間帯をご指定頂けます。(お時間枠：9～12時、11～14時、13～16時、15～18時)</td>
+									<th>100リットル未満</th>
+									<td>Gランク</td>
+									<td>4,320円</td>
+								</tr>
+								<tr>
+									<th>200リットル未満</th>
+									<td>Hランク</td>
+									<td>5,940円</td>
+								</tr>
+								<tr>
+									<th>400リットル未満</th>
+									<td>Iランク</td>
+									<td>7,560円</td>
+								</tr>
+								<tr>
+									<th>500リットル未満</th>
+									<td>Jランク</td>
+									<td>9,720円</td>
+								</tr>
+								<tr>
+									<th>500リットル以上</th>
+									<td>Kランク</td>
+									<td>12,960円</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--fourcol refrigerate-->
+					<div class="fourcol col rankCharge last">
+						<span class="icon-laptop"></span>
+						<h6>パソコン</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>デスクトップ本体</th>
+									<td>Bランク</td>
 									<td>1,080円</td>
 								</tr>
 								<tr>
-									<th><h5>当日集荷サービス</h5></th>
-									<td colspan="2">受付日当日にお伺いさせて頂くサービスです。</td>
+									<th>ノートパソコン</th>
+									<td>Bランク</td>
+									<td>1,080円</td>
+								</tr>
+								<tr>
+									<th>一体型パソコン</th>
+									<td>Dランク</td>
 									<td>2,160円</td>
 								</tr>
 								<tr>
-									<th><h5>夜間指定サービス</h5></th>
-									<td colspan="2">18時～20時の間でお伺いさせて頂くサービスです。</td>
+									<th>モニタ(液晶/ブラウン管)</th>
+									<td>Cランク</td>
+									<td>1,620円</td>
+								</tr>
+								<tr>
+									<th>マウス・キーボード</th>
+									<td>Aランク</td>
+									<td>540円</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--fourcol laptop-->
+					<div class="fourcol col rankCharge">
+						<span class="icon-airconditioner"></span>
+						<h6>エアコン</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>窓用エアコン</th>
+									<td>Fランク</td>
 									<td>3,240円</td>
 								</tr>
 								<tr>
-									<th><h5>レディースサービス</h5></th>
-									<td colspan="2">女性スタッフによるお伺いをお約束致します。</td>
-									<td>1,080円</td>
-								</tr>
-								<tr>
-									<th rowspan="2"><h5>目の前あんしんデータ消去サービス</h5></th>
-									<td rowspan="2">お客様の目の前でパソコンからハードディスクを取り出し、物理的に破壊するサービスです。  </td>
-									<td class="split">デスクトップ本体</td>
-									<td>2,160円</td>
-								</tr>
-								<tr>
-									<td class="split">ノートPC / 一体型PC</td>
-									<td> 4,320円</td>
+									<th>エアコン(室外機付)</th>
+									<td>Hランク</td>
+									<td>5,940円</td>
 								</tr>
 							</tbody>
 						</table>
-						<div class="footnote">
-							<p><small>※ 1) ご指定がない場合はご訪問前日の18～21時の間にお伺い予定時間を3時間枠でご連絡致します。</small></p>
-							<p><small>※ 2) ご予約状況により、承ることができない可能性もございますので、あらかじめご了承ください。</small></p>
-							<p><small>※ 3) 女性1名、男性1名でのお伺いになります。 女性のお客様対象のサービスです。</small></p>
-							<p><small>※ 4) こちらのサービスをご希望されない場合はセンターに持ち帰ってデータ消去を行います。</small></p>
-						</div>
 					</div>
-				</section><!--#optionsCharges-->
-			</div><!-- .tabs -->
-		</section><!--.ex-->
+					<!--fourcol air airconditioner-->
+					<div class="fourcol col rankCharge">
+						<span class="icon-washingmachine"></span>
+						<h6>洗濯機</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>洗濯機 8.0㎏以下</th>
+									<td>Gランク</td>
+									<td>4,320円</td>
+								</tr>
+								<tr>
+									<th>ドラム式洗濯乾燥機</th>
+									<td>Hランク</td>
+									<td>5,940円</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--fourcol washingmachine-->
+					<div class="fourcol col rankCharge last">
+						<span class="icon-clothesdryer"></span>
+						<h6>衣類乾燥機</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>全サイズ</th>
+									<td>Fランク</td>
+									<td>3,240円</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--fourcol clothesdryer-->
+					<div class="twelvecol col last">
+						<p class="footnote">
+							<small>※1 すべて冷凍含サイズです。</small>
+						</p>
+					</div>
+				</div><!--#itemCharges #electricApp-->
 
+				<div id="itemRank" class="itemChargesDetails">
+					<div class="twelvecol col last">
+						<h5>各品物別ランク料金</h5>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>A ランク 540円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>50㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>1kg以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">炊飯器、ミキサー、オーブントースター、サッカーボール、ビデオカメラ等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>B ランク 1,080円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>90㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>2㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">加湿器、縦型掃除機、ダイニングチェア、ノートパソコン、パソコン本体、布団、ガステーブル(2口)、ＤＶＤプレーヤー、ギター等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>C ランク 1,620円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>150㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>5㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">カラーBOX(3段)、姿見、空気清浄器、スキー板等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge last">
+						<h6>D ランク 2,160円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>180㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>10㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">デスクチェア、こたつ、電子レンジ、ミニコンポ、一体型パソコン等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>E ランク 2,700円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>210㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>15㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">家庭用複合機、ホットカーペット、レッグマジック、ステッパー等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>F ランク 3,240円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>270㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>20㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">レンジ台、オイルヒーター、電子キーボード等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>G ランク 4,320円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>300㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>30㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">自転車、ダイニングセット(二人用)、エアロバイク等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge last">
+						<h6>H ランク 5,940円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>360㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>40㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">A3レーザープリンタ、ウッドカーペット等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>I ランク 7,560円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>400㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>50㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">足踏みミシン、ダイニングセット(四人用)、白黒業務用コピー機</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>J ランク 9,720円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>450㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>60㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">エレクトーン、大型マッサージ機等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col rankCharge">
+						<h6>K ランク 12,960円</h6>
+						<table>
+							<tbody>
+								<tr>
+									<th>縦・横・奥行の合計</th>
+									<td>500㎝以下</td>
+								</tr>
+								<tr>
+									<th>重さ</th>
+									<td>70㎏以下</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="itemEx">電子ピアノ、介護ベッド等</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="threecol col last"></div>
+				</div><!--#itemCharges #itemRank-->
+			</section><!--#itemCharges-->
 
+			<section class="tabContents" id="spworksCharges">
+				<div class="linkMenu twelvecol col last">
+					<div class="tab"><a href="#basicCharges">基本料金</a></div>
+					<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
+					<h4><a href="#spworksCharges">特殊作業料金</a></h4>
+					<div class="tab"><a href="#optionsCharges">オプション料金</a></div>
+				</div>
+				<div class="twelvecol col last listCharge">
+					<p>エコ回収をするうえで必要な作業に対して頂戴する料金です。お客様自身で作業を行って頂ければ料金は頂戴致しません。</p>
+					<table>
+						<tbody>
+							<tr>
+								<th><h5>外階段作業</h5><sup>※1 ※2</sup></th>
+								<td>集合住宅の共有スペースや戸建の屋外に設置されている階段を利用して行う作業です。</td>
+								<td>540円/階</td>
+							</tr>
+							<tr>
+								<th><h5>内階段作業</h5><sup>※1 ※2</sup></th>
+								<td>戸建、メゾネットなど室内にある階段を利用して行う作業です。</td>
+								<td>2,160円/階</td>
+							</tr>
+							<tr>
+								<th><h5>解体作業</h5><sup>※1</sup></th>
+								<td>ベッドフレームや大型クローゼットなどの解体を行います。10分1,080円が目安となります。 </td>
+								<td>1,080円/10分</td>
+							</tr>
+							<tr>
+								<th><h5>吊り下ろし作業</h5><sup>※1</sup></th>
+								<td>お部屋の中の階段を通らない大型家具などをベランダや窓から外に運び出す作業です。</td>
+								<td>11,880 / 円</td>
+							</tr>
+							<tr>
+								<th><h5>養生作業</h5></th>
+								<td>集合住宅の共有スペース(エレベーター周りやエントランスなど)を保護するためにプラスチックのシートを壁や床に貼る作業です。作業量により、料金が変動致します。お住まいの集合住宅によっては、数点のお運び出しの場合もこちらの作業が必要になりますので、事前にご確認ください。</td>
+								<td>1,080円～</td>
+							</tr>
+							<tr>
+								<th><h5>エアコン取り外し工事</h5></th>
+								<td>お住まいに設置されているエアコンの室内機と室外機を取り外す工事です。室外機の設置場所や設置方法(床置き、天井吊りなど)により料金が異なります。</td>
+								<td>9,720円/台～</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="footnote">
+						<p>
+							<small>※1 お品物ごとに作業料金が適用されます。</small>
+							<small>※2 料金ランクがFランク以上のお品物のみが適用対象になります。</small>
+							<small>※3 お品物ごとに作業料金が適用されます。</small>
+						</p>
+					</div>
+				</div>
+			</section><!--#spworksCharges-->
 
+			<section class="tabContents" id="optionsCharges">
+				<div class="linkMenu twelvecol col last">
+					<div class="tab"><a href="#basicCharges">基本料金</a></div>
+					<div class="tab"><a href="#itemCharges">物品ごとの料金</a></div>
+					<div class="tab"><a href="#spworksCharges">特殊作業料金</a></div>
+					<h4><a href="#optionsCharges">オプション料金</a></h4>
+				</div>
+				<div class="twelvecol col last listCharge">
+					<p>お客様のご希望により自由に選択して頂けるサービスの料金です。</p>
+					<table>
+						<tbody>
+							<tr>
+								<th><h5>時間帯指定サービス</h5><sup>※1</sup></th>
+								<td colspan="2">3時間枠でお時間帯をご指定頂けます。(お時間枠：9～12時、11～14時、13～16時、15～18時)</td>
+								<td>1,080円</td>
+							</tr>
+							<tr>
+								<th><h5>当日集荷サービス</h5><sup>※2</sup></th>
+								<td colspan="2">受付日当日にお伺いさせて頂くサービスです。</td>
+								<td>2,160円</td>
+							</tr>
+							<tr>
+								<th><h5>夜間指定サービス</h5></th>
+								<td colspan="2">18時～20時の間でお伺いさせて頂くサービスです。</td>
+								<td>3,240円</td>
+							</tr>
+							<tr>
+								<th><h5>レディースサービス</h5><sup>※3</sup></th>
+								<td colspan="2">女性スタッフによるお伺いをお約束致します。</td>
+								<td>1,080円</td>
+							</tr>
+							<tr>
+								<th rowspan="2"><h5>目の前あんしんデータ消去サービス</h5><sup>※4</sup></th>
+								<td rowspan="2">お客様の目の前でパソコンからハードディスクを取り出し、物理的に破壊するサービスです。  </td>
+								<td class="split">デスクトップ本体</td>
+								<td>2,160円</td>
+							</tr>
+							<tr>
+								<td class="split">ノートPC / 一体型PC</td>
+								<td> 4,320円</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="footnote">
+						<p>
+							<small>※1 ご指定がない場合はご訪問前日の18～21時の間にお伺い予定時間を3時間枠でご連絡致します。</small>
+							<small>※2 ご予約状況により、承ることができない可能性もございますので、あらかじめご了承ください。</small>
+							<small>※3 女性1名、男性1名でのお伺いになります。 女性のお客様対象のサービスです。</small>
+							<small>※4 こちらのサービスをご希望されない場合はセンターに持ち帰ってデータ消去を行います。</small>
+						</p>
+					</div>
+				</div>
+			</section><!--#optionsCharges-->
+		</section><!--.lpCharge-->
 
 		<section class="purchase contents">
 			<div class="twelvecol col last titleSection">
@@ -773,7 +729,7 @@ get_header();
 				</dl>
 			</div>
 			<div class="threecol col">
-				<h4>家電</h4>
+				<h4>楽器</h4>
 				<dl>
 					<dt>対象品例</dt>
 					<dd>エレクトーン、電子ピアノ、ギター、キーボード、ベースなど</dd>
@@ -782,7 +738,7 @@ get_header();
 				</dl>
 			</div>
 			<div class="threecol col last">
-				<h4>家電</h4>
+				<h4>パソコン</h4>
 				<dl>
 					<dt>対象品例</dt>
 					<dd>デスクトップ本体、液晶モニタ、ノートパソコン</dd>
@@ -790,11 +746,13 @@ get_header();
 					<dd>初期化できるもの、OS、型番</dd>
 				</dl>
 			</div>
-			<div class="twelvecol col last"><p class="footnote"><small>※お品物やエリアによって買取のみではお伺いできない場合もございます。詳しくはお問い合わせください。</small></p></div>
+			<div class="twelvecol col last">
+				<p class="footnote"><small>※お品物やエリアによって買取のみではお伺いできない場合もございます。詳しくはお問い合わせください。</small></p>
+			</div>
 		</section><!-- .purchase -->
 
 
-		<section class="estimates contents">
+		<section class="quality contents">
 			<div class="twelvecol col last titleSection"><h3>事前見積&スピード対応</h3></div>
 			<div class="strongPointDetail">
 				<div class="sixcol col">
@@ -822,39 +780,115 @@ get_header();
 			<div class="listStaff twelvecol col">
 				<h4>私たちがまいります</h4>
 				<div class="owl-carousel owl-theme owl">
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_kurahashi.jpg"></div><span class="block">倉橋 瑛子</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_shinki.jpg"></div><span class="block">新木 千晴</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_tanomi.jpg"></div><span class="block">田野實 温代</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_tsutsumiya.jpg"></div><span class="block">堤谷 美里</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_iwasaki.jpg"></div><span class="block">岩崎 愛華</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_nagahiro.jpg"></div><span class="block">永廣 亜沙美</span></div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_kurahashi.jpg" alt="" /></div>
+						<span class="block">倉橋 瑛子</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_shinki.jpg" alt="" /></div>
+						<span class="block">新木 千晴</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_tanomi.jpg" alt="" /></div>
+						<span class="block">田野實 温代</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_tsutsumiya.jpg" alt="" /></div>
+							<span class="block">堤谷 美里</span>
+						</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_iwasaki.jpg" alt="" /></div>
+						<span class="block">岩崎 愛華</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_nagahiro.jpg" alt="" /></div>
+						<span class="block">永廣 亜沙美</span>
+					</div>
 				</div>
 			</div>
 			<div class="listStaff twelvecol col last">
 				<h4>私たちがうかがいます</h4>
 				<div class="owl-carousel owl-theme owl">
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_ushio.jpg"></div><span class="block">潮 恵輔</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_miyazaki.jpg"></div><span class="block">宮崎 美穂</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_watanabe.jpg"></div><span class="block">渡辺 愛美</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yanashima.jpg"></div><span class="block">梁島 さゆり</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_goto.jpg"></div><span class="block">後藤 拓</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_m.jpg"></div><span class="block">星 祐太</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamashita.jpg"></div><span class="block">山下 恭平</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_kaneko.jpg"></div><span class="block">金子 拓矢</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sasaki.jpg"></div><span class="block">佐々木 健</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sato.jpg"></div><span class="block">佐藤 一樹</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_f.jpg"></div><span class="block">星 奈緒美</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamamoto.jpg"></div><span class="block">山本 紘亮</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_oomori.jpg"></div><span class="block">大森 太一</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sanada.jpg"></div><span class="block">眞田 清道</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_okamura.jpg"></div><span class="block">岡村 駿太</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_iwashima.jpg"></div><span class="block">岩島 正明</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_tokura.jpg"></div><span class="block">十倉 淳</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_shimura.jpg"></div><span class="block">志村 昭</span></div>
-					<div class="item"><div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_murooka.jpg"></div><span class="block">室岡 誠</span></div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_ushio.jpg" alt="" /></div>
+						<span class="block">潮 恵輔</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_miyazaki.jpg" alt="" /></div>
+						<span class="block">宮崎 美穂</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_watanabe.jpg" alt="" /></div>
+						<span class="block">渡辺 愛美</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yanashima.jpg" alt="" /></div>
+						<span class="block">梁島 さゆり</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_goto.jpg" alt="" /></div>
+						<span class="block">後藤 拓</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_m.jpg" alt="" /></div>
+						<span class="block">星 祐太</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamashita.jpg" alt="" /></div>
+						<span class="block">山下 恭平</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_kaneko.jpg" alt="" /></div>
+						<span class="block">金子 拓矢</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sasaki.jpg" alt="" /></div>
+						<span class="block">佐々木 健</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sato.jpg" alt="" /></div>
+						<span class="block">佐藤 一樹</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_hoshi_f.jpg" alt="" /></div>
+						<span class="block">星 奈緒美</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yamamoto.jpg" alt="" /></div>
+						<span class="block">山本 紘亮</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_oomori.jpg" alt="" /></div>
+						<span class="block">大森 太一</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_sanada.jpg" alt="" /></div>
+						<span class="block">眞田 清道</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_okamura.jpg" alt="" /></div>
+						<span class="block">岡村 駿太</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_iwashima.jpg" alt="" /></div>
+						<span class="block">岩島 正明</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_tokura.jpg" alt="" /></div>
+						<span class="block">十倉 淳</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_shimura.jpg" alt="" /></div>
+						<span class="block">志村 昭</span>
+					</div>
+					<div class="staff">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_murooka.jpg" alt="" /></div>
+						<span class="block">室岡 誠</span>
+					</div>
+
 				</div>
 			</div>
-		</section><!-- .estimates -->
+		</section><!-- .quality  -->
 
 		<section class="achive contents">
 			<div class="twelvecol col last titleSection">
@@ -866,9 +900,9 @@ get_header();
 					<p>明確な料金体系やエコ回収後までしっかり責任を持ってリユース・リサイクルを行う仕組みに共感して頂き、<br />エコランドは60社以上の優良企業様と提携・協力をさせて頂いております。</p>
 				</div>
 				<ul class="listColl">
-					<li class="fourcol col"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/G_1_東急ベル.gif" alt="東急ベル" /></li>
-					<li class="fourcol col"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/G_2_logotype01_01.gif"alt="Duck!ダック引越センター" /></li>
-					<li class="fourcol col last"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/G_3_150111_プラウドオーナーず.jpg"alt="_プラウドオーナーズ" /></li>
+					<li class="fourcol col"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_coll_img_01.gif" alt="東急ベル" /></li>
+					<li class="fourcol col"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_coll_img_02.gif" alt="Duck!ダック引越センター" /></li>
+					<li class="fourcol col last"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_coll_img_03.jpg" alt="_プラウドオーナーズ" /></li>
 				</ul>
 			</div>
 			<div class="achiveContents">
@@ -877,33 +911,33 @@ get_header();
 					<p>エコランドのエコ回収やお片づけサービスはこれまで多くのメディアに取り上げられました。</p>
 				</div>
 				<div id="owlMedia" class="owl-carousel owl-theme">
-					<div class="item">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/150126_1.jpg"></div>
+					<div class="media">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_media_img_01.jpg" alt="" /></div>
 						<h5>理念と経営 <span class="block small">2014年01月10日</span></h5>
 						<p>2014年1月10日、「理念と経営2月号」の特集にエコランドを運営する株式会社ウインローダーについて掲載して頂きました！</p>
 					</div>
-					<div class="item">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/150126_2.jpg"></div>
+					<div class="media">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_media_img_02.jpg" alt="" /></div>
 						<h5>日経ウーマン <span class="block small">2013年08月05日</span></h5>
 						<p>2013年8月5日発行の日経ウーマン別冊に、エコランドの整理収納アドバイザー星が登場致しました！</p>
 					</div>
-					<div class="item">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/150126_3.jpg"></div>
+					<div class="media">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_media_img_03.jpg" alt="" /></div>
 						<h5>サンキュ！<span class="block small">2013年05月01日</span></h5>
 						<p>2013年5月1日発売の「サンキュ！6月号」に、エコランドのお片づけサービスが掲載されました！</p>
 					</div>
-					<div class="item">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/150126_4.jpg"></div>
+					<div class="media">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_media_img_04.jpg" alt="" /></div>
 						<h5>ガイアの夜明け <span class="block small">2011年12月20日</span></h5>
 						<p>2011年12月20日、エコランドのお片づけサービスについてガイアの夜明けで紹介して頂きました！</p>
 					</div>
-					<div class="item">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/150126_5.jpg"></div>
+					<div class="media">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_media_img_05.jpg" alt="" /></div>
 						<h5>トコトンハテナ <span class="block small">2010年1月24日</span></h5>
 						<p>2010年1月24日放送の、テレビ東京【トコトンハテナ】もりちえみさんが年末のエコ回収に密着取材！</p>
 					</div>
-					<div class="item">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/150126_6.png"></div>
+					<div class="media">
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpAchi_media_img_06.jpg"></div>
 						<h5>東京カワイイ☆ＴＶ <span class="block small">2010年1月23日</span></h5>
 						<p>1月23日・30日放送のNHK【東京カワイイ☆TV】に俳優の沢村一樹さん・歌手のBENIさんがエコランドに!</p>
 					</div>
@@ -919,26 +953,28 @@ get_header();
 				<li class="threecol col">
 					<span class="icon-number"></span>
 					<h4>見積もり依頼</h4>
-					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step1.jpg">
-					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpFlow_img_01.jpg" alt="" />
+					<p>HPで、詳しく料金がわかります。そのままお申し込みもできます。お急ぎの方はコールセンターまでお電話ください。きちんとご料金を案内します。</p>
+					<p><a href="http://www.eco-kaishu.jp/wp-content/themes/ecokaishu/assets/pdf/%E9%9B%86%E8%8D%B7%E8%A6%8B%E7%A9%8D.pdf" target="_blank">集荷見積書の例</a></p>
+
 				</li>
 				<li class="threecol col">
 					<span class="icon-number2"></span>
 					<h4>集荷</h4>
-					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step2.jpg">
-					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpFlow_img_02.jpg" alt="" />
+					<p>到着前にお電話で確認のうえ、お伺いします。お部屋を傷つけないよう、てきぱきとまとめて運びだします。</p>
 				</li>
 				<li class="threecol col">
 					<span class="icon-number3"></span>
 					<h4>お支払い</h4>
-					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step3.jpg">
-					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpFlow_img_03.jpg" alt="" />
+					<p>作業終了後、現金またはクレジットカードにてご清算いただきます。お見積額から料金が変わることはありません。</p>
 				</li>
 				<li class="threecol col last">
 					<span class="icon-number4"></span>
 					<h4>エコオク</h4>
-					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/area/step4.jpg">
-					<p>私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
+					<img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpFlow_img_04.jpg" alt="" />
+					<p>エコ回収はすべて独自オークション「エコオク」にその場で出品します。落札額の半額がキャッシュバックされるので、お財布に優しい！そして、とってもエコです。</p>
 				</li>
 			</ul>
 			<div class="twelvecol col last">
@@ -953,72 +989,143 @@ get_header();
 				<div>
 			</div>
 		</section><!-- .flow -->
+
+
 		<section class="voices contents">
 			<div class="twelvecol col last titleSection">
 				<h3>お客様の声</h3>
 			</div>
-			<div class="fivecol col customerProfile">
-				<h4>えこりん様</h4>
-				<span class="new">NEW</span>
-				<dl>
-					<dt class="hide">性別・年代</dt><dd class="name">女性 / 20代</dd>
-					<dt class="hide">回収エリア</dt><dd class="place"><a href="http://www.eco-kaishu.jp/area/%e5%b8%82%e5%b7%9d%e5%b8%82/">千葉県 市川市</a></dd>
-				</dl>
-				<h5 class="info index">エコ回収をご利用になったきっかけ</h5>
-				<ul><li>引越</li></ul>
-				<h5 class="info index">エコランドをお選びになった理由</h5>
-				<ul><li>リユース・リサイクルしている</li><li>料金が安い</li><li>買取対応もしている</li></ul>
-				<h5 class="items index">エコ回収したアイテム</h5>
-				<ul><li><a href="http://www.eco-kaishu.jp/items/%e3%82%bd%e3%83%95%e3%82%a1/">ソファ</a></li><li><a href="http://www.eco-kaishu.jp/items/%e3%83%99%e3%83%83%e3%83%89/">ベッド</a></li><li><a href="http://www.eco-kaishu.jp/items/%e5%86%b7%e8%94%b5%e5%ba%ab/">冷蔵庫</a></li><li><a href="http://www.eco-kaishu.jp/items/%e6%b4%97%e6%bf%af%e6%a9%9f/">洗濯機</a></li></ul>
-				<h5 class="comments index">サービス全体について評価してください</h5>
-				<span class="star star4"></span>
-				<p >私も今どうもその約束人に対してものの所へ出ならた。<br />どうしても事実へ演説院はけっしてどんな就職ですでだけ</p>
-				<p class="footnote p2_t clear al_r"><small>2015-01-28投稿</small></p>
-			</div>
-			<div class="sevencol col last">
-				<ul class="archiveList">
-					<li class="al_c">
-						<a href="#">
-							<div class="">女性 / 20代</div>
-							<div class="">東京都 練馬区</div>
-							<div class="">パソコン、冷蔵庫、デスク</div>
-							<div class=""><span class="star star4"></span></div>
-						</a>
-					</li>
-					<li class="al_c">
-						<a href="#">
-							<div class="">女性 / 20代</div>
-							<div class="">東京都 練馬区</div>
-							<div class="">パソコン、冷蔵庫、デスク</div>
-							<div class=""><span class="star star4"></span></div>
-						</a>
-					</li>
-					<li class="al_c">
-						<a href="#">
-							<div class="">女性 / 20代</div>
-							<div class="">東京都 練馬区</div>
-							<div class="">パソコン、冷蔵庫、デスク</div>
-							<div class=""><span class="star star4"></span></div>
-						</a>
-					</li>
-				</ul>
-			</div>
+			<?php
+			$append = array("アンティーク家具", "ベッド", "掃除機", "書籍", "枕", "洗濯機", "照明", "パソコン", "パソコン周辺機器");
+			$pageTitle = in_array($pageTitle, $append) ? $pageTitle."類" : $pageTitle;
+			$args = array(
+				"post_type" => "voices",
+				"tax_query" => array(
+					"relation" => "and",
+					array(
+						"taxonomy" => "voicekinds",
+						"field" => "slug",
+						"terms" => array("review")
+					),
+					array(
+						"taxonomy" => "cltitems",
+						"field" => "slug",
+						"terms" => array($pageTitle)
+					)
+				)
+			);
+			$args1 = array_merge($args, array("posts_per_page" => 1));
+			$newVoice =  query_posts($args1);
+			foreach($newVoice as $voice){
+				$name = getCustomerName($voice);
+				$sex = getCustomerSex($voice);
+				$age = getCustomerAge($voice);
+				$area = getCustomerAreas($voice, TRUE);
+				$items = getCustomerItems($voice, TRUE, "dd");
+				$date = get_the_date("Y-m-d", $voice->ID);
+				$starts = getCustomerStarts($voice,"dd");
+				$features = getCustomerFeatures($voice, "dd");
+				$review03 = get_post_meta($voice->ID, "voiceInfo17", TRUE);
+				$review03Score = get_post_meta($voice->ID, "voiceInfo16", TRUE);
+				$review03ScoreIndex = getCustomerReview($post, $review03Score);
+
+				echo <<<EOF
+
+
+				<div class="fivecol col customerProfile">
+					<h4>{$name}<span class="small">様より</span></h4>
+					<span class="new">NEW</span>
+					<dl>
+						<dt class="hide">性別・年代</dt><dd class="name">{$sex} / {$age}</dd>
+						<dt class="hide">回収エリア</dt><dd class="place">{$area}</dd>
+					</dl>
+					<h5 class="info index">エコ回収をご利用になったきっかけ</h5>
+					<ul>{$starts}</ul>
+					<h5 class="info index">エコランドをお選びになった理由</h5>
+					<ul>{$features}</ul>
+					<h5 class="items index">エコ回収したアイテム</h5>
+					<ul>{$items}</ul>
+					<h5 class="comments index">エコ回収サービス全体について評価してください。</h5>
+					<p class="rating-foreground star star{$review03Score}">
+						<meta itemprop="rating" content="{$review03Score}" />
+					</p>
+					<p class="m1_t" >{$review03}</p>
+					<p class="footnote p2_t clear al_r"><small>{$date}投稿</small></p>
+				</div>
+
+EOF;
+				}
+
+
+			$args2 = array_merge($args, array("offset" => -1));
+			$voices =  query_posts($args2);
+			if($voices){
+				echo <<<EOF
+					<div class="sevencol col last">
+					<ul class="archiveList">
+EOF;
+				foreach($voices as $voice){
+					$name = getCustomerName($voice);
+					$sex = getCustomerSex($voice);
+					$age = getCustomerAge($voice);
+					$area = getCustomerAreas($voice);
+					$date = date("m/d", strtotime(getCustomerDate($voice)));
+					$items = getCustomerItems($voice);
+					$link = get_permalink($voice->ID);
+					echo <<<EOF
+						<li>
+							<a href="#">
+								<h4>{$name}様</h4>
+								<p>
+									<span class="itemInfo customer">{$sex} / {$age}</span>
+									<span class="itemInfo place">{$area}</span>
+									<span class="itemInfo items">{$items}</span>
+								</p>
+								<p class="rating-foreground star star{$review03Score}"><meta itemprop="rating" content="{$review03Score}" /></p>
+							</a>
+						</li>
+EOF;
+				}
+				if($voices) echo "</ul></div>";
+			}?>
+
 		</section><!-- .flow -->
-		<section class="faq contents">
-			<div class="twelvecol col last titleSection"><h3>よくある質問</h3></div>
+
+		<?php
+		$args = array(
+			"post_type" => "faq",
+			"posts_per_page" => -1,
+			"qstcat" => $post->post_title,
+			"order" => ASC,
+			"orderby" => DATE,
+		);
+		$faqs = query_posts($args);
+		if($faqs): ?>
+			<section class="contents">
+				<div class="twelvecol col last titleSection"><h3>よくある質問</h3></div>
+				<div class="twelvecol col last">
+					<dl class="listFaq">
+					<?php foreach($faqs as $faq): ?>
+						<dt><?php echo $faq->post_title; ?></dt>
+						<dd><?php echo $faq->post_content; ?></dd>
+					<?php endforeach; wp_reset_query();?>
+					</dl>
+				</div>
+			<!-- .faq --></section>
+		<?php endif; ?>
+
+		<section class="listVoices contents ">
 			<div class="twelvecol col last">
+				<div class="titleSection"><h3>口コミ</h3></div>
 				<dl>
-					<dt>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</dt>
-					<dd>まるで大森さんの発展時代まだ相違でしたい一口その倫理それか発展がってご発展たたでないて、そうした今は私か辺科学がしが、張さんののが鈍痛のそれをいやしくもご意味と犯さとあなた他人にご所有で加えるようにどうぞ実安心がさたいですと、どうもけっして混同ができだていです事に命じないた。</dd>
-					<dt>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</dt>
-					<dd>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</dd>
-					<dt>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</dt>
-					<dd>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</dd>
-					<dt>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</dt>
-					<dd>すでに久原さんを交渉演壇ちょっと意見に喜ぶで人その双方私かお話にとかいうご損害です</dd>
+				<?php for($i=0; $i<count($voiceTitles); $i++){
+					echo "<dt>".$voiceTitles[$i]."</dt>";
+					echo "<dd>".$voiceContents[$i]."</dd>";
+				}?>
 				</dl>
 			</div>
-		</section><!-- .faq -->
+		</section>
+
 	<!--.container--></div>
 
 <?php get_footer(); ?>'

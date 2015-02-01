@@ -77,7 +77,7 @@
 
 		// tbody, tfoot
 		//**************************************************************
-		
+
 		tbody, tfoot{
 			display: block;
 			tr{
@@ -86,8 +86,8 @@
 					display: block;
 					padding: 0.5rem 0.2rem;
 					border: none;
-					background: rgba($black, .05);
-					list-style-type: none;					
+					background: rgba($black, .03);
+					list-style-type: none;
 				}
 				td{
 					display: block;
@@ -98,7 +98,7 @@
 					vertical-align: middle;
 					&:not(:last-child){
 						margin: 0.2rem 0;
-						border-bottom: 1px solid rgba($black, .05);
+						border-bottom: 1px dotted $gray;
 					}
 					&:before{
 						display: inline-block;
@@ -217,7 +217,7 @@
 
 	//PC
 	@media all and (min-width: $minWidth){
-		
+
 		//th, td
 		th, td{
 			padding-left: 1.0rem;

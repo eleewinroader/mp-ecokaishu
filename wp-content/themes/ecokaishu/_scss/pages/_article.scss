@@ -236,7 +236,7 @@ h6{
 				&.title{
 					margin-top: 2.0rem;
 					margin-bottom: 1.0rem;
-					font-size: $bigger;
+					font-size: $normal * 1.2;
 				}
 			}
 
@@ -390,6 +390,23 @@ h6{
 	}
 
 }
+
+
+//**********************************************************************
+// .circleTrimming
+//**********************************************************************
+
+.circleTrimming{
+	display: block;
+	overflow: hidden;
+	margin: 0 auto;
+	border: 1px solid rgba($black, .05);
+	@include border-radius(50%);
+	@include box-sizing(border-box);
+	background-color: $white;
+	text-align: center;
+}
+
 
 //**********************************************************************
 // &.article settings

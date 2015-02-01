@@ -10,11 +10,11 @@
 	<div class="footer">
 
 		<?php
-		if(campCode($post)){ 
+		if(campCode($post)){
 			$childrenClass = campCode($post, "children");
 			$pr_code = substr($childrenClass, 7, 11);
 			$pr_code = str_replace("-", "_", $pr_code);
-			$param = "?pr_code=".$pr_code; 
+			$param = "?pr_code=".$pr_code;
 			if($pr_code == "4_00") $ycoll = "2-1";
 		}?>
 
@@ -45,7 +45,7 @@
 			</div>
 		<!--#campaign--></aside>
 
-		<aside id="contactBnr" class="boiler">
+		<!--<aside id="contactBnr" class="boiler">
 			<div class="container">
 				<div class="twelvecol col last">
 					<div class="contact">
@@ -62,7 +62,7 @@
 					</div>
 				</div>
 			</div>
-		</aside>
+		</aside>-->
 		<!--#contactBnr-->
 
 		<aside class="boiler" id="sitePages">
@@ -259,7 +259,7 @@ $(document).ready(function(){
 		}
 		<?php endif; ?>
 
-		
+
 	});
 
 	function checkOffsetContactBnr() {
@@ -283,7 +283,7 @@ $(document).ready(function(){
 
 	// sp menu
 	$(".showSmaller").each(function(){
-			
+
 		var panelId = $(this).attr("data-panel");
 		var panel = $("#"+panelId);
 		var contentId = $(this).attr("data-content");
@@ -291,7 +291,7 @@ $(document).ready(function(){
 
 		panel.html(content); // ex: $("#panelMenu").html($("#contMenu"));
 	});
-	
+
 	//// header
 	// sp main menu btn tap
 	$('#menuBtn').on({
@@ -323,7 +323,7 @@ $(document).ready(function(){
 	<?php endif; ?>
 
 	//owl-slide
-	$("#owl-slide").owlCarousel({ 
+	$("#owl-slide").owlCarousel({
 		navigation : true, // Show next and prev buttons
 		slideSpeed : 500,
 		paginationSpeed : 1000,
@@ -341,9 +341,9 @@ $(document).ready(function(){
 	});
 
 	$("#owlMedia").owlCarousel({
-			items : 4, 
-			itemsDesktop : [1140, 4], 
-			itemsTablet: [600,1], 
+			items : 4,
+			itemsDesktop : [1140, 4],
+			itemsTablet: [600,1],
 			itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
 	});
 

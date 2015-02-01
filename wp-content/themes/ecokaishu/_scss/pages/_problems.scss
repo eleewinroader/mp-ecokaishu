@@ -42,11 +42,11 @@ background-color: $white;
 
 			display: block;
 			margin-bottom: 2rem;
-		
+
 			span:first-child{
 				display: block;
 				margin-bottom: 0.5rem;
-				font-size: 70%;	
+				font-size: 70%;
 			}
 			span:nth-of-type(2){
 				display: block;
@@ -73,14 +73,6 @@ background-color: $white;
 
 .circleTrimming{
 
-	display: block;
-	overflow: hidden;
-	margin: 0 auto;
-	border: 1px solid rgba($black, .1);
-	@include border-radius(50%);
-	@include box-sizing(border-box);
-	background-color: $white;
-
 	//PC
 	@media all and (min-width: $minWidth){
 		width: 240px;
@@ -105,7 +97,7 @@ background-color: $white;
 
 	// #introIllust1, #introIllust2
 	//**************************************************************
-	
+
 	#introIllust1, #introIllust2{
 		display: inline-block;
 		position: absolute;
@@ -199,12 +191,12 @@ background-color: $white;
 
 			li{
 				margin-bottom: 0.5rem;
-				
+
 				a{
 					display: block;
 					padding: 0.5rem;
 					background-color: rgba($gray, .6);
-					border: 1px solid rgba($black, .1); 
+					border: 1px solid rgba($black, .1);
 					text-decoration: none;
 					color: $black;
 
@@ -229,7 +221,7 @@ background-color: $white;
 					display: inline !important;
 				}
 			}
-			
+
 		}
 		#introIllust1{
 			z-index: 1;
@@ -259,7 +251,7 @@ background-color: $white;
 
 	//#pointListLink
 	//**************************************************************
-	
+
 	#pointListLink{
 
 		//ul
@@ -290,7 +282,7 @@ background-color: $white;
 					content: "\e66f";
 				}
 
-				//a 
+				//a
 				a{
 					text-decoration: none;
 					font-weight: normal;
@@ -388,21 +380,11 @@ background-color: $white;
 						border-bottom: 1px solid !important;
 						color: $darkGray;
 					}
-					&[href$=".pdf"]{
-						&:before{
-							display: inline-block;
-							margin-right: 0.2rem;
-							font-size: 90%;
-							font-family: icomoon;
-							speak: none;
-							content: "\ea5b";
-						}
-					}
 				}
 			}
 		}
 	}
-	
+
 	//PC
 	@media all and (min-width: $minWidth){
 
@@ -475,7 +457,7 @@ background-color: $white;
 	ul{
 		display: block;
 		margin: 2.0rem 0;
-		
+
 		//li
 		li{
 			position: relative;
@@ -523,7 +505,7 @@ background-color: $white;
 				display: inline !important;
 			}
 		}
-		
+
 		.col{
 			&:not(:last-of-type){
 				margin-bottom: 4.0rem;

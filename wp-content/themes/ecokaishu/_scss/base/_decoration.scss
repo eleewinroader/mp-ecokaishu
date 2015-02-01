@@ -57,6 +57,21 @@ sup, sub{
 .bg_orange{ padding: 0.1rem; background: rgba($orange, .2) !important; }
 .bg_yellow{ padding: 0.1rem; background: rgba($yellow, .2) !important; }
 
+[href$=".pdf"]{
+	display: inline-block;
+	border-bottom: 1px dotted;
+	text-decoration: none;
+	color: $green;
+	&:before{
+		display: inline-block;
+		margin-right: 0.2rem;
+		font-size: 90%;
+		font-family: icomoon;
+		speak: none;
+		content: "\ea5b";
+	}
+}
+
 .underline{ text-decoration: underline; }
 
 .block{ display: block !important; }
@@ -67,6 +82,9 @@ sup, sub{
 	color: rgba($black, .7) !important;
 	font-size: 80% !important;
 	line-height: 1.2em !important;
+	small {
+		display: block;
+	}
 }
 
 .star{
