@@ -340,7 +340,7 @@ $(document).ready(function(){
 			itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
 	});
 
-	$("#owlMedia").owlCarousel({
+	$("#listMedia").owlCarousel({
 			items : 4,
 			itemsDesktop : [1140, 4],
 			itemsTablet: [600,1],

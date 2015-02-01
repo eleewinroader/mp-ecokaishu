@@ -96,18 +96,18 @@ get_header();
 		<div class="eightcol col last customerVoices">
 			<section class="answer">
 				<h3>エコ回収サービス全体について評価してください。</h3>
-				<span class="rating-foreground star star<?php echo $review03Score; ?>">
+				<p class="rating-foreground star star<?php echo $review03Score; ?>">
 					<meta itemprop="rating" content="<?php echo $review03Score; ?>" />
 					<span class="index"><?php echo getCustomerReview($post, $review03Score); ?></span>
-				</span>
+				</p>
 				<?php echo $review03; ?>
 			<!--answer--></section>
 			<section class="answer">
 				<h3>電話受付・メール対応など、コンシェルジュ<span class="small">(受付スタッフ)</span>の対応はいかがでしたか？</h3>
-				<span class="rating-foreground star star<?php echo $review01Score; ?>">
+				<p class="rating-foreground star star<?php echo $review01Score; ?>">
 					<meta itemprop="rating" content="<?php echo $review01Score; ?>" />
 					<span class="index"><?php echo getCustomerReview($post, $review01Score); ?></span>
-				</span>
+				</p>
 				<?php
 				echo $review01;
 				if(getStaffComments($post, "conciergestaff", $crtUser)){
@@ -122,10 +122,10 @@ get_header();
 			<!--answer--></section>
 			<section class="answer">
 				<h3>当日の集荷スタッフのご対応はいかがでしたか？</h3>
-				<span class="rating-foreground star star<?php echo $review02Score; ?>">
+				<p class="rating-foreground star star<?php echo $review02Score; ?>">
 					<meta itemprop="rating" content="<?php echo $review02Score; ?>" />
 					<span class="index"><?php echo getCustomerReview($post, $review02Score); ?></span>
-				</span>
+				</p>
 				<?php
 				echo $review02;
 				if(getStaffComments($post, "cltstaff", $crtUser)){

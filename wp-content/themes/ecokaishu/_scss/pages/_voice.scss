@@ -335,3 +335,117 @@
 
 
 }
+
+//**********************************************************************
+// .customerProfile
+//**********************************************************************
+
+.customerProfile{
+
+	// a
+	//**************************************************************
+
+	a{
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0.2rem 0.5rem;
+		border: 1px solid rgba($black, .1);
+		background: rgba($black, .05);
+		font-size: 90%;
+		@include border-radius(3px);
+	}
+
+	// ul
+	//**************************************************************
+
+	ul{
+
+		li{
+
+			display: inline-block;
+
+			//&:not(:last-of-type)
+			&:not(:last-of-type){
+				margin-right: 0.5rem;
+			}
+
+		}
+
+	}
+
+	// dl
+	//**************************************************************
+
+	dl{
+
+		//dt
+		dt{
+
+			vertical-align: middle;
+
+			//&:before
+			&:before{
+				@extend .icomoon;
+			}
+
+			//.hide
+			&.hide{ display: none; }
+
+
+		}
+
+
+		//dd
+		dd{
+
+			display: inline-block;
+			vertical-align: middle;
+
+			//&:not(:last-of-type)
+			&:not(:last-of-type){
+				margin-right: 0.5rem;
+			}
+
+			//&:before
+			&:before{
+				@extend .icomoon;
+			}
+			&.name{ &:before{ content: "\e919"; } }
+			&.place{ &:before{ content: "\e8eb"; } }
+			&.date{ &:before{ content: "\e64d"; } }
+
+		}
+
+	}
+
+
+	// .index
+	//**************************************************************
+
+	.index{
+
+		display: block;
+		margin-top: 1.0rem;
+		margin-bottom: 0.5rem;
+		padding-top: 1.0rem;
+		border-top: 1px dashed rgba($black, .1);
+		font-size: $normal;
+		text-align: left;
+
+		&:before{ @extend .icomoon; }
+		&.info{ &:before{ content: "\e954"; }}
+		&.comments{ &:before{ content: "\e915"; }}
+		&.items{ &:before{ content: "\e905"; }}
+
+	}
+
+	// .footnote
+	//**************************************************************
+
+	.footnote{
+		clear: both;
+		padding-top: 2.0rem;
+		text-align: right;
+	}
+
+}

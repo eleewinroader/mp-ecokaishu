@@ -51,7 +51,7 @@ background-repeat: no-repeat;
 
 //h3
 h3{
-	margin-bottom: 0;
+	margin-bottom: 1.0rem;
 	font-size: $biggest;
 	text-align: center;
 }
@@ -69,8 +69,8 @@ h3{
 	}
 }
 
-//.checkContents
-.checkContents {
+//.contentsCheck
+.contentsCheck {
 	position: relative;
 	margin-top: 3.0rem;
 	padding: 1.0rem;
@@ -82,22 +82,24 @@ h3{
 }
 
 //**********************************************************************
-// .lpIntro
+// #lpIntro
 //**********************************************************************
 
-.lpIntro {
+#lpIntro {
 
 	// h2
 	//**************************************************************
 
 	h2 {
 
+		//.sub
 		.sub{
 			display: block;
 			line-height: 1.1em;
 			margin-bottom: 0.5rem;
 		}
 
+		//.main
 		.main{
 			display: block;
 			line-height: 1.1em;
@@ -106,19 +108,35 @@ h3{
 
 	}
 
-	// .fourcol
+	// .points
 	//**************************************************************
 
-	.fourcol {
+	.points {
 
 		text-align: center;
 
+		//span[class^="icon-"]
 		span[class^="icon-"]{
 			line-height: 0;
 			padding: 0.5rem;
 			@include border-radius(50%);
 			background: $white;
 			font-size: $bigger*2;
+		}
+
+		//.titlePoint
+		.titlePoint{
+			margin-top: 2.0rem;
+			margin-bottom: 2.0rem;
+			font-size: $bigger;
+		}
+
+		//.subTitlePoint
+		.subTitlePoint{
+			margin-top: 1.0rem;
+			margin-bottom: 1.0rem;
+			font-size: $normal* 1.2;
+			font-weight: bold;
 		}
 
 	}
@@ -129,10 +147,9 @@ h3{
 
 		padding-top: 5.0rem;
 
+		//h2
 		h2 {
-
 			margin-bottom: 5.0rem;
-
 			.sub{
 				font-size: $biggest;
 			}
@@ -144,16 +161,16 @@ h3{
 			}
 		}
 
-		.fourcol{
-
+		//.points
+		.points{
 			padding-left: 1.0rem;
 			padding-right: 1.0rem;
 			padding-bottom: 3.0rem;
 			@include border-radius(6px);
 			background: rgba($white, .5);
-
 		}
 
+		//.footnote
 		.footnote{
 			display: block;
 			margin-top: 3.0rem !important;
@@ -166,10 +183,9 @@ h3{
 
 		padding-top: 2.0rem;
 
+		//h2
 		h2 {
-
 			margin-bottom: 6.0rem;
-
 			&:before{
 				background: none;
 			}
@@ -178,16 +194,14 @@ h3{
 			}
 		}
 
-		.fourcol {
-
+		//.points
+		.points {
 			margin-bottom: 3.0rem;
 			padding-bottom: 3.0rem;
 			border-bottom: 1px dashed $gray;
-
 			span[class^="icon-"]{
 				border: 1px solid rgba($black, .1);
 			}
-
 		}
 
 	}
@@ -204,12 +218,14 @@ h3{
 }
 
 //**********************************************************************
-// .purchase
+// #lpPurchase
 //**********************************************************************
 
-.purchase{
+#lpPurchase{
 
-	//dl
+	// dl
+	//**************************************************************
+
 	dl {
 		dt {
 			margin-top: 1.0rem;
@@ -233,8 +249,8 @@ h3{
 			}
 		}
 
-		//.threecol
-		.threecol{
+		//.contentsPurchase
+		.contentsPurchase{
 			margin-bottom: 20px;
 			padding-left: 0.5rem;
 			padding-right: 0.5rem;
@@ -248,9 +264,8 @@ h3{
 	//Mobile
 	@media all and (max-width: $maxWidth){
 
-		//.threecol
-		.threecol{
-			display: block;
+		//.contentsPurchase
+		.contentsPurchase{
 			margin-bottom: 3.0rem;
 			padding-bottom: 3.0rem;
 			border-bottom: 1px dashed $gray;
@@ -264,12 +279,14 @@ h3{
 }
 
 //**********************************************************************
-// .quality
+// #lpQuality
 //**********************************************************************
 
-.quality {
+ #lpQuality {
 
-	//.listStaff
+	// .listStaff
+	//**************************************************************
+
 	.listStaff {
 
 		margin-top: 2.0rem;
@@ -280,11 +297,8 @@ h3{
 		.staff{
 			text-align: center;
 			.circleTrimming {
-				display: block;
 				width: 170px;
 				height: 170px;
-				margin-left: auto;
-				margin-right: auto;
 				margin-bottom: 1.0rem;
 			}
 		}
@@ -294,29 +308,37 @@ h3{
 }
 
 //**********************************************************************
-// .achive
+// #lpAchivements
 //*********************************************************************
 
-.achive {
+#lpAchivements {
 
-	.achiveContents{
+	// .contentsAchivements
+	//**************************************************************
+
+	.contentsAchivements{
 		margin-top: 2.0rem;
 		padding-top: 1.0rem;
 		border-top: 1px dashed rgba($black, .05);
 		text-align: center;
 	}
 
+	// .listColl
+	//**************************************************************
+
 	.listColl{
 		margin-top: 2.0rem;
-		.fourcol{
+		.listColLogo{
 			padding-left: 1.0rem;
 			padding-right: 1.0rem;
 		}
 	}
 
-	#owlMedia{
-		margin-top: 2.0rem;
+	// #listMedia
+	//**************************************************************
 
+	#listMedia{
+		margin-top: 2.0rem;
 		.circleTrimming {
 			width: 240px;
 			height: 240px;
@@ -327,16 +349,13 @@ h3{
 	//PC
 	@media all and (min-width: $minWidth){
 
-		#owlMedia{
-
+		//#listMedia
+		#listMedia{
 			.media{
-
 				margin-left: 10px;
 				margin-right: 10px;
 				width: 265px;
-
 			}
-
 		}
 
 	}
@@ -344,9 +363,9 @@ h3{
 	//Mobile
 	@media all and (max-width: $maxWidth){
 
+		//.listColl
 		.listColl{
 			li{
-
 				margin-bottom: 2.0rem;
 			}
 		}
@@ -357,41 +376,52 @@ h3{
 
 
 //**********************************************************************
-// .flow
+// #lpFlow
 //*********************************************************************
 
-.flow {
+#lpFlow {
 
-	#listFlow{
+	// .listFlow
+	//**************************************************************
+
+	.listFlow{
 
 		margin: 2.0rem 0;
 
+		//li
 		li{
 
 			position: relative;
 			text-align: center;
 
+			//h4
+			h4{
+				margin-bottom: 1.0rem;
+			}
+
+			//p
+			p{
+				margin-top: 1.0rem;
+				text-align: left;
+			}
+
+			//span[class^="icon-"]
 			span[class^="icon-"]{
 				display: block;
 				margin: 0 auto;
 				font-size: $biggest*2;
 			}
 
-			h4{
-				margin-bottom: 1.0rem;
-			}
-
-			p{
-				margin-top: 1.0rem;
-				text-align: left;
-			}
-
 		}
 
 	}
 
-	.checkContents{
+	// .contentsCheck
+	//**************************************************************
 
+	.contentsCheck{
+
+		//li
 		li{
 			margin-bottom: 1.0rem;
 			padding-bottom: 1.0rem;
@@ -404,7 +434,8 @@ h3{
 	//PC
 	@media all and (min-width: $minWidth){
 
-		.checkContents{
+		//.contentsCheck
+		.contentsCheck{
 			padding-left: 3.0rem;
 			padding-right: 3.0rem;
 			text-align: center;
@@ -415,8 +446,8 @@ h3{
 	//Mobile
 	@media all and (max-width: $maxWidth){
 
+		//#listFlow
 		#listFlow{
-
 			li{
 				&:not(:last-of-type){
 					margin-bottom: 2.0rem;
@@ -424,7 +455,6 @@ h3{
 					border-bottom: 1px dashed rgba($black, .1);
 				}
 			}
-
 		}
 
 	}
@@ -432,36 +462,42 @@ h3{
 }
 
 //**********************************************************************
-// .voices
+// #lpVoices
 //**********************************************************************
 
-.voices{
+#lpVoices{
 
-	.fivecol {
+	// #voiceNew
+	//**************************************************************
+
+	#voiceNew {
+
 		position: relative;
 		padding: 1.0rem 1.5rem;
 		border: 1px solid $gray;
 		@include border-radius (6px);
+
+		//new
+		.new {
+			@extend .point;
+			background: $orange;
+		}
+
 	}
 
-	.new {
-		@extend .point;
-		background: $orange;
-	}
-
-	.al_r {
-		margin-top: 1.0rem;
-		color: rgba($black, .3);
-	}
+	// archiveList
+	//**************************************************************
 
 	.archiveList{
 
+		//a
 		a{
 
 			display: block;
 			position: relative;
 			padding-right: 2.0rem;
 
+			//&:after
 			&:after{
 				position: absolute;
 				top: 50%;
@@ -471,12 +507,15 @@ h3{
 				content: "\e862";
 			}
 
+			//h4
 			h4{
 				margin-top: 0;
 				margin-bottom: 0.5rem;
 				font-size: $normal;
 				line-height: 1.2em;
 			}
+
+			//.itemInfo
 			.itemInfo{
 				display: inline-block !important;
 				&:before{
@@ -488,10 +527,13 @@ h3{
 			}
 
 		}
+
 	}
+
 	//PC
 	@media all and (min-width: $minWidth){
 
+		//.archiveList
 		.archiveList{
 			a{
 				padding-right: 160px;
@@ -508,20 +550,27 @@ h3{
 
 	//Mobile
 	@media all and (max-width: $maxWidth){
+
+		//.archiveList
 		.archiveList{
 			margin-top: 2.0rem;
 		}
+
 	}
 
 }
 
-
 //**********************************************************************
-// .listVoices
+// #lpWords
 //**********************************************************************
 
-.listVoices{
-	dl{
+#lpWords{
+
+	// .listWords
+	//**************************************************************
+
+	.listWords{
+
 		//dt
 		dt{
 			margin-top: 1.0rem;
@@ -531,6 +580,7 @@ h3{
 				content: "\e915";
 			}
 		}
+
 	}
 }
 
