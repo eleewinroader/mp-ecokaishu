@@ -218,119 +218,117 @@
 	}
 }
 
-.staffwords {
-	.staffDetail {
-		h3 {
-			text-align: center;
-			span {
-				display: block;
-				font-size: 80%;
-			}
+.staffDetail {
+	h3 {
+		text-align: center;
+		span {
+			display: block;
+			font-size: 80%;
 		}
-		.circleTrimming {
-			overflow: hidden;
-			@include border-radius(50%);
-			border: 1px solid rgba($black, .05);
-			background: $gray;
-			display: inline-block;
-			width: 250px;
-			height: 250px;
-			margin-bottom: 2rem;
-		}
-		.staffDiary {
-			.diary {
-				padding: 2rem 0;
+	}
+	.circleTrimming {
+		overflow: hidden;
+		@include border-radius(50%);
+		border: 1px solid rgba($black, .05);
+		background: $gray;
+		display: inline-block;
+		width: 250px;
+		height: 250px;
+		margin-bottom: 2rem;
+	}
+	.staffDiary {
+		.diary {
+			padding: 2rem 0;
+			position: relative;
+			background: {
+				image: url("assets/img/staff/dot.jpg");
+	 			position: center top;
+	  			repeat: repeat-y;
+	  		}
+	  		&:before {
+	  			content: "\e86e";
+	  			font-family: "icomoon";
+	  			font-size: $biggest*2;
+	  			position: absolute;
+	  			top: -10px;
+	  			left: 47.6%;
+	  		}
+	  		&:after {
+	  			content: "\e86e";
+	  			font-family: "icomoon";
+	  			font-size: $biggest*2;
+	  			position: absolute;
+	  			bottom: -10px;
+	  			left: 47.6%;
+	  		}
+	  	}
+		.sixcol {
+			.item {
+				background: $gray;
+				padding: 2rem 1rem;
+				margin-bottom: 1.5rem;
 				position: relative;
-				background: {
-					image: url("assets/img/staff/dot.jpg");
-		 			position: center top;
-		  			repeat: repeat-y;
-		  		}
-		  		&:before {
-		  			content: "\e86e";
-		  			font-family: "icomoon";
-		  			font-size: $biggest*2;
-		  			position: absolute;
-		  			top: -10px;
-		  			left: 47.6%;
-		  		}
-		  		&:after {
-		  			content: "\e86e";
-		  			font-family: "icomoon";
-		  			font-size: $biggest*2;
-		  			position: absolute;
-		  			bottom: -10px;
-		  			left: 47.6%;
-		  		}
-		  	}
+				&:after {
+					right: -8px;
+					top: 10%;
+					width: 0px;
+					height: 0px;
+					content: "";
+					position: absolute;
+					border-style: solid;
+					border-width: 8px 8px 0 0;
+					border-color: $gray transparent transparent transparent;;
+				}
+				p {
+					margin-bottom: 1rem;
+				}
+				small {
+					display: block;
+					text-align: right;
+					font-size: 80%;
+				}
+				img {
+					width: 100%;
+				}
+			}
+			&.last {
+				.item {
+					&:after {
+						left: -8px;
+						border-width: 0 8px 8px 0;
+						border-color: transparent $gray transparent transparent;;
+					}
+				}
+			}				
+		}
+		.seemore {
+			background: $gray;
+			color: $darkGray;
+			text-align: center;
+			display: block;
+			padding: 0.5rem 0;
+			margin: 2rem 0;
+			@include border-radius(5px);
+		}
+
+		//Mobile
+		@media all and (max-width: $maxWidth){
+			.diary {
+				background: none;
+				&:before, &:after {
+					content: "";
+				}
+			}
 			.sixcol {
 				.item {
-					background: $gray;
-					padding: 2rem 1rem;
-					margin-bottom: 1.5rem;
-					position: relative;
 					&:after {
-						right: -8px;
-						top: 10%;
-						width: 0px;
-						height: 0px;
-						content: "";
-						position: absolute;
-						border-style: solid;
-						border-width: 8px 8px 0 0;
-						border-color: $gray transparent transparent transparent;;
-					}
-					p {
-						margin-bottom: 1rem;
-					}
-					small {
-						display: block;
-						text-align: right;
-						font-size: 80%;
-					}
-					img {
-						width: 100%;
+						border: none;
 					}
 				}
-				&.last {
-					.item {
-						&:after {
-							left: -8px;
-							border-width: 0 8px 8px 0;
-							border-color: transparent $gray transparent transparent;;
-						}
-					}
-				}				
 			}
 			.seemore {
-				background: $gray;
-				color: $darkGray;
-				text-align: center;
-				display: block;
-				padding: 0.5rem 0;
-				margin: 2rem 0;
-				@include border-radius(5px);
-			}
-
-			//Mobile
-			@media all and (max-width: $maxWidth){
-				.diary {
-					background: none;
-					&:before, &:after {
-						content: "";
-					}
-				}
-				.sixcol {
-					.item {
-						&:after {
-							border: none;
-						}
-					}
-				}
-				.seemore {
-					margin: 0;
-				}			
-			}
+				margin: 0;
+			}			
 		}
 	}
 }
