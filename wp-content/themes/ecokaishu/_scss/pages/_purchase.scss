@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+article.purchase {
+
+//**********************************************************************
+// Extend class
+//**********************************************************************
+
+//.icomoon
+.icomoon{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.3rem;
+	font-family: icomoon;
+	speak: none;
+}
+
+//**********************************************************************
+// .appealingPoints
+//**********************************************************************
+
+.appealingPoints{
+
+	margin: 0 auto;
+	width: $maxWidth;
+
+	//li
+	li{
+		position: relative;
+		padding-top: 1.0rem;
+		padding-bottom: 1.0rem;
+		padding-left: 1.5rem;
+		border-bottom: 1px solid $gray;
+		&:before{
+			position: absolute;
+			left: 0;
+			@extend .icomoon;
+			content: "\e9a4";
+		}
+	}
+
+}
+
+//**********************************************************************
+// .purchaseDetails
+//**********************************************************************
+
+.purchaseDetails{
+
+	//PC
+	@media all and (min-width: $minWidth){
+		margin-top: 5.0rem;
+		margin-bottom: 5.0rem;
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+		margin-top: 3.0rem;
+		margin-bottom: 3.0rem;
+	}
+
+}
+
+
+
+}
+
+//**********************************************************************
+// Extend class
+//**********************************************************************
+
+.purchaseDetails{
+
+	dl {
+		dt {
+			margin-top: 1.0rem;
+			padding: 1.0rem 0 0.5rem 0;
+			font-weight: bold;
+		}
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		//.catTitle
+		.catTitle{
+			text-align: center;
+		}
+
+		//dl
+		dl{
+			dt{
+				border-top: 1px dotted $gray;
+			}
+		}
+
+		//.contentsPurchase
+		.contentsPurchase{
+			margin-bottom: 20px;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			padding-bottom: 1.0rem;
+			border: 1px solid $gray;
+			@include border-radius(6px);
+		}
+
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		//.contentsPurchase
+		.contentsPurchase{
+			margin-bottom: 3.0rem;
+			padding-bottom: 3.0rem;
+			border-bottom: 1px dashed $gray;
+			&:first-of-type{
+				border: 10px solid;
+			}
+		}
+
+	}
+
+}

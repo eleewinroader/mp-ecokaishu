@@ -705,7 +705,7 @@ get_header();
 				<p class="txtNote">製造年(使用年数)、メーカー名(ブランド名)、型番などをお教え頂ければメール/お電話で買取の目安金額がご案内できます。<br />最終的な買取金額はお引取にお伺いした際に商品の状態を確認した上でのご案内となります。</p>
 			<!--.titleSection--></div>
 			<div class="threecol col contentsPurchase">
-				<h4>家電</h4>
+				<h4 class="catTitle">家電</h4>
 				<dl>
 					<dt>対象品例</dt>
 					<dd>ＴＶ、冷蔵庫、洗濯機、電子レンジ、掃除機、炊飯器、ガステーブル、ブルーレイ/DVDレコーダー、ミニコンポなど</dd>
@@ -714,7 +714,7 @@ get_header();
 				</dl>
 			<!--contentsPurchase--></div>
 			<div class="threecol col contentsPurchase">
-				<h4>家具</h4>
+				<h4 class="catTitle">家具</h4>
 				<dl>
 					<dt>対象品例</dt>
 					<dd>ブランド家具</dd>
@@ -723,7 +723,7 @@ get_header();
 				</dl>
 			<!--contentsPurchase--></div>
 			<div class="threecol col contentsPurchase">
-				<h4>楽器</h4>
+				<h4 class="catTitle">楽器</h4>
 				<dl>
 					<dt>対象品例</dt>
 					<dd>エレクトーン、電子ピアノ、ギター、キーボード、ベースなど</dd>
@@ -732,7 +732,7 @@ get_header();
 				</dl>
 			<!--contentsPurchase--></div>
 			<div class="threecol col contentsPurchase last">
-				<h4>パソコン</h4>
+				<h4 class="catTitle">パソコン</h4>
 				<dl>
 					<dt>対象品例</dt>
 					<dd>デスクトップ本体、液晶モニタ、ノートパソコン</dd>
