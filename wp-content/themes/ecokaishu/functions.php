@@ -568,9 +568,10 @@ EOF;
 					</div>
 EOF;
 				}
-
 			}
+
 		}
+
 	}
 
 	return $notapproved.$string;
