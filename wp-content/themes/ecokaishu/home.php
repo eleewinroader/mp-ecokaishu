@@ -84,17 +84,15 @@ get_header( ); ?>
 
 				<section id="news">
 					<h3>お知らせ</h3>
-					<ul>
-						<?php
-						function filter_where( $where = '' ) {
-							$where .= " AND post_date > '" . date('Y-m-d', strtotime('-14 days')) . "'";
-							return $where;
-						}
-						add_filter( 'posts_where', 'filter_where' );
-						$args = array(
-							"post_type" => "notices"
-						);
-						$posts = query_posts($args);
+					<?php
+					function filter_where( $where = '' ) {
+						$where .= " AND post_date > '" . date('Y-m-d', strtotime('-14 days')) . "'";
+						return $where;
+					}
+					add_filter( 'posts_where', 'filter_where' );
+					$posts = query_posts(array("post_type" => "notices"));
+					$listId = (count($posts) > 1) ? "newsTicker" : "";
+						echo '<ul id="'.$listId.'">';
 						foreach($posts as $post){
 							$li = "<li><a href=".get_permalink($post->ID)."><time datetime=".$post->post_date.">".get_the_date("y.m.d")."</time>";
 							$tags = get_the_tags();

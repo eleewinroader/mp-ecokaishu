@@ -100,7 +100,15 @@ get_header();
 					<meta itemprop="rating" content="<?php echo $review03Score; ?>" />
 					<span class="index"><?php echo getCustomerReview($post, $review03Score); ?></span>
 				</p>
-				<?php echo $review03; ?>
+				<?php echo $review03;
+				if(getStaffComments($post, "editor", $crtUser)){
+					echo getStaffComments($post, "editor", $crtUser);
+				}
+				if(is_user_logged_in()){
+					if($crtUser->roles[0] == "editor"){
+						comment_form();
+					}
+				}?>
 			<!--answer--></section>
 			<section class="answer">
 				<h3>電話受付・メール対応など、コンシェルジュ<span class="small">(受付スタッフ)</span>の対応はいかがでしたか？</h3>
