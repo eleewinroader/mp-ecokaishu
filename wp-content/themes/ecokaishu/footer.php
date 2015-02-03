@@ -386,7 +386,7 @@ $(document).ready(function(){
 	});
 
 	//newsticker
-	$('#news ul').inewsticker({
+	$('#newsTicker').inewsticker({
 		speed : 5000,
 		effect : 'fade',
 		dir : 'ltr',
