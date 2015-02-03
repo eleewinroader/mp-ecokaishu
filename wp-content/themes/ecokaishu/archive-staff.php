@@ -65,6 +65,18 @@ get_header( ); ?>
 					<h4>永廣 亜沙美<span class="small">ながひろ あさみ</span></h4>
 					<p>安心してご利用して頂けるよう、「かゆいところに手が届く」ご案内を心がけています。ぜひ一度お問い合わせください！</p>
 				</li>
+				<li class="col threecol">
+					<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_oki.jpg" /></div>
+					<h4>隠岐 めぐみ<span class="small">おき めぐみ</span></h4>
+				</li>
+				<li class="col threecol last">
+					<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecoland_logo_white.gif" /></div>
+					<h4>橋本 美樹<span class="small"> はしもと みき</span></h4>
+				</li>
+				<li class="col threecol">
+					<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecoland_logo_white.gif" /></div>
+					<h4>堀 淑子<span class="small">おき めぐみ</span></h4>
+				</li>
 			</ol>
 			<div class="last"></div>
 		<!--#staff--></section>
