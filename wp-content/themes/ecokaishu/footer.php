@@ -85,7 +85,7 @@
 				<div class="twocol col">
 					<ul id="marg">
 						<li><a href="<?php echo get_post_type_archive_link("unavailable"); ?>">エコ回収できるモノ</a></li>
-						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">買取について</a></li>
+						<li><a href="<?php echo get_post_type_archive_link("purchase"); ?>">買取について</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("faq"); ?>">よくある質問</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("notices");?>">新着情報</a></li>
 						<li><a href="<?php echo get_post_type_archive_link("problems"); ?>">お悩みの方へ</a></li>

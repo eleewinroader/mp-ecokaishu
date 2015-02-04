@@ -10,6 +10,7 @@
 	vertical-align: middle;
 	margin-right: 0.3rem;
 	font-family: icomoon;
+	font-size: 90%;
 	speak: none;
 }
 
@@ -476,6 +477,30 @@
 
 }
 
+
+//**********************************************************************
+// .listPoints
+//**********************************************************************
+
+.listPoints{
+
+	margin: 0 auto;
+
+	//li
+	li{
+		position: relative;
+		padding-top: 1.0rem;
+		padding-bottom: 1.0rem;
+		border-bottom: 1px solid $gray;
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+		width: $maxWidth;
+		text-align: center;
+	}
+
+}
 
 //**************************************************************
 // .wp-pagenavi

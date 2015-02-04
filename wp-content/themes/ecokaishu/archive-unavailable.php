@@ -36,7 +36,7 @@ get_header(); ?>
 					<span class="block">お引取しています。</span>
 				</p>
 			<!-- .intro .summary--></div>
-			<ul class="listSummary">
+			<ul class="listPoints">
 				<li>再利用できないモノは法律上お引取ができません。</li>
 				<li>古いモノでもまだ使用可能であればお引取致します。</li>
 				<li>電化製品は壊れていても修理できる可能性がある場合はお引取可能です。</li>
@@ -44,8 +44,8 @@ get_header(); ?>
 			</ul>
 		<!-- .intro --></div>
 
-		<div class="sixcol col">
-			<div class="txtSummary bor">
+		<div class="unavailableDetails">
+			<section class="sixcol col">
 				<h3>エコ回収できないモノ</h3>
 				<dl class="listDefi">
 					<dt>可燃ごみ</dt>
@@ -63,10 +63,8 @@ get_header(); ?>
 					<dt>大型家具で運び出し前に解体が必要な品物で、復元ができないモノ</dt>
 					<dd>IKEA大型家具など</dd>
 				</dl>
-			</div>
-		</div>
-		<div class="sixcol col last">
-			<div class="txtSummary">
+			</section>
+			<section class="sixcol col last">
 				<h3>よくご質問があり、お引取ができないモノ</h3>
 				<ul class="listDefi">
 					<li>安全装置がすべての口に付いていないガステーブル</li>
@@ -78,8 +76,9 @@ get_header(); ?>
 					<li>転売が禁止されているもの（コンサートチケットなど）</li>
 				</ul>
 				<p class="footnote"><small>※コンロの火が出る真ん中に、お鍋を置くと凹む突起物があるモノは、安全装置が付いています。</small></p>
-			</div>
+			</section>
 		</div>
+
 	</div>
 
 <?php get_footer(); ?>

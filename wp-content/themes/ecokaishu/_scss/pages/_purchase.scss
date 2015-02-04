@@ -66,7 +66,7 @@ article.purchase {
 }
 
 //**********************************************************************
-// Extend class
+// .purchaseDetails
 //**********************************************************************
 
 .purchaseDetails{
@@ -115,7 +115,7 @@ article.purchase {
 			padding-bottom: 3.0rem;
 			border-bottom: 1px dashed $gray;
 			&:first-of-type{
-				border: 10px solid;
+				margin-top: 3.0rem;
 			}
 		}
 
