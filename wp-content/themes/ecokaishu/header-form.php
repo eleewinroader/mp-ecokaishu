@@ -13,7 +13,7 @@ if($_GET){
 	$pr_code = $_GET['pr_code'];
 	if($pr_code) $prCode = "?pr_code=".$pr_code;
 }else{
-	$prCode = "";	
+	$prCode = "";
 }
 $contactForm = siteInfo('siteUrlEcokaishu').'/contact/'.$prCode;
 $estmtForm = siteInfo('siteUrlEcokaishu').'/estimate/'.$prCode;
@@ -31,14 +31,14 @@ $estmtForm = siteInfo('siteUrlEcokaishu').'/estimate/'.$prCode;
 <?php
 $brow = IEbrowserVer();
 if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
-	echo '<meta http-equiv="refresh" content="0; url=http://www.eco-kaishu.jp/legacy">';
+	echo '<meta http-equiv="refresh" content="0; url=https://www.eco-kaishu.jp/contact-legacy/">';
 }?>
 <title></title>
 <link rel="author" href="https://plus.google.com/116236726085502236125" />
 <meta name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css" rel="stylesheet" type="text/css" media="all" />
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/fullwidth.css" rel="stylesheet" type="text/css" media="all" />
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/form.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo bloginfo("template_url"); ?>/assets/css/common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo bloginfo("template_url"); ?>/assets/css/fullwidth.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo bloginfo("template_url"); ?>/assets/css/form.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/hot-sneaks/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
@@ -49,10 +49,8 @@ if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
 <script type="text/javascript" src="https://www.eco-kaishu.jp/js/responsiveslides.js"></script>
 <script type="text/javascript" src="https://www.eco-kaishu.jp/js/placeholders.min.js"></script>
 <script type="text/javascript" src="https://www.eco-kaishu.jp/js/jquery.addInputArea.4.6.js"></script>
-<?php
-echo '<!--[if lte IE 8]><script type="text/javascript" src="'.siteInfo('rootUrl').'/js/html5shiv.js"></script><![endif]-->
+<!--[if lte IE 8]><script type="text/javascript" src="'.siteInfo('rootUrl').'/js/html5shiv.js"></script><![endif]-->
 <!--[if lte IE 7]><script type="text/javascript" src="'.siteInfo('rootUrl').'/js/lte-ie7.js"></script><![endif]-->
-';?>
 <?php wp_head(); ?>
 
 <script type="text/javascript">

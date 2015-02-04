@@ -121,7 +121,7 @@
 			<div class="formTitle"><label for="cstmPron">ふりがな</label></div>
 			<div class="formElements">
 				<ul class="formElement">
-					<li><input type="text" id="cstmPron" name="cstmPron" value="<?php if($cstmPron) echo $cstmPron;?>"<?php echo $disabled; ?> placeholder="例)えこはなこ" /></li>					
+					<li><input type="text" id="cstmPron" name="cstmPron" value="<?php if($cstmPron) echo $cstmPron;?>"<?php echo $disabled; ?> placeholder="例)えこはなこ" /></li>
 				</ul>
 			</div>
 		</li>
@@ -167,58 +167,15 @@
 			<div class="formTitle">エコ回収対象品</div>
 			<div class="formElements">
 				<div class="formElement">
-				<textarea name="cstmContents" class="animated" id="cstmContents" placeholder="例) 本棚(17cm×89cm×59cm)、木棚(三段、29cm×77cm×64cm)、衣装 クリアケース(65cm×17cm×45cm)×４個、ガラス棚(30cm×62cm×40cm)などなど"<?php echo $disabled; ?>><?php if($cstmContents) echo $cstmContents; ?></textarea>	
+				<textarea name="cstmContents" class="animated" id="cstmContents" placeholder="例) 本棚(17cm×89cm×59cm)、木棚(三段、29cm×77cm×64cm)、衣装 クリアケース(65cm×17cm×45cm)×４個、ガラス棚(30cm×62cm×40cm)などなど"<?php echo $disabled; ?>><?php if($cstmContents) echo $cstmContents; ?></textarea>
 				</div>
 				<p class="footnote"><small>※家具類や大きな品物は、「幅×奥行×高さ」などをお伝え頂くと正確なお見積もりができます。また、家電類は「型番号」、「メーカー名」、「年式」をお伝え頂くと、買取も含め、正確なお見積もりができます。お手数ですが、ご協力のほどよろしくお願いします。</small></p>
 				<p class="footnote pink"><small>※原則、購入後５年以上経過している場合は買取は行っておりません。</small></p>
-				
+
 			</div>
 		</li>
 	</ol>
 </fieldset>
-
-<!--<fieldset>
-	<ol>
-		<li class="formContents">
-			<div class="formTitle">キャンペーン種類</div>
-			<div class="formElements">
-				<select name="campKind" id="campKind"<?php echo $disabled; ?>>
-					<option value="">選択してください</option>
-					<?php
-					$campKinds = array();
-					$campCodes = array();
-					$args = array(
-						"post_type" => "campaign",
-						"campaignstatus" => "open",
-						"posts_per_page" => -1
-					);
-					$camps = query_posts($args);
-					foreach($camps as $camp){
-						$campName = get_post_meta($camp->ID, "campInfo01", TRUE);
-						if($campName) array_push($campKinds, $campName);
-						if(campCode($camp)){
-							$childrenClass = campCode($camp, "children");
-							$code = substr($childrenClass, 7, 11);
-							$code = str_replace("-", "_", $code);
-							array_push($campCodes, $code);
-						}
-					}
-					for($i=0; $i<count($campKinds); $i++){
-						if($campCodes[$i] == $pr_code){
-							$selected = " selected";
-							$campName = $campKinds[$i];
-						}else{
-							$selected = "";
-						}
-						echo '<option id="campKinds'.$i.'" value="'.$campCodes[$i].'"'.$selected.'>'.$campKinds[$i].'</option>';
-					}?>
-				</select>
-				<input type="hidden" name="campName" value="<?php echo $campName; ?>" />
-			</div>
-		</li>
-	</ol>
-</fieldset>-->
-
 <fieldset>
 	<ol>
 		<li class="formContents" id="cltDay">
@@ -234,7 +191,7 @@
 						$type = "date";
 						$mindate = ' min="'.$today.'"';
 					}else{
-						$type = "text";	
+						$type = "text";
 					}
 					echo '<li><label for="cltDay'.$i.'">第'.$j.'希望</label><input type="'.$type.'" name="cltDay'.$i.'" class="datepicker" value="'.$cltDayArgs[$i].'" id="cltDay'.$i.'"'.$disabled.$mindate.' /></li>';
 				}?>
@@ -242,40 +199,6 @@
 		</li>
 	</ol>
 </fieldset>
-
-<!--
-<fieldset>
-	<ol>
-		<li class="formContents">
-			<div class="formTitle"><label for="cpiItems">キャンペーン対象品</label></div>
-			<div class="formElements">
-				<p>下記は今月のキャンペーン対象の品目です。一つでも含まれれば、基本料金(3,240円)が無料になります。含まれている品目があれば、チェックしてください。</p>
-				<ul class="formElement">
-				<?php
-				$cpiItemsArgs = array("食器棚", "電子ピアノ", "自転車", "ベッドフレーム", "ダイニングテーブル");
-				for($i=0; $i<count($cpiItemsArgs); $i++){
-					if(in_array($cpiItemsArgs[$i], $cpiItems)) $checked = " checked";
-					else $checked = "";
-					echo '<li><input type="checkbox" name="cpiItems[]" value="'.$cpiItemsArgs[$i].'" id="cpiItems'.$i.'"'.$checked.$disabled.' /><label for="cpiItems'.$i.'">'.$cpiItemsArgs[$i].'</label></li>';
-				}?>	
-				</ul>				
-			</div>
-		</li>
-	</ol>
-</fieldset>
-
-<?php if($quiz != "eco"): ?>
-<fieldset>
-	<ol>
-		<li class="formContents" id="coupon">
-			<div class="formTitle">初回限定クーポン</div>
-			<div class="formElements">
-				<div class="formElement"><input type="checkbox" name="coupon" value="受け取る" id="getCoupon"<?php if($coupon) echo " checked"; echo $disabled; ?>/><label for="getCoupon">初回限定「基本料金100%OFF」クーポンを受け取る</label></div>
-			</div>
-		</li>
-	</ol>
-</fieldset>
-<?php endif; ?>-->
 
 <fieldset id="law">
 	<ol>
