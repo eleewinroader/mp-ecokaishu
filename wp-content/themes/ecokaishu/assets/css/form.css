@@ -163,6 +163,10 @@ textarea{
 		content: "必須";
 		background: #e2318c;
 	}
+	#contact2 .required .formTitle:before{
+		background: #7ac943;
+	}
+
 	.ok:before{
 		background: #009ea1 !important;
 		font-family: "icomoon";
@@ -207,6 +211,17 @@ textarea{
 		display: block;
 		position: relative;
 		width: 100%;
+	}
+
+	.formContents  .lawDoc {
+	    border: 1px solid rgba(0, 0, 0, 0.1);
+	    font-size: 90%;
+	    height: 160px;
+	    line-height: 1.5em;
+	    overflow-x: hidden;
+	    overflow-y: visible;
+	    padding: 0.5rem;
+	    margin-bottom: 0.5rem;
 	}
 
 
@@ -264,6 +279,19 @@ textarea{
 		text-shadow: 0px 0px 3px rgba(0, 0, 0, .9);
 		filter: dropshadow(color=#000000, offx=0, offy=0);
 		cursor: pointer;
+	}
+	#contact2 .formBtns input[type="submit"]{
+		position: relative;
+		-moz-box-shadow: none;
+		-ms-box-shadow: none;
+		-webkit-box-shadow: none;
+		padding: 1em 2em;
+		border: none;
+		background: #e2318c;
+		font-weight: normal;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
 	}
 	.formBtns input[type="submit"]:hover{
 		background: rgba(0, 0, 0, .5) !important;
