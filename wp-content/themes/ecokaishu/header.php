@@ -35,7 +35,6 @@ if(is_single()){
 	$tempType = "home";
 }
 
-
 $h1 = getH1($tempType, $metaObj); ?>
 <!DOCTYPE html>
 <!--[if IE 7]>

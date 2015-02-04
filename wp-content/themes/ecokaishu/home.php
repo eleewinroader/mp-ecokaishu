@@ -277,32 +277,33 @@ get_header( ); ?>
 		</div>
 	</div>
 
-	<div class="twelvecol col last">
-		<section class="lstStaff">
-			<h3>ただ今、エコ回収スタッフ</h3>
-			<div class="liquidLayout">
+	<?php
+	$args = array(
+		"posts_per_page" => 6,
+		"post_type" => "staffwords"
+	);
+	$words = query_posts($args); // get posts of staffwords posted by the staff
+	if($words): ?>	
+		<div class="twelvecol col last">
+			<section class="lstStaff">
+				<h3>ただ今、エコ回収スタッフ</h3>
+				<div class="liquidLayout">
 
-				<?php
-					$args = array(
-						"posts_per_page" => 6,
-					    "post_type" => "staffwords"
-					);
-					$words = query_posts($args); // get posts of staffwords posted by the staff
-				?>
+					<?php foreach($words as $word): ?>
+						<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>
+						<dl class="item">
+							<dt><a href="#" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
+							<dd>
+								<?php echo $word->post_content; ?>
+							</dd>
+						</dl>
+					<?php endforeach;?>
+					
+				</div>
+			</section>
+		</div>
+	<?php endif; ?>
 
-				<?php foreach($words as $word): ?>
-					<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>
-					<dl class="item">
-						<dt><a href="#" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
-						<dd>
-							<?php echo $word->post_content; ?>
-						</dd>
-					</dl>
-				<?php endforeach;?>
-				
-			</div>
-		</section>
-	</div>
 <!-- .container--></div>
 
 

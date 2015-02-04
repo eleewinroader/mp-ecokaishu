@@ -75,7 +75,7 @@ get_header( ); ?>
 				</li>
 				<li class="col threecol">
 					<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecoland_logo_white.gif" /></div>
-					<h4>堀 淑子<span class="small">おき めぐみ</span></h4>
+					<h4>堀 淑子<span class="small">ほり よしこ</span></h4>
 				</li>
 			</ol>
 			<div class="last"></div>

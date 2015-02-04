@@ -796,15 +796,20 @@ a{
 
 	}
 
+	// &#contactBnr
+	//**************************************************************
+
 	&#contactBnr{
-		overflow: hidden;
-		background: $green;
-		padding: 3rem 0;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
+
 		z-index: 99;
+		overflow: hidden;
+		position: fixed;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		padding: 2.0rem 0;
+		border-top: 1px solid $gray;
+		background: rgba($white, .8);
 
 		.container {
 			position: relative;
@@ -812,7 +817,9 @@ a{
 
 		//PC
 		@media all and (min-width: $minWidth){
+
 			.contact {
+
 				text-align: center;
 
 				#tel, #mail {
@@ -836,8 +843,8 @@ a{
 
 				#tel {
 					a {
-						color: $white;
-						border: solid 3px $white;
+						color: $green;
+						border: 3px solid  $green;
 						font-size: $biggest*1.2;
 					}
 				}
@@ -851,9 +858,9 @@ a{
 					}
 				}
 				#openingHour {
-					margin-top: 1rem;
-					a {						
-						color: $white;
+					margin-top: 0.5rem;
+					a {
+						color: $darkGray;
 						text-decoration: none;
 					}
 				}
@@ -877,7 +884,7 @@ a{
 						color: $white;
 						line-height: 4rem;
 						text-decoration: none;
-						display: inline-block;						
+						display: inline-block;	
 
 						span {
 							display: none;
@@ -892,7 +899,7 @@ a{
 				}
 				#tel {
 					a {
-						background: rgba($yellow, 0.5);
+						background: $green;
 					}
 				}
 				#mail {
@@ -902,7 +909,7 @@ a{
 				}
 				#openingHour {
 					a {
-						background: $yellow;
+						background: $orange;
 					}
 				}
 			}

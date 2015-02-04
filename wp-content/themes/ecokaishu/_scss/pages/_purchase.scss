@@ -15,31 +15,6 @@ article.purchase {
 	speak: none;
 }
 
-//**********************************************************************
-// .appealingPoints
-//**********************************************************************
-
-.appealingPoints{
-
-	margin: 0 auto;
-	width: $maxWidth;
-
-	//li
-	li{
-		position: relative;
-		padding-top: 1.0rem;
-		padding-bottom: 1.0rem;
-		padding-left: 1.5rem;
-		border-bottom: 1px solid $gray;
-		&:before{
-			position: absolute;
-			left: 0;
-			@extend .icomoon;
-			content: "\e9a4";
-		}
-	}
-
-}
 
 //**********************************************************************
 // .purchaseDetails
@@ -61,9 +36,8 @@ article.purchase {
 
 }
 
-
-
 }
+
 
 //**********************************************************************
 // .purchaseDetails

@@ -45,7 +45,7 @@
 			</div>
 		<!--#campaign--></aside>
 
-		<!--<aside id="contactBnr" class="boiler">
+		<aside id="contactBnr" class="boiler">
 			<div class="container">
 				<div class="twelvecol col last">
 					<div class="contact">
@@ -62,8 +62,7 @@
 					</div>
 				</div>
 			</div>
-		</aside>-->
-		<!--#contactBnr-->
+		<!--#contactBnr--></aside>
 
 		<aside class="boiler" id="sitePages">
 			<div class="container">
