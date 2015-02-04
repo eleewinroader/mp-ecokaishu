@@ -82,28 +82,31 @@ get_header( ); ?>
 					<!-- #owl-slide--></div>
 				</div>
 
-				<section id="news">
-					<h3>お知らせ</h3>
-					<?php
-					function filter_where( $where = '' ) {
-						$where .= " AND post_date > '" . date('Y-m-d', strtotime('-14 days')) . "'";
-						return $where;
-					}
-					add_filter( 'posts_where', 'filter_where' );
-					$posts = query_posts(array("post_type" => "notices"));
-					$listId = (count($posts) > 1) ? "newsTicker" : "";
-						echo '<ul id="'.$listId.'">';
-						foreach($posts as $post){
-							$li = "<li><a href=".get_permalink($post->ID)."><time datetime=".$post->post_date.">".get_the_date("y.m.d")."</time>";
-							$tags = get_the_tags();
-							if ($tags) foreach($tags as $tag) $li .= '<span class="tag">'.$tag->name.'</span>';
-							$li .= '<span class="newsTxt">'.$post->post_title.'</span></a></li>';
-							echo $li;
-						}
-						wp_reset_query();?>
-					</ul>
-					<div class="clear"></div>
-				</section>
+				<?php
+				function filter_where( $where = '' ) {
+					$where .= " AND post_date > '" . date('Y-m-d', strtotime('-14 days')) . "'";
+					return $where;
+				}
+				add_filter( 'posts_where', 'filter_where' );
+				$posts = query_posts(array("post_type" => "notices"));
+				if($posts): ?>
+					<section id="news">
+						<h3>お知らせ</h3>
+						<?php
+						$listId = (count($posts) > 1) ? "newsTicker" : "";
+							echo '<ul id="'.$listId.'">';
+							foreach($posts as $post){
+								$li = "<li><a href=".get_permalink($post->ID)."><time datetime=".$post->post_date.">".get_the_date("y.m.d")."</time>";
+								$tags = get_the_tags();
+								if ($tags) foreach($tags as $tag) $li .= '<span class="tag">'.$tag->name.'</span>';
+								$li .= '<span class="newsTxt">'.$post->post_title.'</span></a></li>';
+								echo $li;
+							}
+						wp_reset_query(); ?>
+						</ul>
+						<div class="clear"></div>
+					</section>
+				<?php endif; ?>
 
 			<!-- #sliderCampaignNews--></div>
 

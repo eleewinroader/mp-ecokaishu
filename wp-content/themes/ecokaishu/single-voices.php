@@ -104,8 +104,11 @@ get_header();
 				if(getStaffComments($post, "editor", $crtUser)){
 					echo getStaffComments($post, "editor", $crtUser);
 				}
+				if(getStaffComments($post, "manager", $crtUser)){
+					echo getStaffComments($post, "manager", $crtUser);
+				}
 				if(is_user_logged_in()){
-					if($crtUser->roles[0] == "editor"){
+					if($crtUser->roles[0] == "editor" || $crtUser->roles[0] == "manager"){
 						comment_form();
 					}
 				}?>
