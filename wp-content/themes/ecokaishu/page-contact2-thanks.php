@@ -41,7 +41,7 @@ if($_POST){
 		//タクソノミー挿入	
 		wp_set_object_terms($insert_id, $quesKind, 'qstcat', $append = true);
 
-		$cstmEmail = "phuongtran214@gmail.com";
+		$cstmEmail = "e_lee@winroader.co.jp";
 		//受付メール送信
 		$contactValues = array(
 			'quesKind' => $quesKind,
