@@ -8,7 +8,7 @@
 <div class="content">
 
 <fieldset>
-	<ol>
+	<ol>		
 		<li class="formContents required">
 			<div class="formTitle"><label for="cstmName">会員番号</label></div>
 			<div class="formElements">
@@ -28,27 +28,31 @@
 		<li class="formContents required">
 			<div class="formTitle"><label for="afUserPhone">電話番号</label></div>
 			<div class="formElements">
-				<div class="formElement"><input type="email" name="afUserPhone" id="afUserPhone" value="<?php if($afUserPhone) echo $afUserPhone; ?>"<?php echo $disabled; ?> placeholder="例) 00012345678" /></div>
+				<ul class="formElement">
+					<li><input type="text" id="afUserPhone" name="afUserPhone" value="<?php if($afUserPhone) echo $afUserPhone;?>"<?php echo $disabled; ?> placeholder="例) 00012345678" /></li>					
+				</ul>
 			</div>
 		</li>
-		<li class="formContents required">
+		<li class="formContents required" id="afUserCltDate">
 			<div class="formTitle">引き取り希望日</div>
 			<div class="formElements">
 				<ul class="formElement">
 				<?php
-				$collectDate = array("2月15日(日)", "2月16日(日)", "2月22日(日)" , "2月23日(日)");
-				for($i=0; $i<count($collectDate); $i++){
-					echo '<li><input type="checkbox" name="collectDate" value="'.$collectDate[$i].'" id="collectDate'.$i.'"'.$checked.$disabled.' /><label for="collectDate'.$i.'">'.$collectDate[$i].'</label></li>';
-				}?>
+				$afUserCltDates = array("2月15日(日)", "2月16日(日)", "2月22日(日)", "2月23日(日)");
+				for($i=0; $i<count($afUserCltDates); $i++){
+					if(in_array($afUserCltDates[$i], $afUserCltDate)) $checked = " checked";
+					else $checked = "";
+					echo '<li><input type="checkbox" name="afUserCltDate['.$i.']" value="'.$afUserCltDates[$i].'" id="afUserCltDate'.$i.'"'.$checked.$disabled.' /><label for="afUserCltDate'.$i.'">'.$afUserCltDates[$i].'</label></li>';
+				}?>	
 			</ul>
 			</div>
 		</li>
 	</ol>
 </fieldset>
 
-<fieldset id="law">
+<fieldset>
 	<ol>
-		<li class="formContents required" id="law">
+		<li class="formContents required">
 			<div class="formTitle">個人情報の取扱について</div>
 			<div class="formElements">
 				<ul class="formElement">
@@ -60,7 +64,7 @@
 	</ol>
 </fieldset>
 
-
+<input type="hidden" id="quesKind" name="quesKind" value="<?php echo $quesKind; ?>" />
 <input type="hidden" name="siteCode" value="<?php echo siteCode(); ?>" />
 <input type="hidden" name="pr_code" value="<?php echo $pr_code; ?>" />
 <input type="hidden" name="couponUsed" id="couponUsed" value="<?php echo $couponUsed; ?>" />

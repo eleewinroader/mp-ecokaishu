@@ -13,19 +13,17 @@ if($_POST){
 	require_once(ABSPATH . WPINC . '/registration.php');
 	global $wpdb, $user_ID;
 
-	include (TEMPLATEPATH . '/contact-post.php');
+	include (TEMPLATEPATH . '/contact2-post.php');
 
 	$userAgent = $_SERVER['HTTP_USER_AGENT']; //ユーザーエージェント
 	date_default_timezone_set('Asia/Tokyo');
 	$submitdate = date("mdH", time()); //送信タイム
-	$post_type = "contactform";
+	$post_type = "af";
 	$post_title = cmsTitle($post_type, $submitdate, $pr_code);
 
 	$insertpost = array(
-		'post_status' => 'pending',
+		'post_status' => 'draft',
 		'post_title' => $post_title,
-		'post_content' => $cstmContents,
-		'comment_status' => 'closed',
 		'post_type' => $post_type
 	);
 	$insert_id = wp_insert_post($insertpost);
@@ -35,52 +33,25 @@ if($_POST){
 
 		//カスタムフィールド情報挿入
 		//cf　１番無くなった
-		add_post_meta($insert_id, 'contactInfo2', $cstmName);
-		add_post_meta($insert_id, 'contactInfo10', $cstmPron);
-		add_post_meta($insert_id, 'contactInfo4', $cstmEmail);
-		add_post_meta($insert_id, 'contactInfo5', $cstmPhoneNum);
-		add_post_meta($insert_id, 'contactInfo6', $replyWay);
-		add_post_meta($insert_id, 'contactInfo7', $coupon);
-		add_post_meta($insert_id, 'contactInfo8', $userAgent);
-		add_post_meta($insert_id, 'contactInfo9', $siteCode);
+		add_post_meta($insert_id, 'afInfo01', $afUserID);
+		add_post_meta($insert_id, 'afInfo02', $afUserName);
+		add_post_meta($insert_id, 'afInfo03', $afUserPhone);
+		add_post_meta($insert_id, 'afInfo04', $afUserCltDate);
 
 		//タクソノミー挿入	
 		wp_set_object_terms($insert_id, $quesKind, 'qstcat', $append = true);
 
-		//ユーザー登録
-		if($coupon == '受け取る' && !$couponUsed){
-			$email = $wpdb->escape($cstmEmail);
-			$user = array(
-				'user_email' => $email,
-				'user_login' => $email,
-				'user_pass' => '0000'
-			);
-			$status = wp_insert_user($user);
-			$couponPub = date("ymd", time()); //送信タイム
-			if(is_wp_error($status)){
-				$user = get_user_by("email", $cstmEmail);
-				$user = $user->ID;				
-				$couponNum = "NE".$couponPub."-".sprintf("%06d", $user);
-			}else{
-				$couponNum = "NE".$couponPub."-".sprintf("%06d", $status);
-			}
-		}
-
+		$cstmEmail = "phuongtran214@gmail.com";
 		//受付メール送信
 		$contactValues = array(
 			'quesKind' => $quesKind,
-			'cstmName' => $cstmName,
-			'cstmPron' => $cstmPron,
-			'cstmType' => $cstmType,
-			'cstmEmail' => $cstmEmail,
-			'cstmPhoneNum' => $cstmPhoneNum,
-			'cstmContents' => $cstmContents,
-			'replyWay' => $replyWay,
-			'couponNum' => $couponNum,
+			'afUserID' => $afUserID,
+			'afUserName' => $afUserName,
+			'afUserPhone' => $afUserPhone,
+			'afUserCltDate' => $afUserCltDate,
 			'post_title' => $post_title
 		);
-		contact_ntfct($cstmEmail, $contactValues);
-
+		contact2_ntfct($cstmEmail, $contactValues);		
 	}
 
 }else{
@@ -103,11 +74,6 @@ wp_reset_query(); wp_reset_postdata();
 		}?>
 
 		<header>
-			<nav id="sitepath">
-				<ul class="bread_crumb">
-					<li><?php echo $title; ?></li>
-				</ul>
-			</nav>
 			<h2><?php echo $title; ?></h2>
 		</header>
 

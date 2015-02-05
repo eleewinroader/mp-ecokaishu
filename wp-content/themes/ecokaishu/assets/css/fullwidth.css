@@ -129,12 +129,11 @@ PC settings
 		border: none;
 		padding: 0;
 		margin: 0;
-		text-align: left;
+		background: url("../../assets/img/contact/appealing.png") top left no-repeat;
+		background-size: 35% auto;
+		height: 65px;
+		text-indent: -10000px;
 	}
-	#fullwidth .intro h3 img {
-		width: 35%;
-	}
-
 	
 	#fullwidth .intro dl dt {
 		font-size: 20px;
@@ -200,6 +199,20 @@ PC settings
 	#fullwidth .intro .download_2 {
 		float: right;
 		text-decoration: none;
+	}
+	#fullwidth .al_c {
+		text-align: center;
+	}
+	#fullwidth .btnBackTop {
+		background: #7ac943;
+		padding: 1em 2em;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		color: #FFFFFF;
+		text-decoration: none;
+		margin-top: 2rem;
+		display: inline-block;
 	}
 
 
