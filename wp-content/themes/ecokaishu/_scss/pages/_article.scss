@@ -344,51 +344,6 @@ h6{
 
 	}
 
-	.listSummary {
-		text-align: center;
-		
-
-		li {
-			border-bottom: rgba($black, .1) solid 1px;
-			padding: 1rem 0;
-		}
-
-		// PC
-		@media all and (min-width: $minWidth){
-			width: $maxWidth;
-			margin: 0 auto;
-		}
-	}
-
-	.txtSummary {
-		margin: 2rem 0;		
-
-		h3 {
-			margin-top: 0;
-		}
-
-		// PC
-		@media all and (min-width: $minWidth){
-			padding: 2rem 2rem 2rem 1rem;
-			&.bor {			
-				border-right: rgba($black, .1) solid 1px;
-			}
-		}
-
-		// Mobile
-		@media all and (max-width: $maxWidth){
-			padding: 2rem 0;
-
-			&.bor {			
-				border-bottom: rgba($black, .1) solid 1px;
-			}
-		}
-	}
-
-	// .contents
-	//**************************************************************
-
-
 
 }
 

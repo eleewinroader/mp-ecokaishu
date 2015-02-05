@@ -27,13 +27,13 @@ get_header(); ?>
 		</div>
 	<!--.headerPage--></header>
 
-	<div class="container">		
+	<div class="container">
 
 		<div class="intro">
 			<div class="summary">
 				<p><span class="block">エコランドは</span><span class="block">買取も同時にできます。</span></p>
 			<!-- .intro .summary--></div>
-			<ul class="appealingPoints">
+			<ul class="listPoints">
 				<li>お電話で買取の目安金額がご案内できます。</li>
 				<li>製造年(使用年数)、メーカー名(ブランド名)、型番がわかると、より正確に案内できます。</li>
 				<li>最終的な買取金額はお引取にお伺いした際に商品の状態を確認した上でのご案内となります。</li>

@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+article.unavailable {
+
+//**********************************************************************
+// Extend class
+//**********************************************************************
+
+//.icomoon
+.icomoon{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.3rem;
+	font-family: icomoon;
+	speak: none;
+}
+
+//**********************************************************************
+// .unavailableDetails
+//**********************************************************************
+
+.unavailableDetails{
+
+	//PC
+	@media all and (min-width: $minWidth){
+		margin-top: 5.0rem;
+		margin-bottom: 5.0rem;
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+		margin-top: 3.0rem;
+		margin-bottom: 3.0rem;
+	}
+
+}
+
+
+
+}

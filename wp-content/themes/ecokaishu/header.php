@@ -35,7 +35,6 @@ if(is_single()){
 	$tempType = "home";
 }
 
-
 $h1 = getH1($tempType, $metaObj); ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
@@ -124,7 +123,7 @@ if($keywords && !is_single()) echo '<meta name="keywords" itemprop="keywords" co
 									<li><a href="<?php echo get_post_type_archive_link("flow"); ?>">ご利用の流れ</a></li>
 									<li><a href="<?php echo get_post_type_archive_link("price"); ?>">料金案内</a></li>
 									<li><a href="<?php echo get_post_type_archive_link("unavailable"); ?>">エコ回収できないモノ</a></li>
-									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>#faq3">買取について</a></li>
+									<li><a href="<?php echo get_post_type_archive_link("purchase"); ?>">買取について</a></li>
 									<li><a href="<?php echo get_post_type_archive_link("area"); ?>">対応エリア</a></li>
 									<li><a href="<?php echo get_post_type_archive_link("faq"); ?>">よくある質問</a></li>
 								</ul>

@@ -8,10 +8,12 @@
 * @since MP-Ecokaishu 0.0
 */
 
-include(TEMPLATEPATH.'/estimate-post.php');
+
+include(TEMPLATEPATH.'/estimate2-1-post.php');
 include (TEMPLATEPATH . '/header-form.php');
 
 ?>
+
 	<header>
 		<nav id="sitepath">
 			<ul class="bread_crumb">					
@@ -29,12 +31,16 @@ include (TEMPLATEPATH . '/header-form.php');
 
 	<div class="fullwidthForm" id="estimate">
 
+		<div class="contents">
+		<div class="content" id="estmtIntro">
+		<img src="<?php echo siteInfo("rootUrl"); ?>/img/kaishu/estmt/intro_camp2<?php if(is_smartphone()) echo "_s"; ?>.gif" alt="" /></div></div>
+
 		<?php
 		echo notices();
-		$actions = get_permalink(get_page_by_path('estimate/confirm', OBJECT));
-		$submits = "見積内容を確認する";
+		$actions = get_permalink(get_page_by_path('estimate2-1/confirm', OBJECT));
+		$submits = "サービス申込を確認する";
 		echo '<form action="'.$actions.'" method="post" name="form" id="estimate" enctype="multipart/form-data">';
-		include(TEMPLATEPATH.'/estimate-form.php');
+		include(TEMPLATEPATH.'/estimate2-1-form.php');
 		echo '<div class="formBtns"><input type="submit" value="'.$submits.'" id="send" /></div></form>';
 		?>
 
@@ -42,6 +48,7 @@ include (TEMPLATEPATH . '/header-form.php');
 
 </article>
 </div>
+	
 
 <footer class="siteFooter al_c">
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
@@ -58,14 +65,14 @@ document.write("<img width=1 height=1 border=0 src='" + protocol + "//b90.yahoo.
 /* ]]> */
 //-->
 </script>
-<!-- Google Code for &#12363;&#12435;&#12383;&#12435;&#35211;&#31309;&#12418;&#12426; Conversion Page -->
+<!-- Google Code for &#22823;&#22411;&#23478;&#20855;&#28961;&#26009;&#24341;&#21462; Conversion Page -->
 <script type="text/javascript">
 /* <![CDATA[ */
 var google_conversion_id = 974830453;
 var google_conversion_language = "en";
 var google_conversion_format = "3";
 var google_conversion_color = "ffffff";
-var google_conversion_label = "ly68CLOUiQoQ9fbq0AM";
+var google_conversion_label = "w-lcCKuViQoQ9fbq0AM";
 var google_remarketing_only = false;
 /* ]]> */
 </script>
@@ -73,11 +80,11 @@ var google_remarketing_only = false;
 </script>
 <noscript>
 <div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/974830453/?label=ly68CLOUiQoQ9fbq0AM&amp;guid=ON&amp;script=0"/>
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/974830453/?label=w-lcCKuViQoQ9fbq0AM&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
 
-<script src="//easy-entry.jp/ffconf/ffconf_5000_0137_0229.js" charset="utf-8" type="text/javascript"></script>
+<script src="//easy-entry.jp/ffconf/ffconf_5000_0140_0232.js" charset="utf-8" type="text/javascript"></script>
 <script src="//easy-entry.jp/track/efo2.js" charset="utf-8" type="text/javascript"></script>
 
 </body>

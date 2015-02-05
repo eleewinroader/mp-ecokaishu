@@ -1,14 +1,14 @@
 <?php
-/**
- * The main template file.
- *
- * Template name: メールで見積依頼の内容確認
+/*
+*
+* Template name: メールで見積依頼2の内容確認
+*
 * @package Montser Platform
 * @subpackage MP-Ecokaishu 2.2
 * @since MP-Ecokaishu 0.0
- */
+*/
 
-include(TEMPLATEPATH.'/estimate-post.php');
+include(TEMPLATEPATH.'/estimate2-1-post.php');
 
 /*
 $errormsg = array();
@@ -41,17 +41,17 @@ include (TEMPLATEPATH . '/header-form.php');
 	<?php
 	if($errormsg){ //エラーメッセージがある場合
 		$disabled = '';
-		$actions = get_permalink(get_page_by_path('estimate/confirm', OBJECT));
+		$actions = get_permalink(get_page_by_path('estimate2-1/confirm', OBJECT));
 		$submits = "見積内容を確認する";
 		echo '<div class="fullwidthForm"><form action="'.$actions.'" method="post" name="form" id="estimate" enctype="multipart/form-data">';
-		include(TEMPLATEPATH.'/estimate-form.php');
+		include(TEMPLATEPATH.'/estimate2-1-form.php');
 		echo '<div class="formBtns"><input type="submit" name="" value="'.$submits.'" id="submit" /></div></form></div>';
 	}else{ //エラーメッセージが無い場合
 		$disabled = ' disabled';
-		$actions = array(get_permalink(get_page_by_path('estimate', OBJECT)), get_permalink(get_page_by_path('estimate/thanks', OBJECT)));
-		$submits = array("依頼内容を修正する", "この内容で見積を依頼する");
+		$actions = array(get_permalink(get_page_by_path('estimate2-1', OBJECT)), get_permalink(get_page_by_path('estimate2-1/thanks', OBJECT)));
+		$submits = array("申込内容を修正する", "この内容で申し込む");
 		echo '<div class="fullwidthForm" id="confirm">';
-		include(TEMPLATEPATH.'/estimate-form.php');		
+		include(TEMPLATEPATH.'/estimate2-1-form.php');		
 		echo '<ul class="formBtns">';
 		for($i=0; $i<count($actions); $i++){
 			echo '<li><form action="'.$actions[$i].'" method="post" name="form" id="estimate" enctype="multipart/form-data">';
@@ -73,7 +73,7 @@ include (TEMPLATEPATH . '/header-form.php');
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
 </footer>
 
-<script src="//easy-entry.jp/ffconf/ffconf_5000_0137_0229.js" charset="utf-8" type="text/javascript"></script>
+<script src="//easy-entry.jp/ffconf/ffconf_5000_0140_0232.js" charset="utf-8" type="text/javascript"></script>
 <script src="//easy-entry.jp/track/efo2r.js?t=1" charset="utf-8" type="text/javascript"></script>
 
 </body>

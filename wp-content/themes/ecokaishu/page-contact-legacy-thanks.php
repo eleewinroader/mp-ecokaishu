@@ -4,6 +4,8 @@
 * Template name: レガシー用お問い合わせ受付完了
 *
 * @package Montser Platform
+* @subpackage MP-Ecokaishu 2.2
+* @since MP-Ecokaishu 0.0
 */
 
 if($_POST){
@@ -44,7 +46,7 @@ if($_POST){
 		add_post_meta($insert_id, 'contactInfo8', $userAgent);
 		add_post_meta($insert_id, 'contactInfo9', $siteCode);
 
-		//タクソノミー挿入
+		//タクソノミー挿入	
 		wp_set_object_terms($insert_id, $quesKind, 'qstcat', $append = true);
 
 		//ユーザー登録
@@ -59,7 +61,7 @@ if($_POST){
 			$couponPub = date("ymd", time()); //送信タイム
 			if(is_wp_error($status)){
 				$user = get_user_by("email", $cstmEmail);
-				$user = $user->ID;
+				$user = $user->ID;				
 				$couponNum = "NE".$couponPub."-".sprintf("%06d", $user);
 			}else{
 				$couponNum = "NE".$couponPub."-".sprintf("%06d", $status);
@@ -93,7 +95,7 @@ include (TEMPLATEPATH . '/header-legacy.php');
 wp_reset_query(); wp_reset_postdata();
 
 	if(have_posts()): while(have_posts()): the_post();
-
+	
 		if($error){
 			$title = get_post_meta($post->ID, "thanksCf1", TRUE);
 			$content = get_post_meta($post->ID, "thanksCf2", TRUE);
@@ -111,7 +113,7 @@ wp_reset_query(); wp_reset_postdata();
 				<p><?php echo $content; ?></p>
 				<?php echo telBnr(); ?>
 			</div>
-		</div>
+		</div>		
 
 	<?php endwhile; endif; ?>
 
