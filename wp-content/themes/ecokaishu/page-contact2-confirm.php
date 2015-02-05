@@ -80,15 +80,14 @@ include (TEMPLATEPATH . '/header-form.php');
 * @package Montser Platform
  */
  
-include (TEMPLATEPATH . '/contact-post.php');
+include (TEMPLATEPATH . '/contact2-post.php');
 
 //エラーメッセージ取得
 $errormsg = array();
-if(!$cstmName) $errormsg['cstmName'] = "お名前をご入力ください";
-if(!$cstmEmail) $errormsg['cstmEmail'] = "メールアドレスを入力ください";
-if(!$cstmPhoneNum) $errormsg['cstmPhoneNum'] = "連絡可能な電話番号をご入力ください";
-if(!$cstmContents) $errormsg['cstmContents'] = "お問い合わせ内容をご入力ください";
-if(!$replyWay) $errormsg['replyWay'] = "エコランドからのご連絡方法を選択してください";
+if(!$afUserID) $errormsg['afUserID'] = "お名前をご入力ください";
+if(!$afUserName) $errormsg['afUserName'] = "メールアドレスを入力ください";
+if(!$afUserPhone) $errormsg['afUserPhone'] = "連絡可能な電話番号をご入力ください";
+if(!$afUserCltDate) $errormsg['afUserCltDate'] = "お問い合わせ内容をご入力ください";
 if(!$agreeLaw) $errormsg['agreeLaw'] = "プライバシーポリシーに同意してください";
 
 include (TEMPLATEPATH . '/header-form.php');
@@ -96,28 +95,23 @@ include (TEMPLATEPATH . '/header-form.php');
 ?>
 
 	<header>
-		<nav id="sitepath">
-			<ul class="bread_crumb">					
-				<li><?php the_title(); ?></li>
-			</ul>
-		</nav>
 		<h2><?php the_title(); ?></h2>
 	</header>
 
 	<?php
 	if($errormsg){ //エラーメッセージがある場合
 		$disabled = '';
-		$actions = get_permalink(get_page_by_path('contact/confirm', OBJECT));
+		$actions = get_permalink(get_page_by_path('contact2/confirm', OBJECT));
 		$submits = "お問い合わせ内容を確認する";
 		echo '<div class="fullwidthForm"><form action="'.$actions.'" method="post" name="form" id="" enctype="multipart/form-data">';
-		include(TEMPLATEPATH.'/contact-form.php');
+		include(TEMPLATEPATH.'/contact2-form.php');
 		echo '<div class="formBtns"><input type="submit" name="" value="'.$submits.'" id="submit" /></div></form></div>';
 	}else{ //エラーメッセージが無い場合
 		$disabled = ' disabled';
-		$actions = array(get_permalink(get_page_by_path('contact', OBJECT)), get_permalink(get_page_by_path('contact/thanks', OBJECT)));
+		$actions = array(get_permalink(get_page_by_path('contact2', OBJECT)), get_permalink(get_page_by_path('contact2/thanks', OBJECT)));
 		$submits = array("内容を修正する", "この内容で送信する");
 		echo '<div class="fullwidthForm" id="confirm">';
-		include(TEMPLATEPATH.'/contact-form.php');
+		include(TEMPLATEPATH.'/contact2-form.php');
 		echo '<ul class="formBtns">';
 		for($i=0; $i<count($actions); $i++){
 			echo '<li><form action="'.$actions[$i].'" method="post" name="form" id="confirm" enctype="multipart/form-data">';
@@ -133,8 +127,6 @@ include (TEMPLATEPATH . '/header-form.php');
 
 </article>
 </div>
-
-
 
 <footer class="siteFooter al_c">
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>

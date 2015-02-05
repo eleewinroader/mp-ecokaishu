@@ -484,7 +484,7 @@ $(document).ready(function(){
 					msg.remove();
 					ele.closest(".formContents").find(".formTitle").removeClass("ok");
 					ele.after('<span id="'+msgId+'" class="msg errorMsg">'+errorTypeMsg+'</span>');
-					ele.removeClass("focus").addClass("error");					
+					ele.removeClass("focus").addClass("error");	
 				}
 			}else{
 				msg.remove();
@@ -1024,8 +1024,58 @@ $(document).ready(function(){
 				ele.removeClass("focus").addClass("error");
 			}
 
+		},
+		'afUserPhone' : function(){
 
-		}
+			var eleId = "afUserPhone";
+			var ele = $("#"+eleId);
+			var msgId = eleId+"Msg";
+			var msg = $("#"+msgId);
+			var errorTypeMsg = "数字のみ、10文字以上入力してください 例)0123456789";
+			var errorMsg = "お電話番号を入力してください";
+
+			var patt = /^[0-9\-]+$/;
+
+			if(ele.val()){
+				if(ele.val().match(patt) && ele.val().length > 9){
+					msg.remove();
+					ele.closest(".formContents").find(".formTitle").addClass("ok");
+					ele.removeClass("focus").addClass("correct");
+				}else{
+					jVal.errors = true;
+					msg.remove();
+					ele.closest(".formContents").find(".formTitle").removeClass("ok");
+					ele.after('<span id="'+msgId+'" class="msg errorMsg">'+errorTypeMsg+'</span>');
+					ele.removeClass("focus").addClass("error");
+				}
+			}else{
+				jVal.errors = true;
+				msg.remove();
+				ele.closest(".formContents").find(".formTitle").removeClass("ok");
+				ele.after('<span id="'+msgId+'" class="msg errorMsg">'+errorMsg+'</span>');
+				ele.removeClass("focus").addClass("error");
+			}
+
+		},
+		'afUserCltDate' : function(){
+
+			var eleId = "afUserCltDate";
+			var ele = $("#"+eleId+" input[type='checkbox']:checked");
+			var msgId = eleId+"Msg";
+			var msg = $("#"+msgId);
+			var errorMsg = "回収していただいた不用品をチェック、あるいは入力してください";
+
+			if(ele.length == 0){
+				jVal.errors = true;
+				msg.remove();
+				$("#"+eleId).find(".formTitle").removeClass("ok");
+				$("#"+eleId).find(".formElement").after('<span id="'+msgId+'" class="msg errorMsg">'+errorMsg+'</span>');
+			}else{
+				msg.remove();
+				$("#"+eleId).find(".formTitle").addClass("ok");
+			}
+
+		},
 
 
 	};
@@ -1102,7 +1152,9 @@ $(document).ready(function(){
 				jVal.afUserID();
 				jVal.afUserName();
 				jVal.afUserPhone();
-
+				jVal.afUserCltDate();
+				jVal.agreeLaw();
+				jVal.sendIt();
 
 			<?php endif; ?>
 
@@ -1146,6 +1198,8 @@ $(document).ready(function(){
 	$(".municipality").blur(jVal.cstmMunicipality);
 	$("#afUserName").blur(jVal.afUserName);
 	$("#afUserID").blur(jVal.afUserID);
+	$("#afUserPhone").blur(jVal.afUserPhone);
+	$("#afUserCltDate input[type='checkbox']").click(jVal.afUserCltDate);
 
 });
 
