@@ -1057,9 +1057,9 @@ $(document).ready(function(){
 			}
 
 		},
-		'collectDate' : function(){
+		'afUserCltDate' : function(){
 
-			var eleId = "collectDate";
+			var eleId = "afUserCltDate";
 			var ele = $("#"+eleId+" input[type='checkbox']:checked");
 			var msgId = eleId+"Msg";
 			var msg = $("#"+msgId);
@@ -1152,7 +1152,7 @@ $(document).ready(function(){
 				jVal.afUserID();
 				jVal.afUserName();
 				jVal.afUserPhone();
-				jVal.collectDate();
+				jVal.afUserCltDate();
 				jVal.agreeLaw();
 				jVal.sendIt();
 
@@ -1199,7 +1199,7 @@ $(document).ready(function(){
 	$("#afUserName").blur(jVal.afUserName);
 	$("#afUserID").blur(jVal.afUserID);
 	$("#afUserPhone").blur(jVal.afUserPhone);
-	$("#collectDate input[type='checkbox']").click(jVal.collectDate);
+	$("#afUserCltDate input[type='checkbox']").click(jVal.afUserCltDate);
 
 });
 
