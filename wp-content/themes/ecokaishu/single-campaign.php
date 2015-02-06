@@ -1,4 +1,9 @@
 <?php
+$aucfanCamp = get_page_by_path("aucfan", OBJECT, "campaign");
+if($post->ID == $aucfanCamp->ID){
+	include(TEMPLATEPATH.'/page-contact2.php'); 
+}else{
+
 /*
 * @package Montser Platform
 */
@@ -312,4 +317,6 @@ EOF;
 		<?php endif; ?>
 
 
-<?php get_footer(); ?>
+<?php
+get_footer();
+}?>

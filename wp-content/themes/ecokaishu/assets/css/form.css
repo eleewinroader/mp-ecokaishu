@@ -87,7 +87,7 @@ textarea{
 	background: rgba(226, 49, 140, .1);
 	font-weight: bold;
 }
-#confirm select[disabled]{	
+#confirm select[disabled]{
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	border: 1px solid transparent;
@@ -140,7 +140,7 @@ textarea{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-	
+
 	/* .formTitle*/
 	.formTitle{
 		position: relative;
@@ -181,7 +181,7 @@ textarea{
 	/* .formElements*/
 	.formContents .formElements{
 		position: relative;
-	}	
+	}
 	.formContents .formElements p{
 		margin: 0.5rem 0;
 	}
@@ -240,7 +240,7 @@ textarea{
 	/* .subtitle*/
 	#fwForm .formElements .subtitle{
 		font-weight: bold;
-	}	
+	}
 	#fwForm .formElements .fwList > ul{
 		border-left: 1px solid #dddddd;
 		margin-left: 0.3rem;
@@ -251,7 +251,7 @@ textarea{
 	}
 
 
-	
+
 
 /* formBtns
 ***********************************************************************/
@@ -262,7 +262,7 @@ textarea{
 }
 	.formBtns li{
 		display: inline-block;
-		padding: 0 1.0rem;		
+		padding: 0 1.0rem;
 	}
 	.formBtns input[type="submit"]{
 		position: relative;
@@ -334,7 +334,7 @@ select+.msg{
 }
 .error{
 	background: rgba(226, 49, 140, .1) !important;
-	border: 1px solid rgba(226, 49, 140, .3) !important;	
+	border: 1px solid rgba(226, 49, 140, .3) !important;
 }
 .errorMsg{
 	background: #e2318c;
@@ -345,7 +345,7 @@ select+.msg{
 }
 .correct{
 	background: rgba(14, 158, 161, .1) !important;
-	border: 1px solid rgba(14, 158, 161, .3) !important;	
+	border: 1px solid rgba(14, 158, 161, .3) !important;
 }
 .correctMsg{
 	background: #009ea1;
@@ -454,7 +454,7 @@ select+.msg{
 			font-weight: bold;
 		}
 		#causesRank li{
-			display: block;			
+			display: block;
 		}
 		#causesRank li select{
 			min-width: 500px;
@@ -476,7 +476,7 @@ select+.msg{
 			left: 0 !important;
 			bottom: 0rem !important;
 		}
-		
+
 	}
 
 
@@ -539,7 +539,7 @@ select+.msg{
 		}
 
 		/* .formBtns*/
-		
+
 		.formBtns{
 			margin-bottom: 2.0rem;
 			margin-left: 0.5rem;

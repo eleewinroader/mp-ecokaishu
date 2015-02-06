@@ -1244,6 +1244,8 @@ function cmsTitle($posttype, $submitdate, $pr_code=FALSE){
 		$typeid = 'V';
 	}elseif($posttype == "remind"){
 		$typeid = "R";
+	}elseif($posttype == "af"){
+		$typeid = "A";
 	}else{
 		$typeid = 'E';
 	}
@@ -1401,6 +1403,25 @@ mail_footer();
 
 	wp_mail($email, $subject, $message, mail_header());
 	wp_mail('mail_contact@eco-land.jp', $subject, $message, mail_header($email));
+}
+
+/* contact 2
+*****************************************************************************************/
+
+function contact2_ntfct($contactValues){
+	$subject = '【直接引取りキャンペーン】申込が完了いたしました';
+$message .= '
+
+■ 会員番号：'.$contactValues['afUserID'].'
+■ お名前：'.$contactValues['afUserName'].'
+■ 電話番号：'.$contactValues['afUserPhone'].'
+■ 引き取り希望日：'.$contactValues['afUserCltDate'].'
+■ お問い合わせ時刻：'.date("Y年m月d日 H時i分s秒", time()).'
+■ 受付番号：'.$contactValues['post_title'].'
+
+';
+
+	wp_mail('e.lee.winroader@gmail.com', $subject, $message, mail_header($email));
 }
 
 /* クーポン未使用者専用フォーム

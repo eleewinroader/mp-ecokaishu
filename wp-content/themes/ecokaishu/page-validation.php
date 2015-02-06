@@ -2,7 +2,6 @@
 
 $(document).ready(function(){
 
-
 	<?php if(!is_smartphone() && pageCode() == "inquiry"): ?>
 	/*
 	生年月日*/
@@ -24,7 +23,7 @@ $(document).ready(function(){
 	<?php endif; ?>
 
 	<?php if(!is_smartphone() && pageCode() == "contact"):  ?>
-	
+
 		//集荷日
 		$(document).ready(function(){
 			$( ".datepicker" ).datepicker({
@@ -36,7 +35,6 @@ $(document).ready(function(){
 
 	<?php endif; ?>
 
-
 	/*
 	選んだ理由の順位付け　*/
 	//選択ボックス
@@ -46,13 +44,14 @@ $(document).ready(function(){
 			if($(this).is(':checked')){
 				var option = $('<option />');
 				option.val(inputVal).html(inputVal);
-				$('.select').append(option);	   
+				$('.select').append(option);
 			}else{
 			   $(".select").children("option[value="+inputVal+"]").remove();
 			}
 		});
 	});
 	//値がある場合
+	<?php if($cause): ?>
 	var causes = [<?php echo '"'.implode('","', $cause).'"'; ?>];
 	var causeValues = [<?php echo '"'.$causeFirst.'", "'.$causeSecond.'", "'.$causeThird.'"'; ?>];
 	if(causes.length > 1){
@@ -63,7 +62,7 @@ $(document).ready(function(){
 				option.val(value).html(value);
 				if(value == causeValues[i]){
 					option.attr("selected", "selected");
-				}				
+				}
 				$('#causesRank li:nth-child('+child+') select').append(option);
 			});
 		}
@@ -74,12 +73,13 @@ $(document).ready(function(){
 			});
 		}
 	}
+	<?php endif; ?>
 
 	/*
 	テキストエリア制御*/
 	$(function(){
 		$(".fwList, #cttCorsPro, #cttOrgsPro, #cttOrgsCon").hide();
-		
+
 		//お客さんの声
 		$(".fwRadio input[type='radio']").change(function(){
 			var inputVal = $(this).val();
@@ -93,7 +93,7 @@ $(document).ready(function(){
 				$(this).closest("ul").find(".fwList").show();
 				$(this).closest("ul").find(".fwList span").html(checked);
 			}
-		});		
+		});
 
 		//他社考慮したか
 		$("#cttCors input[type='radio']").change(function(){
@@ -134,7 +134,7 @@ $(document).ready(function(){
 				}
 			}
 		});
-	});		
+	});
 
 
 	/*
@@ -167,7 +167,7 @@ $(document).ready(function(){
 				$("+label+input", this).fadeIn().removeClass("hide");
 			}
 		});
-	});	
+	});
 
 
 	/*
@@ -189,9 +189,9 @@ $(document).ready(function(){
 		});
 	});
 
-	
+
 	/*
-	値のない確認画面でのtextfieldを消す	*/
+	値のない確認画面でのtextfieldを消す*/
 	$(function(){
 		$("#confirm input[type='text']").each(function(){
 			if($(this).val() == 0){
@@ -201,7 +201,7 @@ $(document).ready(function(){
 	});
 
 	<?php if(!is_smartphone()): ?>
-	
+
 		//集荷日
 		$(document).ready(function(){
 			$( ".datepicker" ).datepicker({
@@ -245,6 +245,7 @@ $(document).ready(function(){
 	});
 	var cstmMncplt = "<?php echo $cstmMncplt; ?>";
 	if(cstmMncplt) $('.selected').parents("select").removeClass("hide");
+
 
 	var jVal = {
 
@@ -384,7 +385,7 @@ $(document).ready(function(){
 								$("#getCoupon").closest("li").find("label").after('<span id="getCouponMsg" class="msg correctMsg">クーポン番号を受付完了メールにてお知らせいたします</span>');
 								$("#couponUsed").attr("value", "");
 								$("#getCoupon").closest("li").find(".formTitle").addClass("ok");
-							<?php endif; ?>							
+							<?php endif; ?>
 						}
 					});*/
 				}else{
@@ -456,7 +457,7 @@ $(document).ready(function(){
 				ele.after('<span id="'+msgId+'" class="msg errorMsg">'+errorMsg+'</span>');
 				ele.removeClass("focus").addClass("error");
 			}
-			
+
 		},
 
 		'cstmPrefecture' : function(){
@@ -484,7 +485,7 @@ $(document).ready(function(){
 					msg.remove();
 					ele.closest(".formContents").find(".formTitle").removeClass("ok");
 					ele.after('<span id="'+msgId+'" class="msg errorMsg">'+errorTypeMsg+'</span>');
-					ele.removeClass("focus").addClass("error");					
+					ele.removeClass("focus").addClass("error");
 				}
 			}else{
 				msg.remove();
@@ -742,7 +743,7 @@ $(document).ready(function(){
 
 		},
 
-		
+
 		'campKind' : function(){
 
 			var eleId = "campKind";
@@ -773,7 +774,7 @@ $(document).ready(function(){
 			}else{
 				$("#"+eleId).closest(".formContents").find(".formTitle").removeClass("ok");
 				ele.removeClass("focus");
-			}			
+			}
 
 		},
 
@@ -797,7 +798,7 @@ $(document).ready(function(){
 				}
 
 			});
-			
+
 		},
 
 		'voices' : function(){
@@ -812,7 +813,7 @@ $(document).ready(function(){
 			if(ele.is(':checked')){
 				msg.remove();
 			}
-			
+
 		},
 
 		'cttCors' : function(){
@@ -828,7 +829,7 @@ $(document).ready(function(){
 			}else{
 				$("#"+eleId).closest(".formContents").find(".formTitle").removeClass("ok");
 			}
-			
+
 		},
 
 		'cttCorsPro' : function(){
@@ -837,7 +838,7 @@ $(document).ready(function(){
 			var ele2 = $("input[name='notAplyCor[]']:checked").length;
 
 			if(ele1 > 0 && ele2 > 0){
-				$("#cttCors").closest(".formContents").find(".formTitle").addClass("ok");				
+				$("#cttCors").closest(".formContents").find(".formTitle").addClass("ok");
 			}else{
 				$("#cttCors").closest(".formContents").find(".formTitle").removeClass("ok");
 			}
@@ -999,13 +1000,13 @@ $(document).ready(function(){
 			var ele = $("#"+eleId);
 			var msgId = eleId+"Msg";
 			var msg = $("#"+msgId);
-			var errorTypeMsg = "数字のみ、10文字以上入力してください 例)0123456789";
-			var errorMsg = "お電話番号を入力してください";
+			var errorTypeMsg = "数字のみ、6文字入力してください 例)123456";
+			var errorMsg = "会員番号を入力してください";
 
 			var patt = /^[0-9\-]+$/;
 
 			if(ele.val()){
-				if(ele.val().match(patt) && ele.val().length > 9){
+				if(ele.val().match(patt) && ele.val().length == 6){
 					msg.remove();
 					ele.closest(".formContents").find(".formTitle").addClass("ok");
 					ele.removeClass("focus").addClass("correct");
@@ -1024,8 +1025,58 @@ $(document).ready(function(){
 				ele.removeClass("focus").addClass("error");
 			}
 
+		},
+		'afUserPhone' : function(){
 
-		}
+			var eleId = "afUserPhone";
+			var ele = $("#"+eleId);
+			var msgId = eleId+"Msg";
+			var msg = $("#"+msgId);
+			var errorTypeMsg = "数字のみ、10文字入力してください 例)08012345678";
+			var errorMsg = "お電話番号を入力してください";
+
+			var patt = /^[0-9\-]+$/;
+
+			if(ele.val()){
+				if(ele.val().match(patt) && ele.val().length < 12){
+					msg.remove();
+					ele.closest(".formContents").find(".formTitle").addClass("ok");
+					ele.removeClass("focus").addClass("correct");
+				}else{
+					jVal.errors = true;
+					msg.remove();
+					ele.closest(".formContents").find(".formTitle").removeClass("ok");
+					ele.after('<span id="'+msgId+'" class="msg errorMsg">'+errorTypeMsg+'</span>');
+					ele.removeClass("focus").addClass("error");
+				}
+			}else{
+				jVal.errors = true;
+				msg.remove();
+				ele.closest(".formContents").find(".formTitle").removeClass("ok");
+				ele.after('<span id="'+msgId+'" class="msg errorMsg">'+errorMsg+'</span>');
+				ele.removeClass("focus").addClass("error");
+			}
+
+		},
+		'afUserCltDate' : function(){
+
+			var eleId = "afUserCltDate";
+			var ele = $("#"+eleId+" input[type='checkbox']:checked");
+			var msgId = eleId+"Msg";
+			var msg = $("#"+msgId);
+			var errorMsg = "回収していただいた不用品をチェック、あるいは入力してください";
+
+			if(ele.length == 0){
+				jVal.errors = true;
+				msg.remove();
+				$("#"+eleId).find(".formTitle").removeClass("ok");
+				$("#"+eleId).find(".formElement").after('<span id="'+msgId+'" class="msg errorMsg">'+errorMsg+'</span>');
+			}else{
+				msg.remove();
+				$("#"+eleId).find(".formTitle").addClass("ok");
+			}
+
+		},
 
 
 	};
@@ -1096,13 +1147,15 @@ $(document).ready(function(){
 				jVal.agreeLaw();
 				jVal.sendIt();
 
-			<?php elseif(pageCode() == "contact2"): ?>
+			<?php elseif(pageCode() == "campaign"): ?>
 
 				jVal.errors = false;
 				jVal.afUserID();
 				jVal.afUserName();
 				jVal.afUserPhone();
-
+				jVal.afUserCltDate();
+				jVal.agreeLaw();
+				jVal.sendIt();
 
 			<?php endif; ?>
 
@@ -1112,7 +1165,7 @@ $(document).ready(function(){
 
 	$("#quesKind").change(jVal.quesKind);
 	//$("#campKind").change(jVal.campKind);
-	$("#cstmName").blur(jVal.cstmName);	
+	$("#cstmName").blur(jVal.cstmName);
 	$("#cstmPron").blur(jVal.cstmPron);
 	$("#cstmEmail").blur(jVal.cstmEmail);
 	$("#cstmBD").blur(jVal.cstmBD);
@@ -1139,13 +1192,15 @@ $(document).ready(function(){
 	$("#cttOrgsPro input[type='checkbox']").click(jVal.cttOrgsPro);
 	$("#cttOrgsCon input[type='checkbox']").click(jVal.cttOrgsCon);
 	$("#causesRank select").change(jVal.causesRank);
-	$("#cstmContents").blur(jVal.cstmContents);		
+	$("#cstmContents").blur(jVal.cstmContents);
 	$("#getCoupon").change(jVal.getCoupon);
 	$("#agreeLaw").change(jVal.agreeLaw);
 	$("#prefectures").change(jVal.cstmPrefecture);
 	$(".municipality").blur(jVal.cstmMunicipality);
 	$("#afUserName").blur(jVal.afUserName);
 	$("#afUserID").blur(jVal.afUserID);
+	$("#afUserPhone").blur(jVal.afUserPhone);
+	$("#afUserCltDate input[type='checkbox']").click(jVal.afUserCltDate);
 
 });
 
