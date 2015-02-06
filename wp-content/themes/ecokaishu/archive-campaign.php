@@ -35,9 +35,11 @@ get_header(); ?>
 				<h3>ただ今進行中のキャンペーン</h3>
 				<div id="owl-slide" class="owl-carousel owl-theme">
 					<?php
+					$aucfanCamp = get_page_by_path("aucfan", OBJECT, "campaign");
 					$args = array(
 						"post_type" => "campaign",
-						"campaignstatus" => "open"
+						"campaignstatus" => "open",
+						"post__not_in" => array($aucfanCamp)
 					);
 					$posts = query_posts($args);
 					foreach($posts as $post): ?>
