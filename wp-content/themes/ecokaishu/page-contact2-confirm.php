@@ -76,10 +76,10 @@ include (TEMPLATEPATH . '/header-form.php');
 /**
  * The main template file.
  *
- * Template name: お問い合わせ内容確認
+ * Template name: 直接引取りキャンペーン内容確認
 * @package Montser Platform
  */
- 
+
 include (TEMPLATEPATH . '/contact2-post.php');
 
 //エラーメッセージ取得
@@ -115,7 +115,7 @@ include (TEMPLATEPATH . '/header-form.php');
 		echo '<ul class="formBtns">';
 		for($i=0; $i<count($actions); $i++){
 			echo '<li><form action="'.$actions[$i].'" method="post" name="form" id="confirm" enctype="multipart/form-data">';
-			foreach($_POST as $key => $val){ 
+			foreach($_POST as $key => $val){
 				if(is_array($val)) $val = implode("\t", $val);
 				else $val = $val;
 				echo '<input type="hidden" name="'.$key.'" value="'.$val.'" />';

@@ -28,13 +28,7 @@ $estmtForm = siteInfo('siteUrlEcokaishu').'/estimate/'.$prCode;
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php
-$brow = IEbrowserVer();
-if($brow == "msie ie6" || $brow == "msie ie7" || $brow == "msie ie8"){
-	echo '<meta http-equiv="refresh" content="0; url=https://www.eco-kaishu.jp/contact-legacy/">';
-}?>
 <title></title>
-<link rel="author" href="https://plus.google.com/116236726085502236125" />
 <meta name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
 <link href="<?php echo bloginfo("template_url"); ?>/assets/css/common.css" rel="stylesheet" type="text/css" media="all" />
 <link href="<?php echo bloginfo("template_url"); ?>/assets/css/fullwidth.css" rel="stylesheet" type="text/css" media="all" />
