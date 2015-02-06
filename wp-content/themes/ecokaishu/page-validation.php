@@ -2,7 +2,6 @@
 
 $(document).ready(function(){
 
-
 	<?php if(!is_smartphone() && pageCode() == "inquiry"): ?>
 	/*
 	生年月日*/
@@ -36,7 +35,6 @@ $(document).ready(function(){
 
 	<?php endif; ?>
 
-
 	/*
 	選んだ理由の順位付け　*/
 	//選択ボックス
@@ -53,6 +51,7 @@ $(document).ready(function(){
 		});
 	});
 	//値がある場合
+	<?php if($cause): ?>
 	var causes = [<?php echo '"'.implode('","', $cause).'"'; ?>];
 	var causeValues = [<?php echo '"'.$causeFirst.'", "'.$causeSecond.'", "'.$causeThird.'"'; ?>];
 	if(causes.length > 1){
@@ -74,6 +73,7 @@ $(document).ready(function(){
 			});
 		}
 	}
+	<?php endif; ?>
 
 	/*
 	テキストエリア制御*/
@@ -191,7 +191,7 @@ $(document).ready(function(){
 
 
 	/*
-	値のない確認画面でのtextfieldを消す	*/
+	値のない確認画面でのtextfieldを消す*/
 	$(function(){
 		$("#confirm input[type='text']").each(function(){
 			if($(this).val() == 0){
@@ -245,6 +245,7 @@ $(document).ready(function(){
 	});
 	var cstmMncplt = "<?php echo $cstmMncplt; ?>";
 	if(cstmMncplt) $('.selected').parents("select").removeClass("hide");
+
 
 	var jVal = {
 
@@ -999,13 +1000,13 @@ $(document).ready(function(){
 			var ele = $("#"+eleId);
 			var msgId = eleId+"Msg";
 			var msg = $("#"+msgId);
-			var errorTypeMsg = "数字のみ、10文字以上入力してください 例)0123456789";
+			var errorTypeMsg = "数字のみ、6文字入力してください 例)123456";
 			var errorMsg = "会員番号を入力してください";
 
 			var patt = /^[0-9\-]+$/;
 
 			if(ele.val()){
-				if(ele.val().match(patt) && ele.val().length > 9){
+				if(ele.val().match(patt) && ele.val().length == 6){
 					msg.remove();
 					ele.closest(".formContents").find(".formTitle").addClass("ok");
 					ele.removeClass("focus").addClass("correct");
@@ -1031,13 +1032,13 @@ $(document).ready(function(){
 			var ele = $("#"+eleId);
 			var msgId = eleId+"Msg";
 			var msg = $("#"+msgId);
-			var errorTypeMsg = "数字のみ、10文字以上入力してください 例)08012345678";
+			var errorTypeMsg = "数字のみ、10文字入力してください 例)08012345678";
 			var errorMsg = "お電話番号を入力してください";
 
 			var patt = /^[0-9\-]+$/;
 
 			if(ele.val()){
-				if(ele.val().match(patt) && ele.val().length < 11){
+				if(ele.val().match(patt) && ele.val().length < 12){
 					msg.remove();
 					ele.closest(".formContents").find(".formTitle").addClass("ok");
 					ele.removeClass("focus").addClass("correct");
