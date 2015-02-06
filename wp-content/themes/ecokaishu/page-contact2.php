@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 /*
 * @package Montser Platform
@@ -12,7 +12,7 @@ include (TEMPLATEPATH . '/header-form.php');
 
 	<header>
 		<nav id="sitepath">
-			<ul class="bread_crumb">					
+			<ul class="bread_crumb">
 				<li><?php the_title(); ?></li>
 			</ul>
 		</nav>
@@ -43,7 +43,7 @@ include (TEMPLATEPATH . '/header-form.php');
 <script language="Javascript" type="text/javascript">
 <!--
 /* <![CDATA[ */
-var account_id="1OsEOoQOLDXC8XxH8jBf"; 
+var account_id="1OsEOoQOLDXC8XxH8jBf";
 var transaction_id = "";
 var amount = "";
 if (location.protocol == "https:") { var protocol = "https:"} else { var protocol = "http:" }
@@ -147,5 +147,4 @@ include (TEMPLATEPATH . '/header-form.php');
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
 </footer>
 </body>
->>>>>>> 207be51fed207f50de305fbcbfbe383aeaec59f4
 </html>
