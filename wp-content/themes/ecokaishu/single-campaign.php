@@ -1,7 +1,7 @@
 <?php
 $aucfanCamp = get_page_by_path("aucfan", OBJECT, "campaign");
 if($post->ID == $aucfanCamp->ID){
-	get_template_part("page", "contact2");
+	get_template_part("page-contact2");
 }else{
 
 /*

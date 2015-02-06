@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /*
 * @package Montser Platform
@@ -147,5 +146,5 @@ include (TEMPLATEPATH . '/header-form.php');
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
 </footer>
 </body>
->>>>>>> 207be51fed207f50de305fbcbfbe383aeaec59f4
+
 </html>
