@@ -30,6 +30,8 @@ if($_POST){
 
 	//DB挿入
 	if($insert_id){
+		
+		$afUserCltDate = implode(",", $afUserCltDate);
 
 		//カスタムフィールド情報挿入
 		//cf　１番無くなった

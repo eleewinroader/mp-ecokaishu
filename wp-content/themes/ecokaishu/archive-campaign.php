@@ -35,11 +35,9 @@ get_header(); ?>
 				<h3>ただ今進行中のキャンペーン</h3>
 				<div id="owl-slide" class="owl-carousel owl-theme">
 					<?php
-					$aucfanCamp = get_page_by_path("aucfan", OBJECT, "campaign");
 					$args = array(
 						"post_type" => "campaign",
-						"campaignstatus" => "open",
-						"post__not_in" => array($aucfanCamp)
+						"campaignstatus" => "open"
 					);
 					$posts = query_posts($args);
 					foreach($posts as $post): ?>
@@ -83,11 +81,13 @@ get_header(); ?>
 				</div>
 				<?php
 				global $wp_query;
+				$aucfanCamp = get_page_by_path("aucfan", OBJECT, "campaign");
 				query_posts(array_merge(
 						array(
 						'post_type' => array('post'),
 						'orderby' => $orderby,
 						'order' => $order,
+						"post__not_in" => array($aucfanCamp->ID)
 					),
 			   		$wp_query->query
 				));

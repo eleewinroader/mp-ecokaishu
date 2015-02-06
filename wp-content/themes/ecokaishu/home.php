@@ -102,11 +102,15 @@ get_header( ); ?>
 								$li .= '<span class="newsTxt">'.$post->post_title.'</span></a></li>';
 								echo $li;
 							}
-						wp_reset_query(); ?>
+						?>
 						</ul>
 						<div class="clear"></div>
 					</section>
-				<?php endif; ?>
+				<?php
+				endif;
+				remove_filter('posts_where', 'filter_where');
+				wp_reset_query();
+				?>
 
 			<!-- #sliderCampaignNews--></div>
 
@@ -291,7 +295,6 @@ get_header( ); ?>
 			<section class="lstStaff">
 				<h3>ただ今、エコ回収スタッフ</h3>
 				<div class="liquidLayout">
-
 					<?php foreach($words as $word): ?>
 						<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>
 						<dl class="item">
@@ -301,11 +304,10 @@ get_header( ); ?>
 							</dd>
 						</dl>
 					<?php endforeach;?>
-					
 				</div>
 			</section>
 		</div>
-	<?php endif; ?>
+	<?php endif; wp_reset_query();?>
 
 	<div class="twelvecol col last m5_b">
 		<section>

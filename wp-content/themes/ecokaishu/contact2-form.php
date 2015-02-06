@@ -38,19 +38,22 @@
 			<div class="formElements">
 				<ul class="formElement">
 				<?php
+
 				$afUserCltDates = array("2月15日(日)", "2月16日(月)", "2月22日(日)", "2月23日(月)");
 				for($i=0; $i<count($afUserCltDates); $i++){
-					if(in_array($afUserCltDates[$i], $afUserCltDate)) $checked = " checked";
+					if(in_array($afUserCltDate[$i], $afUserCltDates)) $checked = " checked";
 					else $checked = "";
 					echo '<li><input type="checkbox" name="afUserCltDate['.$i.']" value="'.$afUserCltDates[$i].'" id="afUserCltDate'.$i.'"'.$checked.$disabled.' /><label for="afUserCltDate'.$i.'">'.$afUserCltDates[$i].'</label></li>';
-				}?>
+				}
+
+				?>
 			</ul>
 			</div>
 		</li>
 	</ol>
 </fieldset>
 
-<fieldset>
+<fieldset id="law">
 	<ol>
 		<li class="formContents required">
 			<div class="formTitle">個人情報の取扱について</div>

@@ -14,7 +14,7 @@ include (TEMPLATEPATH . '/header-form.php');
 	</header>
 
 	<div class="intro">
-		<h3>梱包配送料 不要!!</h3>
+		<img src="<?php echo bloginfo("template_url"); ?>/assets/img/contact/appealing.png" alt="梱包配送料不要!!" id="appealing" />
 		<p>エコオクにて、通常発生してしまう梱包配送料を支払うことなく、<br /> 現場引取にて商品を受け取りことが可能です。</p>
 		<p>2015年2月8日(日)～2月19日(木)(落札日)</p>
 		<dl>

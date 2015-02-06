@@ -46,7 +46,7 @@ include (TEMPLATEPATH . '/header-form.php');
 				else $val = $val;
 				echo '<input type="hidden" name="'.$key.'" value="'.$val.'" />';
 			}
-			echo '<input type="submit" name="" value="'.$submits[$i].'" id="submit" /></form></li>';
+			echo '<input type="submit" name="" value="'.$submits[$i].'" id="submit'.$i.'" /></form></li>';
 		}
 		echo '</ul></div>';
 	}?>

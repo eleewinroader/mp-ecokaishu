@@ -2,6 +2,7 @@
 /*
 * @package Montser Platform
 */
+wp_reset_query();
 ?>
 
 
@@ -58,7 +59,7 @@
 						<div id="mail">
 							<a href="http://www.eco-kaishu.jp/estimate/?pr_code=0-03"><span>メールで見積依頼</span><span class="icon-mail5"></span></a>
 						</div>
-						<div id="openingHour"><a href="#"><span>営業時間 平･土 9:00-22:00日･祝 9:00-20:00</span><span class="icon-question2"></span></a></div>
+						<div id="openingHour"><a href="<?php echo get_post_type_archive_link("faq"); ?>"><span>営業時間 平･土 9:00-22:00日･祝 9:00-20:00</span><span class="icon-question2"></span></a></div>
 					</div>
 				</div>
 			</div>
