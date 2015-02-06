@@ -99,6 +99,136 @@ html, body{
 
 .hide{ display: none; }
 
+
+/***********************************************************************
+AUCFAN
+************************************************************************/
+
+#fullwidth .intro {
+	padding: 2.5rem 0;
+	margin-top: 1rem;
+}
+#fullwidth .intro h3 {
+	border: none;
+	padding: 0;
+	margin: 0;
+	height: 65px;
+}
+
+#fullwidth .intro dl dt {
+	font-size: 20px;
+	padding: 0.5rem 0;
+}
+
+#fullwidth .intro dl dd{
+	margin-left: 15px;
+	padding: 0.2rem 0;
+}
+
+#fullwidth .intro dl dd:before {
+	content: "\e862";
+	font-family: "icomoon";
+	margin-left: -15px;
+}
+
+#fullwidth .intro .titFlow {
+	font-size: 20px;
+}
+
+#fullwidth .intro ul li {
+	padding: 20px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	border: #f2f2f2 solid 1px;
+	position: relative;
+}
+#fullwidth .intro ul li h5 {
+	color: #e2318c;
+}
+#fullwidth .intro ul li h6 {
+	font-size: 17px;
+	margin: 0.5rem 0;
+}
+#fullwidth .intro ul li p {
+	margin: 0.5rem 0;
+}
+
+#fullwidth .intro .footnote p {
+	margin: 0;
+}
+
+#fullwidth .intro .download_1 {
+	float: left;
+	text-decoration: none;
+}
+#fullwidth .intro .download_2 {
+	float: right;
+	text-decoration: none;
+}
+#fullwidth .al_c {
+	text-align: center;
+}
+#fullwidth .btnBackTop {
+	background: #7ac943;
+	padding: 1em 2em;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-top: 2rem;
+	display: inline-block;
+}
+#fullwidth #submit0{
+	background: #A5DF00;
+}
+
+
+@media only screen and (min-width: 860px){
+	#fullwidth .intro {
+		background: url("../../assets/img/contact/bg.jpg") top right no-repeat;
+
+	}
+	#fullwidth .intro #appealing {
+		max-width: 360px;
+	}
+
+	#fullwidth .intro ul li {
+		position: relative;
+		float: left;
+		width: 196px;
+		margin: 8px;
+		padding: 20px;
+	}
+	#fullwidth .intro ul li:before {
+		color: #e2318c;
+		content: "\e85a";
+		position: absolute;
+		top: 40%;
+		right: -18px;
+		font-family: "icomoon";
+	}
+
+	#fullwidth .intro ul li:last-of-type:before {
+		content: "";
+	}
+}
+
+@media handheld, only screen and (max-width: 599px){
+	#fullwidth .intro {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+	#fullwidth .intro ul li {
+		width: 100%;
+		margin-bottom: 2.0rem;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
 /***********************************************************************
 PC settings
 ************************************************************************/
@@ -120,101 +250,7 @@ PC settings
 		background: #ffffff;
 		margin: 0 auto;
 	}
-	#fullwidth .intro {
-		background: url("../../assets/img/contact/bg.jpg") top right no-repeat;
-		padding: 2.5rem 0;
-		margin-top: 1rem;
-	}
-	#fullwidth .intro h3 {
-		border: none;
-		padding: 0;
-		margin: 0;
-		background: url("../../assets/img/contact/appealing.png") top left no-repeat;
-		background-size: 35% auto;
-		height: 65px;
-		text-indent: -10000px;
-	}
 	
-	#fullwidth .intro dl dt {
-		font-size: 20px;
-		padding: 0.5rem 0;
-	}
-
-	#fullwidth .intro dl dd{
-		margin-left: 15px;
-		padding: 0.2rem 0;
-	}
-
-	#fullwidth .intro dl dd:before {
-		content: "\e862";
-		font-family: "icomoon";
-		margin-left: -15px;
-	}
-
-	#fullwidth .intro .titFlow {
-		font-size: 20px;
-	}
-
-	#fullwidth .intro ul li {
-		float: left;
-		width: 196px;
-		margin: 8px;
-		padding: 20px;
-		-webkit-border-radius: 6px;
-		-moz-border-radius: 6px;
-		border-radius: 6px;
-		border: #f2f2f2 solid 1px;
-		position: relative;
-	}
-	#fullwidth .intro ul li:before {
-		color: #e2318c;
-		content: "\e85a";
-		position: absolute;
-		top: 40%;
-		right: -18px;
-		font-family: "icomoon";
-	}
-	#fullwidth .intro ul li:last-of-type:before {
-		content: "";
-	}
-	#fullwidth .intro ul li h5 {
-		color: #e2318c;
-	}
-	#fullwidth .intro ul li h6 {
-		font-size: 17px;
-		margin: 0.5rem 0;
-	}
-	#fullwidth .intro ul li p {
-		margin: 0.5rem 0;
-	}
-
-	#fullwidth .intro .footnote p {
-		margin: 0;
-	}
-
-	#fullwidth .intro .download_1 {
-		float: left;
-		text-decoration: none;
-	}
-	#fullwidth .intro .download_2 {
-		float: right;
-		text-decoration: none;
-	}
-	#fullwidth .al_c {
-		text-align: center;
-	}
-	#fullwidth .btnBackTop {
-		background: #7ac943;
-		padding: 1em 2em;
-		-webkit-border-radius: 6px;
-		-moz-border-radius: 6px;
-		border-radius: 6px;
-		color: #FFFFFF;
-		text-decoration: none;
-		margin-top: 2rem;
-		display: inline-block;
-	}
-
 
 	/* #estimate2 */
 	#estimate2 #fullwidth article{

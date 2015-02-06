@@ -460,6 +460,7 @@ h3{
 			h4{
 				margin-top: 0;
 				margin-bottom: 0.5rem;
+				color: $darkGray !important;
 				font-size: $normal;
 				line-height: 1.2em;
 			}
@@ -467,6 +468,7 @@ h3{
 			//.itemInfo
 			.itemInfo{
 				display: inline-block !important;
+				color: $darkGray !important;
 				&:before{
 					@extend .icomoon;
 				}

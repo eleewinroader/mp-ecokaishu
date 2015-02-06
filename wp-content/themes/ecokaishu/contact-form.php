@@ -106,7 +106,7 @@
 
 <fieldset id="law">
 	<ol>
-		<li class="formContents required" id="law">
+		<li class="formContents required">
 			<div class="formTitle">個人情報の取扱について</div>
 			<div class="formElements">
 				<ul class="formElement">

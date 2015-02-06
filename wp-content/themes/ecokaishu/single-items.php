@@ -102,7 +102,7 @@ get_header();
 			</div>';
 	?>
 
-	<header class="headerPage">
+	<div class="headerPage">
 		<nav class="navPage">
 			<div class="container">
 				<div class="twelvecol col last">
@@ -115,7 +115,7 @@ get_header();
 				</div>
 			</div>
 		</nav>
-	<!--.headerPage--></header>
+	<!--.headerPage--></div>
 
 	<div class="container">
 
@@ -796,8 +796,8 @@ get_header();
 						<span class="block">岩崎 愛華</span>
 					</div>
 					<div class="staff">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_nagahiro.jpg" alt="" /></div>
-						<span class="block">永廣 亜沙美</span>
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_oki.jpg" alt="" /></div>
+						<span class="block">隠岐 めぐみ</span>
 					</div>
 				</div>
 			<!--.listStaff--></div>
@@ -805,16 +805,8 @@ get_header();
 				<h4>私たちがうかがいます</h4>
 				<div class="owl-carousel owl-theme owl">
 					<div class="staff">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_ushio.jpg" alt="" /></div>
-						<span class="block">潮 恵輔</span>
-					</div>
-					<div class="staff">
 						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_miyazaki.jpg" alt="" /></div>
 						<span class="block">宮崎 美穂</span>
-					</div>
-					<div class="staff">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_watanabe.jpg" alt="" /></div>
-						<span class="block">渡辺 愛美</span>
 					</div>
 					<div class="staff">
 						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yanashima.jpg" alt="" /></div>
@@ -1018,10 +1010,10 @@ EOF;
 					$sex = getCustomerSex($voice);
 					$age = getCustomerAge($voice);
 					$area = getCustomerAreas($voice, TRUE);
-					$items = getCustomerItems($voice, TRUE, "dd");
+					$items = getCustomerItems($voice, TRUE, "li");
 					$date = get_the_date("Y-m-d", $voice->ID);
-					$starts = getCustomerStarts($voice,"dd");
-					$features = getCustomerFeatures($voice, "dd");
+					$starts = getCustomerStarts($voice,"li");
+					$features = getCustomerFeatures($voice, "li");
 					$review03 = get_post_meta($voice->ID, "voiceInfo17", TRUE);
 					$review03Score = get_post_meta($voice->ID, "voiceInfo16", TRUE);
 					$review03ScoreIndex = getCustomerReview($post, $review03Score);
@@ -1051,9 +1043,11 @@ EOF;
 
 				$args2 = array_merge($args, array("offset" => -1));
 				$voices =  query_posts($args2);
+				echo <<<EOF
+					<div class="sevencol col last">
+EOF;
 				if($voices){
 					echo <<<EOF
-						<div class="sevencol col last">
 						<ul class="archiveList">
 EOF;
 					foreach($voices as $voice){
@@ -1066,7 +1060,7 @@ EOF;
 						$link = get_permalink($voice->ID);
 						echo <<<EOF
 							<li>
-								<a href="#">
+								<a href="{$link}">
 									<h4>{$name}様</h4>
 									<p>
 										<span class="itemInfo customer">{$sex} / {$age}</span>
@@ -1078,9 +1072,9 @@ EOF;
 							</li>
 EOF;
 					}
-					if($voices) echo "</ul></div>";
+					if($voices) echo "</ul>";
 			}
-			echo "<!-- #lpVoices--></section>";
+			echo "</div><!-- #lpVoices--></section>";
 		}?>
 
 		<?php
@@ -1108,20 +1102,29 @@ EOF;
 			<!-- #lpFaq --></section>
 		<?php endif; ?>
 
-		<section class="lcontents" id="lpWords">
+		<section class="contents" id="lpWords">
 			<div class="twelvecol col last">
-				<div class="titleSection">
-					<h3>口コミ</h3>
-				<!--.titleSection--></div>
-				<dl class="listWords">
-				<?php for($i=0; $i<count($voiceTitles); $i++){
-					echo "<dt>".$voiceTitles[$i]."</dt>";
-					echo "<dd>".$voiceContents[$i]."</dd>";
-				}?>
-				</dl>
+				<?php if($post->post_content): ?>
+					<div class="titleSection">
+						<h3><?php echo $pageTitle; ?>の処分をお考えの皆様へ</h3>
+					<!--.titleSection--></div>
+					<?php echo $post->post_content; ?>
+				<?php endif; ?>
+				
+				<?php if($voiceTitles): ?>
+					<div class="titleSection">
+						<h3>口コミ</h3>
+					</div>
+					<dl class="listWords">
+					<?php for($i=0; $i<count($voiceTitles); $i++){
+						echo "<dt>".$voiceTitles[$i]."</dt>";
+						echo "<dd>".$voiceContents[$i]."</dd>";
+					}?>
+					</dl>
+				<?php endif; ?>
 			</div>
 		<!-- #lpVoices--></section>
 
 	<!--.container--></div>
 
-<?php get_footer(); ?>'
+<?php get_footer(); ?>

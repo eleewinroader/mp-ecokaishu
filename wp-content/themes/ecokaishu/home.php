@@ -102,11 +102,15 @@ get_header( ); ?>
 								$li .= '<span class="newsTxt">'.$post->post_title.'</span></a></li>';
 								echo $li;
 							}
-						wp_reset_query(); ?>
+						?>
 						</ul>
 						<div class="clear"></div>
 					</section>
-				<?php endif; ?>
+				<?php
+				endif;
+				remove_filter('posts_where', 'filter_where');
+				wp_reset_query();
+				?>
 
 			<!-- #sliderCampaignNews--></div>
 
@@ -291,7 +295,6 @@ get_header( ); ?>
 			<section class="lstStaff">
 				<h3>ただ今、エコ回収スタッフ</h3>
 				<div class="liquidLayout">
-
 					<?php foreach($words as $word): ?>
 						<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>
 						<dl class="item">
@@ -301,11 +304,18 @@ get_header( ); ?>
 							</dd>
 						</dl>
 					<?php endforeach;?>
-					
 				</div>
 			</section>
 		</div>
-	<?php endif; ?>
+	<?php endif; wp_reset_query();?>
+
+	<div class="twelvecol col last m5_b">
+		<section>
+		<h3>不用品回収の前に一度エコ回収にご相談ください！</h3>
+		<p>東京・千葉・埼玉・神奈川でお引越、買い替え、お片づけに伴う不用品回収をご検討中の方は、ぜひエコランドのエコ回収をご利用ください。エコ回収はお品物ごとに料金が決まっているため、事前にお電話やメールで正確なお見積が可能です。また、1点からでもお引取にお伺い致します。不用品がたくさんある場合は無料で出張見積致します。運び出しが大変なタンスやベッドなどの大型家具や洗濯機や冷蔵庫などのリサイクル家電、電子ピアノやエレクトーンなどの楽器もベテランスタッフが迅速に運び出します。個人情報が心配なパソコンは無料でデータ消去致しますので安心してご依頼ください。
+エコ回収は一般的な不用品回収と違い、お引き取りした不用品をゴミとして処分せず、オークション出品することでリユース・リサイクルするサービスです。リサイクルショップも運営しているため、家具・家電などは使用年数や型番などによってはお買取も可能です。処分をご検討される前にお気軽にエコランドにお問い合わせください。</p>
+		</section>
+	</div>
 
 <!-- .container--></div>
 

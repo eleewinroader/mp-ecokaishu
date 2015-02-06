@@ -81,11 +81,13 @@ get_header(); ?>
 				</div>
 				<?php
 				global $wp_query;
+				$aucfanCamp = get_page_by_path("aucfan", OBJECT, "campaign");
 				query_posts(array_merge(
 						array(
 						'post_type' => array('post'),
 						'orderby' => $orderby,
 						'order' => $order,
+						"post__not_in" => array($aucfanCamp->ID)
 					),
 			   		$wp_query->query
 				));
