@@ -22,7 +22,7 @@ include (TEMPLATEPATH . '/header-form.php');
 			<dd>キャンペーン期間中に、エコオク！で商品を落札し、<br /> その後、専用フォームから直接引取り申請をし、期日までに銀行振込いただいた方。</dd>
 			<dd>2/15(日)、16(月)、22(日)、23日(月)の 11時～14時に <br /> 東京都東村山市のエコオク！倉庫に引き取りに来れる方。</dd>
 			<dt>料金</dt>
-			<dd>落札代金の他、１点あたり500円の引き取り手数料がかかります。</dd>			
+			<dd>落札代金の他、１点あたり500円の引き取り手数料がかかります。</dd>
 		</dl>
 		<div class="footnote">
 			<p><small>※落札日から11日目以降は保管料金500円/円発生します。</small></p>
@@ -47,10 +47,6 @@ include (TEMPLATEPATH . '/header-form.php');
 			</li>
 		</ul>
 		<div class="clear"></div>
-		<p>
-			<a href="#" class="download_1">キャンペーンのもっと詳しい情報についてはこちらをダウンロードしてください。</a>
-			<a href="#" class="download_2">直接引取りキャンペーン案内PDF</a>
-		</p>
 	</div>
 
 	<div class="fullwidthForm" id="contact">
@@ -73,39 +69,5 @@ include (TEMPLATEPATH . '/header-form.php');
 <footer class="siteFooter al_c">
 	<p>Copyrights&copy;. 2014 WINROADER ALL RIGHT RESERVED.</p>
 </footer>
-
-<script language="Javascript" type="text/javascript">
-<!--
-/* <![CDATA[ */
-var account_id="1OsEOoQOLDXC8XxH8jBf"; 
-var transaction_id = "";
-var amount = "";
-if (location.protocol == "https:") { var protocol = "https:"} else { var protocol = "http:" }
-document.write("<img width=1 height=1 border=0 src='" + protocol + "//b90.yahoo.co.jp/c?account_id=" + account_id + "&transaction_id=" + transaction_id + "&amount=" + amount + "'>");
-/* ]]> */
-//-->
-</script>
-<!-- Google Code for &#12362;&#21839;&#12356;&#21512;&#12431;&#12379; Conversion Page -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 974830453;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "RFSGCLuTiQoQ9fbq0AM";
-var google_remarketing_only = false;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/974830453/?label=RFSGCLuTiQoQ9fbq0AM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-
-<script src="//easy-entry.jp/ffconf/ffconf_5000_0138_0230.js" charset="utf-8" type="text/javascript"></script>
-<script src="//easy-entry.jp/track/efo2.js" charset="utf-8" type="text/javascript"></script>
-
 </body>
 </html>
