@@ -25,19 +25,38 @@ sup, sub{
 .big{ font-size: 1.2em !important; }
 .small{ font-size: 0.8em !important; }
 
-.m0{ margin: 0 !important; }
-.m0_r{ margin-right: 0rem !important; }
-.m0_b{ margin-bottom: 0rem !important; }
-.m2_b{ margin-bottom: 2.0rem !important; }
-.m1_t{ margin-top: 1.0rem !important; }
-.m2_t{ margin-top: 2.0rem !important; }
-
-.p0{ padding: 0 !important; }
-.p0_r{ padding-right: 0rem !important; }
-.p0_b{ padding-bottom: 0rem !important; }
-.p2_b{ padding-bottom: 2.0rem !important; }
-.p1_t{ padding-top: 1.0rem !important; }
-.p2_t{ padding-top: 2.0rem !important; }
+@for $i from 0 through 10 {
+	.m#{$i}{
+		margin: #{$i}rem !important;
+	}
+	.m#{$i}_r{
+		margin-right: #{$i}rem !important;
+	}
+	.m#{$i}_l{
+		margin-left: #{$i}rem !important;
+	}
+	.m#{$i}_t{
+		margin-top: #{$i}rem !important;
+	}
+	.m#{$i}_b{
+		margin-bottom: #{$i}rem !important;
+	}
+	.p#{$i}{
+		padding: #{$i}rem !important;
+	}
+	.p#{$i}_r{
+		padding-right: #{$i}rem !important;
+	}
+	.p#{$i}_l{
+		padding-left: #{$i}rem !important;
+	}
+	.p#{$i}_t{
+		padding-top: #{$i}rem !important;
+	}
+	.p#{$i}_b{
+		padding-bottom: #{$i}rem !important;
+	}
+}
 
 .green{ color: $green !important; }
 .pink{ color: $pink !important; }

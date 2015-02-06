@@ -102,7 +102,7 @@ get_header();
 			</div>';
 	?>
 
-	<header class="headerPage">
+	<div class="headerPage">
 		<nav class="navPage">
 			<div class="container">
 				<div class="twelvecol col last">
@@ -115,7 +115,7 @@ get_header();
 				</div>
 			</div>
 		</nav>
-	<!--.headerPage--></header>
+	<!--.headerPage--></div>
 
 	<div class="container">
 
@@ -1108,17 +1108,26 @@ EOF;
 			<!-- #lpFaq --></section>
 		<?php endif; ?>
 
-		<section class="lcontents" id="lpWords">
+		<section class="contents" id="lpWords">
 			<div class="twelvecol col last">
-				<div class="titleSection">
-					<h3>口コミ</h3>
-				<!--.titleSection--></div>
-				<dl class="listWords">
-				<?php for($i=0; $i<count($voiceTitles); $i++){
-					echo "<dt>".$voiceTitles[$i]."</dt>";
-					echo "<dd>".$voiceContents[$i]."</dd>";
-				}?>
-				</dl>
+				<?php if($post->post_content): ?>
+					<div class="titleSection">
+						<h3><?php echo $pageTitle; ?>の処分をお考えの皆様へ</h3>
+					<!--.titleSection--></div>
+					<?php echo $post->post_content; ?>
+				<?php endif; ?>
+				
+				<?php if($voiceTitles): ?>
+					<div class="titleSection">
+						<h3>口コミ</h3>
+					</div>
+					<dl class="listWords">
+					<?php for($i=0; $i<count($voiceTitles); $i++){
+						echo "<dt>".$voiceTitles[$i]."</dt>";
+						echo "<dd>".$voiceContents[$i]."</dd>";
+					}?>
+					</dl>
+				<?php endif; ?>
 			</div>
 		<!-- #lpVoices--></section>
 
