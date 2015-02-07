@@ -26,7 +26,7 @@ include (TEMPLATEPATH . '/header-form.php');
 		</dl>
 		<div class="footnote">
 			<p><small>※落札日から11日目以降は保管料金500円/日が発生します。</small><br />
-			<small>※引取りに来られなかった場合は、梱包配送料金をお支払頂き、発送したしますので予めご了承ください。</small></p>
+			<small>※引取りに来られなかった場合は、梱包配送料金をお支払頂き、発送いたしますので予めご了承ください。</small></p>
 		</div>
 		<p class="titFlow">ご利用の流れ</p>
 		<ul>
