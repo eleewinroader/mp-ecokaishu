@@ -262,22 +262,33 @@
 	  			left: 47.6%;
 	  		}
 	  	}
+	  	.noDiary {
+	  		text-align: center;
+	  	}
 		.sixcol {
+			&:first-child {
+				float: left !important;
+				.item {
+					&:after {
+						right: -8px !important;
+						left: auto !important;
+						border-color: $gray transparent transparent transparent !important;
+						border-width: 8px 8px 0 0 !important;
+					}
+				}
+			}
 			.item {
 				background: $gray;
 				padding: 2rem 1rem;
 				margin-bottom: 1.5rem;
 				position: relative;
-				&:after {
-					right: -8px;
+				&:after {					
 					top: 10%;
 					width: 0px;
 					height: 0px;
 					content: "";
 					position: absolute;
-					border-style: solid;
-					border-width: 8px 8px 0 0;
-					border-color: $gray transparent transparent transparent;;
+					border-style: solid;					
 				}
 				p {
 					margin-bottom: 1rem;
@@ -291,7 +302,7 @@
 					width: 100%;
 				}
 			}
-			&.last {
+			&:nth-of-type(even) {
 				.item {
 					&:after {
 						left: -8px;
@@ -299,7 +310,16 @@
 						border-color: transparent $gray transparent transparent;;
 					}
 				}
-			}				
+			}		
+			&:nth-of-type(odd) {
+				.item {
+					&:after {
+						right: -8px;
+						border-width: 8px 8px 0 0;
+						border-color: $gray transparent transparent transparent;
+					}
+				}
+			}			
 		}
 		.seemore {
 			background: $gray;
