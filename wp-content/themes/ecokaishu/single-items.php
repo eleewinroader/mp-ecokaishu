@@ -1081,7 +1081,7 @@ EOF;
 		$args = array(
 			"post_type" => "faq",
 			"posts_per_page" => -1,
-			"qstcat" => $post->post_title,
+			"qstcat" =>  $pageTitle,
 			"order" => ASC,
 			"orderby" => DATE,
 		);

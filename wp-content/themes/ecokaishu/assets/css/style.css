@@ -7910,71 +7910,77 @@ article.post header .postNav li {
 article.post#notices .container {
   max-width: 768px; }
 /* line 440, ../../_scss/pages/_article.scss */
-article.post#docs .col > ol {
+article.post.docs .col > ol {
   margin-left: 2.0rem; }
   /* line 446, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:before {
+  article.post.docs .col > ol > li:before {
     margin-right: 0.5rem; }
   /* line 447, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(1):before {
+  article.post.docs .col > ol > li:nth-of-type(1):before {
     content: "(1)"; }
   /* line 448, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(2):before {
+  article.post.docs .col > ol > li:nth-of-type(2):before {
     content: "(2)"; }
   /* line 449, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(3):before {
+  article.post.docs .col > ol > li:nth-of-type(3):before {
     content: "(3)"; }
   /* line 450, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(4):before {
+  article.post.docs .col > ol > li:nth-of-type(4):before {
     content: "(4)"; }
   /* line 451, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(5):before {
+  article.post.docs .col > ol > li:nth-of-type(5):before {
     content: "(5)"; }
   /* line 452, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(6):before {
+  article.post.docs .col > ol > li:nth-of-type(6):before {
     content: "(6)"; }
   /* line 453, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(7):before {
+  article.post.docs .col > ol > li:nth-of-type(7):before {
     content: "(7)"; }
   /* line 454, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(8):before {
+  article.post.docs .col > ol > li:nth-of-type(8):before {
     content: "(8)"; }
   /* line 455, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(9):before {
+  article.post.docs .col > ol > li:nth-of-type(9):before {
     content: "(9)"; }
   /* line 456, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li:nth-of-type(10):before {
+  article.post.docs .col > ol > li:nth-of-type(10):before {
     content: "(10)"; }
   /* line 458, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li > ol {
+  article.post.docs .col > ol > li > ol {
     margin-left: 3.0rem; }
     /* line 462, ../../_scss/pages/_article.scss */
-    article.post#docs .col > ol > li > ol > li {
+    article.post.docs .col > ol > li > ol > li {
       list-style-type: lower-alpha; }
       /* line 464, ../../_scss/pages/_article.scss */
-      article.post#docs .col > ol > li > ol > li > ol {
+      article.post.docs .col > ol > li > ol > li > ol {
         margin-left: 4.0rem; }
         /* line 466, ../../_scss/pages/_article.scss */
-        article.post#docs .col > ol > li > ol > li > ol > li {
+        article.post.docs .col > ol > li > ol > li > ol > li {
           list-style-type: circle; }
   /* line 474, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ol > li > p {
+  article.post.docs .col > ol > li > p {
     display: inline-block; }
 /* line 483, ../../_scss/pages/_article.scss */
-article.post#docs .col > ul {
+article.post.docs .col > ul {
   margin-left: 2.0rem; }
   /* line 487, ../../_scss/pages/_article.scss */
-  article.post#docs .col > ul > li {
+  article.post.docs .col > ul > li {
     list-style-type: circle; }
     /* line 489, ../../_scss/pages/_article.scss */
-    article.post#docs .col > ul > li > ul {
+    article.post.docs .col > ul > li > ul {
       margin-left: 3.0rem; }
       /* line 492, ../../_scss/pages/_article.scss */
-      article.post#docs .col > ul > li > ul > li {
+      article.post.docs .col > ul > li > ul > li {
         list-style-type: square; }
 /* line 501, ../../_scss/pages/_article.scss */
-article.post#docs .col > dl {
+article.post.docs .col > dl {
   margin-left: 2.0rem; }
+  /* line 503, ../../_scss/pages/_article.scss */
+  article.post.docs .col > dl.listDefi {
+    margin-top: 2.0rem;
+    margin-left: 0;
+    padding-top: 2.0rem;
+    border-top: 1px dashed #f0f0f0; }
 
 /* line 9, ../../_scss/pages/_columns.scss */
 article.columns .contents {
@@ -9279,6 +9285,7 @@ article.campaign .about {
     transform: rotate(45deg); }
     /* line 867, ../../_scss/pages/_campaign.scss */
     #camp1406-00 .raindrop#drop1 {
+<<<<<<< HEAD
       top: 240px;
       left: 822px; }
     /* line 867, ../../_scss/pages/_campaign.scss */
@@ -9437,6 +9444,166 @@ article.campaign .about {
     #camp1406-00 .raindrop#drop40 {
       top: 121px;
       left: 870px; }
+=======
+      top: 122px;
+      left: 837px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop2 {
+      top: 462px;
+      left: 485px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop3 {
+      top: 454px;
+      left: 276px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop4 {
+      top: 450px;
+      left: 321px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop5 {
+      top: 426px;
+      left: 859px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop6 {
+      top: 295px;
+      left: 539px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop7 {
+      top: 176px;
+      left: 320px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop8 {
+      top: 202px;
+      left: 28px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop9 {
+      top: 371px;
+      left: 270px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop10 {
+      top: 96px;
+      left: 818px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop11 {
+      top: 264px;
+      left: 315px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop12 {
+      top: 275px;
+      left: 382px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop13 {
+      top: 132px;
+      left: 390px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop14 {
+      top: 70px;
+      left: 485px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop15 {
+      top: 49px;
+      left: 574px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop16 {
+      top: 398px;
+      left: 725px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop17 {
+      top: 257px;
+      left: 758px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop18 {
+      top: 184px;
+      left: 437px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop19 {
+      top: 131px;
+      left: 635px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop20 {
+      top: 237px;
+      left: 650px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop21 {
+      top: 75px;
+      left: 798px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop22 {
+      top: 50px;
+      left: 731px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop23 {
+      top: 168px;
+      left: 315px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop24 {
+      top: 448px;
+      left: 681px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop25 {
+      top: 379px;
+      left: 674px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop26 {
+      top: 337px;
+      left: 31px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop27 {
+      top: 290px;
+      left: 642px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop28 {
+      top: 61px;
+      left: 153px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop29 {
+      top: 431px;
+      left: 148px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop30 {
+      top: 323px;
+      left: 202px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop31 {
+      top: 278px;
+      left: 287px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop32 {
+      top: 66px;
+      left: 559px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop33 {
+      top: 305px;
+      left: 426px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop34 {
+      top: 446px;
+      left: 601px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop35 {
+      top: 55px;
+      left: 864px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop36 {
+      top: 96px;
+      left: 287px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop37 {
+      top: 60px;
+      left: 415px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop38 {
+      top: 476px;
+      left: 769px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop39 {
+      top: 78px;
+      left: 237px; }
+    /* line 867, ../../_scss/pages/_campaign.scss */
+    #camp1406-00 .raindrop#drop40 {
+      top: 62px;
+      left: 663px; }
+>>>>>>> hotfix-2.4
 
 /* line 881, ../../_scss/pages/_campaign.scss */
 #camp1406-01 {
@@ -9601,6 +9768,7 @@ article.campaign .about {
     /* line 1083, ../../_scss/pages/_campaign.scss */
     #camp1406-01 .leaf#leaf1 {
       background-color: #fccb00;
+<<<<<<< HEAD
       top: 480px;
       left: 819px;
       -webkit-transform: rotate(22deg);
@@ -9798,6 +9966,205 @@ article.campaign .about {
       -ms-transform: rotate(5deg);
       -o-transform: rotate(5deg);
       transform: rotate(5deg); }
+=======
+      top: 397px;
+      left: 235px;
+      -webkit-transform: rotate(9deg);
+      -moz-transform: rotate(9deg);
+      -ms-transform: rotate(9deg);
+      -o-transform: rotate(9deg);
+      transform: rotate(9deg); }
+    /* line 1083, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf2 {
+      background-color: #fccb00;
+      top: 484px;
+      left: 582px;
+      -webkit-transform: rotate(8deg);
+      -moz-transform: rotate(8deg);
+      -ms-transform: rotate(8deg);
+      -o-transform: rotate(8deg);
+      transform: rotate(8deg); }
+    /* line 1083, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf3 {
+      background-color: #fccb00;
+      top: 321px;
+      left: 884px;
+      -webkit-transform: rotate(19deg);
+      -moz-transform: rotate(19deg);
+      -ms-transform: rotate(19deg);
+      -o-transform: rotate(19deg);
+      transform: rotate(19deg); }
+    /* line 1083, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf4 {
+      background-color: #fccb00;
+      top: 288px;
+      left: 590px;
+      -webkit-transform: rotate(19deg);
+      -moz-transform: rotate(19deg);
+      -ms-transform: rotate(19deg);
+      -o-transform: rotate(19deg);
+      transform: rotate(19deg); }
+    /* line 1083, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf5 {
+      background-color: #fccb00;
+      top: 390px;
+      left: 117px;
+      -webkit-transform: rotate(26deg);
+      -moz-transform: rotate(26deg);
+      -ms-transform: rotate(26deg);
+      -o-transform: rotate(26deg);
+      transform: rotate(26deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf6 {
+      background-color: #FFF84B;
+      top: 87px;
+      left: 251px;
+      -webkit-transform: rotate(4deg);
+      -moz-transform: rotate(4deg);
+      -ms-transform: rotate(4deg);
+      -o-transform: rotate(4deg);
+      transform: rotate(4deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf7 {
+      background-color: #FFF84B;
+      top: 303px;
+      left: 625px;
+      -webkit-transform: rotate(29deg);
+      -moz-transform: rotate(29deg);
+      -ms-transform: rotate(29deg);
+      -o-transform: rotate(29deg);
+      transform: rotate(29deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf8 {
+      background-color: #FFF84B;
+      top: 349px;
+      left: 71px;
+      -webkit-transform: rotate(26deg);
+      -moz-transform: rotate(26deg);
+      -ms-transform: rotate(26deg);
+      -o-transform: rotate(26deg);
+      transform: rotate(26deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf9 {
+      background-color: #FFF84B;
+      top: 204px;
+      left: 411px;
+      -webkit-transform: rotate(6deg);
+      -moz-transform: rotate(6deg);
+      -ms-transform: rotate(6deg);
+      -o-transform: rotate(6deg);
+      transform: rotate(6deg); }
+    /* line 1091, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf10 {
+      background-color: #FFF84B;
+      top: 384px;
+      left: 618px;
+      -webkit-transform: rotate(16deg);
+      -moz-transform: rotate(16deg);
+      -ms-transform: rotate(16deg);
+      -o-transform: rotate(16deg);
+      transform: rotate(16deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf11 {
+      background-color: #009ea1;
+      top: 378px;
+      left: 659px;
+      -webkit-transform: rotate(81deg);
+      -moz-transform: rotate(81deg);
+      -ms-transform: rotate(81deg);
+      -o-transform: rotate(81deg);
+      transform: rotate(81deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf12 {
+      background-color: #009ea1;
+      top: 299px;
+      left: 888px;
+      -webkit-transform: rotate(47deg);
+      -moz-transform: rotate(47deg);
+      -ms-transform: rotate(47deg);
+      -o-transform: rotate(47deg);
+      transform: rotate(47deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf13 {
+      background-color: #009ea1;
+      top: 87px;
+      left: 375px;
+      -webkit-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf14 {
+      background-color: #009ea1;
+      top: 175px;
+      left: 571px;
+      -webkit-transform: rotate(26deg);
+      -moz-transform: rotate(26deg);
+      -ms-transform: rotate(26deg);
+      -o-transform: rotate(26deg);
+      transform: rotate(26deg); }
+    /* line 1099, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf15 {
+      background-color: #009ea1;
+      top: 423px;
+      left: 361px;
+      -webkit-transform: rotate(28deg);
+      -moz-transform: rotate(28deg);
+      -ms-transform: rotate(28deg);
+      -o-transform: rotate(28deg);
+      transform: rotate(28deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf16 {
+      background-color: #e2318c;
+      top: 252px;
+      left: 537px;
+      -webkit-transform: rotate(86deg);
+      -moz-transform: rotate(86deg);
+      -ms-transform: rotate(86deg);
+      -o-transform: rotate(86deg);
+      transform: rotate(86deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf17 {
+      background-color: #e2318c;
+      top: 251px;
+      left: 72px;
+      -webkit-transform: rotate(32deg);
+      -moz-transform: rotate(32deg);
+      -ms-transform: rotate(32deg);
+      -o-transform: rotate(32deg);
+      transform: rotate(32deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf18 {
+      background-color: #e2318c;
+      top: 135px;
+      left: 8px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf19 {
+      background-color: #e2318c;
+      top: 233px;
+      left: 837px;
+      -webkit-transform: rotate(10deg);
+      -moz-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+      -o-transform: rotate(10deg);
+      transform: rotate(10deg); }
+    /* line 1107, ../../_scss/pages/_campaign.scss */
+    #camp1406-01 .leaf#leaf20 {
+      background-color: #e2318c;
+      top: 324px;
+      left: 418px;
+      -webkit-transform: rotate(81deg);
+      -moz-transform: rotate(81deg);
+      -ms-transform: rotate(81deg);
+      -o-transform: rotate(81deg);
+      transform: rotate(81deg); }
+>>>>>>> hotfix-2.4
   /* line 1119, ../../_scss/pages/_campaign.scss */
   #camp1406-01 .details {
     background: rgba(252, 203, 0, 0.8); }
@@ -9903,6 +10270,7 @@ article.campaign .about {
     /* line 1250, ../../_scss/pages/_campaign.scss */
     #camp1406-02 .ball#ball1,
     #camp1406-03 .ball#ball1 {
+<<<<<<< HEAD
       top: 87px;
       left: 740px;
       -webkit-transform: rotate(9deg);
@@ -9950,6 +10318,65 @@ article.campaign .about {
       -ms-transform: rotate(39deg);
       -o-transform: rotate(39deg);
       transform: rotate(39deg); }
+=======
+      top: 231px;
+      left: 373px;
+      -webkit-transform: rotate(4deg);
+      -moz-transform: rotate(4deg);
+      -ms-transform: rotate(4deg);
+      -o-transform: rotate(4deg);
+      transform: rotate(4deg); }
+    /* line 1250, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball2,
+    #camp1406-03 .ball#ball2 {
+      top: 69px;
+      left: 31px;
+      -webkit-transform: rotate(35deg);
+      -moz-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+      -o-transform: rotate(35deg);
+      transform: rotate(35deg); }
+    /* line 1250, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball3,
+    #camp1406-03 .ball#ball3 {
+      top: 395px;
+      left: 330px;
+      -webkit-transform: rotate(2deg);
+      -moz-transform: rotate(2deg);
+      -ms-transform: rotate(2deg);
+      -o-transform: rotate(2deg);
+      transform: rotate(2deg); }
+    /* line 1250, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball4,
+    #camp1406-03 .ball#ball4 {
+      top: 129px;
+      left: 280px;
+      -webkit-transform: rotate(22deg);
+      -moz-transform: rotate(22deg);
+      -ms-transform: rotate(22deg);
+      -o-transform: rotate(22deg);
+      transform: rotate(22deg); }
+    /* line 1250, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball5,
+    #camp1406-03 .ball#ball5 {
+      top: 196px;
+      left: 114px;
+      -webkit-transform: rotate(38deg);
+      -moz-transform: rotate(38deg);
+      -ms-transform: rotate(38deg);
+      -o-transform: rotate(38deg);
+      transform: rotate(38deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball6,
+    #camp1406-03 .ball#ball6 {
+      top: 462px;
+      left: 98px;
+      -webkit-transform: rotate(37deg);
+      -moz-transform: rotate(37deg);
+      -ms-transform: rotate(37deg);
+      -o-transform: rotate(37deg);
+      transform: rotate(37deg); }
+>>>>>>> hotfix-2.4
     /* line 1257, ../../_scss/pages/_campaign.scss */
     #camp1406-02 .ball#ball6,
     #camp1406-03 .ball#ball6 {
@@ -9963,6 +10390,7 @@ article.campaign .about {
     /* line 1257, ../../_scss/pages/_campaign.scss */
     #camp1406-02 .ball#ball7,
     #camp1406-03 .ball#ball7 {
+<<<<<<< HEAD
       top: 227px;
       left: 216px;
       -webkit-transform: rotate(16deg);
@@ -10000,6 +10428,45 @@ article.campaign .about {
       -ms-transform: rotate(10deg);
       -o-transform: rotate(10deg);
       transform: rotate(10deg); }
+=======
+      top: 302px;
+      left: 427px;
+      -webkit-transform: rotate(41deg);
+      -moz-transform: rotate(41deg);
+      -ms-transform: rotate(41deg);
+      -o-transform: rotate(41deg);
+      transform: rotate(41deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball8,
+    #camp1406-03 .ball#ball8 {
+      top: 309px;
+      left: 330px;
+      -webkit-transform: rotate(14deg);
+      -moz-transform: rotate(14deg);
+      -ms-transform: rotate(14deg);
+      -o-transform: rotate(14deg);
+      transform: rotate(14deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball9,
+    #camp1406-03 .ball#ball9 {
+      top: 76px;
+      left: 807px;
+      -webkit-transform: rotate(12deg);
+      -moz-transform: rotate(12deg);
+      -ms-transform: rotate(12deg);
+      -o-transform: rotate(12deg);
+      transform: rotate(12deg); }
+    /* line 1257, ../../_scss/pages/_campaign.scss */
+    #camp1406-02 .ball#ball10,
+    #camp1406-03 .ball#ball10 {
+      top: 19px;
+      left: 348px;
+      -webkit-transform: rotate(40deg);
+      -moz-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+      -o-transform: rotate(40deg);
+      transform: rotate(40deg); }
+>>>>>>> hotfix-2.4
   /* line 1268, ../../_scss/pages/_campaign.scss */
   #camp1406-02 .details,
   #camp1406-03 .details {
@@ -10234,6 +10701,7 @@ article.campaign .about {
     opacity: 0.3; }
     /* line 1580, ../../_scss/pages/_campaign.scss */
     #camp1407-00 .star#star1 {
+<<<<<<< HEAD
       top: 197px;
       left: 350px;
       color: #fccb00;
@@ -10258,6 +10726,43 @@ article.campaign .about {
     #camp1407-00 .star#star3 {
       top: 289px;
       left: 669px;
+=======
+      top: 110px;
+      left: 529px;
+      color: #fccb00;
+      -webkit-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg);
+      font-size: 30px; }
+    /* line 1580, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star2 {
+      top: 355px;
+      left: 205px;
+      color: #fccb00;
+      -webkit-transform: rotate(19deg);
+      -moz-transform: rotate(19deg);
+      -ms-transform: rotate(19deg);
+      -o-transform: rotate(19deg);
+      transform: rotate(19deg);
+      font-size: 30px; }
+    /* line 1580, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star3 {
+      top: 236px;
+      left: 914px;
+      color: #fccb00;
+      -webkit-transform: rotate(44deg);
+      -moz-transform: rotate(44deg);
+      -ms-transform: rotate(44deg);
+      -o-transform: rotate(44deg);
+      transform: rotate(44deg);
+      font-size: 30px; }
+    /* line 1580, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star4 {
+      top: 23px;
+      left: 155px;
+>>>>>>> hotfix-2.4
       color: #fccb00;
       -webkit-transform: rotate(1deg);
       -moz-transform: rotate(1deg);
@@ -10266,6 +10771,7 @@ article.campaign .about {
       transform: rotate(1deg);
       font-size: 30px; }
     /* line 1580, ../../_scss/pages/_campaign.scss */
+<<<<<<< HEAD
     #camp1407-00 .star#star4 {
       top: 332px;
       left: 293px;
@@ -10335,6 +10841,55 @@ article.campaign .about {
     #camp1407-00 .star#star10 {
       top: 100px;
       left: 394px;
+=======
+    #camp1407-00 .star#star5 {
+      top: 111px;
+      left: 154px;
+      color: #fccb00;
+      -webkit-transform: rotate(29deg);
+      -moz-transform: rotate(29deg);
+      -ms-transform: rotate(29deg);
+      -o-transform: rotate(29deg);
+      transform: rotate(29deg);
+      font-size: 30px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star6 {
+      top: 363px;
+      left: 107px;
+      color: #fccb00;
+      -webkit-transform: rotate(42deg);
+      -moz-transform: rotate(42deg);
+      -ms-transform: rotate(42deg);
+      -o-transform: rotate(42deg);
+      transform: rotate(42deg);
+      font-size: 10px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star7 {
+      top: 215px;
+      left: 913px;
+      color: #fccb00;
+      -webkit-transform: rotate(18deg);
+      -moz-transform: rotate(18deg);
+      -ms-transform: rotate(18deg);
+      -o-transform: rotate(18deg);
+      transform: rotate(18deg);
+      font-size: 10px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star8 {
+      top: 20px;
+      left: 229px;
+      color: #fccb00;
+      -webkit-transform: rotate(33deg);
+      -moz-transform: rotate(33deg);
+      -ms-transform: rotate(33deg);
+      -o-transform: rotate(33deg);
+      transform: rotate(33deg);
+      font-size: 10px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star9 {
+      top: 71px;
+      left: 54px;
+>>>>>>> hotfix-2.4
       color: #fccb00;
       -webkit-transform: rotate(31deg);
       -moz-transform: rotate(31deg);
@@ -10342,8 +10897,20 @@ article.campaign .about {
       -o-transform: rotate(31deg);
       transform: rotate(31deg);
       font-size: 10px; }
+    /* line 1589, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star10 {
+      top: 69px;
+      left: 59px;
+      color: #fccb00;
+      -webkit-transform: rotate(13deg);
+      -moz-transform: rotate(13deg);
+      -ms-transform: rotate(13deg);
+      -o-transform: rotate(13deg);
+      transform: rotate(13deg);
+      font-size: 10px; }
     /* line 1598, ../../_scss/pages/_campaign.scss */
     #camp1407-00 .star#star11 {
+<<<<<<< HEAD
       top: 330px;
       left: 679px;
       color: white;
@@ -10368,6 +10935,32 @@ article.campaign .about {
     #camp1407-00 .star#star13 {
       top: 113px;
       left: 63px;
+=======
+      top: 149px;
+      left: 467px;
+      color: white;
+      -webkit-transform: rotate(17deg);
+      -moz-transform: rotate(17deg);
+      -ms-transform: rotate(17deg);
+      -o-transform: rotate(17deg);
+      transform: rotate(17deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star12 {
+      top: 327px;
+      left: 870px;
+      color: white;
+      -webkit-transform: rotate(17deg);
+      -moz-transform: rotate(17deg);
+      -ms-transform: rotate(17deg);
+      -o-transform: rotate(17deg);
+      transform: rotate(17deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star13 {
+      top: 137px;
+      left: 819px;
+>>>>>>> hotfix-2.4
       color: white;
       -webkit-transform: rotate(12deg);
       -moz-transform: rotate(12deg);
@@ -10377,6 +10970,7 @@ article.campaign .about {
       font-size: 20px; }
     /* line 1598, ../../_scss/pages/_campaign.scss */
     #camp1407-00 .star#star14 {
+<<<<<<< HEAD
       top: 224px;
       left: 494px;
       color: white;
@@ -10412,6 +11006,54 @@ article.campaign .about {
     #camp1407-00 .star#star17 {
       top: 287px;
       left: 72px;
+=======
+      top: 65px;
+      left: 14px;
+      color: white;
+      -webkit-transform: rotate(6deg);
+      -moz-transform: rotate(6deg);
+      -ms-transform: rotate(6deg);
+      -o-transform: rotate(6deg);
+      transform: rotate(6deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star15 {
+      top: 132px;
+      left: 239px;
+      color: white;
+      -webkit-transform: rotate(44deg);
+      -moz-transform: rotate(44deg);
+      -ms-transform: rotate(44deg);
+      -o-transform: rotate(44deg);
+      transform: rotate(44deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star16 {
+      top: 85px;
+      left: 41px;
+      color: white;
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      transform: rotate(3deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star17 {
+      top: 169px;
+      left: 913px;
+      color: white;
+      -webkit-transform: rotate(44deg);
+      -moz-transform: rotate(44deg);
+      -ms-transform: rotate(44deg);
+      -o-transform: rotate(44deg);
+      transform: rotate(44deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star18 {
+      top: 324px;
+      left: 900px;
+>>>>>>> hotfix-2.4
       color: white;
       -webkit-transform: rotate(17deg);
       -moz-transform: rotate(17deg);
@@ -10420,6 +11062,7 @@ article.campaign .about {
       transform: rotate(17deg);
       font-size: 20px; }
     /* line 1598, ../../_scss/pages/_campaign.scss */
+<<<<<<< HEAD
     #camp1407-00 .star#star18 {
       top: 483px;
       left: 33px;
@@ -10456,10 +11099,38 @@ article.campaign .about {
     #camp1407-00 .star#star21 {
       top: 244px;
       left: 700px;
+=======
+    #camp1407-00 .star#star19 {
+      top: 17px;
+      left: 775px;
+      color: white;
+      -webkit-transform: rotate(34deg);
+      -moz-transform: rotate(34deg);
+      -ms-transform: rotate(34deg);
+      -o-transform: rotate(34deg);
+      transform: rotate(34deg);
+      font-size: 20px; }
+    /* line 1598, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star20 {
+      top: 108px;
+      left: 857px;
+      color: white;
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      transform: rotate(3deg);
+      font-size: 20px; }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star21 {
+      top: 442px;
+      left: 587px;
+>>>>>>> hotfix-2.4
       color: black;
       font-size: 100px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
       opacity: 0.1;
+<<<<<<< HEAD
       -webkit-transform: rotate(3deg);
       -moz-transform: rotate(3deg);
       -ms-transform: rotate(3deg);
@@ -10469,10 +11140,22 @@ article.campaign .about {
     #camp1407-00 .star#star22 {
       top: 366px;
       left: 204px;
+=======
+      -webkit-transform: rotate(2deg);
+      -moz-transform: rotate(2deg);
+      -ms-transform: rotate(2deg);
+      -o-transform: rotate(2deg);
+      transform: rotate(2deg); }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star22 {
+      top: 233px;
+      left: 590px;
+>>>>>>> hotfix-2.4
       color: black;
       font-size: 100px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
       opacity: 0.1;
+<<<<<<< HEAD
       -webkit-transform: rotate(33deg);
       -moz-transform: rotate(33deg);
       -ms-transform: rotate(33deg);
@@ -10482,10 +11165,22 @@ article.campaign .about {
     #camp1407-00 .star#star23 {
       top: 189px;
       left: 762px;
+=======
+      -webkit-transform: rotate(14deg);
+      -moz-transform: rotate(14deg);
+      -ms-transform: rotate(14deg);
+      -o-transform: rotate(14deg);
+      transform: rotate(14deg); }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star23 {
+      top: 38px;
+      left: 910px;
+>>>>>>> hotfix-2.4
       color: black;
       font-size: 100px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
       opacity: 0.1;
+<<<<<<< HEAD
       -webkit-transform: rotate(29deg);
       -moz-transform: rotate(29deg);
       -ms-transform: rotate(29deg);
@@ -10495,10 +11190,22 @@ article.campaign .about {
     #camp1407-00 .star#star24 {
       top: 202px;
       left: 754px;
+=======
+      -webkit-transform: rotate(39deg);
+      -moz-transform: rotate(39deg);
+      -ms-transform: rotate(39deg);
+      -o-transform: rotate(39deg);
+      transform: rotate(39deg); }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star24 {
+      top: 64px;
+      left: 316px;
+>>>>>>> hotfix-2.4
       color: black;
       font-size: 100px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
       opacity: 0.1;
+<<<<<<< HEAD
       -webkit-transform: rotate(40deg);
       -moz-transform: rotate(40deg);
       -ms-transform: rotate(40deg);
@@ -10508,10 +11215,22 @@ article.campaign .about {
     #camp1407-00 .star#star25 {
       top: 67px;
       left: 639px;
+=======
+      -webkit-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg); }
+    /* line 1607, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star25 {
+      top: 344px;
+      left: 853px;
+>>>>>>> hotfix-2.4
       color: black;
       font-size: 100px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
       opacity: 0.1;
+<<<<<<< HEAD
       -webkit-transform: rotate(41deg);
       -moz-transform: rotate(41deg);
       -ms-transform: rotate(41deg);
@@ -10521,10 +11240,22 @@ article.campaign .about {
     #camp1407-00 .star#star26 {
       top: 414px;
       left: 804px;
+=======
+      -webkit-transform: rotate(17deg);
+      -moz-transform: rotate(17deg);
+      -ms-transform: rotate(17deg);
+      -o-transform: rotate(17deg);
+      transform: rotate(17deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star26 {
+      top: 347px;
+      left: 796px;
+>>>>>>> hotfix-2.4
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -webkit-transform: rotate(3deg);
       -moz-transform: rotate(3deg);
       -ms-transform: rotate(3deg);
@@ -10534,10 +11265,22 @@ article.campaign .about {
     #camp1407-00 .star#star27 {
       top: 455px;
       left: 738px;
+=======
+      -webkit-transform: rotate(6deg);
+      -moz-transform: rotate(6deg);
+      -ms-transform: rotate(6deg);
+      -o-transform: rotate(6deg);
+      transform: rotate(6deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star27 {
+      top: 468px;
+      left: 916px;
+>>>>>>> hotfix-2.4
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -webkit-transform: rotate(36deg);
       -moz-transform: rotate(36deg);
       -ms-transform: rotate(36deg);
@@ -10547,10 +11290,22 @@ article.campaign .about {
     #camp1407-00 .star#star28 {
       top: 487px;
       left: 661px;
+=======
+      -webkit-transform: rotate(29deg);
+      -moz-transform: rotate(29deg);
+      -ms-transform: rotate(29deg);
+      -o-transform: rotate(29deg);
+      transform: rotate(29deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star28 {
+      top: 359px;
+      left: 702px;
+>>>>>>> hotfix-2.4
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -webkit-transform: rotate(2deg);
       -moz-transform: rotate(2deg);
       -ms-transform: rotate(2deg);
@@ -10560,10 +11315,22 @@ article.campaign .about {
     #camp1407-00 .star#star29 {
       top: 389px;
       left: 314px;
+=======
+      -webkit-transform: rotate(36deg);
+      -moz-transform: rotate(36deg);
+      -ms-transform: rotate(36deg);
+      -o-transform: rotate(36deg);
+      transform: rotate(36deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star29 {
+      top: 10px;
+      left: 245px;
+>>>>>>> hotfix-2.4
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -webkit-transform: rotate(25deg);
       -moz-transform: rotate(25deg);
       -ms-transform: rotate(25deg);
@@ -10573,10 +11340,22 @@ article.campaign .about {
     #camp1407-00 .star#star30 {
       top: 164px;
       left: 378px;
+=======
+      -webkit-transform: rotate(16deg);
+      -moz-transform: rotate(16deg);
+      -ms-transform: rotate(16deg);
+      -o-transform: rotate(16deg);
+      transform: rotate(16deg); }
+    /* line 1617, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star30 {
+      top: 305px;
+      left: 264px;
+>>>>>>> hotfix-2.4
       color: #009ea1;
       font-size: 10px;
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
       opacity: 0.3;
+<<<<<<< HEAD
       -webkit-transform: rotate(7deg);
       -moz-transform: rotate(7deg);
       -ms-transform: rotate(7deg);
@@ -10692,6 +11471,123 @@ article.campaign .about {
       -ms-transform: rotate(36deg);
       -o-transform: rotate(36deg);
       transform: rotate(36deg); }
+=======
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+      transform: rotate(30deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star31 {
+      top: 267px;
+      left: 284px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(1deg);
+      -moz-transform: rotate(1deg);
+      -ms-transform: rotate(1deg);
+      -o-transform: rotate(1deg);
+      transform: rotate(1deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star32 {
+      top: 150px;
+      left: 812px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(6deg);
+      -moz-transform: rotate(6deg);
+      -ms-transform: rotate(6deg);
+      -o-transform: rotate(6deg);
+      transform: rotate(6deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star33 {
+      top: 377px;
+      left: 887px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(34deg);
+      -moz-transform: rotate(34deg);
+      -ms-transform: rotate(34deg);
+      -o-transform: rotate(34deg);
+      transform: rotate(34deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star34 {
+      top: 329px;
+      left: 633px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(39deg);
+      -moz-transform: rotate(39deg);
+      -ms-transform: rotate(39deg);
+      -o-transform: rotate(39deg);
+      transform: rotate(39deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star35 {
+      top: 288px;
+      left: 331px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star36 {
+      top: 91px;
+      left: 920px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(17deg);
+      -moz-transform: rotate(17deg);
+      -ms-transform: rotate(17deg);
+      -o-transform: rotate(17deg);
+      transform: rotate(17deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star37 {
+      top: 153px;
+      left: 634px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(39deg);
+      -moz-transform: rotate(39deg);
+      -ms-transform: rotate(39deg);
+      -o-transform: rotate(39deg);
+      transform: rotate(39deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star38 {
+      top: 294px;
+      left: 509px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+      transform: rotate(30deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star39 {
+      top: 492px;
+      left: 804px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(21deg);
+      -moz-transform: rotate(21deg);
+      -ms-transform: rotate(21deg);
+      -o-transform: rotate(21deg);
+      transform: rotate(21deg); }
+    /* line 1627, ../../_scss/pages/_campaign.scss */
+    #camp1407-00 .star#star40 {
+      top: 44px;
+      left: 856px;
+      color: #009ea1;
+      font-size: 20px;
+      -webkit-transform: rotate(17deg);
+      -moz-transform: rotate(17deg);
+      -ms-transform: rotate(17deg);
+      -o-transform: rotate(17deg);
+      transform: rotate(17deg); }
+>>>>>>> hotfix-2.4
 
 /* line 1644, ../../_scss/pages/_campaign.scss */
 #camp1407-01 {
