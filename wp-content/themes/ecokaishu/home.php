@@ -286,6 +286,7 @@ get_header( ); ?>
 		"post_type" => "staffwords"
 	);
 	$words = query_posts($args); // get posts of staffwords posted by the staff
+
 	if($words): ?>	
 		<div class="twelvecol col last">
 			<section class="lstStaff">
@@ -293,13 +294,15 @@ get_header( ); ?>
 				<div class="liquidLayout">
 
 					<?php foreach($words as $word): ?>
-						<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>
+						<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>	
 						<dl class="item">
 							<dt><a href="#" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
 							<dd>
 								<?php echo $word->post_content; ?>
+								<small><?php echo $word->post_date; ?></small>
 							</dd>
 						</dl>
+						
 					<?php endforeach;?>
 					
 				</div>

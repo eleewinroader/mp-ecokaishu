@@ -1218,6 +1218,7 @@ function update_profile_fields($contactmethods){
 	$contactmethods['namePron'] = 'ふりがな';
 	$contactmethods['belongs'] = '所属';
 	$contactmethods['profileimg'] = 'プロフィール画像';
+	$contactmethods['enteryear'] = '入社年度';
 
 	return $contactmethods;
 }
