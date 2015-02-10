@@ -42,7 +42,7 @@ if(!@$_POST['paged']):?>
 
 	<?php
 		$args = array(
-			"posts_per_page" => 2,
+			"posts_per_page" => 10,
 			"post_type" => "staffwords",
 			"authors" => $staffId,
 		);
@@ -123,7 +123,7 @@ if(!@$_POST['paged']):?>
 
 		$paged = (int) $_POST['paged'];
 		$args = array(
-			"posts_per_page" => 2,
+			"posts_per_page" => 10,
 		    "post_type" => "staffwords",
 		    "authors" => $staffId,
 			'paged' => $paged,

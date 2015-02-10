@@ -299,7 +299,20 @@ get_header( ); ?>
 					<?php foreach($words as $word): ?>
 						<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>	
 						<dl class="item">
-							<dt><a href="#" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
+
+							<?php
+								$argsStaff = array(
+									"post_type" => "staff",
+									"author" => $word->post_author, 
+								);
+								$staffposts = query_posts($argsStaff); 
+
+								foreach($staffposts as $staffpost){
+									$staffID = $staffpost->ID;
+								}
+							?>
+
+							<dt><a href="<?php echo get_permalink($staffID); ?>" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
 							<dd>
 								<?php echo $word->post_content; ?>
 								<small><?php echo $word->post_date; ?></small>
