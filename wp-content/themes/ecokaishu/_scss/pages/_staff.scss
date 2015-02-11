@@ -278,6 +278,7 @@
 			}		
 			&:nth-of-type(odd) {
 				float: left;
+				clear: both;
 				.cnt {
 					&:after {
 						right: -8px;

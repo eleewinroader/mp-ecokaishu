@@ -8,7 +8,6 @@ define("TAX", 8);
 
 date_default_timezone_set( 'Asia/Tokyo' );
 
-
 add_action( 'wp_before_admin_bar_render', 'my_before_admin_bar_render' );
 function my_before_admin_bar_render() {
 	global $wp_admin_bar;
@@ -1409,36 +1408,20 @@ mail_footer();
 /* contact 2
 *****************************************************************************************/
 
-function contact2_ntfct($email, $contactValues){
+function contact2_ntfct($contactValues){
 	$subject = '【直接引取りキャンペーン】申込が完了いたしました';
-	$message = '様
-
-お問合せをいただき誠にありがとうございます。
-お問合せいただきました内容は下記の通りです。ご確認ください。';
 $message .= '
-
-──────────────────────────────────
-
-■ お問い合わせ内容: 
 
 ■ 会員番号：'.$contactValues['afUserID'].'
 ■ お名前：'.$contactValues['afUserName'].'
 ■ 電話番号：'.$contactValues['afUserPhone'].'
 ■ 引き取り希望日：'.$contactValues['afUserCltDate'].'
 ■ お問い合わせ時刻：'.date("Y年m月d日 H時i分s秒", time()).'
+■ 受付番号：'.$contactValues['post_title'].'
 
-──────────────────────────────────';
+';
 
-$message .= '
-
-担当者より後ほどご連絡をさせていただきます。
-この度はお問合わせいただき誠にありがとうございました。
-
-受付番号：'.$contactValues['post_title'].
-mail_footer();
-
-	wp_mail($email, $subject, $message, mail_header());
-	wp_mail('mail_contact@eco-land.jp', $subject, $message, mail_header($email));
+	wp_mail('e.lee.winroader@gmail.com', $subject, $message, mail_header($email));
 }
 
 /* クーポン未使用者専用フォーム
