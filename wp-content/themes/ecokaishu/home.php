@@ -42,7 +42,7 @@ get_header( ); ?>
 							</a>
 						</div>
 						<div class="slider">
-							<a href="<?php echo bloginfo("site_url"); ?>/inquiry/">
+							<a href="<?php echo site_url(); ?>/inquiry/">
 								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_04<?php if(is_smartphone()) echo "_s"; ?>.jpg" alt="率直なお客様の声をお聞してください" />
 							</a>
 						</div>
