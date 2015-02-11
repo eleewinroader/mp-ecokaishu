@@ -41,6 +41,11 @@ get_header( ); ?>
 								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_02<?php if(is_smartphone()) echo "_s"; ?>.jpg" alt="安心・丁寧な作業を常に心がけています" />
 							</a>
 						</div>
+						<div class="slider">
+							<a href="<?php echo bloginfo("site_url"); ?>/inquiry/">
+								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_04<?php if(is_smartphone()) echo "_s"; ?>.jpg" alt="率直なお客様の声をお聞してください" />
+							</a>
+						</div>
 						<!--<div class="slider">
 							<a href="<?php echo get_post_type_archive_link("concierge"); ?>">
 								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_03<?php if(is_smartphone()) echo "_s"; ?>.gif" alt="5分で見積完結【新登場】WEB見積" />
