@@ -44,7 +44,7 @@ if(!@$_POST['paged']):?>
 		$args = array(
 			"posts_per_page" => 10,
 			"post_type" => "staffwords",
-			"authors" => $staffId,
+			"author" => $staff->id,
 		);
 		$words = query_posts($args); // get posts of staffwords posted by the staff
 		$count_item = count($words);
@@ -125,7 +125,7 @@ if(!@$_POST['paged']):?>
 		$args = array(
 			"posts_per_page" => 10,
 		    "post_type" => "staffwords",
-		    "authors" => $staffId,
+		    "author" => $staff->id,
 			'paged' => $paged,
 		);
 		$words = query_posts($args); // get posts of staffwords posted by the staff
