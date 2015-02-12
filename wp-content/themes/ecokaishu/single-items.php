@@ -158,6 +158,65 @@ get_header();
 			</div>
 		<!--.lpIntro--></div>
 
+<?php
+function getCharge($var1, $var2){
+	$page = get_page_by_title($var1, OBJECT, "price");
+	switch ($var2) {
+		case '金額':
+			$val = getMetaArr($page, "priceInfo01");
+			break;
+		case '金額':
+			$val = getMetaArr($page, "priceInfo01");
+			break;
+		case '項目':
+			$val = getMetaArr($page, "priceInfo07");
+			break;
+		case '単位':
+			$val = get_post_meta($page->ID, "priceInfo05", TRUE);
+			break;
+		case 'サイズ':
+			$val = get_post_meta($page->ID, "priceInfo02", TRUE);
+			break;
+		case '重さ':
+			$val = get_post_meta($page->ID, "priceInfo03", TRUE);
+			break;
+		case '例':
+			$val = get_post_meta($page->ID, "priceInfo04", TRUE);
+			break;
+		case '内容':
+			$val = get_post_meta($page->ID, "priceInfo06", TRUE);
+			break;
+		default:
+			break;
+	}
+	return $val;
+}
+
+$basicCharge = getCharge("基本料金", "金額")[0];
+$basicChargeUnit = getCharge("基本料金", "単位");
+$basicChargeEx = getCharge("基本料金", "内容");
+
+$areaCharge = getCharge("地域料金", "金額")[0];
+$areaChargeUnit = getCharge("地域料金", "単位");
+$areaChargeEx = getCharge("地域料金", "内容");
+
+
+$gRankCharge = getCharge("Gランク", "金額")[0];
+$fRankCharge = getCharge("Fランク", "金額")[0];
+$spWork1Charge = getCharge("外階段作業", "金額")[0];
+$sumCharge = taxIn($basicCharge + $gRankCharge + $fRankCharge + $spWork1Charge);
+
+
+$itemsInfo02 = getMetaArr($post, "itemsInfo02");
+$itemsInfo03 = getMetaArr($post, "itemsInfo03");
+$itemsInfo04 = getMetaArr($post, "itemsInfo04");
+
+$itemSpworks = get_the_terms($post->ID, "spworks");
+
+?>
+
+
+
 		<section class="contents priceDetails" id="lpPriceDetails">
 			<div class="twelvecol col last titleSection">
 				<h3>明確な料金体系</h3>
@@ -169,18 +228,38 @@ get_header();
 				<li class="twocol col">
 					<p class="title">基本料金</p>
 					<span class="icon-shipping"></span>
-					<p><span class="price">3,240</span></p>
+					<p>
+						<span class="price"><?php echo taxIn($basicCharge); ?></span>
+					</p>
 				</li>
 				<li class="twocol col">
-					<p class="title">物品ごとの料金</p>
-					<span class="icon-box2"></span>
-					<p><span class="priceIndex">洗濯機</span><span class="price">4,320</span></p>
-					<p><span class="priceIndex">ソファ</span><span class="price">3,240</span></p>
+
+					<?php
+					if($itemsInfo02): ?>
+						<p class="title">物品ごとの料金<sup>※1</sup></p>
+						<span class="icon-box2"></span>
+						<p>
+							<span class="priceIndex block"><?php echo $itemsInfo04[0]; ?></span>
+							<span class="price"><?php echo taxIn(getCharge($itemsInfo02[0], "金額")[0]); ?></span>
+						</p>
+					<?php else: ?>
+						<p>
+							<span class="priceIndex">洗濯機</span>
+							<span class="price"><?php echo taxIn($gRankCharge); ?></span>
+						</p>
+						<p>
+							<span class="priceIndex">ソファ</span>
+							<span class="price"><?php echo taxIn($fRankCharge); ?></span>
+						</p>
+					<?php endif; ?>
 				</li>
 				<li class="twocol col">
 					<p class="title">特殊作業料金</p>
 					<span class="icon-tools"></span>
-					<p><span class="priceIndex m0_r">階段の運び出し</span><span class="price block">1,080</span></p>
+					<p>
+						<span class="priceIndex m0_r">階段の運び出し</span>
+						<span class="price block"><?php echo taxIn($spWork1Charge); ?></span>
+					</p>
 				</li>
 				<li class="twocol col">
 					<p class="title">オプション料金</p>
@@ -188,9 +267,15 @@ get_header();
 				</li>
 				<li class="fourcol col last">
 					<p class="title">合計料金</p>
-					<p><span class="price">11,880</span></p>
+					<p>
+						<span class="price"><?php echo $sumCharge; ?></span>
+					</p>
 				</li>
 			<!--priceEx--></ul>
+			<p class="footnote twelvecol col last">
+				<small>※1 サイズなどで。</small>
+			</p>
+
 			<section class="contentsPrice" id="basicCharges">
 				<div class="linkMenu twelvecol col last">
 					<h4><a href="#basicCharges">基本料金</a></h4>
@@ -203,13 +288,13 @@ get_header();
 						<tbody>
 							<tr>
 								<th><h5>基本料金</h5></th>
-								<td>1回のエコ回収にお伺いするにあたり頂戴している料金です。</td>
-								<td>3,240円</td>
+								<td><?php echo $basicChargeEx; ?></td>
+								<td><?php echo taxIn($basicCharge).$basicChargeUnit; ?></td>
 							</tr>
 							<tr>
 								<th><h5>地域料金</h5></th>
-								<td>一部の対応エリア訪問の際に頂戴している料金です。</td>
-								<td>4,320円</td>
+								<td><?php echo $areaChargeEx; ?></td>
+								<td><?php echo taxIn($areaCharge).$areaChargeUnit; ?></td>
 							</tr>
 						</tbody>
 					</table>
@@ -604,6 +689,15 @@ get_header();
 					<p>エコ回収をするうえで必要な作業に対して頂戴する料金です。お客様自身で作業を行って頂ければ料金は頂戴致しません。</p>
 					<table>
 						<tbody>
+<?php
+foreach($itemSpworks as $spwork){
+	$var1 = getCharge($spwork->name, "金額")[0];
+	$var2 = getCharge($spwork->name, "単位");
+	$var3 = getCharge($spwork->name, "内容");
+	print_r($var1);
+	print_r($var2);
+	print_r($var3);
+}?>
 							<tr>
 								<th><h5>外階段作業</h5><sup>※1 ※2</sup></th>
 								<td>集合住宅の共有スペースや戸建の屋外に設置されている階段を利用して行う作業です。</td>
@@ -1110,7 +1204,7 @@ EOF;
 					<!--.titleSection--></div>
 					<?php echo $post->post_content; ?>
 				<?php endif; ?>
-				
+
 				<?php if($voiceTitles): ?>
 					<div class="titleSection">
 						<h3>口コミ</h3>

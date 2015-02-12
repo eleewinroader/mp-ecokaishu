@@ -295,19 +295,35 @@ get_header( ); ?>
 		"post_type" => "staffwords"
 	);
 	$words = query_posts($args); // get posts of staffwords posted by the staff
+
 	if($words): ?>	
 		<div class="twelvecol col last">
 			<section class="lstStaff">
 				<h3>ただ今、エコ回収スタッフ</h3>
 				<div class="liquidLayout">
 					<?php foreach($words as $word): ?>
-						<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>
+						<?php $staffImage = get_user_meta($word->post_author, "profileimg", TRUE); ?>	
 						<dl class="item">
-							<dt><a href="#" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
+
+							<?php
+								$argsStaff = array(
+									"post_type" => "staff",
+									"author" => $word->post_author, 
+								);
+								$staffposts = query_posts($argsStaff); 
+
+								foreach($staffposts as $staffpost){
+									$staffID = $staffpost->ID;
+								}
+							?>
+
+							<dt><a href="<?php echo get_permalink($staffID); ?>" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
 							<dd>
 								<?php echo $word->post_content; ?>
+								<small><?php echo $word->post_date; ?></small>
 							</dd>
 						</dl>
+						
 					<?php endforeach;?>
 				</div>
 			</section>
