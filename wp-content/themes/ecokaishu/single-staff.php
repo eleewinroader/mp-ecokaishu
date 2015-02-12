@@ -6,6 +6,8 @@ foreach($authors as $author) {
 
 $staff = get_user_by("login", $staffId); // get user info by login account
 $staffImage = get_user_meta($staff->id, "profileimg", TRUE); // get profile image meta
+$enterYear = get_user_meta($staff->id, "enteryear", TRUE); 
+$belongs = get_user_meta($staff->id, "belongs", TRUE); 
 
 if(!@$_POST['paged']):?>
 <?php
@@ -42,7 +44,7 @@ if(!@$_POST['paged']):?>
 		$args = array(
 			"posts_per_page" => 10,
 			"post_type" => "staffwords",
-			"authors" => $staffId,
+			"author" => $staff->id,
 		);
 		$words = query_posts($args); // get posts of staffwords posted by the staff
 		$count_item = count($words);
@@ -57,7 +59,7 @@ if(!@$_POST['paged']):?>
 					<h3><?php echo get_the_title(); ?> <span>たのみ あつよ</span></h3>
 					<div class="al_c">
 						<div class="circleTrimming"><img src="<?php echo $staffImage; ?>" class="staffimg" /></div>
-						<p>入社2年目 / コンシェルジュ</p>
+						<p><?php echo $enterYear; ?> 年入社 / <?php echo $belongs; ?></p>
 					</div>
 				</div>
 			</div>
@@ -65,11 +67,11 @@ if(!@$_POST['paged']):?>
 				<div class="twelvecol col last"><h3>田野實 温代の一言日記</h3></div>
 
 				<?php if ( have_posts() ) : ?>
-					<div class="diary">	
+					<div class="items">	
 						
 						<?php foreach($words as $word): ?>
-							<div class="sixcol col <?php echo $index==$count_item?"last":""?>">
-								<div class="item">
+							<div class="item sixcol col <?php echo $index==$count_item?"last":""?>">
+								<div class="cnt">
 									<?php echo $word->post_content; ?>
 								</div>
 							</div>
@@ -79,7 +81,7 @@ if(!@$_POST['paged']):?>
 					</div>	
 					<a href="javascript:void(0)" class="seemore" id="seemore">もっと見る</a>	
 				<?php else : ?>
-					<div class="noDiary">No posts available now</div>
+					<div class="noItems">No posts available now</div>
 				<?php endif; ?>		
 			</div>
 		</div><!--.container-->
@@ -101,7 +103,7 @@ if(!@$_POST['paged']):?>
 				data: {paged:mySelf.page},
 				dataType: "html",
 				success: function(data) {
-				 $('.staffDiary .diary .clear').before(data);
+				 $('.staffDiary .items .clear').before(data);
 				 mySelf.page += 1;
 				}
 			});
@@ -123,7 +125,7 @@ if(!@$_POST['paged']):?>
 		$args = array(
 			"posts_per_page" => 10,
 		    "post_type" => "staffwords",
-		    "authors" => $staffId,
+		    "author" => $staff->id,
 			'paged' => $paged,
 		);
 		$words = query_posts($args); // get posts of staffwords posted by the staff
@@ -132,8 +134,8 @@ if(!@$_POST['paged']):?>
 	?>
 
 	<?php foreach($words as $word): ?>
-		<div class="sixcol col <?php echo $index==$count_item?"last":""?>">
-			<div class="item">
+		<div class="item sixcol col <?php echo $index==$count_item?"last":""?>">
+			<div class="cnt">
 				<?php echo $word->post_content; ?>
 			</div>
 		</div>

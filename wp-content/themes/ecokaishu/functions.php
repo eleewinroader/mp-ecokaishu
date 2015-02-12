@@ -8,7 +8,6 @@ define("TAX", 8);
 
 date_default_timezone_set( 'Asia/Tokyo' );
 
-
 add_action( 'wp_before_admin_bar_render', 'my_before_admin_bar_render' );
 function my_before_admin_bar_render() {
 	global $wp_admin_bar;
@@ -1221,6 +1220,7 @@ function update_profile_fields($contactmethods){
 	$contactmethods['namePron'] = 'ふりがな';
 	$contactmethods['belongs'] = '所属';
 	$contactmethods['profileimg'] = 'プロフィール画像';
+	$contactmethods['enteryear'] = '入社年度';
 
 	return $contactmethods;
 }
@@ -1423,6 +1423,7 @@ $message .= '
 ■ 受付番号：'.$contactValues['post_title'].'
 
 ';
+
 	$emails = array(
 		"h_murakami@winroader.co.jp",
 		"k_iwakiri@winroader.co.jp",

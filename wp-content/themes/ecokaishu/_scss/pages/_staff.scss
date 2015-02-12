@@ -237,7 +237,7 @@
 		margin-bottom: 2rem;
 	}
 	.staffDiary {
-		.diary {
+		.items {
 			padding: 2rem 0;
 			position: relative;
 			background: {
@@ -262,22 +262,32 @@
 	  			left: 47.6%;
 	  		}
 	  	}
-	  	.noDiary {
+	  	.noItems {
 	  		text-align: center;
 	  	}
-		.sixcol {
-			&:first-child {
-				float: left !important;
-				.item {
+		.item {
+			&:nth-of-type(even) {
+				float: right;
+				.cnt {
 					&:after {
-						right: -8px !important;
-						left: auto !important;
-						border-color: $gray transparent transparent transparent !important;
-						border-width: 8px 8px 0 0 !important;
+						left: -8px;
+						border-width: 0 8px 8px 0;
+						border-color: transparent $gray transparent transparent;;
+					}
+				}
+			}		
+			&:nth-of-type(odd) {
+				float: left;
+				clear: both;
+				.cnt {
+					&:after {
+						right: -8px;
+						border-width: 8px 8px 0 0;
+						border-color: $gray transparent transparent transparent;
 					}
 				}
 			}
-			.item {
+			.cnt {
 				background: $gray;
 				padding: 2rem 1rem;
 				margin-bottom: 1.5rem;
@@ -301,25 +311,7 @@
 				img {
 					width: 100%;
 				}
-			}
-			&:nth-of-type(even) {
-				.item {
-					&:after {
-						left: -8px;
-						border-width: 0 8px 8px 0;
-						border-color: transparent $gray transparent transparent;;
-					}
-				}
-			}		
-			&:nth-of-type(odd) {
-				.item {
-					&:after {
-						right: -8px;
-						border-width: 8px 8px 0 0;
-						border-color: $gray transparent transparent transparent;
-					}
-				}
-			}			
+			}						
 		}
 		.seemore {
 			background: $gray;
