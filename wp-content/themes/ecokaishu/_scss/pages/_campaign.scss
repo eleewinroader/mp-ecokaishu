@@ -2073,7 +2073,7 @@ article.campaign{
 				@include rotate(60deg);
 				&:before{
 					transform: rotate(-60deg) translate(-87px, 0px);
-	      				transform-origin: 0 0;
+		 				transform-origin: 0 0;
 				}
 			}
 
@@ -2837,7 +2837,56 @@ background:{
 
 }
 
+//**************************************************************************
+// #camp1502-00
+//**************************************************************************
 
+#camp1502-00{
+
+	$yellow1502-00: #ffff66;
+
+
+	overflow: hidden;
+	position: relative;
+	background: $yellow1502-00;
+
+
+	&:before{
+		display: block;
+		position: absolute;
+		z-index: 1;
+		opacity: 0.3;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url("assets/img/campaign/1502/bg.png");
+		background-position: center top;
+		content: "";
+	}
+
+	.imgforSp{
+		position: relative;
+		z-index: 2;
+	}
+
+
+	// .details
+	//******************************************************************
+
+	.details{
+		position: relative;
+		z-index: 2;
+		background-color: $yellow1502-00;
+
+		ol{
+			list-style-type: decimal;
+			list-style-position: inside;
+		}
+	}
+
+
+}
 
 
 

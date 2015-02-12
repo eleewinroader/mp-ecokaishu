@@ -1,7 +1,7 @@
 <?php
 /*
 *
-* Template name: お問い合わせ受付完了
+* Template name: 直接引取りキャンペーン受付完了
 *
 * @package Montser Platform
 * @subpackage MP-Ecokaishu
@@ -30,6 +30,8 @@ if($_POST){
 
 	//DB挿入
 	if($insert_id){
+		
+		$afUserCltDate = implode(",", $afUserCltDate);
 
 		//カスタムフィールド情報挿入
 		//cf　１番無くなった
@@ -38,20 +40,18 @@ if($_POST){
 		add_post_meta($insert_id, 'afInfo03', $afUserPhone);
 		add_post_meta($insert_id, 'afInfo04', $afUserCltDate);
 
-		//タクソノミー挿入	
+		//タクソノミー挿入
 		wp_set_object_terms($insert_id, $quesKind, 'qstcat', $append = true);
 
-		$cstmEmail = "e_lee@winroader.co.jp";
 		//受付メール送信
 		$contactValues = array(
-			'quesKind' => $quesKind,
 			'afUserID' => $afUserID,
 			'afUserName' => $afUserName,
 			'afUserPhone' => $afUserPhone,
 			'afUserCltDate' => $afUserCltDate,
 			'post_title' => $post_title
 		);
-		contact2_ntfct($cstmEmail, $contactValues);		
+		contact2_ntfct($contactValues);
 	}
 
 }else{
@@ -64,7 +64,7 @@ include (TEMPLATEPATH . '/header-form.php');
 wp_reset_query(); wp_reset_postdata();
 
 	if(have_posts()): while(have_posts()): the_post();
-	
+
 		if($error){
 			$title = get_post_meta($post->ID, "thanksCf1", TRUE);
 			$content = get_post_meta($post->ID, "thanksCf2", TRUE);
@@ -81,7 +81,7 @@ wp_reset_query(); wp_reset_postdata();
 			<div class="content">
 				<p><?php echo $content; ?></p>
 			</div>
-		</div>		
+		</div>
 
 	<?php endwhile; endif; ?>
 
@@ -109,9 +109,6 @@ var google_remarketing_only = false;
 <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/974830453/?label=ewxYCOv_2QkQ9fbq0AM&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
-
-<script src="//easy-entry.jp/ffconf/ffconf_5000_0138_0230.js" charset="utf-8" type="text/javascript"></script>
-<script src="//easy-entry.jp/track/efo2r.js?t=100" charset="utf-8" type="text/javascript"></script>
 
 </body>
 </html>

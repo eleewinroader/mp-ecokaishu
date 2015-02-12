@@ -1,4 +1,9 @@
 <?php
+$aucfanCamp = get_page_by_path("aucfan", OBJECT, "campaign");
+if($post->ID == $aucfanCamp->ID){
+	include(TEMPLATEPATH.'/page-contact2.php'); 
+}else{
+
 /*
 * @package Montser Platform
 */
@@ -298,18 +303,11 @@ EOF;
 
 		<?php
 		echo $endstring;
-		if(campCode($post, "children", "") == "camp0000-04"):
+		if(campCode($post, "children", "") == "camp0000-04"){
 			echo $reviewForm;
-		else: ?>
-			<aside class="contents contactBnr">
-				<div class="container">
-					<div class="twelvecol col last">
-						<h3 class="al_l"><?php the_title(); ?>の申込・問合せはお気軽にどうぞ!</h3>
-						<?php echo contactBnr(TRUE, $formType); ?>
-					</div>
-				</div>
-			</aside>
-		<?php endif; ?>
+		}?>
 
 
-<?php get_footer(); ?>
+<?php
+get_footer();
+}?>

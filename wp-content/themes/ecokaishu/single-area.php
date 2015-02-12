@@ -238,10 +238,10 @@ get_header();
 				$sex = getCustomerSex($voice);
 				$age = getCustomerAge($voice);
 				$area = getCustomerAreas($voice, TRUE);
-				$items = getCustomerItems($voice, TRUE, "dd");
+				$items = getCustomerItems($voice, TRUE, "li");
 				$date = getCustomerDate($voice);
-				$starts = getCustomerStarts($voice,"dd");
-				$features = getCustomerFeatures($voice, "dd");
+				$starts = getCustomerStarts($voice,"li");
+				$features = getCustomerFeatures($voice, "li");
 				$review03 = get_post_meta($voice->ID, "voiceInfo17", TRUE);
 				$review03Score = get_post_meta($voice->ID, "voiceInfo16", TRUE);
 				$review03ScoreIndex = getCustomerReview($post, $review03Score);
@@ -256,24 +256,21 @@ get_header();
 				<div class="customerProfile">
 					<div class="customerComments">
 						<h4>{$name}<span class="small">様より</span></h4>
-						<span class="rating-foreground star star{$review03Score}"> 
-							<meta itemprop="rating" content="{$review03Score}" /> 
-							<span class="index">{$review03ScoreIndex}</span>
-						</span> 
-						{$review04}
-					</div>
-					<div class="customerInfo last">
+						<span class="new">NEW</span>
 						<dl>
 							<dt class="hide">性別・年代</dt><dd class="name">{$sex} / {$age}</dd>
 							<dt class="hide">回収エリア</dt><dd class="place">{$area}</dd>
-							<dt class="hide">回収日時</dt><dd class="date"><time datetime="{$date}">{$date}回収</time></dd>
-							<dt class="infoIndex">エコ回収をご利用になったきっかけ</dt> 
-							{$starts}
-							<dt class="infoIndex">エコランドをお選びになった理由</dt>
-							{$features}
-							<dt class="infoIndex">エコ回収したアイテム</dt>
-							{$items}
 						</dl>
+						<h5 class="info index">エコ回収をご利用になったきっかけ</h5>
+						<ul>{$starts}</ul>
+						<h5 class="info index">エコランドをお選びになった理由</h5>
+						<ul>{$features}</ul>
+						<h5 class="items index">エコ回収したアイテム</h5>
+						<ul>{$items}</ul>
+					</div>
+					<div class="customerInfo last">
+						{$review04}
+						<p class="footnote"><small>{$date}投稿</small></p>
 					</div>
 				<!--customerProfile--></div>
 EOF;

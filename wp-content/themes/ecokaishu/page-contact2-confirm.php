@@ -2,10 +2,10 @@
 /**
  * The main template file.
  *
- * Template name: お問い合わせ内容確認
+ * Template name: 直接引取りキャンペーン内容確認
 * @package Montser Platform
  */
- 
+
 include (TEMPLATEPATH . '/contact2-post.php');
 
 //エラーメッセージ取得
@@ -34,19 +34,19 @@ include (TEMPLATEPATH . '/header-form.php');
 		echo '<div class="formBtns"><input type="submit" name="" value="'.$submits.'" id="submit" /></div></form></div>';
 	}else{ //エラーメッセージが無い場合
 		$disabled = ' disabled';
-		$actions = array(get_permalink(get_page_by_path('contact2', OBJECT)), get_permalink(get_page_by_path('contact2/thanks', OBJECT)));
+		$actions = array(get_permalink(get_page_by_path("aucfan", OBJECT, "campaign")), get_permalink(get_page_by_path('contact2/thanks', OBJECT)));
 		$submits = array("内容を修正する", "この内容で送信する");
 		echo '<div class="fullwidthForm" id="confirm">';
 		include(TEMPLATEPATH.'/contact2-form.php');
 		echo '<ul class="formBtns">';
 		for($i=0; $i<count($actions); $i++){
 			echo '<li><form action="'.$actions[$i].'" method="post" name="form" id="confirm" enctype="multipart/form-data">';
-			foreach($_POST as $key => $val){ 
+			foreach($_POST as $key => $val){
 				if(is_array($val)) $val = implode("\t", $val);
 				else $val = $val;
 				echo '<input type="hidden" name="'.$key.'" value="'.$val.'" />';
 			}
-			echo '<input type="submit" name="" value="'.$submits[$i].'" id="submit" /></form></li>';
+			echo '<input type="submit" name="" value="'.$submits[$i].'" id="submit'.$i.'" /></form></li>';
 		}
 		echo '</ul></div>';
 	}?>

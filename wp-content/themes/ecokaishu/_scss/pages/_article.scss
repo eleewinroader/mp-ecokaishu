@@ -423,10 +423,10 @@ h6{
 
 	}
 
-	// #docs
+	// .docs
 	//**************************************************************
 
-	&#docs{
+	&.docs{
 
 		//.container
 		.container{
@@ -500,6 +500,12 @@ h6{
 			//dl
 			> dl{
 				margin-left: 2.0rem;
+				&.listDefi{
+					margin-top: 2.0rem;
+					margin-left: 0;
+					padding-top: 2.0rem;
+					border-top: 1px dashed $gray;
+				}
 			}
 
 		}

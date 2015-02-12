@@ -1,14 +1,7 @@
 @charset "UTF-8";
 
-//**********************************************************************
-//**********************************************************************
-//
-// _form.scss INDEX
-//
-// Form elements general settings
-// Form layout settings
-//
-//**********************************************************************
+form{
+
 //**********************************************************************
 // Form elements general settings
 //**********************************************************************
@@ -16,11 +9,14 @@
 // variables
 $formHeight: 44px;
 $formPadding: 0.5rem;
-
 input, textarea, select{
 	font-size: 100%;
-	//-webkit-appearance: none;
 }
+
+//**********************************************************************
+// input
+//**********************************************************************
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -31,15 +27,105 @@ input[type="tel"]{
 	border: 1px solid rgba($black, .1);
 	@include box-sizing(border-box);
 }
+input[id*="Etc"]:disabled{
+	border: 1px solid transparent !important;
+}
+
+// input+label
+//**********************************************************************
+
+input[type="radio"]+label,
+input[type="checkbox"]+label{
+	margin-right: 1.0rem;
+	margin-left: 0.3rem;
+	padding: 0.3rem 0;
+	height: $formHeight;
+	line-height: 30px;
+	vertical-align: middle;
+	@include box-sizing(border-box);
+}
+input:checked+label{
+	padding: 0.3rem 0;
+	color: $black;
+}
+
+//PC
+@media all and (min-width: $minWidth){
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="date"],
+	input[type="password"]{
+		width: 300px;
+	}
+	label+input[type="text"]{
+		margin-left: 0.5rem;
+	}
+	input[type="radio"]+label,
+	input[type="checkbox"]+label{
+		display: inline-block;
+	}
+
+}
+
+//Mobile
+@media all and (max-width: $maxWidth){
+
+	input{
+		-webkit-appearance: none;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="date"],
+	input[type="password"]{
+		width: 100%;
+		max-width: 100%;
+		padding: 0.5rem;
+	}
+	input[type="date"]{
+		min-height: $formHeight !important;
+		height: inherit;
+	}
+	input[type="submit"]{
+		padding-bottom: 0.7rem !important;
+	}
+
+}
+
+//**********************************************************************
+// textarea
+//**********************************************************************
+
 textarea{
+
 	width: 100%;
 	min-height: 100px;
 	padding: $formPadding;
 	border: 1px solid rgba($black, .1);
 	@include box-sizing(border-box);
 
+	//PC
+	@media all and (min-width: $minWidth){
+		min-height: 86px;
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+		textarea{
+			min-height: 160px;
+		}
+	}
+
 }
+
+//**********************************************************************
+// input[type="submit"], button
+//**********************************************************************
+
 input[type="submit"], button{
+
 	display: inline-block;
 	-webkit-appearance: none;
 	width: 100%;
@@ -52,10 +138,30 @@ input[type="submit"], button{
 	@include border-radius(3px);
 	color: $white;
 	line-height: $formHeight;
+
+	//&:hover
 	&:hover{
 		background: rgba($black, .9) !important;
 	}
+
+	//PC
+	@media all and (max-width: $maxWidth){
+		font-size: 18px !important;
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+		width: 100%;
+		font-size: 16px !important;
+	}
+
+
 }
+
+//**********************************************************************
+// select, option
+//**********************************************************************
+
 select,
 option{
 	height: $formHeight;
@@ -66,18 +172,245 @@ option{
 	line-height: 1.5rem;
 }
 
+//**********************************************************************
+// placeholder
+//**********************************************************************
+
 ::-webkit-input-placeholder{ font-size: 14px; }
 :-moz-placeholder{ font-size: 14px; }
 ::-moz-placeholder{ font-size: 14px; }
 :-ms-input-placeholder{ font-size: 14px; }
 
+//**********************************************************************
+// Checked, disabled, selected
+//**********************************************************************
+
+#confirm{
+
+	// input
+	//**************************************************************
+
+	input{
+
+		//&;disabled
+		&:disabled{
+			border: 1px solid transparent;
+			background: rgba($pink, .1);
+			color: $black;
+			font-weight: bold;
+			vertical-align: middle;
+			line-height: normal;
+		}
+
+		//&:checked+label{
+		&:checked+label{
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			background: rgba($pink, .1);
+			font-weight: bold;
+		}
+
+	}
+
+	// select[disabled]
+	//**************************************************************
+
+	select[disabled]{
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		border: 1px solid transparent;
+		background: rgba($pink, .1);
+		color: $black;
+		font-weight: bold;
+	}
+
+	// textarea:disabled
+	//**************************************************************
+
+	textarea:disabled{
+		border: 1px solid transparent;
+		background: rgba($pink, .1);
+		color: $black;
+		font-weight: bold;
+		vertical-align: middle;
+		line-height: normal;
+	}
+
+}
+
 
 //**********************************************************************
-// Form layout settings
+// .formContents
 //**********************************************************************
 
 .formContents{
+
+	position: relative;
 	margin: $formPadding 0;
+	@include box-sizing(border-box);
+
+	// .formTitle
+	//**************************************************************
+
+	.formTitle{
+
+		position: relative;
+		font-weight: bold;
+
+		//&:before
+		&:before{
+
+			display: inline-block;
+			margin-right: 0.5rem;
+			padding: 0 0.3rem;
+			width: $formHeight;
+			font-size: 10px;
+			font-weight: normal;
+			color: $white;
+			@include box-sizing(border-box);
+			text-align: center;
+
+		}
+
+	}
+
+	//.required
+	&.required{
+		.formTitle{
+			&:before{
+				background: $pink;
+				content: "必須";
+				#confirm &{
+					background: $gray !important;
+				}
+			}
+			&.ok{
+				&:before{
+					background: $green !important;
+					content: "OK" !important;
+				}
+			}
+		}
+	}
+
+	// .formElements
+	//**************************************************************
+
+	.formElements{
+
+		position: relative;
+
+		//p
+		 p{
+			margin: 0.5rem 0;
+		}
+
+		//ul
+		ul{
+
+			position: relative;
+
+			li{
+				display: inline-block;
+				padding: 0.3rem 0;
+				vertical-align: top;
+			}
+
+			//ul
+			ul{
+				margin-left: 0.5rem;
+				padding-left: 1.0rem;
+				border-left: 1px dotted $gray;
+				li{
+					padding-top: 1.0rem;
+				}
+
+				//ul
+				ul{
+					margin-left: 0;
+					padding-left: 0;
+					border-left: none;
+					li{
+						padding-top: 0 !important;
+					}
+				}
+
+			}
+
+		}
+
+		//.formElement
+		 .formElement{
+			display: block;
+			position: relative;
+			width: 100%;
+		}
+
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		display: table;
+		width: 100%;
+		padding: 1.0rem 0;
+		border-bottom: 1px dotted $gray;
+
+		//.formTitle
+		.formTitle{
+			display: table-cell;
+			width: 35%;
+			margin-bottom: 1.0rem;
+			border-right: 1px solid $gray;
+			vertical-align: middle;
+			&+.formElements{
+				padding-left: 1.5rem;
+			}
+		}
+
+		//.formElements
+		.formElements{
+
+			display: table-cell;
+			vertical-align: middle;
+
+			//input[type="radio"]:first-child
+			input[type="radio"]:first-child{
+				margin-left: 0.1rem;
+			}
+
+		}
+
+		//&#replyWay
+		&#replyWay{
+			.formElements ul li{
+				display: inline-block;
+			}
+		}
+
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+
+		padding: 1.0rem 0 0 0;
+
+		//.formTitle
+		.formTitle{
+			padding-top: 1.0rem;
+			margin-bottom: 0.5rem;
+			border-top: 1px solid rgba($black, .1);
+		}
+
+		//.formElements
+		.formElements{
+			li{
+				display: block;
+			}
+		}
+
+	}
+
 }
 
 // PC settings
@@ -99,6 +432,160 @@ option{
 
 }
 
+
+
+//**********************************************************************
+// .formBtns
+//**********************************************************************
+
+.formBtns{
+
+	text-align: center;
+	margin: 0 auto;
+
+	// li
+	//**************************************************************
+
+	li{
+
+		display: inline-block;
+		padding: 0 1.0rem;
+
+		//&:first-of-type
+		&:first-of-type{
+			input[type="submit"]{
+				background: $green;
+			}
+		}
+
+		//&:last-of-type
+		&:last-of-type{
+			input[type="submit"]{
+				background: $pink;
+			}
+		}
+
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+
+		margin: 1.0rem 0;
+
+	}
+
+	// Mobile
+	@media all and (max-width: $maxWidth){
+
+		margin-bottom: 2.0rem;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+		padding-top: 1.0rem;
+		border-top: 1px solid $gray;
+		-webkit-appearance: none;
+
+		//li
+		li{
+			display: block;
+			margin-bottom: 0.5rem;
+			padding: 0;
+		}
+
+	}
+
+}
+
+//**********************************************************************
+// #cltDay
+//**********************************************************************
+
+#cltDay{
+
+	//li
+	li{
+		display: block;
+
+		//ul
+		ul{
+			margin-left: 1.0rem;
+			li{
+				display: inline-block;
+			}
+		}
+
+	}
+
+}
+
+
+//**********************************************************************
+// Messages
+//**********************************************************************
+
+// .msg
+//**********************************************************************
+
+.msg{
+
+	position: absolute;
+	padding: 0 0.5rem;
+	color: $white;
+	font-size: 12px;
+	text-align: left;
+	line-height: 1.0rem;
+
+	//input, select
+	input+&,
+	select+&{
+		padding-left: 0.2rem;
+	}
+
+	//PC
+	@media all and (min-width: $minWidth){
+		left: 0;
+		bottom: -1.0rem;
+	}
+
+	//Mobile
+	@media all and (max-width: $maxWidth){
+		left: 0 !important;
+		right: 0 !important;
+		bottom: -20px !important;
+	}
+
+}
+
+// .error
+//**********************************************************************
+
+.error{
+	background: rgba($pink, .1) !important;
+	border: 1px solid rgba($pink, .3) !important;
+}
+.errorMsg{
+	background: $pink;
+	color: $white;
+}
+
+// .error
+//**********************************************************************
+
+.correct{
+	background: rgba($green, .1) !important;
+	border: 1px solid rgba($green, .3) !important;
+}
+.correctMsg{
+	background: $green;
+	color: $white;
+}
+
+// .focus
+//**********************************************************************
+
+.focus{
+	background: rgba(211, 211, 212, .1) !important;
+	border: 1px solid rgba(211, 211, 212, 1) !important;
+}
 
 //**********************************************************************
 // .lawDoc
@@ -145,6 +632,8 @@ option{
 		margin: 0;
 		padding: 0;
 	}
+
+}
 
 }
 

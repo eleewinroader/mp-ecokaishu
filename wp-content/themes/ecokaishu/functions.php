@@ -171,7 +171,10 @@ function getArticleClass($tempType, $obj){
 			if(campCode($post)) $classinfo .= " ".campCode($obj, "parent", " ");
 		}elseif($obj->post_type == "voices"){
 			$classinfo .= " ".$obj->post_type;
-		}elseif($obj->post_type == "area" || $obj->post_type == "items"){
+		}elseif($obj->post_type == "area"){
+			$classinfo .= " columns";
+			$classinfo .= " ".$obj->post_type;
+		}elseif($obj->post_type == "items"){
 			$classinfo .= " lp";
 			$classinfo .= " ".$obj->post_type;
 		}elseif($obj->post_type == "page" && $obj->post_name == "inquiry"){
@@ -1420,8 +1423,18 @@ $message .= '
 ■ 受付番号：'.$contactValues['post_title'].'
 
 ';
+<<<<<<< HEAD
+	$emails = array(
+		"h_murakami@winroader.co.jp",
+		"k_iwakiri@winroader.co.jp",
+		"e_lee@winroader.co.jp",
+		"eco-auc@eco-land.jp"
+	);
+	wp_mail($emails, $subject, $message, mail_header());
+=======
 
 	wp_mail('e.lee.winroader@gmail.com', $subject, $message, mail_header($email));
+>>>>>>> 871ed9f3ab988bdc81dd7907d6d6f59071b4d81b
 }
 
 /* クーポン未使用者専用フォーム

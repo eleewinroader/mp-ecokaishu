@@ -8,12 +8,12 @@
 <div class="content">
 
 <fieldset>
-	<ol>		
+	<ol>
 		<li class="formContents required">
 			<div class="formTitle"><label for="cstmName">会員番号</label></div>
 			<div class="formElements">
 				<ul class="formElement">
-					<li><input type="text" id="afUserID" name="afUserID" value="<?php if($afUserID) echo $afUserID;?>"<?php echo $disabled; ?> placeholder="例) 123456789" /></li>
+					<li><input type="text" id="afUserID" name="afUserID" value="<?php if($afUserID) echo $afUserID;?>"<?php echo $disabled; ?> placeholder="例) 123456" /></li>
 				</ul>
 			</div>
 		</li>
@@ -21,7 +21,7 @@
 			<div class="formTitle"><label for="afUserName">お名前</label></div>
 			<div class="formElements">
 				<ul class="formElement">
-					<li><input type="text" id="afUserName" name="afUserName" value="<?php if($afUserName) echo $afUserName;?>"<?php echo $disabled; ?> placeholder="例) エコ花子" /></li>					
+					<li><input type="text" id="afUserName" name="afUserName" value="<?php if($afUserName) echo $afUserName;?>"<?php echo $disabled; ?> placeholder="例) エコ花子" /></li>
 				</ul>
 			</div>
 		</li>
@@ -29,7 +29,7 @@
 			<div class="formTitle"><label for="afUserPhone">電話番号</label></div>
 			<div class="formElements">
 				<ul class="formElement">
-					<li><input type="text" id="afUserPhone" name="afUserPhone" value="<?php if($afUserPhone) echo $afUserPhone;?>"<?php echo $disabled; ?> placeholder="例) 00012345678" /></li>					
+					<li><input type="text" id="afUserPhone" name="afUserPhone" value="<?php if($afUserPhone) echo $afUserPhone;?>"<?php echo $disabled; ?> placeholder="例) 08012345678" /></li>
 				</ul>
 			</div>
 		</li>
@@ -38,19 +38,22 @@
 			<div class="formElements">
 				<ul class="formElement">
 				<?php
-				$afUserCltDates = array("2月15日(日)", "2月16日(日)", "2月22日(日)", "2月23日(日)");
+
+				$afUserCltDates = array("2月15日(日)", "2月16日(月)", "2月22日(日)", "2月23日(月)");
 				for($i=0; $i<count($afUserCltDates); $i++){
-					if(in_array($afUserCltDates[$i], $afUserCltDate)) $checked = " checked";
+					if(in_array($afUserCltDate[$i], $afUserCltDates)) $checked = " checked";
 					else $checked = "";
 					echo '<li><input type="checkbox" name="afUserCltDate['.$i.']" value="'.$afUserCltDates[$i].'" id="afUserCltDate'.$i.'"'.$checked.$disabled.' /><label for="afUserCltDate'.$i.'">'.$afUserCltDates[$i].'</label></li>';
-				}?>	
+				}
+
+				?>
 			</ul>
 			</div>
 		</li>
 	</ol>
 </fieldset>
 
-<fieldset>
+<fieldset id="law">
 	<ol>
 		<li class="formContents required">
 			<div class="formTitle">個人情報の取扱について</div>
@@ -64,12 +67,11 @@
 	</ol>
 </fieldset>
 
-<input type="hidden" id="quesKind" name="quesKind" value="<?php echo $quesKind; ?>" />
-<input type="hidden" name="siteCode" value="<?php echo siteCode(); ?>" />
-<input type="hidden" name="pr_code" value="<?php echo $pr_code; ?>" />
-<input type="hidden" name="couponUsed" id="couponUsed" value="<?php echo $couponUsed; ?>" />
+<div class="test"></div>
+
 
 <?php include(TEMPLATEPATH.'/page-validation.php'); ?>
+
 
 </div>
 </div>

@@ -102,7 +102,7 @@ get_header();
 			</div>';
 	?>
 
-	<header class="headerPage">
+	<div class="headerPage">
 		<nav class="navPage">
 			<div class="container">
 				<div class="twelvecol col last">
@@ -115,7 +115,7 @@ get_header();
 				</div>
 			</div>
 		</nav>
-	<!--.headerPage--></header>
+	<!--.headerPage--></div>
 
 	<div class="container">
 
@@ -127,7 +127,7 @@ get_header();
 				</h2>
 			</div>
 			<div class="fourcol col points">
-				<span class="icon-moneybag"></span>
+				<span class="icon-flashlight2"></span>
 				<p class="titlePoint">明確な料金体系</p>
 				<p class="subTitlePoint">1点からでもオトクにお伺い！</p>
 				<p>エコランドのエコ回収は料金がお品物ごとに決まっています。1点からでもお引取可能なので、パック料金より断然お得！</p>
@@ -135,7 +135,7 @@ get_header();
 				<p>家電・家具などはお買取も行っておりますので複数の業者に頼む手間が省けます！<sup><a href="#reasonAppe1">※1</a></sup></p>
 			</div>
 			<div class="fourcol col points">
-				<span class="icon-settings"></span>
+				<span class="icon-headphone"></span>
 				<p class="titlePoint">事前見積&スピード対応</p>
 				<p class="subTitlePoint">ネット/電話で事前見積</p>
 				<p>「受付の対応が良かった」がエコランドを選んだ理由【第3位】<sup><a href="#reasonAppe2">※2</a></sup>！コンシェルジュ(受付スタッフ)が事前にネット/お電話で丁寧にお見積させて頂きます。</p>
@@ -143,7 +143,7 @@ get_header();
 				<p>お部屋の中からの運び出しからお任せください。大きいモノや重たいモノでもプロのスタッフがスピーディーに運び出します。</p>
 			</div>
 			<div class="fourcol col points last">
-				<span class="icon-files"></span>
+				<span class="icon-people"></span>
 				<p class="titlePoint">安心の実績</p>
 				<p class="subTitlePoint">大手企業との提携が信頼の証</p>
 				<p>お引取後までしっかり責任を負うエコランドの仕組みが認められ、たくさんの企業様と提携させて頂いています。</p>
@@ -752,6 +752,7 @@ get_header();
 			<div class="strongPointDetail">
 				<div class="sixcol col">
 					<h4>ネット/ 電話で事前見積</h4>
+					<p class="al_c"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpQuality_img_01.gif" /></p>
 					<p>
 						エコ回収のお見積はサイト上のお問い合わせフォームから、またはお電話でご案内できます。<br />
 						コンシェルジュ(受付スタッフ)が親切・丁寧にご案内致しますので、<br />
@@ -766,6 +767,7 @@ get_header();
 				</div>	-->
 				<div class="sixcol col last">
 					<h4>プロに運び出しもお任せ</h4>
+					<p class="al_c"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/lp/lpQuality_img_02.gif" /></p>
 					<p>
 						<span class="block">エコ回収にお伺いするスタッフは経験豊富な運び出しのプロ！</span>
 						<span class="block">大きなモノや重たいモノも迅速な作業で安全に運び出します。</span>
@@ -796,8 +798,8 @@ get_header();
 						<span class="block">岩崎 愛華</span>
 					</div>
 					<div class="staff">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_nagahiro.jpg" alt="" /></div>
-						<span class="block">永廣 亜沙美</span>
+						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_oki.jpg" alt="" /></div>
+						<span class="block">隠岐 めぐみ</span>
 					</div>
 				</div>
 			<!--.listStaff--></div>
@@ -805,16 +807,8 @@ get_header();
 				<h4>私たちがうかがいます</h4>
 				<div class="owl-carousel owl-theme owl">
 					<div class="staff">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_ushio.jpg" alt="" /></div>
-						<span class="block">潮 恵輔</span>
-					</div>
-					<div class="staff">
 						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_miyazaki.jpg" alt="" /></div>
 						<span class="block">宮崎 美穂</span>
-					</div>
-					<div class="staff">
-						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_watanabe.jpg" alt="" /></div>
-						<span class="block">渡辺 愛美</span>
 					</div>
 					<div class="staff">
 						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_yanashima.jpg" alt="" /></div>
@@ -1018,10 +1012,10 @@ EOF;
 					$sex = getCustomerSex($voice);
 					$age = getCustomerAge($voice);
 					$area = getCustomerAreas($voice, TRUE);
-					$items = getCustomerItems($voice, TRUE, "dd");
+					$items = getCustomerItems($voice, TRUE, "li");
 					$date = get_the_date("Y-m-d", $voice->ID);
-					$starts = getCustomerStarts($voice,"dd");
-					$features = getCustomerFeatures($voice, "dd");
+					$starts = getCustomerStarts($voice,"li");
+					$features = getCustomerFeatures($voice, "li");
 					$review03 = get_post_meta($voice->ID, "voiceInfo17", TRUE);
 					$review03Score = get_post_meta($voice->ID, "voiceInfo16", TRUE);
 					$review03ScoreIndex = getCustomerReview($post, $review03Score);
@@ -1051,9 +1045,11 @@ EOF;
 
 				$args2 = array_merge($args, array("offset" => -1));
 				$voices =  query_posts($args2);
+				echo <<<EOF
+					<div class="sevencol col last">
+EOF;
 				if($voices){
 					echo <<<EOF
-						<div class="sevencol col last">
 						<ul class="archiveList">
 EOF;
 					foreach($voices as $voice){
@@ -1066,7 +1062,7 @@ EOF;
 						$link = get_permalink($voice->ID);
 						echo <<<EOF
 							<li>
-								<a href="#">
+								<a href="{$link}">
 									<h4>{$name}様</h4>
 									<p>
 										<span class="itemInfo customer">{$sex} / {$age}</span>
@@ -1078,16 +1074,16 @@ EOF;
 							</li>
 EOF;
 					}
-					if($voices) echo "</ul></div>";
+					if($voices) echo "</ul>";
 			}
-			echo "<!-- #lpVoices--></section>";
+			echo "</div><!-- #lpVoices--></section>";
 		}?>
 
 		<?php
 		$args = array(
 			"post_type" => "faq",
 			"posts_per_page" => -1,
-			"qstcat" => $post->post_title,
+			"qstcat" =>  $pageTitle,
 			"order" => ASC,
 			"orderby" => DATE,
 		);
@@ -1108,20 +1104,29 @@ EOF;
 			<!-- #lpFaq --></section>
 		<?php endif; ?>
 
-		<section class="lcontents" id="lpWords">
+		<section class="contents" id="lpWords">
 			<div class="twelvecol col last">
-				<div class="titleSection">
-					<h3>口コミ</h3>
-				<!--.titleSection--></div>
-				<dl class="listWords">
-				<?php for($i=0; $i<count($voiceTitles); $i++){
-					echo "<dt>".$voiceTitles[$i]."</dt>";
-					echo "<dd>".$voiceContents[$i]."</dd>";
-				}?>
-				</dl>
+				<?php if($post->post_content): ?>
+					<div class="titleSection">
+						<h3><?php echo $pageTitle; ?>の処分をお考えの皆様へ</h3>
+					<!--.titleSection--></div>
+					<?php echo $post->post_content; ?>
+				<?php endif; ?>
+				
+				<?php if($voiceTitles): ?>
+					<div class="titleSection">
+						<h3>口コミ</h3>
+					</div>
+					<dl class="listWords">
+					<?php for($i=0; $i<count($voiceTitles); $i++){
+						echo "<dt>".$voiceTitles[$i]."</dt>";
+						echo "<dd>".$voiceContents[$i]."</dd>";
+					}?>
+					</dl>
+				<?php endif; ?>
 			</div>
 		<!-- #lpVoices--></section>
 
 	<!--.container--></div>
 
-<?php get_footer(); ?>'
+<?php get_footer(); ?>
