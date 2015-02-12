@@ -9,10 +9,10 @@ define("TAX", 8);
 date_default_timezone_set( 'Asia/Tokyo' );
 
 add_action( 'wp_before_admin_bar_render', 'my_before_admin_bar_render' );
-function my_before_admin_bar_render() {
+/*function my_before_admin_bar_render() {
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu( 'edit' ); // ［プロフィールを編集］を削除
-}
+}*/
 
 function taxin($price){
 	return number_format(floor($price * TAX / 100 + $price));
