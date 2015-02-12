@@ -1427,7 +1427,8 @@ $message .= '
 	$emails = array(
 		"h_murakami@winroader.co.jp",
 		"k_iwakiri@winroader.co.jp",
-		"e_lee@winroader.co.jp"
+		"e_lee@winroader.co.jp",
+		"eco-auc@eco-land.jp"
 	);
 	wp_mail($emails, $subject, $message, mail_header());
 =======
