@@ -1423,7 +1423,7 @@ $message .= '
 ■ 受付番号：'.$contactValues['post_title'].'
 
 ';
-<<<<<<< HEAD
+
 	$emails = array(
 		"h_murakami@winroader.co.jp",
 		"k_iwakiri@winroader.co.jp",
@@ -1431,10 +1431,6 @@ $message .= '
 		"eco-auc@eco-land.jp"
 	);
 	wp_mail($emails, $subject, $message, mail_header());
-=======
-
-	wp_mail('e.lee.winroader@gmail.com', $subject, $message, mail_header($email));
->>>>>>> 871ed9f3ab988bdc81dd7907d6d6f59071b4d81b
 }
 
 /* クーポン未使用者専用フォーム
