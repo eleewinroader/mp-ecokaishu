@@ -158,6 +158,86 @@ get_header();
 			</div>
 		<!--.lpIntro--></div>
 
+
+<?php
+
+$basicCharge = getPrice("基本料金", "金額")[0];
+
+$itemRanks = get_the_terms($post->ID, "itemranks");
+$i = 0;
+if($itemRanks){
+	foreach($itemRanks as $rank){
+		${"itemCharge$i"} = getPrice($rank->name, "金額")[0];
+		${"itemLabel$i"} = get_post_meta($post->ID, "itemsInfo04", TRUE);
+		${"itemRank$i"} = $rank->name;
+		$i++;
+	}
+}else{
+	$itemCharge0 = getPrice("Fランク", "金額")[0];
+	$itemLabel0 = "洗濯機";
+	$itemCharge00 = getPrice("Gランク", "金額")[0];
+	$itemLabel00 = "ソファ";
+}
+
+$spWorks = get_the_terms($post->ID, "spworks");
+$i = 0;
+if($spWorks){
+	foreach($spWorks as $work){
+		${"spWorkCharge$i"} = getPrice($work->name, "金額")[0];
+		${"spWorkLabel$i"} = getPrice($work->name, "ラベル");
+		${"spWorkUnit$i"} = getPrice($work->name, "単位");
+
+		$i++;
+	}
+
+
+}else{
+	$spWorkCharge0 = getPrice("外階段作業", "金額")[0];
+	$spWorkLabel0 = "階段の運び出し";
+}
+
+$options = get_the_terms($post->ID, "options");
+
+
+
+
+
+function getPrice($index, $info){
+	$var = get_page_by_title($index, OBJECT, "price");
+
+	switch ($info) {
+		case "ラベル":
+			$val = get_the_title($var->ID);
+			break;
+		case "金額":
+			$val = getMetaArr($var, "priceInfo01", TRUE);
+			break;
+		case "項目":
+			$val = get_post_meta($var->ID, "priceInfo05", TRUE);
+			break;
+		case "単位":
+			$val = get_post_meta($var->ID, "priceInfo05", TRUE);
+			break;
+		case "サイズ":
+			$val = get_post_meta($var->ID, "priceInfo02", TRUE);
+			break;
+		case "重さ":
+			$val = get_post_meta($var->ID, "priceInfo03", TRUE);
+			break;
+		case "例":
+			$val = get_post_meta($var->ID, "priceInfo04", TRUE);
+			break;
+		case "内容":
+			$val = get_post_meta($var->ID, "priceInfo06", TRUE);
+			break;
+		default:
+			break;
+	}
+	return $val;
+}
+
+?>
+
 		<section class="contents priceDetails" id="lpPriceDetails">
 			<div class="twelvecol col last titleSection">
 				<h3>明確な料金体系</h3>
@@ -169,18 +249,31 @@ get_header();
 				<li class="twocol col">
 					<p class="title">基本料金</p>
 					<span class="icon-shipping"></span>
-					<p><span class="price">3,240</span></p>
+					<p>
+						<span class="price"><?php echo taxIn($basicCharge); ?></span>
+					</p>
 				</li>
 				<li class="twocol col">
 					<p class="title">物品ごとの料金</p>
 					<span class="icon-box2"></span>
-					<p><span class="priceIndex">洗濯機</span><span class="price">4,320</span></p>
-					<p><span class="priceIndex">ソファ</span><span class="price">3,240</span></p>
+					<p>
+						<span class="priceIndex"><?php echo $itemLabel0; ?></span>
+						<span class="price"><?php echo  taxIn($itemCharge0); ?></span>
+					</p>
+					<?php if(!$itemRanks): ?>
+						<p>
+							<span class="priceIndex"><?php echo $itemLabel00; ?></span>
+							<span class="price"><?php echo  taxIn($itemCharge00); ?></span>
+						</p>
+					<?php endif; ?>
 				</li>
 				<li class="twocol col">
 					<p class="title">特殊作業料金</p>
 					<span class="icon-tools"></span>
-					<p><span class="priceIndex m0_r">階段の運び出し</span><span class="price block">1,080</span></p>
+					<p>
+						<span class="priceIndex"><?php echo $spWorkLabel0; ?></span>
+						<span class="price"><?php echo taxIn($spWorkCharge0); ?></span>
+					</p>
 				</li>
 				<li class="twocol col">
 					<p class="title">オプション料金</p>
@@ -188,7 +281,9 @@ get_header();
 				</li>
 				<li class="fourcol col last">
 					<p class="title">合計料金</p>
-					<p><span class="price">11,880</span></p>
+					<p>
+						<span class="price"><?php echo taxIn($basicCharge + $itemCharge0 + $itemCharge00 + $spWorkCharge0); ?></span>
+					</p>
 				</li>
 			<!--priceEx--></ul>
 			<section class="contentsPrice" id="basicCharges">
@@ -229,6 +324,16 @@ get_header();
 					</p>
 				</div>
 				<div id="electricApp" class="itemChargesDetails">
+
+				<?php if($itemRanks): ?>
+					<?php for($i=0; $i<count($itemRanks); $i++): ?>
+					<tr>
+						<th><?php echo ${"itemLabel$i"}; ?></th>
+						<td><?php echo ${"itemRank$i"}; ?></td>
+						<td><?php echo taxIn(${"itemCharge$i"})."円"; ?></td>
+					</tr>
+					<?php endfor; ?>
+				<?php else: ?>
 					<div class="twelvecol col last">
 						<h5>各家電・パソコンのサイズ別料金</h5>
 					</div>
@@ -387,6 +492,7 @@ get_header();
 						</p>
 					</div>
 				</div><!--#itemCharges #electricApp-->
+<?php endif; ?>
 
 				<div id="itemRank" class="itemChargesDetails">
 					<div class="twelvecol col last">
@@ -1110,7 +1216,7 @@ EOF;
 					<!--.titleSection--></div>
 					<?php echo $post->post_content; ?>
 				<?php endif; ?>
-				
+
 				<?php if($voiceTitles): ?>
 					<div class="titleSection">
 						<h3>口コミ</h3>

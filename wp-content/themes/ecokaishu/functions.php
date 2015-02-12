@@ -9,10 +9,10 @@ define("TAX", 8);
 date_default_timezone_set( 'Asia/Tokyo' );
 
 add_action( 'wp_before_admin_bar_render', 'my_before_admin_bar_render' );
-function my_before_admin_bar_render() {
+/*function my_before_admin_bar_render() {
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu( 'edit' ); // ［プロフィールを編集］を削除
-}
+}*/
 
 function taxin($price){
 	return number_format(floor($price * TAX / 100 + $price));
@@ -1423,17 +1423,12 @@ $message .= '
 ■ 受付番号：'.$contactValues['post_title'].'
 
 ';
-<<<<<<< HEAD
 	$emails = array(
 		"h_murakami@winroader.co.jp",
 		"k_iwakiri@winroader.co.jp",
 		"e_lee@winroader.co.jp"
 	);
 	wp_mail($emails, $subject, $message, mail_header());
-=======
-
-	wp_mail('e.lee.winroader@gmail.com', $subject, $message, mail_header($email));
->>>>>>> 871ed9f3ab988bdc81dd7907d6d6f59071b4d81b
 }
 
 /* クーポン未使用者専用フォーム

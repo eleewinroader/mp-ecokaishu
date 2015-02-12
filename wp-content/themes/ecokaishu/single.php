@@ -20,7 +20,7 @@ get_header();
 
 	//vars of meta
 	$contentsTitles = getMetaArr($post, "contentsInfo01");
-	$contents = getMetaArr($post, "contentsInfo02"); 
+	$contents = getMetaArr($post, "contentsInfo02");
 	$contentsImgs = getMetaImgArr($post, "contentsInfo03");
 
 	$kijitasuInfo01 = get_post_meta($post->ID, "kijitasuInfo01", TRUE);
@@ -30,7 +30,7 @@ get_header();
 	$kijitasuInfo05 = get_post_meta($post->ID, "kijitasuInfo05", TRUE);
 	$kijitasuInfo06 = get_post_meta($post->ID, "kijitasuInfo06", TRUE);
 	$kijitasuInfo07 = get_post_meta($post->ID, "kijitasuInfo07", TRUE);
-	
+
 	?>
 
 	<header class="headerPage">
@@ -40,17 +40,17 @@ get_header();
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
-						</a> 
+						</a>
 					</div>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo $catUrl; ?>" itemprop="url">
 							<span itemprop="title"><?php echo $catName; ?></span>
-						</a> 
+						</a>
 					</div>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo get_permalink($post->ID) ?>" itemprop="url">
 							<span itemprop="title"><?php the_title(); ?></span>
-						</a> 
+						</a>
 					</div>
 				</div>
 			</div>
@@ -145,7 +145,7 @@ get_header();
 					wp_reset_query();
 				}
 			}?>
-			
+
 			<div class="bnrBtn contents" id="area">
 				<a href="<?php echo get_post_type_archive_link("area"); ?>">
 					<span class="icon-search"></span>
@@ -156,7 +156,7 @@ get_header();
 
 			<div class="bnrBtn contents">
 				<a href="<?php echo get_post_type_archive_link("problems"); ?>"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/base/ecokaishu_bnr_problems_640x640.gif" alt="お悩みの方へページへ" /></a>
-			<!--.contents--></div>	
+			<!--.contents--></div>
 
 			<?php
 			$convSales = convSale();
@@ -213,7 +213,7 @@ get_header();
 				<!--人気エリア一覧--></section>';
 				wp_reset_query();
 			}?>
-			
+
 
 		<!--.sidebar--></aside>
 
