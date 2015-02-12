@@ -75,7 +75,6 @@ get_header();
 
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 				<?php if($kijitasuInfo01): ?>
-
 					<figure class="figure">
 						<?php echo get_attached_img($post->ID, "kijitasuInfo03", "", "", "thumbnail", "", ""); ?>
 						<figcaption><?php echo $kijitasuInfo01; ?></figcaption>
@@ -89,7 +88,6 @@ get_header();
 						</dl>
 					</figure>
 					<div class="clear"></div>
-
 				<?php else: ?>
 					<?php the_content(); ?>
 				<?php endif; ?>

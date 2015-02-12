@@ -15,7 +15,7 @@ include (TEMPLATEPATH . '/header-form.php');
 
 	<div class="intro">
 		<img src="<?php echo bloginfo("template_url"); ?>/assets/img/contact/appealing.png" alt="梱包配送料不要!!" id="appealing" />
-		<p>エコオクにて、通常発生してしまう梱包配送料を支払うことなく、<br /> 現場引取にて商品を受け取りことが可能です。</p>
+		<p>エコオクにて、通常発生してしまう梱包配送料を支払うことなく、<br /> 直接倉庫にて商品を受け取ることが可能です。</p>
 		<p>2015年2月8日(日)～2月19日(木)(落札日)</p>
 		<dl>
 			<dt>対象者</dt>
@@ -25,8 +25,8 @@ include (TEMPLATEPATH . '/header-form.php');
 			<dd>落札代金の他、１点あたり500円の引き取り手数料がかかります。</dd>
 		</dl>
 		<div class="footnote">
-			<p><small>※落札日から11日目以降は保管料金500円/円発生します。</small>
-			<small>※引き取りキャンセルの場合、梱包配送料金をお支払したのち発送したします。</small></p>
+			<p><small>※落札日から11日目以降は保管料金500円/日が発生します。</small><br />
+			<small>※引取りに来られなかった場合は、梱包配送料金をお支払頂き、発送いたしますので予めご了承ください。</small></p>
 		</div>
 		<p class="titFlow">ご利用の流れ</p>
 		<ul>
@@ -38,12 +38,12 @@ include (TEMPLATEPATH . '/header-form.php');
 			<li>
 				<h5>STEP 2</h5>
 				<h6>引取前日までに振り込み</h6>
-				<p>引取前日15:00までご指定の講座まで振り込み</p>
+				<p>引取前日15:00までご指定銀行口座に振り込み</p>
 			</li>
 			<li>
 				<h5>STEP 3</h5>
 				<h6>商品の引取</h6>
-				<p>指定した引取日11:00-14:00の間エコオク倉庫にて商品引取</p>
+				<p>指定した引取日の11:00-14:00の間にエコオク倉庫にて商品引取</p>
 			</li>
 		</ul>
 		<div class="clear"></div>
