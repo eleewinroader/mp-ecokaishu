@@ -314,13 +314,14 @@ get_header( ); ?>
 
 								foreach($staffposts as $staffpost){
 									$staffID = $staffpost->ID;
+									$staffName = $staffpost->post_title;
 								}
 							?>
 
-							<dt><a href="<?php echo get_permalink($staffID); ?>" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
+							<dt><a href="<?php echo get_permalink($staffID); ?>"><img class="circleTrimming" src="<?php echo $staffImage; ?>" /><?php echo $staffName; ?></a></dt>
 							<dd>
 								<?php echo $word->post_content; ?>
-								<small><?php echo $word->post_date; ?></small>
+								<small><?php echo $word->post_date; ?></small>								
 							</dd>
 						</dl>
 						

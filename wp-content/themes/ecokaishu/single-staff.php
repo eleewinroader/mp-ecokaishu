@@ -29,15 +29,20 @@ if(!@$_POST['paged']):?>
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
 						</a>
 					</div>
+					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
+						<a href="<?php echo get_post_type_archive_link("staff"); ?>">
+							<span itemprop="title"><?php echo get_post_type_object(get_post_type($post))->label; ?></span>						
+						</a>
+					</div>
 					<?php echo $navPage; ?>
 				</div>
 			</div>
 		</nav>
-		<!-- <div class="container">
+		<div class="container">
 			<div class="twelvecol col last">
 				<h2><?php echo get_the_title(); ?></h2>
 			</div>
-		</div> -->
+		</div>
 	<!--.headerPage--></header>
 
 	<?php
@@ -64,7 +69,7 @@ if(!@$_POST['paged']):?>
 				</div>
 			</div>
 			<div class="staffDiary contents">
-				<div class="twelvecol col last"><h3>田野實 温代の一言日記</h3></div>
+				<div class="twelvecol col last"><h4><?php echo get_the_title(); ?> の一言日記</h4></div>
 
 				<?php if ( have_posts() ) : ?>
 					<div class="items">	
