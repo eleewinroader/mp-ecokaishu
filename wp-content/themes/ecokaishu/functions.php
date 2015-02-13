@@ -8,11 +8,11 @@ define("TAX", 8);
 
 date_default_timezone_set( 'Asia/Tokyo' );
 
-add_action( 'wp_before_admin_bar_render', 'my_before_admin_bar_render' );
+/*add_action( 'wp_before_admin_bar_render', 'my_before_admin_bar_render' );
 function my_before_admin_bar_render() {
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu( 'edit' ); // ［プロフィールを編集］を削除
-}
+}*/
 
 function taxin($price){
 	return number_format(floor($price * TAX / 100 + $price));
@@ -172,7 +172,7 @@ function getArticleClass($tempType, $obj){
 		}elseif($obj->post_type == "voices"){
 			$classinfo .= " ".$obj->post_type;
 		}elseif($obj->post_type == "area"){
-			$classinfo .= " columns";
+			$classinfo .= " lp";
 			$classinfo .= " ".$obj->post_type;
 		}elseif($obj->post_type == "items"){
 			$classinfo .= " lp";
@@ -267,6 +267,39 @@ function getMetaImgArr($post, $meta){
 	}
 	return $vars;
 
+}
+
+function getPrice($index, $info){
+	$var = get_page_by_title($index, OBJECT, "price");
+	switch ($info) {
+		case "ラベル":
+			$val = get_the_title($var->ID);
+			break;
+		case "金額":
+			$val = getMetaArr($var, "priceInfo01", TRUE);
+			break;
+		case "項目":
+			$val = getMetaArr($var, "priceInfo07", TRUE);
+			break;
+		case "単位":
+			$val = get_post_meta($var->ID, "priceInfo05", TRUE);
+			break;
+		case "サイズ":
+			$val = get_post_meta($var->ID, "priceInfo02", TRUE);
+			break;
+		case "重さ":
+			$val = get_post_meta($var->ID, "priceInfo03", TRUE);
+			break;
+		case "例":
+			$val = get_post_meta($var->ID, "priceInfo04", TRUE);
+			break;
+		case "内容":
+			$val = get_post_meta($var->ID, "priceInfo06", TRUE);
+			break;
+		default:
+			break;
+	}
+	return $val;
 }
 
 //header cleaner
@@ -1423,7 +1456,6 @@ $message .= '
 ■ 受付番号：'.$contactValues['post_title'].'
 
 ';
-
 	$emails = array(
 		"h_murakami@winroader.co.jp",
 		"k_iwakiri@winroader.co.jp",

@@ -42,7 +42,7 @@ get_header( ); ?>
 							</a>
 						</div>
 						<div class="slider">
-							<a href="<?php echo bloginfo("site_url"); ?>/inquiry/">
+							<a href="<?php echo site_url(); ?>/inquiry/">
 								<img src="<?php echo bloginfo("template_url"); ?>/assets/img/home/slider_04<?php if(is_smartphone()) echo "_s"; ?>.jpg" alt="率直なお客様の声をお聞してください" />
 							</a>
 						</div>
@@ -314,13 +314,14 @@ get_header( ); ?>
 
 								foreach($staffposts as $staffpost){
 									$staffID = $staffpost->ID;
+									$staffName = $staffpost->post_title;
 								}
 							?>
 
-							<dt><a href="<?php echo get_permalink($staffID); ?>" class="circleTrimming"><img src="<?php echo $staffImage; ?>" /></a></dt>
+							<dt><a href="<?php echo get_permalink($staffID); ?>"><img class="circleTrimming" src="<?php echo $staffImage; ?>" /><?php echo $staffName; ?></a></dt>
 							<dd>
 								<?php echo $word->post_content; ?>
-								<small><?php echo $word->post_date; ?></small>
+								<small><?php echo $word->post_date; ?></small>								
 							</dd>
 						</dl>
 						
