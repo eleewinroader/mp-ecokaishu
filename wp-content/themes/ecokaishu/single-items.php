@@ -155,7 +155,7 @@ get_header();
 				</h2>
 			</div>
 			<div class="fourcol col points">
-				<span class="icon-moneybag"></span>
+				<span class="icon-flashlight2"></span>
 				<p class="titlePoint">明確な料金体系</p>
 				<p class="subTitlePoint">1点からでもオトクにお伺い！</p>
 				<p>エコランドのエコ回収は料金がお品物ごとに決まっています。1点からでもお引取可能なので、パック料金より断然お得！</p>
@@ -163,7 +163,7 @@ get_header();
 				<p>家電・家具などはお買取も行っておりますので複数の業者に頼む手間が省けます！<sup><a href="#reasonAppe1">※1</a></sup></p>
 			</div>
 			<div class="fourcol col points">
-				<span class="icon-settings"></span>
+				<span class="icon-headphone"></span>
 				<p class="titlePoint">事前見積&スピード対応</p>
 				<p class="subTitlePoint">ネット/電話で事前見積</p>
 				<p>「受付の対応が良かった」がエコランドを選んだ理由【第3位】<sup><a href="#reasonAppe2">※2</a></sup>！コンシェルジュ(受付スタッフ)が事前にネット/お電話で丁寧にお見積させて頂きます。</p>
@@ -171,7 +171,7 @@ get_header();
 				<p>お部屋の中からの運び出しからお任せください。大きいモノや重たいモノでもプロのスタッフがスピーディーに運び出します。</p>
 			</div>
 			<div class="fourcol col points last">
-				<span class="icon-files"></span>
+				<span class="icon-people"></span>
 				<p class="titlePoint">安心の実績</p>
 				<p class="subTitlePoint">大手企業との提携が信頼の証</p>
 				<p>お引取後までしっかり責任を負うエコランドの仕組みが認められ、たくさんの企業様と提携させて頂いています。</p>

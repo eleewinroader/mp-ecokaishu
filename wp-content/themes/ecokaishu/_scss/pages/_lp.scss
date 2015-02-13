@@ -118,10 +118,9 @@ h3{
 		//span[class^="icon-"]
 		span[class^="icon-"]{
 			line-height: 0;
-			padding: 0.5rem;
 			@include border-radius(50%);
 			background: $white;
-			font-size: $bigger*2;
+			font-size: $biggest*2.2;
 		}
 
 		//.titlePoint
@@ -263,6 +262,15 @@ h3{
 //**********************************************************************
 
  #lpQuality {
+
+	// .strongPointDetail
+	//******************************************************************
+
+	.strongPointDetail {
+		h4 {
+			text-align: center;
+		}
+	}
 
 	// .listStaff
 	//******************************************************************
