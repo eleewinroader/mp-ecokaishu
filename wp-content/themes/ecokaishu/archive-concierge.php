@@ -5,14 +5,14 @@
 get_header( ); ?>
 
 	<?php
-	if(campCode($post)){ 
+	if(campCode($post)){
 		$childrenClass = campCode($post, "children");
 		$pr_code = substr($childrenClass, 7, 11);
 		$pr_code = str_replace("-", "_", $pr_code);
-		$param = "?pr_code=".$pr_code; 
+		$param = "?pr_code=".$pr_code;
 		if($pr_code == "4_00") $ycoll = "2-1";
 	}?>
-	
+
 	<header class="headerPage">
 		<nav class="navPage">
 			<div class="container">
@@ -20,12 +20,12 @@ get_header( ); ?>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo siteInfo("rootUrl"); ?>" itemprop="url">
 							<span itemprop="title"><?php echo bloginfo("site_name"); ?>TOP</span>
-						</a> 
+						</a>
 					</div>
 					<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">
 						<a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" itemprop="url">
 							<span itemprop="title"><?php post_type_archive_title(); ?></span>
-						</a> 
+						</a>
 					</div>
 				</div>
 			</div>
