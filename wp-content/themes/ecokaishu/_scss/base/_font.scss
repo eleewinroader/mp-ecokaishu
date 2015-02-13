@@ -26,24 +26,13 @@
 	src:url('assets/fonts/custom150116.eot?#iefix-14fm3e') format('embedded-opentype'),
 		url('assets/fonts/custom150116.woff?-14fm3e') format('woff'),
 		url('assets/fonts/custom150116.ttf?-14fm3e') format('truetype'),
-		url('assets/fonts/custom150116.svg?-14fm3e#custom150116') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'custom150211';
-	src:url('assets/fonts/custom150211.eot?kd0z8s');
-	src:url('assets/fonts/custom150211.eot?#iefixkd0z8s') format('embedded-opentype'),
-		url('assets/fonts/custom150211.woff?kd0z8s') format('woff'),
-		url('assets/fonts/custom150211.ttf?kd0z8s') format('truetype'),
-		url('assets/fonts/custom150211.svg?kd0z8s#custom150211') format('svg');
+		url('assets/fonts/custom150116.svg?-14fm3e#custom140702') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-	font-family: "icomoon", "custom140702", "custom150116" , "custom150211";
+	font-family: "icomoon", "custom140702", "custom150116";
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -3505,13 +3494,4 @@
 }
 .icon-clothesdryer:before {
     content: "\ee08";
-}
-.icon-flashlight2:before {
-    content: "\ee09";
-}
-.icon-headphone:before {
-    content: "\ee10";
-}
-.icon-people:before {
-    content: "\ee11";
 }

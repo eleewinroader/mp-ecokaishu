@@ -190,40 +190,50 @@
 		border: 1px solid rgba($black, .05);
 		background: $gray;
 		display: inline-block;
-		width: 75px;
-		height: 75px;
+		width: 100%;
+		height: 100%;
 	}
 	.item {
-		width: 31.5789% !important;
+		width: 360px !important;
 		margin-top: 1rem !important;
-		border: none !important;
-		color: $darkGray;
+		border: none !important;		
 	}
 	dl {		
 		dt {
 			float: left;
+			width: 20.83333%;
+			text-align: center;
+			a {
+				color: $darkGray;
+				text-decoration: none;	
+				img {
+					margin-bottom: 0.5rem;
+				}			
+			}
 		}
 		dd {
 			float: right;
+			width: 63.61111%;
 			background: $gray;
 			@include border-radius(5px);
-			padding: 1rem;
-			width: 62%;
+			padding: 5%;
 			small {
 				display: block;
 				font-size: 80%;
 				text-align: right;
+			}
+			img {
+				margin: 0.5rem 0;
 			}
 		}
 	}
 }
 
 .staffDetail {
-	h3 {
+	h4, h3 {
 		text-align: center;
 		span {
 			display: block;
-			font-size: 80%;
 		}
 	}
 	.circleTrimming {
@@ -261,58 +271,60 @@
 	  			bottom: -10px;
 	  			left: 47.6%;
 	  		}
+	  		.item {
+				&:nth-of-type(even) {
+					float: right;
+					.cnt {
+						&:after {
+							left: -8px;
+							border-width: 0 8px 8px 0;
+							border-color: transparent $gray transparent transparent;;
+						}
+					}
+				}		
+				&:nth-of-type(odd) {
+					float: left;
+					clear: both;
+					.cnt {
+						&:after {
+							right: -8px;
+							border-width: 8px 8px 0 0;
+							border-color: $gray transparent transparent transparent;
+						}
+					}
+				}
+				.cnt {
+					background: $gray;
+					padding: 2rem 1rem;
+					margin-bottom: 1.5rem;
+					position: relative;
+					&:after {					
+						top: 10%;
+						width: 0px;
+						height: 0px;
+						content: "";
+						position: absolute;
+						border-style: solid;					
+					}
+					p {
+						margin-bottom: 1rem;
+					}
+					small {
+						display: block;
+						text-align: right;
+						font-size: 80%;
+					}
+					img {
+						width: 100%;
+						margin: 0.5rem 0;
+					}
+				}						
+			}
 	  	}
 	  	.noItems {
 	  		text-align: center;
 	  	}
-		.item {
-			&:nth-of-type(even) {
-				float: right;
-				.cnt {
-					&:after {
-						left: -8px;
-						border-width: 0 8px 8px 0;
-						border-color: transparent $gray transparent transparent;;
-					}
-				}
-			}		
-			&:nth-of-type(odd) {
-				float: left;
-				clear: both;
-				.cnt {
-					&:after {
-						right: -8px;
-						border-width: 8px 8px 0 0;
-						border-color: $gray transparent transparent transparent;
-					}
-				}
-			}
-			.cnt {
-				background: $gray;
-				padding: 2rem 1rem;
-				margin-bottom: 1.5rem;
-				position: relative;
-				&:after {					
-					top: 10%;
-					width: 0px;
-					height: 0px;
-					content: "";
-					position: absolute;
-					border-style: solid;					
-				}
-				p {
-					margin-bottom: 1rem;
-				}
-				small {
-					display: block;
-					text-align: right;
-					font-size: 80%;
-				}
-				img {
-					width: 100%;
-				}
-			}						
-		}
+		
 		.seemore {
 			background: $gray;
 			color: $darkGray;
@@ -325,16 +337,17 @@
 
 		//Mobile
 		@media all and (max-width: $maxWidth){
-			.diary {
+			.items {
 				background: none;
 				&:before, &:after {
 					content: "";
 				}
-			}
-			.sixcol {
 				.item {
-					&:after {
-						border: none;
+					float: none !important;
+					.cnt {						
+						&:after {
+							border: none;
+						}
 					}
 				}
 			}
