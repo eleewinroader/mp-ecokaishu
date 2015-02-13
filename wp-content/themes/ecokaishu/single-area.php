@@ -25,9 +25,9 @@ get_header();
 	$basicEx = getPrice("基本料金", "内容");
 	$areaCharge = getPrice("地域料金", "金額")[0];
 	$areaEx = getPrice("地域料金", "内容");
-	$itemRanks = get_terms("itemranks");
-	$spWorks = get_terms("spworks", array("orderby"=>"id", "order"=> "ASC"));
-	$options = get_terms("options", array("orderby"=>"id", "order"=> "ASC"));
+	$itemRanks = get_terms("itemranks", array("hide_empty" => FALSE));
+	$spWorks = get_terms("spworks", array("orderby"=>"id", "order"=> "ASC", "hide_empty" => FALSE));
+	$options = get_terms("options", array("orderby"=>"id", "order"=> "ASC", "hide_empty" => FALSE));
 
 	$navPage .= '
 			<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="crumb">

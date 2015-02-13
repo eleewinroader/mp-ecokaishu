@@ -9,9 +9,9 @@ $basicCharge = getPrice("基本料金", "金額")[0];
 $basicEx = getPrice("基本料金", "内容");
 $areaCharge = getPrice("地域料金", "金額")[0];
 $areaEx = getPrice("地域料金", "内容");
-$itemRanks = get_terms("itemranks");
-$spWorks = get_terms("spworks", array("orderby"=>"id", "order"=> "ASC"));
-$options = get_terms("options", array("orderby"=>"id", "order"=> "ASC"));
+$itemRanks = get_terms("itemranks", array("hide_empty" => FALSE));
+$spWorks = get_terms("spworks", array("orderby"=>"id", "order"=> "ASC", "hide_empty" => FALSE));
+$options = get_terms("options", array("orderby"=>"id", "order"=> "ASC", "hide_empty" => FALSE));
 
 ?>
 
@@ -188,7 +188,7 @@ $options = get_terms("options", array("orderby"=>"id", "order"=> "ASC"));
 					foreach($itemRanks as $itemRank):
 						$last = ($k % 4 == 0) ? " last" : ""; ?>
 						<div class="threecol col rankCharge<?php echo $last; ?>">
-							<h6><?php echo $itemRank->name." ".getPrice($itemRank->name, "金額")[0].getPrice($itemRank->name, "単位"); ?></h6>
+							<h6><?php echo $itemRank->name." ".taxIn(getPrice($itemRank->name, "金額")[0]).getPrice($itemRank->name, "単位"); ?></h6>
 							<table>
 								<tbody>
 									<tr>

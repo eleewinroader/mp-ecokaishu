@@ -33,7 +33,7 @@ get_header();
 		$itemLabel01 = "ソファ";
 	}
 
-	$spWorks = get_the_terms($post->ID, "spworks") ? get_the_terms($post->ID, "spworks") : get_terms("spworks", array("orderby"=>"id", "order"=> "ASC"));
+	$spWorks = get_the_terms($post->ID, "spworks") ? get_the_terms($post->ID, "spworks") : get_terms("spworks", array("orderby"=>"id", "order"=> "ASC", "hide_empty" => FALSE));
 	$i = 0;
 	foreach($spWorks as $work){
 		${"spWorkCharge$i"} = getPrice($work->name, "金額")[0];
@@ -43,7 +43,7 @@ get_header();
 		$i++;
 	}
 
-	$options = get_the_terms($post->ID, "options") ? get_the_terms($post->ID, "options") : get_terms("options", array("orderby"=>"id", "order"=> "ASC"));
+	$options = get_the_terms($post->ID, "options") ? get_the_terms($post->ID, "options") : get_terms("options", array("orderby"=>"id", "order"=> "ASC", "hide_empty" => FALSE));
 	$j = 0;
 	foreach($options as $option){
 		if(count(getPrice($option->name, "金額")) > 1){
@@ -304,11 +304,11 @@ get_header();
 						</div>
 						<?php
 						$k = 1;
-						$ranks = get_terms("itemranks");
+						$ranks = get_terms("itemranks", array("hide_empty" => FALSE));
 						foreach($ranks as $rank):
 							$last = ($k % 4 == 0) ? " last" : ""; ?>
 							<div class="threecol col rankCharge<?php echo $last; ?>">
-								<h6><?php echo $rank->name." ".getPrice($rank->name, "金額")[0].getPrice($rank->name, "単位"); ?></h6>
+								<h6><?php echo $rank->name." ".taxIn(getPrice($rank->name, "金額")[0]).getPrice($rank->name, "単位"); ?></h6>
 								<table>
 									<tbody>
 										<tr>

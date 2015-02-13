@@ -14,8 +14,6 @@ function my_before_admin_bar_render() {
 	$wp_admin_bar->remove_menu( 'edit' ); // ［プロフィールを編集］を削除
 }*/
 
-add_options_page('My Plugin Options', 'My Plugin', 'administrator', __FILE__, 'my_plugin_options');
-
 function taxin($price){
 	return number_format(floor($price * TAX / 100 + $price));
 }
