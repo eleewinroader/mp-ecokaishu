@@ -24,9 +24,11 @@ get_header();
 	$basicCharge = getPrice("基本料金", "金額");
 	$basicCharge = $basicCharge[0];
 	$basicEx = getPrice("基本料金", "内容");
+	$basicChargeUnit = getPrice("基本料金", "単位");
 	$areaCharge = getPrice("地域料金", "金額");
 	$areaCharge = $areaCharge[0];
 	$areaEx = getPrice("地域料金", "内容");
+	$areaChargeUnit = getPrice("地域料金", "単位");
 
 	$itemRanks = get_terms("itemranks", array("hide_empty" => FALSE));
 	$spWorks = get_terms("spworks", array("orderby"=>"id", "order"=> "ASC", "hide_empty" => FALSE));
@@ -493,7 +495,7 @@ get_header();
 				</div>
 			<!--.strongPointDetail--></div>
 			<div class="listStaff twelvecol col">
-				<h4>私たちがまいります</h4>
+				<h4>私たちが承ります</h4>
 				<div class="owl-carousel owl-theme owl">
 					<div class="staff">
 						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_kurahashi.jpg" alt="" /></div>
@@ -522,7 +524,7 @@ get_header();
 				</div>
 			<!--.listStaff--></div>
 			<div class="listStaff twelvecol col last">
-				<h4>私たちがうかがいます</h4>
+				<h4>私たちが伺います</h4>
 				<div class="owl-carousel owl-theme owl">
 					<div class="staff">
 						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_miyazaki.jpg" alt="" /></div>
