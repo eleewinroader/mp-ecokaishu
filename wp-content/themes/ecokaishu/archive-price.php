@@ -8,9 +8,11 @@ get_header( );
 $basicCharge = getPrice("基本料金", "金額");
 $basicCharge = $basicCharge[0];
 $basicEx = getPrice("基本料金", "内容");
+$basicChargeUnit = getPrice("基本料金", "単位");
 $areaCharge = getPrice("地域料金", "金額");
 $areaCharge = $areaCharge[0];
 $areaEx = getPrice("地域料金", "内容");
+$areaChargeUnit = getPrice("地域料金", "単位");
 
 $itemRanks = get_terms("itemranks", array("hide_empty" => FALSE));
 $spWorks = get_terms("spworks", array("orderby"=>"id", "order"=> "ASC", "hide_empty" => FALSE));
@@ -160,7 +162,6 @@ $options = get_terms("options", array("orderby"=>"id", "order"=> "ASC", "hide_em
 					<?php
 					$items = array("テレビ", "冷蔵庫", "パソコン", "エアコン", "洗濯機");
 					$j = 1;
-
 					foreach($items as $item):
 						$last = ($j % 3) ? "" : " last";
 						$page = get_page_by_title($item, OBJECT, "items"); ?>
