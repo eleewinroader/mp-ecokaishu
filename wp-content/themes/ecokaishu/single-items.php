@@ -13,16 +13,21 @@ get_header();
 	$basicCharge = getPrice("基本料金", "金額");
 	$basicCharge = $basicCharge[0];
 	$basicEx = getPrice("基本料金", "内容");
+	$basicChargeUnit = getPrice("基本料金", "単位");
 	$areaCharge = getPrice("地域料金", "金額");
 	$areaCharge = $areaCharge[0];
 	$areaEx = getPrice("地域料金", "内容");
+	$areaChargeUnit = getPrice("地域料金", "単位");
 
+	$indexRanks = getMetaArr($post, "itemsInfo02");
+	$indexCount = count(getMetaArr($post, "itemsInfo02"));
 	$itemRanks = get_the_terms($post->ID, "itemranks");
+
 	$i = 0;
 	if($itemRanks){
-		foreach($itemRanks as $rank){
-			${"itemRank$i"} = $rank->name;
-			${"itemCharge$i"} = getPrice($rank->name, "金額");
+		foreach($indexRanks as $rank){
+			${"itemRank$i"} = $rank;
+			${"itemCharge$i"} = getPrice($rank, "金額");
 			${"itemCharge$i"} = ${"itemCharge$i"}[0];
 			${"itemLabel$i"} = getMetaArr($post, "itemsInfo03");
 			${"itemLabel$i"} = ${"itemLabel$i"}[$i];
@@ -66,10 +71,6 @@ get_header();
 		${"optionEx$j"} = getPrice($option->name, "内容");
 		$j++;
 	}
-
-	$itemRanks = getMetaArr($post, "itemsInfo02");
-	$itemIndexs = getMetaArr($post, "itemsInfo03");
-	$itemSizes = getMetaArr($post, "itemsInfo04");
 
 	//vars of post type
 	$postTypeName = $postType->name;
@@ -234,10 +235,18 @@ get_header();
 				<li class="twocol col">
 					<p class="title">特殊作業料金</p>
 					<span class="icon-tools"></span>
-					<p>
-						<span class="priceIndex"><?php echo $spWorkIndex0; ?></span>
-						<span class="price"><?php echo taxIn($spWorkCharge0); ?></span>
-					</p>
+					<?php
+					$n = 0;
+					for($m=0; $m < count($indexRanks); $m++){
+						$spWorkRanks = array("Fランク", "Gランク", "Hランク", "Iランク", "Jランク", "Kランク");
+						(in_array($indexRanks[$m], $spWorkRanks)) ? $n++ : $n;
+					}
+					if($n): ?>
+						<p>
+							<span class="priceIndex"><?php echo $spWorkIndex0; ?></span>
+							<span class="price"><?php echo taxIn($spWorkCharge0); ?></span>
+						</p>
+					<?php endif; ?>
 				</li>
 				<li class="twocol col">
 					<p class="title">オプション料金</p>
@@ -246,7 +255,12 @@ get_header();
 				<li class="fourcol col last">
 					<p class="title">合計料金</p>
 					<p>
-						<span class="price"><?php echo taxIn($basicCharge + $itemCharge0 + $itemCharge01 + $spWorkCharge0); ?></span>
+						<span class="price">
+							<?php
+							$sum = $basicCharge + $itemCharge0 + $itemCharge01;
+							if($n) $sum = $sum + $spWorkCharge0;
+							echo taxIn($sum); ?>
+						</span>
 					</p>
 				</li>
 			<!--priceEx--></ul>
@@ -294,7 +308,8 @@ get_header();
 						<div class="twelvecol col last listCharge m1_t">
 							<table>
 								<tbody>
-									<?php for($i=0; $i<count($itemRanks); $i++): ?>
+									<?php
+									for($i=0; $i<$indexCount; $i++): ?>
 										<tr>
 											<th><?php echo ${"itemLabel$i"}." ".${"itemSize$i"}; ?></th>
 											<td><?php echo ${"itemRank$i"}; ?></td>
@@ -465,7 +480,7 @@ get_header();
 				</div>
 			<!--.strongPointDetail--></div>
 			<div class="listStaff twelvecol col">
-				<h4>私たちがまいります</h4>
+				<h4>私たちが承ります</h4>
 				<div class="owl-carousel owl-theme owl">
 					<div class="staff">
 						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/concierge_img_kurahashi.jpg" alt="" /></div>
@@ -494,7 +509,7 @@ get_header();
 				</div>
 			<!--.listStaff--></div>
 			<div class="listStaff twelvecol col last">
-				<h4>私たちがうかがいます</h4>
+				<h4>私たちが伺います</h4>
 				<div class="owl-carousel owl-theme owl">
 					<div class="staff">
 						<div class="circleTrimming"><img src="<?php echo bloginfo("template_url"); ?>/assets/img/staff/clt_img_miyazaki.jpg" alt="" /></div>
