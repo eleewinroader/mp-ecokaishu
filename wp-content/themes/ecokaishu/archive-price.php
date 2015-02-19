@@ -158,7 +158,7 @@ $options = get_terms("options", array("orderby"=>"id", "order"=> "ASC", "hide_em
 						<h5>各家電・パソコンのサイズ別料金</h5>
 					</div>
 					<?php
-					$items = array("テレビ", "冷蔵庫", "パソコン", "エアコン", "洗濯機", "衣類乾燥機");
+					$items = array("テレビ", "冷蔵庫", "パソコン", "エアコン", "洗濯機");
 					$j = 1;
 
 					foreach($items as $item):
