@@ -193,6 +193,9 @@ h6{
 			}
 			.priceIndex{
 				margin-right: 0.5rem;
+				&.block{
+					margin-right: 0;
+				}
 			}
 			.price{
 				&:after{
